@@ -20,5 +20,5 @@
     "target_accuracy_percent": 91,
     "headless": true,
     "mute_audio": true,
-    "max_words_per_session": 50
+    "max_words_per_session": 1000
 }
