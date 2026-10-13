@@ -1,0 +1,44 @@
+name: InstaLing Daily Bot
+
+on:
+  schedule:
+    # Uruchamianie kilka razy dziennie, skrypt sam wie czy to właściwy moment i czy nie zrobiono już dzisiaj sesji
+    - cron: '15 14 * * *'  # 14:15 UTC (ok. 16:15 w Polsce)
+    - cron: '45 16 * * *'  # 16:45 UTC (ok. 18:45 w Polsce)
+    - cron: '30 18 * * *'  # 18:30 UTC (ok. 20:30 w Polsce)
+  workflow_dispatch:      # Pozwala na ręczne uruchomienie przyciskiem w panelu GitHub
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Konfiguracja Pythona
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalacja zależności i przeglądarki Chromium
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps chromium
+
+      - name: Uruchomienie bota InstaLing
+        env:
+          INSTALING_LOGIN: ${{ secrets.INSTALING_LOGIN }}
+          INSTALING_PASSWORD: ${{ secrets.INSTALING_PASSWORD }}
+        run: |
+          python main.py --run
+
+      - name: Zapisanie zaktualizowanej bazy słówek i historii (Auto-Commit)
+        run: |
+          git config --global user.name "InstaLing Bot"
+          git config --global user.email "bot@github-actions.internal"
+          git add data/
+          git diff --staged --quiet || git commit -m "Auto: Zaktualizowano słówka i historię sesji [skip ci]"
+          git push

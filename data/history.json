@@ -1,0 +1,8 @@
+[
+  {
+    "success": false,
+    "error": "Locator.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"input#log_email, input#login, input[name='log_email'], input[name='login']\").first\n",
+    "duration_seconds": 39.0,
+    "timestamp": "2026-10-13T16:39:52.777266"
+  }
+]

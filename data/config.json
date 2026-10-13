@@ -1,0 +1,24 @@
+{
+    "login": "asa613207",
+    "password": "euirp",
+    "schedule_mode": "random",
+    "fixed_time": "17:30",
+    "random_window_start": "15:46",
+    "random_window_end": "21:57",
+    "random_jitter_minutes": 3,
+    "miss_days_mode": "random",
+    "miss_days_count": 1,
+    "miss_fixed_days": [
+        5,
+        6
+    ],
+    "read_time_min_s": 5.0,
+    "read_time_max_s": 70.0,
+    "typing_speed_min_ms": 75,
+    "typing_speed_max_ms": 170,
+    "typo_chance_percent": 6,
+    "target_accuracy_percent": 91,
+    "headless": true,
+    "mute_audio": true,
+    "max_words_per_session": 50
+}

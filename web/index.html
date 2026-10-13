@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InstaLing Auto-Bot | Panel Kontrolny</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 24px; min-height: 100vh; }
+    .container { max-width: 1100px; margin: 0 auto; }
+
+    header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+    h1 { font-size: 1.6rem; display: flex; align-items: center; gap: 10px; }
+    .badge { padding: 4px 10px; border-radius: 999px; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; }
+    .badge-success { background: rgba(16, 185, 129, 0.2); color: #34d399; border: 1px solid #10b981; }
+    .badge-warning { background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid #f59e0b; }
+    .badge-info { background: rgba(59, 130, 246, 0.2); color: #60a5fa; border: 1px solid #3b82f6; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
+    .stat-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; }
+    .stat-title { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; }
+    .stat-val { font-size: 1.4rem; font-weight: 700; }
+
+    .nav-tabs { display: flex; gap: 8px; margin-bottom: 20px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+    .tab-btn { background: transparent; border: none; color: var(--text-muted); font-size: 0.95rem; font-weight: 600; padding: 8px 16px; border-radius: 6px; cursor: pointer; transition: 0.2s; }
+    .tab-btn.active { background: var(--primary); color: white; }
+    .tab-btn:hover:not(.active) { background: #334155; color: white; }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; margin-bottom: 20px; }
+    .card-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+    .form-group { margin-bottom: 14px; }
+    label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px; }
+    input, select { width: 100%; padding: 10px 12px; border-radius: 6px; border: 1px solid var(--border); background: #0f172a; color: white; font-size: 0.95rem; }
+    input:focus, select:focus { outline: none; border-color: var(--primary); }
+
+    .btn { padding: 10px 18px; border-radius: 6px; border: none; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: 0.2s; font-size: 0.9rem; }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-success { background: var(--success); color: white; }
+    .btn-danger { background: var(--danger); color: white; }
+
+    table { width: 100%; border-collapse: collapse; margin-top: 12px; }
+    th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+    th { color: var(--text-muted); font-weight: 600; background: #162032; }
+
+    .logs-console { background: #090d16; border: 1px solid var(--border); border-radius: 6px; padding: 14px; height: 350px; overflow-y: auto; font-family: 'Courier New', monospace; font-size: 0.85rem; color: #a7f3d0; line-height: 1.4; }
+    .toast { position: fixed; bottom: 20px; right: 20px; padding: 12px 20px; border-radius: 8px; background: var(--success); color: white; font-weight: 600; display: none; box-shadow: 0 4px 12px rgba(0,0,0,0.4); z-index: 1000; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>🤖 InstaLing Auto-Bot <span id="status-badge" class="badge badge-info">Ładowanie...</span></h1>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 4px;">Zarządzanie automatyczną nauką, harmonogramem i bazą słówek</p>
+      </div>
+      <div>
+        <button id="run-now-btn" class="btn btn-success" onclick="triggerRunNow()">▶ Wykonaj sesję teraz</button>
+      </div>
+    </header>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-title">📅 Dzisiejszy dzień</div>
+        <div class="stat-val" id="stat-day">-</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;" id="stat-workday-desc">-</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">⏰ Zaplanowana godzina</div>
+        <div class="stat-val" id="stat-time">-</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;" id="stat-mode-desc">Tryb harmonogramu</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">📚 Zapamiętane słówka</div>
+        <div class="stat-val" id="stat-words">0</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">Uczenie kontekstowe</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-title">📊 Wykonane sesje</div>
+        <div class="stat-val" id="stat-sessions">0</div>
+        <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;" id="stat-done-today">Dzisiaj: Sprawdzanie...</div>
+      </div>
+    </div>
+
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="switchTab('settings')">⚙️ Ustawienia i Harmonogram</button>
+      <button class="tab-btn" onclick="switchTab('words')">📖 Baza słówek (<span id="tab-word-count">0</span>)</button>
+      <button class="tab-btn" onclick="switchTab('history')">📜 Historia sesji</button>
+      <button class="tab-btn" onclick="switchTab('logs')">💻 Logi na żywo</button>
+    </div>
+
+    <!-- TAB: USTAWIENIA -->
+    <div id="tab-settings" class="tab-content active">
+      <div class="card">
+        <div class="card-title">🔑 Dane logowania do InstaLing</div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Login lub e-mail ucznia:</label>
+            <input type="text" id="cfg-login" placeholder="np. jan.kowalski@szkola.pl">
+          </div>
+          <div class="form-group">
+            <label>Hasło:</label>
+            <input type="password" id="cfg-password" placeholder="••••••••">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">⏰ Tryby harmonogramu (Godziny)</div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Wybór trybu:</label>
+            <select id="cfg-schedule_mode" onchange="toggleScheduleFields()">
+              <option value="random">Tryb losowy (losowa godzina w oknie z jitterem)</option>
+              <option value="fixed">Tryb stały (zawsze o tej samej godzinie)</option>
+            </select>
+          </div>
+          <div class="form-group" id="group-fixed">
+            <label>Stała godzina wykonania (HH:MM):</label>
+            <input type="time" id="cfg-fixed_time">
+          </div>
+          <div class="form-group" id="group-random-1">
+            <label>Początek okna losowania (HH:MM):</label>
+            <input type="time" id="cfg-random_window_start">
+          </div>
+          <div class="form-group" id="group-random-2">
+            <label>Koniec okna losowania (HH:MM):</label>
+            <input type="time" id="cfg-random_window_end">
+          </div>
+          <div class="form-group" id="group-random-3">
+            <label>Losowy jitter (+/- minuty odchyłki):</label>
+            <input type="number" id="cfg-random_jitter_minutes" min="0" max="60">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🎲 Częstotliwość wypadków (Symulacja zapomnienia / Dni wolne)</div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Tryb opuszczania sesji w tygodniu:</label>
+            <select id="cfg-miss_days_mode">
+              <option value="random">Losowe N dni wolnych w tygodniu (polecane)</option>
+              <option value="fixed">Stałe wybrane dni tygodnia (np. weekend)</option>
+              <option value="none">Brak (rób codziennie 7 dni w tygodniu)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Liczba losowych dni wolnych w tygodniu:</label>
+            <input type="number" id="cfg-miss_days_count" min="0" max="5">
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🛡️ Anty-detekcja i ludzkie zachowanie</div>
+        <div class="grid-2">
+          <div class="form-group">
+            <label>Docelowa skuteczność odpowiedzi (%) (88-94% symuluje naturalnego ucznia):</label>
+            <input type="number" id="cfg-target_accuracy_percent" min="50" max="100">
+          </div>
+          <div class="form-group">
+            <label>Szansa na literówkę i poprawienie Backspacem (%):</label>
+            <input type="number" id="cfg-typo_chance_percent" min="0" max="30">
+          </div>
+          <div class="form-group">
+            <label>Czas na 'czytanie' zdania (min / max sekundy):</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="number" step="0.1" id="cfg-read_time_min_s" placeholder="Min (np 1.8)">
+              <input type="number" step="0.1" id="cfg-read_time_max_s" placeholder="Max (np 3.8)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Szybkość pisania liter (min / max milisekundy na znak):</label>
+            <div style="display: flex; gap: 8px;">
+              <input type="number" id="cfg-typing_speed_min_ms" placeholder="Min (np 70)">
+              <input type="number" id="cfg-typing_speed_max_ms" placeholder="Max (np 160)">
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Przeglądarka bez okna (Headless):</label>
+            <select id="cfg-headless">
+              <option value="true">Tak (tryb cichy / serwer)</option>
+              <option value="false">Nie (pokazuj okno Chromium)</option>
+            </select>
+          </div>
+        </div>
+        <button class="btn btn-primary" onclick="saveConfiguration()" style="margin-top: 10px;">💾 Zapisz wszystkie ustawienia</button>
+      </div>
+    </div>
+
+    <!-- TAB: BAZA SŁÓWEK -->
+    <div id="tab-words" class="tab-content">
+      <div class="card">
+        <div class="card-title">➕ Dodaj nowe słówko ręcznie</div>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <input type="text" id="new-prompt" placeholder="Polskie słówko lub fraza" style="flex: 1; min-width: 200px;">
+          <input type="text" id="new-answer" placeholder="Poprawna odpowiedź obca" style="flex: 1; min-width: 200px;">
+          <input type="text" id="new-sentence" placeholder="Opcjonalny fragment zdania" style="flex: 1.5; min-width: 200px;">
+          <button class="btn btn-primary" onclick="addCustomWord()">Dodaj</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div class="card-title" style="margin: 0;">📚 Lista zapamiętanych słówek</div>
+          <button class="btn btn-danger" onclick="clearWordsDatabase()">Wyczyść całą bazę</button>
+        </div>
+        <input type="text" id="words-search" placeholder="🔍 Szukaj w bazie słówek..." oninput="filterWords()" style="margin-bottom: 12px;">
+        <div style="max-height: 480px; overflow-y: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Polski prompt / Klucz</th>
+                <th>Poprawna odpowiedź</th>
+                <th>Zdanie kontekstowe</th>
+                <th>Użycia</th>
+              </tr>
+            </thead>
+            <tbody id="words-table-body">
+              <tr><td colspan="4">Ładowanie słówek...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: HISTORIA -->
+    <div id="tab-history" class="tab-content">
+      <div class="card">
+        <div class="card-title">📜 Rejestr sesji</div>
+        <div style="max-height: 500px; overflow-y: auto;">
+          <table>
+            <thead>
+              <tr>
+                <th>Data i godzina</th>
+                <th>Status</th>
+                <th>Liczba pytań</th>
+                <th>Poprawne</th>
+                <th>Błędy</th>
+                <th>Skuteczność</th>
+                <th>Czas trwania</th>
+              </tr>
+            </thead>
+            <tbody id="history-table-body">
+              <tr><td colspan="7">Ładowanie historii...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: LOGI -->
+    <div id="tab-logs" class="tab-content">
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+          <div class="card-title" style="margin: 0;">💻 Logi bota na żywo</div>
+          <span id="log-status" style="font-size: 0.85rem; color: var(--text-muted);">Odświeżanie co 2s...</span>
+        </div>
+        <div class="logs-console" id="logs-box">Oczekiwanie na logi...</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast">Zapisano pomyślnie!</div>
+
+  <script>
+    let allWords = {};
+
+    function showToast(text = "Zapisano pomyślnie!") {
+      const toast = document.getElementById('toast');
+      toast.innerText = text;
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 3000);
+    }
+
+    function switchTab(name) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById(`tab-${name}`).classList.add('active');
+      if (name === 'words') loadWords();
+      if (name === 'history') loadHistory();
+    }
+
+    function toggleScheduleFields() {
+      const mode = document.getElementById('cfg-schedule_mode').value;
+      const isFixed = mode === 'fixed';
+      document.getElementById('group-fixed').style.display = isFixed ? 'block' : 'none';
+      document.getElementById('group-random-1').style.display = isFixed ? 'none' : 'block';
+      document.getElementById('group-random-2').style.display = isFixed ? 'none' : 'block';
+      document.getElementById('group-random-3').style.display = isFixed ? 'none' : 'block';
+    }
+
+    async function loadStatus() {
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+        
+        document.getElementById('stat-day').innerText = `${data.weekday_name} (${data.today})`;
+        document.getElementById('stat-workday-desc').innerText = data.is_workday ? 'Dzień zaplanowany na sesję' : 'Zaplanowany dzień wolny (odpoczynek)';
+        document.getElementById('stat-time').innerText = data.planned_time;
+        document.getElementById('stat-mode-desc').innerText = data.config.schedule_mode === 'fixed' ? 'Tryb stały' : 'Tryb losowych godzin';
+        document.getElementById('stat-words').innerText = data.words_count;
+        document.getElementById('tab-word-count').innerText = data.words_count;
+        document.getElementById('stat-sessions').innerText = data.history_count;
+        document.getElementById('stat-done-today').innerText = data.is_done ? 'Dzisiaj: Ukończona ✓' : 'Dzisiaj: Oczekuje na start';
+
+        const badge = document.getElementById('status-badge');
+        if (data.is_running_now) {
+          badge.className = 'badge badge-warning';
+          badge.innerText = 'SESJA W TOKU...';
+          document.getElementById('run-now-btn').disabled = true;
+        } else {
+          badge.className = data.is_workday ? 'badge badge-success' : 'badge badge-warning';
+          badge.innerText = data.is_workday ? 'GOTOWY' : 'DZIEŃ WOLNY';
+          document.getElementById('run-now-btn').disabled = false;
+        }
+
+        // Uzupełnienie formularza
+        const cfg = data.config;
+        for (const key in cfg) {
+          const el = document.getElementById(`cfg-${key}`);
+          if (el) {
+            el.value = cfg[key];
+          }
+        }
+        toggleScheduleFields();
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    async function saveConfiguration() {
+      const cfg = {
+        login: document.getElementById('cfg-login').value,
+        password: document.getElementById('cfg-password').value,
+        schedule_mode: document.getElementById('cfg-schedule_mode').value,
+        fixed_time: document.getElementById('cfg-fixed_time').value,
+        random_window_start: document.getElementById('cfg-random_window_start').value,
+        random_window_end: document.getElementById('cfg-random_window_end').value,
+        random_jitter_minutes: parseInt(document.getElementById('cfg-random_jitter_minutes').value) || 0,
+        miss_days_mode: document.getElementById('cfg-miss_days_mode').value,
+        miss_days_count: parseInt(document.getElementById('cfg-miss_days_count').value) || 0,
+        target_accuracy_percent: parseFloat(document.getElementById('cfg-target_accuracy_percent').value) || 90,
+        typo_chance_percent: parseFloat(document.getElementById('cfg-typo_chance_percent').value) || 5,
+        read_time_min_s: parseFloat(document.getElementById('cfg-read_time_min_s').value) || 1.8,
+        read_time_max_s: parseFloat(document.getElementById('cfg-read_time_max_s').value) || 3.8,
+        typing_speed_min_ms: parseInt(document.getElementById('cfg-typing_speed_min_ms').value) || 70,
+        typing_speed_max_ms: parseInt(document.getElementById('cfg-typing_speed_max_ms').value) || 160,
+        headless: document.getElementById('cfg-headless').value === 'true'
+      };
+
+      const res = await fetch('/api/config', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(cfg)
+      });
+      if (res.ok) {
+        showToast("Zapisano ustawienia!");
+        loadStatus();
+      }
+    }
+
+    async function loadWords() {
+      const res = await fetch('/api/words');
+      allWords = await res.json();
+      renderWordsTable(allWords);
+    }
+
+    function renderWordsTable(wordsObj) {
+      const tbody = document.getElementById('words-table-body');
+      tbody.innerHTML = '';
+      const entries = Object.entries(wordsObj);
+      if (entries.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--text-muted);">Baza słówek jest pusta. Bot pozna je sam podczas pierwszej sesji!</td></tr>';
+        return;
+      }
+      entries.forEach(([key, val]) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${val.prompt || key}</strong></td>
+          <td style="color: #60a5fa;">${val.answer || '-'}</td>
+          <td style="color: var(--text-muted); font-size: 0.8rem;">${val.sentence || '-'}</td>
+          <td>${val.usage_count || 1}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function filterWords() {
+      const query = document.getElementById('words-search').value.toLowerCase();
+      const filtered = {};
+      for (const [k, v] of Object.entries(allWords)) {
+        if ((v.prompt && v.prompt.toLowerCase().includes(query)) ||
+            (v.answer && v.answer.toLowerCase().includes(query)) ||
+            k.toLowerCase().includes(query)) {
+          filtered[k] = v;
+        }
+      }
+      renderWordsTable(filtered);
+    }
+
+    async function addCustomWord() {
+      const prompt = document.getElementById('new-prompt').value.trim();
+      const answer = document.getElementById('new-answer').value.trim();
+      const sentence = document.getElementById('new-sentence').value.trim();
+      if (!prompt || !answer) {
+        alert("Podaj prompt i odpowiedź!");
+        return;
+      }
+      await fetch('/api/words', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ prompt, answer, sentence })
+      });
+      document.getElementById('new-prompt').value = '';
+      document.getElementById('new-answer').value = '';
+      document.getElementById('new-sentence').value = '';
+      showToast("Dodano słówko!");
+      loadWords();
+      loadStatus();
+    }
+
+    async function clearWordsDatabase() {
+      if (!confirm("Czy na pewno chcesz usunąć wszystkie zapamiętane słówka?")) return;
+      await fetch('/api/words', { method: 'DELETE' });
+      showToast("Wyczyszczono słówka.");
+      loadWords();
+      loadStatus();
+    }
+
+    async function loadHistory() {
+      const res = await fetch('/api/history');
+      const list = await res.json();
+      const tbody = document.getElementById('history-table-body');
+      tbody.innerHTML = '';
+      if (!list || list.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Brak wpisów w historii sesji.</td></tr>';
+        return;
+      }
+      list.slice().reverse().forEach(h => {
+        const tr = document.createElement('tr');
+        const isOk = h.success;
+        tr.innerHTML = `
+          <td>${h.timestamp ? h.timestamp.replace('T', ' ').slice(0, 19) : '-'}</td>
+          <td><span class="badge ${isOk ? 'badge-success' : 'badge-warning'}">${isOk ? 'SUKCES' : 'BŁĄD'}</span></td>
+          <td>${h.words_total ?? '-'}</td>
+          <td>${h.words_correct ?? '-'}</td>
+          <td>${h.words_mistakes ?? '-'}</td>
+          <td><strong>${h.accuracy_percent ? h.accuracy_percent + '%' : '-'}</strong></td>
+          <td>${h.duration_seconds ? h.duration_seconds + 's' : '-'}</td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    async function triggerRunNow() {
+      if (!confirm("Uruchomić sesję InstaLing w tle teraz?")) return;
+      const res = await fetch('/api/run', { method: 'POST' });
+      const data = await res.json();
+      if (res.ok) {
+        showToast("Uruchomiono sesję!");
+        switchTab('logs');
+      } else {
+        alert(data.error || "Błąd uruchamiania");
+      }
+      loadStatus();
+    }
+
+    async function fetchLogs() {
+      try {
+        const res = await fetch('/api/logs');
+        const data = await res.json();
+        const box = document.getElementById('logs-box');
+        if (data.logs.length > 0) {
+          box.innerHTML = data.logs.join('<br>');
+          box.scrollTop = box.scrollHeight;
+        }
+      } catch (e) {}
+    }
+
+    setInterval(fetchLogs, 2000);
+    setInterval(loadStatus, 5000);
+    window.onload = () => {
+      loadStatus();
+      fetchLogs();
+    };
+  </script>
+</body>
+</html>
