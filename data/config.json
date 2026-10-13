@@ -13,7 +13,7 @@
         6
     ],
     "read_time_min_s": 5.0,
-    "read_time_max_s": 70.0,
+    "read_time_max_s": 12.0,
     "typing_speed_min_ms": 75,
     "typing_speed_max_ms": 170,
     "typo_chance_percent": 6,

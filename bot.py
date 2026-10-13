@@ -7,7 +7,6 @@ from storage import Storage
 from solver import InstaLingSolver
 
 INSTALING_LOGIN_URL = "https://instaling.pl/teacher.php?page=login"
-INSTALING_MAIN_URL = "https://instaling.pl/teacher.php?page=teacherActions"
 
 class InstaLingBot:
     def __init__(self, config: Optional[Dict[str, Any]] = None):
@@ -57,72 +56,57 @@ class InstaLingBot:
             )
             page = context.new_page()
 
+            # Skrypt automatycznie usuwający baner RODO co 200ms na każdej podstronie
+            page.add_init_script("""
+                setInterval(() => {
+                    document.querySelectorAll('.fc-consent-root, .fc-dialog-overlay, .fc-dialog-container').forEach(e => e.remove());
+                }, 200);
+            """)
+
             try:
-                # 1. Wejście na stronę logowania
+                # ==============================
+                # 1. WEJŚCIE NA STRONĘ LOGOWANIA
+                # ==============================
                 print("[*] Otwieranie strony logowania InstaLing...")
                 page.goto(INSTALING_LOGIN_URL, timeout=40000)
                 page.wait_for_load_state("domcontentloaded")
-                time.sleep(1.5)
-
-                # Akceptacja cookies/rodo jeśli występuje
-                try:
-                    cookie_btn = page.locator("button:has-text('Consent'), button:has-text('Accept all'), button:has-text('Zgadzam się'), button:has-text('Akceptuję'), .cookie-accept, .fc-button.fc-cta-consent")
-                    if cookie_btn.count() > 0 and cookie_btn.first.is_visible():
-                        cookie_btn.first.click()
-                        time.sleep(0.5)
-                except Exception:
-                    pass
-
-                # 2. Bezpieczne wpisywanie loginu i hasła (human-like)
-                print("[*] Logowanie do konta ucznia...")
-                login_input = page.locator("input#log_email, input#login, input[name='log_email'], input[name='login']").first
-                login_input.click()
-                login_input.press_sequentially(login, delay=random.randint(65, 130))
-                time.sleep(random.uniform(0.4, 0.8))
-
-                pass_input = page.locator("input#log_password, input[name='log_password'], input[name='password']").first
-                pass_input.click()
-                pass_input.press_sequentially(password, delay=random.randint(70, 140))
-                time.sleep(random.uniform(0.5, 1.0))
-
-                # Kliknięcie 'Zaloguj się'
-                submit_btn = page.locator("button[type='submit'], input[type='submit'], .btn-login, button:has-text('Zaloguj')").first
-                submit_btn.click()
-                page.wait_for_load_state("networkidle", timeout=20000)
                 time.sleep(2.0)
 
-                # 3. Weryfikacja zalogowania
-                if "page=login" in page.url:
-                    # Sprawdź czy jest komunikat błędu
+                # ==============================
+                # 2. LOGOWANIE
+                # ==============================
+                print("[*] Logowanie do konta ucznia...")
+                login_input = page.locator("input#log_email").first
+                login_input.fill(login)
+                time.sleep(random.uniform(0.4, 0.7))
+
+                pass_input = page.locator("input#log_password").first
+                pass_input.fill(password)
+                time.sleep(random.uniform(0.4, 0.8))
+
+                submit_btn = page.locator('button:has-text("ZALOGUJ")').first
+                submit_btn.click(force=True)
+                time.sleep(3.5)
+
+                # ==============================
+                # 3. WERYFIKACJA ZALOGOWANIA
+                # ==============================
+                current_url = page.url
+                if "page=login" in current_url and "student" not in current_url:
                     error_msg = page.locator(".alert-danger, .error-message, #error_box").all_inner_texts()
                     err_txt = " | ".join(error_msg) if error_msg else "Niepoprawny login lub hasło."
                     return {"success": False, "error": f"Błąd logowania: {err_txt}"}
 
-                print("[+] Pomyślnie zalogowano do serwisu!")
+                print(f"[+] Pomyślnie zalogowano! Panel: {current_url}")
 
-                # 4. Znalezienie przycisku rozpoczęcia sesji
+                # ==============================
+                # 4. WEJŚCIE DO SESJI Z PANELU
+                # ==============================
                 print("[*] Wyszukiwanie sesji...")
-                session_btn_selectors = [
-                    "a:has-text('Zacznij codzienną sesję')",
-                    "a:has-text('Dokończ sesję')",
-                    "a:has-text('Zacznij sesję')",
-                    ".btn-session",
-                    "#start_session_button",
-                    "#start_session_page",
-                    "a[href*='action=start_session']"
-                ]
-
-                session_btn = None
-                for sel in session_btn_selectors:
-                    loc = page.locator(sel)
-                    if loc.count() > 0 and loc.first.is_visible():
-                        session_btn = loc.first
-                        break
-
-                if not session_btn:
-                    # Sprawdź czy sesja już dzisiaj została ukończona
+                session_btn = page.locator("a.btn-start-session, a:has-text('Dokończ sesję'), a:has-text('Zacznij codzienną sesję'), a:has-text('Zacznij sesję')").first
+                if session_btn.count() == 0 or not session_btn.is_visible():
                     page_text = page.inner_text("body")
-                    if "Wykonałeś już dzisiejszą sesję" in page_text or "dzisiejsza sesja wykonana" in page_text:
+                    if "Wykonałeś już dzisiejszą sesję" in page_text or "sesja wykonana" in page_text.lower():
                         print("[i] Sesja na dzisiaj została już wcześniej wykonana!")
                         return {
                             "success": True,
@@ -131,38 +115,57 @@ class InstaLingBot:
                         }
                     return {"success": False, "error": "Nie znaleziono przycisku startu sesji na stronie głównej."}
 
+                print(f"[*] Przechodzenie do sesji: '{session_btn.inner_text().strip()}'")
                 session_btn.click()
-                page.wait_for_load_state("domcontentloaded")
-                time.sleep(2.0)
+                time.sleep(3.0)
 
-                # 5. Rozwiązywanie słówek w pętli
+                # ==============================
+                # 5. EKRAN STARTOWY SESJI (Kontynuuj / Rozpocznij)
+                # ==============================
+                cont_btn = page.get_by_text("Kontynuuj sesję").first
+                if cont_btn.count() > 0 and cont_btn.is_visible():
+                    print("[*] Klikam 'Kontynuuj sesję'...")
+                    cont_btn.click(force=True)
+                    time.sleep(2.5)
+
+                start_btn = page.get_by_text("Rozpocznij sesję").first
+                if start_btn.count() > 0 and start_btn.is_visible():
+                    print("[*] Klikam 'Rozpocznij sesję'...")
+                    start_btn.click(force=True)
+                    time.sleep(2.5)
+
+                # ==============================
+                # 6. PĘTLA ROZWIĄZYWANIA SŁÓWEK
+                # ==============================
                 print("[*] Rozpoczynanie rozwiązywania słówek...")
                 solver = InstaLingSolver(page, self.config, self.storage)
-                
+
                 iterations = 0
                 while iterations < max_words:
                     iterations += 1
-                    time.sleep(random.uniform(0.5, 1.2))
+                    time.sleep(random.uniform(0.6, 1.2))
 
                     if solver.is_session_finished():
-                        print("[+] Wykryto zakończenie sesji! Sukces!")
+                        print("[+] Sesja ukończona pomyślnie! Gratulacje!")
                         break
 
                     handled = solver.handle_single_word()
                     if not handled:
-                        # Ponowne sprawdzenie czy to koniec
-                        time.sleep(1.5)
+                        time.sleep(2.0)
                         if solver.is_session_finished():
+                            print("[+] Sesja ukończona!")
                             break
-                        print("[i] Brak kolejnych pytań lub oczekiwanie na zmianę stanu.")
+                        print("[i] Zakończono pytania w tej sesji.")
                         break
 
-                # 6. Odczekanie chwili po sesji i wylogowanie
-                time.sleep(random.uniform(2.5, 4.5))
+                # ==============================
+                # 7. WYLOGOWANIE I STATYSTYKI
+                # ==============================
+                time.sleep(random.uniform(2.0, 3.5))
                 try:
                     logout_btn = page.locator("a:has-text('Wyloguj'), a[href*='logout']").first
                     if logout_btn.is_visible():
-                        logout_btn.click()
+                        logout_btn.click(force=True)
                         time.sleep(1.0)
                 except Exception:
                     pass
@@ -183,9 +186,10 @@ class InstaLingBot:
                     "finished_at": datetime.now().isoformat()
                 }
 
-                # Zapis do historii
                 self.storage.record_session(result)
-                print(f"[✓] Sesja zakończona pomyślnie w {duration_s:.1f}s. Rozwiązano: {total}, trafienia: {correct}, błędy: {mistakes} ({acc}%).")
+                print(f"\n[✓] SESJA ZAKOŃCZONA SUKCESEM!")
+                print(f"    Czas trwania: {duration_s:.1f} s | Rozwiązano słówek: {total}")
+                print(f"    Poprawne: {correct} | Błędy: {mistakes} | Skuteczność: {acc}%\n")
                 return result
 
             except Exception as e:

@@ -1,4 +1,3 @@
-from __future__ import annotations
 import time
 import random
 from typing import Dict, Any, Optional, Tuple, TYPE_CHECKING
@@ -22,149 +21,79 @@ class InstaLingSolver:
         self.session_words_count = 0
         self.session_correct_count = 0
         self.session_mistakes_count = 0
-        self.deliberate_errors_pool = set() # słówka celowo pomylone raz, by nie mylić ich przy powtórce
+        self.deliberate_errors_pool = set()
 
     def human_type(self, selector: str, text: str) -> None:
         """Symuluje naturalne pisanie na klawiaturze z opóźnieniami i sporadycznymi literówkami."""
-        locator = self.page.locator(selector)
-        locator.click()
-        locator.fill("") # wyczyść pole
-        
-        speed_min = self.config.get("typing_speed_min_ms", 70) / 1000.0
-        speed_max = self.config.get("typing_speed_max_ms", 160) / 1000.0
+        locator = self.page.locator(selector).first
+        locator.click(force=True)
+        locator.fill("")
+
+        speed_min = self.config.get("typing_speed_min_ms", 75) / 1000.0
+        speed_max = self.config.get("typing_speed_max_ms", 170) / 1000.0
         typo_chance = self.config.get("typo_chance_percent", 5) / 100.0
 
         for char in text:
-            # Losowa literówka
             lower_char = char.lower()
             if lower_char in KEYBOARD_NEIGHBORS and random.random() < typo_chance:
                 wrong_char = random.choice(KEYBOARD_NEIGHBORS[lower_char])
                 locator.press_sequentially(wrong_char, delay=int(random.uniform(speed_min, speed_max) * 1000))
-                time.sleep(random.uniform(0.2, 0.45))
+                time.sleep(random.uniform(0.2, 0.4))
                 self.page.keyboard.press("Backspace")
                 time.sleep(random.uniform(0.1, 0.25))
 
-            # Właściwy znak
             locator.press_sequentially(char, delay=int(random.uniform(speed_min, speed_max) * 1000))
             time.sleep(random.uniform(speed_min, speed_max))
 
     def human_read_delay(self) -> None:
         """Symuluje czas potrzebny człowiekowi na przeczytanie zdania."""
-        t_min = self.config.get("read_time_min_s", 1.8)
-        t_max = self.config.get("read_time_max_s", 3.8)
+        t_min = min(float(self.config.get("read_time_min_s", 1.8)), 4.0)
+        t_max = min(float(self.config.get("read_time_max_s", 4.0)), 7.0)
         time.sleep(random.uniform(t_min, t_max))
 
-    def find_element_text(self, selectors: list) -> str:
-        """Zwraca tekst pierwszego pasującego i widocznego selektora."""
-        for sel in selectors:
-            try:
-                loc = self.page.locator(sel)
-                if loc.count() > 0 and loc.first.is_visible():
-                    text = loc.first.inner_text().strip()
-                    if text:
-                        return text
-            except Exception:
-                continue
-        return ""
-
     def get_prompt_and_sentence(self) -> Tuple[str, str]:
-        """Wycina polski prompt (słowo) oraz kontekst zdania z ekranu."""
-        # Selektory słowa po polsku
-        prompt_selectors = [
-            "#word", ".word", "#polish_word", ".polish_word",
-            "#learning_card .word", "#card_word", ".translations"
-        ]
-        prompt = self.find_element_text(prompt_selectors)
+        """Pobiera polskie słowo (prompt) oraz kontekst zdania."""
+        prompt = ""
+        sentence = ""
 
-        # Selektory zdania z luką
-        sentence_selectors = [
-            "#usage", ".usage", "#sentence", ".sentence",
-            "#question", ".question", "#learning_card .usage"
-        ]
-        sentence = self.find_element_text(sentence_selectors)
+        # Polski prompt
+        trans_loc = self.page.locator("#question_translation, .translation").first
+        if trans_loc.count() > 0 and trans_loc.is_visible():
+            prompt = trans_loc.inner_text().strip()
+
+        # Zdanie z luką
+        usage_loc = self.page.locator("#question_usage, #usage").first
+        if usage_loc.count() > 0 and usage_loc.is_visible():
+            sentence = usage_loc.inner_text().strip()
 
         return prompt, sentence
 
-    def find_input_selector(self) -> Optional[str]:
-        candidates = ["input#answer", "input[name='answer']", "input.answer", "input[type='text']"]
-        for sel in candidates:
-            try:
-                loc = self.page.locator(sel)
-                if loc.count() > 0 and loc.first.is_visible():
-                    return sel
-            except Exception:
-                continue
-        return None
-
-    def find_check_button(self) -> Optional[Locator]:
-        candidates = [
-            "#check", "button#check", "input#check",
-            "button:has-text('Sprawdź')", "div.btn-check", ".btn_check"
-        ]
-        for sel in candidates:
-            try:
-                loc = self.page.locator(sel)
-                if loc.count() > 0 and loc.first.is_visible():
-                    return loc.first
-            except Exception:
-                continue
-        return None
-
-    def find_next_button(self) -> Optional[Locator]:
-        candidates = [
-            "#nextword", "button#nextword", "input#nextword",
-            "button:has-text('Następne')", "button:has-text('Dalej')",
-            ".next_button", "#next_word"
-        ]
-        for sel in candidates:
-            try:
-                loc = self.page.locator(sel)
-                if loc.count() > 0 and loc.first.is_visible():
-                    return loc.first
-            except Exception:
-                continue
-        return None
-
     def extract_correct_answer_from_page(self) -> str:
-        """Pobiera wyświetloną przez platformę poprawną odpowiedź w przypadku błędu."""
-        candidates = [
-            "#word_return", ".return_word", "#word_return_container",
-            "#correct_answer", ".correct_answer", "#answer_result",
-            ".answer_box .correct"
-        ]
-        ans = self.find_element_text(candidates)
-        if ans:
-            # Często tekst to 'Poprawna odpowiedź: cat' lub samo słowo
-            if ":" in ans:
-                ans = ans.split(":")[-1].strip()
-            return ans
-        
-        # Fallback: szukanie w widocznym kontenerze błędu
-        try:
-            container = self.page.locator("#word_return_container, .answer_box")
-            if container.count() > 0 and container.first.is_visible():
-                txt = container.first.inner_text().strip()
-                if txt:
-                    return txt.split("\n")[-1].strip()
-        except Exception:
-            pass
+        """Pobiera wyświetlone poprawne słówko z szarej ramki po błędzie."""
+        # W nowym interfejsie InstaLing poprawne słowo jest w #word
+        ans_loc = self.page.locator("#word, .word, #word_return, .return_word").first
+        if ans_loc.count() > 0 and ans_loc.is_visible():
+            txt = ans_loc.inner_text().strip()
+            if txt:
+                return txt
 
-        return ""
+        # Fallback z JS
+        cand = self.page.evaluate("""() => {
+            const w = document.getElementById('word');
+            if (w && w.innerText) return w.innerText.trim();
+            const el = Array.from(document.querySelectorAll('div, span')).find(e => {
+                const t = e.innerText ? e.innerText.trim() : '';
+                return e.offsetParent !== null && e.children.length === 0 && t.length > 1 && !['Niepoprawnie', 'Poprawnie', 'Następne', 'Zgłoś błąd'].includes(t);
+            });
+            return el ? el.innerText.trim() : '';
+        }""")
+        return cand or ""
 
     def is_session_finished(self) -> bool:
-        """Sprawdza czy pojawił się ekran podsumowania lub gratulacji."""
-        indicators = [
-            "text=Gratulacje", "text=ukończyłeś sesję", "text=Koniec sesji",
-            "#return_main", "a:has-text('Wróć do strony głównej')",
-            "text=Dokończono sesję"
-        ]
-        for sel in indicators:
-            try:
-                loc = self.page.locator(sel)
-                if loc.count() > 0 and loc.first.is_visible():
-                    return True
-            except Exception:
-                continue
+        """Sprawdza czy sesja została ukończona (ekran gratulacji lub powrotu)."""
+        body_txt = self.page.inner_text("body").lower()
+        if "gratulacje" in body_txt or "ukończyłeś sesję" in body_txt or "koniec sesji" in body_txt:
+            return True
         return False
 
     def handle_single_word(self) -> bool:
@@ -172,22 +101,26 @@ class InstaLingSolver:
         if self.is_session_finished():
             return False
 
-        input_sel = self.find_input_selector()
-        if not input_sel:
-            # Może jeszcze ładuje się strona lub to koniec
-            time.sleep(1.0)
+        # Sprawdzamy czy pole input#answer jest gotowe
+        ans_loc = self.page.locator("input#answer").first
+        try:
+            ans_loc.wait_for(state="visible", timeout=6000)
+        except Exception:
+            # Może to koniec sesji
             if self.is_session_finished():
                 return False
-            input_sel = self.find_input_selector()
-            if not input_sel:
-                return False
+            # Sprawdźmy czy nie ma przypadkiem przycisku Kontynuuj sesję
+            cont_btn = self.page.get_by_text("Kontynuuj sesję").first
+            if cont_btn.count() > 0 and cont_btn.is_visible():
+                cont_btn.click(force=True)
+                time.sleep(2.0)
+            return True
 
-        # Pobieramy kontekst i polskie słówko
         prompt, sentence = self.get_prompt_and_sentence()
         self.human_read_delay()
 
         known_answer = self.storage.get_word(prompt, sentence)
-        target_acc = self.config.get("target_accuracy_percent", 91)
+        target_acc = float(self.config.get("target_accuracy_percent", 91))
         word_id = f"{prompt}_{sentence}"
 
         is_first_encounter = known_answer is None
@@ -198,53 +131,43 @@ class InstaLingSolver:
         )
 
         if is_first_encounter or should_make_deliberate_mistake:
-            # 1. Nie znamy słowa LUB celowy błąd dla statystyk
             if should_make_deliberate_mistake:
                 self.deliberate_errors_pool.add(word_id)
-                print(f"[~] Celowy błąd dla symulacji ucznia: '{prompt}'")
-                # Wpisujemy celowo literówkę lub zbędny znak
-                fake_ans = known_answer[:-1] if len(known_answer) > 2 else "x"
-                self.human_type(input_sel, fake_ans)
+                print(f"[~] Celowy błąd dla statystyk ucznia: '{prompt}'")
+                fake = known_answer[:-1] if len(known_answer) > 2 else "x"
+                self.human_type("input#answer", fake)
             else:
-                print(f"[?] Nowe słówko nieznane w bazie: '{prompt}' (zdanie: '{sentence[:30]}...')")
-                # Wpisujemy pusty lub pojedynczy znak, aby poznać poprawną odpowiedź
-                self.human_type(input_sel, "-")
+                print(f"[?] Nowe słówko (brak w bazie): '{prompt}'")
+                self.human_type("input#answer", "-")
 
-            check_btn = self.find_check_button()
-            if check_btn:
-                check_btn.click()
-            else:
-                self.page.keyboard.press("Enter")
+            # Klikamy Sprawdź
+            check_btn = self.page.locator("#check, button:has-text('Sprawdź')").first
+            check_btn.click(force=True)
+            time.sleep(1.8)
 
-            time.sleep(1.2)
-            # Odczytujemy poprawną odpowiedź z serwisu InstaLing
+            # Odczytujemy poprawną odpowiedź z ekranu
             correct_ans = self.extract_correct_answer_from_page()
             if correct_ans:
-                print(f"[+] ZAPAMIĘTANO DO BAZY: '{prompt}' -> '{correct_ans}'")
+                print(f"[+] ZAPAMIĘTANO SŁÓWKO: '{prompt}' -> '{correct_ans}'")
                 self.storage.record_word(correct_ans, prompt, sentence)
 
             self.session_mistakes_count += 1
         else:
-            # 2. Słówko znane - wpisujemy bezbłędnie
             print(f"[✓] Znaleziono w bazie: '{prompt}' -> '{known_answer}'")
-            self.human_type(input_sel, known_answer)
+            self.human_type("input#answer", known_answer)
 
-            check_btn = self.find_check_button()
-            if check_btn:
-                check_btn.click()
-            else:
-                self.page.keyboard.press("Enter")
-
-            time.sleep(1.0)
+            check_btn = self.page.locator("#check, button:has-text('Sprawdź')").first
+            check_btn.click(force=True)
+            time.sleep(1.5)
             self.session_correct_count += 1
 
         self.session_words_count += 1
 
-        # Klikamy 'Następne słówko'
-        next_btn = self.find_next_button()
-        if next_btn:
-            time.sleep(random.uniform(0.6, 1.4))
-            next_btn.click()
-            time.sleep(random.uniform(0.7, 1.2))
+        # Klikamy 'Następne'
+        next_btn = self.page.locator("#nextword, button:has-text('Następne'), a:has-text('Następne')").first
+        if next_btn.count() > 0 and next_btn.is_visible():
+            time.sleep(random.uniform(0.8, 1.6))
+            next_btn.click(force=True)
+            time.sleep(random.uniform(1.0, 1.8))
 
         return True
