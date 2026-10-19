@@ -22,5 +22,21 @@
     "error": "Timeout 20000ms exceeded.\n=========================== logs ===========================\n\"load\" event fired\n============================================================",
     "duration_seconds": 29.7,
     "timestamp": "2026-10-13T17:02:12.689536"
+  },
+  {
+    "success": false,
+    "error": "'charmap' codec can't encode character '\\u2713' in position 1: character maps to <undefined>",
+    "duration_seconds": 31.4,
+    "timestamp": "2026-10-13T17:30:22.882323"
+  },
+  {
+    "success": true,
+    "words_total": 19,
+    "words_correct": 14,
+    "words_mistakes": 5,
+    "accuracy_percent": 73.7,
+    "duration_seconds": 261.3,
+    "finished_at": "2026-10-19T20:12:11.888761",
+    "timestamp": "2026-10-19T20:12:11.888771"
   }
 ]

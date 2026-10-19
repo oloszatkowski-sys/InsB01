@@ -1,0 +1,198 @@
+{
+  "my little sister watches ________ luka every weekend. | kreskówka": {
+    "answer": "cartoon",
+    "prompt": "kreskówka",
+    "sentence": "My little sister watches ________\nluka\n every weekend.",
+    "updated_at": "2026-10-19T20:11:51.460678",
+    "usage_count": 3
+  },
+  "kreskówka": {
+    "answer": "cartoon",
+    "prompt": "kreskówka",
+    "sentence": "My little sister watches ________\nluka\n every weekend.",
+    "updated_at": "2026-10-19T20:11:51.460678",
+    "usage_count": 3
+  },
+  "his ___________ luka was amazing. | występ": {
+    "answer": "performance",
+    "prompt": "występ",
+    "sentence": "His ___________\nluka\n was amazing.",
+    "updated_at": "2026-10-19T20:02:02.740837",
+    "usage_count": 1
+  },
+  "występ": {
+    "answer": "performance",
+    "prompt": "występ",
+    "sentence": "His ___________\nluka\n was amazing.",
+    "updated_at": "2026-10-19T20:02:02.740837",
+    "usage_count": 1
+  },
+  "kim kardashian is an american _________ luka . | znana osoba": {
+    "answer": "celebrity",
+    "prompt": "znana osoba",
+    "sentence": "Kim Kardashian is an American _________\nluka\n.",
+    "updated_at": "2026-10-19T20:02:13.333910",
+    "usage_count": 1
+  },
+  "znana osoba": {
+    "answer": "celebrity",
+    "prompt": "znana osoba",
+    "sentence": "Kim Kardashian is an American _________\nluka\n.",
+    "updated_at": "2026-10-19T20:02:13.333910",
+    "usage_count": 1
+  },
+  "she _____ luka a brilliant scientist. | grać (np. kogoś w filmie)": {
+    "answer": "play",
+    "prompt": "grać (np. kogoś w filmie)",
+    "sentence": "She _____\nluka\n a brilliant scientist.",
+    "updated_at": "2026-10-19T20:02:39.738728",
+    "usage_count": 1
+  },
+  "grać (np. kogoś w filmie)": {
+    "answer": "play",
+    "prompt": "grać (np. kogoś w filmie)",
+    "sentence": "She _____\nluka\n a brilliant scientist.",
+    "updated_at": "2026-10-19T20:02:39.738728",
+    "usage_count": 1
+  },
+  "i've seen an interesting _____________ luka on tv recently. | reklama": {
+    "answer": "advertisement",
+    "prompt": "reklama",
+    "sentence": "I've seen an interesting _____________\nluka\n on TV recently.",
+    "updated_at": "2026-10-19T20:03:01.964923",
+    "usage_count": 1
+  },
+  "reklama": {
+    "answer": "advertisement",
+    "prompt": "reklama",
+    "sentence": "I've seen an interesting _____________\nluka\n on TV recently.",
+    "updated_at": "2026-10-19T20:03:01.964923",
+    "usage_count": 1
+  },
+  "john was sitting in the front row of seats at a calvin klein _______ luka ____ luka . | pokaz mody": {
+    "answer": "fashion show",
+    "prompt": "pokaz mody",
+    "sentence": "John was sitting in the front row of seats at a Calvin Klein _______\nluka\n ____\nluka\n.",
+    "updated_at": "2026-10-19T20:03:26.181778",
+    "usage_count": 1
+  },
+  "pokaz mody": {
+    "answer": "fashion show",
+    "prompt": "pokaz mody",
+    "sentence": "John was sitting in the front row of seats at a Calvin Klein _______\nluka\n ____\nluka\n.",
+    "updated_at": "2026-10-19T20:03:26.181778",
+    "usage_count": 1
+  },
+  "i was in the ________ luka of that show. | widownia; publiczność": {
+    "answer": "audience",
+    "prompt": "widownia; publiczność",
+    "sentence": "I was in the ________\nluka\n of that show.",
+    "updated_at": "2026-10-19T20:04:48.887629",
+    "usage_count": 1
+  },
+  "widownia; publiczność": {
+    "answer": "audience",
+    "prompt": "widownia; publiczność",
+    "sentence": "I was in the ________\nluka\n of that show.",
+    "updated_at": "2026-10-19T20:04:48.887629",
+    "usage_count": 1
+  },
+  "sherlock holmes is a popular _____ luka ______ luka known all over the world. | serial kryminalny": {
+    "answer": "crime series",
+    "prompt": "serial kryminalny",
+    "sentence": "Sherlock Holmes is a popular _____\nluka\n ______\nluka\n known all over the world.",
+    "updated_at": "2026-10-19T20:05:14.548517",
+    "usage_count": 1
+  },
+  "serial kryminalny": {
+    "answer": "crime series",
+    "prompt": "serial kryminalny",
+    "sentence": "Sherlock Holmes is a popular _____\nluka\n ______\nluka\n known all over the world.",
+    "updated_at": "2026-10-19T20:05:14.548517",
+    "usage_count": 1
+  },
+  "change the _______ luka , my favourite serial starts in five minutes. | kanał; kanał telewizyjny": {
+    "answer": "channel",
+    "prompt": "kanał; kanał telewizyjny",
+    "sentence": "Change the _______\nluka\n, my favourite serial starts in five minutes.",
+    "updated_at": "2026-10-19T20:06:05.659526",
+    "usage_count": 1
+  },
+  "kanał; kanał telewizyjny": {
+    "answer": "channel",
+    "prompt": "kanał; kanał telewizyjny",
+    "sentence": "Change the _______\nluka\n, my favourite serial starts in five minutes.",
+    "updated_at": "2026-10-19T20:06:05.659526",
+    "usage_count": 1
+  },
+  "we could all bake cakes and sell them at a school ____ luka . | targ, jarmark": {
+    "answer": "fair",
+    "prompt": "targ, jarmark",
+    "sentence": "We could all bake cakes and sell them at a school ____\nluka\n.",
+    "updated_at": "2026-10-19T20:06:43.520586",
+    "usage_count": 1
+  },
+  "targ, jarmark": {
+    "answer": "fair",
+    "prompt": "targ, jarmark",
+    "sentence": "We could all bake cakes and sell them at a school ____\nluka\n.",
+    "updated_at": "2026-10-19T20:06:43.520586",
+    "usage_count": 1
+  },
+  "are there any ___ luka _________ luka in your town? | galeria sztuki": {
+    "answer": "art gallery",
+    "prompt": "galeria sztuki",
+    "sentence": "Are there any ___\nluka\n _________\nluka\n in your town?",
+    "updated_at": "2026-10-19T20:08:52.698999",
+    "usage_count": 1
+  },
+  "galeria sztuki": {
+    "answer": "art gallery",
+    "prompt": "galeria sztuki",
+    "sentence": "Are there any ___\nluka\n _________\nluka\n in your town?",
+    "updated_at": "2026-10-19T20:08:52.698999",
+    "usage_count": 1
+  },
+  "the kids couldn't take their eyes off the ______ luka . | ekran": {
+    "answer": "screen",
+    "prompt": "ekran",
+    "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
+    "updated_at": "2026-10-19T20:09:30.059046",
+    "usage_count": 1
+  },
+  "ekran": {
+    "answer": "screen",
+    "prompt": "ekran",
+    "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
+    "updated_at": "2026-10-19T20:09:30.059046",
+    "usage_count": 1
+  },
+  "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
+    "answer": "it's written by",
+    "prompt": "został napisany przez",
+    "sentence": "It's a well-known play _______\nluka\n __\nluka\n William Shakespeare.",
+    "updated_at": "2026-10-19T20:09:42.031207",
+    "usage_count": 1
+  },
+  "został napisany przez": {
+    "answer": "it's written by",
+    "prompt": "został napisany przez",
+    "sentence": "It's a well-known play _______\nluka\n __\nluka\n William Shakespeare.",
+    "updated_at": "2026-10-19T20:09:42.031207",
+    "usage_count": 1
+  },
+  "please, ______ luka these images to our website. | wysyłać (np. pliki na serwer internetowy)": {
+    "answer": "upload",
+    "prompt": "wysyłać (np. pliki na serwer internetowy)",
+    "sentence": "Please, ______\nluka\n these images to our website.",
+    "updated_at": "2026-10-19T20:10:20.239954",
+    "usage_count": 1
+  },
+  "wysyłać (np. pliki na serwer internetowy)": {
+    "answer": "upload",
+    "prompt": "wysyłać (np. pliki na serwer internetowy)",
+    "sentence": "Please, ______\nluka\n these images to our website.",
+    "updated_at": "2026-10-19T20:10:20.239954",
+    "usage_count": 1
+  }
+}

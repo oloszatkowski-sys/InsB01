@@ -1,7 +1,13 @@
+import sys
 import time
 import random
 from typing import Dict, Any, Optional, Tuple, TYPE_CHECKING
 from storage import Storage
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 if TYPE_CHECKING:
     from playwright.sync_api import Page, Locator
@@ -11,6 +17,12 @@ KEYBOARD_NEIGHBORS = {
     'i': 'uok', 'o': 'ipl', 'p': 'ol', 'a': 'qwsz', 's': 'awedxz', 'd': 'serfcx',
     'f': 'drtgvc', 'g': 'ftyhbv', 'h': 'gyujnb', 'j': 'huikmn', 'k': 'jiolm', 'l': 'kop',
     'z': 'asx', 'x': 'zsdc', 'c': 'xdfv', 'v': 'cfgb', 'b': 'vghn', 'n': 'bhjm', 'm': 'njk'
+}
+
+SYSTEM_BLACKLIST = {
+    "literówka", "literowka", "niepoprawnie", "poprawnie", "następne", "nastepne",
+    "zgłoś błąd", "zglos blad", "pytanie", "odpowiedź", "odpowiedz", "sprawdź", "sprawdz",
+    "deklaracja dostępności", "twoja odpowiedź", "twoja odpowiedz", "luka"
 }
 
 class InstaLingSolver:
@@ -24,25 +36,31 @@ class InstaLingSolver:
         self.deliberate_errors_pool = set()
 
     def human_type(self, selector: str, text: str) -> None:
-        """Symuluje naturalne pisanie na klawiaturze z opóźnieniami i sporadycznymi literówkami."""
+        """Symuluje naturalne pisanie na klawiaturze (klawisz po klawiszu) - brak copy/paste."""
         locator = self.page.locator(selector).first
         locator.click(force=True)
-        locator.fill("")
+        time.sleep(random.uniform(0.15, 0.3))
 
-        speed_min = self.config.get("typing_speed_min_ms", 75) / 1000.0
-        speed_max = self.config.get("typing_speed_max_ms", 170) / 1000.0
-        typo_chance = self.config.get("typo_chance_percent", 5) / 100.0
+        # Czyścimy pole za pomocą klawiatury (Ctrl+A -> Backspace) - zero schowka
+        self.page.keyboard.press("Control+A")
+        time.sleep(0.05)
+        self.page.keyboard.press("Backspace")
+        time.sleep(random.uniform(0.1, 0.2))
+
+        speed_min = float(self.config.get("typing_speed_min_ms", 75)) / 1000.0
+        speed_max = float(self.config.get("typing_speed_max_ms", 170)) / 1000.0
+        typo_chance = float(self.config.get("typo_chance_percent", 5)) / 100.0
 
         for char in text:
             lower_char = char.lower()
             if lower_char in KEYBOARD_NEIGHBORS and random.random() < typo_chance:
                 wrong_char = random.choice(KEYBOARD_NEIGHBORS[lower_char])
-                locator.press_sequentially(wrong_char, delay=int(random.uniform(speed_min, speed_max) * 1000))
-                time.sleep(random.uniform(0.2, 0.4))
+                self.page.keyboard.type(wrong_char, delay=int(random.uniform(speed_min, speed_max) * 1000))
+                time.sleep(random.uniform(0.2, 0.35))
                 self.page.keyboard.press("Backspace")
-                time.sleep(random.uniform(0.1, 0.25))
+                time.sleep(random.uniform(0.1, 0.2))
 
-            locator.press_sequentially(char, delay=int(random.uniform(speed_min, speed_max) * 1000))
+            self.page.keyboard.type(char, delay=int(random.uniform(speed_min, speed_max) * 1000))
             time.sleep(random.uniform(speed_min, speed_max))
 
     def human_read_delay(self) -> None:
@@ -56,12 +74,10 @@ class InstaLingSolver:
         prompt = ""
         sentence = ""
 
-        # Polski prompt
         trans_loc = self.page.locator("#question_translation, .translation").first
         if trans_loc.count() > 0 and trans_loc.is_visible():
             prompt = trans_loc.inner_text().strip()
 
-        # Zdanie z luką
         usage_loc = self.page.locator("#question_usage, #usage").first
         if usage_loc.count() > 0 and usage_loc.is_visible():
             sentence = usage_loc.inner_text().strip()
@@ -69,25 +85,30 @@ class InstaLingSolver:
         return prompt, sentence
 
     def extract_correct_answer_from_page(self) -> str:
-        """Pobiera wyświetlone poprawne słówko z szarej ramki po błędzie."""
-        # W nowym interfejsie InstaLing poprawne słowo jest w #word
+        """Pobiera wyświetlone poprawne słówko z szarej ramki po błędzie z rygorystycznym filtrem."""
         ans_loc = self.page.locator("#word, .word, #word_return, .return_word").first
         if ans_loc.count() > 0 and ans_loc.is_visible():
             txt = ans_loc.inner_text().strip()
-            if txt:
+            if txt and txt.lower() not in SYSTEM_BLACKLIST and len(txt) > 0:
                 return txt
 
-        # Fallback z JS
+        # Fallback z JS - szuka elementu z odpowiedzią omijając czarną listę słów systemowych
         cand = self.page.evaluate("""() => {
             const w = document.getElementById('word');
-            if (w && w.innerText) return w.innerText.trim();
+            if (w && w.innerText) {
+                const t = w.innerText.trim();
+                if (t.length > 0) return t;
+            }
+            const blacklist = ['literówka', 'literowka', 'niepoprawnie', 'poprawnie', 'następne', 'nastepne', 'zgłoś błąd', 'zglos blad', 'pytanie', 'odpowiedź', 'odpowiedz', 'sprawdź', 'sprawdz', 'deklaracja dostępności', 'twoja odpowiedź', 'twoja odpowiedz', 'luka'];
             const el = Array.from(document.querySelectorAll('div, span')).find(e => {
-                const t = e.innerText ? e.innerText.trim() : '';
-                return e.offsetParent !== null && e.children.length === 0 && t.length > 1 && !['Niepoprawnie', 'Poprawnie', 'Następne', 'Zgłoś błąd'].includes(t);
+                const t = e.innerText ? e.innerText.trim().toLowerCase() : '';
+                return e.offsetParent !== null && e.children.length === 0 && t.length > 1 && !blacklist.includes(t);
             });
             return el ? el.innerText.trim() : '';
         }""")
-        return cand or ""
+        if cand and cand.lower() not in SYSTEM_BLACKLIST:
+            return cand
+        return ""
 
     def is_session_finished(self) -> bool:
         """Sprawdza czy sesja została ukończona (ekran gratulacji lub powrotu)."""
@@ -97,19 +118,16 @@ class InstaLingSolver:
         return False
 
     def handle_single_word(self) -> bool:
-        """Rozwiązuje pojedyncze zadanie słówkowe. Zwraca True jeśli zadanie obsłużone, False jeśli koniec."""
+        """Rozwiązuje pojedyncze zadanie słówkowe z automatyczną auto-korektą błędnych wpisów."""
         if self.is_session_finished():
             return False
 
-        # Sprawdzamy czy pole input#answer jest gotowe
         ans_loc = self.page.locator("input#answer").first
         try:
             ans_loc.wait_for(state="visible", timeout=6000)
         except Exception:
-            # Może to koniec sesji
             if self.is_session_finished():
                 return False
-            # Sprawdźmy czy nie ma przypadkiem przycisku Kontynuuj sesję
             cont_btn = self.page.get_by_text("Kontynuuj sesję").first
             if cont_btn.count() > 0 and cont_btn.is_visible():
                 cont_btn.click(force=True)
@@ -120,6 +138,10 @@ class InstaLingSolver:
         self.human_read_delay()
 
         known_answer = self.storage.get_word(prompt, sentence)
+        # Odrzucamy z bazy słowa systemowe jeśli przypadkowo tam trafiły
+        if known_answer and known_answer.lower() in SYSTEM_BLACKLIST:
+            known_answer = None
+
         target_acc = float(self.config.get("target_accuracy_percent", 91))
         word_id = f"{prompt}_{sentence}"
 
@@ -133,33 +155,42 @@ class InstaLingSolver:
         if is_first_encounter or should_make_deliberate_mistake:
             if should_make_deliberate_mistake:
                 self.deliberate_errors_pool.add(word_id)
-                print(f"[~] Celowy błąd dla statystyk ucznia: '{prompt}'")
+                print(f"[~] Celowy blad dla statystyk ucznia: '{prompt}'")
                 fake = known_answer[:-1] if len(known_answer) > 2 else "x"
                 self.human_type("input#answer", fake)
             else:
-                print(f"[?] Nowe słówko (brak w bazie): '{prompt}'")
+                print(f"[?] Nowe slowko (brak w bazie): '{prompt}'")
                 self.human_type("input#answer", "-")
 
-            # Klikamy Sprawdź
             check_btn = self.page.locator("#check, button:has-text('Sprawdź')").first
             check_btn.click(force=True)
             time.sleep(1.8)
 
-            # Odczytujemy poprawną odpowiedź z ekranu
             correct_ans = self.extract_correct_answer_from_page()
-            if correct_ans:
-                print(f"[+] ZAPAMIĘTANO SŁÓWKO: '{prompt}' -> '{correct_ans}'")
+            if correct_ans and correct_ans.lower() not in SYSTEM_BLACKLIST:
+                print(f"[+] ZAPAMIETANO SLOWKO: '{prompt}' -> '{correct_ans}'")
                 self.storage.record_word(correct_ans, prompt, sentence)
 
             self.session_mistakes_count += 1
         else:
-            print(f"[✓] Znaleziono w bazie: '{prompt}' -> '{known_answer}'")
+            print(f"[OK] Znaleziono w bazie: '{prompt}' -> '{known_answer}'")
             self.human_type("input#answer", known_answer)
 
             check_btn = self.page.locator("#check, button:has-text('Sprawdź')").first
             check_btn.click(force=True)
-            time.sleep(1.5)
-            self.session_correct_count += 1
+            time.sleep(1.6)
+
+            # --- AUTO-KOREKTA (SELF-HEALING) ---
+            # Sprawdzamy czy InstaLing nie zgłosił błędu / literówki
+            body_feedback = self.page.inner_text("body").lower()
+            if "niepoprawnie" in body_feedback or "literówka" in body_feedback or "literowka" in body_feedback:
+                real_ans = self.extract_correct_answer_from_page()
+                if real_ans and real_ans.lower() not in SYSTEM_BLACKLIST and real_ans.lower() != known_answer.lower():
+                    print(f"[!] AUTOKOREKTA: Baza miala '{known_answer}', poprawiono na: '{real_ans}'!")
+                    self.storage.record_word(real_ans, prompt, sentence)
+                self.session_mistakes_count += 1
+            else:
+                self.session_correct_count += 1
 
         self.session_words_count += 1
 

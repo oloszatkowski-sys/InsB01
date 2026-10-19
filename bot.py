@@ -1,3 +1,4 @@
+import sys
 import time
 import random
 from datetime import datetime
@@ -5,6 +6,11 @@ from typing import Dict, Any, Optional
 from config import load_config
 from storage import Storage
 from solver import InstaLingSolver
+
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(sys.stderr, "reconfigure"):
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
 
 INSTALING_LOGIN_URL = "https://instaling.pl/teacher.php?page=login"
 
@@ -97,7 +103,7 @@ class InstaLingBot:
                     err_txt = " | ".join(error_msg) if error_msg else "Niepoprawny login lub hasło."
                     return {"success": False, "error": f"Błąd logowania: {err_txt}"}
 
-                print(f"[+] Pomyślnie zalogowano! Panel: {current_url}")
+                print(f"[+] Pomyslnie zalogowano! Panel: {current_url}")
 
                 # ==============================
                 # 4. WEJŚCIE DO SESJI Z PANELU
@@ -107,15 +113,15 @@ class InstaLingBot:
                 if session_btn.count() == 0 or not session_btn.is_visible():
                     page_text = page.inner_text("body")
                     if "Wykonałeś już dzisiejszą sesję" in page_text or "sesja wykonana" in page_text.lower():
-                        print("[i] Sesja na dzisiaj została już wcześniej wykonana!")
+                        print("[i] Sesja na dzisiaj zostala juz wczesniej wykonana!")
                         return {
                             "success": True,
                             "already_completed": True,
-                            "message": "Dzisiejsza sesja była już ukończona."
+                            "message": "Dzisiejsza sesja byla juz ukonczona."
                         }
-                    return {"success": False, "error": "Nie znaleziono przycisku startu sesji na stronie głównej."}
+                    return {"success": False, "error": "Nie znaleziono przycisku startu sesji na stronie glownej."}
 
-                print(f"[*] Przechodzenie do sesji: '{session_btn.inner_text().strip()}'")
+                print(f"[*] Przechodzenie do sesji...")
                 session_btn.click()
                 time.sleep(3.0)
 
@@ -124,20 +130,20 @@ class InstaLingBot:
                 # ==============================
                 cont_btn = page.get_by_text("Kontynuuj sesję").first
                 if cont_btn.count() > 0 and cont_btn.is_visible():
-                    print("[*] Klikam 'Kontynuuj sesję'...")
+                    print("[*] Klikam 'Kontynuuj sesje'...")
                     cont_btn.click(force=True)
                     time.sleep(2.5)
 
                 start_btn = page.get_by_text("Rozpocznij sesję").first
                 if start_btn.count() > 0 and start_btn.is_visible():
-                    print("[*] Klikam 'Rozpocznij sesję'...")
+                    print("[*] Klikam 'Rozpocznij sesje'...")
                     start_btn.click(force=True)
                     time.sleep(2.5)
 
                 # ==============================
                 # 6. PĘTLA ROZWIĄZYWANIA SŁÓWEK
                 # ==============================
-                print("[*] Rozpoczynanie rozwiązywania słówek...")
+                print("[*] Rozpoczynanie rozwiazywania slowek...")
                 solver = InstaLingSolver(page, self.config, self.storage)
 
                 iterations = 0
@@ -146,16 +152,16 @@ class InstaLingBot:
                     time.sleep(random.uniform(0.6, 1.2))
 
                     if solver.is_session_finished():
-                        print("[+] Sesja ukończona pomyślnie! Gratulacje!")
+                        print("[+] Sesja ukonczona pomyslnie! Gratulacje!")
                         break
 
                     handled = solver.handle_single_word()
                     if not handled:
                         time.sleep(2.0)
                         if solver.is_session_finished():
-                            print("[+] Sesja ukończona!")
+                            print("[+] Sesja ukonczona!")
                             break
-                        print("[i] Zakończono pytania w tej sesji.")
+                        print("[i] Zakonczono pytania w tej sesji.")
                         break
 
                 # ==============================
@@ -187,14 +193,14 @@ class InstaLingBot:
                 }
 
                 self.storage.record_session(result)
-                print(f"\n[✓] SESJA ZAKOŃCZONA SUKCESEM!")
-                print(f"    Czas trwania: {duration_s:.1f} s | Rozwiązano słówek: {total}")
-                print(f"    Poprawne: {correct} | Błędy: {mistakes} | Skuteczność: {acc}%\n")
+                print(f"\n[OK] SESJA ZAKONCZONA SUKCESEM!")
+                print(f"    Czas trwania: {duration_s:.1f} s | Rozwiazano slowek: {total}")
+                print(f"    Poprawne: {correct} | Bledy: {mistakes} | Skutecznosc: {acc}%\n")
                 return result
 
             except Exception as e:
                 err_str = str(e)
-                print(f"[!] Błąd w trakcie wykonywania sesji: {err_str}")
+                print(f"[!] Blad w trakcie wykonywania sesji: {err_str}")
                 self.storage.record_session({
                     "success": False,
                     "error": err_str,
