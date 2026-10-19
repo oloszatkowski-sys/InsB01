@@ -2,10 +2,12 @@ import sys
 import time
 import random
 from datetime import datetime
-from typing import Dict, Any, Optional
+from typing import Dict, Any, Optional, List
 from config import load_config
 from storage import Storage
 from solver import InstaLingSolver
+from notifier import Notifier
+from logger import log
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -18,6 +20,7 @@ class InstaLingBot:
     def __init__(self, config: Optional[Dict[str, Any]] = None):
         self.config = config or load_config()
         self.storage = Storage()
+        self.notifier = Notifier(self.config)
 
     def run_session(self) -> Dict[str, Any]:
         """Uruchamia pełną sesję: start przeglądarki, logowanie, rozwiązanie zadań i zapis."""
@@ -42,8 +45,13 @@ class InstaLingBot:
         headless = bool(self.config.get("headless", True))
         mute_audio = bool(self.config.get("mute_audio", True))
         max_words = int(self.config.get("max_words_per_session", 45))
+        session_logs: List[str] = []
 
-        print(f"[*] Uruchamianie bota InstaLing... (headless={headless})")
+        def track_log(msg: str):
+            log(msg)
+            session_logs.append(msg)
+
+        track_log(f"[*] Uruchamianie bota InstaLing... (headless={headless})")
 
         with sync_playwright() as p:
             args = []
@@ -73,7 +81,7 @@ class InstaLingBot:
                 # ==============================
                 # 1. WEJŚCIE NA STRONĘ LOGOWANIA
                 # ==============================
-                print("[*] Otwieranie strony logowania InstaLing...")
+                track_log("[*] Otwieranie strony logowania InstaLing...")
                 page.goto(INSTALING_LOGIN_URL, timeout=40000)
                 page.wait_for_load_state("domcontentloaded")
                 time.sleep(2.0)
@@ -81,7 +89,7 @@ class InstaLingBot:
                 # ==============================
                 # 2. LOGOWANIE
                 # ==============================
-                print("[*] Logowanie do konta ucznia...")
+                track_log("[*] Logowanie do konta ucznia...")
                 login_input = page.locator("input#log_email").first
                 login_input.fill(login)
                 time.sleep(random.uniform(0.4, 0.7))
@@ -101,27 +109,33 @@ class InstaLingBot:
                 if "page=login" in current_url and "student" not in current_url:
                     error_msg = page.locator(".alert-danger, .error-message, #error_box").all_inner_texts()
                     err_txt = " | ".join(error_msg) if error_msg else "Niepoprawny login lub hasło."
-                    return {"success": False, "error": f"Błąd logowania: {err_txt}"}
+                    res = {"success": False, "error": f"Błąd logowania: {err_txt}"}
+                    self.notifier.send_session_summary(res, session_logs)
+                    return res
 
-                print(f"[+] Pomyslnie zalogowano! Panel: {current_url}")
+                track_log(f"[+] Pomyslnie zalogowano! Panel: {current_url}")
 
                 # ==============================
                 # 4. WEJŚCIE DO SESJI Z PANELU
                 # ==============================
-                print("[*] Wyszukiwanie sesji...")
+                track_log("[*] Wyszukiwanie sesji...")
                 session_btn = page.locator("a.btn-start-session, a:has-text('Dokończ sesję'), a:has-text('Zacznij codzienną sesję'), a:has-text('Zacznij sesję')").first
                 if session_btn.count() == 0 or not session_btn.is_visible():
                     page_text = page.inner_text("body")
                     if "Wykonałeś już dzisiejszą sesję" in page_text or "sesja wykonana" in page_text.lower():
-                        print("[i] Sesja na dzisiaj zostala juz wczesniej wykonana!")
-                        return {
+                        track_log("[i] Sesja na dzisiaj zostala juz wczesniej wykonana!")
+                        res = {
                             "success": True,
                             "already_completed": True,
                             "message": "Dzisiejsza sesja byla juz ukonczona."
                         }
-                    return {"success": False, "error": "Nie znaleziono przycisku startu sesji na stronie glownej."}
+                        self.notifier.send_session_summary(res, session_logs)
+                        return res
+                    res = {"success": False, "error": "Nie znaleziono przycisku startu sesji na stronie glownej."}
+                    self.notifier.send_session_summary(res, session_logs)
+                    return res
 
-                print(f"[*] Przechodzenie do sesji...")
+                track_log(f"[*] Przechodzenie do sesji...")
                 session_btn.click()
                 time.sleep(3.0)
 
@@ -130,20 +144,20 @@ class InstaLingBot:
                 # ==============================
                 cont_btn = page.get_by_text("Kontynuuj sesję").first
                 if cont_btn.count() > 0 and cont_btn.is_visible():
-                    print("[*] Klikam 'Kontynuuj sesje'...")
+                    track_log("[*] Klikam 'Kontynuuj sesje'...")
                     cont_btn.click(force=True)
                     time.sleep(2.5)
 
                 start_btn = page.get_by_text("Rozpocznij sesję").first
                 if start_btn.count() > 0 and start_btn.is_visible():
-                    print("[*] Klikam 'Rozpocznij sesje'...")
+                    track_log("[*] Klikam 'Rozpocznij sesje'...")
                     start_btn.click(force=True)
                     time.sleep(2.5)
 
                 # ==============================
                 # 6. PĘTLA ROZWIĄZYWANIA SŁÓWEK
                 # ==============================
-                print("[*] Rozpoczynanie rozwiazywania slowek...")
+                track_log("[*] Rozpoczynanie rozwiazywania slowek...")
                 solver = InstaLingSolver(page, self.config, self.storage)
 
                 iterations = 0
@@ -152,16 +166,16 @@ class InstaLingBot:
                     time.sleep(random.uniform(0.6, 1.2))
 
                     if solver.is_session_finished():
-                        print("[+] Sesja ukonczona pomyslnie! Gratulacje!")
+                        track_log("[+] Sesja ukonczona pomyslnie! Gratulacje!")
                         break
 
                     handled = solver.handle_single_word()
                     if not handled:
                         time.sleep(2.0)
                         if solver.is_session_finished():
-                            print("[+] Sesja ukonczona!")
+                            track_log("[+] Sesja ukonczona!")
                             break
-                        print("[i] Zakonczono pytania w tej sesji.")
+                        track_log("[i] Zakonczono pytania w tej sesji.")
                         break
 
                 # ==============================
@@ -193,20 +207,25 @@ class InstaLingBot:
                 }
 
                 self.storage.record_session(result)
-                print(f"\n[OK] SESJA ZAKONCZONA SUKCESEM!")
-                print(f"    Czas trwania: {duration_s:.1f} s | Rozwiazano slowek: {total}")
-                print(f"    Poprawne: {correct} | Bledy: {mistakes} | Skutecznosc: {acc}%\n")
+                track_log(f"\n[OK] SESJA ZAKONCZONA SUKCESEM!")
+                track_log(f"    Czas trwania: {duration_s:.1f} s | Rozwiazano slowek: {total}")
+                track_log(f"    Poprawne: {correct} | Bledy: {mistakes} | Skutecznosc: {acc}%\n")
+
+                # Wysyłamy powiadomienie Discord z pingiem i logami!
+                self.notifier.send_session_summary(result, session_logs)
                 return result
 
             except Exception as e:
                 err_str = str(e)
-                print(f"[!] Blad w trakcie wykonywania sesji: {err_str}")
-                self.storage.record_session({
+                track_log(f"[!] Blad w trakcie wykonywania sesji: {err_str}")
+                result = {
                     "success": False,
                     "error": err_str,
                     "duration_seconds": round((datetime.now() - start_time).total_seconds(), 1)
-                })
-                return {"success": False, "error": err_str}
+                }
+                self.storage.record_session(result)
+                self.notifier.send_session_summary(result, session_logs)
+                return result
             finally:
                 context.close()
                 browser.close()

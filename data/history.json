@@ -38,5 +38,21 @@
     "duration_seconds": 261.3,
     "finished_at": "2026-10-19T20:12:11.888761",
     "timestamp": "2026-10-19T20:12:11.888771"
+  },
+  {
+    "success": false,
+    "error": "Locator.click: Target crashed \nCall log:\n  - waiting for locator(\"input#answer\").first\n",
+    "duration_seconds": 129.5,
+    "timestamp": "2026-10-19T20:19:03.800913"
+  },
+  {
+    "success": true,
+    "words_total": 2,
+    "words_correct": 1,
+    "words_mistakes": 1,
+    "accuracy_percent": 50.0,
+    "duration_seconds": 36.3,
+    "finished_at": "2026-10-19T20:20:28.439998",
+    "timestamp": "2026-10-19T20:20:28.440004"
   }
 ]
