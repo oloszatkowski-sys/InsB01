@@ -8,6 +8,7 @@ from storage import Storage
 from solver import InstaLingSolver
 from notifier import Notifier
 from logger import log
+from users_manager import UsersManager, mask_login
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -21,24 +22,29 @@ class InstaLingBot:
         self.config = config or load_config()
         self.storage = Storage()
         self.notifier = Notifier(self.config)
+        self.users_mgr = UsersManager()
 
-    def run_session(self) -> Dict[str, Any]:
-        """Uruchamia pełną sesję: start przeglądarki, logowanie, rozwiązanie zadań i zapis."""
-        try:
-            from playwright.sync_api import sync_playwright
-        except ImportError:
-            return {
-                "success": False,
-                "error": "Biblioteka Playwright nie jest zainstalowana. Uruchom w terminalu: pip install playwright && playwright install chromium"
-            }
+    def run_session(self, user: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+        """Uruchamia pełną sesję dla wybranego użytkownika (lub domyślnego)."""
+        if not user:
+            user = self.users_mgr.get_ntfy_user()
+            if not user:
+                user = {
+                    "nickname": "Główny",
+                    "login": self.config.get("login", ""),
+                    "password": self.config.get("password", ""),
+                    "track_in_ntfy": True
+                }
 
-        login = self.config.get("login", "").strip()
-        password = self.config.get("password", "").strip()
+        nickname = user.get("nickname", "Uczeń")
+        login = str(user.get("login", "")).strip()
+        password = str(user.get("password", "")).strip()
+        masked = mask_login(login)
 
         if not login or not password:
             return {
                 "success": False,
-                "error": "Brak danych logowania (login lub hasło są puste). Skonfiguruj je w menu lub pliku config.json."
+                "error": f"Brak danych logowania dla {nickname} (login/hasło puste)."
             }
 
         start_time = datetime.now()
@@ -51,7 +57,15 @@ class InstaLingBot:
             log(msg)
             session_logs.append(msg)
 
-        track_log(f"[*] Uruchamianie bota InstaLing... (headless={headless})")
+        track_log(f"[*] Rozpoczynam sesje dla uzytkownika: {nickname} ({masked}) (headless={headless})")
+
+        try:
+            from playwright.sync_api import sync_playwright
+        except ImportError:
+            return {
+                "success": False,
+                "error": "Biblioteka Playwright nie jest zainstalowana."
+            }
 
         with sync_playwright() as p:
             args = []
@@ -81,7 +95,7 @@ class InstaLingBot:
                 # ==============================
                 # 1. WEJŚCIE NA STRONĘ LOGOWANIA
                 # ==============================
-                track_log("[*] Otwieranie strony logowania InstaLing...")
+                track_log(f"[*] [{nickname}] Otwieranie strony logowania InstaLing...")
                 page.goto(INSTALING_LOGIN_URL, timeout=40000)
                 page.wait_for_load_state("domcontentloaded")
                 time.sleep(2.0)
@@ -89,7 +103,7 @@ class InstaLingBot:
                 # ==============================
                 # 2. LOGOWANIE
                 # ==============================
-                track_log("[*] Logowanie do konta ucznia...")
+                track_log(f"[*] [{nickname}] Logowanie do konta...")
                 login_input = page.locator("input#log_email").first
                 login_input.fill(login)
                 time.sleep(random.uniform(0.4, 0.7))
@@ -109,33 +123,33 @@ class InstaLingBot:
                 if "page=login" in current_url and "student" not in current_url:
                     error_msg = page.locator(".alert-danger, .error-message, #error_box").all_inner_texts()
                     err_txt = " | ".join(error_msg) if error_msg else "Niepoprawny login lub hasło."
-                    res = {"success": False, "error": f"Błąd logowania: {err_txt}"}
-                    self.notifier.send_session_summary(res, session_logs)
+                    res = {"success": False, "error": f"Błąd logowania dla {nickname}: {err_txt}"}
+                    self.notifier.send_session_summary(res, user, session_logs)
                     return res
 
-                track_log(f"[+] Pomyslnie zalogowano! Panel: {current_url}")
+                track_log(f"[+] [{nickname}] Pomyslnie zalogowano do serwisu!")
 
                 # ==============================
                 # 4. WEJŚCIE DO SESJI Z PANELU
                 # ==============================
-                track_log("[*] Wyszukiwanie sesji...")
+                track_log(f"[*] [{nickname}] Wyszukiwanie sesji...")
                 session_btn = page.locator("a.btn-start-session, a:has-text('Dokończ sesję'), a:has-text('Zacznij codzienną sesję'), a:has-text('Zacznij sesję')").first
                 if session_btn.count() == 0 or not session_btn.is_visible():
                     page_text = page.inner_text("body")
                     if "Wykonałeś już dzisiejszą sesję" in page_text or "sesja wykonana" in page_text.lower():
-                        track_log("[i] Sesja na dzisiaj zostala juz wczesniej wykonana!")
+                        track_log(f"[i] [{nickname}] Dzisiejsza sesja byla juz wczesniej wykonana!")
                         res = {
                             "success": True,
                             "already_completed": True,
-                            "message": "Dzisiejsza sesja byla juz ukonczona."
+                            "message": f"Dzisiejsza sesja {nickname} była już ukończona."
                         }
-                        self.notifier.send_session_summary(res, session_logs)
+                        self.notifier.send_session_summary(res, user, session_logs)
                         return res
-                    res = {"success": False, "error": "Nie znaleziono przycisku startu sesji na stronie glownej."}
-                    self.notifier.send_session_summary(res, session_logs)
+                    res = {"success": False, "error": "Nie znaleziono przycisku startu sesji na stronie głównej."}
+                    self.notifier.send_session_summary(res, user, session_logs)
                     return res
 
-                track_log(f"[*] Przechodzenie do sesji...")
+                track_log(f"[*] [{nickname}] Przechodzenie do sesji...")
                 session_btn.click()
                 time.sleep(3.0)
 
@@ -144,20 +158,20 @@ class InstaLingBot:
                 # ==============================
                 cont_btn = page.get_by_text("Kontynuuj sesję").first
                 if cont_btn.count() > 0 and cont_btn.is_visible():
-                    track_log("[*] Klikam 'Kontynuuj sesje'...")
+                    track_log(f"[*] [{nickname}] Klikam 'Kontynuuj sesje'...")
                     cont_btn.click(force=True)
                     time.sleep(2.5)
 
                 start_btn = page.get_by_text("Rozpocznij sesję").first
                 if start_btn.count() > 0 and start_btn.is_visible():
-                    track_log("[*] Klikam 'Rozpocznij sesje'...")
+                    track_log(f"[*] [{nickname}] Klikam 'Rozpocznij sesje'...")
                     start_btn.click(force=True)
                     time.sleep(2.5)
 
                 # ==============================
                 # 6. PĘTLA ROZWIĄZYWANIA SŁÓWEK
                 # ==============================
-                track_log("[*] Rozpoczynanie rozwiazywania slowek...")
+                track_log(f"[*] [{nickname}] Rozpoczynanie rozwiazywania slowek...")
                 solver = InstaLingSolver(page, self.config, self.storage)
 
                 iterations = 0
@@ -166,27 +180,42 @@ class InstaLingBot:
                     time.sleep(random.uniform(0.6, 1.2))
 
                     if solver.is_session_finished():
-                        track_log("[+] Sesja ukonczona pomyslnie! Gratulacje!")
+                        track_log(f"[+] [{nickname}] Sesja ukonczona pomyslnie! Gratulacje!")
                         break
 
                     handled = solver.handle_single_word()
                     if not handled:
                         time.sleep(2.0)
                         if solver.is_session_finished():
-                            track_log("[+] Sesja ukonczona!")
+                            track_log(f"[+] [{nickname}] Sesja ukonczona!")
                             break
-                        track_log("[i] Zakonczono pytania w tej sesji.")
+                        track_log(f"[i] [{nickname}] Zakonczono pytania w tej sesji.")
                         break
 
                 # ==============================
-                # 7. WYLOGOWANIE I STATYSTYKI
+                # 7. POWRÓT NA STRONĘ GŁÓWNĄ I WYLOGOWANIE
                 # ==============================
                 time.sleep(random.uniform(2.0, 3.5))
+
+                # Krok A: Powrót na stronę główną
+                try:
+                    home_btn = page.locator("a:has-text('Wróć do strony głównej'), a:has-text('Strona główna'), a.btn-return, a[href*='mainPage']").first
+                    if home_btn.count() > 0 and home_btn.is_visible():
+                        track_log(f"[*] [{nickname}] Klikam powrot do strony glownej...")
+                        home_btn.click(force=True)
+                        time.sleep(random.uniform(2.0, 3.0))
+                        track_log(f"[+] [{nickname}] Powrot do strony glownej wykonany.")
+                except Exception:
+                    pass
+
+                # Krok B: Wylogowanie
                 try:
                     logout_btn = page.locator("a:has-text('Wyloguj'), a[href*='logout']").first
-                    if logout_btn.is_visible():
+                    if logout_btn.count() > 0 and logout_btn.is_visible():
+                        track_log(f"[*] [{nickname}] Wylogowywanie...")
                         logout_btn.click(force=True)
-                        time.sleep(1.0)
+                        time.sleep(1.5)
+                        track_log(f"[+] [{nickname}] Pomyslnie wylogowano.")
                 except Exception:
                     pass
 
@@ -198,6 +227,8 @@ class InstaLingBot:
 
                 result = {
                     "success": True,
+                    "nickname": nickname,
+                    "masked_login": masked,
                     "words_total": total,
                     "words_correct": correct,
                     "words_mistakes": mistakes,
@@ -207,24 +238,25 @@ class InstaLingBot:
                 }
 
                 self.storage.record_session(result)
-                track_log(f"\n[OK] SESJA ZAKONCZONA SUKCESEM!")
-                track_log(f"    Czas trwania: {duration_s:.1f} s | Rozwiazano slowek: {total}")
-                track_log(f"    Poprawne: {correct} | Bledy: {mistakes} | Skutecznosc: {acc}%\n")
+                track_log(f"\n[OK] SESJA DLA {nickname} ({masked}) ZAKONCZONA SUKCESEM!")
+                track_log(f"    Czas trwania: {duration_s:.1f} s | Rozwiazano: {total} | Poprawne: {correct} ({acc}%)\n")
 
-                # Wysyłamy powiadomienie Discord z pingiem i logami!
-                self.notifier.send_session_summary(result, session_logs)
+                # Wysyłamy powiadomienie z podziałem na kanały Discord i ntfy
+                self.notifier.send_session_summary(result, user, session_logs)
                 return result
 
             except Exception as e:
                 err_str = str(e)
-                track_log(f"[!] Blad w trakcie wykonywania sesji: {err_str}")
+                track_log(f"[!] Blad w trakcie wykonywania sesji dla {nickname}: {err_str}")
                 result = {
                     "success": False,
+                    "nickname": nickname,
+                    "masked_login": masked,
                     "error": err_str,
                     "duration_seconds": round((datetime.now() - start_time).total_seconds(), 1)
                 }
                 self.storage.record_session(result)
-                self.notifier.send_session_summary(result, session_logs)
+                self.notifier.send_session_summary(result, user, session_logs)
                 return result
             finally:
                 context.close()

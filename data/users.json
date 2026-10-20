@@ -1,0 +1,11 @@
+[
+  {
+    "id": "user_1",
+    "nickname": "SZATEK-01",
+    "login": "asa613207",
+    "password": "euirp",
+    "active": true,
+    "created_at": "2026-10-20",
+    "track_in_ntfy": true
+  }
+]
