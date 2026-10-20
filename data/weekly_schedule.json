@@ -1,0 +1,118 @@
+{
+  "week_key": "2026-W43",
+  "created_at": "2026-10-20T16:27:04.275975",
+  "days": {
+    "0": {
+      "day_name": "Poniedziałek",
+      "date": "2026-10-19",
+      "slots": [
+        {
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 965,
+          "scheduled_time": "16:05",
+          "status": "Oczekuje",
+          "completed": false
+        }
+      ]
+    },
+    "1": {
+      "day_name": "Wtorek",
+      "date": "2026-10-20",
+      "slots": [
+        {
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1002,
+          "scheduled_time": "16:42",
+          "status": "Oczekuje",
+          "completed": false
+        }
+      ]
+    },
+    "2": {
+      "day_name": "Środa",
+      "date": "2026-10-21",
+      "slots": [
+        {
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1009,
+          "scheduled_time": "16:49",
+          "status": "Oczekuje",
+          "completed": false
+        }
+      ]
+    },
+    "3": {
+      "day_name": "Czwartek",
+      "date": "2026-10-22",
+      "slots": [
+        {
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1256,
+          "scheduled_time": "20:56",
+          "status": "Oczekuje",
+          "completed": false
+        }
+      ]
+    },
+    "4": {
+      "day_name": "Piątek",
+      "date": "2026-10-23",
+      "slots": [
+        {
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1044,
+          "scheduled_time": "17:24",
+          "status": "Oczekuje",
+          "completed": false
+        }
+      ]
+    },
+    "5": {
+      "day_name": "Sobota",
+      "date": "2026-10-24",
+      "slots": [
+        {
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1210,
+          "scheduled_time": "20:10",
+          "status": "Oczekuje",
+          "completed": false
+        }
+      ]
+    },
+    "6": {
+      "day_name": "Niedziela",
+      "date": "2026-10-25",
+      "slots": [
+        {
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1082,
+          "scheduled_time": "18:02",
+          "status": "Oczekuje",
+          "completed": false
+        }
+      ]
+    }
+  }
+}
