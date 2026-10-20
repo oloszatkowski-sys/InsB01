@@ -1,6 +1,6 @@
 {
   "week_key": "2026-W43",
-  "created_at": "2026-10-20T16:27:04.275975",
+  "created_at": "2026-10-20T16:47:02.976089",
   "days": {
     "0": {
       "day_name": "Poniedziałek",
@@ -13,6 +13,16 @@
           "is_off_day": false,
           "scheduled_minutes": 965,
           "scheduled_time": "16:05",
+          "status": "Oczekuje",
+          "completed": false
+        },
+        {
+          "user_id": "user_2",
+          "nickname": "Gwiazda Dawida",
+          "login": "asa619379",
+          "is_off_day": false,
+          "scheduled_minutes": 1257,
+          "scheduled_time": "20:57",
           "status": "Oczekuje",
           "completed": false
         }
@@ -31,6 +41,16 @@
           "scheduled_time": "16:42",
           "status": "Oczekuje",
           "completed": false
+        },
+        {
+          "user_id": "user_2",
+          "nickname": "Gwiazda Dawida",
+          "login": "asa619379",
+          "is_off_day": false,
+          "scheduled_minutes": 1031,
+          "scheduled_time": "17:11",
+          "status": "Oczekuje",
+          "completed": false
         }
       ]
     },
@@ -45,6 +65,16 @@
           "is_off_day": false,
           "scheduled_minutes": 1009,
           "scheduled_time": "16:49",
+          "status": "Oczekuje",
+          "completed": false
+        },
+        {
+          "user_id": "user_2",
+          "nickname": "Gwiazda Dawida",
+          "login": "asa619379",
+          "is_off_day": false,
+          "scheduled_minutes": 1272,
+          "scheduled_time": "21:12",
           "status": "Oczekuje",
           "completed": false
         }
@@ -63,6 +93,16 @@
           "scheduled_time": "20:56",
           "status": "Oczekuje",
           "completed": false
+        },
+        {
+          "user_id": "user_2",
+          "nickname": "Gwiazda Dawida",
+          "login": "asa619379",
+          "is_off_day": false,
+          "scheduled_minutes": 1295,
+          "scheduled_time": "21:35",
+          "status": "Oczekuje",
+          "completed": false
         }
       ]
     },
@@ -79,6 +119,16 @@
           "scheduled_time": "17:24",
           "status": "Oczekuje",
           "completed": false
+        },
+        {
+          "user_id": "user_2",
+          "nickname": "Gwiazda Dawida",
+          "login": "asa619379",
+          "is_off_day": false,
+          "scheduled_minutes": 992,
+          "scheduled_time": "16:32",
+          "status": "Oczekuje",
+          "completed": false
         }
       ]
     },
@@ -91,8 +141,18 @@
           "nickname": "Oleslaw 010",
           "login": "asa614845",
           "is_off_day": false,
-          "scheduled_minutes": 1210,
-          "scheduled_time": "20:10",
+          "scheduled_minutes": 1220,
+          "scheduled_time": "20:20",
+          "status": "Oczekuje",
+          "completed": false
+        },
+        {
+          "user_id": "user_2",
+          "nickname": "Gwiazda Dawida",
+          "login": "asa619379",
+          "is_off_day": false,
+          "scheduled_minutes": 1205,
+          "scheduled_time": "20:05",
           "status": "Oczekuje",
           "completed": false
         }
@@ -109,6 +169,16 @@
           "is_off_day": false,
           "scheduled_minutes": 1082,
           "scheduled_time": "18:02",
+          "status": "Oczekuje",
+          "completed": false
+        },
+        {
+          "user_id": "user_2",
+          "nickname": "Gwiazda Dawida",
+          "login": "asa619379",
+          "is_off_day": false,
+          "scheduled_minutes": 1307,
+          "scheduled_time": "21:47",
           "status": "Oczekuje",
           "completed": false
         }
