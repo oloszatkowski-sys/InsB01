@@ -75,6 +75,7 @@ class MultiScheduler:
                 with open(self.weekly_file, "r", encoding="utf-8") as f:
                     data = json.load(f)
                     if data.get("week_key") == week_key and "days" in data:
+                        self._export_markdown_plan(data)
                         return data
             except Exception:
                 pass
@@ -217,6 +218,69 @@ class MultiScheduler:
         DATA_DIR.mkdir(parents=True, exist_ok=True)
         with open(self.weekly_file, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
+        self._export_markdown_plan(data)
+
+    def _export_markdown_plan(self, data: Dict[str, Any]) -> None:
+        """Eksportuje czytelny plik PLAN_TYGODNIA.md dla użytkownika i GitHuba."""
+        lines = [
+            "# 🗓️ Harmonogram Tygodniowy InstaLing Multi-User",
+            "",
+            f"> **Strefa czasowa:** `Europe/Warsaw` ({data.get('tzname', 'CET')})  ",
+            f"> **Tydzień ISO:** `{data.get('week_key', '')}`  ",
+            f"> **Ostatnia synchronizacja:** `{format_warsaw()}`  ",
+            "",
+            "| Dzień tygodnia | Data | Uczeń | Login | Godzina (PL) | Status | Rozpoczęto | Ukończono | Wynik |",
+            "|---|---|---|---|---|---|---|---|---|"
+        ]
+
+        days = data.get("days", {})
+        for day_idx in range(7):
+            day_obj = days.get(str(day_idx), {})
+            d_name = day_obj.get("day_name", DAY_NAMES_PL[day_idx])
+            d_date = day_obj.get("date", "")
+            slots = day_obj.get("slots", [])
+
+            for s in slots:
+                nick = s.get("nickname", "Uczeń")
+                mask = mask_login(s.get("login", ""))
+                sched_t = s.get("scheduled_time", "--:--")
+                is_off = s.get("is_off_day", False)
+                comp = s.get("completed", False)
+                started = s.get("started_at") or "-"
+                completed = s.get("completed_at") or "-"
+                acc = s.get("accuracy_percent")
+                words_tot = s.get("words_total")
+                words_cor = s.get("words_correct")
+
+                if is_off:
+                    st_str = "🏖️ Dzień wolny"
+                    res_str = "-"
+                elif comp:
+                    st_str = "✅ Ukończono"
+                    res_str = f"{words_cor}/{words_tot} ({acc}%)" if acc is not None else "Tak"
+                elif s.get("status") == "W trakcie":
+                    st_str = "▶️ W trakcie..."
+                    res_str = "-"
+                elif s.get("status") == "Błąd":
+                    st_str = "⚠️ Błąd"
+                    res_str = s.get("error") or "Błąd"
+                else:
+                    st_str = "⏳ Oczekuje"
+                    res_str = "-"
+
+                lines.append(f"| {d_name} | `{d_date}` | **{nick}** | `{mask}` | **{sched_t}** | {st_str} | {started} | {completed} | {res_str} |")
+
+        md_content = "\n".join(lines) + "\n"
+
+        root_md = Path(__file__).resolve().parent / "PLAN_TYGODNIA.md"
+        data_md = DATA_DIR / "PLAN_TYGODNIA.md"
+        try:
+            with open(root_md, "w", encoding="utf-8") as f:
+                f.write(md_content)
+            with open(data_md, "w", encoding="utf-8") as f:
+                f.write(md_content)
+        except Exception as e:
+            log(f"[!] Błąd zapisu PLAN_TYGODNIA.md: {e}")
 
     def get_today_slots(self) -> List[Dict[str, Any]]:
         """Pobiera sloty na dzisiejszy dzień w Polsce."""
