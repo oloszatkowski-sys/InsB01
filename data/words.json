@@ -3,15 +3,15 @@
     "answer": "cartoon",
     "prompt": "kreskówka",
     "sentence": "My little sister watches ________\nluka\n every weekend.",
-    "updated_at": "2026-10-20T16:58:58.244757",
-    "usage_count": 5
+    "updated_at": "2026-10-27T16:57:32.693960",
+    "usage_count": 7
   },
   "kreskówka": {
     "answer": "cartoon",
     "prompt": "kreskówka",
     "sentence": "My little sister watches ________\nluka\n every weekend.",
-    "updated_at": "2026-10-20T16:58:58.244757",
-    "usage_count": 5
+    "updated_at": "2026-10-27T16:57:32.693960",
+    "usage_count": 7
   },
   "his ___________ luka was amazing. | występ": {
     "answer": "performance",
@@ -115,15 +115,15 @@
     "answer": "channel",
     "prompt": "kanał; kanał telewizyjny",
     "sentence": "Change the _______\nluka\n, my favourite serial starts in five minutes.",
-    "updated_at": "2026-10-19T20:06:05.659526",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:58:35.913951",
+    "usage_count": 3
   },
   "kanał; kanał telewizyjny": {
     "answer": "channel",
     "prompt": "kanał; kanał telewizyjny",
     "sentence": "Change the _______\nluka\n, my favourite serial starts in five minutes.",
-    "updated_at": "2026-10-19T20:06:05.659526",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:58:35.913951",
+    "usage_count": 3
   },
   "we could all bake cakes and sell them at a school ____ luka . | targ, jarmark": {
     "answer": "fair",
@@ -269,29 +269,29 @@
     "answer": "share online",
     "prompt": "udostępniać w sieci",
     "sentence": "We should always think about what we _____\nluka\n ______\nluka\n.",
-    "updated_at": "2026-10-20T16:54:18.097905",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:55:26.213943",
+    "usage_count": 3
   },
   "udostępniać w sieci": {
     "answer": "share online",
     "prompt": "udostępniać w sieci",
     "sentence": "We should always think about what we _____\nluka\n ______\nluka\n.",
-    "updated_at": "2026-10-20T16:54:18.097905",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:55:26.213943",
+    "usage_count": 3
   },
   "please, ______ luka these images to our website. | wysyłać (np. pliki na serwer internetowy)": {
     "answer": "upload",
     "prompt": "wysyłać (np. pliki na serwer internetowy)",
     "sentence": "Please, ______\nluka\n these images to our website.",
-    "updated_at": "2026-10-20T16:54:26.223682",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:55:44.505355",
+    "usage_count": 3
   },
   "wysyłać (np. pliki na serwer internetowy)": {
     "answer": "upload",
     "prompt": "wysyłać (np. pliki na serwer internetowy)",
     "sentence": "Please, ______\nluka\n these images to our website.",
-    "updated_at": "2026-10-20T16:54:26.223682",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:55:44.505355",
+    "usage_count": 3
   },
   "this _______ luka ____ luka is silly. | reality show": {
     "answer": "reality show",
@@ -339,15 +339,15 @@
     "answer": "website",
     "prompt": "strona internetowa",
     "sentence": "I found an interesting _______\nluka\n devoted to role-playing games.",
-    "updated_at": "2026-10-20T19:34:38.197545",
-    "usage_count": 3
+    "updated_at": "2026-10-27T16:56:39.455205",
+    "usage_count": 5
   },
   "strona internetowa": {
     "answer": "website",
     "prompt": "strona internetowa",
     "sentence": "I found an interesting _______\nluka\n devoted to role-playing games.",
-    "updated_at": "2026-10-20T19:34:38.197545",
-    "usage_count": 3
+    "updated_at": "2026-10-27T16:56:39.455205",
+    "usage_count": 5
   },
   "they wanted him to ____ luka in a new television show. | grać główną rolę": {
     "answer": "star",

@@ -176,7 +176,7 @@ class InstaLingBot:
                 # 6. PĘTLA ROZWIĄZYWANIA SŁÓWEK
                 # ==============================
                 track_log(f"[*] [{nickname}] Rozpoczynanie rozwiazywania slowek...")
-                solver = InstaLingSolver(page, self.config, self.storage)
+                solver = InstaLingSolver(page, self.config, self.storage, log_fn=track_log)
 
                 iterations = 0
                 MAX_SESSION_SEC = 420  # 7 minut twardego limitu na sesję
@@ -248,13 +248,22 @@ class InstaLingBot:
                     "duration_seconds": round(duration_s, 1),
                     "started_at_warsaw": format_warsaw(start_dt),
                     "completed_at_warsaw": format_warsaw(end_dt),
-                    "finished_at": end_dt.isoformat()
+                    "finished_at": end_dt.isoformat(),
+                    "words_details": solver.resolved_words
                 }
 
                 self.storage.record_session(result)
                 track_log(f"\n[OK] SESJA DLA {nickname} ({masked}) ZAKONCZONA SUKCESEM!")
                 track_log(f"    Czas: {format_warsaw(start_dt)} -> {format_warsaw(end_dt)} ({duration_s:.1f}s)")
                 track_log(f"    Rozwiazano: {total} | Poprawne: {correct} ({acc}%)\n")
+
+                if solver.resolved_words:
+                    track_log("📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:")
+                    for idx, w in enumerate(solver.resolved_words):
+                        st = w.get("status", "")
+                        tag = "✅ POPRAWNIE" if st == "poprawnie" else ("🆕 NOWE ZAPAMIĘTANO" if st == "nowe" else ("🔄 AUTOKOREKTA" if st == "autokorekta" else "⚠️ BŁĄD"))
+                        track_log(f"  {idx+1:2d}. {w['prompt']} ➔ {w['answer']} [{tag}]")
+                    track_log("")
 
                 # Wysyłamy powiadomienie z podziałem na kanały Discord i ntfy
                 self.notifier.send_session_summary(result, user, session_logs)

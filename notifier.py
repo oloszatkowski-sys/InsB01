@@ -49,6 +49,30 @@ class Notifier:
                 f"**Skuteczność:** {acc}%\n"
                 f"**Akcja końcowa:** Powrót do strony głównej i bezpieczne wylogowanie"
             )
+
+            words_details = result.get("words_details", [])
+            if words_details:
+                w_lines = []
+                for item in words_details[:18]:
+                    prompt = item.get("prompt", "")
+                    ans = item.get("answer", "")
+                    st = item.get("status", "")
+                    if st == "poprawnie":
+                        tag = "✅"
+                    elif st == "nowe":
+                        tag = "🆕"
+                    elif st == "autokorekta":
+                        tag = "🔄"
+                    elif st == "celowy_blad":
+                        tag = "🎯"
+                    else:
+                        tag = "⚠️"
+                    w_lines.append(f"• `{prompt}` ➔ **{ans}** {tag}")
+
+                if len(words_details) > 18:
+                    w_lines.append(f"*... oraz {len(words_details) - 18} innych słówek.*")
+
+                desc += "\n\n📚 **Słówka w tej sesji:**\n" + "\n".join(w_lines)
         else:
             title = f"⚠️ InstaLing Auto-Bot - Błąd Sesji: {nickname}"
             color = 15548997  # Czerwony

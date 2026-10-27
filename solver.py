@@ -26,14 +26,16 @@ SYSTEM_BLACKLIST = {
 }
 
 class InstaLingSolver:
-    def __init__(self, page, config: Dict[str, Any], storage: Storage):
+    def __init__(self, page, config: Dict[str, Any], storage: Storage, log_fn=None):
         self.page = page
         self.config = config
         self.storage = storage
+        self.log_fn = log_fn or print
         self.session_words_count = 0
         self.session_correct_count = 0
         self.session_mistakes_count = 0
         self.deliberate_errors_pool = set()
+        self.resolved_words: List[Dict[str, Any]] = []
 
     def human_type(self, selector: str, text: str) -> None:
         """Symuluje naturalne pisanie na klawiaturze (klawisz po klawiszu) - brak copy/paste."""
@@ -177,12 +179,12 @@ class InstaLingSolver:
         if is_first_encounter or should_make_deliberate_mistake:
             if should_make_deliberate_mistake:
                 self.deliberate_errors_pool.add(word_id)
-                print(f"[~] Celowy blad dla statystyk ucznia: '{prompt}'")
                 fake = known_answer[:-1] if len(known_answer) > 2 else "x"
                 self.human_type("input#answer", fake)
+                self.log_fn(f"[~] Celowy błąd dla ucznia: '{prompt}' (wpisano: '{fake}', prawidłowe: '{known_answer}')")
             else:
-                print(f"[?] Nowe slowko (brak w bazie): '{prompt}'")
                 self.human_type("input#answer", "-")
+                self.log_fn(f"[?] Nowe słówko: '{prompt}' (sprawdzam poprawną odpowiedź)")
 
             check_btn = self.page.locator("#check, button:has-text('Sprawdź')").first
             check_btn.click(force=True)
@@ -190,12 +192,15 @@ class InstaLingSolver:
 
             correct_ans = self.extract_correct_answer_from_page()
             if correct_ans and correct_ans.lower() not in SYSTEM_BLACKLIST:
-                print(f"[+] ZAPAMIETANO SLOWKO: '{prompt}' -> '{correct_ans}'")
                 self.storage.record_word(correct_ans, prompt, sentence)
+                if should_make_deliberate_mistake:
+                    self.resolved_words.append({"prompt": prompt, "answer": correct_ans, "status": "celowy_blad"})
+                else:
+                    self.log_fn(f"[+] ZAPAMIĘTANO SŁÓWKO: '{prompt}' -> '{correct_ans}'")
+                    self.resolved_words.append({"prompt": prompt, "answer": correct_ans, "status": "nowe"})
 
             self.session_mistakes_count += 1
         else:
-            print(f"[OK] Znaleziono w bazie: '{prompt}' -> '{known_answer}'")
             self.human_type("input#answer", known_answer)
 
             check_btn = self.page.locator("#check, button:has-text('Sprawdź')").first
@@ -208,10 +213,15 @@ class InstaLingSolver:
             if "niepoprawnie" in body_feedback or "literówka" in body_feedback or "literowka" in body_feedback:
                 real_ans = self.extract_correct_answer_from_page()
                 if real_ans and real_ans.lower() not in SYSTEM_BLACKLIST and real_ans.lower() != known_answer.lower():
-                    print(f"[!] AUTOKOREKTA: Baza miala '{known_answer}', poprawiono na: '{real_ans}'!")
+                    self.log_fn(f"[!] AUTOKOREKTA: Baza miała '{known_answer}', poprawiono na: '{real_ans}'!")
                     self.storage.record_word(real_ans, prompt, sentence)
+                    self.resolved_words.append({"prompt": prompt, "answer": real_ans, "status": "autokorekta"})
+                else:
+                    self.resolved_words.append({"prompt": prompt, "answer": known_answer, "status": "blad"})
                 self.session_mistakes_count += 1
             else:
+                self.log_fn(f"[OK] Słówko: '{prompt}' -> '{known_answer}' (Poprawnie)")
+                self.resolved_words.append({"prompt": prompt, "answer": known_answer, "status": "poprawnie"})
                 self.session_correct_count += 1
 
         self.session_words_count += 1

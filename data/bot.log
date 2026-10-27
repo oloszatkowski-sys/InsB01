@@ -131,3 +131,88 @@
 [2026-10-27 16:49:50] [Powiadomienie] Wysłano embed '🤖 InstaLing Auto-Bot - Sesja Ukończona: Oleslaw 010' na Discord
 [2026-10-27 16:49:50] [Powiadomienie] Wysłano logi na kanał Discord
 [2026-10-27 16:49:51] [Powiadomienie] Wysłano embed '📅 Plan Sesji Na Dziś' na Discord
+[2026-10-27 16:54:39] [*] Żądanie kontrolowanego resetu harmonogramu...
+[2026-10-27 16:54:39] [*] Inicjalizacja kontrolowanego resetu harmonogramu...
+[2026-10-27 16:54:39] [+] Wygenerowano nowy, świeży plan tygodnia (Europe/Warsaw).
+[2026-10-27 16:54:39] [Powiadomienie] Wysłano embed '🗓️ Plan Tygodnia InstaLing' na Discord
+[2026-10-27 16:54:39] [Powiadomienie] Wysłano embed '📅 Plan Sesji Na Dziś' na Discord
+[2026-10-27 16:54:39] [+] Harmonogram zresetowany i opublikowany na Discordzie.
+[2026-10-27 16:54:53] 
+==============================================================
+[2026-10-27 16:54:53] 🕒 [START ZADANIA INDYWIDUALNEGO] InstaLing Auto-Bot
+[2026-10-27 16:54:53] --------------------------------------------------------------
+[2026-10-27 16:54:53] 🌍 Czas UTC:         2026-10-27 15:54:53 UTC
+[2026-10-27 16:54:53] 🇵🇱 Czas w Polsce:     2026-10-27 16:54:53 CET
+[2026-10-27 16:54:53] 👤 Uczeń:             Szlucha Jagoda (lasa6####)
+[2026-10-27 16:54:53] 🎯 Przyczyna:        ręczne uruchomienie (--user)
+[2026-10-27 16:54:53] ==============================================================
+[2026-10-27 16:54:53] [*] Rozpoczynam sesje dla uzytkownika: Szlucha Jagoda (lasa6####) (headless=True)
+[2026-10-27 16:54:53] [*] Czas startu (Polska): 2026-10-27 16:54:53 CET
+[2026-10-27 16:54:56] [*] [Szlucha Jagoda] Otwieranie strony logowania InstaLing...
+[2026-10-27 16:54:59] [*] [Szlucha Jagoda] Logowanie do konta...
+[2026-10-27 16:55:04] [+] [Szlucha Jagoda] Pomyslnie zalogowano do serwisu!
+[2026-10-27 16:55:04] [*] [Szlucha Jagoda] Wyszukiwanie sesji...
+[2026-10-27 16:55:04] [*] [Szlucha Jagoda] Przechodzenie do sesji...
+[2026-10-27 16:55:07] [*] [Szlucha Jagoda] Klikam 'Rozpocznij sesje'...
+[2026-10-27 16:55:10] [*] [Szlucha Jagoda] Rozpoczynanie rozwiazywania slowek...
+[2026-10-27 16:55:14] [~] Celowy błąd dla ucznia: 'udostępniać w sieci' (wpisano: 'share onlin', prawidłowe: 'share online')
+[2026-10-27 16:55:26] [!] AUTOKOREKTA: Baza miała '_____', poprawiono na: 'share online'!
+[2026-10-27 16:55:33] [~] Celowy błąd dla ucznia: 'wysyłać (np. pliki na serwer internetowy)' (wpisano: 'uploa', prawidłowe: 'upload')
+[2026-10-27 16:55:44] [!] AUTOKOREKTA: Baza miała '______', poprawiono na: 'upload'!
+[2026-10-27 16:55:56] [OK] Słówko: 'reality show' -> 'reality show' (Poprawnie)
+[2026-10-27 16:56:07] [OK] Słówko: 'scena (np. z filmu)' -> 'scene' (Poprawnie)
+[2026-10-27 16:56:17] [OK] Słówko: 'subskrybować; wykupić abonament' -> 'subscribe' (Poprawnie)
+[2026-10-27 16:56:26] [~] Celowy błąd dla ucznia: 'strona internetowa' (wpisano: 'websit', prawidłowe: 'website')
+[2026-10-27 16:56:39] [!] AUTOKOREKTA: Baza miała '_______', poprawiono na: 'website'!
+[2026-10-27 16:56:48] [OK] Słówko: 'strona internetowa' -> 'website' (Poprawnie)
+[2026-10-27 16:56:55] [OK] Słówko: 'grać główną rolę' -> 'star' (Poprawnie)
+[2026-10-27 16:57:03] [OK] Słówko: 'rola' -> 'role' (Poprawnie)
+[2026-10-27 16:57:13] [~] Celowy błąd dla ucznia: 'kreskówka' (wpisano: 'cartoo', prawidłowe: 'cartoon')
+[2026-10-27 16:57:25] [OK] Słówko: 'wysyłać (np. pliki na serwer internetowy)' -> 'upload' (Poprawnie)
+[2026-10-27 16:57:32] [!] AUTOKOREKTA: Baza miała '________', poprawiono na: 'cartoon'!
+[2026-10-27 16:57:43] [OK] Słówko: 'osoba przeprowadzająca wywiad' -> 'interviewer' (Poprawnie)
+[2026-10-27 16:57:53] [OK] Słówko: 'dziennikarz' -> 'journalist' (Poprawnie)
+[2026-10-27 16:58:04] [OK] Słówko: 'artykuł' -> 'article' (Poprawnie)
+[2026-10-27 16:58:14] [OK] Słówko: 'film dokumentalny; program dokumentalny' -> 'documentary' (Poprawnie)
+[2026-10-27 16:58:22] [~] Celowy błąd dla ucznia: 'kanał; kanał telewizyjny' (wpisano: 'channe', prawidłowe: 'channel')
+[2026-10-27 16:58:35] [!] AUTOKOREKTA: Baza miała '_______', poprawiono na: 'channel'!
+[2026-10-27 16:58:44] [OK] Słówko: 'kreskówka' -> 'cartoon' (Poprawnie)
+[2026-10-27 16:58:54] [OK] Słówko: 'serial kryminalny' -> 'crime series' (Poprawnie)
+[2026-10-27 16:59:01] [OK] Słówko: 'kanał; kanał telewizyjny' -> 'channel' (Poprawnie)
+[2026-10-27 16:59:15] [OK] Słówko: 'udostępniać w sieci' -> 'share online' (Poprawnie)
+[2026-10-27 16:59:19] [+] [Szlucha Jagoda] Sesja ukonczona pomyslnie! Gratulacje!
+[2026-10-27 16:59:21] 
+[OK] SESJA DLA Szlucha Jagoda (lasa6####) ZAKONCZONA SUKCESEM!
+[2026-10-27 16:59:21]     Czas: 2026-10-27 16:54:53 CET -> 2026-10-27 16:59:21 CET (267.7s)
+[2026-10-27 16:59:21]     Rozwiazano: 25 | Poprawne: 15 (60.0%)
+
+[2026-10-27 16:59:21] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:
+[2026-10-27 16:59:21]    1. udostępniać w sieci ➔ _____ [⚠️ BŁĄD]
+[2026-10-27 16:59:21]    2. udostępniać w sieci ➔ share online [🔄 AUTOKOREKTA]
+[2026-10-27 16:59:21]    3. wysyłać (np. pliki na serwer internetowy) ➔ ______ [⚠️ BŁĄD]
+[2026-10-27 16:59:21]    4. wysyłać (np. pliki na serwer internetowy) ➔ upload [🔄 AUTOKOREKTA]
+[2026-10-27 16:59:21]    5. reality show ➔ reality show [✅ POPRAWNIE]
+[2026-10-27 16:59:21]    6. scena (np. z filmu) ➔ scene [✅ POPRAWNIE]
+[2026-10-27 16:59:21]    7. subskrybować; wykupić abonament ➔ subscribe [✅ POPRAWNIE]
+[2026-10-27 16:59:21]    8. strona internetowa ➔ _______ [⚠️ BŁĄD]
+[2026-10-27 16:59:21]    9. strona internetowa ➔ website [🔄 AUTOKOREKTA]
+[2026-10-27 16:59:21]   10. strona internetowa ➔ website [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   11. grać główną rolę ➔ star [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   12. rola ➔ role [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   13. kreskówka ➔ ________ [⚠️ BŁĄD]
+[2026-10-27 16:59:21]   14. wysyłać (np. pliki na serwer internetowy) ➔ upload [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   15. kreskówka ➔ cartoon [🔄 AUTOKOREKTA]
+[2026-10-27 16:59:21]   16. osoba przeprowadzająca wywiad ➔ interviewer [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   17. dziennikarz ➔ journalist [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   18. artykuł ➔ article [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   19. film dokumentalny; program dokumentalny ➔ documentary [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   20. kanał; kanał telewizyjny ➔ _______ [⚠️ BŁĄD]
+[2026-10-27 16:59:21]   21. kanał; kanał telewizyjny ➔ channel [🔄 AUTOKOREKTA]
+[2026-10-27 16:59:21]   22. kreskówka ➔ cartoon [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   23. serial kryminalny ➔ crime series [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   24. kanał; kanał telewizyjny ➔ channel [✅ POPRAWNIE]
+[2026-10-27 16:59:21]   25. udostępniać w sieci ➔ share online [✅ POPRAWNIE]
+[2026-10-27 16:59:21] 
+[2026-10-27 16:59:21] [Powiadomienie] Wysłano embed '🤖 InstaLing Auto-Bot - Sesja Ukończona: Szlucha Jagoda' na Discord
+[2026-10-27 16:59:22] [Powiadomienie] Wysłano logi na kanał Discord
+[2026-10-27 16:59:23] [Powiadomienie] Wysłano embed '📅 Plan Sesji Na Dziś' na Discord

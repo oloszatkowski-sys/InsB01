@@ -104,5 +104,146 @@
     "completed_at_warsaw": "2026-10-27 16:49:49 CET",
     "finished_at": "2026-10-27T16:49:49.819034+01:00",
     "timestamp": "2026-10-27T16:49:49.819133"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "words_total": 25,
+    "words_correct": 15,
+    "words_mistakes": 10,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 267.7,
+    "started_at_warsaw": "2026-10-27 16:54:53 CET",
+    "completed_at_warsaw": "2026-10-27 16:59:21 CET",
+    "finished_at": "2026-10-27T16:59:21.531700+01:00",
+    "words_details": [
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wysyłać (np. pliki na serwer internetowy)",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wysyłać (np. pliki na serwer internetowy)",
+        "answer": "upload",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (np. z filmu)",
+        "answer": "scene",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "subskrybować; wykupić abonament",
+        "answer": "subscribe",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grać główną rolę",
+        "answer": "star",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rola",
+        "answer": "role",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wysyłać (np. pliki na serwer internetowy)",
+        "answer": "upload",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "osoba przeprowadzająca wywiad",
+        "answer": "interviewer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dziennikarz",
+        "answer": "journalist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kanał; kanał telewizyjny",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kanał; kanał telewizyjny",
+        "answer": "channel",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "serial kryminalny",
+        "answer": "crime series",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kanał; kanał telewizyjny",
+        "answer": "channel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-27T16:59:21.531773"
   }
 ]
