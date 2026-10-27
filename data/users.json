@@ -16,5 +16,14 @@
     "active": true,
     "created_at": "2026-10-20",
     "track_in_ntfy": false
+  },
+  {
+    "id": "user_3",
+    "nickname": "OliwiercioTheHacker",
+    "login": "asa610791",
+    "password": "ofjdh",
+    "active": true,
+    "created_at": "2026-10-20",
+    "track_in_ntfy": false
   }
 ]

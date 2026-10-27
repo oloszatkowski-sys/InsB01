@@ -9,6 +9,7 @@ from solver import InstaLingSolver
 from notifier import Notifier
 from logger import log
 from users_manager import UsersManager, mask_login
+from timezone_utils import now_warsaw, format_warsaw, now_utc, format_utc
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
@@ -47,10 +48,12 @@ class InstaLingBot:
                 "error": f"Brak danych logowania dla {nickname} (login/hasło puste)."
             }
 
-        start_time = datetime.now()
+        start_dt = now_warsaw()
+        start_epoch = time.time()
         headless = bool(self.config.get("headless", True))
         mute_audio = bool(self.config.get("mute_audio", True))
-        max_words = int(self.config.get("max_words_per_session", 45))
+        # Zabezpieczenie przed zbyt dużą liczbą iteracji
+        max_words = min(int(self.config.get("max_words_per_session", 45)), 50)
         session_logs: List[str] = []
 
         def track_log(msg: str):
@@ -58,6 +61,7 @@ class InstaLingBot:
             session_logs.append(msg)
 
         track_log(f"[*] Rozpoczynam sesje dla uzytkownika: {nickname} ({masked}) (headless={headless})")
+        track_log(f"[*] Czas startu (Polska): {format_warsaw(start_dt)}")
 
         try:
             from playwright.sync_api import sync_playwright
@@ -175,9 +179,16 @@ class InstaLingBot:
                 solver = InstaLingSolver(page, self.config, self.storage)
 
                 iterations = 0
+                MAX_SESSION_SEC = 420  # 7 minut twardego limitu na sesję
+
                 while iterations < max_words:
                     iterations += 1
                     time.sleep(random.uniform(0.6, 1.2))
+
+                    # Zabezpieczenie przed zbyt długim działaniem
+                    if (time.time() - start_epoch) > MAX_SESSION_SEC:
+                        track_log(f"[!] Przekroczono limit czasu sesji ({MAX_SESSION_SEC}s). Bezpieczne zakończenie sesji.")
+                        break
 
                     if solver.is_session_finished():
                         track_log(f"[+] [{nickname}] Sesja ukonczona pomyslnie! Gratulacje!")
@@ -219,7 +230,8 @@ class InstaLingBot:
                 except Exception:
                     pass
 
-                duration_s = (datetime.now() - start_time).total_seconds()
+                end_dt = now_warsaw()
+                duration_s = (end_dt - start_dt).total_seconds()
                 total = solver.session_words_count
                 correct = solver.session_correct_count
                 mistakes = solver.session_mistakes_count
@@ -234,12 +246,15 @@ class InstaLingBot:
                     "words_mistakes": mistakes,
                     "accuracy_percent": acc,
                     "duration_seconds": round(duration_s, 1),
-                    "finished_at": datetime.now().isoformat()
+                    "started_at_warsaw": format_warsaw(start_dt),
+                    "completed_at_warsaw": format_warsaw(end_dt),
+                    "finished_at": end_dt.isoformat()
                 }
 
                 self.storage.record_session(result)
                 track_log(f"\n[OK] SESJA DLA {nickname} ({masked}) ZAKONCZONA SUKCESEM!")
-                track_log(f"    Czas trwania: {duration_s:.1f} s | Rozwiazano: {total} | Poprawne: {correct} ({acc}%)\n")
+                track_log(f"    Czas: {format_warsaw(start_dt)} -> {format_warsaw(end_dt)} ({duration_s:.1f}s)")
+                track_log(f"    Rozwiazano: {total} | Poprawne: {correct} ({acc}%)\n")
 
                 # Wysyłamy powiadomienie z podziałem na kanały Discord i ntfy
                 self.notifier.send_session_summary(result, user, session_logs)
@@ -247,13 +262,17 @@ class InstaLingBot:
 
             except Exception as e:
                 err_str = str(e)
+                end_dt = now_warsaw()
+                duration_s = (end_dt - start_dt).total_seconds()
                 track_log(f"[!] Blad w trakcie wykonywania sesji dla {nickname}: {err_str}")
                 result = {
                     "success": False,
                     "nickname": nickname,
                     "masked_login": masked,
                     "error": err_str,
-                    "duration_seconds": round((datetime.now() - start_time).total_seconds(), 1)
+                    "duration_seconds": round(duration_s, 1),
+                    "started_at_warsaw": format_warsaw(start_dt),
+                    "completed_at_warsaw": format_warsaw(end_dt)
                 }
                 self.storage.record_session(result)
                 self.notifier.send_session_summary(result, user, session_logs)

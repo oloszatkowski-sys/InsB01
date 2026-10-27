@@ -3,62 +3,72 @@ import random
 import time
 from datetime import datetime, date, timedelta
 from pathlib import Path
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Optional, Tuple
+
 from config import load_config
 from users_manager import UsersManager, mask_login
 from notifier import Notifier
 from logger import log
-from bot import InstaLingBot
+from bot_lock import BotLock
+from timezone_utils import (
+    WARSAW_TZ,
+    UTC_TZ,
+    now_warsaw,
+    now_utc,
+    today_warsaw,
+    format_warsaw,
+    format_utc,
+    time_to_minutes,
+    minutes_to_time,
+    get_iso_week_key,
+    get_delay_str,
+    get_current_polish_tzname
+)
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 WEEKLY_SCHEDULE_FILE = DATA_DIR / "weekly_schedule.json"
-SCHEDULE_STATE_FILE = DATA_DIR / "multi_schedule_state.json"
+LEGACY_SCHEDULE_STATE_FILE = DATA_DIR / "schedule_state.json"
+LEGACY_MULTI_STATE_FILE = DATA_DIR / "multi_schedule_state.json"
 
 DAY_NAMES_PL = ["Poniedziałek", "Wtorek", "Środa", "Czwartek", "Piątek", "Sobota", "Niedziela"]
 
 class MultiScheduler:
+    """Zunifikowany, świadomy strefy czasowej (Europe/Warsaw) harmonogram sesji wielu użytkowników."""
+
     def __init__(self, config: Optional[Dict[str, Any]] = None):
         self.config = config or load_config()
         self.users_mgr = UsersManager()
         self.notifier = Notifier(self.config)
         self.weekly_file = WEEKLY_SCHEDULE_FILE
-        self.state_file = SCHEDULE_STATE_FILE
-        self._load_state()
 
-    def _load_state(self) -> None:
-        if self.state_file.exists():
+    def clean_legacy_states(self) -> None:
+        """Usuwa przestarzałe pliki stanu, zapewniając jeden spójny mechanizm terminów."""
+        for legacy in [LEGACY_SCHEDULE_STATE_FILE, LEGACY_MULTI_STATE_FILE]:
+            if legacy.exists():
+                try:
+                    legacy.unlink(missing_ok=True)
+                    log(f"[*] Usunięto nieaktualny plik stanu: {legacy.name}")
+                except Exception as e:
+                    log(f"[!] Błąd usuwania starego pliku {legacy.name}: {e}")
+
+    def reset_schedule(self) -> Dict[str, Any]:
+        """Przeprowadza kontrolowany reset harmonogramu i generuje świeży plan na bieżący tydzień."""
+        log("[*] Inicjalizacja kontrolowanego resetu harmonogramu...")
+        self.clean_legacy_states()
+        if self.weekly_file.exists():
             try:
-                with open(self.state_file, "r", encoding="utf-8") as f:
-                    self.state = json.load(f)
+                self.weekly_file.unlink(missing_ok=True)
             except Exception:
-                self.state = {}
-        else:
-            self.state = {}
-
-    def _save_state(self) -> None:
-        DATA_DIR.mkdir(parents=True, exist_ok=True)
-        with open(self.state_file, "w", encoding="utf-8") as f:
-            json.dump(self.state, f, indent=2, ensure_ascii=False)
-
-    def _parse_time(self, time_str: str) -> int:
-        parts = time_str.strip().split(":")
-        return int(parts[0]) * 60 + int(parts[1])
-
-    def _format_time(self, minutes: int) -> str:
-        h = (minutes // 60) % 24
-        m = minutes % 60
-        return f"{h:02d}:{m:02d}"
-
-    def get_current_week_key(self) -> str:
-        """Zwraca identyfikator bieżącego tygodnia ISO, np. '2026-W43'."""
-        today = date.today()
-        year, week_num, _ = today.isocalendar()
-        return f"{year}-W{week_num:02d}"
+                pass
+        
+        new_plan = self.get_or_create_weekly_schedule(force_new=True)
+        log("[+] Wygenerowano nowy, świeży plan tygodnia (Europe/Warsaw).")
+        return new_plan
 
     def get_or_create_weekly_schedule(self, force_new: bool = False) -> Dict[str, Any]:
-        """Pobiera lub tworzy spójny harmonogram na cały bieżący tydzień (od poniedziałku do niedzieli)."""
+        """Pobiera lub tworzy spójny harmonogram na cały bieżący tydzień w strefie Europe/Warsaw."""
         DATA_DIR.mkdir(parents=True, exist_ok=True)
-        week_key = self.get_current_week_key()
+        week_key = get_iso_week_key()
 
         if not force_new and self.weekly_file.exists():
             try:
@@ -69,22 +79,26 @@ class MultiScheduler:
             except Exception:
                 pass
 
-        # Generujemy nowy, trwały plan tygodnia
+        # Tworzymy nowy harmonogram dla bieżącego tygodnia
+        self.clean_legacy_states()
         users = self.users_mgr.get_active_users()
-        win_start = self._parse_time(self.config.get("random_window_start", "15:46"))
-        win_end = self._parse_time(self.config.get("random_window_end", "21:57"))
-        if win_end <= win_start:
+        win_start = time_to_minutes(self.config.get("random_window_start", "15:46"))
+        win_end = time_to_minutes(self.config.get("random_window_end", "21:57"))
+        if win_end <= win_start + 60:
             win_end = win_start + 300
+
+        # Minimalny odstęp pomiędzy różnymi użytkownikami tego samego dnia (minuty)
+        min_user_gap = int(self.config.get("min_user_gap_minutes", 45))
 
         miss_mode = self.config.get("miss_days_mode", "none")
         miss_count = int(self.config.get("miss_days_count", 0))
         miss_fixed = self.config.get("miss_fixed_days", [])
 
-        days_schedule = {}
+        # Obliczamy poniedziałek bieżącego tygodnia w Polsce
+        today_pl = today_warsaw()
+        monday = today_pl - timedelta(days=today_pl.weekday())
 
-        # Obliczamy daty od poniedziałku do niedzieli bieżącego tygodnia
-        today = date.today()
-        monday = today - timedelta(days=today.weekday())
+        days_schedule: Dict[str, Any] = {}
 
         for day_idx in range(7):
             day_date = monday + timedelta(days=day_idx)
@@ -92,23 +106,37 @@ class MultiScheduler:
             day_date_str = day_date.isoformat()
 
             day_slots = []
-            for u in users:
+            
+            # Aby schemat nie powtarzał się każdego dnia, tasujemy kolejność użytkowników per dzień
+            shuffled_users = list(users)
+            # Deterministyczne tasowanie per dzień tygodnia
+            day_seed = f"order_{week_key}_{day_date_str}"
+            rng = random.Random(day_seed)
+            rng.shuffle(shuffled_users)
+
+            # Wyznaczamy dostępne pasma czasowe dla użytkowników w tym dniu
+            total_users = max(len(shuffled_users), 1)
+            total_span = win_end - win_start
+            sub_window = max(total_span // total_users, min_user_gap + 15)
+
+            for u_idx, u in enumerate(shuffled_users):
                 u_id = u.get("id") or u.get("login")
                 nick = u.get("nickname", "Uczeń")
                 login = u.get("login", "")
+                slot_id = f"{day_date_str}_{u_id}"
 
                 # Sprawdzenie dnia wolnego
                 is_off = False
                 if miss_mode == "fixed" and day_idx in miss_fixed:
                     is_off = True
                 elif miss_mode == "random" and miss_count > 0:
-                    seed_str = f"{day_date_str}_{u_id}"
-                    random.seed(seed_str)
-                    is_off = random.random() < (miss_count / 7.0)
-                    random.seed()
+                    seed_str = f"off_{day_date_str}_{u_id}"
+                    off_rng = random.Random(seed_str)
+                    is_off = off_rng.random() < (miss_count / 7.0)
 
                 if is_off:
                     day_slots.append({
+                        "slot_id": slot_id,
                         "user_id": u_id,
                         "nickname": nick,
                         "login": login,
@@ -116,39 +144,56 @@ class MultiScheduler:
                         "scheduled_minutes": 0,
                         "scheduled_time": "Wolne",
                         "status": "Dzień wolny",
-                        "completed": True
+                        "completed": True,
+                        "started_at": None,
+                        "completed_at": None,
+                        "duration_seconds": None,
+                        "accuracy_percent": None,
+                        "error": None
                     })
                 else:
-                    seed_str = f"{day_date_str}_{u_id}_time"
-                    random.seed(seed_str)
-                    rand_min = random.randint(win_start, win_end)
-                    random.seed()
+                    # Losujemy godzinę w dedykowanym sektorze dnia z jitterem
+                    sector_start = win_start + u_idx * sub_window
+                    sector_end = min(sector_start + sub_window - min_user_gap, win_end)
+                    if sector_end <= sector_start:
+                        sector_start = win_start
+                        sector_end = win_end
+
+                    time_seed = f"time_{day_date_str}_{u_id}_{week_key}"
+                    time_rng = random.Random(time_seed)
+                    chosen_min = time_rng.randint(sector_start, sector_end)
 
                     day_slots.append({
+                        "slot_id": slot_id,
                         "user_id": u_id,
                         "nickname": nick,
                         "login": login,
                         "is_off_day": False,
-                        "scheduled_minutes": rand_min,
-                        "scheduled_time": self._format_time(rand_min),
+                        "scheduled_minutes": chosen_min,
+                        "scheduled_time": minutes_to_time(chosen_min),
                         "status": "Oczekuje",
-                        "completed": False
+                        "completed": False,
+                        "started_at": None,
+                        "completed_at": None,
+                        "duration_seconds": None,
+                        "accuracy_percent": None,
+                        "error": None
                     })
 
-            # Rozwiązywanie kolizji w ramach danego dnia
-            active = [s for s in day_slots if not s["is_off_day"]]
-            active.sort(key=lambda x: x["scheduled_minutes"])
+            # Rozwiązywanie ewentualnych kolizji z zachowaniem minimalnego odstępu (min_user_gap)
+            active_slots = [s for s in day_slots if not s["is_off_day"]]
+            active_slots.sort(key=lambda x: x["scheduled_minutes"])
 
-            SLOT_GAP = 15
-            for i in range(1, len(active)):
-                prev = active[i - 1]["scheduled_minutes"]
-                curr = active[i]["scheduled_minutes"]
-                if curr - prev < SLOT_GAP:
-                    new_min = prev + SLOT_GAP
+            for i in range(1, len(active_slots)):
+                prev_min = active_slots[i - 1]["scheduled_minutes"]
+                curr_min = active_slots[i]["scheduled_minutes"]
+                if curr_min - prev_min < min_user_gap:
+                    new_min = prev_min + min_user_gap
                     if new_min > win_end:
-                        new_min = max(win_start, active[0]["scheduled_minutes"] - SLOT_GAP)
-                    active[i]["scheduled_minutes"] = new_min
-                    active[i]["scheduled_time"] = self._format_time(new_min)
+                        # Przesuń w tył pierwszy lub dopasuj
+                        new_min = win_end
+                    active_slots[i]["scheduled_minutes"] = new_min
+                    active_slots[i]["scheduled_time"] = minutes_to_time(new_min)
 
             days_schedule[str(day_idx)] = {
                 "day_name": day_name,
@@ -158,89 +203,193 @@ class MultiScheduler:
 
         result = {
             "week_key": week_key,
-            "created_at": datetime.now().isoformat(),
+            "timezone": "Europe/Warsaw",
+            "tzname": get_current_polish_tzname(),
+            "created_at_warsaw": format_warsaw(),
+            "created_at_utc": format_utc(),
             "days": days_schedule
         }
 
-        with open(self.weekly_file, "w", encoding="utf-8") as f:
-            json.dump(result, f, indent=2, ensure_ascii=False)
-
+        self._save_weekly_schedule(result)
         return result
 
-    def generate_today_plan(self, force_refresh: bool = False) -> List[Dict[str, Any]]:
-        """Pobiera DOKŁADNIE ten sam plan na dzisiaj, który został zaplanowany w Planie Tygodnia."""
-        weekly = self.get_or_create_weekly_schedule()
-        today = date.today()
-        current_weekday = today.weekday()
-        day_data = weekly.get("days", {}).get(str(current_weekday))
+    def _save_weekly_schedule(self, data: Dict[str, Any]) -> None:
+        DATA_DIR.mkdir(parents=True, exist_ok=True)
+        with open(self.weekly_file, "w", encoding="utf-8") as f:
+            json.dump(data, f, indent=2, ensure_ascii=False)
 
-        if not day_data:
-            # Fallback
+    def get_today_slots(self) -> List[Dict[str, Any]]:
+        """Pobiera sloty na dzisiejszy dzień w Polsce."""
+        weekly = self.get_or_create_weekly_schedule()
+        today_pl = today_warsaw()
+        current_weekday = today_pl.weekday()
+        day_data = weekly.get("days", {}).get(str(current_weekday), {})
+        return day_data.get("slots", [])
+
+    def update_slot_result(self, slot_id: str, result: Dict[str, Any]) -> None:
+        """Aktualizuje stan konkretnego slotu (rozpoczęcie, zakończenie, statystyki) w weekly_schedule.json."""
+        weekly = self.get_or_create_weekly_schedule()
+        success = result.get("success", False)
+        updated = False
+
+        for day_idx, day_obj in weekly.get("days", {}).items():
+            for slot in day_obj.get("slots", []):
+                if slot.get("slot_id") == slot_id:
+                    if success:
+                        slot["completed"] = True
+                        slot["status"] = "Ukończono"
+                        slot["started_at"] = result.get("started_at_warsaw")
+                        slot["completed_at"] = result.get("completed_at_warsaw")
+                        slot["duration_seconds"] = result.get("duration_seconds")
+                        slot["accuracy_percent"] = result.get("accuracy_percent")
+                        slot["words_total"] = result.get("words_total")
+                        slot["words_correct"] = result.get("words_correct")
+                        slot["error"] = None
+                    else:
+                        slot["completed"] = False
+                        slot["status"] = "Błąd"
+                        slot["started_at"] = result.get("started_at_warsaw")
+                        slot["completed_at"] = result.get("completed_at_warsaw")
+                        slot["error"] = result.get("error", "Nieznany błąd")
+                    updated = True
+                    break
+            if updated:
+                break
+
+        if updated:
+            self._save_weekly_schedule(weekly)
+
+    def get_due_slots(self) -> List[Dict[str, Any]]:
+        """Zwraca listę slotów na dziś, które nadeszły i nie zostały jeszcze ukończone."""
+        slots = self.get_today_slots()
+        now_pl = now_warsaw()
+        current_minutes = now_pl.hour * 60 + now_pl.minute
+
+        due = [
+            s for s in slots
+            if not s["is_off_day"] and not s.get("completed", False) and s["scheduled_minutes"] <= current_minutes
+        ]
+        due.sort(key=lambda x: x["scheduled_minutes"])
+        return due
+
+    def run_due_cycle(self, trigger_reason: str = "harmonogram", max_sessions: int = 1) -> List[Dict[str, Any]]:
+        """
+        Sprawdza harmonogram i wykonuje oczekujące sesje.
+        Domyślnie wykonuje MAKSYMALNIE JEDNĄ sesję na wywołanie (max_sessions=1),
+        co uniemożliwia jednoczesne lub bezpośrednie wykonywanie 2 sekcji naraz!
+        """
+        due_slots = self.get_due_slots()
+        if not due_slots:
             return []
 
-        today_slots = day_data.get("slots", [])
-
-        # Synchronizacja stanu ukończenia z multi_schedule_state.json
-        today_str = today.isoformat()
-        completed_users = set(self.state.get("completed_today", [])) if self.state.get("date") == today_str else set()
-
-        for slot in today_slots:
-            u_id = slot["user_id"]
-            if u_id in completed_users:
-                slot["completed"] = True
-                slot["status"] = "Ukończono"
-
-        return today_slots
-
-    def mark_user_completed(self, user_id: str) -> None:
-        """Oznacza sesję danego użytkownika jako ukończoną dzisiaj."""
-        today_str = date.today().isoformat()
-        if self.state.get("date") != today_str:
-            self.state["date"] = today_str
-            self.state["completed_today"] = []
-
-        if user_id not in self.state["completed_today"]:
-            self.state["completed_today"].append(user_id)
-            self._save_state()
-
-    def run_queue_cycle(self) -> None:
-        """Sprawdza harmonogram i wykonuje oczekujące sesje jedna po drugiej w ścisłej kolejce."""
-        plan = self.generate_today_plan()
-        now = datetime.now()
-        current_minutes = now.hour * 60 + now.minute
-
-        due_entries = [
-            p for p in plan 
-            if not p["is_off_day"] and not p.get("completed", False) and p["scheduled_minutes"] <= current_minutes
-        ]
-
-        if not due_entries:
-            return
-
+        from bot import InstaLingBot
         bot = InstaLingBot(self.config)
-        users = {u.get("id") or u.get("login"): u for u in self.users_mgr.get_active_users()}
+        users_map = {u.get("id") or u.get("login"): u for u in self.users_mgr.get_active_users()}
 
-        for entry in due_entries:
-            u_id = entry["user_id"]
-            user_obj = users.get(u_id)
+        executed_results = []
+
+        # Bierzemy maksymalnie max_sessions (domyślnie 1)
+        slots_to_run = due_slots[:max_sessions]
+
+        for slot in slots_to_run:
+            u_id = slot["user_id"]
+            user_obj = users_map.get(u_id)
             if not user_obj:
                 continue
 
-            nick = entry["nickname"]
-            log(f"\n[KOLEJKA] Rozpoczynam sesje dla uzytkownika: {nick}")
+            nick = slot["nickname"]
+            slot_id = slot["slot_id"]
 
-            res = bot.run_session(user=user_obj)
-            if res.get("success", False):
-                self.mark_user_completed(u_id)
+            # Blokada zapobiegająca jednoczesnemu workflow
+            if not BotLock.acquire(u_id, nick):
+                log(f"[!] Nie można pobrać blokady dla {nick}. Pomijam ten cykl.")
+                continue
 
-            pause_s = random.uniform(25.0, 45.0)
-            log(f"[KOLEJKA] Zakonczono sesje dla {nick}. Odczekanie {pause_s:.0f}s przed kolejna...")
-            time.sleep(pause_s)
+            now_pl = now_warsaw()
+            current_min = now_pl.hour * 60 + now_pl.minute
+            delay_text = get_delay_str(slot["scheduled_minutes"], current_min)
+
+            log("\n" + "=" * 62)
+            log("🕒 [START ZADANIA] InstaLing Auto-Bot")
+            log("-" * 62)
+            log(f"🌍 Czas UTC:         {format_utc()}")
+            log(f"🇵🇱 Czas w Polsce:     {format_warsaw(now_pl)}")
+            log(f"👤 Uczeń:             {nick} ({mask_login(slot['login'])})")
+            log(f"⏰ Planowana sesja:   {slot['scheduled_time']} ({get_current_polish_tzname()})")
+            log(f"⏱️ Przesunięcie:      {delay_text}")
+            log(f"🎯 Przyczyna:        {trigger_reason}")
+            log("=" * 62)
+
+            started_at_warsaw = format_warsaw(now_pl)
+
+            try:
+                res = bot.run_session(user=user_obj)
+                res["started_at_warsaw"] = started_at_warsaw
+                res["completed_at_warsaw"] = format_warsaw(now_warsaw())
+                
+                # Zapisujemy stan w weekly_schedule.json
+                self.update_slot_result(slot_id, res)
+                executed_results.append(res)
+
+                if res.get("success"):
+                    log(f"[+] Zadanie dla {nick} zakończone sukcesem i odnotowane w harmonogramie.")
+                else:
+                    log(f"[!] Zadanie dla {nick} zakończone błędem: {res.get('error')}")
+
+            finally:
+                BotLock.release()
+
+        return executed_results
+
+    def run_single_user(self, nickname_or_login: str, trigger_reason: str = "ręczne uruchomienie") -> Dict[str, Any]:
+        """Uruchamia sesję dla konkretnego użytkownika w bezpieczny, izolowany sposób."""
+        from bot import InstaLingBot
+        users = self.users_mgr.get_active_users()
+        target_user = None
+        for u in users:
+            if u.get("nickname", "").lower() == nickname_or_login.lower() or u.get("login", "") == nickname_or_login:
+                target_user = u
+                break
+
+        if not target_user:
+            return {"success": False, "error": f"Nie znaleziono użytkownika: {nickname_or_login}"}
+
+        nick = target_user.get("nickname", "Uczeń")
+        u_id = target_user.get("id") or target_user.get("login")
+
+        if not BotLock.acquire(u_id, nick):
+            return {"success": False, "error": f"Inna sesja dla {nick} lub innego użytkownika jest już w toku (aktywna blokada)."}
+
+        now_pl = now_warsaw()
+        log("\n" + "=" * 62)
+        log("🕒 [START ZADANIA INDYWIDUALNEGO] InstaLing Auto-Bot")
+        log("-" * 62)
+        log(f"🌍 Czas UTC:         {format_utc()}")
+        log(f"🇵🇱 Czas w Polsce:     {format_warsaw(now_pl)}")
+        log(f"👤 Uczeń:             {nick} ({mask_login(target_user.get('login'))})")
+        log(f"🎯 Przyczyna:        {trigger_reason}")
+        log("=" * 62)
+
+        started_at = format_warsaw(now_pl)
+        bot = InstaLingBot(self.config)
+
+        try:
+            res = bot.run_session(user=target_user)
+            res["started_at_warsaw"] = started_at
+            res["completed_at_warsaw"] = format_warsaw(now_warsaw())
+
+            # Dopasowujemy dzisiejszy slot jeśli istnieje
+            today_str = today_warsaw().isoformat()
+            slot_id = f"{today_str}_{u_id}"
+            self.update_slot_result(slot_id, res)
+            return res
+        finally:
+            BotLock.release()
 
     def publish_today_plan_to_discord(self) -> None:
-        """Wysyła plan na dziś (w 100% zgodny z planem tygodnia) do kanału #plan-na-dzis."""
-        plan = self.generate_today_plan()
-        self.notifier.send_daily_plan(plan)
+        """Wysyła plan na dziś (w 100% zgodny z planem tygodnia i strefą Europe/Warsaw) do kanału #plan-na-dzis."""
+        slots = self.get_today_slots()
+        self.notifier.send_daily_plan(slots)
 
     def publish_weekly_plan_to_discord(self) -> None:
         """Wysyła trwały plan bieżącego tygodnia (Pon-Ndz) do kanału #plan-tygodnia."""
@@ -257,7 +406,10 @@ class MultiScheduler:
                 entries.append({
                     "nickname": s.get("nickname", "Uczeń"),
                     "time": s.get("scheduled_time", "--:--"),
-                    "is_off": s.get("is_off_day", False)
+                    "is_off": s.get("is_off_day", False),
+                    "status": s.get("status", "Oczekuje"),
+                    "completed": s.get("completed", False),
+                    "completed_at": s.get("completed_at")
                 })
             weekly_report[day_name] = entries
 

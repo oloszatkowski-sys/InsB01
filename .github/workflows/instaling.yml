@@ -2,20 +2,43 @@ name: InstaLing Daily Bot
 
 on:
   schedule:
-    # Uruchamianie kilka razy dziennie, skrypt sam wie czy to właściwy moment i czy nie zrobiono już dzisiaj sesji
-    - cron: '15 14 * * *'  # 14:15 UTC (ok. 16:15 w Polsce)
-    - cron: '45 16 * * *'  # 16:45 UTC (ok. 18:45 w Polsce)
-    - cron: '30 18 * * *'  # 18:30 UTC (ok. 20:30 w Polsce)
-  workflow_dispatch:      # Pozwala na ręczne uruchomienie przyciskiem w panelu GitHub
+    # Uruchamianie co 25 minut w oknie popołudniowym (13:00 - 21:00 UTC, czyli ok. 14:00 - 22:00 w Polsce)
+    # Skrypt sam sprawdza harmonogram Europe/Warsaw i wykonuje zadanie tylko wtedy, gdy nadeszła godzina dla danego użytkownika
+    - cron: '*/25 13-21 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Tryb uruchomienia: due (tylko oczekujące), all (wszyscy), plan (wyślij plan dziś), week (wyślij plan tydzień), reset (reset harmonogramu)'
+        required: false
+        default: 'due'
+        type: choice
+        options:
+          - 'due'
+          - 'all'
+          - 'plan'
+          - 'week'
+          - 'reset'
+      user:
+        description: 'Opcjonalnie: pseudonim lub login konkretnego użytkownika'
+        required: false
+        default: ''
+
+# Blokada zapobiegająca równoczesnemu uruchamianiu dwóch workflow naraz
+concurrency:
+  group: instaling-bot
+  cancel-in-progress: false
 
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+    timeout-minutes: 15  # Twardy limit czasu zadania chroniący przed jakimkolwiek zawieszeniem
+
     steps:
       - name: Pobierz repozytorium
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
 
       - name: Konfiguracja Pythona
         uses: actions/setup-python@v5
@@ -28,17 +51,33 @@ jobs:
           pip install -r requirements.txt
           playwright install --with-deps chromium
 
-      - name: Uruchomienie bota InstaLing
+      - name: Wykonanie bota InstaLing (Europe/Warsaw)
         env:
           INSTALING_LOGIN: ${{ secrets.INSTALING_LOGIN }}
           INSTALING_PASSWORD: ${{ secrets.INSTALING_PASSWORD }}
+          RUN_MODE: ${{ github.event.inputs.mode || 'due' }}
+          TARGET_USER: ${{ github.event.inputs.user || '' }}
         run: |
-          python main.py --run
+          if [ "$RUN_MODE" = "reset" ]; then
+            python main.py --reset-schedule
+          elif [ "$RUN_MODE" = "plan" ]; then
+            python main.py --plan
+          elif [ "$RUN_MODE" = "week" ]; then
+            python main.py --week
+          elif [ "$RUN_MODE" = "all" ]; then
+            python main.py --run-all
+          elif [ -n "$TARGET_USER" ]; then
+            python main.py --user "$TARGET_USER"
+          else
+            # Domyślny tryb cykliczny: inteligentne uruchomienie tylko oczekującej sekcji
+            python main.py --cron
+          fi
 
-      - name: Zapisanie zaktualizowanej bazy słówek i historii (Auto-Commit)
+      - name: Zapisanie zaktualizowanego harmonogramu, słówek i historii (Auto-Commit)
         run: |
           git config --global user.name "InstaLing Bot"
           git config --global user.email "bot@github-actions.internal"
+          git pull --rebase origin main || git pull --rebase origin master || true
           git add data/
-          git diff --staged --quiet || git commit -m "Auto: Zaktualizowano słówka i historię sesji [skip ci]"
-          git push
+          git diff --staged --quiet || git commit -m "Auto: Aktualizacja stanu harmonogramu i historii [skip ci]"
+          git push || true

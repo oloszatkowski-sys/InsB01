@@ -1,152 +1,266 @@
 {
-  "week_key": "2026-W43",
-  "created_at": "2026-10-20T16:47:02.976089",
+  "week_key": "2026-W44",
+  "timezone": "Europe/Warsaw",
+  "tzname": "CET",
+  "created_at_warsaw": "2026-10-27 16:42:30 CET",
+  "created_at_utc": "2026-10-27 15:42:30 UTC",
   "days": {
     "0": {
       "day_name": "Poniedziałek",
-      "date": "2026-10-19",
+      "date": "2026-10-26",
       "slots": [
         {
-          "user_id": "user_1",
-          "nickname": "Oleslaw 010",
-          "login": "asa614845",
-          "is_off_day": false,
-          "scheduled_minutes": 965,
-          "scheduled_time": "16:05",
-          "status": "Oczekuje",
-          "completed": false
-        },
-        {
+          "slot_id": "2026-10-26_user_2",
           "user_id": "user_2",
           "nickname": "Gwiazda Dawida",
           "login": "asa619379",
           "is_off_day": false,
-          "scheduled_minutes": 1257,
-          "scheduled_time": "20:57",
+          "scheduled_minutes": 1024,
+          "scheduled_time": "17:04",
           "status": "Oczekuje",
-          "completed": false
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-10-26_user_1",
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1112,
+          "scheduled_time": "18:32",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-10-26_user_3",
+          "user_id": "user_3",
+          "nickname": "OliwiercioTheHacker",
+          "login": "asa610791",
+          "is_off_day": false,
+          "scheduled_minutes": 1269,
+          "scheduled_time": "21:09",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
         }
       ]
     },
     "1": {
       "day_name": "Wtorek",
-      "date": "2026-10-20",
+      "date": "2026-10-27",
       "slots": [
         {
-          "user_id": "user_1",
-          "nickname": "Oleslaw 010",
-          "login": "asa614845",
-          "is_off_day": false,
-          "scheduled_minutes": 1002,
-          "scheduled_time": "16:42",
-          "status": "Oczekuje",
-          "completed": false
-        },
-        {
+          "slot_id": "2026-10-27_user_2",
           "user_id": "user_2",
           "nickname": "Gwiazda Dawida",
           "login": "asa619379",
           "is_off_day": false,
-          "scheduled_minutes": 1031,
-          "scheduled_time": "17:11",
+          "scheduled_minutes": 953,
+          "scheduled_time": "15:53",
           "status": "Oczekuje",
-          "completed": false
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-10-27_user_3",
+          "user_id": "user_3",
+          "nickname": "OliwiercioTheHacker",
+          "login": "asa610791",
+          "is_off_day": false,
+          "scheduled_minutes": 1136,
+          "scheduled_time": "18:56",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-10-27_user_1",
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1265,
+          "scheduled_time": "21:05",
+          "status": "Ukończono",
+          "completed": true,
+          "started_at": "2026-10-27 16:44:07 CET",
+          "completed_at": "2026-10-27 16:49:51 CET",
+          "duration_seconds": 342.6,
+          "accuracy_percent": 48.4,
+          "error": null,
+          "words_total": 31,
+          "words_correct": 15
         }
       ]
     },
     "2": {
       "day_name": "Środa",
-      "date": "2026-10-21",
+      "date": "2026-10-28",
       "slots": [
         {
+          "slot_id": "2026-10-28_user_1",
           "user_id": "user_1",
           "nickname": "Oleslaw 010",
           "login": "asa614845",
           "is_off_day": false,
-          "scheduled_minutes": 1009,
-          "scheduled_time": "16:49",
+          "scheduled_minutes": 981,
+          "scheduled_time": "16:21",
           "status": "Oczekuje",
-          "completed": false
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
         },
         {
+          "slot_id": "2026-10-28_user_3",
+          "user_id": "user_3",
+          "nickname": "OliwiercioTheHacker",
+          "login": "asa610791",
+          "is_off_day": false,
+          "scheduled_minutes": 1093,
+          "scheduled_time": "18:13",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-10-28_user_2",
           "user_id": "user_2",
           "nickname": "Gwiazda Dawida",
           "login": "asa619379",
           "is_off_day": false,
-          "scheduled_minutes": 1272,
-          "scheduled_time": "21:12",
+          "scheduled_minutes": 1237,
+          "scheduled_time": "20:37",
           "status": "Oczekuje",
-          "completed": false
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
         }
       ]
     },
     "3": {
       "day_name": "Czwartek",
-      "date": "2026-10-22",
+      "date": "2026-10-29",
       "slots": [
         {
-          "user_id": "user_1",
-          "nickname": "Oleslaw 010",
-          "login": "asa614845",
-          "is_off_day": false,
-          "scheduled_minutes": 1256,
-          "scheduled_time": "20:56",
-          "status": "Oczekuje",
-          "completed": false
-        },
-        {
+          "slot_id": "2026-10-29_user_2",
           "user_id": "user_2",
           "nickname": "Gwiazda Dawida",
           "login": "asa619379",
           "is_off_day": false,
-          "scheduled_minutes": 1295,
-          "scheduled_time": "21:35",
+          "scheduled_minutes": 990,
+          "scheduled_time": "16:30",
           "status": "Oczekuje",
-          "completed": false
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-10-29_user_3",
+          "user_id": "user_3",
+          "nickname": "OliwiercioTheHacker",
+          "login": "asa610791",
+          "is_off_day": false,
+          "scheduled_minutes": 1098,
+          "scheduled_time": "18:18",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-10-29_user_1",
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1267,
+          "scheduled_time": "21:07",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
         }
       ]
     },
     "4": {
       "day_name": "Piątek",
-      "date": "2026-10-23",
+      "date": "2026-10-30",
       "slots": [
         {
+          "slot_id": "2026-10-30_user_1",
           "user_id": "user_1",
           "nickname": "Oleslaw 010",
           "login": "asa614845",
           "is_off_day": false,
-          "scheduled_minutes": 1044,
-          "scheduled_time": "17:24",
+          "scheduled_minutes": 1012,
+          "scheduled_time": "16:52",
           "status": "Oczekuje",
-          "completed": false
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
         },
         {
-          "user_id": "user_2",
-          "nickname": "Gwiazda Dawida",
-          "login": "asa619379",
+          "slot_id": "2026-10-30_user_3",
+          "user_id": "user_3",
+          "nickname": "OliwiercioTheHacker",
+          "login": "asa610791",
           "is_off_day": false,
-          "scheduled_minutes": 992,
-          "scheduled_time": "16:32",
+          "scheduled_minutes": 1126,
+          "scheduled_time": "18:46",
           "status": "Oczekuje",
-          "completed": false
-        }
-      ]
-    },
-    "5": {
-      "day_name": "Sobota",
-      "date": "2026-10-24",
-      "slots": [
-        {
-          "user_id": "user_1",
-          "nickname": "Oleslaw 010",
-          "login": "asa614845",
-          "is_off_day": false,
-          "scheduled_minutes": 1220,
-          "scheduled_time": "20:20",
-          "status": "Oczekuje",
-          "completed": false
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
         },
         {
+          "slot_id": "2026-10-30_user_2",
           "user_id": "user_2",
           "nickname": "Gwiazda Dawida",
           "login": "asa619379",
@@ -154,33 +268,120 @@
           "scheduled_minutes": 1205,
           "scheduled_time": "20:05",
           "status": "Oczekuje",
-          "completed": false
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        }
+      ]
+    },
+    "5": {
+      "day_name": "Sobota",
+      "date": "2026-10-31",
+      "slots": [
+        {
+          "slot_id": "2026-10-31_user_1",
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1022,
+          "scheduled_time": "17:02",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-10-31_user_3",
+          "user_id": "user_3",
+          "nickname": "OliwiercioTheHacker",
+          "login": "asa610791",
+          "is_off_day": false,
+          "scheduled_minutes": 1136,
+          "scheduled_time": "18:56",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-10-31_user_2",
+          "user_id": "user_2",
+          "nickname": "Gwiazda Dawida",
+          "login": "asa619379",
+          "is_off_day": false,
+          "scheduled_minutes": 1216,
+          "scheduled_time": "20:16",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
         }
       ]
     },
     "6": {
       "day_name": "Niedziela",
-      "date": "2026-10-25",
+      "date": "2026-11-01",
       "slots": [
         {
-          "user_id": "user_1",
-          "nickname": "Oleslaw 010",
-          "login": "asa614845",
-          "is_off_day": false,
-          "scheduled_minutes": 1082,
-          "scheduled_time": "18:02",
-          "status": "Oczekuje",
-          "completed": false
-        },
-        {
+          "slot_id": "2026-11-01_user_2",
           "user_id": "user_2",
           "nickname": "Gwiazda Dawida",
           "login": "asa619379",
           "is_off_day": false,
-          "scheduled_minutes": 1307,
-          "scheduled_time": "21:47",
+          "scheduled_minutes": 1008,
+          "scheduled_time": "16:48",
           "status": "Oczekuje",
-          "completed": false
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-11-01_user_1",
+          "user_id": "user_1",
+          "nickname": "Oleslaw 010",
+          "login": "asa614845",
+          "is_off_day": false,
+          "scheduled_minutes": 1129,
+          "scheduled_time": "18:49",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
+        },
+        {
+          "slot_id": "2026-11-01_user_3",
+          "user_id": "user_3",
+          "nickname": "OliwiercioTheHacker",
+          "login": "asa610791",
+          "is_off_day": false,
+          "scheduled_minutes": 1265,
+          "scheduled_time": "21:05",
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
         }
       ]
     }

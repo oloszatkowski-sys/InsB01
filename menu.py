@@ -3,262 +3,321 @@ import sys
 import time
 
 if hasattr(sys.stdout, "reconfigure"):
-    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
 if hasattr(sys.stderr, "reconfigure"):
-    sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-from datetime import datetime
+    sys.stderr.reconfigure(encoding="utf-8", errors="replace", line_buffering=True)
+
+from datetime import datetime, date
 from config import load_config, save_config, DEFAULT_CONFIG
 from storage import Storage
-from scheduler import Scheduler, DAY_NAMES
+from users_manager import UsersManager, mask_login
+from multi_scheduler import MultiScheduler, DAY_NAMES_PL
 from bot import InstaLingBot
+from timezone_utils import now_warsaw, today_warsaw, format_warsaw, get_current_polish_tzname
 
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
-def print_header():
-    print("=" * 60)
-    print("        🤖 INSTALING AUTO-BOT - PANEL KONTROLNY        ")
-    print("=" * 60)
+def print_header(plan=None):
+    print("=" * 68)
+    print("         🤖 INSTALING AUTO-BOT - PANEL MULTI-USER (POLSKA)       ")
+    print("=" * 68)
+    now_pl = now_warsaw()
+    today_pl = today_warsaw()
+    weekday_pl = DAY_NAMES_PL[today_pl.weekday()]
+    print(f" 🇵🇱 Dzisiaj: {weekday_pl}, {today_pl.isoformat()} | {now_pl.strftime('%H:%M:%S')} {get_current_polish_tzname()} (Europe/Warsaw)")
 
-def menu_credentials(cfg):
+    if plan:
+        print(" Harmonogram na dziś (Zsynchronizowany z Discordem):")
+        for p in plan:
+            nick = p.get("nickname", "Uczeń")
+            mask = mask_login(p.get("login", ""))
+            t = p.get("scheduled_time", "--:--")
+            is_off = p.get("is_off_day", False)
+            completed = p.get("completed", False)
+            comp_at = p.get("completed_at")
+            acc = p.get("accuracy_percent")
+
+            if is_off:
+                print(f"  • {nick} ({mask}): 🏖️ Dzień wolny | Status: Dzień wolny")
+            elif completed:
+                fin_str = comp_at[11:16] if comp_at and len(comp_at) >= 16 else "Tak"
+                acc_str = f" ({acc}%)" if acc is not None else ""
+                print(f"  • {nick} ({mask}): ✅ {t} | Status: UKOŃCZONO o {fin_str}{acc_str}")
+            elif p.get("status") == "W trakcie":
+                print(f"  • {nick} ({mask}): ▶️ {t} | Status: W TRAKCIE...")
+            elif p.get("status") == "Błąd":
+                print(f"  • {nick} ({mask}): ⚠️ {t} | Status: BŁĄD SESJI")
+            else:
+                print(f"  • {nick} ({mask}): ⏰ {t} | Status: ⏳ Oczekuje")
+    print("=" * 68)
+
+def menu_users(users_mgr: UsersManager, sched: MultiScheduler):
+    while True:
+        clear_screen()
+        print_header()
+        print("\n--- [1] ZARZĄDZANIE UŻYTKOWNIKAMI (PROFILE) ---")
+        users = users_mgr.get_users()
+        if not users:
+            print("Brak dodanych użytkowników.")
+        else:
+            print(f"{'NR':<3} | {'PSEUDONIM':<18} | {'LOGIN':<12} | {'STATUS':<10} | {'TELEFON (ntfy)':<14}")
+            print("-" * 65)
+            for i, u in enumerate(users):
+                st = "Aktywny" if u.get("active", True) else "Wyłączony"
+                nt = "✅ TAK" if u.get("track_in_ntfy", False) else "NIE"
+                print(f"{i+1:<3} | {u.get('nickname', ''):<18} | {mask_login(u.get('login', '')):<12} | {st:<10} | {nt:<14}")
+
+        print("\nOpcje:")
+        print("1. Dodaj nowego użytkownika")
+        print("2. Edytuj dane użytkownika (login / hasło / pseudonim)")
+        print("3. Przełącz powiadomienia na telefon (ntfy.sh) dla konta")
+        print("4. Włącz / Wyłącz profil")
+        print("5. Usuń profil")
+        print("0. Wróć do menu głównego")
+
+        ch = input("\nWybór (0-5): ").strip()
+        if ch == "1":
+            nick = input("Podaj pseudonim (np. SZATEK-02): ").strip()
+            login = input("Podaj login InstaLing (np. asa123456): ").strip()
+            pwd = input("Podaj hasło InstaLing: ").strip()
+            if nick and login and pwd:
+                users.append({
+                    "id": f"user_{len(users)+1}",
+                    "nickname": nick,
+                    "login": login,
+                    "password": pwd,
+                    "active": True,
+                    "created_at": date.today().isoformat(),
+                    "track_in_ntfy": False
+                })
+                users_mgr.save_users(users)
+                sched.get_or_create_weekly_schedule(force_new=True)
+                sched.publish_weekly_plan_to_discord()
+                sched.publish_today_plan_to_discord()
+                print("\n[OK] Dodano użytkownika i zaktualizowano plan na Discordzie!")
+                time.sleep(1.5)
+        elif ch == "2":
+            idx = input("Podaj numer użytkownika do edycji: ").strip()
+            if idx.isdigit() and 1 <= int(idx) <= len(users):
+                u = users[int(idx) - 1]
+                print(f"\nEdycja użytkownika: {u.get('nickname')}")
+                new_nick = input(f"Nowy pseudonim (Enter aby zachować '{u.get('nickname')}'): ").strip()
+                if new_nick: u["nickname"] = new_nick
+                new_login = input(f"Nowy login (Enter aby zachować '{u.get('login')}'): ").strip()
+                if new_login: u["login"] = new_login
+                new_pass = input("Nowe hasło (Enter aby zachować): ").strip()
+                if new_pass: u["password"] = new_pass
+                users_mgr.save_users(users)
+                sched.get_or_create_weekly_schedule(force_new=True)
+                sched.publish_weekly_plan_to_discord()
+                sched.publish_today_plan_to_discord()
+                print("\n[OK] Zapisano zmiany i zaktualizowano Discord!")
+                time.sleep(1.5)
+        elif ch == "3":
+            idx = input("Podaj numer użytkownika do ntfy.sh (tylko 1 może mieć telefon): ").strip()
+            if idx.isdigit() and 1 <= int(idx) <= len(users):
+                sel_idx = int(idx) - 1
+                for i, u in enumerate(users):
+                    u["track_in_ntfy"] = (i == sel_idx)
+                users_mgr.save_users(users)
+                print(f"\n[OK] Powiadomienia na telefon ntfy.sh ustawiono dla: {users[sel_idx].get('nickname')}")
+                time.sleep(1.5)
+        elif ch == "4":
+            idx = input("Podaj numer użytkownika: ").strip()
+            if idx.isdigit() and 1 <= int(idx) <= len(users):
+                u = users[int(idx) - 1]
+                u["active"] = not u.get("active", True)
+                users_mgr.save_users(users)
+                sched.get_or_create_weekly_schedule(force_new=True)
+                sched.publish_today_plan_to_discord()
+                print(f"\n[OK] Zmieniono status aktywności.")
+                time.sleep(1.5)
+        elif ch == "5":
+            idx = input("Podaj numer użytkownika do usunięcia: ").strip()
+            if idx.isdigit() and 1 <= int(idx) <= len(users):
+                deleted = users.pop(int(idx) - 1)
+                users_mgr.save_users(users)
+                sched.get_or_create_weekly_schedule(force_new=True)
+                sched.publish_today_plan_to_discord()
+                print(f"\n[OK] Usunięto użytkownika {deleted.get('nickname')}.")
+                time.sleep(1.5)
+        elif ch == "0":
+            break
+
+def menu_schedule(cfg, sched: MultiScheduler):
     clear_screen()
     print_header()
-    print("\n--- [1] DANE LOGOWANIA ---")
-    current_log = cfg.get("login", "")
-    print(f"Obecny login: {current_log if current_log else '[brak]'}")
-    has_pass = bool(cfg.get("password"))
-    print(f"Hasło: {'********' if has_pass else '[brak]'}")
-    
-    new_login = input("\nPodaj nowy login (lub Enter aby zachować): ").strip()
-    if new_login:
-        cfg["login"] = new_login
+    print("\n--- [2] TRYB HARMONOGRAMU (GODZINY I OKNO CZASOWE) ---")
+    print(f"Aktualne okno losowania sesji: {cfg.get('random_window_start', '15:46')} - {cfg.get('random_window_end', '21:57')}")
+    print("Wszystkie sesje użytkowników są rozkładane w tym oknie z odstępem min. 15 minut (Zero Kolizji).\n")
 
-    new_pass = input("Podaj nowe hasło (lub Enter aby zachować): ").strip()
-    if new_pass:
-        cfg["password"] = new_pass
+    w_start = input(f"Podaj początek okna (Enter aby zachować '{cfg.get('random_window_start')}'): ").strip()
+    if w_start: cfg["random_window_start"] = w_start
+
+    w_end = input(f"Podaj koniec okna (Enter aby zachować '{cfg.get('random_window_end')}'): ").strip()
+    if w_end: cfg["random_window_end"] = w_end
 
     save_config(cfg)
-    print("\n[✓] Zapisano dane logowania.")
+    sched.get_or_create_weekly_schedule(force_new=True)
+    sched.publish_weekly_plan_to_discord()
+    sched.publish_today_plan_to_discord()
+    print("\n[OK] Zaktualizowano okno czasowe i wygenerowano nowy spójny plan na Discordzie!")
     input("\nNaciśnij Enter, aby wrócić...")
 
-def menu_schedule(cfg):
+def menu_missed_days(cfg, sched: MultiScheduler):
     clear_screen()
     print_header()
-    print("\n--- [2] TRYB HARMONOGRAMU (GODZINY) ---")
-    cur_mode = cfg.get("schedule_mode", "random")
-    print(f"Aktualny tryb: {'LOSOWE GODZINY' if cur_mode == 'random' else 'STAŁA GODZINA'}")
-    print(f"Stała godzina: {cfg.get('fixed_time', '17:30')}")
-    print(f"Okno losowania: {cfg.get('random_window_start', '14:30')} - {cfg.get('random_window_end', '20:45')}")
-    print(f"Losowy jitter: +/- {cfg.get('random_jitter_minutes', 15)} min")
-    
-    print("\nWybierz:")
-    print("1. Tryb stałej godziny (np. zawsze o 17:30)")
-    print("2. Tryb losowych godzin (np. losowo między 14:30 a 20:45 z losowym przesunięciem)")
-    print("0. Wróć")
-    
-    choice = input("\nWybór: ").strip()
-    if choice == "1":
-        cfg["schedule_mode"] = "fixed"
-        val = input(f"Podaj stałą godzinę HH:MM (obecna: {cfg.get('fixed_time', '17:30')}): ").strip()
-        if val:
-            cfg["fixed_time"] = val
-    elif choice == "2":
-        cfg["schedule_mode"] = "random"
-        start_w = input(f"Początek okna HH:MM (obecny: {cfg.get('random_window_start', '14:30')}): ").strip()
-        if start_w:
-            cfg["random_window_start"] = start_w
-        end_w = input(f"Koniec okna HH:MM (obecny: {cfg.get('random_window_end', '20:45')}): ").strip()
-        if end_w:
-            cfg["random_window_end"] = end_w
-        jit = input(f"Losowy jitter w minutach (obecny: {cfg.get('random_jitter_minutes', 15)}): ").strip()
-        if jit.isdigit():
-            cfg["random_jitter_minutes"] = int(jit)
-
-    save_config(cfg)
-    print("\n[✓] Zapisano ustawienia harmonogramu.")
-    input("\nNaciśnij Enter, aby wrócić...")
-
-def menu_missed_days(cfg):
-    clear_screen()
-    print_header()
-    print("\n--- [3] CZĘSTOTLIWOŚĆ WYPADKÓW (DNI WOLNE) ---")
-    cur_mode = cfg.get("miss_days_mode", "random")
-    count = cfg.get("miss_days_count", 1)
-    fixed_days = cfg.get("miss_fixed_days", [5, 6])
-    fixed_names = ", ".join([DAY_NAMES[i] for i in fixed_days if 0 <= i < 7])
-
-    print(f"Aktualny tryb opuszczania dni: {cur_mode.upper()}")
-    print(f"Liczba losowych dni wolnych: {count} dni w tygodniu")
-    print(f"Stałe dni wolne: {fixed_names if fixed_names else 'Brak'}")
-
-    print("\nWybierz:")
-    print("1. Losowe dni wolne w tygodniu (np. 1 lub 2 dni - bot losowo 'zapomina')")
-    print("2. Stałe dni wolne (np. zawsze sobota i niedziela)")
-    print("3. Wyłącz dni wolne (bot robi lekcje codziennie 7/7)")
+    print("\n--- [3] DNI WOLNE W TYGODNIU (ANTY-DETEKCJA) ---")
+    print(f"Aktualny tryb: {cfg.get('miss_days_mode', 'none')}")
+    print(f"Liczba dni wolnych w tygodniu na profil: {cfg.get('miss_days_count', 0)}")
+    print("\nOpcje:")
+    print("1. Codziennie (0 dni wolnych - 100% systematyczności)")
+    print("2. Losowo 1 dzień wolny w tygodniu (dla każdego ucznia osobno)")
+    print("3. Losowo 2 dni wolne w tygodniu")
     print("0. Wróć")
 
-    choice = input("\nWybór: ").strip()
-    if choice == "1":
-        cfg["miss_days_mode"] = "random"
-        c = input("Ile losowych dni wolnych w tygodniu (1, 2, 3)? [domyślnie 1]: ").strip()
-        if c.isdigit():
-            cfg["miss_days_count"] = int(c)
-    elif choice == "2":
-        cfg["miss_days_mode"] = "fixed"
-        print("Wybierz dni tygodnia (oddzielone przecinkami, np. 5,6 dla sob/ndz):")
-        for i, d in enumerate(DAY_NAMES):
-            print(f"  {i}: {d}")
-        sel = input("Podaj numery dni: ").strip()
-        if sel:
-            try:
-                cfg["miss_fixed_days"] = [int(x.strip()) for x in sel.split(",") if x.strip().isdigit()]
-            except Exception:
-                pass
-    elif choice == "3":
+    c = input("\nWybór: ").strip()
+    if c == "1":
         cfg["miss_days_mode"] = "none"
         cfg["miss_days_count"] = 0
+    elif c == "2":
+        cfg["miss_days_mode"] = "random"
+        cfg["miss_days_count"] = 1
+    elif c == "3":
+        cfg["miss_days_mode"] = "random"
+        cfg["miss_days_count"] = 2
 
     save_config(cfg)
-    print("\n[✓] Zapisano ustawienia dni wolnych.")
+    sched.get_or_create_weekly_schedule(force_new=True)
+    sched.publish_weekly_plan_to_discord()
+    sched.publish_today_plan_to_discord()
+    print("\n[OK] Zapisano i zaktualizowano plan na Discordzie!")
     input("\nNaciśnij Enter, aby wrócić...")
 
 def menu_anti_detection(cfg):
     clear_screen()
     print_header()
-    print("\n--- [4] ANTY-DETEKCJA I SYMULACJA CZŁOWIEKA ---")
-    print(f"1. Docelowa skuteczność sesji: {cfg.get('target_accuracy_percent', 91)}% (celowe błędy)")
-    print(f"2. Szansa na literówkę i Backspace: {cfg.get('typo_chance_percent', 6)}%")
-    print(f"3. Czas na czytanie zdania: {cfg.get('read_time_min_s', 1.8)}s - {cfg.get('read_time_max_s', 3.8)}s")
-    print(f"4. Szybkość pisania (opóźnienie): {cfg.get('typing_speed_min_ms', 75)}ms - {cfg.get('typing_speed_max_ms', 170)}ms")
-    print(f"5. Tryb ukrytej przeglądarki (Headless): {'Włączony (brak okna)' if cfg.get('headless', True) else 'Wyłączony (widać okno Chrome)'}")
-    print("0. Wróć")
+    print("\n--- [4] PARAMETRY ANTY-DETEKCJI I PISANIA ---")
+    print(f"• Docelowa skuteczność ucznia: {cfg.get('target_accuracy_percent', 78)}%")
+    print(f"• Szansa na literówkę i Backspace: {cfg.get('typo_chance_percent', 3)}%")
+    print(f"• Prędkość wciskania klawiszy: {cfg.get('typing_speed_min_ms', 75)} - {cfg.get('typing_speed_max_ms', 170)} ms")
+    print(f"• Czas namysłu nad zdaniem: {cfg.get('read_time_min_s', 0.25)} - {cfg.get('read_time_max_s', 5.0)} s")
+    print("• Wpisywanie: 100% klawisz po klawiszu (brak schowka/Ctrl+V)\n")
 
-    choice = input("\nCo chcesz zmienić (1-5, 0=Wróć): ").strip()
-    if choice == "1":
-        acc = input("Podaj docelową skuteczność w % (np. 88-94): ").strip()
-        if acc.replace(".", "").isdigit():
-            cfg["target_accuracy_percent"] = float(acc)
-    elif choice == "2":
-        typo = input("Podaj szansę na literówkę w % (np. 5): ").strip()
-        if typo.replace(".", "").isdigit():
-            cfg["typo_chance_percent"] = float(typo)
-    elif choice == "3":
-        t1 = input("Minimalny czas czytania (s): ").strip()
-        t2 = input("Maksymalny czas czytania (s): ").strip()
-        if t1.replace(".", "").isdigit(): cfg["read_time_min_s"] = float(t1)
-        if t2.replace(".", "").isdigit(): cfg["read_time_max_s"] = float(t2)
-    elif choice == "4":
-        s1 = input("Min opóźnienie klawisza (ms): ").strip()
-        s2 = input("Max opóźnienie klawisza (ms): ").strip()
-        if s1.isdigit(): cfg["typing_speed_min_ms"] = int(s1)
-        if s2.isdigit(): cfg["typing_speed_max_ms"] = int(s2)
-    elif choice == "5":
-        cfg["headless"] = not cfg.get("headless", True)
-        print(f"Zmieniono tryb okna na: {'Bez okna (Headless)' if cfg['headless'] else 'Z widocznym oknem'}")
+    acc = input("Podaj docelową skuteczność w % (np. 80, Enter aby zachować): ").strip()
+    if acc: cfg["target_accuracy_percent"] = float(acc)
 
     save_config(cfg)
+    print("\n[OK] Zapisano ustawienia anty-detekcji.")
     input("\nNaciśnij Enter, aby wrócić...")
 
 def menu_view_words(storage: Storage):
     clear_screen()
     print_header()
-    words = storage.words
-    print(f"\n--- [5] BAZA ZAPAMIĘTANYCH SŁÓWEK (Łącznie: {len(words)}) ---")
-    if not words:
-        print("Baza słówek jest pusta. Bot nauczy się ich automatycznie podczas sesji!")
+    print(f"\n--- [5] BAZA ZAPAMIĘTANYCH SŁÓWEK ({len(storage.words)} słówek) ---")
+    if not storage.words:
+        print("Baza słówek jest pusta.")
     else:
-        print(f"{'ZAPYTANIE / POLSKI':<35} | {'POPRAWNA ODPOWIEDŹ':<25} | UŻYCIA")
-        print("-" * 75)
-        # Pokazujemy do 25 słówek
-        items = list(words.items())[:25]
-        for key, val in items:
-            ans = val.get("answer", "")
-            prompt = val.get("prompt", key)[:33]
-            usage = val.get("usage_count", 1)
-            print(f"{prompt:<35} | {ans:<25} | {usage}")
-        if len(words) > 25:
-            print(f"... oraz {len(words) - 25} innych słówek.")
+        for i, (k, v) in enumerate(list(storage.words.items())[:30]):
+            prompt = v.get("prompt", k)
+            ans = v.get("answer", "")
+            print(f"  {i+1}. {prompt} -> {ans}")
+        if len(storage.words) > 30:
+            print(f"  ... i {len(storage.words) - 30} innych słówek.")
 
-    print("\nOpcje:")
-    print("1. Wyczyść całą bazę słówek")
-    print("0. Wróć")
-    c = input("\nWybór: ").strip()
+    print("\nOpcje: [1] Wyczyść bazę słówek | [Enter] Wróć")
+    c = input("Wybór: ").strip()
     if c == "1":
-        conf = input("Czy na pewno chcesz usunąć wszystkie słówka? (tak/nie): ").strip().lower()
-        if conf == "tak":
-            storage.words = {}
-            storage.save_words()
-            print("[✓] Baza wyczyszczona.")
-
-    input("\nNaciśnij Enter, aby wrócić...")
+        storage.clear_words()
+        print("[OK] Wyczyszczono bazę słówek.")
+        time.sleep(1.0)
 
 def menu_history(storage: Storage):
     clear_screen()
     print_header()
+    print("\n--- [6] HISTORIA SESJI ---")
     history = storage.history
-    print(f"\n--- [6] HISTORIA SESJI (Łącznie wpisów: {len(history)}) ---")
     if not history:
         print("Brak historii wykonanych sesji.")
     else:
-        print(f"{'DATA I CZAS':<20} | {'STATUS':<10} | {'SŁÓWKA':<8} | {'TRAFIENIA':<10} | {'SKUTECZNOŚĆ':<12}")
+        print(f"{'DATA':<19} | {'UCZEŃ':<15} | {'STATUS':<8} | {'TRAFIENIA':<10} | {'SKUTECZNOŚĆ':<12}")
         print("-" * 75)
         for h in history[-15:]:
-            ts = h.get("timestamp", "")[:19].replace("T", " ")
+            ts = h.get("finished_at", h.get("timestamp", ""))[:19].replace("T", " ")
+            nick = h.get("nickname", "Uczeń")
             stat = "SUKCES" if h.get("success") else "BŁĄD"
-            words = h.get("words_total", "-")
-            corr = f"{h.get('words_correct', '-')}/{words}"
+            corr = f"{h.get('words_correct', '-')}/{h.get('words_total', '-')}"
             acc = f"{h.get('accuracy_percent', '-')}%"
-            print(f"{ts:<20} | {stat:<10} | {str(words):<8} | {corr:<10} | {acc:<12}")
+            print(f"{ts:<19} | {nick:<15} | {stat:<8} | {corr:<10} | {acc:<12}")
 
     input("\nNaciśnij Enter, aby wrócić...")
 
-def run_test_now(cfg):
+def run_test_now(cfg, users_mgr: UsersManager, sched: MultiScheduler):
     clear_screen()
     print_header()
-    print("\n--- [7] TESTOWE URUCHOMIENIE SESJI NA ŻYWO ---")
-    print("Zaraz nastąpi zalogowanie i wykonanie sesji InstaLing.")
-    print("Upewnij się, że dane logowania są poprawne.\n")
-    confirm = input("Uruchomić teraz? (t/n): ").strip().lower()
-    if confirm in ["t", "tak", "y", "yes"]:
-        bot = InstaLingBot(cfg)
-        res = bot.run_session()
-        print("\n" + "=" * 50)
-        print("WYNIK KOŃCOWY:")
-        print(res)
-        print("=" * 50)
+    print("\n--- [7] URUCHOMIENIE SESJI NA ŻYWO ---")
+    users = users_mgr.get_active_users()
+    if not users:
+        print("Brak aktywnych użytkowników!")
+        input("\nNaciśnij Enter...")
+        return
+
+    print("Dostępni użytkownicy:")
+    for i, u in enumerate(users):
+        print(f"  [{i+1}] {u.get('nickname')} ({mask_login(u.get('login'))})")
+    print("  [A] Uruchom wszystkich po kolei (Kolejka)")
+    print("  [0] Anuluj")
+
+    c = input("\nWybór: ").strip().lower()
+    bot = InstaLingBot(cfg)
+
+    if c == "a":
+        for i, u in enumerate(users):
+            nick = u.get("nickname", "Uczeń")
+            print(f"\n[*] Uruchamiam sesję dla {nick}...")
+            res = sched.run_single_user(nick, trigger_reason="uruchomienie z menu")
+            if i < len(users) - 1:
+                print("[*] Odczekanie 20s przed kolejnym kontem...")
+                time.sleep(20)
+    elif c.isdigit() and 1 <= int(c) <= len(users):
+        target_u = users[int(c) - 1]
+        nick = target_u.get("nickname", "Uczeń")
+        print(f"\n[*] Uruchamiam sesję dla {nick}...")
+        res = sched.run_single_user(nick, trigger_reason="uruchomienie z menu")
+
     input("\nNaciśnij Enter, aby wrócić...")
 
 def show_main_menu():
     while True:
         cfg = load_config()
         storage = Storage()
-        scheduler = Scheduler(cfg, storage)
-        status = scheduler.check_execution_status()
+        users_mgr = UsersManager()
+        sched = MultiScheduler(cfg)
+        plan = sched.get_today_slots()
 
         clear_screen()
-        print_header()
-        print(f" Dzisiaj: {status['weekday_name']}, {status['today']}")
-        print(f" Dzień roboczy: {'TAK' if status['is_workday'] else 'NIE (Dzień wolny)'} | Dzisiaj ukończono: {'TAK' if status['is_done'] else 'NIE'}")
-        print(f" Zaplanowana godzina: {status['planned_time']} | Wolne w tym tyg: {', '.join(status['off_days_this_week']) or 'Brak'}")
-        print("=" * 60)
-        print("\n [1] 🔑 Dane logowania (Login / Hasło)")
-        print(" [2] ⏰ Tryb harmonogramu (Stała godzina / Losowe okna czasowe)")
-        print(" [3] 🎲 Częstotliwość wypadków (Dni wolne w tygodniu)")
-        print(" [4] 🛡️ Anty-detekcja (Skuteczność, pisanie, czas czytania)")
-        print(" [5] 📚 Baza zapamiętanych słówek (Podgląd / Czyszczenie)")
+        print_header(plan)
+        print("\n [1] 👥 Zarządzanie użytkownikami (Profile / Loginy / Hasła)")
+        print(" [2] ⏰ Okno godzinowe harmonogramu (Wspólne dla wszystkich)")
+        print(" [3] 🎲 Częstotliwość dni wolnych (Anty-detekcja)")
+        print(" [4] 🛡️ Parametry pisania i anty-detekcji")
+        print(" [5] 📚 Baza zapamiętanych słówek")
         print(" [6] 📊 Historia sesji i statystyki")
         print(" [7] ▶️ Uruchom sesję teraz (Test na żywo)")
-        print(" [8] 🌐 Uruchom Web Panel (Nowoczesny panel w przeglądarce)")
+        print(" [8] 🌐 Uruchom Web Panel w przeglądarce")
         print(" [9] ⏳ Uruchom Harmonogram w tle (Daemon na komputerze)")
+        print(" [P] 📢 Wyślij świeży Plan na Dziś i Tydzień na Discorda")
+        print(" [R] 🔄 Zresetuj i wylosuj nowy Plan Tygodnia (Reset)")
         print(" [0] 🚪 Wyjście")
 
-        choice = input("\nWybierz opcję (0-9): ").strip()
+        choice = input("\nWybierz opcję: ").strip().lower()
         if choice == "1":
-            menu_credentials(cfg)
+            menu_users(users_mgr, sched)
         elif choice == "2":
-            menu_schedule(cfg)
+            menu_schedule(cfg, sched)
         elif choice == "3":
-            menu_missed_days(cfg)
+            menu_missed_days(cfg, sched)
         elif choice == "4":
             menu_anti_detection(cfg)
         elif choice == "5":
@@ -266,7 +325,7 @@ def show_main_menu():
         elif choice == "6":
             menu_history(storage)
         elif choice == "7":
-            run_test_now(cfg)
+            run_test_now(cfg, users_mgr, sched)
         elif choice == "8":
             print("\nUruchamianie serwera Web Panel...")
             from web_server import start_web_server
@@ -277,6 +336,21 @@ def show_main_menu():
             from daemon import run_daemon
             run_daemon()
             break
+        elif choice == "p":
+            print("\nWysyłam zsynchronizowany plan na Discorda...")
+            sched.publish_weekly_plan_to_discord()
+            sched.publish_today_plan_to_discord()
+            print("[OK] Wysłano na Discorda!")
+            time.sleep(1.5)
+        elif choice == "r":
+            conf = input("\nCzy na pewno chcesz zresetować i wylosować od nowa Plan Tygodnia? (t/n): ").strip().lower()
+            if conf in ["t", "tak", "y", "yes"]:
+                print("\n[*] Resetowanie harmonogramu...")
+                sched.reset_schedule()
+                sched.publish_weekly_plan_to_discord()
+                sched.publish_today_plan_to_discord()
+                print("[OK] Wygenerowano nowy plan tygodnia i wysłano na Discorda!")
+                time.sleep(2.0)
         elif choice == "0":
             print("\nDo widzenia!")
             sys.exit(0)

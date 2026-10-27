@@ -1,17 +1,17 @@
 {
   "my little sister watches ________ luka every weekend. | kreskówka": {
-    "answer": "Literówka",
+    "answer": "cartoon",
     "prompt": "kreskówka",
     "sentence": "My little sister watches ________\nluka\n every weekend.",
-    "updated_at": "2026-10-19T20:01:37.952779",
-    "usage_count": 2
+    "updated_at": "2026-10-20T16:58:58.244757",
+    "usage_count": 5
   },
   "kreskówka": {
-    "answer": "Literówka",
+    "answer": "cartoon",
     "prompt": "kreskówka",
     "sentence": "My little sister watches ________\nluka\n every weekend.",
-    "updated_at": "2026-10-19T20:01:37.952779",
-    "usage_count": 2
+    "updated_at": "2026-10-20T16:58:58.244757",
+    "usage_count": 5
   },
   "his ___________ luka was amazing. | występ": {
     "answer": "performance",
@@ -157,29 +157,29 @@
     "answer": "festival",
     "prompt": "festiwal",
     "sentence": "I'm only here for a few days of the ________\nluka\n.",
-    "updated_at": "2026-10-19T20:08:28.675609",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:48:58.859808",
+    "usage_count": 3
   },
   "festiwal": {
     "answer": "festival",
     "prompt": "festiwal",
     "sentence": "I'm only here for a few days of the ________\nluka\n.",
-    "updated_at": "2026-10-19T20:08:28.675609",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:48:58.859808",
+    "usage_count": 3
   },
   "the kids couldn't take their eyes off the ______ luka . | ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-10-19T20:09:10.195766",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:46:27.658007",
+    "usage_count": 3
   },
   "ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-10-19T20:09:10.195766",
-    "usage_count": 1
+    "updated_at": "2026-10-27T16:46:27.658007",
+    "usage_count": 3
   },
   "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
     "answer": "Literówka",
@@ -264,5 +264,299 @@
     "sentence": "We were _______\nluka\n and dancing all night.",
     "updated_at": "2026-10-19T20:23:36.324490",
     "usage_count": 1
+  },
+  "we should always think about what we _____ luka ______ luka . | udostępniać w sieci": {
+    "answer": "share online",
+    "prompt": "udostępniać w sieci",
+    "sentence": "We should always think about what we _____\nluka\n ______\nluka\n.",
+    "updated_at": "2026-10-20T16:54:18.097905",
+    "usage_count": 1
+  },
+  "udostępniać w sieci": {
+    "answer": "share online",
+    "prompt": "udostępniać w sieci",
+    "sentence": "We should always think about what we _____\nluka\n ______\nluka\n.",
+    "updated_at": "2026-10-20T16:54:18.097905",
+    "usage_count": 1
+  },
+  "please, ______ luka these images to our website. | wysyłać (np. pliki na serwer internetowy)": {
+    "answer": "upload",
+    "prompt": "wysyłać (np. pliki na serwer internetowy)",
+    "sentence": "Please, ______\nluka\n these images to our website.",
+    "updated_at": "2026-10-20T16:54:26.223682",
+    "usage_count": 1
+  },
+  "wysyłać (np. pliki na serwer internetowy)": {
+    "answer": "upload",
+    "prompt": "wysyłać (np. pliki na serwer internetowy)",
+    "sentence": "Please, ______\nluka\n these images to our website.",
+    "updated_at": "2026-10-20T16:54:26.223682",
+    "usage_count": 1
+  },
+  "this _______ luka ____ luka is silly. | reality show": {
+    "answer": "reality show",
+    "prompt": "reality show",
+    "sentence": "This _______\nluka\n ____\nluka\n is silly.",
+    "updated_at": "2026-10-20T19:27:58.011253",
+    "usage_count": 3
+  },
+  "reality show": {
+    "answer": "reality show",
+    "prompt": "reality show",
+    "sentence": "This _______\nluka\n ____\nluka\n is silly.",
+    "updated_at": "2026-10-20T19:27:58.011253",
+    "usage_count": 3
+  },
+  "it's that funny _____ luka from my favourite movie. | scena (np. z filmu)": {
+    "answer": "scene",
+    "prompt": "scena (np. z filmu)",
+    "sentence": "It's that funny _____\nluka\n from my favourite movie.",
+    "updated_at": "2026-10-20T19:28:31.654213",
+    "usage_count": 3
+  },
+  "scena (np. z filmu)": {
+    "answer": "scene",
+    "prompt": "scena (np. z filmu)",
+    "sentence": "It's that funny _____\nluka\n from my favourite movie.",
+    "updated_at": "2026-10-20T19:28:31.654213",
+    "usage_count": 3
+  },
+  "i want to _________ luka to this channel. | subskrybować; wykupić abonament": {
+    "answer": "subscribe",
+    "prompt": "subskrybować; wykupić abonament",
+    "sentence": "I want to _________\nluka\n to this channel.",
+    "updated_at": "2026-10-20T16:56:11.795431",
+    "usage_count": 3
+  },
+  "subskrybować; wykupić abonament": {
+    "answer": "subscribe",
+    "prompt": "subskrybować; wykupić abonament",
+    "sentence": "I want to _________\nluka\n to this channel.",
+    "updated_at": "2026-10-20T16:56:11.795431",
+    "usage_count": 3
+  },
+  "i found an interesting _______ luka devoted to role-playing games. | strona internetowa": {
+    "answer": "website",
+    "prompt": "strona internetowa",
+    "sentence": "I found an interesting _______\nluka\n devoted to role-playing games.",
+    "updated_at": "2026-10-20T19:34:38.197545",
+    "usage_count": 3
+  },
+  "strona internetowa": {
+    "answer": "website",
+    "prompt": "strona internetowa",
+    "sentence": "I found an interesting _______\nluka\n devoted to role-playing games.",
+    "updated_at": "2026-10-20T19:34:38.197545",
+    "usage_count": 3
+  },
+  "they wanted him to ____ luka in a new television show. | grać główną rolę": {
+    "answer": "star",
+    "prompt": "grać główną rolę",
+    "sentence": "They wanted him to ____\nluka\n in a new television show.",
+    "updated_at": "2026-10-20T16:56:00.965362",
+    "usage_count": 1
+  },
+  "grać główną rolę": {
+    "answer": "star",
+    "prompt": "grać główną rolę",
+    "sentence": "They wanted him to ____\nluka\n in a new television show.",
+    "updated_at": "2026-10-20T16:56:00.965362",
+    "usage_count": 1
+  },
+  "getting this ____ luka is my dream. | rola": {
+    "answer": "role",
+    "prompt": "rola",
+    "sentence": "Getting this ____\nluka\n is my dream.",
+    "updated_at": "2026-10-20T19:35:32.056773",
+    "usage_count": 3
+  },
+  "rola": {
+    "answer": "role",
+    "prompt": "rola",
+    "sentence": "Getting this ____\nluka\n is my dream.",
+    "updated_at": "2026-10-20T19:35:32.056773",
+    "usage_count": 3
+  },
+  "this ___________ luka always asks difficult questions. | osoba przeprowadzająca wywiad": {
+    "answer": "interviewer",
+    "prompt": "osoba przeprowadzająca wywiad",
+    "sentence": "This ___________\nluka\n always asks difficult questions.",
+    "updated_at": "2026-10-20T16:57:45.129586",
+    "usage_count": 3
+  },
+  "osoba przeprowadzająca wywiad": {
+    "answer": "interviewer",
+    "prompt": "osoba przeprowadzająca wywiad",
+    "sentence": "This ___________\nluka\n always asks difficult questions.",
+    "updated_at": "2026-10-20T16:57:45.129586",
+    "usage_count": 3
+  },
+  "as a __________ luka , she's interested in politics. | dziennikarz": {
+    "answer": "journalist",
+    "prompt": "dziennikarz",
+    "sentence": "As a __________\nluka\n, she's interested in politics.",
+    "updated_at": "2026-10-20T16:57:24.326987",
+    "usage_count": 1
+  },
+  "dziennikarz": {
+    "answer": "journalist",
+    "prompt": "dziennikarz",
+    "sentence": "As a __________\nluka\n, she's interested in politics.",
+    "updated_at": "2026-10-20T16:57:24.326987",
+    "usage_count": 1
+  },
+  "you absolutely must read this _______ luka . | artykuł": {
+    "answer": "article",
+    "prompt": "artykuł",
+    "sentence": "You absolutely must read this _______\nluka\n.",
+    "updated_at": "2026-10-20T16:58:21.683447",
+    "usage_count": 3
+  },
+  "artykuł": {
+    "answer": "article",
+    "prompt": "artykuł",
+    "sentence": "You absolutely must read this _______\nluka\n.",
+    "updated_at": "2026-10-20T16:58:21.683447",
+    "usage_count": 3
+  },
+  "that ___________ luka is terribly boring. | film dokumentalny; program dokumentalny": {
+    "answer": "documentary",
+    "prompt": "film dokumentalny; program dokumentalny",
+    "sentence": "That ___________\nluka\n is terribly boring.",
+    "updated_at": "2026-10-20T19:30:00.483810",
+    "usage_count": 3
+  },
+  "film dokumentalny; program dokumentalny": {
+    "answer": "documentary",
+    "prompt": "film dokumentalny; program dokumentalny",
+    "sentence": "That ___________\nluka\n is terribly boring.",
+    "updated_at": "2026-10-20T19:30:00.483810",
+    "usage_count": 3
+  },
+  "can you _____ luka ___ luka ________ luka , please? the sun is blinding me. | zasunąć zasłony": {
+    "answer": "close the curtains",
+    "prompt": "zasunąć zasłony",
+    "sentence": "Can you _____\nluka\n ___\nluka\n ________\nluka\n, please? The sun is blinding me.",
+    "updated_at": "2026-10-20T19:34:48.196982",
+    "usage_count": 1
+  },
+  "zasunąć zasłony": {
+    "answer": "close the curtains",
+    "prompt": "zasunąć zasłony",
+    "sentence": "Can you _____\nluka\n ___\nluka\n ________\nluka\n, please? The sun is blinding me.",
+    "updated_at": "2026-10-20T19:34:48.196982",
+    "usage_count": 1
+  },
+  "i listen to ____ luka and pop. | rock": {
+    "answer": "rock",
+    "prompt": "rock",
+    "sentence": "I listen to ____\nluka\n and pop.",
+    "updated_at": "2026-10-27T16:44:35.715160",
+    "usage_count": 1
+  },
+  "rock": {
+    "answer": "rock",
+    "prompt": "rock",
+    "sentence": "I listen to ____\nluka\n and pop.",
+    "updated_at": "2026-10-27T16:44:35.715160",
+    "usage_count": 1
+  },
+  "i prefer ___________ luka to painting. | fotografia (dziedzina); fotografika": {
+    "answer": "photography",
+    "prompt": "fotografia (dziedzina); fotografika",
+    "sentence": "I prefer ___________\nluka\n to painting.",
+    "updated_at": "2026-10-27T16:44:45.277399",
+    "usage_count": 1
+  },
+  "fotografia (dziedzina); fotografika": {
+    "answer": "photography",
+    "prompt": "fotografia (dziedzina); fotografika",
+    "sentence": "I prefer ___________\nluka\n to painting.",
+    "updated_at": "2026-10-27T16:44:45.277399",
+    "usage_count": 1
+  },
+  "sheila loves clothes and she'd like to become a _______ luka ________ luka one day. | projektant mody": {
+    "answer": "fashion designer",
+    "prompt": "projektant mody",
+    "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
+    "updated_at": "2026-10-27T16:44:54.579867",
+    "usage_count": 1
+  },
+  "projektant mody": {
+    "answer": "fashion designer",
+    "prompt": "projektant mody",
+    "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
+    "updated_at": "2026-10-27T16:44:54.579867",
+    "usage_count": 1
+  },
+  "i saw your ______ luka . i think it's great! | projekt; konstrukcja": {
+    "answer": "design",
+    "prompt": "projekt; konstrukcja",
+    "sentence": "I saw your ______\nluka\n. I think it's great!",
+    "updated_at": "2026-10-27T16:45:14.517231",
+    "usage_count": 1
+  },
+  "projekt; konstrukcja": {
+    "answer": "design",
+    "prompt": "projekt; konstrukcja",
+    "sentence": "I saw your ______\nluka\n. I think it's great!",
+    "updated_at": "2026-10-27T16:45:14.517231",
+    "usage_count": 1
+  },
+  "can you play any musical __________ luka ? | instrument; przyrząd": {
+    "answer": "instrument",
+    "prompt": "instrument; przyrząd",
+    "sentence": "Can you play any musical __________\nluka\n?",
+    "updated_at": "2026-10-27T16:46:59.571833",
+    "usage_count": 3
+  },
+  "instrument; przyrząd": {
+    "answer": "instrument",
+    "prompt": "instrument; przyrząd",
+    "sentence": "Can you play any musical __________\nluka\n?",
+    "updated_at": "2026-10-27T16:46:59.571833",
+    "usage_count": 3
+  },
+  "i ____ luka ___ luka ________ luka every morning, right after i wake up. | rozsunąć zasłony": {
+    "answer": "open the curtains",
+    "prompt": "rozsunąć zasłony",
+    "sentence": "I ____\nluka\n ___\nluka\n ________\nluka\n every morning, right after I wake up.",
+    "updated_at": "2026-10-27T16:46:46.911392",
+    "usage_count": 1
+  },
+  "rozsunąć zasłony": {
+    "answer": "open the curtains",
+    "prompt": "rozsunąć zasłony",
+    "sentence": "I ____\nluka\n ___\nluka\n ________\nluka\n every morning, right after I wake up.",
+    "updated_at": "2026-10-27T16:46:46.911392",
+    "usage_count": 1
+  },
+  "she's a ________ luka and plays the violin. | muzyk": {
+    "answer": "musician",
+    "prompt": "muzyk",
+    "sentence": "She's a ________\nluka\n and plays the violin.",
+    "updated_at": "2026-10-27T16:47:29.474011",
+    "usage_count": 1
+  },
+  "muzyk": {
+    "answer": "musician",
+    "prompt": "muzyk",
+    "sentence": "She's a ________\nluka\n and plays the violin.",
+    "updated_at": "2026-10-27T16:47:29.474011",
+    "usage_count": 1
+  },
+  "the ____ luka in the book is really complicated. i'll have to read it again to understand what's going on. | fabuła; akcja; wątek": {
+    "answer": "plot",
+    "prompt": "fabuła; akcja; wątek",
+    "sentence": "The ____\nluka\n in the book is really complicated. I'll have to read it again to understand what's going on.",
+    "updated_at": "2026-10-27T16:48:48.794869",
+    "usage_count": 3
+  },
+  "fabuła; akcja; wątek": {
+    "answer": "plot",
+    "prompt": "fabuła; akcja; wątek",
+    "sentence": "The ____\nluka\n in the book is really complicated. I'll have to read it again to understand what's going on.",
+    "updated_at": "2026-10-27T16:48:48.794869",
+    "usage_count": 3
   }
 }

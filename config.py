@@ -17,6 +17,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     "random_window_start": "14:30",
     "random_window_end": "20:45",
     "random_jitter_minutes": 15,
+    "min_user_gap_minutes": 45,
     
     # Częstotliwość wypadków (dni wolne w tygodniu)
     # 'random' = losuje N dni w tygodniu; 'fixed' = konkretne dni z listy; 'none' = robi codziennie

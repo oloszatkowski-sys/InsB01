@@ -17,69 +17,116 @@ from web_server import start_web_server
 from users_manager import UsersManager, mask_login
 from multi_scheduler import MultiScheduler
 from logger import log
+from timezone_utils import (
+    now_warsaw,
+    now_utc,
+    today_warsaw,
+    format_warsaw,
+    format_utc,
+    get_current_polish_tzname
+)
 
 def main():
-    parser = argparse.ArgumentParser(description="InstaLing Auto-Bot - Multi-User Edition")
+    parser = argparse.ArgumentParser(description="InstaLing Auto-Bot - Multi-User Edition (Europe/Warsaw)")
     parser.add_argument("--menu", action="store_true", help="Uruchom interaktywne menu konsolowe (TUI)")
     parser.add_argument("--web", action="store_true", help="Uruchom serwer Web Panelu (interfejs w przeglądarce)")
     parser.add_argument("--port", type=int, default=5000, help="Port dla Web Panelu (domyślnie 5000)")
-    parser.add_argument("--run", action="store_true", help="Wykonaj sesje w kolejce dla aktywnych uzytkownikow")
-    parser.add_argument("--user", type=str, default="", help="Wykonaj sesje tylko dla wybranego pseudonimu")
-    parser.add_argument("--plan", action="store_true", help="Opublikuj plan na dzis na Discordzie (#plan-na-dzis)")
+    parser.add_argument("--run", action="store_true", help="Inteligentne sprawdzenie i uruchomienie oczekującej sesji wg harmonogramu")
+    parser.add_argument("--cron", action="store_true", help="Alias dla --run używany przez zadania cykliczne (GitHub Actions)")
+    parser.add_argument("--run-all", action="store_true", help="Wymuszone wykonanie sesji dla wszystkich aktywnych kont (jedno po drugim)")
+    parser.add_argument("--user", type=str, default="", help="Wykonaj sesję tylko dla wybranego pseudonimu lub loginu")
+    parser.add_argument("--plan", action="store_true", help="Opublikuj plan na dziś na Discordzie (#plan-na-dzis)")
     parser.add_argument("--week", action="store_true", help="Opublikuj plan tygodnia na Discordzie (#plan-tygodnia)")
-    parser.add_argument("--daemon", action="store_true", help="Uruchom ciagly proces harmonogramu w tle (kolejka)")
+    parser.add_argument("--reset-schedule", action="store_true", help="Zresetuj stary harmonogram i wygeneruj nowy plan tygodnia")
+    parser.add_argument("--daemon", action="store_true", help="Uruchom ciągły proces harmonogramu w tle (kolejka lokalna)")
 
     args = parser.parse_args()
     cfg = load_config()
+    sched = MultiScheduler(cfg)
 
     if args.web:
         start_web_server(port=args.port)
+
+    elif args.reset_schedule:
+        log("[*] Żądanie kontrolowanego resetu harmonogramu...")
+        new_plan = sched.reset_schedule()
+        sched.publish_weekly_plan_to_discord()
+        sched.publish_today_plan_to_discord()
+        log("[+] Harmonogram zresetowany i opublikowany na Discordzie.")
+
     elif args.plan:
-        log("[*] Generowanie i publikowanie planu na dziś na Discordzie...")
-        sched = MultiScheduler(cfg)
+        log(f"[*] Generowanie i publikowanie planu na dziś na Discordzie (strefa {get_current_polish_tzname()})...")
         sched.publish_today_plan_to_discord()
         log("[+] Plan na dziś został wysłany.")
+
     elif args.week:
-        log("[*] Generowanie i publikowanie planu tygodnia na Discordzie...")
-        sched = MultiScheduler(cfg)
+        log(f"[*] Generowanie i publikowanie planu tygodnia na Discordzie (strefa {get_current_polish_tzname()})...")
         sched.publish_weekly_plan_to_discord()
         log("[+] Plan tygodnia został wysłany.")
-    elif args.run:
-        log("[*] Tryb wykonania sesji...")
+
+    elif args.user:
+        res = sched.run_single_user(args.user, trigger_reason="ręczne uruchomienie (--user)")
+        try:
+            sched.publish_today_plan_to_discord()
+        except Exception:
+            pass
+        sys.exit(0 if res.get("success") else 1)
+
+    elif args.run or args.cron:
+        now_pl = now_warsaw()
+        log(f"[*] Uruchomienie wg harmonogramu: {format_warsaw(now_pl)} | {format_utc()}")
+
+        # Sprawdzamy czy są sesje oczekujące w tym momencie
+        due_slots = sched.get_due_slots()
+        if not due_slots:
+            today_slots = sched.get_today_slots()
+            status_list = [f"{s['nickname']}: {s['scheduled_time']} ({s['status']})" for s in today_slots]
+            log("[i] Żadna sesja nie oczekuje na wykonanie w tym momencie.")
+            log("    Dzisiejszy harmonogram: " + " | ".join(status_list))
+            sys.exit(0)
+
+        # Wykonujemy MAKSYMALNIE 1 sesję na wywołanie crona, aby zachować odstęp czasowy
+        results = sched.run_due_cycle(trigger_reason="harmonogram", max_sessions=1)
+        any_failed = any(not r.get("success", False) for r in results)
+        
+        # Aktualizujemy plan na Discordzie po wykonaniu zadania
+        try:
+            sched.publish_today_plan_to_discord()
+        except Exception:
+            pass
+
+        sys.exit(1 if any_failed else 0)
+
+    elif args.run_all:
+        log("[*] Wymuszone wykonanie sesji dla wszystkich kont...")
         users_mgr = UsersManager()
         active = users_mgr.get_active_users()
-
-        if args.user:
-            active = [u for u in active if u.get("nickname", "").lower() == args.user.lower()]
-            if not active:
-                log(f"[!] Nie znaleziono użytkownika o pseudonimie: {args.user}")
-                sys.exit(1)
-
-        bot = InstaLingBot(cfg)
         any_failed = False
 
-        for i, user in enumerate(active):
-            nick = user.get("nickname", "Uczeń")
-            log(f"\n==================================================")
-            log(f"[*] Kolejka ({i+1}/{len(active)}): Rozpoczynam sesje dla {nick}")
-            log(f"==================================================")
-
-            res = bot.run_session(user=user)
-            if not res.get("success", False):
+        for i, u in enumerate(active):
+            nick = u.get("nickname", "Uczeń")
+            log(f"\n[*] Kolejka ({i+1}/{len(active)}): Wykonuję sesję dla {nick}")
+            res = sched.run_single_user(nick, trigger_reason="wymuszone uruchomienie (--run-all)")
+            if not res.get("success"):
                 any_failed = True
 
-            # Jeśli jest kolejny użytkownik, bezpieczna przerwa
             if i < len(active) - 1:
-                wait_sec = random.uniform(25.0, 45.0)
-                log(f"[*] Odczekanie {wait_sec:.0f}s przed nastepnym uzytkownikiem w kolejce...")
-                time.sleep(wait_sec)
+                pause_s = random.uniform(30.0, 60.0)
+                log(f"[*] Bezpieczny odstęp {pause_s:.0f}s przed kolejnym użytkownikiem...")
+                time.sleep(pause_s)
+
+        try:
+            sched.publish_today_plan_to_discord()
+        except Exception:
+            pass
 
         sys.exit(1 if any_failed else 0)
 
     elif args.daemon:
         run_daemon()
+
     else:
-        # Domyślnie menu konsolowe
+        # Domyślnie menu konsolowe (TUI)
         show_main_menu()
 
 if __name__ == "__main__":

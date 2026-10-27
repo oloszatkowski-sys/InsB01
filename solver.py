@@ -122,16 +122,38 @@ class InstaLingSolver:
         if self.is_session_finished():
             return False
 
+        if not hasattr(self, "consecutive_no_answer"):
+            self.consecutive_no_answer = 0
+
         ans_loc = self.page.locator("input#answer").first
         try:
-            ans_loc.wait_for(state="visible", timeout=6000)
+            ans_loc.wait_for(state="visible", timeout=4000)
+            self.consecutive_no_answer = 0
         except Exception:
             if self.is_session_finished():
                 return False
-            cont_btn = self.page.get_by_text("Kontynuuj sesję").first
+
+            # Szukamy ewentualnych przycisków kontynuacji lub przejścia dalej
+            cont_btn = self.page.locator("a:has-text('Kontynuuj sesję'), button:has-text('Kontynuuj'), a:has-text('Rozpocznij sesję'), button:has-text('Rozpocznij'), #nextword, button:has-text('Następne')").first
             if cont_btn.count() > 0 and cont_btn.is_visible():
-                cont_btn.click(force=True)
-                time.sleep(2.0)
+                try:
+                    cont_btn.click(force=True)
+                    time.sleep(2.0)
+                except Exception:
+                    pass
+                if self.is_session_finished():
+                    return False
+                return True
+
+            self.consecutive_no_answer += 1
+            if self.consecutive_no_answer >= 3:
+                print(f"[!] Pole odpowiedzi nie pojawiło się przez {self.consecutive_no_answer} próby. Sprawdzam czy sesja zakończona...")
+                if self.is_session_finished():
+                    return False
+                print("[!] Brak pytania i brak przycisków. Kończę rozwiązywanie, aby zapobiec zawieszeniu.")
+                return False
+
+            time.sleep(1.5)
             return True
 
         prompt, sentence = self.get_prompt_and_sentence()

@@ -32,16 +32,21 @@ class Notifier:
         sekcja_wh = self._get_webhook("webhook_sekcja")
         ping_role = self.config.get("discord_ping", "@everyone")
 
+        started_pl = result.get("started_at_warsaw", "N/A")
+        completed_pl = result.get("completed_at_warsaw", "N/A")
+
         if success:
             title = f"🤖 InstaLing Auto-Bot - Sesja Ukończona: {nickname}"
             color = 5763719  # Zielony
             desc = (
                 f"👤 **Uczeń:** `{nickname}` (`{masked}`)\n"
                 f"**Status:** ✅ Sesja zakończona sukcesem\n"
+                f"**Rozpoczęcie (PL):** `{started_pl}`\n"
+                f"**Zakończenie (PL):** `{completed_pl}`\n"
+                f"**Czas trwania:** {duration_s:.1f} s (~{duration_s/60:.1f} min)\n"
                 f"**Rozwiązane słówka:** {total}\n"
                 f"**Poprawne:** {correct} | **Błędy:** {mistakes}\n"
                 f"**Skuteczność:** {acc}%\n"
-                f"**Czas trwania:** {duration_s:.1f} s (~{duration_s/60:.1f} min)\n"
                 f"**Akcja końcowa:** Powrót do strony głównej i bezpieczne wylogowanie"
             )
         else:
@@ -51,6 +56,8 @@ class Notifier:
             desc = (
                 f"👤 **Uczeń:** `{nickname}` (`{masked}`)\n"
                 f"**Status:** ❌ Błąd wykonania\n"
+                f"**Rozpoczęcie (PL):** `{started_pl}`\n"
+                f"**Zakończenie (PL):** `{completed_pl}`\n"
                 f"**Komunikat:** `{err}`"
             )
 
@@ -79,7 +86,8 @@ class Notifier:
                 f"• Login: `{masked}`\n"
                 f"• Wynik: {correct}/{total} ({acc}%)\n"
                 f"• Czas: {duration_s:.1f}s\n"
-                f"• Data: {result.get('finished_at', '')[:19].replace('T', ' ')}"
+                f"• Rozpoczęcie: `{started_pl}`\n"
+                f"• Zakończenie: `{completed_pl}`"
             )
             self._send_discord_embed(stats_wh, f"📈 Statystyki: {nickname}", stat_desc, color=3447003)
 
@@ -89,7 +97,7 @@ class Notifier:
             if not ntfy_topic:
                 login = user.get("login", "user").strip()
                 ntfy_topic = f"instaling_{login}"
-            ntfy_msg = f"{nickname} ({masked}): {correct}/{total} poprawnych ({acc}%) w {duration_s:.0f}s"
+            ntfy_msg = f"{nickname} ({masked}): {correct}/{total} poprawnych ({acc}%) w {duration_s:.0f}s (Start: {started_pl[11:16]} -> Koniec: {completed_pl[11:16]})"
             self._send_ntfy(ntfy_topic, title, ntfy_msg, "high" if not success else "default")
 
     def send_daily_plan(self, plan_entries: List[Dict[str, Any]]) -> None:
@@ -104,13 +112,24 @@ class Notifier:
             mask = mask_login(p.get("login", ""))
             time_str = p.get("scheduled_time", "--:--")
             is_off = p.get("is_off_day", False)
+            completed = p.get("completed", False)
+            completed_at = p.get("completed_at")
+            acc = p.get("accuracy_percent")
+
             if is_off:
                 lines.append(f"• 👤 **{nick}** (`{mask}`): 🏖️ *Dzień wolny (antydetekcja)*")
+            elif completed:
+                extra = f" (Ukończono: {completed_at[11:16] if completed_at and len(completed_at) >= 16 else 'Tak'}, {acc}%)" if acc is not None else ""
+                lines.append(f"• 👤 **{nick}** (`{mask}`): ✅ **{time_str}**{extra}")
+            elif p.get("status") == "W trakcie":
+                lines.append(f"• 👤 **{nick}** (`{mask}`): ▶️ **{time_str}** *(Sesja w toku...)*")
+            elif p.get("status") == "Błąd":
+                lines.append(f"• 👤 **{nick}** (`{mask}`): ⚠️ **{time_str}** *(Wystąpił błąd sesji)*")
             else:
-                lines.append(f"• 👤 **{nick}** (`{mask}`): ⏰ **{time_str}**")
+                lines.append(f"• 👤 **{nick}** (`{mask}`): ⏰ **{time_str}** *(Oczekuje)*")
 
-        desc = "**Harmonogram sesji InstaLing na dzisiejszy dzień:**\n\n" + "\n".join(lines)
-        desc += "\n\n*Sesje wykonują się w automatycznej kolejce bez kolizji.*"
+        desc = "**Harmonogram sesji InstaLing na dzisiejszy dzień (Europe/Warsaw):**\n\n" + "\n".join(lines)
+        desc += "\n\n*Sesje wykonują się w oddzielnych terminach w automatycznej kolejce bez kolizji.*"
 
         self._send_discord_embed(wh, "📅 Plan Sesji Na Dziś", desc, color=10181046)
 
@@ -120,14 +139,21 @@ class Notifier:
         if not wh:
             return
 
-        desc = "**Rozpiska tygodniowa sesji:**\n\n"
+        desc = "**Rozpiska tygodniowa sesji (czas polski Europe/Warsaw):**\n\n"
         for day, entries in weekly_data.items():
             desc += f"🗓️ **{day}:**\n"
             for e in entries:
                 nick = e.get("nickname", "Uczeń")
                 t = e.get("time", "--:--")
                 off = e.get("is_off", False)
-                status = "🏖️ Wolne" if off else f"⏰ {t}"
+                comp = e.get("completed", False)
+                comp_at = e.get("completed_at")
+                if off:
+                    status = "🏖️ Wolne"
+                elif comp:
+                    status = f"✅ {t} (Ukończono o {comp_at[11:16] if comp_at and len(comp_at) >= 16 else 'dzisiaj'})"
+                else:
+                    status = f"⏰ {t}"
                 desc += f"  - `{nick}`: {status}\n"
             desc += "\n"
 

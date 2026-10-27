@@ -67,6 +67,20 @@ class BotWebHandler(http.server.SimpleHTTPRequestHandler):
             self._send_json({"logs": latest_logs, "is_running": is_running})
             return
 
+        elif url == "/api/plan":
+            cfg = load_config()
+            from multi_scheduler import MultiScheduler
+            sched = MultiScheduler(cfg)
+            weekly = sched.get_or_create_weekly_schedule()
+            self._send_json(weekly)
+            return
+
+        elif url == "/api/users":
+            from users_manager import UsersManager
+            mgr = UsersManager()
+            self._send_json(mgr.get_users())
+            return
+
         return super().do_GET()
 
     def do_POST(self):
