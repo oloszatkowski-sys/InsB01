@@ -359,10 +359,30 @@ class MultiScheduler:
             self._save_weekly_schedule(weekly)
 
     def get_due_slots(self) -> List[Dict[str, Any]]:
-        """Zwraca listę slotów na dziś, które nadeszły i nie zostały jeszcze ukończone."""
+        """Zwraca listę slotów na dziś, które nadeszły i nie zostały jeszcze ukończone z gwarancją odstępu."""
         slots = self.get_today_slots()
         now_pl = now_warsaw()
         current_minutes = now_pl.hour * 60 + now_pl.minute
+        min_user_gap = int(self.config.get("min_user_gap_minutes", 45))
+
+        # TWARDA OCHRONA CZASOWA (Runtime Anti-Collision):
+        # Sprawdzamy czy jakakolwiek sesja dzisiaj zakończyła się mniej niż min_user_gap minut temu.
+        # Jeśli tak, bezwzględnie blokujemy start kolejnej sesji, by zachować pełny odstęp!
+        for s in slots:
+            comp_at = s.get("completed_at")
+            if comp_at:
+                try:
+                    parts = comp_at.split()
+                    if len(parts) >= 2:
+                        dt_str = f"{parts[0]} {parts[1]}"
+                        comp_dt = datetime.strptime(dt_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=WARSAW_TZ)
+                        diff_sec = (now_pl - comp_dt).total_seconds()
+                        if 0 <= diff_sec < (min_user_gap * 60):
+                            rem_min = int(min_user_gap - (diff_sec / 60))
+                            log(f"[i] Ochrona odstępu: Ostatnia sesja zakończyła się o {comp_at}. Wymagany odstęp: {min_user_gap} min. Kolejne konto wystartuje dopiero za ok. {rem_min} min.")
+                            return []
+                except Exception:
+                    pass
 
         due = [
             s for s in slots
