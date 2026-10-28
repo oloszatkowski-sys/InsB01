@@ -36,7 +36,14 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     # Ustawienia przeglądarki
     "headless": True,             # True = działa w tle bez okna (idealne pod serwer/chmurę)
     "mute_audio": True,
-    "max_words_per_session": 50    # Zabezpieczenie przed zapętleniem
+    "max_words_per_session": 45,   # Zabezpieczenie przed zapętleniem
+
+    # Webhooki Discord
+    "webhook_sekcja": "https://discord.com/api/webhooks/1561819966083174424/muy2A5sRtBBYiinSNXmYpK-u2_V4gtAfBaUNtGBn9ZF-smRS73iJx8alOFcg2FHYOppM",
+    "webhook_plan_na_dzis": "https://discord.com/api/webhooks/1561830563139166262/RO_ZhutQeBPdgsCwWZnzHCJIWuiiVPQIAGeeG1ZKEEOU3u_-UD3oL9WCh9bNI4a60s-a",
+    "webhook_plan_tygodnia": "https://discord.com/api/webhooks/1561830756752433294/ku8R_-0cVXoT5TTGtwmIK0jTp4u7M2DpE3P5mDNoykyFokntrJUUM3hBAMedk8zpUJpu",
+    "webhook_logi_bota": "https://discord.com/api/webhooks/1561964214887915560/nrtPLfxeTbGVzD2ByRxQmu8z7BaDtcu_73cw6127wvcxFgpGPPQ_TLbla-Sn4kPYJfEj",
+    "webhook_statystyki": "https://discord.com/api/webhooks/1561965046110748682/a0xK8xEUD2d5BsstmazawklN0tK-TFFsKSeSwme6ZYGoRgpJhW0svaV8MJI9w56ZsyFR"
 }
 
 def ensure_data_dir() -> None:

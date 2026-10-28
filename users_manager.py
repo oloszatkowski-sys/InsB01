@@ -21,29 +21,39 @@ class UsersManager:
         self._ensure_users_exist()
 
     def _ensure_users_exist(self) -> None:
-        """Jeśli users.json nie istnieje, migruje dane z config.json."""
+        """Jeśli users.json nie istnieje, tworzy listę aktualnych kont."""
         DATA_DIR.mkdir(parents=True, exist_ok=True)
         if not self.users_file.exists():
-            default_user = {
-                "id": "user_1",
-                "nickname": "SZATEK-01",
-                "login": "asa613207",
-                "password": "euirp",
-                "active": True,
-                "created_at": "2026-10-20",
-                "track_in_ntfy": True
-            }
-            if CONFIG_FILE.exists():
-                try:
-                    with open(CONFIG_FILE, "r", encoding="utf-8") as f:
-                        cfg = json.load(f)
-                        if cfg.get("login"):
-                            default_user["login"] = cfg.get("login")
-                        if cfg.get("password"):
-                            default_user["password"] = cfg.get("password")
-                except Exception:
-                    pass
-            self.save_users([default_user])
+            default_users = [
+                {
+                    "id": "user_1",
+                    "nickname": "Oleslaw 010",
+                    "login": "asa614845",
+                    "password": "jorto",
+                    "active": True,
+                    "created_at": "2026-10-20",
+                    "track_in_ntfy": True
+                },
+                {
+                    "id": "user_2",
+                    "nickname": "Szlucha Jagoda",
+                    "login": "lasa67473",
+                    "password": "ofnmi",
+                    "active": True,
+                    "created_at": "2026-10-27",
+                    "track_in_ntfy": False
+                },
+                {
+                    "id": "user_3",
+                    "nickname": "OliwiercioTheHacker",
+                    "login": "asa610791",
+                    "password": "ofjdh",
+                    "active": True,
+                    "created_at": "2026-10-20",
+                    "track_in_ntfy": False
+                }
+            ]
+            self.save_users(default_users)
 
     def get_users(self) -> List[Dict[str, Any]]:
         """Wczytuje listę wszystkich użytkowników."""

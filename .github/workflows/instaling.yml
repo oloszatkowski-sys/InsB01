@@ -77,6 +77,10 @@ jobs:
           pip install -r requirements.txt
           playwright install --with-deps chromium
 
+      - name: Uruchomienie testów automatycznych (Pre-Flight Checks)
+        run: |
+          python test_bot.py
+
       - name: Wykonanie bota InstaLing (Europe/Warsaw)
         env:
           INSTALING_LOGIN: ${{ secrets.INSTALING_LOGIN }}
@@ -107,9 +111,9 @@ jobs:
         run: |
           git config --global user.name "InstaLing Bot"
           git config --global user.email "bot@github-actions.internal"
-          git pull --rebase origin main || git pull --rebase origin master || true
-          # Usuwamy ewentualne pliki prywatne z indeksu commitów (ochrona haseł)
-          git reset data/users.json data/config.json BACKUP_BOT_INFO.md 2>/dev/null || true
-          git add -f data/weekly_schedule.json data/words.json data/history.json PLAN_TYGODNIA.md data/PLAN_TYGODNIA.md
-          git diff --staged --quiet || git commit -m "Auto: Aktualizacja planu tygodnia i stanu sesji [skip ci]"
-          git push origin HEAD || true
+          git add -f data/weekly_schedule.json data/words.json data/history.json PLAN_TYGODNIA.md data/PLAN_TYGODNIA.md 2>/dev/null || true
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto: Aktualizacja planu tygodnia i stanu sesji [skip ci]"
+            git pull --rebase --autostash origin main || git pull --rebase --autostash origin master || true
+            git push origin HEAD || true
+          fi
