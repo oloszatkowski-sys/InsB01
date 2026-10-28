@@ -6,6 +6,7 @@
     "random_window_start": "15:46",
     "random_window_end": "21:57",
     "random_jitter_minutes": 3,
+    "min_user_gap_minutes": 45,
     "miss_days_mode": "none",
     "miss_days_count": 0,
     "miss_fixed_days": [
@@ -18,8 +19,8 @@
     "typo_chance_percent": 3.0,
     "target_accuracy_percent": 78.0,
     "headless": true,
+    "mute_audio": true,
     "max_words_per_session": 45,
-    "min_user_gap_minutes": 45,
     "discord_webhook_url": "https://discord.com/api/webhooks/1561819966083174424/muy2A5sRtBBYiinSNXmYpK-u2_V4gtAfBaUNtGBn9ZF-smRS73iJx8alOFcg2FHYOppM",
     "webhook_sekcja": "https://discord.com/api/webhooks/1561819966083174424/muy2A5sRtBBYiinSNXmYpK-u2_V4gtAfBaUNtGBn9ZF-smRS73iJx8alOFcg2FHYOppM",
     "webhook_plan_na_dzis": "https://discord.com/api/webhooks/1561830563139166262/RO_ZhutQeBPdgsCwWZnzHCJIWuiiVPQIAGeeG1ZKEEOU3u_-UD3oL9WCh9bNI4a60s-a",

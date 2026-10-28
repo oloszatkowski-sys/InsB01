@@ -87,15 +87,15 @@
     "answer": "audience",
     "prompt": "widownia; publiczność",
     "sentence": "I was in the ________\nluka\n of that show.",
-    "updated_at": "2026-10-19T20:04:48.887629",
-    "usage_count": 1
+    "updated_at": "2026-10-28T16:25:30.190225",
+    "usage_count": 3
   },
   "widownia; publiczność": {
     "answer": "audience",
     "prompt": "widownia; publiczność",
     "sentence": "I was in the ________\nluka\n of that show.",
-    "updated_at": "2026-10-19T20:04:48.887629",
-    "usage_count": 1
+    "updated_at": "2026-10-28T16:25:30.190225",
+    "usage_count": 3
   },
   "sherlock holmes is a popular _____ luka ______ luka known all over the world. | serial kryminalny": {
     "answer": "crime series",
@@ -129,15 +129,15 @@
     "answer": "fair",
     "prompt": "targ, jarmark",
     "sentence": "We could all bake cakes and sell them at a school ____\nluka\n.",
-    "updated_at": "2026-10-19T20:06:43.520586",
-    "usage_count": 1
+    "updated_at": "2026-10-28T16:26:54.097107",
+    "usage_count": 3
   },
   "targ, jarmark": {
     "answer": "fair",
     "prompt": "targ, jarmark",
     "sentence": "We could all bake cakes and sell them at a school ____\nluka\n.",
-    "updated_at": "2026-10-19T20:06:43.520586",
-    "usage_count": 1
+    "updated_at": "2026-10-28T16:26:54.097107",
+    "usage_count": 3
   },
   "are there any ___ luka _________ luka in your town? | galeria sztuki": {
     "answer": "art gallery",
@@ -157,29 +157,29 @@
     "answer": "festival",
     "prompt": "festiwal",
     "sentence": "I'm only here for a few days of the ________\nluka\n.",
-    "updated_at": "2026-10-27T16:48:58.859808",
-    "usage_count": 3
+    "updated_at": "2026-10-28T16:32:51.073131",
+    "usage_count": 5
   },
   "festiwal": {
     "answer": "festival",
     "prompt": "festiwal",
     "sentence": "I'm only here for a few days of the ________\nluka\n.",
-    "updated_at": "2026-10-27T16:48:58.859808",
-    "usage_count": 3
+    "updated_at": "2026-10-28T16:32:51.073131",
+    "usage_count": 5
   },
   "the kids couldn't take their eyes off the ______ luka . | ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-10-27T16:46:27.658007",
-    "usage_count": 3
+    "updated_at": "2026-10-28T16:33:56.540566",
+    "usage_count": 5
   },
   "ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-10-27T16:46:27.658007",
-    "usage_count": 3
+    "updated_at": "2026-10-28T16:33:56.540566",
+    "usage_count": 5
   },
   "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
     "answer": "Literówka",
@@ -252,18 +252,18 @@
     "usage_count": 1
   },
   "we were _______ luka and dancing all night. | śpiewać": {
-    "answer": "portrait",
+    "answer": "sing",
     "prompt": "śpiewać",
     "sentence": "We were _______\nluka\n and dancing all night.",
-    "updated_at": "2026-10-19T20:23:36.324490",
-    "usage_count": 1
+    "updated_at": "2026-10-28T16:30:08.310636",
+    "usage_count": 2
   },
   "śpiewać": {
-    "answer": "portrait",
+    "answer": "sing",
     "prompt": "śpiewać",
     "sentence": "We were _______\nluka\n and dancing all night.",
-    "updated_at": "2026-10-19T20:23:36.324490",
-    "usage_count": 1
+    "updated_at": "2026-10-28T16:30:08.310636",
+    "usage_count": 2
   },
   "we should always think about what we _____ luka ______ luka . | udostępniać w sieci": {
     "answer": "share online",
@@ -493,15 +493,15 @@
     "answer": "design",
     "prompt": "projekt; konstrukcja",
     "sentence": "I saw your ______\nluka\n. I think it's great!",
-    "updated_at": "2026-10-27T16:45:14.517231",
-    "usage_count": 1
+    "updated_at": "2026-10-28T16:34:25.037780",
+    "usage_count": 3
   },
   "projekt; konstrukcja": {
     "answer": "design",
     "prompt": "projekt; konstrukcja",
     "sentence": "I saw your ______\nluka\n. I think it's great!",
-    "updated_at": "2026-10-27T16:45:14.517231",
-    "usage_count": 1
+    "updated_at": "2026-10-28T16:34:25.037780",
+    "usage_count": 3
   },
   "can you play any musical __________ luka ? | instrument; przyrząd": {
     "answer": "instrument",
@@ -558,5 +558,131 @@
     "sentence": "The ____\nluka\n in the book is really complicated. I'll have to read it again to understand what's going on.",
     "updated_at": "2026-10-27T16:48:48.794869",
     "usage_count": 3
+  },
+  "shakespeare was the greatest ____ luka of his times. | poeta": {
+    "answer": "poet",
+    "prompt": "poeta",
+    "sentence": "Shakespeare was the greatest ____\nluka\n of his times.",
+    "updated_at": "2026-10-28T16:27:09.803381",
+    "usage_count": 1
+  },
+  "poeta": {
+    "answer": "poet",
+    "prompt": "poeta",
+    "sentence": "Shakespeare was the greatest ____\nluka\n of his times.",
+    "updated_at": "2026-10-28T16:27:09.803381",
+    "usage_count": 1
+  },
+  "he's the ____ luka _____ luka in that new film. | główny (pierwszoplanowy) aktor": {
+    "answer": "lead actor",
+    "prompt": "główny (pierwszoplanowy) aktor",
+    "sentence": "He's the ____\nluka\n _____\nluka\n in that new film.",
+    "updated_at": "2026-10-28T16:27:19.649982",
+    "usage_count": 1
+  },
+  "główny (pierwszoplanowy) aktor": {
+    "answer": "lead actor",
+    "prompt": "główny (pierwszoplanowy) aktor",
+    "sentence": "He's the ____\nluka\n _____\nluka\n in that new film.",
+    "updated_at": "2026-10-28T16:27:19.649982",
+    "usage_count": 1
+  },
+  "the famous ______ luka died at the age of 94. | pisarz": {
+    "answer": "writer",
+    "prompt": "pisarz",
+    "sentence": "The famous ______\nluka\n died at the age of 94.",
+    "updated_at": "2026-10-28T16:28:00.507295",
+    "usage_count": 1
+  },
+  "pisarz": {
+    "answer": "writer",
+    "prompt": "pisarz",
+    "sentence": "The famous ______\nluka\n died at the age of 94.",
+    "updated_at": "2026-10-28T16:28:00.507295",
+    "usage_count": 1
+  },
+  "who's your favourite _______ luka ? | aktorka": {
+    "answer": "actress",
+    "prompt": "aktorka",
+    "sentence": "Who's your favourite _______\nluka\n?",
+    "updated_at": "2026-10-28T16:28:21.790748",
+    "usage_count": 1
+  },
+  "aktorka": {
+    "answer": "actress",
+    "prompt": "aktorka",
+    "sentence": "Who's your favourite _______\nluka\n?",
+    "updated_at": "2026-10-28T16:28:21.790748",
+    "usage_count": 1
+  },
+  "she was humming a merry ____ luka . | melodia": {
+    "answer": "tune",
+    "prompt": "melodia",
+    "sentence": "She was humming a merry ____\nluka\n.",
+    "updated_at": "2026-10-28T16:30:36.799419",
+    "usage_count": 3
+  },
+  "melodia": {
+    "answer": "tune",
+    "prompt": "melodia",
+    "sentence": "She was humming a merry ____\nluka\n.",
+    "updated_at": "2026-10-28T16:30:36.799419",
+    "usage_count": 3
+  },
+  "it's absolutely freezing in here! can you ____ luka the ________ luka __ luka ? | zwiększyć temperaturę na kaloryferze": {
+    "answer": "turn the radiator up",
+    "prompt": "zwiększyć temperaturę na kaloryferze",
+    "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
+    "updated_at": "2026-10-28T16:29:22.483877",
+    "usage_count": 1
+  },
+  "zwiększyć temperaturę na kaloryferze": {
+    "answer": "turn the radiator up",
+    "prompt": "zwiększyć temperaturę na kaloryferze",
+    "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
+    "updated_at": "2026-10-28T16:29:22.483877",
+    "usage_count": 1
+  },
+  "if you want to ____ luka _____ luka , you can take quicker showers. | oszczędzać wodę": {
+    "answer": "save water",
+    "prompt": "oszczędzać wodę",
+    "sentence": "If you want to ____\nluka\n _____\nluka\n, you can take quicker showers.",
+    "updated_at": "2026-10-28T16:29:40.780141",
+    "usage_count": 1
+  },
+  "oszczędzać wodę": {
+    "answer": "save water",
+    "prompt": "oszczędzać wodę",
+    "sentence": "If you want to ____\nluka\n _____\nluka\n, you can take quicker showers.",
+    "updated_at": "2026-10-28T16:29:40.780141",
+    "usage_count": 1
+  },
+  "i love this ____ luka ! i'm going to their concert next week! | zespół": {
+    "answer": "band",
+    "prompt": "zespół",
+    "sentence": "I love this ____\nluka\n! I'm going to their concert next week!",
+    "updated_at": "2026-10-28T16:35:04.626616",
+    "usage_count": 3
+  },
+  "zespół": {
+    "answer": "band",
+    "prompt": "zespół",
+    "sentence": "I love this ____\nluka\n! I'm going to their concert next week!",
+    "updated_at": "2026-10-28T16:35:04.626616",
+    "usage_count": 3
+  },
+  "edward norton's ______ luka is the main asset of this film. | aktorstwo; gra aktorska": {
+    "answer": "acting",
+    "prompt": "aktorstwo; gra aktorska",
+    "sentence": "Edward Norton's ______\nluka\n is the main asset of this film.",
+    "updated_at": "2026-10-28T16:34:45.379188",
+    "usage_count": 1
+  },
+  "aktorstwo; gra aktorska": {
+    "answer": "acting",
+    "prompt": "aktorstwo; gra aktorska",
+    "sentence": "Edward Norton's ______\nluka\n is the main asset of this film.",
+    "updated_at": "2026-10-28T16:34:45.379188",
+    "usage_count": 1
   }
 }

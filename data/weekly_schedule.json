@@ -2,8 +2,8 @@
   "week_key": "2026-W44",
   "timezone": "Europe/Warsaw",
   "tzname": "CET",
-  "created_at_warsaw": "2026-10-27 16:54:39 CET",
-  "created_at_utc": "2026-10-27 15:54:39 UTC",
+  "created_at_warsaw": "2026-10-27 17:11:36 CET",
+  "created_at_utc": "2026-10-27 16:11:36 UTC",
   "days": {
     "0": {
       "day_name": "Poniedziałek",
@@ -71,15 +71,13 @@
           "is_off_day": false,
           "scheduled_minutes": 953,
           "scheduled_time": "15:53",
-          "status": "Ukończono",
-          "completed": true,
-          "started_at": "2026-10-27 16:54:53 CET",
-          "completed_at": "2026-10-27 16:59:22 CET",
-          "duration_seconds": 267.7,
-          "accuracy_percent": 60.0,
-          "error": null,
-          "words_total": 25,
-          "words_correct": 15
+          "status": "Oczekuje",
+          "completed": false,
+          "started_at": null,
+          "completed_at": null,
+          "duration_seconds": null,
+          "accuracy_percent": null,
+          "error": null
         },
         {
           "slot_id": "2026-10-27_user_3",
@@ -127,13 +125,15 @@
           "is_off_day": false,
           "scheduled_minutes": 981,
           "scheduled_time": "16:21",
-          "status": "Oczekuje",
-          "completed": false,
-          "started_at": null,
-          "completed_at": null,
-          "duration_seconds": null,
-          "accuracy_percent": null,
-          "error": null
+          "status": "Ukończono",
+          "completed": true,
+          "started_at": "2026-10-28 16:32:04 CET",
+          "completed_at": "2026-10-28 16:36:29 CET",
+          "duration_seconds": 263.5,
+          "accuracy_percent": 60.0,
+          "error": null,
+          "words_total": 25,
+          "words_correct": 15
         },
         {
           "slot_id": "2026-10-28_user_3",
@@ -143,13 +143,15 @@
           "is_off_day": false,
           "scheduled_minutes": 1093,
           "scheduled_time": "18:13",
-          "status": "Oczekuje",
-          "completed": false,
-          "started_at": null,
-          "completed_at": null,
-          "duration_seconds": null,
-          "accuracy_percent": null,
-          "error": null
+          "status": "Ukończono",
+          "completed": true,
+          "started_at": "2026-10-28 16:26:26 CET",
+          "completed_at": "2026-10-28 16:31:02 CET",
+          "duration_seconds": 276.0,
+          "accuracy_percent": 55.6,
+          "error": null,
+          "words_total": 27,
+          "words_correct": 15
         },
         {
           "slot_id": "2026-10-28_user_2",
@@ -159,13 +161,15 @@
           "is_off_day": false,
           "scheduled_minutes": 1237,
           "scheduled_time": "20:37",
-          "status": "Oczekuje",
-          "completed": false,
-          "started_at": null,
-          "completed_at": null,
-          "duration_seconds": null,
-          "accuracy_percent": null,
-          "error": null
+          "status": "Ukończono",
+          "completed": true,
+          "started_at": "2026-10-28 16:22:51 CET",
+          "completed_at": "2026-10-28 16:26:06 CET",
+          "duration_seconds": 193.5,
+          "accuracy_percent": 88.2,
+          "error": null,
+          "words_total": 17,
+          "words_correct": 15
         }
       ]
     },
@@ -385,5 +389,8 @@
         }
       ]
     }
-  }
+  },
+  "last_weekly_plan_week": "2026-W44",
+  "last_daily_plan_date": "2026-10-28",
+  "last_morning_check_date": "2026-10-28"
 }

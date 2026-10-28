@@ -245,5 +245,398 @@
       }
     ],
     "timestamp": "2026-10-27T16:59:21.531773"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "words_total": 17,
+    "words_correct": 15,
+    "words_mistakes": 2,
+    "accuracy_percent": 88.2,
+    "duration_seconds": 193.5,
+    "started_at_warsaw": "2026-10-28 16:22:51 CET",
+    "completed_at_warsaw": "2026-10-28 16:26:04 CET",
+    "finished_at": "2026-10-28T16:26:04.855386+01:00",
+    "words_details": [
+      {
+        "prompt": "wysyłać (np. pliki na serwer internetowy)",
+        "answer": "upload",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kanał; kanał telewizyjny",
+        "answer": "channel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reklama",
+        "answer": "advertisement",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grać (np. kogoś w filmie)",
+        "answer": "play",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "znana osoba",
+        "answer": "celebrity",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokaz mody",
+        "answer": "fashion show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "galeria sztuki",
+        "answer": "art gallery",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "targ, jarmark",
+        "answer": "fair",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występ",
+        "answer": "performance",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-28T16:26:04.855451"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "words_total": 27,
+    "words_correct": 15,
+    "words_mistakes": 12,
+    "accuracy_percent": 55.6,
+    "duration_seconds": 276.0,
+    "started_at_warsaw": "2026-10-28 16:26:26 CET",
+    "completed_at_warsaw": "2026-10-28 16:31:02 CET",
+    "finished_at": "2026-10-28T16:31:02.101113+01:00",
+    "words_details": [
+      {
+        "prompt": "targ, jarmark",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "targ, jarmark",
+        "answer": "fair",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "put on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "poeta",
+        "answer": "poet",
+        "status": "nowe"
+      },
+      {
+        "prompt": "główny (pierwszoplanowy) aktor",
+        "answer": "lead actor",
+        "status": "nowe"
+      },
+      {
+        "prompt": "poeta",
+        "answer": "poet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "subskrybować; wykupić abonament",
+        "answer": "subscribe",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisarz",
+        "answer": "writer",
+        "status": "nowe"
+      },
+      {
+        "prompt": "targ, jarmark",
+        "answer": "fair",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "nowe"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reklama",
+        "answer": "advertisement",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "fabuła; akcja; wątek",
+        "answer": "plot",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "tune",
+        "status": "nowe"
+      },
+      {
+        "prompt": "pisarz",
+        "answer": "writer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "oszczędzać wodę",
+        "answer": "save water",
+        "status": "nowe"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "oszczędzać wodę",
+        "answer": "save water",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "śpiewać",
+        "answer": "sing",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "śpiewać",
+        "answer": "sing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "tune",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "tune",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny (pierwszoplanowy) aktor",
+        "answer": "lead actor",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-28T16:31:02.101194"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "words_total": 25,
+    "words_correct": 15,
+    "words_mistakes": 10,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 263.5,
+    "started_at_warsaw": "2026-10-28 16:32:04 CET",
+    "completed_at_warsaw": "2026-10-28 16:36:28 CET",
+    "finished_at": "2026-10-28T16:36:28.002424+01:00",
+    "words_details": [
+      {
+        "prompt": "fotografia (dziedzina); fotografika",
+        "answer": "photography",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rola",
+        "answer": "role",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rock",
+        "answer": "rock",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "fabuła; akcja; wątek",
+        "answer": "plot",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "muzyk",
+        "answer": "musician",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "subskrybować; wykupić abonament",
+        "answer": "subscribe",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-28T16:36:28.002486"
   }
 ]

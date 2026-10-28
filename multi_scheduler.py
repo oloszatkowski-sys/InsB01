@@ -1,6 +1,7 @@
 import json
 import random
 import time
+import urllib.request
 from datetime import datetime, date, timedelta
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
@@ -66,7 +67,10 @@ class MultiScheduler:
         return new_plan
 
     def get_or_create_weekly_schedule(self, force_new: bool = False) -> Dict[str, Any]:
-        """Pobiera lub tworzy spójny harmonogram na cały bieżący tydzień w strefie Europe/Warsaw."""
+        """
+        Pobiera lub tworzy spójny harmonogram na cały bieżący tydzień w strefie Europe/Warsaw.
+        W obrębie tego samego tygodnia (ISO week) harmonogram jest STABILNY i NIE ulega zmianie!
+        """
         DATA_DIR.mkdir(parents=True, exist_ok=True)
         week_key = get_iso_week_key()
 
@@ -80,7 +84,7 @@ class MultiScheduler:
             except Exception:
                 pass
 
-        # Tworzymy nowy harmonogram dla bieżącego tygodnia
+        # Tworzymy nowy harmonogram dla nowego tygodnia
         self.clean_legacy_states()
         users = self.users_mgr.get_active_users()
         win_start = time_to_minutes(self.config.get("random_window_start", "15:46"))
@@ -110,12 +114,10 @@ class MultiScheduler:
             
             # Aby schemat nie powtarzał się każdego dnia, tasujemy kolejność użytkowników per dzień
             shuffled_users = list(users)
-            # Deterministyczne tasowanie per dzień tygodnia
             day_seed = f"order_{week_key}_{day_date_str}"
             rng = random.Random(day_seed)
             rng.shuffle(shuffled_users)
 
-            # Wyznaczamy dostępne pasma czasowe dla użytkowników w tym dniu
             total_users = max(len(shuffled_users), 1)
             total_span = win_end - win_start
             sub_window = max(total_span // total_users, min_user_gap + 15)
@@ -126,7 +128,6 @@ class MultiScheduler:
                 login = u.get("login", "")
                 slot_id = f"{day_date_str}_{u_id}"
 
-                # Sprawdzenie dnia wolnego
                 is_off = False
                 if miss_mode == "fixed" and day_idx in miss_fixed:
                     is_off = True
@@ -153,7 +154,6 @@ class MultiScheduler:
                         "error": None
                     })
                 else:
-                    # Losujemy godzinę w dedykowanym sektorze dnia z jitterem
                     sector_start = win_start + u_idx * sub_window
                     sector_end = min(sector_start + sub_window - min_user_gap, win_end)
                     if sector_end <= sector_start:
@@ -191,7 +191,6 @@ class MultiScheduler:
                 if curr_min - prev_min < min_user_gap:
                     new_min = prev_min + min_user_gap
                     if new_min > win_end:
-                        # Przesuń w tył pierwszy lub dopasuj
                         new_min = win_end
                     active_slots[i]["scheduled_minutes"] = new_min
                     active_slots[i]["scheduled_time"] = minutes_to_time(new_min)
@@ -222,23 +221,50 @@ class MultiScheduler:
 
     def _export_markdown_plan(self, data: Dict[str, Any]) -> None:
         """Eksportuje czytelny plik PLAN_TYGODNIA.md dla użytkownika i GitHuba."""
+        today_pl = today_warsaw()
+        today_str = today_pl.isoformat()
+
+        # Obliczamy statystyki tygodnia
+        total_slots = 0
+        completed_slots = 0
+        pending_slots = 0
+        off_slots = 0
+
+        days = data.get("days", {})
+        for day_idx in range(7):
+            day_obj = days.get(str(day_idx), {})
+            for s in day_obj.get("slots", []):
+                if s.get("is_off_day"):
+                    off_slots += 1
+                elif s.get("completed"):
+                    completed_slots += 1
+                    total_slots += 1
+                else:
+                    pending_slots += 1
+                    total_slots += 1
+
         lines = [
             "# 🗓️ Harmonogram Tygodniowy InstaLing Multi-User",
             "",
-            f"> **Strefa czasowa:** `Europe/Warsaw` ({data.get('tzname', 'CET')})  ",
-            f"> **Tydzień ISO:** `{data.get('week_key', '')}`  ",
-            f"> **Ostatnia synchronizacja:** `{format_warsaw()}`  ",
+            "> **Automatycznie synchronizowany plan sesji w strefie `Europe/Warsaw` z pełną ochroną anty-detekcyjną.**",
             "",
-            "| Dzień tygodnia | Data | Uczeń | Login | Godzina (PL) | Status | Rozpoczęto | Ukończono | Wynik |",
+            f"- 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` ({data.get('tzname', 'CET')})",
+            f"- 📅 **Tydzień ISO:** `{data.get('week_key', '')}`",
+            f"- 📊 **Status tygodnia:** Ukończono **{completed_slots}** z **{total_slots}** sesji (Pozostało: **{pending_slots}**)",
+            f"- 🔄 **Ostatnia aktualizacja:** `{format_warsaw()}`",
+            "",
+            "| Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |",
             "|---|---|---|---|---|---|---|---|---|"
         ]
 
-        days = data.get("days", {})
         for day_idx in range(7):
             day_obj = days.get(str(day_idx), {})
             d_name = day_obj.get("day_name", DAY_NAMES_PL[day_idx])
             d_date = day_obj.get("date", "")
             slots = day_obj.get("slots", [])
+
+            is_today = (d_date == today_str)
+            day_label = f"👉 **{d_name} (DZIŚ)**" if is_today else d_name
 
             for s in slots:
                 nick = s.get("nickname", "Uczeń")
@@ -257,7 +283,7 @@ class MultiScheduler:
                     res_str = "-"
                 elif comp:
                     st_str = "✅ Ukończono"
-                    res_str = f"{words_cor}/{words_tot} ({acc}%)" if acc is not None else "Tak"
+                    res_str = f"**{words_cor}/{words_tot}** ({acc}%)" if acc is not None else "Tak"
                 elif s.get("status") == "W trakcie":
                     st_str = "▶️ W trakcie..."
                     res_str = "-"
@@ -268,7 +294,16 @@ class MultiScheduler:
                     st_str = "⏳ Oczekuje"
                     res_str = "-"
 
-                lines.append(f"| {d_name} | `{d_date}` | **{nick}** | `{mask}` | **{sched_t}** | {st_str} | {started} | {completed} | {res_str} |")
+                lines.append(f"| {day_label} | `{d_date}` | **{nick}** | `{mask}` | **{sched_t}** | {st_str} | {started} | {completed} | {res_str} |")
+
+        lines.extend([
+            "",
+            "---",
+            "### 📌 Informacje o harmonogramie:",
+            "- 🛡️ **Odstępy anty-kolizyjne:** Pomiędzy sesjami różnych uczniów zachowywany jest odstęp minimum **45 minut**.",
+            "- ☀️ **Codzienny przegląd o 06:30:** GitHub Actions każdego ranka weryfikuje gotowość i publikuje plan na dany dzień.",
+            "- 🔒 **Niezmienność planu:** Harmonogram wylosowany na dany tydzień obowiązuje od poniedziałku do niedzieli i nie zmienia się w trakcie tygodnia."
+        ])
 
         md_content = "\n".join(lines) + "\n"
 
@@ -351,8 +386,6 @@ class MultiScheduler:
         users_map = {u.get("id") or u.get("login"): u for u in self.users_mgr.get_active_users()}
 
         executed_results = []
-
-        # Bierzemy maksymalnie max_sessions (domyślnie 1)
         slots_to_run = due_slots[:max_sessions]
 
         for slot in slots_to_run:
@@ -364,7 +397,6 @@ class MultiScheduler:
             nick = slot["nickname"]
             slot_id = slot["slot_id"]
 
-            # Blokada zapobiegająca jednoczesnemu workflow
             if not BotLock.acquire(u_id, nick):
                 log(f"[!] Nie można pobrać blokady dla {nick}. Pomijam ten cykl.")
                 continue
@@ -391,7 +423,6 @@ class MultiScheduler:
                 res["started_at_warsaw"] = started_at_warsaw
                 res["completed_at_warsaw"] = format_warsaw(now_warsaw())
                 
-                # Zapisujemy stan w weekly_schedule.json
                 self.update_slot_result(slot_id, res)
                 executed_results.append(res)
 
@@ -442,7 +473,6 @@ class MultiScheduler:
             res["started_at_warsaw"] = started_at
             res["completed_at_warsaw"] = format_warsaw(now_warsaw())
 
-            # Dopasowujemy dzisiejszy slot jeśli istnieje
             today_str = today_warsaw().isoformat()
             slot_id = f"{today_str}_{u_id}"
             self.update_slot_result(slot_id, res)
@@ -452,8 +482,10 @@ class MultiScheduler:
 
     def publish_today_plan_to_discord(self) -> None:
         """Wysyła plan na dziś (w 100% zgodny z planem tygodnia i strefą Europe/Warsaw) do kanału #plan-na-dzis."""
+        today_pl = today_warsaw()
+        day_name = DAY_NAMES_PL[today_pl.weekday()]
         slots = self.get_today_slots()
-        self.notifier.send_daily_plan(slots)
+        self.notifier.send_daily_plan(slots, day_name=day_name, date_str=today_pl.isoformat())
 
     def publish_weekly_plan_to_discord(self) -> None:
         """Wysyła trwały plan bieżącego tygodnia (Pon-Ndz) do kanału #plan-tygodnia."""
@@ -477,4 +509,100 @@ class MultiScheduler:
                 })
             weekly_report[day_name] = entries
 
-        self.notifier.send_weekly_plan(weekly_report)
+        self.notifier.send_weekly_plan(weekly_report, week_key=weekly.get("week_key", ""))
+
+    def run_morning_check(self) -> Dict[str, Any]:
+        """
+        Codzienny przegląd o 06:30 (Europe/Warsaw):
+        1. Weryfikuje stały plan tygodnia (generuje nowy TYLKO po zmianie tygodnia na kolejny).
+        2. Aktualizuje plik PLAN_TYGODNIA.md (oznacza dzisiejszy dzień).
+        3. Wysyła plan na dziś do #plan-na-dzis.
+        4. W poniedziałki wysyła plan tygodnia do #plan-tygodnia.
+        5. Wysyła poranny meldunek na ntfy.sh dla obserwowanych uczniów.
+        6. Sprawdza dostępność serwisu InstaLing.
+        """
+        today_pl = today_warsaw()
+        today_str = today_pl.isoformat()
+        day_name = DAY_NAMES_PL[today_pl.weekday()]
+        week_key = get_iso_week_key()
+
+        log("\n" + "=" * 62)
+        log("☀️ [PORANNY PRZEGLĄD 06:30] InstaLing Auto-Bot")
+        log("-" * 62)
+        log(f"🇵🇱 Czas w Polsce:     {format_warsaw()}")
+        log(f"📅 Data i dzień:      {today_str} ({day_name})")
+        log(f"🗓️ Tydzień ISO:       {week_key}")
+        log("=" * 62)
+
+        # 1. Pobieramy lub tworzymy harmonogram (zachowuje godziny w trakcie tygodnia!)
+        weekly = self.get_or_create_weekly_schedule()
+
+        # 2. Sprawdzamy czy to nowy tydzień
+        if weekly.get("last_weekly_plan_week") != week_key:
+            log(f"[*] Nowy tydzień ISO ({week_key})! Publikuję plan tygodnia na Discordzie...")
+            self.publish_weekly_plan_to_discord()
+            weekly["last_weekly_plan_week"] = week_key
+
+        # 3. Publikujemy dzisiejszy plan na Discordzie
+        log(f"[*] Publikuję plan na dziś ({day_name}) na Discordzie (#plan-na-dzis)...")
+        self.publish_today_plan_to_discord()
+        weekly["last_daily_plan_date"] = today_str
+        weekly["last_morning_check_date"] = today_str
+
+        # 4. Sprawdzamy sloty i wysyłamy ntfy.sh
+        today_slots = self.get_today_slots()
+        slots_summary = []
+        for s in today_slots:
+            nick = s.get("nickname", "Uczeń")
+            t = s.get("scheduled_time", "--:--")
+            off = s.get("is_off_day", False)
+            if off:
+                slots_summary.append(f"• {nick}: 🏖️ Dzień wolny")
+            else:
+                slots_summary.append(f"• {nick}: ⏰ {t}")
+
+        # Powiadomienie ntfy.sh dla kont z track_in_ntfy: true
+        ntfy_user = self.users_mgr.get_ntfy_user()
+        if ntfy_user:
+            topic = self.config.get("ntfy_topic", "").strip() or f"instaling_{ntfy_user.get('login', 'user')}"
+            self.notifier.send_morning_ntfy(topic, today_str, day_name, slots_summary)
+
+        # 5. Sprawdzenie łączności z InstaLing
+        status_ok = True
+        try:
+            req = urllib.request.Request(
+                "https://instaling.pl/teacher.php?page=login",
+                headers={"User-Agent": "Mozilla/5.0"}
+            )
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                if resp.status == 200:
+                    log("[+] Serwis InstaLing odpowiada poprawnie (HTTP 200).")
+        except Exception as e:
+            log(f"[!] Ostrzeżenie przy sprawdzaniu łączności: {e}")
+            status_ok = False
+
+        self._save_weekly_schedule(weekly)
+        log("[+] Poranny przegląd 06:30 zakończony sukcesem.\n")
+        return {"success": True, "date": today_str, "slots": today_slots, "instaling_online": status_ok}
+
+    def check_and_publish_daily_announcements(self) -> None:
+        """Publikuje plan tygodnia w poniedziałki oraz plan na dziś każdego ranka jeśli jeszcze nie został wysłany."""
+        weekly = self.get_or_create_weekly_schedule()
+        today_str = today_warsaw().isoformat()
+        week_key = get_iso_week_key()
+        need_save = False
+
+        if weekly.get("last_weekly_plan_week") != week_key:
+            log(f"[*] Nowy tydzień ({week_key})! Publikuję plan tygodnia na Discordzie...")
+            self.publish_weekly_plan_to_discord()
+            weekly["last_weekly_plan_week"] = week_key
+            need_save = True
+
+        if weekly.get("last_daily_plan_date") != today_str:
+            log(f"[*] Nowy dzień ({today_str})! Publikuję plan na dziś na Discordzie...")
+            self.publish_today_plan_to_discord()
+            weekly["last_daily_plan_date"] = today_str
+            need_save = True
+
+        if need_save:
+            self._save_weekly_schedule(weekly)

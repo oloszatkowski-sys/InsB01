@@ -2,18 +2,26 @@ name: InstaLing Daily Bot
 
 on:
   schedule:
-    # Uruchamianie co 25 minut w oknie popołudniowym (13:00 - 21:00 UTC, czyli ok. 14:00 - 22:00 w Polsce)
-    # Skrypt sam sprawdza harmonogram Europe/Warsaw i wykonuje zadanie tylko wtedy, gdy nadeszła godzina dla danego użytkownika
-    - cron: '*/25 13-21 * * *'
+    # 1. Poranny przegląd o godz. 06:30 czasu polskiego (Europe/Warsaw):
+    # W czasie zimowym CET (UTC+1): 05:30 UTC ('30 5 * * *')
+    # W czasie letnim CEST (UTC+2): 04:30 UTC ('30 4 * * *')
+    # Skrypt sam weryfikuje godzinę w Polsce i nie powiela wykonania w ciągu tego samego dnia.
+    - cron: '30 4,5 * * *'
+
+    # 2. Popołudniowe okno sesji: uruchamianie co 20 minut między 14:00 a 22:00 w Polsce (13:00 - 21:00 UTC)
+    # Skrypt sam sprawdza harmonogram i wykonuje sesję tylko gdy nadeszła kolej danego ucznia (min. 45 min odstępu).
+    - cron: '*/20 13-21 * * *'
+
   workflow_dispatch:
     inputs:
       mode:
-        description: 'Tryb uruchomienia: due (tylko oczekujące), all (wszyscy), plan (wyślij plan dziś), week (wyślij plan tydzień), reset (reset harmonogramu)'
+        description: 'Tryb uruchomienia: due (oczekujące), morning (przegląd 06:30), all (wszyscy), plan (plan dziś), week (plan tydzień), reset (reset planu)'
         required: false
         default: 'due'
         type: choice
         options:
           - 'due'
+          - 'morning'
           - 'all'
           - 'plan'
           - 'week'
@@ -23,7 +31,7 @@ on:
         required: false
         default: ''
 
-# Blokada zapobiegająca równoczesnemu uruchamianiu dwóch workflow naraz
+# Blokada uniemożliwiająca nakładanie się dwóch workflow
 concurrency:
   group: instaling-bot
   cancel-in-progress: false
@@ -33,7 +41,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15  # Twardy limit czasu zadania chroniący przed jakimkolwiek zawieszeniem
     permissions:
-      contents: write  # Wymagane do automatycznego commitowania i pushowania danych na GitHub
+      contents: write  # Wymagane do automatycznego commitowania i pushowania danych do GitHuba
 
     steps:
       - name: Pobierz repozytorium
@@ -62,6 +70,8 @@ jobs:
         run: |
           if [ "$RUN_MODE" = "reset" ]; then
             python main.py --reset-schedule
+          elif [ "$RUN_MODE" = "morning" ]; then
+            python main.py --morning
           elif [ "$RUN_MODE" = "plan" ]; then
             python main.py --plan
           elif [ "$RUN_MODE" = "week" ]; then
@@ -71,7 +81,7 @@ jobs:
           elif [ -n "$TARGET_USER" ]; then
             python main.py --user "$TARGET_USER"
           else
-            # Domyślny tryb cykliczny: inteligentne uruchomienie tylko oczekującej sekcji
+            # Domyślny inteligentny tryb: obsłuży poranny przegląd lub sesję wg harmonogramu
             python main.py --cron
           fi
 
@@ -81,5 +91,5 @@ jobs:
           git config --global user.email "bot@github-actions.internal"
           git pull --rebase origin main || git pull --rebase origin master || true
           git add -A data/ PLAN_TYGODNIA.md
-          git diff --staged --quiet || git commit -m "Auto: Aktualizacja stanu harmonogramu i historii [skip ci]"
+          git diff --staged --quiet || git commit -m "Auto: Aktualizacja planu tygodnia i stanu sesji [skip ci]"
           git push origin HEAD || true

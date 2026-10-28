@@ -222,3 +222,273 @@
 [2026-10-27 17:05:05] [*] Generowanie i publikowanie planu tygodnia na Discordzie (strefa CET)...
 [2026-10-27 17:05:05] [Powiadomienie] Wysłano embed '🗓️ Plan Tygodnia InstaLing' na Discord
 [2026-10-27 17:05:05] [+] Plan tygodnia został wysłany.
+[2026-10-27 17:11:36] [Powiadomienie] Wysłano embed '🗓️ Plan Tygodnia InstaLing' na Discord
+[2026-10-27 17:11:36] [Powiadomienie] Wysłano embed '📅 Plan Sesji Na Dziś' na Discord
+[2026-10-28 16:21:54] 
+==============================================================
+[2026-10-28 16:21:54] 🕒 [START ZADANIA INDYWIDUALNEGO] InstaLing Auto-Bot
+[2026-10-28 16:21:54] --------------------------------------------------------------
+[2026-10-28 16:21:54] 🌍 Czas UTC:         2026-10-28 15:21:54 UTC
+[2026-10-28 16:21:54] 🇵🇱 Czas w Polsce:     2026-10-28 16:21:54 CET
+[2026-10-28 16:21:54] 👤 Uczeń:             Oleslaw 010 (asa61####)
+[2026-10-28 16:21:54] 🎯 Przyczyna:        uruchomienie z menu
+[2026-10-28 16:21:54] ==============================================================
+[2026-10-28 16:21:54] [*] Rozpoczynam sesje dla uzytkownika: Oleslaw 010 (asa61####) (headless=True)
+[2026-10-28 16:21:54] [*] Czas startu (Polska): 2026-10-28 16:21:54 CET
+[2026-10-28 16:21:57] [*] [Oleslaw 010] Otwieranie strony logowania InstaLing...
+[2026-10-28 16:22:21] [*] [Oleslaw 010] Logowanie do konta...
+[2026-10-28 16:22:25] [+] [Oleslaw 010] Pomyslnie zalogowano do serwisu!
+[2026-10-28 16:22:25] [*] [Oleslaw 010] Wyszukiwanie sesji...
+[2026-10-28 16:22:30] [Powiadomienie] Wysłano embed '⚠️ InstaLing Auto-Bot - Błąd Sesji: Oleslaw 010' na Discord
+[2026-10-28 16:22:30] [Powiadomienie] Wysłano logi na kanał Discord
+[2026-10-28 16:22:51] 
+==============================================================
+[2026-10-28 16:22:51] 🕒 [START ZADANIA INDYWIDUALNEGO] InstaLing Auto-Bot
+[2026-10-28 16:22:51] --------------------------------------------------------------
+[2026-10-28 16:22:51] 🌍 Czas UTC:         2026-10-28 15:22:51 UTC
+[2026-10-28 16:22:51] 🇵🇱 Czas w Polsce:     2026-10-28 16:22:51 CET
+[2026-10-28 16:22:51] 👤 Uczeń:             Szlucha Jagoda (lasa6####)
+[2026-10-28 16:22:51] 🎯 Przyczyna:        uruchomienie z menu
+[2026-10-28 16:22:51] ==============================================================
+[2026-10-28 16:22:51] [*] Rozpoczynam sesje dla uzytkownika: Szlucha Jagoda (lasa6####) (headless=True)
+[2026-10-28 16:22:51] [*] Czas startu (Polska): 2026-10-28 16:22:51 CET
+[2026-10-28 16:22:52] [*] [Szlucha Jagoda] Otwieranie strony logowania InstaLing...
+[2026-10-28 16:23:00] [*] [Szlucha Jagoda] Logowanie do konta...
+[2026-10-28 16:23:04] [+] [Szlucha Jagoda] Pomyslnie zalogowano do serwisu!
+[2026-10-28 16:23:04] [*] [Szlucha Jagoda] Wyszukiwanie sesji...
+[2026-10-28 16:23:04] [*] [Szlucha Jagoda] Przechodzenie do sesji...
+[2026-10-28 16:23:07] [*] [Szlucha Jagoda] Klikam 'Rozpocznij sesje'...
+[2026-10-28 16:23:10] [*] [Szlucha Jagoda] Rozpoczynanie rozwiazywania slowek...
+[2026-10-28 16:23:16] [OK] Słówko: 'wysyłać (np. pliki na serwer internetowy)' -> 'upload' (Poprawnie)
+[2026-10-28 16:23:26] [OK] Słówko: 'kreskówka' -> 'cartoon' (Poprawnie)
+[2026-10-28 16:23:36] [OK] Słówko: 'udostępniać w sieci' -> 'share online' (Poprawnie)
+[2026-10-28 16:23:46] [OK] Słówko: 'strona internetowa' -> 'website' (Poprawnie)
+[2026-10-28 16:23:56] [OK] Słówko: 'kanał; kanał telewizyjny' -> 'channel' (Poprawnie)
+[2026-10-28 16:24:06] [OK] Słówko: 'reklama' -> 'advertisement' (Poprawnie)
+[2026-10-28 16:24:16] [OK] Słówko: 'grać (np. kogoś w filmie)' -> 'play' (Poprawnie)
+[2026-10-28 16:24:27] [OK] Słówko: 'znana osoba' -> 'celebrity' (Poprawnie)
+[2026-10-28 16:24:38] [OK] Słówko: 'pokaz mody' -> 'fashion show' (Poprawnie)
+[2026-10-28 16:24:47] [OK] Słówko: 'galeria sztuki' -> 'art gallery' (Poprawnie)
+[2026-10-28 16:24:56] [OK] Słówko: 'targ, jarmark' -> 'fair' (Poprawnie)
+[2026-10-28 16:25:10] [OK] Słówko: 'występ' -> 'performance' (Poprawnie)
+[2026-10-28 16:25:17] [~] Celowy błąd dla ucznia: 'widownia; publiczność' (wpisano: 'audienc', prawidłowe: 'audience')
+[2026-10-28 16:25:30] [!] AUTOKOREKTA: Baza miała '________', poprawiono na: 'audience'!
+[2026-10-28 16:25:40] [OK] Słówko: 'festiwal' -> 'festival' (Poprawnie)
+[2026-10-28 16:25:50] [OK] Słówko: 'ekran' -> 'screen' (Poprawnie)
+[2026-10-28 16:25:57] [OK] Słówko: 'widownia; publiczność' -> 'audience' (Poprawnie)
+[2026-10-28 16:26:01] [+] [Szlucha Jagoda] Sesja ukonczona pomyslnie! Gratulacje!
+[2026-10-28 16:26:04] 
+[OK] SESJA DLA Szlucha Jagoda (lasa6####) ZAKONCZONA SUKCESEM!
+[2026-10-28 16:26:04]     Czas: 2026-10-28 16:22:51 CET -> 2026-10-28 16:26:04 CET (193.5s)
+[2026-10-28 16:26:04]     Rozwiazano: 17 | Poprawne: 15 (88.2%)
+
+[2026-10-28 16:26:04] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:
+[2026-10-28 16:26:04]    1. wysyłać (np. pliki na serwer internetowy) ➔ upload [✅ POPRAWNIE]
+[2026-10-28 16:26:04]    2. kreskówka ➔ cartoon [✅ POPRAWNIE]
+[2026-10-28 16:26:04]    3. udostępniać w sieci ➔ share online [✅ POPRAWNIE]
+[2026-10-28 16:26:04]    4. strona internetowa ➔ website [✅ POPRAWNIE]
+[2026-10-28 16:26:04]    5. kanał; kanał telewizyjny ➔ channel [✅ POPRAWNIE]
+[2026-10-28 16:26:04]    6. reklama ➔ advertisement [✅ POPRAWNIE]
+[2026-10-28 16:26:04]    7. grać (np. kogoś w filmie) ➔ play [✅ POPRAWNIE]
+[2026-10-28 16:26:04]    8. znana osoba ➔ celebrity [✅ POPRAWNIE]
+[2026-10-28 16:26:04]    9. pokaz mody ➔ fashion show [✅ POPRAWNIE]
+[2026-10-28 16:26:04]   10. galeria sztuki ➔ art gallery [✅ POPRAWNIE]
+[2026-10-28 16:26:04]   11. targ, jarmark ➔ fair [✅ POPRAWNIE]
+[2026-10-28 16:26:04]   12. występ ➔ performance [✅ POPRAWNIE]
+[2026-10-28 16:26:04]   13. widownia; publiczność ➔ ________ [⚠️ BŁĄD]
+[2026-10-28 16:26:04]   14. widownia; publiczność ➔ audience [🔄 AUTOKOREKTA]
+[2026-10-28 16:26:04]   15. festiwal ➔ festival [✅ POPRAWNIE]
+[2026-10-28 16:26:04]   16. ekran ➔ screen [✅ POPRAWNIE]
+[2026-10-28 16:26:04]   17. widownia; publiczność ➔ audience [✅ POPRAWNIE]
+[2026-10-28 16:26:04] 
+[2026-10-28 16:26:05] [Powiadomienie] Wysłano embed '🤖 InstaLing Auto-Bot - Sesja Ukończona: Szlucha Jagoda' na Discord
+[2026-10-28 16:26:05] [Powiadomienie] Wysłano logi na kanał Discord
+[2026-10-28 16:26:26] 
+==============================================================
+[2026-10-28 16:26:26] 🕒 [START ZADANIA INDYWIDUALNEGO] InstaLing Auto-Bot
+[2026-10-28 16:26:26] --------------------------------------------------------------
+[2026-10-28 16:26:26] 🌍 Czas UTC:         2026-10-28 15:26:26 UTC
+[2026-10-28 16:26:26] 🇵🇱 Czas w Polsce:     2026-10-28 16:26:26 CET
+[2026-10-28 16:26:26] 👤 Uczeń:             OliwiercioTheHacker (asa61####)
+[2026-10-28 16:26:26] 🎯 Przyczyna:        uruchomienie z menu
+[2026-10-28 16:26:26] ==============================================================
+[2026-10-28 16:26:26] [*] Rozpoczynam sesje dla uzytkownika: OliwiercioTheHacker (asa61####) (headless=True)
+[2026-10-28 16:26:26] [*] Czas startu (Polska): 2026-10-28 16:26:26 CET
+[2026-10-28 16:26:26] [*] [OliwiercioTheHacker] Otwieranie strony logowania InstaLing...
+[2026-10-28 16:26:30] [*] [OliwiercioTheHacker] Logowanie do konta...
+[2026-10-28 16:26:35] [+] [OliwiercioTheHacker] Pomyslnie zalogowano do serwisu!
+[2026-10-28 16:26:35] [*] [OliwiercioTheHacker] Wyszukiwanie sesji...
+[2026-10-28 16:26:35] [*] [OliwiercioTheHacker] Przechodzenie do sesji...
+[2026-10-28 16:26:38] [*] [OliwiercioTheHacker] Klikam 'Rozpocznij sesje'...
+[2026-10-28 16:26:40] [*] [OliwiercioTheHacker] Rozpoczynanie rozwiazywania slowek...
+[2026-10-28 16:26:44] [~] Celowy błąd dla ucznia: 'targ, jarmark' (wpisano: 'fai', prawidłowe: 'fair')
+[2026-10-28 16:26:54] [!] AUTOKOREKTA: Baza miała '____', poprawiono na: 'fair'!
+[2026-10-28 16:27:01] [OK] Słówko: 'wystawiać (sztukę, przedstawienie)' -> 'put on' (Poprawnie)
+[2026-10-28 16:27:07] [?] Nowe słówko: 'poeta' (sprawdzam poprawną odpowiedź)
+[2026-10-28 16:27:09] [+] ZAPAMIĘTANO SŁÓWKO: 'poeta' -> 'poet'
+[2026-10-28 16:27:17] [?] Nowe słówko: 'główny (pierwszoplanowy) aktor' (sprawdzam poprawną odpowiedź)
+[2026-10-28 16:27:19] [+] ZAPAMIĘTANO SŁÓWKO: 'główny (pierwszoplanowy) aktor' -> 'lead actor'
+[2026-10-28 16:27:28] [OK] Słówko: 'poeta' -> 'poet' (Poprawnie)
+[2026-10-28 16:27:38] [OK] Słówko: 'strona internetowa' -> 'website' (Poprawnie)
+[2026-10-28 16:27:49] [OK] Słówko: 'subskrybować; wykupić abonament' -> 'subscribe' (Poprawnie)
+[2026-10-28 16:27:58] [?] Nowe słówko: 'pisarz' (sprawdzam poprawną odpowiedź)
+[2026-10-28 16:28:00] [+] ZAPAMIĘTANO SŁÓWKO: 'pisarz' -> 'writer'
+[2026-10-28 16:28:11] [OK] Słówko: 'targ, jarmark' -> 'fair' (Poprawnie)
+[2026-10-28 16:28:19] [?] Nowe słówko: 'aktorka' (sprawdzam poprawną odpowiedź)
+[2026-10-28 16:28:21] [+] ZAPAMIĘTANO SŁÓWKO: 'aktorka' -> 'actress'
+[2026-10-28 16:28:35] [OK] Słówko: 'aktorka' -> 'actress' (Poprawnie)
+[2026-10-28 16:28:47] [OK] Słówko: 'reklama' -> 'advertisement' (Poprawnie)
+[2026-10-28 16:28:55] [OK] Słówko: 'fabuła; akcja; wątek' -> 'plot' (Poprawnie)
+[2026-10-28 16:29:04] [?] Nowe słówko: 'melodia' (sprawdzam poprawną odpowiedź)
+[2026-10-28 16:29:06] [+] ZAPAMIĘTANO SŁÓWKO: 'melodia' -> 'tune'
+[2026-10-28 16:29:15] [OK] Słówko: 'pisarz' -> 'writer' (Poprawnie)
+[2026-10-28 16:29:20] [?] Nowe słówko: 'zwiększyć temperaturę na kaloryferze' (sprawdzam poprawną odpowiedź)
+[2026-10-28 16:29:22] [+] ZAPAMIĘTANO SŁÓWKO: 'zwiększyć temperaturę na kaloryferze' -> 'turn the radiator up'
+[2026-10-28 16:29:34] [OK] Słówko: 'zwiększyć temperaturę na kaloryferze' -> 'turn the radiator up' (Poprawnie)
+[2026-10-28 16:29:38] [?] Nowe słówko: 'oszczędzać wodę' (sprawdzam poprawną odpowiedź)
+[2026-10-28 16:29:40] [+] ZAPAMIĘTANO SŁÓWKO: 'oszczędzać wodę' -> 'save water'
+[2026-10-28 16:29:46] [~] Celowy błąd dla ucznia: 'melodia' (wpisano: 'tun', prawidłowe: 'tune')
+[2026-10-28 16:29:57] [OK] Słówko: 'oszczędzać wodę' -> 'save water' (Poprawnie)
+[2026-10-28 16:30:08] [!] AUTOKOREKTA: Baza miała 'portrait', poprawiono na: 'sing'!
+[2026-10-28 16:30:15] [OK] Słówko: 'śpiewać' -> 'sing' (Poprawnie)
+[2026-10-28 16:30:27] [OK] Słówko: 'projektant mody' -> 'fashion designer' (Poprawnie)
+[2026-10-28 16:30:36] [!] AUTOKOREKTA: Baza miała '____', poprawiono na: 'tune'!
+[2026-10-28 16:30:45] [OK] Słówko: 'melodia' -> 'tune' (Poprawnie)
+[2026-10-28 16:30:56] [OK] Słówko: 'główny (pierwszoplanowy) aktor' -> 'lead actor' (Poprawnie)
+[2026-10-28 16:30:59] [+] [OliwiercioTheHacker] Sesja ukonczona pomyslnie! Gratulacje!
+[2026-10-28 16:31:02] 
+[OK] SESJA DLA OliwiercioTheHacker (asa61####) ZAKONCZONA SUKCESEM!
+[2026-10-28 16:31:02]     Czas: 2026-10-28 16:26:26 CET -> 2026-10-28 16:31:02 CET (276.0s)
+[2026-10-28 16:31:02]     Rozwiazano: 27 | Poprawne: 15 (55.6%)
+
+[2026-10-28 16:31:02] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:
+[2026-10-28 16:31:02]    1. targ, jarmark ➔ ____ [⚠️ BŁĄD]
+[2026-10-28 16:31:02]    2. targ, jarmark ➔ fair [🔄 AUTOKOREKTA]
+[2026-10-28 16:31:02]    3. wystawiać (sztukę, przedstawienie) ➔ put on [✅ POPRAWNIE]
+[2026-10-28 16:31:02]    4. poeta ➔ poet [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-28 16:31:02]    5. główny (pierwszoplanowy) aktor ➔ lead actor [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-28 16:31:02]    6. poeta ➔ poet [✅ POPRAWNIE]
+[2026-10-28 16:31:02]    7. strona internetowa ➔ website [✅ POPRAWNIE]
+[2026-10-28 16:31:02]    8. subskrybować; wykupić abonament ➔ subscribe [✅ POPRAWNIE]
+[2026-10-28 16:31:02]    9. pisarz ➔ writer [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-28 16:31:02]   10. targ, jarmark ➔ fair [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   11. aktorka ➔ actress [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-28 16:31:02]   12. aktorka ➔ actress [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   13. reklama ➔ advertisement [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   14. fabuła; akcja; wątek ➔ plot [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   15. melodia ➔ tune [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-28 16:31:02]   16. pisarz ➔ writer [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   17. zwiększyć temperaturę na kaloryferze ➔ turn the radiator up [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-28 16:31:02]   18. zwiększyć temperaturę na kaloryferze ➔ turn the radiator up [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   19. oszczędzać wodę ➔ save water [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-28 16:31:02]   20. melodia ➔ ____ [⚠️ BŁĄD]
+[2026-10-28 16:31:02]   21. oszczędzać wodę ➔ save water [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   22. śpiewać ➔ sing [🔄 AUTOKOREKTA]
+[2026-10-28 16:31:02]   23. śpiewać ➔ sing [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   24. projektant mody ➔ fashion designer [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   25. melodia ➔ tune [🔄 AUTOKOREKTA]
+[2026-10-28 16:31:02]   26. melodia ➔ tune [✅ POPRAWNIE]
+[2026-10-28 16:31:02]   27. główny (pierwszoplanowy) aktor ➔ lead actor [✅ POPRAWNIE]
+[2026-10-28 16:31:02] 
+[2026-10-28 16:31:02] [Powiadomienie] Wysłano embed '🤖 InstaLing Auto-Bot - Sesja Ukończona: OliwiercioTheHacker' na Discord
+[2026-10-28 16:31:02] [Powiadomienie] Wysłano logi na kanał Discord
+[2026-10-28 16:32:04] 
+==============================================================
+[2026-10-28 16:32:04] 🕒 [START ZADANIA INDYWIDUALNEGO] InstaLing Auto-Bot
+[2026-10-28 16:32:04] --------------------------------------------------------------
+[2026-10-28 16:32:04] 🌍 Czas UTC:         2026-10-28 15:32:04 UTC
+[2026-10-28 16:32:04] 🇵🇱 Czas w Polsce:     2026-10-28 16:32:04 CET
+[2026-10-28 16:32:04] 👤 Uczeń:             Oleslaw 010 (asa61####)
+[2026-10-28 16:32:04] 🎯 Przyczyna:        uruchomienie z menu
+[2026-10-28 16:32:04] ==============================================================
+[2026-10-28 16:32:04] [*] Rozpoczynam sesje dla uzytkownika: Oleslaw 010 (asa61####) (headless=True)
+[2026-10-28 16:32:04] [*] Czas startu (Polska): 2026-10-28 16:32:04 CET
+[2026-10-28 16:32:05] [*] [Oleslaw 010] Otwieranie strony logowania InstaLing...
+[2026-10-28 16:32:08] [*] [Oleslaw 010] Logowanie do konta...
+[2026-10-28 16:32:12] [+] [Oleslaw 010] Pomyslnie zalogowano do serwisu!
+[2026-10-28 16:32:12] [*] [Oleslaw 010] Wyszukiwanie sesji...
+[2026-10-28 16:32:12] [*] [Oleslaw 010] Przechodzenie do sesji...
+[2026-10-28 16:32:15] [*] [Oleslaw 010] Klikam 'Rozpocznij sesje'...
+[2026-10-28 16:32:18] [*] [Oleslaw 010] Rozpoczynanie rozwiazywania slowek...
+[2026-10-28 16:32:29] [OK] Słówko: 'fotografia (dziedzina); fotografika' -> 'photography' (Poprawnie)
+[2026-10-28 16:32:36] [~] Celowy błąd dla ucznia: 'festiwal' (wpisano: 'festiva', prawidłowe: 'festival')
+[2026-10-28 16:32:51] [!] AUTOKOREKTA: Baza miała '________', poprawiono na: 'festival'!
+[2026-10-28 16:33:03] [OK] Słówko: 'udostępniać w sieci' -> 'share online' (Poprawnie)
+[2026-10-28 16:33:10] [OK] Słówko: 'rola' -> 'role' (Poprawnie)
+[2026-10-28 16:33:21] [OK] Słówko: 'kreskówka' -> 'cartoon' (Poprawnie)
+[2026-10-28 16:33:28] [?] Nowe słówko: 'zespół' (sprawdzam poprawną odpowiedź)
+[2026-10-28 16:33:30] [+] ZAPAMIĘTANO SŁÓWKO: 'zespół' -> 'band'
+[2026-10-28 16:33:39] [~] Celowy błąd dla ucznia: 'ekran' (wpisano: 'scree', prawidłowe: 'screen')
+[2026-10-28 16:33:49] [OK] Słówko: 'festiwal' -> 'festival' (Poprawnie)
+[2026-10-28 16:33:56] [!] AUTOKOREKTA: Baza miała '______', poprawiono na: 'screen'!
+[2026-10-28 16:34:08] [OK] Słówko: 'projektant mody' -> 'fashion designer' (Poprawnie)
+[2026-10-28 16:34:15] [~] Celowy błąd dla ucznia: 'projekt; konstrukcja' (wpisano: 'desig', prawidłowe: 'design')
+[2026-10-28 16:34:25] [!] AUTOKOREKTA: Baza miała '______', poprawiono na: 'design'!
+[2026-10-28 16:34:34] [OK] Słówko: 'ekran' -> 'screen' (Poprawnie)
+[2026-10-28 16:34:43] [?] Nowe słówko: 'aktorstwo; gra aktorska' (sprawdzam poprawną odpowiedź)
+[2026-10-28 16:34:45] [+] ZAPAMIĘTANO SŁÓWKO: 'aktorstwo; gra aktorska' -> 'acting'
+[2026-10-28 16:34:53] [~] Celowy błąd dla ucznia: 'zespół' (wpisano: 'ban', prawidłowe: 'band')
+[2026-10-28 16:35:04] [!] AUTOKOREKTA: Baza miała '____', poprawiono na: 'band'!
+[2026-10-28 16:35:13] [OK] Słówko: 'zespół' -> 'band' (Poprawnie)
+[2026-10-28 16:35:23] [OK] Słówko: 'rock' -> 'rock' (Poprawnie)
+[2026-10-28 16:35:31] [OK] Słówko: 'instrument; przyrząd' -> 'instrument' (Poprawnie)
+[2026-10-28 16:35:39] [OK] Słówko: 'fabuła; akcja; wątek' -> 'plot' (Poprawnie)
+[2026-10-28 16:35:50] [OK] Słówko: 'muzyk' -> 'musician' (Poprawnie)
+[2026-10-28 16:36:01] [OK] Słówko: 'subskrybować; wykupić abonament' -> 'subscribe' (Poprawnie)
+[2026-10-28 16:36:10] [OK] Słówko: 'projekt; konstrukcja' -> 'design' (Poprawnie)
+[2026-10-28 16:36:21] [OK] Słówko: 'aktorstwo; gra aktorska' -> 'acting' (Poprawnie)
+[2026-10-28 16:36:25] [+] [Oleslaw 010] Sesja ukonczona pomyslnie! Gratulacje!
+[2026-10-28 16:36:28] 
+[OK] SESJA DLA Oleslaw 010 (asa61####) ZAKONCZONA SUKCESEM!
+[2026-10-28 16:36:28]     Czas: 2026-10-28 16:32:04 CET -> 2026-10-28 16:36:28 CET (263.5s)
+[2026-10-28 16:36:28]     Rozwiazano: 25 | Poprawne: 15 (60.0%)
+
+[2026-10-28 16:36:28] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:
+[2026-10-28 16:36:28]    1. fotografia (dziedzina); fotografika ➔ photography [✅ POPRAWNIE]
+[2026-10-28 16:36:28]    2. festiwal ➔ ________ [⚠️ BŁĄD]
+[2026-10-28 16:36:28]    3. festiwal ➔ festival [🔄 AUTOKOREKTA]
+[2026-10-28 16:36:28]    4. udostępniać w sieci ➔ share online [✅ POPRAWNIE]
+[2026-10-28 16:36:28]    5. rola ➔ role [✅ POPRAWNIE]
+[2026-10-28 16:36:28]    6. kreskówka ➔ cartoon [✅ POPRAWNIE]
+[2026-10-28 16:36:28]    7. zespół ➔ band [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-28 16:36:28]    8. ekran ➔ ______ [⚠️ BŁĄD]
+[2026-10-28 16:36:28]    9. festiwal ➔ festival [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   10. ekran ➔ screen [🔄 AUTOKOREKTA]
+[2026-10-28 16:36:28]   11. projektant mody ➔ fashion designer [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   12. projekt; konstrukcja ➔ ______ [⚠️ BŁĄD]
+[2026-10-28 16:36:28]   13. projekt; konstrukcja ➔ design [🔄 AUTOKOREKTA]
+[2026-10-28 16:36:28]   14. ekran ➔ screen [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   15. aktorstwo; gra aktorska ➔ acting [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-28 16:36:28]   16. zespół ➔ ____ [⚠️ BŁĄD]
+[2026-10-28 16:36:28]   17. zespół ➔ band [🔄 AUTOKOREKTA]
+[2026-10-28 16:36:28]   18. zespół ➔ band [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   19. rock ➔ rock [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   20. instrument; przyrząd ➔ instrument [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   21. fabuła; akcja; wątek ➔ plot [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   22. muzyk ➔ musician [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   23. subskrybować; wykupić abonament ➔ subscribe [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   24. projekt; konstrukcja ➔ design [✅ POPRAWNIE]
+[2026-10-28 16:36:28]   25. aktorstwo; gra aktorska ➔ acting [✅ POPRAWNIE]
+[2026-10-28 16:36:28] 
+[2026-10-28 16:36:28] [Powiadomienie] Wysłano embed '🤖 InstaLing Auto-Bot - Sesja Ukończona: Oleslaw 010' na Discord
+[2026-10-28 16:36:29] [Powiadomienie] Wysłano logi na kanał Discord
+[2026-10-28 16:56:09] 
+==============================================================
+[2026-10-28 16:56:09] ☀️ [PORANNY PRZEGLĄD 06:30] InstaLing Auto-Bot
+[2026-10-28 16:56:09] --------------------------------------------------------------
+[2026-10-28 16:56:09] 🇵🇱 Czas w Polsce:     2026-10-28 16:56:09 CET
+[2026-10-28 16:56:09] 📅 Data i dzień:      2026-10-28 (Środa)
+[2026-10-28 16:56:09] 🗓️ Tydzień ISO:       2026-W44
+[2026-10-28 16:56:09] ==============================================================
+[2026-10-28 16:56:09] [*] Nowy tydzień ISO (2026-W44)! Publikuję plan tygodnia na Discordzie...
+[2026-10-28 16:56:10] [Powiadomienie] Wysłano embed '🗓️ Oficjalny Plan Tygodnia InstaLing' na Discord
+[2026-10-28 16:56:10] [*] Publikuję plan na dziś (Środa) na Discordzie (#plan-na-dzis)...
+[2026-10-28 16:56:10] [Powiadomienie] Wysłano embed '📅 Harmonogram Sesji Na Dziś (Europe/Warsaw)' na Discord
+[2026-10-28 16:56:10] [Powiadomienie] Wysłano push ntfy.sh do tematu 'instaling_asa614845'
+[2026-10-28 16:56:10] [+] Serwis InstaLing odpowiada poprawnie (HTTP 200).
+[2026-10-28 16:56:10] [+] Poranny przegląd 06:30 zakończony sukcesem.
+
+[2026-10-28 16:56:10] [+] Poranny przegląd 06:30 zrealizowany (data: 2026-10-28).
+[2026-10-28 16:56:20] [*] Uruchomienie wg harmonogramu: 2026-10-28 16:56:20 CET | 2026-10-28 15:56:20 UTC
+[2026-10-28 16:56:20] [i] Żadna sesja nie oczekuje na wykonanie w tym momencie.
+[2026-10-28 16:56:20]     Dzisiejszy harmonogram: Oleslaw 010: 16:21 (Ukończono) | OliwiercioTheHacker: 18:13 (Ukończono) | Szlucha Jagoda: 20:37 (Ukończono)

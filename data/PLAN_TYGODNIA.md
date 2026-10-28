@@ -1,20 +1,23 @@
 # 🗓️ Harmonogram Tygodniowy InstaLing Multi-User
 
-> **Strefa czasowa:** `Europe/Warsaw` (CET)  
-> **Tydzień ISO:** `2026-W44`  
-> **Ostatnia synchronizacja:** `2026-10-27 17:05:05 CET`  
+> **Automatycznie synchronizowany plan sesji w strefie `Europe/Warsaw` z pełną ochroną anty-detekcyjną.**
 
-| Dzień tygodnia | Data | Uczeń | Login | Godzina (PL) | Status | Rozpoczęto | Ukończono | Wynik |
+- 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
+- 📅 **Tydzień ISO:** `2026-W44`
+- 📊 **Status tygodnia:** Ukończono **3** z **21** sesji (Pozostało: **18**)
+- 🔄 **Ostatnia aktualizacja:** `2026-10-28 16:56:20 CET`
+
+| Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
 | Poniedziałek | `2026-10-26` | **Szlucha Jagoda** | `lasa6####` | **17:04** | ⏳ Oczekuje | - | - | - |
 | Poniedziałek | `2026-10-26` | **Oleslaw 010** | `asa61####` | **18:32** | ⏳ Oczekuje | - | - | - |
 | Poniedziałek | `2026-10-26` | **OliwiercioTheHacker** | `asa61####` | **21:09** | ⏳ Oczekuje | - | - | - |
-| Wtorek | `2026-10-27` | **Szlucha Jagoda** | `lasa6####` | **15:53** | ✅ Ukończono | 2026-10-27 16:54:53 CET | 2026-10-27 16:59:22 CET | 15/25 (60.0%) |
+| Wtorek | `2026-10-27` | **Szlucha Jagoda** | `lasa6####` | **15:53** | ⏳ Oczekuje | - | - | - |
 | Wtorek | `2026-10-27` | **OliwiercioTheHacker** | `asa61####` | **18:56** | ⏳ Oczekuje | - | - | - |
 | Wtorek | `2026-10-27` | **Oleslaw 010** | `asa61####` | **21:05** | ⏳ Oczekuje | - | - | - |
-| Środa | `2026-10-28` | **Oleslaw 010** | `asa61####` | **16:21** | ⏳ Oczekuje | - | - | - |
-| Środa | `2026-10-28` | **OliwiercioTheHacker** | `asa61####` | **18:13** | ⏳ Oczekuje | - | - | - |
-| Środa | `2026-10-28` | **Szlucha Jagoda** | `lasa6####` | **20:37** | ⏳ Oczekuje | - | - | - |
+| 👉 **Środa (DZIŚ)** | `2026-10-28` | **Oleslaw 010** | `asa61####` | **16:21** | ✅ Ukończono | 2026-10-28 16:32:04 CET | 2026-10-28 16:36:29 CET | **15/25** (60.0%) |
+| 👉 **Środa (DZIŚ)** | `2026-10-28` | **OliwiercioTheHacker** | `asa61####` | **18:13** | ✅ Ukończono | 2026-10-28 16:26:26 CET | 2026-10-28 16:31:02 CET | **15/27** (55.6%) |
+| 👉 **Środa (DZIŚ)** | `2026-10-28` | **Szlucha Jagoda** | `lasa6####` | **20:37** | ✅ Ukończono | 2026-10-28 16:22:51 CET | 2026-10-28 16:26:06 CET | **15/17** (88.2%) |
 | Czwartek | `2026-10-29` | **Szlucha Jagoda** | `lasa6####` | **16:30** | ⏳ Oczekuje | - | - | - |
 | Czwartek | `2026-10-29` | **OliwiercioTheHacker** | `asa61####` | **18:18** | ⏳ Oczekuje | - | - | - |
 | Czwartek | `2026-10-29` | **Oleslaw 010** | `asa61####` | **21:07** | ⏳ Oczekuje | - | - | - |
@@ -27,3 +30,9 @@
 | Niedziela | `2026-11-01` | **Szlucha Jagoda** | `lasa6####` | **16:48** | ⏳ Oczekuje | - | - | - |
 | Niedziela | `2026-11-01` | **Oleslaw 010** | `asa61####` | **18:49** | ⏳ Oczekuje | - | - | - |
 | Niedziela | `2026-11-01` | **OliwiercioTheHacker** | `asa61####` | **21:05** | ⏳ Oczekuje | - | - | - |
+
+---
+### 📌 Informacje o harmonogramie:
+- 🛡️ **Odstępy anty-kolizyjne:** Pomiędzy sesjami różnych uczniów zachowywany jest odstęp minimum **45 minut**.
+- ☀️ **Codzienny przegląd o 06:30:** GitHub Actions każdego ranka weryfikuje gotowość i publikuje plan na dany dzień.
+- 🔒 **Niezmienność planu:** Harmonogram wylosowany na dany tydzień obowiązuje od poniedziałku do niedzieli i nie zmienia się w trakcie tygodnia.
