@@ -57,6 +57,21 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
+      - name: Wczytanie bezpiecznych danych z GitHub Secrets
+        env:
+          USERS_JSON_SECRET: ${{ secrets.USERS_JSON }}
+          CONFIG_JSON_SECRET: ${{ secrets.CONFIG_JSON }}
+        run: |
+          mkdir -p data
+          if [ -n "$USERS_JSON_SECRET" ]; then
+            echo "$USERS_JSON_SECRET" > data/users.json
+            echo "[+] Wczytano dane kont z GitHub Secrets."
+          fi
+          if [ -n "$CONFIG_JSON_SECRET" ]; then
+            echo "$CONFIG_JSON_SECRET" > data/config.json
+            echo "[+] Wczytano konfigurację i webhooki z GitHub Secrets."
+          fi
+
       - name: Instalacja zależności i przeglądarki Chromium
         run: |
           pip install -r requirements.txt
@@ -93,6 +108,8 @@ jobs:
           git config --global user.name "InstaLing Bot"
           git config --global user.email "bot@github-actions.internal"
           git pull --rebase origin main || git pull --rebase origin master || true
-          git add -A data/ PLAN_TYGODNIA.md
+          # Usuwamy ewentualne pliki prywatne z indeksu commitów (ochrona haseł)
+          git reset data/users.json data/config.json BACKUP_BOT_INFO.md 2>/dev/null || true
+          git add -f data/weekly_schedule.json data/words.json data/history.json PLAN_TYGODNIA.md data/PLAN_TYGODNIA.md
           git diff --staged --quiet || git commit -m "Auto: Aktualizacja planu tygodnia i stanu sesji [skip ci]"
           git push origin HEAD || true

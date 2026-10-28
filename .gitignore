@@ -2,3 +2,9 @@ __pycache__/
 *.pyc
 .env
 .venv/
+data/users.json
+data/config.json
+data/bot.lock
+data/bot.log
+BACKUP_BOT_INFO.md
+instaling-bot.zip
