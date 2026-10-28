@@ -22,6 +22,7 @@ on:
         options:
           - 'due'
           - 'morning'
+          - 'stats'
           - 'all'
           - 'plan'
           - 'week'
@@ -72,6 +73,8 @@ jobs:
             python main.py --reset-schedule
           elif [ "$RUN_MODE" = "morning" ]; then
             python main.py --morning
+          elif [ "$RUN_MODE" = "stats" ]; then
+            python main.py --stats
           elif [ "$RUN_MODE" = "plan" ]; then
             python main.py --plan
           elif [ "$RUN_MODE" = "week" ]; then

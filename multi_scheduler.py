@@ -587,7 +587,13 @@ class MultiScheduler:
             topic = self.config.get("ntfy_topic", "").strip() or f"instaling_{ntfy_user.get('login', 'user')}"
             self.notifier.send_morning_ntfy(topic, today_str, day_name, slots_summary)
 
-        # 5. Sprawdzenie łączności z InstaLing
+        # 5. Aktualizacja kanału #statystyki zbiorczym raportem
+        try:
+            self.notifier.send_bot_global_statistics()
+        except Exception as e:
+            log(f"[!] Błąd wysyłania statystyk bota: {e}")
+
+        # 6. Sprawdzenie łączności z InstaLing
         status_ok = True
         try:
             req = urllib.request.Request(

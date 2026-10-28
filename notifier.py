@@ -167,6 +167,11 @@ class Notifier:
                 color=0x3498DB,
                 fields=stat_fields
             )
+            # Automatycznie aktualizujemy zbiorczy dashboard bota na kanale #statystyki
+            try:
+                self.send_bot_global_statistics()
+            except Exception as e:
+                log(f"[!] Błąd wysyłania globalnych statystyk: {e}")
 
         # 4. POWIADOMIENIE NTFY.SH (DLA UŻYTKOWNIKÓW Z track_in_ntfy: true)
         if user.get("track_in_ntfy", False):
@@ -276,6 +281,83 @@ class Notifier:
             title="🗓️ Oficjalny Plan Tygodnia InstaLing",
             description=desc,
             color=0x1ABC9C
+        )
+
+    def send_bot_global_statistics(self, storage=None, users_mgr=None) -> None:
+        """Wysyła całościowy, bogaty raport statystyk działania bota na dedykowany kanał #statystyki."""
+        stats_wh = self._get_webhook("webhook_statystyki")
+        if not stats_wh:
+            return
+
+        from storage import Storage
+        from users_manager import UsersManager
+        storage = storage or Storage()
+        users_mgr = users_mgr or UsersManager()
+
+        history = storage.history
+        words = storage.words
+        active_users = users_mgr.get_active_users()
+
+        total_sessions = len(history)
+        successful_sessions = sum(1 for h in history if h.get("success", False))
+        failed_sessions = total_sessions - successful_sessions
+
+        total_words_solved = sum(h.get("words_total", 0) for h in history)
+        total_words_correct = sum(h.get("words_correct", 0) for h in history)
+        avg_acc = round((total_words_correct / total_words_solved * 100), 1) if total_words_solved > 0 else 0.0
+
+        total_time_s = sum(h.get("duration_seconds", 0) for h in history)
+        total_time_min = total_time_s / 60.0
+
+        user_lines = []
+        for u in active_users:
+            nick = u.get("nickname", "Uczeń")
+            mask = mask_login(u.get("login", ""))
+            u_hist = [h for h in history if h.get("nickname") == nick or h.get("masked_login") == mask]
+            u_count = len(u_hist)
+            u_acc = round(sum(h.get("accuracy_percent", 0) for h in u_hist) / u_count, 1) if u_count > 0 else 0.0
+            last_date = u_hist[-1].get("completed_at_warsaw", "Brak")[5:16] if u_hist else "Brak"
+            user_lines.append(f"• **{nick}** (`{mask}`): **{u_count}** sesji | Śr. **{u_acc}%** | Ost: `{last_date}`")
+
+        fields = [
+            {
+                "name": "📚 Baza Słówek",
+                "value": f"**{len(words)}** unikalnych słówek",
+                "inline": True
+            },
+            {
+                "name": "🏆 Ogólna Skuteczność",
+                "value": make_progress_bar(avg_acc),
+                "inline": True
+            },
+            {
+                "name": "🔄 Wszystkie Sesje",
+                "value": f"Łącznie: **{total_sessions}** (✅ {successful_sessions} | ❌ {failed_sessions})",
+                "inline": True
+            },
+            {
+                "name": "⏱️ Łączny Czas Nauki",
+                "value": f"**{total_time_min:.1f}** min (~{total_time_min/60:.1f}h)",
+                "inline": True
+            },
+            {
+                "name": "🛡️ Status Anty-Detekcji",
+                "value": "✅ Europe/Warsaw\n✅ Min. 45 min odstępu\n✅ Ludzkie pisanie",
+                "inline": True
+            },
+            {
+                "name": "👥 Aktywność Uczniów",
+                "value": "\n".join(user_lines) if user_lines else "Brak aktywnych uczniów",
+                "inline": False
+            }
+        ]
+
+        self._send_discord_embed(
+            webhook_url=stats_wh,
+            title="📊 Globalny Panel Statystyk InstaLing Auto-Bot",
+            description="Aktualne zestawienie telemetryczne, stan bazy wiedzy oraz postępy wszystkich kont.",
+            color=0x2980B9,
+            fields=fields
         )
 
     def _send_discord_embed(
