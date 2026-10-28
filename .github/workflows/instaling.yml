@@ -21,6 +21,7 @@ on:
         type: choice
         options:
           - 'due'
+          - 'test'
           - 'morning'
           - 'stats'
           - 'all'
@@ -88,7 +89,9 @@ jobs:
           RUN_MODE: ${{ github.event.inputs.mode || 'due' }}
           TARGET_USER: ${{ github.event.inputs.user || '' }}
         run: |
-          if [ "$RUN_MODE" = "reset" ]; then
+          if [ "$RUN_MODE" = "test" ]; then
+            python test_bot.py --discord
+          elif [ "$RUN_MODE" = "reset" ]; then
             python main.py --reset-schedule
           elif [ "$RUN_MODE" = "morning" ]; then
             python main.py --morning

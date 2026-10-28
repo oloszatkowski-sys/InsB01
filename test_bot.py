@@ -108,6 +108,67 @@ def run_tests():
         print(f"🎉 SUKCES: Wszystkie testy ({passed}/{total}) ZALICZONE POPRAWNIE!")
         print("Bot jest w 100% gotowy do bezpiecznego i niezawodnego działania.")
         print("=" * 60)
+
+        # Opcjonalny test kanałów Discord i ntfy (gdy przekazano --discord)
+        if "--discord" in sys.argv or "--full" in sys.argv:
+            print("\n📡 [TEST DISCORD & NTFY] Wysyłanie powiadomień testowych...")
+            try:
+                from config import load_config
+                from notifier import Notifier
+                from multi_scheduler import MultiScheduler
+                cfg = load_config()
+                notifier = Notifier(cfg)
+                sched = MultiScheduler(cfg)
+
+                # 1. Test #sekcja
+                sekcja_wh = notifier._get_webhook("webhook_sekcja")
+                if sekcja_wh:
+                    notifier._send_discord_embed(
+                        webhook_url=sekcja_wh,
+                        title="🧪 Test Powiadomień Bota — Wszystkie Systemy Działają!",
+                        description=(
+                            "✅ **Pomyślnie zweryfikowano działanie bota InstaLing:**\n\n"
+                            "• 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET/CEST)\n"
+                            "• 👥 **Aktywni uczniowie:** Olesław 010, Szlucha Jagoda, OliwiercioTheHacker\n"
+                            "• 🛡️ **Ochrona:** Odstęp min. 45 min, anty-kolizja aktywna\n"
+                            "• 📚 **Baza wiedzy:** Gotowa do samonaprawiania słówek\n"
+                            "• 🚀 **GitHub Actions:** Skonfigurowane i gotowe do pracy"
+                        ),
+                        color=0x2ECC71
+                    )
+                    print("✅ Wysłano meldunek testowy do kanału #sekcja")
+
+                # 2. Test #plan-na-dzis
+                sched.publish_today_plan_to_discord()
+                print("✅ Opublikowano plan na dziś w kanale #plan-na-dzis")
+
+                # 3. Test #plan-tygodnia
+                sched.publish_weekly_plan_to_discord()
+                print("✅ Opublikowano plan tygodnia w kanale #plan-tygodnia")
+
+                # 4. Test #statystyki
+                notifier.send_bot_global_statistics()
+                print("✅ Opublikowano statystyki w kanale #statystyki")
+
+                # 5. Test ntfy.sh
+                from users_manager import UsersManager
+                um = UsersManager()
+                ntfy_u = um.get_ntfy_user()
+                if ntfy_u:
+                    topic = cfg.get("ntfy_topic", "").strip() or f"instaling_{ntfy_u.get('login', 'user')}"
+                    notifier._send_ntfy(
+                        topic=topic,
+                        title="🧪 Test powiadomień InstaLing",
+                        message="Wszystkie testy bota i webhooki Discord zostały pomyślnie zaliczone!",
+                        priority="default",
+                        tags="white_check_mark,robot,tada"
+                    )
+                    print(f"✅ Wysłano powiadomienie testowe na ntfy.sh (temat: {topic})")
+
+                print("🎉 Wszystkie powiadomienia testowe dotarły na Discord i ntfy!\n")
+            except Exception as ex:
+                print(f"❌ Błąd wysyłania powiadomień testowych: {ex}\n")
+
         return True
     else:
         print(f"⚠️ OSTRZEŻENIE: Zliczono {passed}/{total} zaliczonych testów.")

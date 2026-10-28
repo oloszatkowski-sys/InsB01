@@ -39,6 +39,7 @@ def main():
     parser.add_argument("--plan", action="store_true", help="Opublikuj plan na dziś na Discordzie (#plan-na-dzis)")
     parser.add_argument("--week", action="store_true", help="Opublikuj plan tygodnia na Discordzie (#plan-tygodnia)")
     parser.add_argument("--stats", action="store_true", help="Opublikuj globalne statystyki bota na Discordzie (#statystyki)")
+    parser.add_argument("--test", "--test-discord", action="store_true", dest="test", help="Uruchom pełny zestaw testów z powiadomieniami na Discord i ntfy")
     parser.add_argument("--reset-schedule", action="store_true", help="Zresetuj stary harmonogram i wygeneruj nowy plan tygodnia")
     parser.add_argument("--daemon", action="store_true", help="Uruchom ciągły proces harmonogramu w tle (kolejka lokalna)")
 
@@ -75,6 +76,12 @@ def main():
         log(f"[*] Wysyłanie globalnych statystyk bota na kanał #statystyki...")
         sched.notifier.send_bot_global_statistics()
         log("[+] Statystyki bota zostały wysłane na Discord.")
+
+    elif args.test:
+        from test_bot import run_tests
+        sys.argv.append("--discord")
+        success = run_tests()
+        sys.exit(0 if success else 1)
 
     elif args.user:
         res = sched.run_single_user(args.user, trigger_reason="ręczne uruchomienie (--user)")
