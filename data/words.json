@@ -605,15 +605,15 @@
     "answer": "actress",
     "prompt": "aktorka",
     "sentence": "Who's your favourite _______\nluka\n?",
-    "updated_at": "2026-10-28T16:28:21.790748",
-    "usage_count": 1
+    "updated_at": "2026-10-29T20:07:55.656118",
+    "usage_count": 3
   },
   "aktorka": {
     "answer": "actress",
     "prompt": "aktorka",
     "sentence": "Who's your favourite _______\nluka\n?",
-    "updated_at": "2026-10-28T16:28:21.790748",
-    "usage_count": 1
+    "updated_at": "2026-10-29T20:07:55.656118",
+    "usage_count": 3
   },
   "she was humming a merry ____ luka . | melodia": {
     "answer": "tune",
@@ -725,6 +725,132 @@
     "prompt": "obsada",
     "sentence": "The film has an excellent ____\nluka\n of great actors.",
     "updated_at": "2026-10-29T18:31:34.345615",
+    "usage_count": 1
+  },
+  "patty can't ____ luka at all! | rysować": {
+    "answer": "draw",
+    "prompt": "rysować",
+    "sentence": "Patty can't ____\nluka\n at all!",
+    "updated_at": "2026-10-29T20:10:12.932564",
+    "usage_count": 3
+  },
+  "rysować": {
+    "answer": "draw",
+    "prompt": "rysować",
+    "sentence": "Patty can't ____\nluka\n at all!",
+    "updated_at": "2026-10-29T20:10:12.932564",
+    "usage_count": 3
+  },
+  "i prefer fantasy to _______ luka _______ luka . | science fiction; fantastyka naukowa": {
+    "answer": "science fiction",
+    "prompt": "science fiction; fantastyka naukowa",
+    "sentence": "I prefer fantasy to _______\nluka\n _______\nluka\n.",
+    "updated_at": "2026-10-29T20:08:15.319263",
+    "usage_count": 1
+  },
+  "science fiction; fantastyka naukowa": {
+    "answer": "science fiction",
+    "prompt": "science fiction; fantastyka naukowa",
+    "sentence": "I prefer fantasy to _______\nluka\n _______\nluka\n.",
+    "updated_at": "2026-10-29T20:08:15.319263",
+    "usage_count": 1
+  },
+  "i prefer rock to ___ luka . | pop": {
+    "answer": "pop",
+    "prompt": "pop",
+    "sentence": "I prefer rock to ___\nluka\n.",
+    "updated_at": "2026-10-29T20:08:36.594522",
+    "usage_count": 1
+  },
+  "pop": {
+    "answer": "pop",
+    "prompt": "pop",
+    "sentence": "I prefer rock to ___\nluka\n.",
+    "updated_at": "2026-10-29T20:08:36.594522",
+    "usage_count": 1
+  },
+  "i need a _____ luka to paint the wall. | szczotka; pędzel": {
+    "answer": "brush",
+    "prompt": "szczotka; pędzel",
+    "sentence": "I need a _____\nluka\n to paint the wall.",
+    "updated_at": "2026-10-29T20:08:56.837030",
+    "usage_count": 1
+  },
+  "szczotka; pędzel": {
+    "answer": "brush",
+    "prompt": "szczotka; pędzel",
+    "sentence": "I need a _____\nluka\n to paint the wall.",
+    "updated_at": "2026-10-29T20:08:56.837030",
+    "usage_count": 1
+  },
+  "the ________ luka should cooperate with the film crew. | reżyser": {
+    "answer": "director",
+    "prompt": "reżyser",
+    "sentence": "The ________\nluka\n should cooperate with the film crew.",
+    "updated_at": "2026-10-29T20:09:24.456102",
+    "usage_count": 1
+  },
+  "reżyser": {
+    "answer": "director",
+    "prompt": "reżyser",
+    "sentence": "The ________\nluka\n should cooperate with the film crew.",
+    "updated_at": "2026-10-29T20:09:24.456102",
+    "usage_count": 1
+  },
+  "the film was totally lame - except for the __________ luka ! yes, the music was really cool. | ścieżka dźwiękowa": {
+    "answer": "soundtrack",
+    "prompt": "ścieżka dźwiękowa",
+    "sentence": "The film was totally lame - except for the __________\nluka\n! Yes, the music was really cool.",
+    "updated_at": "2026-10-29T20:10:03.334986",
+    "usage_count": 1
+  },
+  "ścieżka dźwiękowa": {
+    "answer": "soundtrack",
+    "prompt": "ścieżka dźwiękowa",
+    "sentence": "The film was totally lame - except for the __________\nluka\n! Yes, the music was really cool.",
+    "updated_at": "2026-10-29T20:10:03.334986",
+    "usage_count": 1
+  },
+  "i gave the _______ luka to my mother and she really likes it. | rysunek": {
+    "answer": "drawing",
+    "prompt": "rysunek",
+    "sentence": "I gave the _______\nluka\n to my mother and she really likes it.",
+    "updated_at": "2026-10-29T20:10:29.699058",
+    "usage_count": 1
+  },
+  "rysunek": {
+    "answer": "drawing",
+    "prompt": "rysunek",
+    "sentence": "I gave the _______\nluka\n to my mother and she really likes it.",
+    "updated_at": "2026-10-29T20:10:29.699058",
+    "usage_count": 1
+  },
+  "it's my favourite music _____ luka . | grupa": {
+    "answer": "group",
+    "prompt": "grupa",
+    "sentence": "It's my favourite music _____\nluka\n.",
+    "updated_at": "2026-10-29T20:11:46.235171",
+    "usage_count": 3
+  },
+  "grupa": {
+    "answer": "group",
+    "prompt": "grupa",
+    "sentence": "It's my favourite music _____\nluka\n.",
+    "updated_at": "2026-10-29T20:11:46.235171",
+    "usage_count": 3
+  },
+  "can you describe the _____________ luka ? | ilustracje": {
+    "answer": "illustrations",
+    "prompt": "ilustracje",
+    "sentence": "Can you describe the _____________\nluka\n?",
+    "updated_at": "2026-10-29T20:11:16.839734",
+    "usage_count": 1
+  },
+  "ilustracje": {
+    "answer": "illustrations",
+    "prompt": "ilustracje",
+    "sentence": "Can you describe the _____________\nluka\n?",
+    "updated_at": "2026-10-29T20:11:16.839734",
     "usage_count": 1
   }
 }

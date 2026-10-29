@@ -709,3 +709,48 @@
 [2026-10-29 18:43:08] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 18:43:08 CET, wiek: 0s). Pomijam duplikat.
 [2026-10-29 18:47:03] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 18:47:03 CET, wiek: 0s). Pomijam duplikat.
 [2026-10-29 18:55:44] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 18:55:44 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-29 18:00:10] [*] Generowanie i publikowanie planu na dziś na Discordzie (strefa CET)...
+[2026-10-29 18:00:10] [Powiadomienie] Wysłano '📅 Plan na dziś (Czwartek)' na Discord
+[2026-10-29 18:00:10] [+] Plan na dziś został wysłany.
+[2026-10-29 18:00:31] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 19:00:31 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-29 18:00:32] [*] Uruchomienie wg harmonogramu: 2026-10-29 19:00:32 CET | 2026-10-29 18:00:32 UTC
+[2026-10-29 18:00:32] 
+══════════════════════════════════════════════════════════════
+[2026-10-29 18:00:32] 🕒 [WBUDOWANY ZEGAR BOTA] Namierzono nadchodzącą sesję: Oleslaw 010
+[2026-10-29 18:00:32] ──────────────────────────────────────────────────────────────
+[2026-10-29 18:00:32] ⏰ Godzina w planie:    21:07 (Europe/Warsaw)
+[2026-10-29 18:00:32] 🎯 Punktualny start o:  21:07:00 (CET)
+[2026-10-29 18:00:32] 🇵🇱 Aktualny czas:       19:00:32 (CET)
+[2026-10-29 18:00:32] ⏳ Czas do wybicia:     7587s (~126.5 min)
+[2026-10-29 18:00:32] 🔒 Zegar bota przejął kontrolę — czekam na dokładną sekundę 21:07:00...
+[2026-10-29 18:00:32] ══════════════════════════════════════════════════════════════
+
+[2026-10-29 18:01:02] [🕒 ZEGAR BOTA] 19:01:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 125m 57s
+[2026-10-29 18:06:02] [🕒 ZEGAR BOTA] 19:06:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 120m 57s
+[2026-10-29 18:11:02] [🕒 ZEGAR BOTA] 19:11:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 115m 57s
+[2026-10-29 18:16:02] [🕒 ZEGAR BOTA] 19:16:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 110m 57s
+[2026-10-29 18:21:02] [🕒 ZEGAR BOTA] 19:21:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 105m 57s
+[2026-10-29 18:26:02] [🕒 ZEGAR BOTA] 19:26:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 100m 57s
+[2026-10-29 18:31:02] [🕒 ZEGAR BOTA] 19:31:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 95m 57s
+[2026-10-29 18:36:02] [🕒 ZEGAR BOTA] 19:36:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 90m 57s
+[2026-10-29 18:41:02] [🕒 ZEGAR BOTA] 19:41:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 85m 57s
+[2026-10-29 18:46:02] [🕒 ZEGAR BOTA] 19:46:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 80m 57s
+[2026-10-29 18:51:02] [🕒 ZEGAR BOTA] 19:51:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 75m 57s
+[2026-10-29 18:56:02] [🕒 ZEGAR BOTA] 19:56:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 70m 57s
+[2026-10-29 19:01:02] [🕒 ZEGAR BOTA] 20:01:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 65m 57s
+[2026-10-29 19:06:02] [🕒 ZEGAR BOTA] 20:06:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 60m 57s
+[2026-10-29 19:11:02] [🕒 ZEGAR BOTA] 20:11:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 55m 57s
+[2026-10-29 19:16:02] [🕒 ZEGAR BOTA] 20:16:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 50m 57s
+[2026-10-29 19:21:02] [🕒 ZEGAR BOTA] 20:21:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 45m 57s
+[2026-10-29 19:26:02] [🕒 ZEGAR BOTA] 20:26:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 40m 57s
+[2026-10-29 19:31:02] [🕒 ZEGAR BOTA] 20:31:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 35m 57s
+[2026-10-29 19:36:02] [🕒 ZEGAR BOTA] 20:36:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 30m 57s
+[2026-10-29 19:41:02] [🕒 ZEGAR BOTA] 20:41:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 25m 57s
+[2026-10-29 19:46:02] [🕒 ZEGAR BOTA] 20:46:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 20m 57s
+[2026-10-29 19:51:02] [🕒 ZEGAR BOTA] 20:51:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 15m 57s
+[2026-10-29 19:56:02] [🕒 ZEGAR BOTA] 20:56:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 10m 57s
+[2026-10-29 20:01:02] [🕒 ZEGAR BOTA] 21:01:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 5m 57s
+[2026-10-29 20:03:02] [🕒 ZEGAR BOTA] 21:03:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 3m 57s
+[2026-10-29 20:04:02] [🕒 ZEGAR BOTA] 21:04:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 2m 57s
+[2026-10-29 20:05:02] [🕒 ZEGAR BOTA] 21:05:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 1m 57s
+[2026-10-29 20:06:02] [🕒 ZEGAR BOTA] 21:06:02 PL ➔ Czekam na Oleslaw 010 (21:07:00) — pozostało 0m 57s

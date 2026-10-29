@@ -900,5 +900,171 @@
       }
     ],
     "timestamp": "2026-10-29T18:32:09.194206"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "words_total": 30,
+    "words_correct": 15,
+    "words_mistakes": 15,
+    "accuracy_percent": 50.0,
+    "duration_seconds": 315.3,
+    "started_at_warsaw": "2026-10-29 21:07:00 CET",
+    "completed_at_warsaw": "2026-10-29 21:12:15 CET",
+    "finished_at": "2026-10-29T21:12:15.758910+01:00",
+    "words_details": [
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "nowe"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "nowe"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pop",
+        "answer": "pop",
+        "status": "nowe"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "szczotka; pędzel",
+        "answer": "brush",
+        "status": "nowe"
+      },
+      {
+        "prompt": "szczotka; pędzel",
+        "answer": "brush",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grać (np. kogoś w filmie)",
+        "answer": "play",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "nowe"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pop",
+        "answer": "pop",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "nowe"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysunek",
+        "answer": "drawing",
+        "status": "nowe"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "nowe"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rysunek",
+        "answer": "drawing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny (pierwszoplanowy) aktor",
+        "answer": "lead actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-29T20:12:15.758958"
   }
 ]

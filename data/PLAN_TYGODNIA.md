@@ -4,8 +4,8 @@
 
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W44`
-- 📊 **Status tygodnia:** Ukończono **5** z **21** sesji (Pozostało: **16**)
-- 🔄 **Ostatnia aktualizacja:** `2026-10-29 18:54:17 CET`
+- 📊 **Status tygodnia:** Ukończono **6** z **21** sesji (Pozostało: **15**)
+- 🔄 **Ostatnia aktualizacja:** `2026-10-29 21:12:16 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
@@ -20,7 +20,7 @@
 | Środa | `2026-10-28` | **Szlucha Jagoda** | `lasa6####` | **20:37** | ✅ Ukończono | 2026-10-28 16:22:51 CET | 2026-10-28 16:26:06 CET | **15/17** (88.2%) |
 | 👉 **Czwartek (DZIŚ)** | `2026-10-29` | **Szlucha Jagoda** | `lasa6####` | **16:30** | ✅ Ukończono | 2026-10-29 16:52:48 CET | 2026-10-29 16:56:41 CET | **15/20** (75.0%) |
 | 👉 **Czwartek (DZIŚ)** | `2026-10-29` | **OliwiercioTheHacker** | `asa61####` | **18:18** | ✅ Ukończono | 2026-10-29 18:27:19 CET | 2026-10-29 18:32:11 CET | **15/26** (57.7%) |
-| 👉 **Czwartek (DZIŚ)** | `2026-10-29` | **Oleslaw 010** | `asa61####` | **21:07** | ⏳ Oczekuje | - | - | - |
+| 👉 **Czwartek (DZIŚ)** | `2026-10-29` | **Oleslaw 010** | `asa61####` | **21:07** | ✅ Ukończono | 2026-10-29 21:07:00 CET | 2026-10-29 21:12:16 CET | **15/30** (50.0%) |
 | Piątek | `2026-10-30` | **Oleslaw 010** | `asa61####` | **16:52** | ⏳ Oczekuje | - | - | - |
 | Piątek | `2026-10-30` | **OliwiercioTheHacker** | `asa61####` | **18:46** | ⏳ Oczekuje | - | - | - |
 | Piątek | `2026-10-30` | **Szlucha Jagoda** | `lasa6####` | **20:05** | ⏳ Oczekuje | - | - | - |

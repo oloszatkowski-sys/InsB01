@@ -232,14 +232,16 @@
           "is_off_day": false,
           "scheduled_minutes": 1267,
           "scheduled_time": "21:07",
-          "status": "Oczekuje",
-          "completed": false,
-          "started_at": null,
-          "completed_at": null,
-          "duration_seconds": null,
-          "accuracy_percent": null,
+          "status": "Ukończono",
+          "completed": true,
+          "started_at": "2026-10-29 21:07:00 CET",
+          "completed_at": "2026-10-29 21:12:16 CET",
+          "duration_seconds": 315.3,
+          "accuracy_percent": 50.0,
           "error": null,
-          "countdown_sent": false
+          "countdown_sent": true,
+          "words_total": 30,
+          "words_correct": 15
         }
       ]
     },
