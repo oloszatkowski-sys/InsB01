@@ -8,9 +8,9 @@ on:
     # Skrypt sam weryfikuje godzinę w Polsce i nie powiela wykonania w ciągu tego samego dnia.
     - cron: '30 4,5 * * *'
 
-    # 2. Popołudniowe okno sesji: uruchamianie co 20 minut między 14:00 a 22:00 w Polsce (13:00 - 21:00 UTC)
-    # Skrypt sam sprawdza harmonogram i wykonuje sesję tylko gdy nadeszła kolej danego ucznia (min. 45 min odstępu).
-    - cron: '*/20 13-21 * * *'
+    # 2. Popołudniowe okno sesji: uruchamianie co 10 minut między 14:00 a 22:00 w Polsce (13:00 - 21:00 UTC)
+    # Skrypt sam sprawdza harmonogram i wykonuje sesję natychmiast, gdy nadeszła godzina dla ucznia.
+    - cron: '*/10 13-21 * * *'
 
   workflow_dispatch:
     inputs:

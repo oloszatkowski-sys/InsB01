@@ -509,3 +509,84 @@
 [2026-10-28 18:25:24] [Powiadomienie] Wysłano embed '🗓️ Oficjalny Plan Tygodnia InstaLing' na Discord
 [2026-10-28 18:25:24] [Powiadomienie] Wysłano embed '📊 Globalny Panel Statystyk InstaLing Auto-Bot' na Discord
 [2026-10-28 18:25:24] [Powiadomienie] Wysłano push ntfy.sh do tematu 'instaling_asa614845'
+[2026-10-29 16:52:48] [*] Uruchomienie wg harmonogramu: 2026-10-29 16:52:48 CET | 2026-10-29 15:52:48 UTC
+[2026-10-29 16:52:48] 
+==============================================================
+[2026-10-29 16:52:48] 🕒 [START ZADANIA] InstaLing Auto-Bot
+[2026-10-29 16:52:48] --------------------------------------------------------------
+[2026-10-29 16:52:48] 🌍 Czas UTC:         2026-10-29 15:52:48 UTC
+[2026-10-29 16:52:48] 🇵🇱 Czas w Polsce:     2026-10-29 16:52:48 CET
+[2026-10-29 16:52:48] 👤 Uczeń:             Szlucha Jagoda (lasa6####)
+[2026-10-29 16:52:48] ⏰ Planowana sesja:   16:30 (CET)
+[2026-10-29 16:52:48] ⏱️ Przesunięcie:      +22 min opóźnienia
+[2026-10-29 16:52:48] 🎯 Przyczyna:        harmonogram
+[2026-10-29 16:52:48] ==============================================================
+[2026-10-29 16:52:48] [*] Rozpoczynam sesje dla uzytkownika: Szlucha Jagoda (lasa6####) (headless=True)
+[2026-10-29 16:52:48] [*] Czas startu (Polska): 2026-10-29 16:52:48 CET
+[2026-10-29 16:52:51] [*] [Szlucha Jagoda] Otwieranie strony logowania InstaLing...
+[2026-10-29 16:52:58] [*] [Szlucha Jagoda] Logowanie do konta...
+[2026-10-29 16:53:03] [+] [Szlucha Jagoda] Pomyslnie zalogowano do serwisu!
+[2026-10-29 16:53:03] [*] [Szlucha Jagoda] Wyszukiwanie sesji...
+[2026-10-29 16:53:04] [*] [Szlucha Jagoda] Przechodzenie do sesji...
+[2026-10-29 16:53:07] [*] [Szlucha Jagoda] Klikam 'Rozpocznij sesje'...
+[2026-10-29 16:53:09] [*] [Szlucha Jagoda] Rozpoczynanie rozwiazywania slowek...
+[2026-10-29 16:53:16] [~] Celowy błąd dla ucznia: 'reality show' (wpisano: 'reality sho', prawidłowe: 'reality show')
+[2026-10-29 16:53:29] [!] AUTOKOREKTA: Baza miała '_______', poprawiono na: 'reality show'!
+[2026-10-29 16:53:37] [OK] Słówko: 'dziennikarz' -> 'journalist' (Poprawnie)
+[2026-10-29 16:53:48] [OK] Słówko: 'osoba przeprowadzająca wywiad' -> 'interviewer' (Poprawnie)
+[2026-10-29 16:53:56] [OK] Słówko: 'grać główną rolę' -> 'star' (Poprawnie)
+[2026-10-29 16:54:02] [~] Celowy błąd dla ucznia: 'artykuł' (wpisano: 'articl', prawidłowe: 'article')
+[2026-10-29 16:54:13] [!] AUTOKOREKTA: Baza miała '_______', poprawiono na: 'article'!
+[2026-10-29 16:54:23] [OK] Słówko: 'widownia; publiczność' -> 'audience' (Poprawnie)
+[2026-10-29 16:54:33] [OK] Słówko: 'serial kryminalny' -> 'crime series' (Poprawnie)
+[2026-10-29 16:54:41] [OK] Słówko: 'scena (np. z filmu)' -> 'scene' (Poprawnie)
+[2026-10-29 16:54:49] [OK] Słówko: 'rola' -> 'role' (Poprawnie)
+[2026-10-29 16:55:00] [OK] Słówko: 'subskrybować; wykupić abonament' -> 'subscribe' (Poprawnie)
+[2026-10-29 16:55:13] [OK] Słówko: 'film dokumentalny; program dokumentalny' -> 'documentary' (Poprawnie)
+[2026-10-29 16:55:21] [?] Nowe słówko: 'został napisany przez' (sprawdzam poprawną odpowiedź)
+[2026-10-29 16:55:23] [+] ZAPAMIĘTANO SŁÓWKO: 'został napisany przez' -> 'it's written by'
+[2026-10-29 16:55:36] [OK] Słówko: 'został napisany przez' -> 'it's written by' (Poprawnie)
+[2026-10-29 16:55:50] [OK] Słówko: 'opowiadanie' -> 'short story' (Poprawnie)
+[2026-10-29 16:56:00] [OK] Słówko: 'festiwal' -> 'festival' (Poprawnie)
+[2026-10-29 16:56:10] [OK] Słówko: 'wystawiać (sztukę, przedstawienie)' -> 'put on' (Poprawnie)
+[2026-10-29 16:56:23] [OK] Słówko: 'reality show' -> 'reality show' (Poprawnie)
+[2026-10-29 16:56:33] [OK] Słówko: 'artykuł' -> 'article' (Poprawnie)
+[2026-10-29 16:56:36] [+] [Szlucha Jagoda] Sesja ukonczona pomyslnie! Gratulacje!
+[2026-10-29 16:56:39] 
+[OK] SESJA DLA Szlucha Jagoda (lasa6####) ZAKONCZONA SUKCESEM!
+[2026-10-29 16:56:39]     Czas: 2026-10-29 16:52:48 CET -> 2026-10-29 16:56:39 CET (230.5s)
+[2026-10-29 16:56:39]     Rozwiazano: 20 | Poprawne: 15 (75.0%)
+
+[2026-10-29 16:56:39] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:
+[2026-10-29 16:56:39]    1. reality show ➔ _______ [⚠️ BŁĄD]
+[2026-10-29 16:56:39]    2. reality show ➔ reality show [🔄 AUTOKOREKTA]
+[2026-10-29 16:56:39]    3. dziennikarz ➔ journalist [✅ POPRAWNIE]
+[2026-10-29 16:56:39]    4. osoba przeprowadzająca wywiad ➔ interviewer [✅ POPRAWNIE]
+[2026-10-29 16:56:39]    5. grać główną rolę ➔ star [✅ POPRAWNIE]
+[2026-10-29 16:56:39]    6. artykuł ➔ _______ [⚠️ BŁĄD]
+[2026-10-29 16:56:39]    7. artykuł ➔ article [🔄 AUTOKOREKTA]
+[2026-10-29 16:56:39]    8. widownia; publiczność ➔ audience [✅ POPRAWNIE]
+[2026-10-29 16:56:39]    9. serial kryminalny ➔ crime series [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   10. scena (np. z filmu) ➔ scene [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   11. rola ➔ role [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   12. subskrybować; wykupić abonament ➔ subscribe [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   13. film dokumentalny; program dokumentalny ➔ documentary [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   14. został napisany przez ➔ it's written by [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-29 16:56:39]   15. został napisany przez ➔ it's written by [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   16. opowiadanie ➔ short story [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   17. festiwal ➔ festival [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   18. wystawiać (sztukę, przedstawienie) ➔ put on [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   19. reality show ➔ reality show [✅ POPRAWNIE]
+[2026-10-29 16:56:39]   20. artykuł ➔ article [✅ POPRAWNIE]
+[2026-10-29 16:56:39] 
+[2026-10-29 16:56:39] [Powiadomienie] Wysłano embed '🏆 InstaLing Auto-Bot — Sesja Ukończona!' na Discord
+[2026-10-29 16:56:40] [Powiadomienie] Wysłano logi na kanał Discord
+[2026-10-29 16:56:40] [Powiadomienie] Wysłano embed '📊 Raport Statystyk: Szlucha Jagoda' na Discord
+[2026-10-29 16:56:40] [Powiadomienie] Wysłano embed '📊 Globalny Panel Statystyk InstaLing Auto-Bot' na Discord
+[2026-10-29 16:56:41] [+] Zadanie dla Szlucha Jagoda zakończone sukcesem i odnotowane w harmonogramie.
+[2026-10-29 16:56:41] [Powiadomienie] Wysłano embed '📅 Harmonogram Sesji Na Dziś (Europe/Warsaw)' na Discord
+[2026-10-29 16:59:16] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 16:59:16 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-29 16:59:39] [*] Uruchomienie wg harmonogramu: 2026-10-29 16:59:39 CET | 2026-10-29 15:59:39 UTC
+[2026-10-29 16:59:39] [i] Ochrona odstępu: Ostatnia sesja zakończyła się o 2026-10-29 16:56:41 CET. Wymagany odstęp: 45 min. Kolejne konto wystartuje dopiero za ok. 42 min.
+[2026-10-29 16:59:39] [i] Żadna sesja nie oczekuje na wykonanie w tym momencie.
+[2026-10-29 16:59:39]     Dzisiejszy harmonogram: Szlucha Jagoda: 16:30 (Ukończono) | OliwiercioTheHacker: 18:18 (Oczekuje) | Oleslaw 010: 21:07 (Oczekuje)

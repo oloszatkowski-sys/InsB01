@@ -25,6 +25,51 @@ class Notifier:
             url = self.config.get("discord_webhook_url", "").strip()
         return url if url else None
 
+    def send_session_start(self, user: Dict[str, Any], scheduled_time: str, started_pl: str) -> None:
+        """Wysyła estetyczne powiadomienie o ROZPOCZĘCIU sesji na kanał #sekcja (bez pingu)."""
+        sekcja_wh = self._get_webhook("webhook_sekcja")
+        if not sekcja_wh:
+            return
+
+        nickname = user.get("nickname", "Uczeń")
+        masked = mask_login(user.get("login", ""))
+
+        title = f"▶️ InstaLing Auto-Bot — Rozpoczęto Sesję: {nickname}"
+        color = 0x3498DB  # Błękit informacyjny
+        desc = f"Rozpoczęto automatyczną sesję dla ucznia **{nickname}** (`{masked}`)."
+        fields = [
+            {
+                "name": "👤 Uczeń",
+                "value": f"**{nickname}** (`{masked}`)",
+                "inline": True
+            },
+            {
+                "name": "⏰ Godzina planowana",
+                "value": f"`{scheduled_time}`",
+                "inline": True
+            },
+            {
+                "name": "🇵🇱 Czas startu (PL)",
+                "value": f"`{started_pl[11:19]}`",
+                "inline": True
+            },
+            {
+                "name": "🎯 Status",
+                "value": "⏳ *Sesja w toku... Trwa logowanie i rozwiązywanie zadań.*",
+                "inline": False
+            }
+        ]
+
+        # WYSYŁKA BEZ PINGU (content=None)
+        self._send_discord_embed(
+            webhook_url=sekcja_wh,
+            title=title,
+            description=desc,
+            color=color,
+            fields=fields,
+            content=None
+        )
+
     def send_session_summary(self, result: Dict[str, Any], user: Dict[str, Any], session_logs: Optional[List[str]] = None) -> None:
         """Wysyła estetyczne, bogate podsumowanie ukończonej sesji na Discord i ntfy.sh."""
         success = result.get("success", False)

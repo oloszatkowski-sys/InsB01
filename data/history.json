@@ -638,5 +638,121 @@
       }
     ],
     "timestamp": "2026-10-28T16:36:28.002486"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "words_total": 20,
+    "words_correct": 15,
+    "words_mistakes": 5,
+    "accuracy_percent": 75.0,
+    "duration_seconds": 230.5,
+    "started_at_warsaw": "2026-10-29 16:52:48 CET",
+    "completed_at_warsaw": "2026-10-29 16:56:39 CET",
+    "finished_at": "2026-10-29T16:56:39.112360+01:00",
+    "words_details": [
+      {
+        "prompt": "reality show",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "dziennikarz",
+        "answer": "journalist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "osoba przeprowadzająca wywiad",
+        "answer": "interviewer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grać główną rolę",
+        "answer": "star",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "serial kryminalny",
+        "answer": "crime series",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (np. z filmu)",
+        "answer": "scene",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rola",
+        "answer": "role",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "subskrybować; wykupić abonament",
+        "answer": "subscribe",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "został napisany przez",
+        "answer": "it's written by",
+        "status": "nowe"
+      },
+      {
+        "prompt": "został napisany przez",
+        "answer": "it's written by",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "opowiadanie",
+        "answer": "short story",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "put on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-29T16:56:39.112460"
   }
 ]

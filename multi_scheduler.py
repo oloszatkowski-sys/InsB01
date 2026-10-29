@@ -95,9 +95,27 @@ class MultiScheduler:
         # Minimalny odstęp pomiędzy różnymi użytkownikami tego samego dnia (minuty)
         min_user_gap = int(self.config.get("min_user_gap_minutes", 45))
 
-        miss_mode = self.config.get("miss_days_mode", "none")
-        miss_count = int(self.config.get("miss_days_count", 0))
-        miss_fixed = self.config.get("miss_fixed_days", [])
+        # Obliczamy dni wolne w tygodniu dla każdego ucznia (Anty-Detekcja):
+        # - 50% szansy na 1 odpuszczoną sesję w tygodniu
+        # - 15% szansy na 2 odpuszczone sesje w tygodniu
+        # - 35% szansy na 0 odpuszczonych (pełny tydzień)
+        user_off_days_map: Dict[str, set] = {}
+        for u in users:
+            u_id = u.get("id") or u.get("login")
+            miss_seed = f"miss_prob_{week_key}_{u_id}"
+            miss_rng = random.Random(miss_seed)
+            roll = miss_rng.uniform(0, 100)
+            if roll < 50.0:
+                num_off = 1
+            elif roll < 65.0:
+                num_off = 2
+            else:
+                num_off = 0
+
+            if num_off > 0:
+                user_off_days_map[u_id] = set(miss_rng.sample(range(7), k=num_off))
+            else:
+                user_off_days_map[u_id] = set()
 
         # Obliczamy poniedziałek bieżącego tygodnia w Polsce
         today_pl = today_warsaw()
@@ -128,13 +146,8 @@ class MultiScheduler:
                 login = u.get("login", "")
                 slot_id = f"{day_date_str}_{u_id}"
 
-                is_off = False
-                if miss_mode == "fixed" and day_idx in miss_fixed:
-                    is_off = True
-                elif miss_mode == "random" and miss_count > 0:
-                    seed_str = f"off_{day_date_str}_{u_id}"
-                    off_rng = random.Random(seed_str)
-                    is_off = off_rng.random() < (miss_count / 7.0)
+                # Sprawdzenie dnia wolnego w oparciu o wylosowany plan tygodnia
+                is_off = day_idx in user_off_days_map.get(u_id, set())
 
                 if is_off:
                     day_slots.append({
@@ -439,6 +452,16 @@ class MultiScheduler:
             started_at_warsaw = format_warsaw(now_pl)
 
             try:
+                # Powiadomienie o rozpoczęciu sesji na Discordzie (BEZ PINGU)
+                try:
+                    self.notifier.send_session_start(
+                        user=user_obj,
+                        scheduled_time=slot.get("scheduled_time", "--:--"),
+                        started_pl=started_at_warsaw
+                    )
+                except Exception as e:
+                    log(f"[!] Błąd wysyłania powiadomienia startowego: {e}")
+
                 res = bot.run_session(user=user_obj)
                 res["started_at_warsaw"] = started_at_warsaw
                 res["completed_at_warsaw"] = format_warsaw(now_warsaw())
@@ -489,6 +512,16 @@ class MultiScheduler:
         bot = InstaLingBot(self.config)
 
         try:
+            # Powiadomienie o rozpoczęciu sesji na Discordzie (BEZ PINGU)
+            try:
+                self.notifier.send_session_start(
+                    user=target_user,
+                    scheduled_time=now_pl.strftime("%H:%M"),
+                    started_pl=started_at
+                )
+            except Exception as e:
+                log(f"[!] Błąd wysyłania powiadomienia startowego: {e}")
+
             res = bot.run_session(user=target_user)
             res["started_at_warsaw"] = started_at
             res["completed_at_warsaw"] = format_warsaw(now_warsaw())

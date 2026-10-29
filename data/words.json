@@ -182,18 +182,18 @@
     "usage_count": 5
   },
   "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
-    "answer": "Literówka",
+    "answer": "it's written by",
     "prompt": "został napisany przez",
     "sentence": "It's a well-known play _______\nluka\n __\nluka\n William Shakespeare.",
-    "updated_at": "2026-10-19T20:10:02.984957",
-    "usage_count": 2
+    "updated_at": "2026-10-29T16:55:23.730585",
+    "usage_count": 3
   },
   "został napisany przez": {
-    "answer": "Literówka",
+    "answer": "it's written by",
     "prompt": "został napisany przez",
     "sentence": "It's a well-known play _______\nluka\n __\nluka\n William Shakespeare.",
-    "updated_at": "2026-10-19T20:10:02.984957",
-    "usage_count": 2
+    "updated_at": "2026-10-29T16:55:23.730585",
+    "usage_count": 3
   },
   "i prefer novels to _____ luka _______ luka . | opowiadanie": {
     "answer": "short story",
@@ -297,15 +297,15 @@
     "answer": "reality show",
     "prompt": "reality show",
     "sentence": "This _______\nluka\n ____\nluka\n is silly.",
-    "updated_at": "2026-10-20T19:27:58.011253",
-    "usage_count": 3
+    "updated_at": "2026-10-29T16:53:29.390220",
+    "usage_count": 5
   },
   "reality show": {
     "answer": "reality show",
     "prompt": "reality show",
     "sentence": "This _______\nluka\n ____\nluka\n is silly.",
-    "updated_at": "2026-10-20T19:27:58.011253",
-    "usage_count": 3
+    "updated_at": "2026-10-29T16:53:29.390220",
+    "usage_count": 5
   },
   "it's that funny _____ luka from my favourite movie. | scena (np. z filmu)": {
     "answer": "scene",
@@ -409,15 +409,15 @@
     "answer": "article",
     "prompt": "artykuł",
     "sentence": "You absolutely must read this _______\nluka\n.",
-    "updated_at": "2026-10-20T16:58:21.683447",
-    "usage_count": 3
+    "updated_at": "2026-10-29T16:54:13.357419",
+    "usage_count": 5
   },
   "artykuł": {
     "answer": "article",
     "prompt": "artykuł",
     "sentence": "You absolutely must read this _______\nluka\n.",
-    "updated_at": "2026-10-20T16:58:21.683447",
-    "usage_count": 3
+    "updated_at": "2026-10-29T16:54:13.357419",
+    "usage_count": 5
   },
   "that ___________ luka is terribly boring. | film dokumentalny; program dokumentalny": {
     "answer": "documentary",

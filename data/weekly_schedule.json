@@ -185,13 +185,15 @@
           "is_off_day": false,
           "scheduled_minutes": 990,
           "scheduled_time": "16:30",
-          "status": "Oczekuje",
-          "completed": false,
-          "started_at": null,
-          "completed_at": null,
-          "duration_seconds": null,
-          "accuracy_percent": null,
-          "error": null
+          "status": "Ukończono",
+          "completed": true,
+          "started_at": "2026-10-29 16:52:48 CET",
+          "completed_at": "2026-10-29 16:56:41 CET",
+          "duration_seconds": 230.5,
+          "accuracy_percent": 75.0,
+          "error": null,
+          "words_total": 20,
+          "words_correct": 15
         },
         {
           "slot_id": "2026-10-29_user_3",
