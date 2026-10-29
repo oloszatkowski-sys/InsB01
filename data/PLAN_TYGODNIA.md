@@ -5,7 +5,7 @@
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W44`
 - 📊 **Status tygodnia:** Ukończono **4** z **21** sesji (Pozostało: **17**)
-- 🔄 **Ostatnia aktualizacja:** `2026-10-29 17:44:40 CET`
+- 🔄 **Ostatnia aktualizacja:** `2026-10-29 17:50:40 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
@@ -33,8 +33,8 @@
 
 ---
 ### 📌 Informacje o harmonogramie:
-- 🕒 **Okna sesji (Europe/Warsaw):** Poranne **06:43 – 07:34** oraz Popołudniowo-wieczorne **15:37 – 22:39**.
+- 🕒 **Okna sesji (Europe/Warsaw):** Poranne **06:43 – 07:34** (rzadko 8%) oraz Popołudniowo-wieczorne **15:37 – 22:39** (głównie).
 - 🛡️ **Odstępy anty-kolizyjne:** Pomiędzy sesjami różnych uczniów zachowywany jest odstęp minimum **45 minut**.
-- ⏳ **Odliczanie 15-0 min:** Zapowiedź sesji pojawia się na kanale **#plan-na-dzis** na ok. 10 minut przed startem.
+- ⏰ **Wbudowany zegar bota:** Sesje uruchamiają się punktualnie o wyznaczonej godzinie (po jednej sekcji naraz).
 - ☀️ **Codzienny przegląd o 06:30:** GitHub Actions każdego ranka weryfikuje gotowość i publikuje plan na dany dzień.
 - 🔒 **Niezmienność planu:** Harmonogram wylosowany na dany tydzień obowiązuje od poniedziałku do niedzieli.

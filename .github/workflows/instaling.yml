@@ -43,7 +43,7 @@ concurrency:
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 15  # Twardy limit czasu zadania chroniący przed jakimkolwiek zawieszeniem
+    timeout-minutes: 20  # Limit czasu uwzględniający ewentualne precyzyjne czekanie zegara i bieg sesji
     permissions:
       contents: write  # Wymagane do automatycznego commitowania i pushowania danych do GitHuba
 

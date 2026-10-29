@@ -105,23 +105,16 @@ def main():
         # Upewniamy się, że ogłoszenia dzienne/tygodniowe są aktualne
         sched.check_and_publish_daily_announcements()
 
-        # Sprawdzamy czy w oknie 15-0 min zbliża się sesja i wysyłamy odliczanie na #plan-na-dzis
-        countdowns = sched.check_upcoming_countdowns()
-        if countdowns:
-            for c in countdowns:
-                log(f"[⏳ ODLICZANIE] Wysłano zapowiedź sesji dla: {c.get('nickname')} ({c.get('scheduled_time')})")
+        # Wykonujemy cykl z wbudowanym precyzyjnym zegarem (czeka do dokładnej minuty, bez zbędnego odliczania)
+        results = sched.run_due_cycle(trigger_reason="harmonogram", max_sessions=1)
 
-        # Sprawdzamy czy są sesje oczekujące w tym momencie
-        due_slots = sched.get_due_slots()
-        if not due_slots:
+        if not results:
             today_slots = sched.get_today_slots()
             status_list = [f"{s['nickname']}: {s['scheduled_time']} ({s['status']})" for s in today_slots]
-            log("[i] Żadna sesja nie oczekuje na wykonanie w tym momencie.")
+            log("[i] Żadna sesja nie oczekuje na wykonanie w tym oknie czasowym.")
             log("    Dzisiejszy harmonogram: " + " | ".join(status_list))
             sys.exit(0)
 
-        # Wykonujemy MAKSYMALNIE 1 sesję na wywołanie crona, aby zachować odstęp czasowy
-        results = sched.run_due_cycle(trigger_reason="harmonogram", max_sessions=1)
         any_failed = any(not r.get("success", False) for r in results)
         
         # Aktualizujemy plan na Discordzie po wykonaniu zadania

@@ -371,9 +371,6 @@ class MultiScheduler:
                 elif s.get("status") == "Błąd":
                     st_str = "⚠️ Błąd"
                     res_str = s.get("error") or "Błąd"
-                elif s.get("countdown_sent") and not s.get("completed"):
-                    st_str = "⏳ Odliczanie (<15m)"
-                    res_str = "-"
                 else:
                     st_str = "⏳ Oczekuje"
                     res_str = "-"
@@ -384,9 +381,9 @@ class MultiScheduler:
             "",
             "---",
             "### 📌 Informacje o harmonogramie:",
-            "- 🕒 **Okna sesji (Europe/Warsaw):** Poranne **06:43 – 07:34** oraz Popołudniowo-wieczorne **15:37 – 22:39**.",
+            "- 🕒 **Okna sesji (Europe/Warsaw):** Poranne **06:43 – 07:34** (rzadko 8%) oraz Popołudniowo-wieczorne **15:37 – 22:39** (głównie).",
             "- 🛡️ **Odstępy anty-kolizyjne:** Pomiędzy sesjami różnych uczniów zachowywany jest odstęp minimum **45 minut**.",
-            "- ⏳ **Odliczanie 15-0 min:** Zapowiedź sesji pojawia się na kanale **#plan-na-dzis** na ok. 10 minut przed startem.",
+            "- ⏰ **Wbudowany zegar bota:** Sesje uruchamiają się punktualnie o wyznaczonej godzinie (po jednej sekcji naraz).",
             "- ☀️ **Codzienny przegląd o 06:30:** GitHub Actions każdego ranka weryfikuje gotowość i publikuje plan na dany dzień.",
             "- 🔒 **Niezmienność planu:** Harmonogram wylosowany na dany tydzień obowiązuje od poniedziałku do niedzieli."
         ])
@@ -445,59 +442,82 @@ class MultiScheduler:
         if updated:
             self._save_weekly_schedule(weekly)
 
-    def check_upcoming_countdowns(self) -> List[Dict[str, Any]]:
+    def wait_for_slot_if_approaching(self, max_wait_seconds: int = 540) -> Optional[Dict[str, Any]]:
         """
-        Sprawdza czy w ciągu najbliższych 15 minut (okno 15-0 min) ma rozpocząć się sesja.
-        Jeśli tak, wysyła jednorazowe powiadomienie z odliczaniem do dedykowanego kanału #plan-na-dzis.
+        Wbudowany zegar bota (Europe/Warsaw):
+        Sprawdza harmonogram na dziś. Jeśli kolejna zaplanowana sesja ma wystartować
+        w ciągu najbliższych kilku minut (domyślnie do 9 minut / 540 sekund),
+        wbudowany zegar bota precyzyjnie odczekuje do DOKŁADNEJ sekundy planowanego startu,
+        a następnie natychmiast przekazuje slot do wykonania!
+        Dzięki temu nie są potrzebne żadne powiadomienia z odliczaniem na Discordzie –
+        bot po prostu sam wie, o której godzinie ma ruszyć i odpala punktualnie.
         """
-        weekly = self.get_or_create_weekly_schedule()
-        today_pl = today_warsaw()
-        current_weekday = today_pl.weekday()
-        day_data = weekly.get("days", {}).get(str(current_weekday), {})
-        slots = day_data.get("slots", [])
-
+        slots = self.get_today_slots()
         now_pl = now_warsaw()
-        current_minutes = now_pl.hour * 60 + now_pl.minute
+        min_user_gap = int(self.config.get("min_user_gap_minutes", 45))
 
-        announced = []
-        need_save = False
+        # Runtime Anti-Collision: Jeśli inna sesja zakończyła się < min_user_gap min temu, nie czekamy
+        for s in slots:
+            comp_at = s.get("completed_at")
+            if comp_at:
+                try:
+                    parts = comp_at.split()
+                    if len(parts) >= 2:
+                        comp_dt = datetime.strptime(f"{parts[0]} {parts[1]}", "%Y-%m-%d %H:%M:%S").replace(tzinfo=WARSAW_TZ)
+                        diff_sec = (now_pl - comp_dt).total_seconds()
+                        if 0 <= diff_sec < (min_user_gap * 60):
+                            rem_min = int(min_user_gap - (diff_sec / 60))
+                            log(f"[i] Ochrona odstępu: Ostatnia sesja zakończyła się o {comp_at}. Wymagany odstęp: {min_user_gap} min. Kolejne konto za ok. {rem_min} min.")
+                            return None
+                except Exception:
+                    pass
 
-        users_map = {u.get("id") or u.get("login"): u for u in self.users_mgr.get_active_users()}
+        # Szukamy najbliższego oczekującego slotu na dziś
+        pending = [
+            s for s in slots
+            if not s["is_off_day"] and not s.get("completed", False)
+        ]
+        if not pending:
+            return None
 
-        for slot in slots:
-            if slot.get("is_off_day"):
-                continue
-            if slot.get("completed"):
-                continue
-            if slot.get("countdown_sent"):
-                continue
+        pending.sort(key=lambda x: x["scheduled_minutes"])
+        next_slot = pending[0]
 
-            diff = slot.get("scheduled_minutes", 0) - current_minutes
-            # Okno 15-0 minut do rozpoczęcia sesji (np. 15, 10, 5 min przed)
-            if 0 < diff <= 15:
-                u_id = slot.get("user_id")
-                user_obj = users_map.get(u_id)
-                if user_obj:
-                    nick = slot.get("nickname", "Uczeń")
-                    sched_time = slot.get("scheduled_time", "--:--")
-                    try:
-                        self.notifier.send_countdown_announcement(
-                            user=user_obj,
-                            scheduled_time=sched_time,
-                            minutes_left=diff
-                        )
-                        slot["countdown_sent"] = True
-                        slot["status"] = f"Odliczanie (~{diff}m)"
-                        need_save = True
-                        announced.append(slot)
-                        log(f"[⏳ ODLICZANIE] Wysłano zapowiedź sesji dla {nick} ({sched_time}) na #plan-na-dzis (za ~{diff} min).")
-                    except Exception as e:
-                        log(f"[!] Błąd wysyłania powiadomienia z odliczaniem: {e}")
+        sched_min = next_slot["scheduled_minutes"]
+        target_hour = sched_min // 60
+        target_minute = sched_min % 60
+        target_dt = now_pl.replace(hour=target_hour, minute=target_minute, second=0, microsecond=0)
 
-        if need_save:
-            self._save_weekly_schedule(weekly)
+        seconds_until = (target_dt - now_pl).total_seconds()
 
-        return announced
+        # Jeśli godzina już minęła (lub jest teraz), slot jest natychmiast gotowy
+        if seconds_until <= 0:
+            return next_slot
+
+        # Jeśli sesja ma wystartować w oknie do max_wait_seconds (np. do 9 min):
+        if 0 < seconds_until <= max_wait_seconds:
+            nick = next_slot["nickname"]
+            sched_t = next_slot["scheduled_time"]
+            log("\n" + "⏰" * 30)
+            log(f"🕒 [WBUDOWANY ZEGAR BOTA] Zbliża się sesja dla ucznia: {nick}")
+            log(f"⏰ Planowany start:     {sched_t} (Europe/Warsaw)")
+            log(f"🇵🇱 Aktualny czas:       {now_pl.strftime('%H:%M:%S')} CET")
+            log(f"⏳ Czas oczekiwania:    {int(seconds_until)}s (~{seconds_until/60:.1f} min)")
+            log(f"🎯 Bot precyzyjnie czeka na wybicie godziny {sched_t}...")
+            log("⏰" * 30 + "\n")
+
+            while True:
+                now_pl = now_warsaw()
+                rem_sec = (target_dt - now_pl).total_seconds()
+                if rem_sec <= 0:
+                    break
+                sleep_part = min(rem_sec, 20.0)
+                time.sleep(sleep_part)
+
+            log(f"[+] [WBUDOWANY ZEGAR] Wybiła godzina {sched_t}! Rozpoczynam sesję dla {nick}.")
+            return next_slot
+
+        return None
 
     def get_due_slots(self) -> List[Dict[str, Any]]:
         """Zwraca listę slotów na dziś, które nadeszły i nie zostały jeszcze ukończone z gwarancją odstępu."""
@@ -538,12 +558,16 @@ class MultiScheduler:
         Domyślnie wykonuje MAKSYMALNIE JEDNĄ sesję na wywołanie (max_sessions=1),
         co uniemożliwia jednoczesne lub bezpośrednie wykonywanie 2 sekcji naraz!
         """
-        # Sprawdzamy i ewentualnie wysyłamy odliczanie dla sesji w oknie 15-0 min (#plan-na-dzis)
-        self.check_upcoming_countdowns()
-
         due_slots = self.get_due_slots()
+        
+        # Jeśli żaden slot nie jest jeszcze 'due', sprawdzamy wbudowany zegar:
+        # czy kolejny slot przypada w ciągu najbliższych kilku minut (np. za 1-9 min)?
         if not due_slots:
-            return []
+            slot_ready = self.wait_for_slot_if_approaching(max_wait_seconds=540)
+            if slot_ready:
+                due_slots = [slot_ready]
+            else:
+                return []
 
         from bot import InstaLingBot
         bot = InstaLingBot(self.config)

@@ -147,11 +147,6 @@ def run_tests():
                 sched.publish_today_plan_to_discord()
                 print("✅ Opublikowano plan na dziś w kanale #plan-na-dzis")
 
-                # Test zapowiedzi odliczania na #plan-na-dzis
-                test_u = active[0] if active else {"nickname": "Tester", "login": "test001"}
-                notifier.send_countdown_announcement(test_u, scheduled_time="18:30", minutes_left=10)
-                print("✅ Przetestowano zapowiedź odliczania (~10 min) w kanale #plan-na-dzis")
-
                 # 3. Test #plan-tygodnia
                 sched.publish_weekly_plan_to_discord()
                 print("✅ Opublikowano plan tygodnia w kanale #plan-tygodnia")
