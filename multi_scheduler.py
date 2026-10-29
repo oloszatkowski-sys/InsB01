@@ -542,6 +542,20 @@ class MultiScheduler:
                     sleep_part = max(0.05, rem_sec)
                 time.sleep(sleep_part)
 
+            # Na GitHub Actions po dłuższym oczekiwaniu pobieramy ewentualne zmiany z repozytorium
+            import os
+            import subprocess
+            if os.getenv("GITHUB_ACTIONS") == "true":
+                try:
+                    subprocess.run(
+                        ["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"],
+                        cwd=str(Path(__file__).resolve().parent),
+                        timeout=15,
+                        capture_output=True
+                    )
+                except Exception:
+                    pass
+
             # Po wybudzeniu odświeżamy stan z dysku, upewniając się, że slot nadal oczekuje
             fresh_slots = self.get_today_slots()
             for fs in fresh_slots:

@@ -65,6 +65,15 @@ def load_config() -> Dict[str, Any]:
             saved = json.load(f)
             merged = DEFAULT_CONFIG.copy()
             merged.update(saved)
+            # Gwarancja spójności parametrów zegara i okien czasowych na GitHub Actions:
+            merged["morning_window_start"] = "06:43"
+            merged["morning_window_end"] = "07:34"
+            merged["morning_session_chance_percent"] = 8.0
+            merged["random_window_start"] = "15:37"
+            merged["random_window_end"] = "22:39"
+            merged["min_user_gap_minutes"] = max(45, int(merged.get("min_user_gap_minutes", 45)))
+            if os.getenv("GITHUB_ACTIONS") == "true":
+                merged["headless"] = True
             if os.getenv("INSTALING_LOGIN"):
                 merged["login"] = os.getenv("INSTALING_LOGIN")
             if os.getenv("INSTALING_PASSWORD"):

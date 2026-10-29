@@ -63,11 +63,11 @@ jobs:
         run: |
           mkdir -p data
           if [ -n "$USERS_JSON_SECRET" ]; then
-            echo "$USERS_JSON_SECRET" > data/users.json
+            printf '%s\n' "$USERS_JSON_SECRET" > data/users.json
             echo "[+] Wczytano dane kont z GitHub Secrets."
           fi
           if [ -n "$CONFIG_JSON_SECRET" ]; then
-            echo "$CONFIG_JSON_SECRET" > data/config.json
+            printf '%s\n' "$CONFIG_JSON_SECRET" > data/config.json
             echo "[+] Wczytano konfigurację i webhooki z GitHub Secrets."
           fi
 
@@ -104,17 +104,21 @@ jobs:
           elif [ -n "$TARGET_USER" ]; then
             python main.py --user "$TARGET_USER"
           else
-            # Domyślny inteligentny tryb: obsłuży poranny przegląd lub sesję wg harmonogramu
+            # Domyślny inteligentny tryb: obsłuży poranny przegląd lub wbudowany zegar sesji
             python main.py --cron
           fi
 
-      - name: Zapisanie zaktualizowanego harmonogramu, słówek i historii (Auto-Commit)
+      - name: Zapisanie zaktualizowanego harmonogramu, słówek i historii (Auto-Commit + Podsumowanie GitHub)
+        if: always()
         run: |
+          if [ -f PLAN_TYGODNIA.md ] && [ -n "$GITHUB_STEP_SUMMARY" ]; then
+            cat PLAN_TYGODNIA.md >> "$GITHUB_STEP_SUMMARY"
+          fi
           git config --global user.name "InstaLing Bot"
           git config --global user.email "bot@github-actions.internal"
           git add -f data/weekly_schedule.json data/words.json data/history.json PLAN_TYGODNIA.md data/PLAN_TYGODNIA.md 2>/dev/null || true
           if ! git diff --staged --quiet; then
             git commit -m "Auto: Aktualizacja planu tygodnia i stanu sesji [skip ci]"
-            git pull --rebase --autostash origin main || git pull --rebase --autostash origin master || true
-            git push origin HEAD || true
+            git pull --rebase --autostash -X theirs origin main || git pull --rebase --autostash -X theirs origin master || true
+            git push origin HEAD:main || git push origin HEAD || true
           fi
