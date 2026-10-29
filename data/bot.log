@@ -590,3 +590,122 @@
 [2026-10-29 16:59:39] [i] Ochrona odstępu: Ostatnia sesja zakończyła się o 2026-10-29 16:56:41 CET. Wymagany odstęp: 45 min. Kolejne konto wystartuje dopiero za ok. 42 min.
 [2026-10-29 16:59:39] [i] Żadna sesja nie oczekuje na wykonanie w tym momencie.
 [2026-10-29 16:59:39]     Dzisiejszy harmonogram: Szlucha Jagoda: 16:30 (Ukończono) | OliwiercioTheHacker: 18:18 (Oczekuje) | Oleslaw 010: 21:07 (Oczekuje)
+[2026-10-29 17:44:02] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 17:44:02 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-29 17:44:07] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 17:44:07 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-29 17:44:08] [Powiadomienie] Wysłano embed '🧪 Test Powiadomień Bota — Wszystkie Systemy Działają!' na Discord
+[2026-10-29 17:44:08] [Powiadomienie] Wysłano embed '📅 Harmonogram Sesji Na Dziś (Europe/Warsaw)' na Discord
+[2026-10-29 17:44:08] [Powiadomienie] Wysłano embed '⏳ InstaLing Auto-Bot — Za ~10 min rozpocznie się sesja!' na Discord
+[2026-10-29 17:44:11] [Powiadomienie] Wysłano embed '🗓️ Oficjalny Plan Tygodnia InstaLing' na Discord
+[2026-10-29 17:44:12] [Powiadomienie] Wysłano embed '📊 Globalny Panel Statystyk InstaLing Auto-Bot' na Discord
+[2026-10-29 17:44:12] [Powiadomienie] Wysłano push ntfy.sh do tematu 'instaling_asa614845'
+[2026-10-29 17:44:40] [*] Uruchomienie wg harmonogramu: 2026-10-29 17:44:40 CET | 2026-10-29 16:44:40 UTC
+[2026-10-29 17:44:40] [i] Żadna sesja nie oczekuje na wykonanie w tym momencie.
+[2026-10-29 17:44:40]     Dzisiejszy harmonogram: Szlucha Jagoda: 16:30 (Ukończono) | OliwiercioTheHacker: 18:18 (Oczekuje) | Oleslaw 010: 21:07 (Oczekuje)
+[2026-10-29 17:50:20] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 17:50:20 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-29 17:50:28] [*] Uruchomienie wg harmonogramu: 2026-10-29 17:50:28 CET | 2026-10-29 16:50:28 UTC
+[2026-10-29 17:50:28] [i] Żadna sesja nie oczekuje na wykonanie w tym oknie czasowym.
+[2026-10-29 17:50:28]     Dzisiejszy harmonogram: Szlucha Jagoda: 16:30 (Ukończono) | OliwiercioTheHacker: 18:18 (Oczekuje) | Oleslaw 010: 21:07 (Oczekuje)
+[2026-10-29 18:27:19] [*] Uruchomienie wg harmonogramu: 2026-10-29 18:27:19 CET | 2026-10-29 17:27:19 UTC
+[2026-10-29 18:27:19] 
+==============================================================
+[2026-10-29 18:27:19] 🕒 [START ZADANIA] InstaLing Auto-Bot
+[2026-10-29 18:27:19] --------------------------------------------------------------
+[2026-10-29 18:27:19] 🌍 Czas UTC:         2026-10-29 17:27:19 UTC
+[2026-10-29 18:27:19] 🇵🇱 Czas w Polsce:     2026-10-29 18:27:19 CET
+[2026-10-29 18:27:19] 👤 Uczeń:             OliwiercioTheHacker (asa61####)
+[2026-10-29 18:27:19] ⏰ Planowana sesja:   18:18 (CET)
+[2026-10-29 18:27:19] ⏱️ Przesunięcie:      +9 min opóźnienia
+[2026-10-29 18:27:19] 🎯 Przyczyna:        harmonogram
+[2026-10-29 18:27:19] ==============================================================
+[2026-10-29 18:27:19] [Powiadomienie] Wysłano embed '▶️ InstaLing Auto-Bot — Rozpoczęto Sesję: OliwiercioTheHacker' na Discord
+[2026-10-29 18:27:19] [*] Rozpoczynam sesje dla uzytkownika: OliwiercioTheHacker (asa61####) (headless=True)
+[2026-10-29 18:27:19] [*] Czas startu (Polska): 2026-10-29 18:27:19 CET
+[2026-10-29 18:27:23] [*] [OliwiercioTheHacker] Otwieranie strony logowania InstaLing...
+[2026-10-29 18:27:31] [*] [OliwiercioTheHacker] Logowanie do konta...
+[2026-10-29 18:27:36] [+] [OliwiercioTheHacker] Pomyslnie zalogowano do serwisu!
+[2026-10-29 18:27:36] [*] [OliwiercioTheHacker] Wyszukiwanie sesji...
+[2026-10-29 18:27:36] [*] [OliwiercioTheHacker] Przechodzenie do sesji...
+[2026-10-29 18:27:39] [*] [OliwiercioTheHacker] Klikam 'Rozpocznij sesje'...
+[2026-10-29 18:27:42] [*] [OliwiercioTheHacker] Rozpoczynanie rozwiazywania slowek...
+[2026-10-29 18:27:47] [~] Celowy błąd dla ucznia: 'grać (np. kogoś w filmie)' (wpisano: 'pla', prawidłowe: 'play')
+[2026-10-29 18:27:59] [!] AUTOKOREKTA: Baza miała '_____', poprawiono na: 'play'!
+[2026-10-29 18:28:09] [OK] Słówko: 'aktorka' -> 'actress' (Poprawnie)
+[2026-10-29 18:28:20] [OK] Słówko: 'główny (pierwszoplanowy) aktor' -> 'lead actor' (Poprawnie)
+[2026-10-29 18:28:30] [~] Celowy błąd dla ucznia: 'melodia' (wpisano: 'tun', prawidłowe: 'tune')
+[2026-10-29 18:28:42] [!] AUTOKOREKTA: Baza miała '____', poprawiono na: 'tune'!
+[2026-10-29 18:28:51] [~] Celowy błąd dla ucznia: 'pisarz' (wpisano: 'write', prawidłowe: 'writer')
+[2026-10-29 18:29:01] [OK] Słówko: 'melodia' -> 'tune' (Poprawnie)
+[2026-10-29 18:29:13] [!] AUTOKOREKTA: Baza miała '______', poprawiono na: 'writer'!
+[2026-10-29 18:29:24] [OK] Słówko: 'wysyłać (np. pliki na serwer internetowy)' -> 'upload' (Poprawnie)
+[2026-10-29 18:29:35] [OK] Słówko: 'targ, jarmark' -> 'fair' (Poprawnie)
+[2026-10-29 18:29:40] [~] Celowy błąd dla ucznia: 'śpiewać' (wpisano: 'sin', prawidłowe: 'sing')
+[2026-10-29 18:29:53] [OK] Słówko: 'grać (np. kogoś w filmie)' -> 'play' (Poprawnie)
+[2026-10-29 18:30:05] [!] AUTOKOREKTA: Baza miała '_______', poprawiono na: 'sing'!
+[2026-10-29 18:30:12] [OK] Słówko: 'poeta' -> 'poet' (Poprawnie)
+[2026-10-29 18:30:20] [?] Nowe słówko: 'koncert' (sprawdzam poprawną odpowiedź)
+[2026-10-29 18:30:21] [+] ZAPAMIĘTANO SŁÓWKO: 'koncert' -> 'concert'
+[2026-10-29 18:30:30] [OK] Słówko: 'śpiewać' -> 'sing' (Poprawnie)
+[2026-10-29 18:30:40] [OK] Słówko: 'oszczędzać wodę' -> 'save water' (Poprawnie)
+[2026-10-29 18:30:56] [OK] Słówko: 'zwiększyć temperaturę na kaloryferze' -> 'turn the radiator up' (Poprawnie)
+[2026-10-29 18:31:02] [?] Nowe słówko: 'główny bohater' (sprawdzam poprawną odpowiedź)
+[2026-10-29 18:31:04] [+] ZAPAMIĘTANO SŁÓWKO: 'główny bohater' -> 'main character'
+[2026-10-29 18:31:13] [OK] Słówko: 'główny bohater' -> 'main character' (Poprawnie)
+[2026-10-29 18:31:25] [OK] Słówko: 'fotografia (dziedzina); fotografika' -> 'photography' (Poprawnie)
+[2026-10-29 18:31:32] [?] Nowe słówko: 'obsada' (sprawdzam poprawną odpowiedź)
+[2026-10-29 18:31:34] [+] ZAPAMIĘTANO SŁÓWKO: 'obsada' -> 'cast'
+[2026-10-29 18:31:45] [OK] Słówko: 'pisarz' -> 'writer' (Poprawnie)
+[2026-10-29 18:31:53] [OK] Słówko: 'obsada' -> 'cast' (Poprawnie)
+[2026-10-29 18:32:03] [OK] Słówko: 'koncert' -> 'concert' (Poprawnie)
+[2026-10-29 18:32:07] [+] [OliwiercioTheHacker] Sesja ukonczona pomyslnie! Gratulacje!
+[2026-10-29 18:32:09] 
+[OK] SESJA DLA OliwiercioTheHacker (asa61####) ZAKONCZONA SUKCESEM!
+[2026-10-29 18:32:09]     Czas: 2026-10-29 18:27:19 CET -> 2026-10-29 18:32:09 CET (289.3s)
+[2026-10-29 18:32:09]     Rozwiazano: 26 | Poprawne: 15 (57.7%)
+
+[2026-10-29 18:32:09] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:
+[2026-10-29 18:32:09]    1. grać (np. kogoś w filmie) ➔ _____ [⚠️ BŁĄD]
+[2026-10-29 18:32:09]    2. grać (np. kogoś w filmie) ➔ play [🔄 AUTOKOREKTA]
+[2026-10-29 18:32:09]    3. aktorka ➔ actress [✅ POPRAWNIE]
+[2026-10-29 18:32:09]    4. główny (pierwszoplanowy) aktor ➔ lead actor [✅ POPRAWNIE]
+[2026-10-29 18:32:09]    5. melodia ➔ ____ [⚠️ BŁĄD]
+[2026-10-29 18:32:09]    6. melodia ➔ tune [🔄 AUTOKOREKTA]
+[2026-10-29 18:32:09]    7. pisarz ➔ ______ [⚠️ BŁĄD]
+[2026-10-29 18:32:09]    8. melodia ➔ tune [✅ POPRAWNIE]
+[2026-10-29 18:32:09]    9. pisarz ➔ writer [🔄 AUTOKOREKTA]
+[2026-10-29 18:32:09]   10. wysyłać (np. pliki na serwer internetowy) ➔ upload [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   11. targ, jarmark ➔ fair [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   12. śpiewać ➔ _______ [⚠️ BŁĄD]
+[2026-10-29 18:32:09]   13. grać (np. kogoś w filmie) ➔ play [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   14. śpiewać ➔ sing [🔄 AUTOKOREKTA]
+[2026-10-29 18:32:09]   15. poeta ➔ poet [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   16. koncert ➔ concert [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-29 18:32:09]   17. śpiewać ➔ sing [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   18. oszczędzać wodę ➔ save water [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   19. zwiększyć temperaturę na kaloryferze ➔ turn the radiator up [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   20. główny bohater ➔ main character [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-29 18:32:09]   21. główny bohater ➔ main character [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   22. fotografia (dziedzina); fotografika ➔ photography [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   23. obsada ➔ cast [🆕 NOWE ZAPAMIĘTANO]
+[2026-10-29 18:32:09]   24. pisarz ➔ writer [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   25. obsada ➔ cast [✅ POPRAWNIE]
+[2026-10-29 18:32:09]   26. koncert ➔ concert [✅ POPRAWNIE]
+[2026-10-29 18:32:09] 
+[2026-10-29 18:32:09] [Powiadomienie] Wysłano embed '🏆 InstaLing Auto-Bot — Sesja Ukończona!' na Discord
+[2026-10-29 18:32:10] [Powiadomienie] Wysłano logi na kanał Discord
+[2026-10-29 18:32:10] [Powiadomienie] Wysłano embed '📊 Raport Statystyk: OliwiercioTheHacker' na Discord
+[2026-10-29 18:32:11] [Powiadomienie] Wysłano embed '📊 Globalny Panel Statystyk InstaLing Auto-Bot' na Discord
+[2026-10-29 18:32:11] [+] Zadanie dla OliwiercioTheHacker zakończone sukcesem i odnotowane w harmonogramie.
+[2026-10-29 18:32:11] [Powiadomienie] Wysłano embed '📅 Harmonogram Sesji Na Dziś (Europe/Warsaw)' na Discord
+[2026-10-29 18:33:29] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 18:33:29 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-29 18:43:05] [*] Generowanie i publikowanie planu na dziś na Discordzie (strefa CET)...
+[2026-10-29 18:43:05] [Powiadomienie] Wysłano embed '📅 Harmonogram Sesji Na Dziś — Czwartek' na Discord
+[2026-10-29 18:43:05] [+] Plan na dziś został wysłany.
+[2026-10-29 18:43:06] [*] Generowanie i publikowanie planu tygodnia na Discordzie (strefa CET)...
+[2026-10-29 18:43:06] [Powiadomienie] Wysłano embed '🗓️ Oficjalny Plan Tygodnia InstaLing' na Discord
+[2026-10-29 18:43:06] [+] Plan tygodnia został wysłany.
+[2026-10-29 18:43:07] [*] Wysyłanie globalnych statystyk bota na kanał #statystyki...
+[2026-10-29 18:43:07] [Powiadomienie] Wysłano embed '📊 Panel Statystyk — InstaLing Auto-Bot' na Discord
+[2026-10-29 18:43:07] [+] Statystyki bota zostały wysłane na Discord.
+[2026-10-29 18:43:08] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 18:43:08 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-29 18:47:03] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 18:47:03 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-29 18:55:44] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-29 18:55:44 CET, wiek: 0s). Pomijam duplikat.

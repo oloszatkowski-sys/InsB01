@@ -458,11 +458,11 @@ class MultiScheduler:
         if updated:
             self._save_weekly_schedule(weekly)
 
-    def wait_for_slot_if_approaching(self, max_wait_seconds: int = 7200) -> Optional[Dict[str, Any]]:
+    def wait_for_slot_if_approaching(self, max_wait_seconds: int = 9000) -> Optional[Dict[str, Any]]:
         """
         Wbudowany precyzyjny zegar bota (Europe/Warsaw):
         Sprawdza harmonogram na dziś. Jeśli kolejna zaplanowana sesja już nadeszła lub ma
-        wystartować w ciągu najbliższych 120 minut (7200 sekund), zegar przejmuje kontrolę,
+        wystartować w ciągu najbliższych 150 minut (9000 sekund), zegar przejmuje kontrolę,
         utrzymuje proces w gotowości i odlicza z dokładnością do 0.05s aż do DOKŁADNEJ sekundy
         planowanego startu (np. 21:07:00), całkowicie eliminując opóźnienia kolejki GitHub Actions!
         Uwzględnia też twardą ochronę odstępu min_user_gap (45 min) po poprzedniej sesji.
@@ -601,12 +601,12 @@ class MultiScheduler:
         due.sort(key=lambda x: x["scheduled_minutes"])
         return due
 
-    def run_due_cycle(self, trigger_reason: str = "harmonogram", max_sessions: int = 1, max_wait_seconds: int = 7200) -> List[Dict[str, Any]]:
+    def run_due_cycle(self, trigger_reason: str = "harmonogram", max_sessions: int = 1, max_wait_seconds: int = 9000) -> List[Dict[str, Any]]:
         """
         Zunifikowany cykl zegara bota:
         Sprawdza harmonogram i uruchamia sesję natychmiast (jeśli jej pora już minęła)
         lub przełącza wbudowany zegar w tryb precyzyjnego oczekiwania (do max_wait_seconds,
-        domyślnie 120 minut), aby odpalić sesję co do sekundy (0.05s precyzji).
+        domyślnie 150 minut), aby odpalić sesję co do sekundy (0.05s precyzji).
         Wykonuje MAKSYMALNIE JEDNĄ sesję na wywołanie (max_sessions=1).
         """
         slot_ready = self.wait_for_slot_if_approaching(max_wait_seconds=max_wait_seconds)

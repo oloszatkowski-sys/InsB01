@@ -7,22 +7,50 @@ from logger import log
 from users_manager import mask_login
 from timezone_utils import WARSAW_TZ, now_warsaw, today_warsaw
 
+
 def make_progress_bar(pct: float, length: int = 10) -> str:
-    """Generuje wizualny pasek postępu (np. ▓▓▓▓▓▓▓▓░░ 80.0%)."""
+    """Generuje prosty pasek postępu."""
     pct = max(0.0, min(100.0, float(pct)))
     filled = int(round(length * (pct / 100.0)))
     filled = max(0, min(length, filled))
     bar = "▓" * filled + "░" * (length - filled)
-    return f"`{bar}` **{pct:.1f}%**"
+    return f"`{bar}` **{pct:.0f}%**"
+
 
 def to_discord_unix(date_str: str, time_str: str) -> Optional[int]:
-    """Konwertuje datę (YYYY-MM-DD) i godzinę (HH:MM) w strefie Europe/Warsaw na znacznik UNIX dla zegara Discorda."""
+    """Konwertuje datę (YYYY-MM-DD) i godzinę (HH:MM) w strefie Europe/Warsaw na znacznik UNIX dla Discorda."""
     try:
         clean_time = time_str.strip()[:5]
         dt = datetime.strptime(f"{date_str} {clean_time}", "%Y-%m-%d %H:%M").replace(tzinfo=WARSAW_TZ)
         return int(dt.timestamp())
     except Exception:
         return None
+
+
+def format_date_pl(date_str: str) -> str:
+    """Zamienia datę RRRR-MM-DD na czytelny format DD.MM.RRRR (np. 29.10.2026)."""
+    try:
+        parts = date_str.strip()[:10].split("-")
+        if len(parts) == 3:
+            return f"{parts[2]}.{parts[1]}.{parts[0]}"
+    except Exception:
+        pass
+    return date_str
+
+
+def format_short_datetime_pl(dt_str: str) -> str:
+    """Zamienia pełną datę '2026-10-29 16:56:41 CET' na czytelne '29.10 o godz. 16:56'."""
+    if not dt_str or dt_str == "Brak":
+        return "jeszcze nie robiono"
+    try:
+        date_part = dt_str[:10].split("-")
+        time_part = dt_str[11:16]
+        if len(date_part) == 3 and time_part:
+            return f"{date_part[2]}.{date_part[1]} o godz. {time_part}"
+    except Exception:
+        pass
+    return dt_str[:16]
+
 
 class Notifier:
     def __init__(self, config: Dict[str, Any]):
@@ -36,50 +64,33 @@ class Notifier:
         return url if url else None
 
     def send_session_start(self, user: Dict[str, Any], scheduled_time: str, started_pl: str) -> None:
-        """Wysyła schludne powiadomienie o ROZPOCZĘCIU sesji na kanał #sekcja (bez pingu)."""
+        """Wysyła proste, bardzo czytelne powiadomienie o ROZPOCZĘCIU sesji na kanał #sekcja (bez pingu)."""
         sekcja_wh = self._get_webhook("webhook_sekcja")
         if not sekcja_wh:
             return
 
         nickname = user.get("nickname", "Uczeń")
-        masked = mask_login(user.get("login", ""))
-        now_ts = int(now_warsaw().timestamp())
+        start_hour = started_pl[11:16] if started_pl and len(started_pl) >= 16 else scheduled_time
 
-        title = f"▶️ Sesja w toku — {nickname}"
-        color = 0x3498DB  # Błękit informacyjny
+        title = f"▶️ Start: {nickname} zaczyna robić InstaLing!"
+        color = 0x3498DB  # Błękitny
         desc = (
-            f"Wbudowany zegar bota wybił godzinę nauki dla ucznia **{nickname}** (`{masked}`).\n"
-            f"⏳ *Trwa logowanie i rozwiązywanie słówek...*"
+            f"Bot właśnie zalogował się na konto **{nickname}** i rozwiązuje dzisiejsze słówka.\n\n"
+            f"⏰ **Godzina z planu:** **{scheduled_time}**\n"
+            f"🕒 **Rozpoczęto o:** **{start_hour}**"
         )
-        fields = [
-            {
-                "name": "👤 Uczeń",
-                "value": f"**{nickname}**\n`{masked}`",
-                "inline": True
-            },
-            {
-                "name": "⏰ Planowany czas",
-                "value": f"**`{scheduled_time}`**\n*(Europe/Warsaw)*",
-                "inline": True
-            },
-            {
-                "name": "🇵🇱 Start zegara",
-                "value": f"**`{started_pl[11:19]}`**\n<t:{now_ts}:R>",
-                "inline": True
-            }
-        ]
 
         self._send_discord_embed(
             webhook_url=sekcja_wh,
             title=title,
             description=desc,
             color=color,
-            fields=fields,
+            fields=None,
             content=None
         )
 
     def send_session_summary(self, result: Dict[str, Any], user: Dict[str, Any], session_logs: Optional[List[str]] = None) -> None:
-        """Wysyła schludne, uporządkowane podsumowanie ukończonej sesji na odpowiednie kanały Discord i ntfy.sh."""
+        """Wysyła bardzo proste i przejrzyste podsumowanie ukończonej sesji na Discord i ntfy.sh."""
         success = result.get("success", False)
         total = result.get("words_total", 0)
         correct = result.get("words_correct", 0)
@@ -91,54 +102,26 @@ class Notifier:
         masked = mask_login(user.get("login", ""))
         started_pl = result.get("started_at_warsaw", "N/A")
         completed_pl = result.get("completed_at_warsaw", "N/A")
-        now_ts = int(now_warsaw().timestamp())
+        start_h = started_pl[11:16] if started_pl and len(started_pl) >= 16 else "--:--"
+        end_h = completed_pl[11:16] if completed_pl and len(completed_pl) >= 16 else "--:--"
+        minutes_taken = max(1, round(duration_s / 60))
 
-        # 1. KANAŁ #sekcja — Główne podsumowanie sesji
+        # 1. KANAŁ #sekcja — Główne, super czytelne podsumowanie sesji
         sekcja_wh = self._get_webhook("webhook_sekcja")
         ping_role = self.config.get("discord_ping", "@everyone")
 
         if success:
-            title = f"🏆 Sesja Ukończona — {nickname}"
-            color = 0x2ECC71  # Szmaragdowa zieleń
-            desc = f"✅ Codzienna sesja dla ucznia **{nickname}** (`{masked}`) została pomyślnie zrealizowana (<t:{now_ts}:R>)."
-
-            fields = [
-                {
-                    "name": "📊 Skuteczność",
-                    "value": make_progress_bar(acc),
-                    "inline": True
-                },
-                {
-                    "name": "📝 Wynik słówek",
-                    "value": f"✅ **{correct}** popr. • ❌ **{mistakes}** bł. *(łącznie {total})*",
-                    "inline": True
-                },
-                {
-                    "name": "⏱️ Czas nauki",
-                    "value": f"**{duration_s:.0f}s** *(~{duration_s/60:.1f} min)*",
-                    "inline": True
-                },
-                {
-                    "name": "🕒 Przebieg czasowy (PL)",
-                    "value": f"`{started_pl[11:19]}` ➔ `{completed_pl[11:19]}`",
-                    "inline": True
-                },
-                {
-                    "name": "👤 Konto ucznia",
-                    "value": f"**{nickname}** (`{masked}`)",
-                    "inline": True
-                },
-                {
-                    "name": "🛡️ Bezpieczeństwo",
-                    "value": "✅ Anty-Detekcja • Odstęp 45m+",
-                    "inline": True
-                }
-            ]
+            title = f"✅ Gotowe! {nickname} zrobił dzisiaj InstaLing!"
+            color = 0x2ECC71  # Zielony
+            desc = (
+                f"👤 **Kto:** **{nickname}**\n"
+                f"🎯 **Wynik:** **{correct} poprawnych na {total} słówek** (**{acc:.0f}%**)\n"
+                f"🕒 **Godzina:** **{start_h} – {end_h}** *(czas nauki: ok. {minutes_taken} min)*"
+            )
+            fields = []
 
             words_details = result.get("words_details", [])
             if words_details:
-                # Schludna deduplikacja słówek: pomijamy puste '_____' z pierwszego kroku autokorekty,
-                # zachowując docelowe słówko i najważniejszy status (nowe > autokorekta > celowy_blad > poprawnie)
                 priority = {"nowe": 4, "autokorekta": 3, "celowy_blad": 2, "poprawnie": 1, "blad": 0}
                 clean_words: Dict[str, Dict[str, str]] = {}
                 for item in words_details:
@@ -151,7 +134,6 @@ class Notifier:
                     if not prev:
                         clean_words[prompt] = {"prompt": prompt, "answer": ans, "status": st}
                     else:
-                        # Aktualizujemy odpowiedź jeśli poprzednia była samymi podkreślnikami '____'
                         if (not prev["answer"] or set(prev["answer"]) <= {"_"}) and ans and not (set(ans) <= {"_"}):
                             prev["answer"] = ans
                         if priority.get(st, 0) > priority.get(prev["status"], 0):
@@ -166,52 +148,34 @@ class Notifier:
                     ans = item["answer"]
                     st = item["status"]
                     if st == "poprawnie":
-                        tag = "✅"
-                        suffix = ""
+                        w_lines.append(f"`{idx}.` {prompt} ➔ **{ans}** ✅")
                     elif st == "nowe":
-                        tag = "🆕"
-                        suffix = " *(nowe)*"
+                        w_lines.append(f"`{idx}.` {prompt} ➔ **{ans}** 🆕 *(nowe słówko)*")
                     elif st == "autokorekta":
-                        tag = "🔄"
-                        suffix = " *(autokorekta)*"
+                        w_lines.append(f"`{idx}.` {prompt} ➔ **{ans}** 🔄 *(poprawione)*")
                     elif st == "celowy_blad":
-                        tag = "🎯"
-                        suffix = " *(celowy błąd)*"
+                        w_lines.append(f"`{idx}.` {prompt} ➔ **{ans}** ❌ *(drobna pomyłka)*")
                     else:
-                        tag = "⚠️"
-                        suffix = ""
-                    w_lines.append(f"`{idx:02d}.` {tag} {prompt} ➔ **{ans}**{suffix}")
+                        w_lines.append(f"`{idx}.` {prompt} ➔ **{ans}**")
 
                 if len(items_list) > 20:
-                    w_lines.append(f"*...oraz {len(items_list) - 20} innych słówek*")
+                    w_lines.append(f"*...i jeszcze {len(items_list) - 20} innych słówek*")
 
                 fields.append({
-                    "name": f"📚 Zestawienie słówek z sesji ({len(items_list)} unikalnych):",
+                    "name": f"📚 Jakie słówka były dzisiaj na sesji ({len(items_list)}):",
                     "value": "\n".join(w_lines),
                     "inline": False
                 })
         else:
-            title = f"⚠️ Błąd Sesji — {nickname}"
-            color = 0xE74C3C  # Szkarłatna czerwień
-            err = result.get("error", "Nieznany błąd wykonania")
-            desc = f"Sesja dla ucznia **{nickname}** (`{masked}`) napotkała problem i zostanie ponowiona."
-            fields = [
-                {
-                    "name": "👤 Uczeń",
-                    "value": f"**{nickname}** (`{masked}`)",
-                    "inline": True
-                },
-                {
-                    "name": "🇵🇱 Czas zdarzenia",
-                    "value": f"`{completed_pl}`",
-                    "inline": True
-                },
-                {
-                    "name": "❌ Szczegóły techniczne",
-                    "value": f"```text\n{err[:300]}\n```",
-                    "inline": False
-                }
-            ]
+            title = f"⚠️ Problem z sesją — {nickname}"
+            color = 0xE74C3C  # Czerwony
+            err = result.get("error", "Nieznany błąd")
+            desc = (
+                f"Nie udało się dokończyć sesji dla **{nickname}** o godz. **{end_h}**.\n"
+                f"🔄 Bot za chwilę spróbuje ponownie.\n\n"
+                f"**Powód:** `{err[:200]}`"
+            )
+            fields = []
 
         if sekcja_wh:
             self._send_discord_embed(
@@ -223,12 +187,12 @@ class Notifier:
                 content=ping_role if ping_role else None
             )
 
-        # 2. KANAŁ #logi-bota — Tylko czyste logi konsoli w estetycznym embedzie
+        # 2. KANAŁ #logi-bota — Krok po kroku co robił bot
         logs_wh = self._get_webhook("webhook_logi_bota") or self.config.get("discord_logs_webhook_url", "").strip()
         if logs_wh and session_logs:
             self._send_discord_logs(logs_wh, nickname, masked, session_logs)
 
-        # 3. KANAŁ #statystyki — Jeden spójny, schludny panel statystyk po sesji
+        # 3. KANAŁ #statystyki — Czytelne podsumowanie wszystkich kont
         stats_wh = self._get_webhook("webhook_statystyki")
         if stats_wh and stats_wh != sekcja_wh and success:
             try:
@@ -236,7 +200,7 @@ class Notifier:
             except Exception as e:
                 log(f"[!] Błąd wysyłania globalnych statystyk: {e}")
 
-        # 4. POWIADOMIENIE NTFY.SH (DLA UŻYTKOWNIKÓW Z track_in_ntfy: true)
+        # 4. POWIADOMIENIE NTFY.SH (na telefon)
         if user.get("track_in_ntfy", False):
             ntfy_topic = self.config.get("ntfy_topic", "").strip()
             if not ntfy_topic:
@@ -244,40 +208,39 @@ class Notifier:
                 ntfy_topic = f"instaling_{login}"
 
             if success:
-                ntfy_title = f"🎓 InstaLing: {nickname} zaliczył sesję! ({acc}%)"
+                ntfy_title = f"InstaLing: {nickname} zrobil sesje! ({correct}/{total})"
                 ntfy_msg = (
-                    f"✅ Sukces!\n"
-                    f"• Wynik: {correct}/{total} poprawnych ({acc}%)\n"
-                    f"• Czas trwania: {duration_s:.0f}s (~{duration_s/60:.1f} min)\n"
-                    f"• Czas PL: {started_pl[11:16]} ➔ {completed_pl[11:16]}"
+                    f"Gotowe! {nickname} zrobil dzisiaj InstaLing.\n"
+                    f"Wynik: {correct} na {total} slowek ({acc:.0f}%)\n"
+                    f"Godzina: {start_h} - {end_h}"
                 )
-                self._send_ntfy(ntfy_topic, ntfy_title, ntfy_msg, priority="default", tags="white_check_mark,mortarboard,robot")
+                self._send_ntfy(ntfy_topic, ntfy_title, ntfy_msg, priority="default", tags="white_check_mark,mortarboard")
             else:
-                ntfy_title = f"⚠️ InstaLing: Błąd sesji dla {nickname}"
-                ntfy_msg = f"❌ Błąd: {result.get('error', 'Nieznany')}\nCzas PL: {completed_pl}"
-                self._send_ntfy(ntfy_topic, ntfy_title, ntfy_msg, priority="high", tags="warning,x,robot")
+                ntfy_title = f"InstaLing: Problem z sesja dla {nickname}"
+                ntfy_msg = f"Bot sprobuje ponownie. Powod: {result.get('error', 'Blad')}"
+                self._send_ntfy(ntfy_topic, ntfy_title, ntfy_msg, priority="high", tags="warning")
 
     def send_morning_ntfy(self, topic: str, date_str: str, day_name: str, slots_summary: List[str]) -> None:
-        """Wysyła poranny meldunek o 06:30 na ntfy.sh."""
-        title = f"☀️ InstaLing: Plan na dziś ({day_name})"
-        msg = f"📅 Data: {date_str} ({day_name})\n\nZaplanowane godziny:\n" + "\n".join(slots_summary)
-        msg += "\n\nOdstęp anty-kolizyjny: min. 45 min."
-        self._send_ntfy(topic, title, msg, priority="default", tags="calendar,alarm_clock,robot")
+        """Wysyła poranny plan dnia na telefon (ntfy.sh)."""
+        title = f"InstaLing: Plan na dzis ({day_name})"
+        msg = f"Kto i o ktorej robi dzisiaj InstaLing ({format_date_pl(date_str)}):\n\n" + "\n".join(slots_summary)
+        self._send_ntfy(topic, title, msg, priority="default", tags="calendar,alarm_clock")
 
     def send_daily_plan(self, plan_entries: List[Dict[str, Any]], day_name: str = "", date_str: str = "") -> None:
-        """Wysyła schludny, nowoczesny plan na dziś z żywym zegarem Discorda (<t:UNIX:R>) do kanału #plan-na-dzis."""
+        """Wysyła bardzo jasny, prosty plan na dziś do kanału #plan-na-dzis."""
         wh = self._get_webhook("webhook_plan_na_dzis")
         if not wh:
             return
 
         if not date_str:
             date_str = today_warsaw().isoformat()
+        nice_date = format_date_pl(date_str)
 
         completed_count = 0
         total_active = 0
         student_blocks = []
 
-        # Sortujemy wpisy chronologicznie (dni wolne na końcu)
+        # Sortujemy według godziny (osoby z dniem wolnym na końcu)
         sorted_entries = sorted(
             plan_entries,
             key=lambda x: (1 if x.get("is_off_day") else 0, x.get("scheduled_minutes", 9999))
@@ -285,7 +248,6 @@ class Notifier:
 
         for p in sorted_entries:
             nick = p.get("nickname", "Uczeń")
-            mask = mask_login(p.get("login", ""))
             time_str = p.get("scheduled_time", "--:--")
             is_off = p.get("is_off_day", False)
             completed = p.get("completed", False)
@@ -295,86 +257,73 @@ class Notifier:
             w_tot = p.get("words_total")
 
             unix_ts = to_discord_unix(date_str, time_str) if not is_off else None
-            live_timer = f" • <t:{unix_ts}:R>" if unix_ts else ""
+            live_timer = f" (<t:{unix_ts}:R>)" if unix_ts else ""
 
             if is_off:
                 student_blocks.append(
-                    f"🏖️ **{nick}** (`{mask}`)\n"
-                    f"┗ 💤 *Dzień wolny (losowa przerwa anty-detekcyjna)*"
+                    f"🏖️ **{nick}** — **Dziś ma wolne**\n"
+                    f"┗ 💤 *Dzisiaj bot nie robi dla niego sesji*"
                 )
             elif completed:
                 completed_count += 1
                 total_active += 1
-                res_info = f" • Wynik: **{w_cor}/{w_tot}** (`{acc}%`)" if acc is not None else ""
-                end_hour = completed_at[11:19] if completed_at and len(completed_at) >= 19 else "dzisiaj"
+                score_str = f" • 🎯 Wynik: **{w_cor}/{w_tot} słówek** ({acc:.0f}%)" if acc is not None else ""
+                end_hour = completed_at[11:16] if completed_at and len(completed_at) >= 16 else time_str
                 student_blocks.append(
-                    f"✅ **{nick}** (`{mask}`)\n"
-                    f"┗ ⏰ Plan: `{time_str}` • Ukończono o **`{end_hour}`**{res_info}"
+                    f"✅ **{nick}** — **ZROBIONE!**\n"
+                    f"┗ 🕒 Zrobiono o godz. **{end_hour}**{score_str}"
                 )
             elif p.get("status") == "W trakcie":
                 total_active += 1
                 student_blocks.append(
-                    f"▶️ **{nick}** (`{mask}`)\n"
-                    f"┗ ⚡ **Sesja aktualnie w toku!** *(Plan: `{time_str}`)*"
+                    f"▶️ **{nick}** — **TERAZ ROBI SŁÓWKA!**\n"
+                    f"┗ ⏰ Godzina z planu: **{time_str}**"
                 )
             elif p.get("status") == "Błąd":
                 total_active += 1
                 student_blocks.append(
-                    f"⚠️ **{nick}** (`{mask}`)\n"
-                    f"┗ 🔄 Plan: `{time_str}` *(Wystąpił błąd — oczekiwanie na ponowienie)*"
+                    f"⚠️ **{nick}** — **Problem o godz. {time_str}**\n"
+                    f"┗ 🔄 *Bot za chwilę spróbuje ponownie*"
                 )
             else:
                 total_active += 1
                 student_blocks.append(
-                    f"⏳ **{nick}** (`{mask}`)\n"
-                    f"┗ ⏰ Start: **`{time_str}`**{live_timer}"
+                    f"⏳ **{nick}** — **Zrobi o godz. {time_str}**{live_timer}\n"
+                    f"┗ 📌 *Czeka na swoją godzinę*"
                 )
 
-        pct_done = (completed_count / total_active * 100.0) if total_active > 0 else 100.0
-        color = 0x2ECC71 if completed_count == total_active and total_active > 0 else 0x9B59B6
+        all_done = (completed_count == total_active and total_active > 0)
+        color = 0x2ECC71 if all_done else 0x5865F2
+
+        if all_done:
+            status_header = f"🎉 **Wszyscy dzisiaj zrobili już InstaLing! ({completed_count}/{total_active})**"
+        else:
+            status_header = f"📌 **Zrobione dzisiaj: {completed_count} z {total_active} osób**"
 
         desc = (
-            f"📅 **Dzień:** `{date_str}` (**{day_name}**) • 🇵🇱 **Strefa:** `Europe/Warsaw`\n"
-            f"📊 **Postęp dnia:** {make_progress_bar(pct_done)} (`{completed_count}/{total_active}`)\n\n"
-            + "\n\n".join(student_blocks)
+            "\n\n".join(student_blocks)
+            + "\n\n──────────────────────────────\n"
+            + status_header
         )
-
-        fields = [
-            {
-                "name": "🕒 Okna czasowe bota",
-                "value": "🌅 Rano: `06:43–07:34` *(8%)*\n🌙 Wieczór: `15:37–22:39` *(92%)*",
-                "inline": True
-            },
-            {
-                "name": "🛡️ Synchronizacja Zegara",
-                "value": "⏰ Wbudowany zegar (`0.5s`)\n🔒 Odstęp min. **45 min**",
-                "inline": True
-            }
-        ]
 
         self._send_discord_embed(
             webhook_url=wh,
-            title=f"📅 Harmonogram Sesji Na Dziś — {day_name}",
+            title=f"📅 Kto i o której robi dziś InstaLing? ({day_name}, {nice_date})",
             description=desc,
             color=color,
-            fields=fields
+            fields=None
         )
 
     def send_weekly_plan(self, weekly_data: Dict[str, Any], week_key: str = "") -> None:
-        """Wysyła schludny, przejrzysty plan tygodnia do kanału #plan-tygodnia."""
+        """Wysyła prostą, przejrzystą rozpiskę na cały tydzień do kanału #plan-tygodnia."""
         wh = self._get_webhook("webhook_plan_tygodnia")
         if not wh:
             return
 
         today_pl = today_warsaw()
         today_weekday = today_pl.weekday()
-        day_names_list = list(weekly_data.keys())
 
-        desc = (
-            f"🗓️ **Tydzień ISO:** `{week_key}` • 🇵🇱 **Strefa:** `Europe/Warsaw`\n"
-            f"🕒 **Okna sesji:** `06:43–07:34` *(rzadko)* oraz `15:37–22:39` *(głównie)*\n"
-            f"🔒 *Stały rozkład tygodnia z gwarancją min. 45 min odstępu między kontami.*"
-        )
+        desc = "Rozpiska godzin, o których bot robi InstaLing w poszczególne dni tygodnia:"
 
         fields = []
         for idx, (day_name, entries) in enumerate(weekly_data.items()):
@@ -387,15 +336,12 @@ class Notifier:
                 t = e.get("time", "--:--")
                 off = e.get("is_off", False)
                 comp = e.get("completed", False)
-                comp_at = e.get("completed_at")
                 if off:
-                    lines.append(f"🏖️ **{nick}**: *Wolne*")
+                    lines.append(f"🏖️ **{nick}** — *Wolne*")
                 elif comp:
-                    end_h = comp_at[11:16] if comp_at and len(comp_at) >= 16 else ""
-                    end_tag = f" *(o {end_h})*" if end_h else ""
-                    lines.append(f"✅ **{nick}**: `{t}`{end_tag}")
+                    lines.append(f"✅ **{nick}** — **{t}** *(zrobione)*")
                 else:
-                    lines.append(f"⏳ **{nick}**: **`{t}`**")
+                    lines.append(f"⏳ **{nick}** — godz. **{t}**")
 
             fields.append({
                 "name": field_title,
@@ -405,7 +351,7 @@ class Notifier:
 
         self._send_discord_embed(
             webhook_url=wh,
-            title="🗓️ Oficjalny Plan Tygodnia InstaLing",
+            title="🗓️ Plan na cały tydzień (Poniedziałek – Niedziela)",
             description=desc,
             color=0x1ABC9C,
             fields=fields
@@ -419,7 +365,7 @@ class Notifier:
         latest_acc: Optional[float] = None,
         latest_score: Optional[str] = None
     ) -> None:
-        """Wysyła pojedynczy, schludny panel statystyk działania bota na dedykowany kanał #statystyki."""
+        """Wysyła proste i czytelne podsumowanie wszystkich kont na kanał #statystyki."""
         stats_wh = self._get_webhook("webhook_statystyki")
         if not stats_wh:
             return
@@ -433,16 +379,7 @@ class Notifier:
         words = storage.words
         active_users = users_mgr.get_active_users()
 
-        total_sessions = len(history)
         successful_sessions = sum(1 for h in history if h.get("success", False))
-        failed_sessions = total_sessions - successful_sessions
-
-        total_words_solved = sum(h.get("words_total", 0) for h in history)
-        total_words_correct = sum(h.get("words_correct", 0) for h in history)
-        avg_acc = round((total_words_correct / total_words_solved * 100), 1) if total_words_solved > 0 else 0.0
-
-        total_time_s = sum(h.get("duration_seconds", 0) for h in history)
-        total_time_min = total_time_s / 60.0
 
         user_lines = []
         for u in active_users:
@@ -450,64 +387,35 @@ class Notifier:
             mask = mask_login(u.get("login", ""))
             u_hist = [h for h in history if h.get("nickname") == nick or h.get("masked_login") == mask]
             u_count = len(u_hist)
-            u_acc = round(sum(h.get("accuracy_percent", 0) for h in u_hist) / u_count, 1) if u_count > 0 else 0.0
-            last_date = u_hist[-1].get("completed_at_warsaw", "Brak")[5:16] if u_hist else "Brak"
+            u_acc = round(sum(h.get("accuracy_percent", 0) for h in u_hist) / u_count) if u_count > 0 else 0
+            last_raw = u_hist[-1].get("completed_at_warsaw", "Brak") if u_hist else "Brak"
+            last_nice = format_short_datetime_pl(last_raw)
             user_lines.append(
-                f"👤 **{nick}** (`{mask}`)\n"
-                f"┗ Sesje: **{u_count}** • Śr. {make_progress_bar(u_acc, length=8)} • Ost.: `{last_date}`"
+                f"👤 **{nick}**\n"
+                f"┗ ✅ Zrobione sesje: **{u_count}** • 🎯 Średni wynik: **{u_acc}%** • 🕒 Ostatnio: **{last_nice}**"
             )
 
-        desc = "Aktualne zestawienie telemetryczne, stan słownika oraz postępy wszystkich kont."
+        header = ""
         if latest_user and latest_score:
-            desc = (
-                f"🆕 **Ostatnia sesja:** **{latest_user}** — wynik **{latest_score}** (`{latest_acc}%`)\n"
-                f"──────────────────────────────────────────"
+            header = (
+                f"🆕 **Ostatnio zrobione:** **{latest_user}** — wynik **{latest_score} słówek** ({latest_acc:.0f}%)\n"
+                f"──────────────────────────────\n"
             )
 
-        fields = [
-            {
-                "name": "📚 Słownik Bota",
-                "value": f"**{len(words)}** słówek",
-                "inline": True
-            },
-            {
-                "name": "🏆 Średnia Skuteczność",
-                "value": make_progress_bar(avg_acc, length=8),
-                "inline": True
-            },
-            {
-                "name": "🔄 Wykonane Sesje",
-                "value": f"✅ **{successful_sessions}** (❌ {failed_sessions})",
-                "inline": True
-            },
-            {
-                "name": "⏱️ Łączny Czas Nauki",
-                "value": f"**{total_time_min:.1f} min** (~{total_time_min/60:.1f}h)",
-                "inline": True
-            },
-            {
-                "name": "✍️ Przerobione Słówka",
-                "value": f"**{total_words_correct}/{total_words_solved}** popr.",
-                "inline": True
-            },
-            {
-                "name": "🛡️ Zegar i Ochrona",
-                "value": "⏰ Precyzja `0.5s` • `45m+`",
-                "inline": True
-            },
-            {
-                "name": "👥 Statystyki Poszczególnych Uczniów",
-                "value": "\n\n".join(user_lines) if user_lines else "Brak aktywnych uczniów",
-                "inline": False
-            }
-        ]
+        desc = (
+            header
+            + "\n\n".join(user_lines)
+            + "\n\n──────────────────────────────\n"
+            + f"📚 **Zapamiętane słówka w bazie bota:** **{len(words)} słówek**\n"
+            + f"🏆 **Wszystkie wykonane sesje łącznie:** **{successful_sessions}**"
+        )
 
         self._send_discord_embed(
             webhook_url=stats_wh,
-            title="📊 Panel Statystyk — InstaLing Auto-Bot",
+            title="📊 Podsumowanie kont — ile już zrobiono?",
             description=desc,
             color=0x2980B9,
-            fields=fields
+            fields=None
         )
 
     def _send_discord_embed(
@@ -525,7 +433,7 @@ class Notifier:
                 "description": description,
                 "color": color,
                 "footer": {
-                    "text": "InstaLing Auto-Bot • Wbudowany Zegar (Europe/Warsaw) • Anty-Detekcja"
+                    "text": "InstaLing Bot • Wysłano automatycznie z GitHuba"
                 },
                 "timestamp": datetime.now(timezone.utc).isoformat()
             }
@@ -551,7 +459,7 @@ class Notifier:
             log(f"[!] Błąd wysyłania powiadomienia Discord: {e}")
 
     def _send_discord_logs(self, webhook_url: str, nickname: str, masked: str, log_lines: List[str]) -> None:
-        """Wysyła logi przebiegu sesji w czystym, ciemnym embedzie na kanał #logi-bota."""
+        """Wysyła logi przebiegu sesji na kanał #logi-bota."""
         try:
             recent = log_lines[-24:] if len(log_lines) > 24 else log_lines
             log_text = "\n".join(recent)
@@ -560,7 +468,7 @@ class Notifier:
 
             self._send_discord_embed(
                 webhook_url=webhook_url,
-                title=f"📋 Logi Konsoli — {nickname} ({masked})",
+                title=f"📋 Przebieg sesji krok po kroku — {nickname}",
                 description=f"```text\n{log_text}\n```",
                 color=0x34495E
             )

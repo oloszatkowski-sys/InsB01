@@ -1,13 +1,17 @@
 name: InstaLing Daily Bot
 
 on:
+  push:
+    branches:
+      - main
+
   schedule:
     # 1. Okno poranne: przegląd o 06:30 oraz sesje 06:43 - 07:34 (Europe/Warsaw)
     # Przesunięte minuty (3,18,33,48) omijają korki kolejki GitHuba na pełnych dziesiątkach minut!
     - cron: '3,18,33,48 4-6 * * *'
 
     # 2. Okno popołudniowo-wieczorne: sesje 15:37 - 22:39 (Europe/Warsaw)
-    # Przesunięte minuty + wbudowany zegar bota (czeka do 90 min na dokładną sekundę sesji)
+    # Przesunięte minuty + wbudowany zegar bota (czeka do 150 min na dokładną sekundę sesji)
     - cron: '3,18,33,48 13-22 * * *'
 
   workflow_dispatch:
@@ -39,7 +43,7 @@ concurrency:
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 160  # Pozwala wbudowanemu zegarowi bota czekać w gotowości nawet do 120 min na dokładną sekundę sesji!
+    timeout-minutes: 180  # Pozwala wbudowanemu zegarowi bota czekać w gotowości do 150 min na dokładną sekundę sesji!
     permissions:
       contents: write  # Wymagane do automatycznego commitowania i pushowania danych do GitHuba
 
@@ -71,9 +75,20 @@ jobs:
             echo "[+] Wczytano konfigurację i webhooki z GitHub Secrets."
           fi
 
-      - name: Instalacja zależności i przeglądarki Chromium
+      - name: Instalacja pakietów Pythona
         run: |
           pip install -r requirements.txt
+
+      - name: Wysyłka powiadomień na Discord prosto z GitHuba
+        if: github.event_name == 'push'
+        run: |
+          echo "[*] Wysyłam czytelny plan na dziś, plan tygodnia i statystyki prosto z GitHub Actions..."
+          python main.py --plan
+          python main.py --week
+          python main.py --stats
+
+      - name: Instalacja przeglądarki Chromium
+        run: |
           playwright install --with-deps chromium
 
       - name: Uruchomienie testów automatycznych (Pre-Flight Checks)
