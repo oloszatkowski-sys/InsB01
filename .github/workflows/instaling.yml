@@ -38,7 +38,7 @@ on:
 # Blokada uniemożliwiająca nakładanie się dwóch workflow
 concurrency:
   group: instaling-bot
-  cancel-in-progress: false
+  cancel-in-progress: ${{ github.event_name == 'push' }}
 
 jobs:
   run-bot:
@@ -82,10 +82,7 @@ jobs:
       - name: Wysyłka powiadomień na Discord prosto z GitHuba
         if: github.event_name == 'push'
         run: |
-          echo "[*] Wysyłam czytelny plan na dziś, plan tygodnia i statystyki prosto z GitHub Actions..."
           python main.py --plan
-          python main.py --week
-          python main.py --stats
 
       - name: Instalacja przeglądarki Chromium
         run: |
