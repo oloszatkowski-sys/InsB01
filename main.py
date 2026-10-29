@@ -105,6 +105,12 @@ def main():
         # Upewniamy się, że ogłoszenia dzienne/tygodniowe są aktualne
         sched.check_and_publish_daily_announcements()
 
+        # Sprawdzamy czy w oknie 15-0 min zbliża się sesja i wysyłamy odliczanie na #plan-na-dzis
+        countdowns = sched.check_upcoming_countdowns()
+        if countdowns:
+            for c in countdowns:
+                log(f"[⏳ ODLICZANIE] Wysłano zapowiedź sesji dla: {c.get('nickname')} ({c.get('scheduled_time')})")
+
         # Sprawdzamy czy są sesje oczekujące w tym momencie
         due_slots = sched.get_due_slots()
         if not due_slots:

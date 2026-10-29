@@ -35,7 +35,12 @@ def run_tests():
         gap = int(cfg.get("min_user_gap_minutes", 0))
         assert gap >= 45, f"Odstęp między użytkownikami ({gap}m) musi wynosić min. 45 min!"
         assert cfg.get("max_words_per_session", 0) <= 50, "Limit słówek musi chronić przed pętlą!"
-        print(f"✅ [2/{total}] Konfiguracja: OK (Odstęp min_user_gap: {gap} min, limit słówek: {cfg.get('max_words_per_session')})")
+        morn_s = cfg.get("morning_window_start", "06:43")
+        morn_e = cfg.get("morning_window_end", "07:34")
+        eve_s = cfg.get("random_window_start", "15:37")
+        eve_e = cfg.get("random_window_end", "22:39")
+        morn_p = cfg.get("morning_session_chance_percent", 8.0)
+        print(f"✅ [2/{total}] Konfiguracja: OK (Okna: {morn_s}-{morn_e} [{morn_p}%] oraz {eve_s}-{eve_e}, odstęp: {gap} min)")
         passed += 1
     except Exception as e:
         print(f"❌ [2/{total}] Błąd konfiguracji: {e}")
@@ -141,6 +146,11 @@ def run_tests():
                 # 2. Test #plan-na-dzis
                 sched.publish_today_plan_to_discord()
                 print("✅ Opublikowano plan na dziś w kanale #plan-na-dzis")
+
+                # Test zapowiedzi odliczania na #plan-na-dzis
+                test_u = active[0] if active else {"nickname": "Tester", "login": "test001"}
+                notifier.send_countdown_announcement(test_u, scheduled_time="18:30", minutes_left=10)
+                print("✅ Przetestowano zapowiedź odliczania (~10 min) w kanale #plan-na-dzis")
 
                 # 3. Test #plan-tygodnia
                 sched.publish_weekly_plan_to_discord()

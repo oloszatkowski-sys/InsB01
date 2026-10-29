@@ -25,6 +25,65 @@ class Notifier:
             url = self.config.get("discord_webhook_url", "").strip()
         return url if url else None
 
+    def send_countdown_announcement(self, user: Dict[str, Any], scheduled_time: str, minutes_left: int) -> None:
+        """
+        Wysyła estetyczne powiadomienie z odliczaniem (15-0 min przed sesją)
+        do kanału #plan-na-dzis (zgodnie z zasadą rozdziału kanałów, bez pingu).
+        """
+        # Wysyłamy na kanał #plan-na-dzis, aby nie zaśmiecać kanału #sekcja
+        plan_wh = self._get_webhook("webhook_plan_na_dzis")
+        if not plan_wh:
+            plan_wh = self._get_webhook("webhook_sekcja")
+        if not plan_wh:
+            return
+
+        nickname = user.get("nickname", "Uczeń")
+        masked = mask_login(user.get("login", ""))
+
+        title = f"⏳ InstaLing Auto-Bot — Za ~{minutes_left} min rozpocznie się sesja!"
+        color = 0xF39C12  # Ciepły bursztynowy / pomarańczowy (przygotowanie)
+        desc = (
+            f"Zbliża się zaplanowana godzina sesji dla ucznia **{nickname}** (`{masked}`).\n"
+            f"Bot rozpocznie rozwiązywanie zadań w najbliższym cyklu."
+        )
+        fields = [
+            {
+                "name": "👤 Uczeń",
+                "value": f"**{nickname}** (`{masked}`)",
+                "inline": True
+            },
+            {
+                "name": "⏰ Godzina w planie (PL)",
+                "value": f"`{scheduled_time}`",
+                "inline": True
+            },
+            {
+                "name": "⏳ Pozostały czas",
+                "value": f"**~{minutes_left} minut**",
+                "inline": True
+            },
+            {
+                "name": "🛡️ Status Anty-Detekcji",
+                "value": "• Odstęp min. 45 min: **Zachowany**\n• Moduł symulacji człowieka: **Gotowy**\n• Baza słówek: **Zsynchronizowana**",
+                "inline": False
+            },
+            {
+                "name": "📢 Gdzie pojawi się relacja?",
+                "value": "• Start i podsumowanie sesji ze słówkami: **#sekcja**\n• Szczegółowe logi operacji w konsoli: **#logi-bota**\n• Karta postępów i statystyki: **#statystyki**",
+                "inline": False
+            }
+        ]
+
+        # WYSYŁKA BEZ PINGU (content=None)
+        self._send_discord_embed(
+            webhook_url=plan_wh,
+            title=title,
+            description=desc,
+            color=color,
+            fields=fields,
+            content=None
+        )
+
     def send_session_start(self, user: Dict[str, Any], scheduled_time: str, started_pl: str) -> None:
         """Wysyła estetyczne powiadomienie o ROZPOCZĘCIU sesji na kanał #sekcja (bez pingu)."""
         sekcja_wh = self._get_webhook("webhook_sekcja")
@@ -281,13 +340,16 @@ class Notifier:
             elif p.get("status") == "Błąd":
                 total_active += 1
                 lines.append(f"⚠️ **{nick}** (`{mask}`) ➔ **{time_str}** *(Błąd - ponowienie wkrótce)*")
+            elif p.get("countdown_sent"):
+                total_active += 1
+                lines.append(f"⏳ **{nick}** (`{mask}`) ➔ **{time_str}** *(Odliczanie <15 min do startu)*")
             else:
                 total_active += 1
                 lines.append(f"⏳ **{nick}** (`{mask}`) ➔ **{time_str}** *(Oczekuje na swoją godzinę)*")
 
         header = f"**Data:** `{date_str}` ({day_name})\n**Postęp sesji:** `{completed_count}/{total_active}` ukończonych dzisiaj\n\n"
         desc = header + "\n".join(lines)
-        desc += "\n\n💡 *Każdy uczeń ma własny przedział czasowy z zachowaniem min. 45 min odstępu bez kolizji.*"
+        desc += "\n\n💡 *Okna sesji: 06:43–07:34 oraz 15:37–22:39 (Europe/Warsaw) z zachowaniem min. 45 min odstępu bez kolizji.*"
 
         self._send_discord_embed(
             webhook_url=wh,

@@ -79,6 +79,11 @@ class MultiScheduler:
                 with open(self.weekly_file, "r", encoding="utf-8") as f:
                     data = json.load(f)
                     if data.get("week_key") == week_key and "days" in data:
+                        # Uzupełniamy ewentualny brakujący klucz countdown_sent
+                        for d in data.get("days", {}).values():
+                            for s in d.get("slots", []):
+                                if "countdown_sent" not in s:
+                                    s["countdown_sent"] = bool(s.get("completed", False))
                         self._export_markdown_plan(data)
                         return data
             except Exception:
@@ -87,12 +92,21 @@ class MultiScheduler:
         # Tworzymy nowy harmonogram dla nowego tygodnia
         self.clean_legacy_states()
         users = self.users_mgr.get_active_users()
-        win_start = time_to_minutes(self.config.get("random_window_start", "15:46"))
-        win_end = time_to_minutes(self.config.get("random_window_end", "21:57"))
-        if win_end <= win_start + 60:
-            win_end = win_start + 300
 
-        # Minimalny odstęp pomiędzy różnymi użytkownikami tego samego dnia (minuty)
+        # Okna czasowe w strefie Europe/Warsaw:
+        # 1. Okno poranne: 06:43 - 07:34 (403 - 454 min)
+        # 2. Okno popołudniowo-wieczorne: 15:37 - 22:39 (937 - 1359 min)
+        morn_start = time_to_minutes(self.config.get("morning_window_start", "06:43"))
+        morn_end = time_to_minutes(self.config.get("morning_window_end", "07:34"))
+        if morn_end <= morn_start:
+            morn_end = morn_start + 51
+
+        eve_start = time_to_minutes(self.config.get("random_window_start", "15:37"))
+        eve_end = time_to_minutes(self.config.get("random_window_end", "22:39"))
+        if eve_end <= eve_start + 60:
+            eve_end = eve_start + 422
+
+        morn_chance = float(self.config.get("morning_session_chance_percent", 8.0))
         min_user_gap = int(self.config.get("min_user_gap_minutes", 45))
 
         # Obliczamy dni wolne w tygodniu dla każdego ucznia (Anty-Detekcja):
@@ -136,44 +150,97 @@ class MultiScheduler:
             rng = random.Random(day_seed)
             rng.shuffle(shuffled_users)
 
-            total_users = max(len(shuffled_users), 1)
-            total_span = win_end - win_start
-            sub_window = max(total_span // total_users, min_user_gap + 15)
+            active_today = [
+                u for u in shuffled_users
+                if day_idx not in user_off_days_map.get(u.get("id") or u.get("login"), set())
+            ]
+            off_today = [
+                u for u in shuffled_users
+                if day_idx in user_off_days_map.get(u.get("id") or u.get("login"), set())
+            ]
 
-            for u_idx, u in enumerate(shuffled_users):
+            # Sloty dla dni wolnych
+            for u in off_today:
                 u_id = u.get("id") or u.get("login")
                 nick = u.get("nickname", "Uczeń")
                 login = u.get("login", "")
                 slot_id = f"{day_date_str}_{u_id}"
+                day_slots.append({
+                    "slot_id": slot_id,
+                    "user_id": u_id,
+                    "nickname": nick,
+                    "login": login,
+                    "is_off_day": True,
+                    "scheduled_minutes": 0,
+                    "scheduled_time": "Wolne",
+                    "status": "Dzień wolny",
+                    "completed": True,
+                    "countdown_sent": True,
+                    "started_at": None,
+                    "completed_at": None,
+                    "duration_seconds": None,
+                    "accuracy_percent": None,
+                    "error": None
+                })
 
-                # Sprawdzenie dnia wolnego w oparciu o wylosowany plan tygodnia
-                is_off = day_idx in user_off_days_map.get(u_id, set())
+            # Przydział sesji aktywnych:
+            # Okno poranne (06:43-07:34) lub popołudniowo-wieczorne (15:37-22:39)
+            morn_roll = rng.uniform(0, 100)
+            morn_user = None
+            eve_users = list(active_today)
 
-                if is_off:
-                    day_slots.append({
-                        "slot_id": slot_id,
-                        "user_id": u_id,
-                        "nickname": nick,
-                        "login": login,
-                        "is_off_day": True,
-                        "scheduled_minutes": 0,
-                        "scheduled_time": "Wolne",
-                        "status": "Dzień wolny",
-                        "completed": True,
-                        "started_at": None,
-                        "completed_at": None,
-                        "duration_seconds": None,
-                        "accuracy_percent": None,
-                        "error": None
-                    })
-                else:
-                    sector_start = win_start + u_idx * sub_window
-                    sector_end = min(sector_start + sub_window - min_user_gap, win_end)
+            # Maksymalnie 1 uczeń w oknie porannym (mieści się z odstępem min 45m)
+            if active_today and morn_roll < morn_chance:
+                morn_user = active_today[0]
+                eve_users = active_today[1:]
+
+            if morn_user:
+                u_id = morn_user.get("id") or morn_user.get("login")
+                nick = morn_user.get("nickname", "Uczeń")
+                login = morn_user.get("login", "")
+                slot_id = f"{day_date_str}_{u_id}"
+
+                time_seed = f"time_morn_{day_date_str}_{u_id}_{week_key}"
+                time_rng = random.Random(time_seed)
+                chosen_min = time_rng.randint(morn_start, morn_end)
+
+                day_slots.append({
+                    "slot_id": slot_id,
+                    "user_id": u_id,
+                    "nickname": nick,
+                    "login": login,
+                    "is_off_day": False,
+                    "scheduled_minutes": chosen_min,
+                    "scheduled_time": minutes_to_time(chosen_min),
+                    "status": "Oczekuje",
+                    "completed": False,
+                    "countdown_sent": False,
+                    "started_at": None,
+                    "completed_at": None,
+                    "duration_seconds": None,
+                    "accuracy_percent": None,
+                    "error": None
+                })
+
+            # Sloty dla okna wieczornego (15:37 - 22:39)
+            if eve_users:
+                total_eve = len(eve_users)
+                total_span = eve_end - eve_start
+                sub_window = max(total_span // total_eve, min_user_gap + 15)
+
+                for e_idx, u in enumerate(eve_users):
+                    u_id = u.get("id") or u.get("login")
+                    nick = u.get("nickname", "Uczeń")
+                    login = u.get("login", "")
+                    slot_id = f"{day_date_str}_{u_id}"
+
+                    sector_start = eve_start + e_idx * sub_window
+                    sector_end = min(sector_start + sub_window - min_user_gap, eve_end)
                     if sector_end <= sector_start:
-                        sector_start = win_start
-                        sector_end = win_end
+                        sector_start = eve_start
+                        sector_end = eve_end
 
-                    time_seed = f"time_{day_date_str}_{u_id}_{week_key}"
+                    time_seed = f"time_eve_{day_date_str}_{u_id}_{week_key}"
                     time_rng = random.Random(time_seed)
                     chosen_min = time_rng.randint(sector_start, sector_end)
 
@@ -187,6 +254,7 @@ class MultiScheduler:
                         "scheduled_time": minutes_to_time(chosen_min),
                         "status": "Oczekuje",
                         "completed": False,
+                        "countdown_sent": False,
                         "started_at": None,
                         "completed_at": None,
                         "duration_seconds": None,
@@ -203,8 +271,8 @@ class MultiScheduler:
                 curr_min = active_slots[i]["scheduled_minutes"]
                 if curr_min - prev_min < min_user_gap:
                     new_min = prev_min + min_user_gap
-                    if new_min > win_end:
-                        new_min = win_end
+                    if new_min > eve_end:
+                        new_min = eve_end
                     active_slots[i]["scheduled_minutes"] = new_min
                     active_slots[i]["scheduled_time"] = minutes_to_time(new_min)
 
@@ -303,6 +371,9 @@ class MultiScheduler:
                 elif s.get("status") == "Błąd":
                     st_str = "⚠️ Błąd"
                     res_str = s.get("error") or "Błąd"
+                elif s.get("countdown_sent") and not s.get("completed"):
+                    st_str = "⏳ Odliczanie (<15m)"
+                    res_str = "-"
                 else:
                     st_str = "⏳ Oczekuje"
                     res_str = "-"
@@ -313,9 +384,11 @@ class MultiScheduler:
             "",
             "---",
             "### 📌 Informacje o harmonogramie:",
+            "- 🕒 **Okna sesji (Europe/Warsaw):** Poranne **06:43 – 07:34** oraz Popołudniowo-wieczorne **15:37 – 22:39**.",
             "- 🛡️ **Odstępy anty-kolizyjne:** Pomiędzy sesjami różnych uczniów zachowywany jest odstęp minimum **45 minut**.",
+            "- ⏳ **Odliczanie 15-0 min:** Zapowiedź sesji pojawia się na kanale **#plan-na-dzis** na ok. 10 minut przed startem.",
             "- ☀️ **Codzienny przegląd o 06:30:** GitHub Actions każdego ranka weryfikuje gotowość i publikuje plan na dany dzień.",
-            "- 🔒 **Niezmienność planu:** Harmonogram wylosowany na dany tydzień obowiązuje od poniedziałku do niedzieli i nie zmienia się w trakcie tygodnia."
+            "- 🔒 **Niezmienność planu:** Harmonogram wylosowany na dany tydzień obowiązuje od poniedziałku do niedzieli."
         ])
 
         md_content = "\n".join(lines) + "\n"
@@ -347,6 +420,7 @@ class MultiScheduler:
         for day_idx, day_obj in weekly.get("days", {}).items():
             for slot in day_obj.get("slots", []):
                 if slot.get("slot_id") == slot_id:
+                    slot["countdown_sent"] = True
                     if success:
                         slot["completed"] = True
                         slot["status"] = "Ukończono"
@@ -370,6 +444,60 @@ class MultiScheduler:
 
         if updated:
             self._save_weekly_schedule(weekly)
+
+    def check_upcoming_countdowns(self) -> List[Dict[str, Any]]:
+        """
+        Sprawdza czy w ciągu najbliższych 15 minut (okno 15-0 min) ma rozpocząć się sesja.
+        Jeśli tak, wysyła jednorazowe powiadomienie z odliczaniem do dedykowanego kanału #plan-na-dzis.
+        """
+        weekly = self.get_or_create_weekly_schedule()
+        today_pl = today_warsaw()
+        current_weekday = today_pl.weekday()
+        day_data = weekly.get("days", {}).get(str(current_weekday), {})
+        slots = day_data.get("slots", [])
+
+        now_pl = now_warsaw()
+        current_minutes = now_pl.hour * 60 + now_pl.minute
+
+        announced = []
+        need_save = False
+
+        users_map = {u.get("id") or u.get("login"): u for u in self.users_mgr.get_active_users()}
+
+        for slot in slots:
+            if slot.get("is_off_day"):
+                continue
+            if slot.get("completed"):
+                continue
+            if slot.get("countdown_sent"):
+                continue
+
+            diff = slot.get("scheduled_minutes", 0) - current_minutes
+            # Okno 15-0 minut do rozpoczęcia sesji (np. 15, 10, 5 min przed)
+            if 0 < diff <= 15:
+                u_id = slot.get("user_id")
+                user_obj = users_map.get(u_id)
+                if user_obj:
+                    nick = slot.get("nickname", "Uczeń")
+                    sched_time = slot.get("scheduled_time", "--:--")
+                    try:
+                        self.notifier.send_countdown_announcement(
+                            user=user_obj,
+                            scheduled_time=sched_time,
+                            minutes_left=diff
+                        )
+                        slot["countdown_sent"] = True
+                        slot["status"] = f"Odliczanie (~{diff}m)"
+                        need_save = True
+                        announced.append(slot)
+                        log(f"[⏳ ODLICZANIE] Wysłano zapowiedź sesji dla {nick} ({sched_time}) na #plan-na-dzis (za ~{diff} min).")
+                    except Exception as e:
+                        log(f"[!] Błąd wysyłania powiadomienia z odliczaniem: {e}")
+
+        if need_save:
+            self._save_weekly_schedule(weekly)
+
+        return announced
 
     def get_due_slots(self) -> List[Dict[str, Any]]:
         """Zwraca listę slotów na dziś, które nadeszły i nie zostały jeszcze ukończone z gwarancją odstępu."""
@@ -410,6 +538,9 @@ class MultiScheduler:
         Domyślnie wykonuje MAKSYMALNIE JEDNĄ sesję na wywołanie (max_sessions=1),
         co uniemożliwia jednoczesne lub bezpośrednie wykonywanie 2 sekcji naraz!
         """
+        # Sprawdzamy i ewentualnie wysyłamy odliczanie dla sesji w oknie 15-0 min (#plan-na-dzis)
+        self.check_upcoming_countdowns()
+
         due_slots = self.get_due_slots()
         if not due_slots:
             return []

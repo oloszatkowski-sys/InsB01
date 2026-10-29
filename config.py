@@ -14,8 +14,14 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     # Tryb harmonogramu: 'random' (losowe godziny) lub 'fixed' (stała godzina)
     "schedule_mode": "random",
     "fixed_time": "17:30",
-    "random_window_start": "14:30",
-    "random_window_end": "20:45",
+    # Okna czasowe w strefie Europe/Warsaw:
+    # 1. Okno poranne (przed szkołą): 06:43 - 07:34 (bardzo mała szansa, rzadkie sesje)
+    "morning_window_start": "06:43",
+    "morning_window_end": "07:34",
+    "morning_session_chance_percent": 8.0,
+    # 2. Okno popołudniowo-wieczorne: 15:37 - 22:39 (główna większość sesji)
+    "random_window_start": "15:37",
+    "random_window_end": "22:39",
     "random_jitter_minutes": 15,
     "min_user_gap_minutes": 45,
     
