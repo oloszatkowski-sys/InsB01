@@ -39,7 +39,7 @@ concurrency:
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 150  # Pozwala wbudowanemu zegarowi bota czekać w gotowości nawet do 90 min na dokładną sekundę sesji!
+    timeout-minutes: 160  # Pozwala wbudowanemu zegarowi bota czekać w gotowości nawet do 120 min na dokładną sekundę sesji!
     permissions:
       contents: write  # Wymagane do automatycznego commitowania i pushowania danych do GitHuba
 
