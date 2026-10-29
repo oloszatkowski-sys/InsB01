@@ -442,35 +442,18 @@ class MultiScheduler:
         if updated:
             self._save_weekly_schedule(weekly)
 
-    def wait_for_slot_if_approaching(self, max_wait_seconds: int = 540) -> Optional[Dict[str, Any]]:
+    def wait_for_slot_if_approaching(self, max_wait_seconds: int = 5400) -> Optional[Dict[str, Any]]:
         """
-        Wbudowany zegar bota (Europe/Warsaw):
+        Wbudowany precyzyjny zegar bota (Europe/Warsaw):
         Sprawdza harmonogram na dziś. Jeśli kolejna zaplanowana sesja ma wystartować
-        w ciągu najbliższych kilku minut (domyślnie do 9 minut / 540 sekund),
-        wbudowany zegar bota precyzyjnie odczekuje do DOKŁADNEJ sekundy planowanego startu,
-        a następnie natychmiast przekazuje slot do wykonania!
-        Dzięki temu nie są potrzebne żadne powiadomienia z odliczaniem na Discordzie –
-        bot po prostu sam wie, o której godzinie ma ruszyć i odpala punktualnie.
+        w ciągu najbliższych 90 minut (5400 sekund), wbudowany zegar bota przejmuje kontrolę,
+        utrzymuje proces w gotowości i odlicza wewnętrznie aż do DOKŁADNEJ sekundy planowanego
+        startu (np. 21:07:00), całkowicie niwelując jakiekolwiek opóźnienia kolejki GitHub Actions!
+        Uwzględnia też twardą ochronę odstępu min_user_gap (45 min) po poprzedniej sesji.
         """
         slots = self.get_today_slots()
         now_pl = now_warsaw()
         min_user_gap = int(self.config.get("min_user_gap_minutes", 45))
-
-        # Runtime Anti-Collision: Jeśli inna sesja zakończyła się < min_user_gap min temu, nie czekamy
-        for s in slots:
-            comp_at = s.get("completed_at")
-            if comp_at:
-                try:
-                    parts = comp_at.split()
-                    if len(parts) >= 2:
-                        comp_dt = datetime.strptime(f"{parts[0]} {parts[1]}", "%Y-%m-%d %H:%M:%S").replace(tzinfo=WARSAW_TZ)
-                        diff_sec = (now_pl - comp_dt).total_seconds()
-                        if 0 <= diff_sec < (min_user_gap * 60):
-                            rem_min = int(min_user_gap - (diff_sec / 60))
-                            log(f"[i] Ochrona odstępu: Ostatnia sesja zakończyła się o {comp_at}. Wymagany odstęp: {min_user_gap} min. Kolejne konto za ok. {rem_min} min.")
-                            return None
-                except Exception:
-                    pass
 
         # Szukamy najbliższego oczekującego slotu na dziś
         pending = [
@@ -488,33 +471,56 @@ class MultiScheduler:
         target_minute = sched_min % 60
         target_dt = now_pl.replace(hour=target_hour, minute=target_minute, second=0, microsecond=0)
 
-        seconds_until = (target_dt - now_pl).total_seconds()
+        # Runtime Anti-Collision: wyliczamy najwcześniejszy dozwolony czas po poprzedniej sesji (+45 min)
+        earliest_allowed_dt = target_dt
+        for s in slots:
+            comp_at = s.get("completed_at")
+            if comp_at:
+                try:
+                    parts = comp_at.split()
+                    if len(parts) >= 2:
+                        comp_dt = datetime.strptime(f"{parts[0]} {parts[1]}", "%Y-%m-%d %H:%M:%S").replace(tzinfo=WARSAW_TZ)
+                        allowed_after_comp = comp_dt + timedelta(minutes=min_user_gap)
+                        if allowed_after_comp > earliest_allowed_dt:
+                            earliest_allowed_dt = allowed_after_comp
+                except Exception:
+                    pass
 
-        # Jeśli godzina już minęła (lub jest teraz), slot jest natychmiast gotowy
+        effective_target_dt = max(target_dt, earliest_allowed_dt)
+        seconds_until = (effective_target_dt - now_pl).total_seconds()
+
+        # Jeśli godzina (oraz wymagany odstęp 45 min) już nadeszła, slot jest natychmiast gotowy!
         if seconds_until <= 0:
             return next_slot
 
-        # Jeśli sesja ma wystartować w oknie do max_wait_seconds (np. do 9 min):
+        # Jeśli sesja ma wystartować w oknie do max_wait_seconds (domyślnie do 90 min):
         if 0 < seconds_until <= max_wait_seconds:
             nick = next_slot["nickname"]
             sched_t = next_slot["scheduled_time"]
+            eff_str = effective_target_dt.strftime("%H:%M:%S")
             log("\n" + "⏰" * 30)
-            log(f"🕒 [WBUDOWANY ZEGAR BOTA] Zbliża się sesja dla ucznia: {nick}")
-            log(f"⏰ Planowany start:     {sched_t} (Europe/Warsaw)")
-            log(f"🇵🇱 Aktualny czas:       {now_pl.strftime('%H:%M:%S')} CET")
-            log(f"⏳ Czas oczekiwania:    {int(seconds_until)}s (~{seconds_until/60:.1f} min)")
-            log(f"🎯 Bot precyzyjnie czeka na wybicie godziny {sched_t}...")
+            log(f"🕒 [WBUDOWANY ZEGAR BOTA] Namierzono nadchodzącą sesję: {nick}")
+            log(f"⏰ Godzina w planie:    {sched_t} (Europe/Warsaw)")
+            log(f"🎯 Punktualny start o:  {eff_str} ({get_current_polish_tzname()})")
+            log(f"🇵🇱 Aktualny czas:       {now_pl.strftime('%H:%M:%S')} ({get_current_polish_tzname()})")
+            log(f"⏳ Czas do wybicia:     {int(seconds_until)}s (~{seconds_until/60:.1f} min)")
+            log(f"🔒 Zegar bota przejął kontrolę — czekam na dokładną sekundę {eff_str}...")
             log("⏰" * 30 + "\n")
 
+            last_log_min = -1
             while True:
                 now_pl = now_warsaw()
-                rem_sec = (target_dt - now_pl).total_seconds()
+                rem_sec = (effective_target_dt - now_pl).total_seconds()
                 if rem_sec <= 0:
                     break
-                sleep_part = min(rem_sec, 20.0)
+                rem_min = int(rem_sec // 60)
+                if rem_min != last_log_min and (rem_min % 5 == 0 or rem_min <= 3):
+                    last_log_min = rem_min
+                    log(f"[🕒 ZEGAR BOTA] {now_pl.strftime('%H:%M:%S')} PL ➔ Czekam na {nick} ({eff_str}) — pozostało {int(rem_sec // 60)}m {int(rem_sec % 60):02d}s")
+                sleep_part = min(rem_sec, 10.0 if rem_sec > 30 else 0.5)
                 time.sleep(sleep_part)
 
-            log(f"[+] [WBUDOWANY ZEGAR] Wybiła godzina {sched_t}! Rozpoczynam sesję dla {nick}.")
+            log(f"[+] [WBUDOWANY ZEGAR] Wybiła dokładnie godzina {effective_target_dt.strftime('%H:%M:%S')}! Odpalam sesję dla {nick} co do sekundy!")
             return next_slot
 
         return None
@@ -560,10 +566,10 @@ class MultiScheduler:
         """
         due_slots = self.get_due_slots()
         
-        # Jeśli żaden slot nie jest jeszcze 'due', sprawdzamy wbudowany zegar:
-        # czy kolejny slot przypada w ciągu najbliższych kilku minut (np. za 1-9 min)?
+        # Jeśli żaden slot nie jest jeszcze 'due', włączamy wbudowany zegar bota:
+        # jeśli kolejny slot jest w oknie do 90 minut (5400s), zegar czeka na dokładną sekundę!
         if not due_slots:
-            slot_ready = self.wait_for_slot_if_approaching(max_wait_seconds=540)
+            slot_ready = self.wait_for_slot_if_approaching(max_wait_seconds=5400)
             if slot_ready:
                 due_slots = [slot_ready]
             else:

@@ -45,15 +45,15 @@
     "answer": "play",
     "prompt": "grać (np. kogoś w filmie)",
     "sentence": "She _____\nluka\n a brilliant scientist.",
-    "updated_at": "2026-10-19T20:02:39.738728",
-    "usage_count": 1
+    "updated_at": "2026-10-29T18:27:59.464514",
+    "usage_count": 3
   },
   "grać (np. kogoś w filmie)": {
     "answer": "play",
     "prompt": "grać (np. kogoś w filmie)",
     "sentence": "She _____\nluka\n a brilliant scientist.",
-    "updated_at": "2026-10-19T20:02:39.738728",
-    "usage_count": 1
+    "updated_at": "2026-10-29T18:27:59.464514",
+    "usage_count": 3
   },
   "i've seen an interesting _____________ luka on tv recently. | reklama": {
     "answer": "advertisement",
@@ -255,15 +255,15 @@
     "answer": "sing",
     "prompt": "śpiewać",
     "sentence": "We were _______\nluka\n and dancing all night.",
-    "updated_at": "2026-10-28T16:30:08.310636",
-    "usage_count": 2
+    "updated_at": "2026-10-29T18:30:05.885295",
+    "usage_count": 4
   },
   "śpiewać": {
     "answer": "sing",
     "prompt": "śpiewać",
     "sentence": "We were _______\nluka\n and dancing all night.",
-    "updated_at": "2026-10-28T16:30:08.310636",
-    "usage_count": 2
+    "updated_at": "2026-10-29T18:30:05.885295",
+    "usage_count": 4
   },
   "we should always think about what we _____ luka ______ luka . | udostępniać w sieci": {
     "answer": "share online",
@@ -591,15 +591,15 @@
     "answer": "writer",
     "prompt": "pisarz",
     "sentence": "The famous ______\nluka\n died at the age of 94.",
-    "updated_at": "2026-10-28T16:28:00.507295",
-    "usage_count": 1
+    "updated_at": "2026-10-29T18:29:13.177472",
+    "usage_count": 3
   },
   "pisarz": {
     "answer": "writer",
     "prompt": "pisarz",
     "sentence": "The famous ______\nluka\n died at the age of 94.",
-    "updated_at": "2026-10-28T16:28:00.507295",
-    "usage_count": 1
+    "updated_at": "2026-10-29T18:29:13.177472",
+    "usage_count": 3
   },
   "who's your favourite _______ luka ? | aktorka": {
     "answer": "actress",
@@ -619,15 +619,15 @@
     "answer": "tune",
     "prompt": "melodia",
     "sentence": "She was humming a merry ____\nluka\n.",
-    "updated_at": "2026-10-28T16:30:36.799419",
-    "usage_count": 3
+    "updated_at": "2026-10-29T18:28:42.495174",
+    "usage_count": 5
   },
   "melodia": {
     "answer": "tune",
     "prompt": "melodia",
     "sentence": "She was humming a merry ____\nluka\n.",
-    "updated_at": "2026-10-28T16:30:36.799419",
-    "usage_count": 3
+    "updated_at": "2026-10-29T18:28:42.495174",
+    "usage_count": 5
   },
   "it's absolutely freezing in here! can you ____ luka the ________ luka __ luka ? | zwiększyć temperaturę na kaloryferze": {
     "answer": "turn the radiator up",
@@ -683,6 +683,48 @@
     "prompt": "aktorstwo; gra aktorska",
     "sentence": "Edward Norton's ______\nluka\n is the main asset of this film.",
     "updated_at": "2026-10-28T16:34:45.379188",
+    "usage_count": 1
+  },
+  "i've never been to a rock _______ luka before. | koncert": {
+    "answer": "concert",
+    "prompt": "koncert",
+    "sentence": "I've never been to a rock _______\nluka\n before.",
+    "updated_at": "2026-10-29T18:30:21.900036",
+    "usage_count": 1
+  },
+  "koncert": {
+    "answer": "concert",
+    "prompt": "koncert",
+    "sentence": "I've never been to a rock _______\nluka\n before.",
+    "updated_at": "2026-10-29T18:30:21.900036",
+    "usage_count": 1
+  },
+  "who is the ____ luka _________ luka of the book? | główny bohater": {
+    "answer": "main character",
+    "prompt": "główny bohater",
+    "sentence": "Who is the ____\nluka\n _________\nluka\n of the book?",
+    "updated_at": "2026-10-29T18:31:04.267618",
+    "usage_count": 1
+  },
+  "główny bohater": {
+    "answer": "main character",
+    "prompt": "główny bohater",
+    "sentence": "Who is the ____\nluka\n _________\nluka\n of the book?",
+    "updated_at": "2026-10-29T18:31:04.267618",
+    "usage_count": 1
+  },
+  "the film has an excellent ____ luka of great actors. | obsada": {
+    "answer": "cast",
+    "prompt": "obsada",
+    "sentence": "The film has an excellent ____\nluka\n of great actors.",
+    "updated_at": "2026-10-29T18:31:34.345615",
+    "usage_count": 1
+  },
+  "obsada": {
+    "answer": "cast",
+    "prompt": "obsada",
+    "sentence": "The film has an excellent ____\nluka\n of great actors.",
+    "updated_at": "2026-10-29T18:31:34.345615",
     "usage_count": 1
   }
 }

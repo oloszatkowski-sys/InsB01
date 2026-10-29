@@ -23,7 +23,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-10-26_user_1",
@@ -39,7 +40,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-10-26_user_3",
@@ -55,7 +57,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         }
       ]
     },
@@ -77,7 +80,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-10-27_user_3",
@@ -93,7 +97,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-10-27_user_1",
@@ -109,7 +114,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         }
       ]
     },
@@ -133,7 +139,8 @@
           "accuracy_percent": 60.0,
           "error": null,
           "words_total": 25,
-          "words_correct": 15
+          "words_correct": 15,
+          "countdown_sent": true
         },
         {
           "slot_id": "2026-10-28_user_3",
@@ -151,7 +158,8 @@
           "accuracy_percent": 55.6,
           "error": null,
           "words_total": 27,
-          "words_correct": 15
+          "words_correct": 15,
+          "countdown_sent": true
         },
         {
           "slot_id": "2026-10-28_user_2",
@@ -169,7 +177,8 @@
           "accuracy_percent": 88.2,
           "error": null,
           "words_total": 17,
-          "words_correct": 15
+          "words_correct": 15,
+          "countdown_sent": true
         }
       ]
     },
@@ -193,7 +202,8 @@
           "accuracy_percent": 75.0,
           "error": null,
           "words_total": 20,
-          "words_correct": 15
+          "words_correct": 15,
+          "countdown_sent": true
         },
         {
           "slot_id": "2026-10-29_user_3",
@@ -203,13 +213,16 @@
           "is_off_day": false,
           "scheduled_minutes": 1098,
           "scheduled_time": "18:18",
-          "status": "Oczekuje",
-          "completed": false,
-          "started_at": null,
-          "completed_at": null,
-          "duration_seconds": null,
-          "accuracy_percent": null,
-          "error": null
+          "status": "Ukończono",
+          "completed": true,
+          "started_at": "2026-10-29 18:27:19 CET",
+          "completed_at": "2026-10-29 18:32:11 CET",
+          "duration_seconds": 289.3,
+          "accuracy_percent": 57.7,
+          "error": null,
+          "countdown_sent": true,
+          "words_total": 26,
+          "words_correct": 15
         },
         {
           "slot_id": "2026-10-29_user_1",
@@ -225,7 +238,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         }
       ]
     },
@@ -247,7 +261,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-10-30_user_3",
@@ -263,7 +278,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-10-30_user_2",
@@ -279,7 +295,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         }
       ]
     },
@@ -301,7 +318,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-10-31_user_3",
@@ -317,7 +335,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-10-31_user_2",
@@ -333,7 +352,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         }
       ]
     },
@@ -355,7 +375,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-11-01_user_1",
@@ -371,7 +392,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         },
         {
           "slot_id": "2026-11-01_user_3",
@@ -387,7 +409,8 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "countdown_sent": false
         }
       ]
     }
