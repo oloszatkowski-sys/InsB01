@@ -1190,5 +1190,74 @@
       }
     ],
     "timestamp": "2026-10-30T15:55:58.130149"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "18:46",
+    "words_total": 10,
+    "words_correct": 9,
+    "words_mistakes": 1,
+    "new_words_count": 1,
+    "autocorrect_count": 0,
+    "accuracy_percent": 90.0,
+    "duration_seconds": 137.3,
+    "started_at_warsaw": "2026-10-30 18:46:00 CET",
+    "completed_at_warsaw": "2026-10-30 18:48:17 CET",
+    "finished_at": "2026-10-30T18:48:17.738336+01:00",
+    "words_details": [
+      {
+        "prompt": "pisarz",
+        "answer": "writer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "tune",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "śpiewać",
+        "answer": "sing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koncert",
+        "answer": "concert",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obsada",
+        "answer": "cast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grać (np. kogoś w filmie)",
+        "answer": "play",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "fotografia (dziedzina); fotografika",
+        "answer": "photography",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wyprzedaż garażowa",
+        "answer": "garage sale",
+        "status": "nowe"
+      },
+      {
+        "prompt": "znana osoba",
+        "answer": "celebrity",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-30T17:48:17.738744"
   }
 ]

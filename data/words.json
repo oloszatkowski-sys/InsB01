@@ -880,5 +880,19 @@
     "sentence": "Picasso was a famous _______\nluka\n.",
     "updated_at": "2026-10-30T15:53:52.798822",
     "usage_count": 1
+  },
+  "i've decided to throw a ______ luka ____ luka to sell my child's old toys and clothes. | wyprzedaż garażowa": {
+    "answer": "garage sale",
+    "prompt": "wyprzedaż garażowa",
+    "sentence": "I've decided to throw a ______\nluka\n ____\nluka\n to sell my child's old toys and clothes.",
+    "updated_at": "2026-10-30T17:47:42.813591",
+    "usage_count": 1
+  },
+  "wyprzedaż garażowa": {
+    "answer": "garage sale",
+    "prompt": "wyprzedaż garażowa",
+    "sentence": "I've decided to throw a ______\nluka\n ____\nluka\n to sell my child's old toys and clothes.",
+    "updated_at": "2026-10-30T17:47:42.813591",
+    "usage_count": 1
   }
 }
