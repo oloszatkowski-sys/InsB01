@@ -199,15 +199,15 @@
     "answer": "short story",
     "prompt": "opowiadanie",
     "sentence": "I prefer novels to _____\nluka\n _______\nluka\n.",
-    "updated_at": "2026-10-19T20:15:29.288260",
-    "usage_count": 1
+    "updated_at": "2026-10-30T15:52:54.003392",
+    "usage_count": 3
   },
   "opowiadanie": {
     "answer": "short story",
     "prompt": "opowiadanie",
     "sentence": "I prefer novels to _____\nluka\n _______\nluka\n.",
-    "updated_at": "2026-10-19T20:15:29.288260",
-    "usage_count": 1
+    "updated_at": "2026-10-30T15:52:54.003392",
+    "usage_count": 3
   },
   "my class ___ luka __ luka an amazing play last week. | wystawiać (sztukę, przedstawienie)": {
     "answer": "put on",
@@ -843,14 +843,42 @@
     "answer": "illustrations",
     "prompt": "ilustracje",
     "sentence": "Can you describe the _____________\nluka\n?",
-    "updated_at": "2026-10-29T20:11:16.839734",
-    "usage_count": 1
+    "updated_at": "2026-10-30T15:55:28.026287",
+    "usage_count": 3
   },
   "ilustracje": {
     "answer": "illustrations",
     "prompt": "ilustracje",
     "sentence": "Can you describe the _____________\nluka\n?",
-    "updated_at": "2026-10-29T20:11:16.839734",
+    "updated_at": "2026-10-30T15:55:28.026287",
+    "usage_count": 3
+  },
+  "i ______ luka apartments for different clients at work. | projektować": {
+    "answer": "design",
+    "prompt": "projektować",
+    "sentence": "I ______\nluka\n apartments for different clients at work.",
+    "updated_at": "2026-10-30T15:53:03.564320",
+    "usage_count": 1
+  },
+  "projektować": {
+    "answer": "design",
+    "prompt": "projektować",
+    "sentence": "I ______\nluka\n apartments for different clients at work.",
+    "updated_at": "2026-10-30T15:53:03.564320",
+    "usage_count": 1
+  },
+  "picasso was a famous _______ luka . | malarz": {
+    "answer": "painter",
+    "prompt": "malarz",
+    "sentence": "Picasso was a famous _______\nluka\n.",
+    "updated_at": "2026-10-30T15:53:52.798822",
+    "usage_count": 1
+  },
+  "malarz": {
+    "answer": "painter",
+    "prompt": "malarz",
+    "sentence": "Picasso was a famous _______\nluka\n.",
+    "updated_at": "2026-10-30T15:53:52.798822",
     "usage_count": 1
   }
 }

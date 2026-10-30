@@ -1066,5 +1066,129 @@
       }
     ],
     "timestamp": "2026-10-29T20:12:15.758958"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "16:52",
+    "words_total": 21,
+    "words_correct": 15,
+    "words_mistakes": 6,
+    "new_words_count": 2,
+    "autocorrect_count": 2,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 237.4,
+    "started_at_warsaw": "2026-10-30 16:52:00 CET",
+    "completed_at_warsaw": "2026-10-30 16:55:58 CET",
+    "finished_at": "2026-10-30T16:55:58.129742+01:00",
+    "words_details": [
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "opowiadanie",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "opowiadanie",
+        "answer": "short story",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malarz",
+        "answer": "painter",
+        "status": "nowe"
+      },
+      {
+        "prompt": "opowiadanie",
+        "answer": "short story",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pop",
+        "answer": "pop",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "_____________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malarz",
+        "answer": "painter",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-30T15:55:58.130149"
   }
 ]

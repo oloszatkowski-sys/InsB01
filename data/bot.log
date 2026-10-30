@@ -757,3 +757,22 @@
 [2026-10-30 16:01:20] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-30 16:01:20 CET, wiek: 0s). Pomijam duplikat.
 [2026-10-30 16:19:15] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-30 16:19:14 CET, wiek: 0s). Pomijam duplikat.
 [2026-10-30 16:25:46] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-30 16:25:46 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-30 15:40:37] [BLOKADA] Inne zadanie jest aktualnie w toku! (Użytkownik: Tester, rozpoczęto: 2026-10-30 16:40:37 CET, wiek: 0s). Pomijam duplikat.
+[2026-10-30 15:40:38] [*] Uruchomienie wg harmonogramu: 2026-10-30 16:40:38 CET | 2026-10-30 15:40:38 UTC
+[2026-10-30 15:40:38] 
+══════════════════════════════════════════════════════════════
+[2026-10-30 15:40:38] 🕒 [WBUDOWANY ZEGAR BOTA] Namierzono nadchodzącą sesję: Oleslaw 010
+[2026-10-30 15:40:38] ──────────────────────────────────────────────────────────────
+[2026-10-30 15:40:38] ⏰ Godzina w planie:    16:52 (Europe/Warsaw)
+[2026-10-30 15:40:38] 🎯 Punktualny start o:  16:52:00 (CET)
+[2026-10-30 15:40:38] 🇵🇱 Aktualny czas:       16:40:38 (CET)
+[2026-10-30 15:40:38] ⏳ Czas do wybicia:     681s (~11.4 min)
+[2026-10-30 15:40:38] 🔒 Zegar bota przejął kontrolę — czekam na dokładną sekundę 16:52:00...
+[2026-10-30 15:40:38] ══════════════════════════════════════════════════════════════
+
+[2026-10-30 15:41:08] [🕒 ZEGAR BOTA] 16:41:08 PL ➔ Czekam na Oleslaw 010 (16:52:00) — pozostało 10m 51s
+[2026-10-30 15:46:08] [🕒 ZEGAR BOTA] 16:46:08 PL ➔ Czekam na Oleslaw 010 (16:52:00) — pozostało 5m 51s
+[2026-10-30 15:48:08] [🕒 ZEGAR BOTA] 16:48:08 PL ➔ Czekam na Oleslaw 010 (16:52:00) — pozostało 3m 51s
+[2026-10-30 15:49:08] [🕒 ZEGAR BOTA] 16:49:08 PL ➔ Czekam na Oleslaw 010 (16:52:00) — pozostało 2m 51s
+[2026-10-30 15:50:08] [🕒 ZEGAR BOTA] 16:50:08 PL ➔ Czekam na Oleslaw 010 (16:52:00) — pozostało 1m 51s
+[2026-10-30 15:51:08] [🕒 ZEGAR BOTA] 16:51:08 PL ➔ Czekam na Oleslaw 010 (16:52:00) — pozostało 0m 51s
