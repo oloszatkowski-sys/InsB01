@@ -25,7 +25,7 @@ class InstaLingBot:
         self.notifier = Notifier(self.config)
         self.users_mgr = UsersManager()
 
-    def run_session(self, user: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
+    def run_session(self, user: Optional[Dict[str, Any]] = None, scheduled_time: Optional[str] = None) -> Dict[str, Any]:
         """Uruchamia pełną sesję dla wybranego użytkownika (lub domyślnego)."""
         if not user:
             user = self.users_mgr.get_ntfy_user()
@@ -236,14 +236,27 @@ class InstaLingBot:
                 correct = solver.session_correct_count
                 mistakes = solver.session_mistakes_count
                 acc = round((correct / total * 100), 1) if total > 0 else 0.0
+                new_words_count = len({
+                    w.get("prompt", "").strip()
+                    for w in solver.resolved_words
+                    if w.get("status") == "nowe" and w.get("prompt", "").strip()
+                })
+                autocorrect_count = len({
+                    w.get("prompt", "").strip()
+                    for w in solver.resolved_words
+                    if w.get("status") == "autokorekta" and w.get("prompt", "").strip()
+                })
 
                 result = {
                     "success": True,
                     "nickname": nickname,
                     "masked_login": masked,
+                    "scheduled_time": scheduled_time or start_dt.strftime("%H:%M"),
                     "words_total": total,
                     "words_correct": correct,
                     "words_mistakes": mistakes,
+                    "new_words_count": new_words_count,
+                    "autocorrect_count": autocorrect_count,
                     "accuracy_percent": acc,
                     "duration_seconds": round(duration_s, 1),
                     "started_at_warsaw": format_warsaw(start_dt),
@@ -278,6 +291,7 @@ class InstaLingBot:
                     "success": False,
                     "nickname": nickname,
                     "masked_login": masked,
+                    "scheduled_time": scheduled_time or start_dt.strftime("%H:%M"),
                     "error": err_str,
                     "duration_seconds": round(duration_s, 1),
                     "started_at_warsaw": format_warsaw(start_dt),

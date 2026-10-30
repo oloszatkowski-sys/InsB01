@@ -83,6 +83,8 @@ jobs:
         if: github.event_name == 'push'
         run: |
           python main.py --plan
+          python main.py --week
+          python main.py --stats
 
       - name: Instalacja przeglądarki Chromium
         run: |

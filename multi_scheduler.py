@@ -427,6 +427,8 @@ class MultiScheduler:
                         slot["accuracy_percent"] = result.get("accuracy_percent")
                         slot["words_total"] = result.get("words_total")
                         slot["words_correct"] = result.get("words_correct")
+                        slot["words_mistakes"] = result.get("words_mistakes")
+                        slot["new_words_count"] = result.get("new_words_count", 0)
                         slot["error"] = None
                     else:
                         slot["completed"] = False
@@ -664,7 +666,8 @@ class MultiScheduler:
                 except Exception as e:
                     log(f"[!] Błąd wysyłania powiadomienia startowego: {e}")
 
-                res = bot.run_session(user=user_obj)
+                res = bot.run_session(user=user_obj, scheduled_time=slot.get("scheduled_time", "--:--"))
+                res["scheduled_time"] = slot.get("scheduled_time", "--:--")
                 res["started_at_warsaw"] = started_at_warsaw
                 res["completed_at_warsaw"] = format_warsaw(now_warsaw())
                 
@@ -724,7 +727,8 @@ class MultiScheduler:
             except Exception as e:
                 log(f"[!] Błąd wysyłania powiadomienia startowego: {e}")
 
-            res = bot.run_session(user=target_user)
+            res = bot.run_session(user=target_user, scheduled_time=now_pl.strftime("%H:%M"))
+            res["scheduled_time"] = now_pl.strftime("%H:%M")
             res["started_at_warsaw"] = started_at
             res["completed_at_warsaw"] = format_warsaw(now_warsaw())
 
@@ -750,6 +754,7 @@ class MultiScheduler:
         for day_idx in range(7):
             day_data = weekly.get("days", {}).get(str(day_idx), {})
             day_name = day_data.get("day_name", DAY_NAMES_PL[day_idx])
+            day_date = day_data.get("date", "")
             day_slots = day_data.get("slots", [])
 
             entries = []
@@ -760,7 +765,15 @@ class MultiScheduler:
                     "is_off": s.get("is_off_day", False),
                     "status": s.get("status", "Oczekuje"),
                     "completed": s.get("completed", False),
-                    "completed_at": s.get("completed_at")
+                    "started_at": s.get("started_at"),
+                    "completed_at": s.get("completed_at"),
+                    "duration_seconds": s.get("duration_seconds"),
+                    "words_total": s.get("words_total"),
+                    "words_correct": s.get("words_correct"),
+                    "words_mistakes": s.get("words_mistakes"),
+                    "accuracy_percent": s.get("accuracy_percent"),
+                    "new_words_count": s.get("new_words_count"),
+                    "date": day_date
                 })
             weekly_report[day_name] = entries
 
