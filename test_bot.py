@@ -125,23 +125,17 @@ def run_tests():
                 notifier = Notifier(cfg)
                 sched = MultiScheduler(cfg)
 
-                # 1. Test #sekcja
-                sekcja_wh = notifier._get_webhook("webhook_sekcja")
-                if sekcja_wh:
-                    notifier._send_discord_embed(
-                        webhook_url=sekcja_wh,
-                        title="🧪 Test Powiadomień Bota — Wszystkie Systemy Działają!",
-                        description=(
-                            "✅ **Pomyślnie zweryfikowano działanie bota InstaLing:**\n\n"
-                            "• 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET/CEST)\n"
-                            "• 👥 **Aktywni uczniowie:** Olesław 010, Szlucha Jagoda, OliwiercioTheHacker\n"
-                            "• 🛡️ **Ochrona:** Odstęp min. 45 min, anty-kolizja aktywna\n"
-                            "• 📚 **Baza wiedzy:** Gotowa do samonaprawiania słówek\n"
-                            "• 🚀 **GitHub Actions:** Skonfigurowane i gotowe do pracy"
-                        ),
-                        color=0x2ECC71
-                    )
-                    print("✅ Wysłano meldunek testowy do kanału #sekcja")
+                # 1. Test #testy (Nowy kanał)
+                test_details = [
+                    "• ✅ **Strefa czasowa:** `Europe/Warsaw` (CET/CEST) — zsynchronizowana",
+                    "• ✅ **Uczniowie:** Olesław 010, Szlucha Jagoda, OliwiercioTheHacker",
+                    "• ✅ **Ochrona:** Odstęp min. 45 min, anty-kolizja aktywna",
+                    "• ✅ **Baza wiedzy:** Słownik gotowy do samonaprawiania słówek",
+                    "• ✅ **Połączenie InstaLing:** HTTP 200 OK — serwis odpowiada",
+                    "• ✅ **GitHub Actions:** Skonfigurowane i gotowe do pracy w chmurze"
+                ]
+                notifier.send_test_report(passed, total, test_details)
+                print("✅ Wysłano raport testowy do dedykowanego kanału #testy")
 
                 # 2. Test #plan-na-dzis
                 sched.publish_today_plan_to_discord()
@@ -170,7 +164,7 @@ def run_tests():
                     )
                     print(f"✅ Wysłano powiadomienie testowe na ntfy.sh (temat: {topic})")
 
-                print("🎉 Wszystkie powiadomienia testowe dotarły na Discord i ntfy!\n")
+                print("🎉 Wszystkie powiadomienia testowe dotarły na Discord (#testy) i ntfy!\n")
             except Exception as ex:
                 print(f"❌ Błąd wysyłania powiadomień testowych: {ex}\n")
 

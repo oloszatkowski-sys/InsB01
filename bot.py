@@ -57,11 +57,13 @@ class InstaLingBot:
         session_logs: List[str] = []
 
         def track_log(msg: str):
-            log(msg)
-            session_logs.append(msg)
+            now_str = now_warsaw().strftime("%H:%M:%S")
+            formatted = f"[{now_str}] {msg}"
+            log(formatted)
+            session_logs.append(formatted)
 
-        track_log(f"[*] Rozpoczynam sesje dla uzytkownika: {nickname} ({masked}) (headless={headless})")
-        track_log(f"[*] Czas startu (Polska): {format_warsaw(start_dt)}")
+        track_log(f"🚀 [START] Rozpoczęcie procedury sesji dla ucznia: {nickname} (login: {masked})")
+        track_log(f"⚙️ [KONFIGURACJA] Headless={headless}, wyciszenie dźwięku={mute_audio}, limit słówek={max_words}")
 
         try:
             from playwright.sync_api import sync_playwright
@@ -80,6 +82,7 @@ class InstaLingBot:
                 headless=headless,
                 args=args
             )
+            track_log(f"🌐 [PRZEGLĄDARKA] Uruchomiono silnik Chromium (wersja standardowa, locale=pl-PL)")
             
             context = browser.new_context(
                 user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
@@ -94,31 +97,38 @@ class InstaLingBot:
                     document.querySelectorAll('.fc-consent-root, .fc-dialog-overlay, .fc-dialog-container').forEach(e => e.remove());
                 }, 200);
             """)
+            track_log("🛡️ [FILTR] Aktywowano skrypt blokujący wyskakujące banery zgód RODO/Cookies")
 
             try:
                 # ==============================
                 # 1. WEJŚCIE NA STRONĘ LOGOWANIA
                 # ==============================
-                track_log(f"[*] [{nickname}] Otwieranie strony logowania InstaLing...")
-                page.goto(INSTALING_LOGIN_URL, timeout=40000)
+                track_log(f"🔗 [NAWIGACJA] Łączenie z adresem logowania: {INSTALING_LOGIN_URL}")
+                t_nav_start = time.time()
+                resp = page.goto(INSTALING_LOGIN_URL, timeout=40000)
                 page.wait_for_load_state("domcontentloaded")
-                time.sleep(2.0)
+                status_code = resp.status if resp else "200"
+                nav_time = time.time() - t_nav_start
+                track_log(f"📡 [SERWER] Strona logowania wczytana pomyślnie (kod HTTP {status_code}, czas: {nav_time:.2f}s)")
+                time.sleep(1.5)
 
                 # ==============================
                 # 2. LOGOWANIE
                 # ==============================
-                track_log(f"[*] [{nickname}] Logowanie do konta...")
+                track_log(f"🔑 [LOGOWANIE] Wprowadzanie identyfikatora ucznia: '{masked}'")
                 login_input = page.locator("input#log_email").first
                 login_input.fill(login)
-                time.sleep(random.uniform(0.4, 0.7))
+                time.sleep(random.uniform(0.3, 0.6))
 
+                track_log("🔒 [LOGOWANIE] Wprowadzanie hasła użytkownika (znaki ukryte)")
                 pass_input = page.locator("input#log_password").first
                 pass_input.fill(password)
-                time.sleep(random.uniform(0.4, 0.8))
+                time.sleep(random.uniform(0.3, 0.6))
 
+                track_log("🖱️ [LOGOWANIE] Kliknięcie przycisku 'ZALOGUJ' i oczekiwanie na autoryzację...")
                 submit_btn = page.locator('button:has-text("ZALOGUJ")').first
                 submit_btn.click(force=True)
-                time.sleep(3.5)
+                time.sleep(3.0)
 
                 # ==============================
                 # 3. WERYFIKACJA ZALOGOWANIA
@@ -127,21 +137,22 @@ class InstaLingBot:
                 if "page=login" in current_url and "student" not in current_url:
                     error_msg = page.locator(".alert-danger, .error-message, #error_box").all_inner_texts()
                     err_txt = " | ".join(error_msg) if error_msg else "Niepoprawny login lub hasło."
+                    track_log(f"❌ [BŁĄD LOGOWANIA] Odrzucono poświadczenia dla {nickname}: {err_txt}")
                     res = {"success": False, "error": f"Błąd logowania dla {nickname}: {err_txt}"}
                     self.notifier.send_session_summary(res, user, session_logs)
                     return res
 
-                track_log(f"[+] [{nickname}] Pomyslnie zalogowano do serwisu!")
+                track_log(f"✅ [AUTORYZACJA] Zalogowano pomyślnie jako {nickname}! (Adres URL: {current_url})")
 
                 # ==============================
                 # 4. WEJŚCIE DO SESJI Z PANELU
                 # ==============================
-                track_log(f"[*] [{nickname}] Wyszukiwanie sesji...")
+                track_log("🔍 [PANEL] Wyszukiwanie kafelka codziennej sesji na pulpicie ucznia...")
                 session_btn = page.locator("a.btn-start-session, a:has-text('Dokończ sesję'), a:has-text('Zacznij codzienną sesję'), a:has-text('Zacznij sesję')").first
                 if session_btn.count() == 0 or not session_btn.is_visible():
                     page_text = page.inner_text("body")
                     if "Wykonałeś już dzisiejszą sesję" in page_text or "sesja wykonana" in page_text.lower():
-                        track_log(f"[i] [{nickname}] Dzisiejsza sesja byla juz wczesniej wykonana!")
+                        track_log(f"ℹ️ [PANEL] Informacja z systemu: {nickname} wykonał już dzisiejszą sesję wcześniej!")
                         res = {
                             "success": True,
                             "already_completed": True,
@@ -149,33 +160,34 @@ class InstaLingBot:
                         }
                         self.notifier.send_session_summary(res, user, session_logs)
                         return res
+                    track_log("❌ [PANEL] Nie odnaleziono aktywnego przycisku sesji na stronie głównej.")
                     res = {"success": False, "error": "Nie znaleziono przycisku startu sesji na stronie głównej."}
                     self.notifier.send_session_summary(res, user, session_logs)
                     return res
 
-                track_log(f"[*] [{nickname}] Przechodzenie do sesji...")
+                track_log("▶️ [PANEL] Przycisk sesji aktywny — otwieranie formularza zadań...")
                 session_btn.click()
-                time.sleep(3.0)
+                time.sleep(2.5)
 
                 # ==============================
                 # 5. EKRAN STARTOWY SESJI (Kontynuuj / Rozpocznij)
                 # ==============================
                 cont_btn = page.get_by_text("Kontynuuj sesję").first
                 if cont_btn.count() > 0 and cont_btn.is_visible():
-                    track_log(f"[*] [{nickname}] Klikam 'Kontynuuj sesje'...")
+                    track_log("🔘 [SESJA] Wykryto przerwaną sesję — klikam 'Kontynuuj sesję'")
                     cont_btn.click(force=True)
-                    time.sleep(2.5)
+                    time.sleep(2.0)
 
                 start_btn = page.get_by_text("Rozpocznij sesję").first
                 if start_btn.count() > 0 and start_btn.is_visible():
-                    track_log(f"[*] [{nickname}] Klikam 'Rozpocznij sesje'...")
+                    track_log("🔘 [SESJA] Ekran gotowości — klikam 'Rozpocznij sesję'")
                     start_btn.click(force=True)
-                    time.sleep(2.5)
+                    time.sleep(2.0)
 
                 # ==============================
                 # 6. PĘTLA ROZWIĄZYWANIA SŁÓWEK
                 # ==============================
-                track_log(f"[*] [{nickname}] Rozpoczynanie rozwiazywania slowek...")
+                track_log("📚 [SESJA] Formularz zadań załadowany — start modułu rozwiązywania słówek InstaLing...")
                 solver = InstaLingSolver(page, self.config, self.storage, log_fn=track_log)
 
                 iterations = 0
@@ -212,10 +224,10 @@ class InstaLingBot:
                 try:
                     home_btn = page.locator("a:has-text('Wróć do strony głównej'), a:has-text('Strona główna'), a.btn-return, a[href*='mainPage']").first
                     if home_btn.count() > 0 and home_btn.is_visible():
-                        track_log(f"[*] [{nickname}] Klikam powrot do strony glownej...")
+                        track_log(f"🏠 [POWRÓT] Kliknięcie powrotu do strony głównej ucznia...")
                         home_btn.click(force=True)
                         time.sleep(random.uniform(2.0, 3.0))
-                        track_log(f"[+] [{nickname}] Powrot do strony glownej wykonany.")
+                        track_log(f"✅ [POWRÓT] Pomyślnie powrócono do pulpitu głównego.")
                 except Exception:
                     pass
 
@@ -223,10 +235,10 @@ class InstaLingBot:
                 try:
                     logout_btn = page.locator("a:has-text('Wyloguj'), a[href*='logout']").first
                     if logout_btn.count() > 0 and logout_btn.is_visible():
-                        track_log(f"[*] [{nickname}] Wylogowywanie...")
+                        track_log(f"🚪 [WYLOGOWANIE] Kliknięcie 'Wyloguj' na koncie {nickname}...")
                         logout_btn.click(force=True)
                         time.sleep(1.5)
-                        track_log(f"[+] [{nickname}] Pomyslnie wylogowano.")
+                        track_log(f"✅ [WYLOGOWANIE] Pomyślnie wylogowano. Sesja została bezpiecznie zamknięta.")
                 except Exception:
                     pass
 
@@ -246,6 +258,10 @@ class InstaLingBot:
                     for w in solver.resolved_words
                     if w.get("status") == "autokorekta" and w.get("prompt", "").strip()
                 })
+
+                track_log(f"🏁 [STATYSTYKA KOŃCOWA] Rozwiązano łącznie: {total} pytań | Poprawne: {correct} ({acc}%) | Błędy: {mistakes}")
+                track_log(f"🆕 [NOWE SŁÓWKA] Wykryto i zapamiętano: {new_words_count} nowych słówek")
+                track_log(f"⏱️ [CZAS SESJI] Całkowity czas od zalogowania do wylogowania: {duration_s:.1f}s (~{duration_s/60:.1f} min)")
 
                 result = {
                     "success": True,

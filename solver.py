@@ -181,10 +181,10 @@ class InstaLingSolver:
                 self.deliberate_errors_pool.add(word_id)
                 fake = known_answer[:-1] if len(known_answer) > 2 else "x"
                 self.human_type("input#answer", fake)
-                self.log_fn(f"[~] Celowy błąd dla ucznia: '{prompt}' (wpisano: '{fake}', prawidłowe: '{known_answer}')")
+                self.log_fn(f"🎯 [CELOWY BŁĄD #{self.session_words_count + 1}] '{prompt}' -> wpisano '{fake}' (docelowo: '{known_answer}')")
             else:
                 self.human_type("input#answer", "-")
-                self.log_fn(f"[?] Nowe słówko: '{prompt}' (sprawdzam poprawną odpowiedź)")
+                self.log_fn(f"🆕 [NOWE SŁÓWKO #{self.session_words_count + 1}] '{prompt}' -> brak w bazie, pobieranie poprawnej odpowiedzi...")
 
             check_btn = self.page.locator("#check, button:has-text('Sprawdź')").first
             check_btn.click(force=True)
@@ -196,7 +196,7 @@ class InstaLingSolver:
                 if should_make_deliberate_mistake:
                     self.resolved_words.append({"prompt": prompt, "answer": correct_ans, "status": "celowy_blad"})
                 else:
-                    self.log_fn(f"[+] ZAPAMIĘTANO SŁÓWKO: '{prompt}' -> '{correct_ans}'")
+                    self.log_fn(f"💾 [ZAPISANO] Odczytano i dodano do bazy bota: '{prompt}' ➔ '{correct_ans}'")
                     self.resolved_words.append({"prompt": prompt, "answer": correct_ans, "status": "nowe"})
 
             self.session_mistakes_count += 1
@@ -213,14 +213,15 @@ class InstaLingSolver:
             if "niepoprawnie" in body_feedback or "literówka" in body_feedback or "literowka" in body_feedback:
                 real_ans = self.extract_correct_answer_from_page()
                 if real_ans and real_ans.lower() not in SYSTEM_BLACKLIST and real_ans.lower() != known_answer.lower():
-                    self.log_fn(f"[!] AUTOKOREKTA: Baza miała '{known_answer}', poprawiono na: '{real_ans}'!")
+                    self.log_fn(f"🔄 [AUTOKOREKTA #{self.session_words_count + 1}] '{prompt}': zmieniono '{known_answer}' ➔ '{real_ans}' w bazie bota!")
                     self.storage.record_word(real_ans, prompt, sentence)
                     self.resolved_words.append({"prompt": prompt, "answer": real_ans, "status": "autokorekta"})
                 else:
+                    self.log_fn(f"❌ [BŁĄD #{self.session_words_count + 1}] '{prompt}' -> wpisano '{known_answer}'")
                     self.resolved_words.append({"prompt": prompt, "answer": known_answer, "status": "blad"})
                 self.session_mistakes_count += 1
             else:
-                self.log_fn(f"[OK] Słówko: '{prompt}' -> '{known_answer}' (Poprawnie)")
+                self.log_fn(f"✅ [POPRAWNIE #{self.session_words_count + 1}] '{prompt}' ➔ '{known_answer}'")
                 self.resolved_words.append({"prompt": prompt, "answer": known_answer, "status": "poprawnie"})
                 self.session_correct_count += 1
 

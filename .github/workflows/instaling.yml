@@ -85,6 +85,7 @@ jobs:
           python main.py --plan
           python main.py --week
           python main.py --stats
+          python test_bot.py --discord
 
       - name: Instalacja przeglądarki Chromium
         run: |

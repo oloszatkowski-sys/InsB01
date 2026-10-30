@@ -45,7 +45,8 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     "max_words_per_session": 45,   # Zabezpieczenie przed zapętleniem
 
     # Webhooki Discord
-    "webhook_sekcja": "https://discord.com/api/webhooks/1561819966083174424/muy2A5sRtBBYiinSNXmYpK-u2_V4gtAfBaUNtGBn9ZF-smRS73iJx8alOFcg2FHYOppM",
+    "webhook_sekcja": "https://discord.com/api/webhooks/1565743381563314236/rTxeLXA4owwQqynumIK7WERFb9GVFOImx-ZuPShwiLjtkv2YO3-Hxe1KJgoeIezmYjNc",
+    "webhook_testy": "https://discord.com/api/webhooks/1561819966083174424/muy2A5sRtBBYiinSNXmYpK-u2_V4gtAfBaUNtGBn9ZF-smRS73iJx8alOFcg2FHYOppM",
     "webhook_plan_na_dzis": "https://discord.com/api/webhooks/1561830563139166262/RO_ZhutQeBPdgsCwWZnzHCJIWuiiVPQIAGeeG1ZKEEOU3u_-UD3oL9WCh9bNI4a60s-a",
     "webhook_plan_tygodnia": "https://discord.com/api/webhooks/1561830756752433294/ku8R_-0cVXoT5TTGtwmIK0jTp4u7M2DpE3P5mDNoykyFokntrJUUM3hBAMedk8zpUJpu",
     "webhook_logi_bota": "https://discord.com/api/webhooks/1561964214887915560/nrtPLfxeTbGVzD2ByRxQmu8z7BaDtcu_73cw6127wvcxFgpGPPQ_TLbla-Sn4kPYJfEj",
@@ -72,6 +73,8 @@ def load_config() -> Dict[str, Any]:
             merged["random_window_start"] = "15:37"
             merged["random_window_end"] = "22:39"
             merged["min_user_gap_minutes"] = max(45, int(merged.get("min_user_gap_minutes", 45)))
+            merged["webhook_sekcja"] = "https://discord.com/api/webhooks/1565743381563314236/rTxeLXA4owwQqynumIK7WERFb9GVFOImx-ZuPShwiLjtkv2YO3-Hxe1KJgoeIezmYjNc"
+            merged["webhook_testy"] = "https://discord.com/api/webhooks/1561819966083174424/muy2A5sRtBBYiinSNXmYpK-u2_V4gtAfBaUNtGBn9ZF-smRS73iJx8alOFcg2FHYOppM"
             if os.getenv("GITHUB_ACTIONS") == "true":
                 merged["headless"] = True
             if os.getenv("INSTALING_LOGIN"):
