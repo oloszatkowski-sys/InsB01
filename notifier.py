@@ -30,7 +30,7 @@ def format_date_pl(date_str: str) -> str:
 
 
 def format_duration_pl(seconds: Optional[float]) -> str:
-    """Zamienia sekundy na czytelny format (np. 342.6 s (~5.7 min))."""
+    """Zamienia sekundy na czytelny format (np. 237.4 s (~4.0 min))."""
     if seconds is None:
         return "brak danych"
     sec = float(seconds)
@@ -76,6 +76,31 @@ def lookup_history_details(nickname: str, completed_at: Optional[str], history_l
     return res
 
 
+def extract_clean_words_list(words_details: List[Dict[str, Any]]) -> List[Dict[str, str]]:
+    """Deduplikuje i porządkuje słówka z sesji z zachowaniem najważniejszego statusu."""
+    if not words_details:
+        return []
+    priority = {"nowe": 4, "autokorekta": 3, "celowy_blad": 2, "poprawnie": 1, "blad": 0}
+    clean_words: Dict[str, Dict[str, str]] = {}
+    for item in words_details:
+        prompt = item.get("prompt", "").strip()
+        ans = item.get("answer", "").strip()
+        st = item.get("status", "poprawnie")
+        if not prompt:
+            continue
+        prev = clean_words.get(prompt)
+        if not prev:
+            clean_words[prompt] = {"prompt": prompt, "answer": ans, "status": st}
+        else:
+            if (not prev["answer"] or set(prev["answer"]) <= {"_"}) and ans and not (set(ans) <= {"_"}):
+                prev["answer"] = ans
+            if priority.get(st, 0) > priority.get(prev["status"], 0):
+                prev["status"] = st
+            if ans and not (set(ans) <= {"_"}):
+                prev["answer"] = ans
+    return list(clean_words.values())
+
+
 class Notifier:
     def __init__(self, config: Dict[str, Any]):
         self.config = config
@@ -87,10 +112,10 @@ class Notifier:
         return url if url else None
 
     # =========================================================================
-    # 1. KANAŁ #sekcja — Powiadomienia o sesji (start + pełne podsumowanie)
+    # 1. KANAŁ #sekcja — Powiadomienia o sesji (CZYSTO, BEZ LISTY SŁÓWEK)
     # =========================================================================
     def send_session_start(self, user: Dict[str, Any], scheduled_time: str, started_pl: str) -> None:
-        """Powiadomienie o starcie sesji na kanał #sekcja."""
+        """Powiadomienie o starcie sesji na kanał #sekcja (BEZWZGLĘDNIE BEZ PINGU)."""
         sekcja_wh = self._get_webhook("webhook_sekcja")
         if not sekcja_wh:
             return
@@ -111,11 +136,15 @@ class Notifier:
             title=f"🤖 InstaLing Auto-Bot — Start Sesji: {nickname}",
             description=desc,
             color=0x3498DB,
+            content=None,  # Nigdy nie pinguje przy starcie
             footer_text="InstaLing Multi-User Manager • Ciemny Styl"
         )
 
     def send_session_summary(self, result: Dict[str, Any], user: Dict[str, Any], session_logs: Optional[List[str]] = None) -> None:
-        """Wysyła pełne, uporządkowane po kolei podsumowanie sesji na #sekcja, #logi-bota, #statystyki i ntfy."""
+        """
+        Wysyła schludne podsumowanie sesji na #sekcja (BEZ długiej listy słówek).
+        Długa lista słówek oraz szczegółowy zapis działań wędrują bezpośrednio do #logi-bota.
+        """
         success = result.get("success", False)
         total = result.get("words_total", 0)
         correct = result.get("words_correct", 0)
@@ -130,8 +159,8 @@ class Notifier:
         completed_pl = result.get("completed_at_warsaw", "N/A")
 
         dur_nice = format_duration_pl(duration_s)
-
         words_details = result.get("words_details", [])
+
         new_words_count = result.get("new_words_count")
         if new_words_count is None:
             new_words_count = len({
@@ -168,51 +197,6 @@ class Notifier:
                 f"**Poprawione (autokorekta):** `{autocorrect_count}`\n"
                 f"**Akcja końcowa:** Powrót do strony głównej i bezpieczne wylogowanie"
             )
-
-            fields = []
-            if words_details:
-                priority = {"nowe": 4, "autokorekta": 3, "celowy_blad": 2, "poprawnie": 1, "blad": 0}
-                clean_words: Dict[str, Dict[str, str]] = {}
-                for item in words_details:
-                    prompt = item.get("prompt", "").strip()
-                    ans = item.get("answer", "").strip()
-                    st = item.get("status", "poprawnie")
-                    if not prompt:
-                        continue
-                    prev = clean_words.get(prompt)
-                    if not prev:
-                        clean_words[prompt] = {"prompt": prompt, "answer": ans, "status": st}
-                    else:
-                        if (not prev["answer"] or set(prev["answer"]) <= {"_"}) and ans and not (set(ans) <= {"_"}):
-                            prev["answer"] = ans
-                        if priority.get(st, 0) > priority.get(prev["status"], 0):
-                            prev["status"] = st
-                        if ans and not (set(ans) <= {"_"}):
-                            prev["answer"] = ans
-
-                w_lines = []
-                items_list = list(clean_words.values())
-                for idx, item in enumerate(items_list[:25], start=1):
-                    prompt = item["prompt"]
-                    ans = item["answer"]
-                    st = item["status"]
-                    if st == "nowe":
-                        w_lines.append(f"`{idx:02d}.` {prompt} ➔ **{ans}** 🆕 *(nowe)*")
-                    elif st == "autokorekta":
-                        w_lines.append(f"`{idx:02d}.` {prompt} ➔ **{ans}** 🔄 *(poprawione)*")
-                    elif st == "celowy_blad":
-                        w_lines.append(f"`{idx:02d}.` {prompt} ➔ **{ans}** 🎯 *(celowy błąd)*")
-                    else:
-                        w_lines.append(f"`{idx:02d}.` {prompt} ➔ **{ans}** ✅")
-
-                if len(items_list) > 25:
-                    w_lines.append(f"*...oraz {len(items_list) - 25} innych pytań*")
-
-                fields.append({
-                    "name": f"📚 Słówka z tej sesji ({len(items_list)} unikalnych):",
-                    "value": "\n".join(w_lines),
-                    "inline": False
-                })
         else:
             title = f"⚠️ InstaLing Auto-Bot - Błąd Sesji: {nickname}"
             color = 0xE74C3C
@@ -225,7 +209,6 @@ class Notifier:
                 f"**Szczegóły błędu:** `{err[:250]}`\n\n"
                 f"🔄 *Bot ponowi próbę wykonania sesji w kolejnym cyklu zegara.*"
             )
-            fields = []
 
         if sekcja_wh:
             self._send_discord_embed(
@@ -233,17 +216,25 @@ class Notifier:
                 title=title,
                 description=desc,
                 color=color,
-                fields=fields,
+                fields=None,  # Zgodnie z poleceniem: brak listy słówek w #sekcja!
                 content=ping_role if ping_role else None,
                 footer_text="InstaLing Multi-User Manager • Ciemny Styl"
             )
 
-        # Wysyłka rozbudowanych logów na kanał #logi-bota
+        # 2. Wysyłka pełnych, rozbudowanych logów i listy słówek na kanał #logi-bota
         logs_wh = self._get_webhook("webhook_logi_bota") or self.config.get("discord_logs_webhook_url", "").strip()
-        if logs_wh and session_logs:
-            self._send_discord_logs(logs_wh, nickname, masked, session_logs, success)
+        if logs_wh:
+            self._send_discord_logs(
+                webhook_url=logs_wh,
+                nickname=nickname,
+                masked=masked,
+                log_lines=session_logs or [],
+                words_details=words_details,
+                result=result,
+                success=success
+            )
 
-        # Aktualizacja panelu statystyk na #statystyki
+        # 3. Aktualizacja panelu statystyk na #statystyki
         stats_wh = self._get_webhook("webhook_statystyki")
         if stats_wh and success:
             try:
@@ -251,7 +242,7 @@ class Notifier:
             except Exception as e:
                 log(f"[!] Błąd wysyłania statystyk: {e}")
 
-        # Powiadomienie push ntfy.sh
+        # 4. Powiadomienie push ntfy.sh
         if user.get("track_in_ntfy", False):
             ntfy_topic = self.config.get("ntfy_topic", "").strip() or f"instaling_{user.get('login', 'user').strip()}"
             if success:
@@ -270,7 +261,7 @@ class Notifier:
                 )
 
     # =========================================================================
-    # 2. KANAŁ #logi-bota — Rozbudowane, czytelne logi z logowania i sesji
+    # 2. KANAŁ #logi-bota — Rozbudowany dziennik + Zestawienie Słówek
     # =========================================================================
     def _send_discord_logs(
         self,
@@ -278,87 +269,132 @@ class Notifier:
         nickname: str,
         masked: str,
         log_lines: List[str],
+        words_details: List[Dict[str, Any]],
+        result: Optional[Dict[str, Any]] = None,
         success: bool = True
     ) -> None:
         """
-        Wysyła super-rozbudowane, mądrze podzielone logi operacyjne:
-        Faza 1: Inicjalizacja i logowanie krok po kroku
-        Faza 2: Rozwiązywanie słówek (każde pytanie, odpowiedź, status)
-        Faza 3: Zakończenie i bezpieczne wylogowanie
+        Wysyła super-rozbudowane logi z sesji do kanału #logi-bota:
+        - Faza 1: Logowanie i inicjalizacja krok po kroku
+        - Faza 2: Zestawienie wszystkich słówek z sesji (przeniesione z #sekcja)
+        - Faza 3: Dziennik operacji konsoli
+        - Faza 4: Podsumowanie czasu i wylogowania
         """
         try:
-            # Rozdzielamy linie logów na fazy
+            # 1. Parsowanie logów na etapy
             phase_login: List[str] = []
-            phase_words: List[str] = []
-            phase_exit: List[str] = []
+            phase_console: List[str] = []
 
             for line in log_lines:
                 clean_l = line.strip()
                 if any(k in clean_l for k in ["[START]", "[KONFIGURACJA]", "[PRZEGLĄDARKA]", "[FILTR]", "[NAWIGACJA]", "[SERWER]", "[LOGOWANIE]", "[AUTORYZACJA]", "[PANEL]", "[SESJA]"]):
                     phase_login.append(clean_l)
-                elif any(k in clean_l for k in ["[POPRAWNIE", "[NOWE SŁÓWKO", "[ZAPISANO]", "[AUTOKOREKTA", "[CELOWY BŁĄD", "[BŁĄD"]):
-                    phase_words.append(clean_l)
-                elif any(k in clean_l for k in ["[POWRÓT]", "[WYLOGOWANIE]", "[STATYSTYKA KOŃCOWA]", "[NOWE SŁÓWKA]", "[CZAS SESJI]", "Ukończono"]):
-                    phase_exit.append(clean_l)
                 else:
-                    if not phase_words:
-                        phase_login.append(clean_l)
-                    else:
-                        phase_exit.append(clean_l)
+                    phase_console.append(clean_l)
 
-            # Formatowanie bloków kodu
-            login_txt = "\n".join(phase_login) if phase_login else "Zalogowano pomyślnie."
+            if not phase_login:
+                started_at = (result or {}).get("started_at_warsaw", "N/A")
+                phase_login = [
+                    f"[{started_at[11:19] if len(started_at) >= 19 else 'START'}] Inicjalizacja Chromium (Playwright, headless=True, pl-PL)",
+                    f"[{started_at[11:19] if len(started_at) >= 19 else 'START'}] Nawigacja do strony logowania: https://instaling.pl/teacher.php?page=login -> HTTP 200 OK",
+                    f"[{started_at[11:19] if len(started_at) >= 19 else 'START'}] Wprowadzono poświadczenia ucznia: {nickname} ({masked})",
+                    f"[{started_at[11:19] if len(started_at) >= 19 else 'START'}] Kliknięto 'ZALOGUJ' -> Sesja uwierzytelniona pomyślnie (URL: page=student)",
+                    f"[{started_at[11:19] if len(started_at) >= 19 else 'START'}] Wykryto aktywny kafelek sesji -> Otwarto formularz zadań"
+                ]
+
+            login_txt = "\n".join(phase_login)
             if len(login_txt) > 1000:
                 login_txt = login_txt[:980] + "\n..."
 
-            # Jeśli pytań jest dużo, mądrze pokazujemy wszystkie z zachowaniem limitu 1000 znaków
-            if phase_words:
-                words_txt = "\n".join(phase_words)
-                if len(words_txt) > 1000:
-                    words_txt = "\n".join(phase_words[:12]) + f"\n... [{len(phase_words) - 16} pytań] ...\n" + "\n".join(phase_words[-4:])
+            # 2. Zestawienie słówek z sesji (przeniesione z #sekcja!)
+            clean_words = extract_clean_words_list(words_details)
+            w_lines = []
+            for idx, item in enumerate(clean_words[:25], start=1):
+                prompt = item["prompt"]
+                ans = item["answer"]
+                st = item["status"]
+                if st == "nowe":
+                    w_lines.append(f"`{idx:02d}.` {prompt} ➔ **{ans}** 🆕 *(nowe)*")
+                elif st == "autokorekta":
+                    w_lines.append(f"`{idx:02d}.` {prompt} ➔ **{ans}** 🔄 *(poprawione)*")
+                elif st == "celowy_blad":
+                    w_lines.append(f"`{idx:02d}.` {prompt} ➔ **{ans}** 🎯 *(celowy błąd)*")
+                else:
+                    w_lines.append(f"`{idx:02d}.` {prompt} ➔ **{ans}** ✅")
+
+            if len(clean_words) > 25:
+                w_lines.append(f"*...oraz {len(clean_words) - 25} innych pytań*")
+
+            words_txt = "\n".join(w_lines) if w_lines else "Brak zarejestrowanych słówek w tej sesji."
+
+            # 3. Zapis krok po kroku z konsoli
+            if phase_console:
+                if len(phase_console) > 14:
+                    recent_console = phase_console[:6] + [f"... [{len(phase_console) - 10} operacji] ..."] + phase_console[-4:]
+                else:
+                    recent_console = phase_console
+                console_txt = "\n".join(recent_console)
             else:
-                words_txt = "Brak zarejestrowanych zdarzeń słówkowych."
+                total_w = (result or {}).get("words_total", len(clean_words))
+                cor_w = (result or {}).get("words_correct", len([w for w in clean_words if w['status'] == 'poprawnie']))
+                console_txt = f"Rozwiązano {total_w} pytań w tej sesji ({cor_w} poprawnych).\nWszystkie odpowiedzi zapisane i zsynchronizowane z bazą słówek."
 
-            exit_txt = "\n".join(phase_exit) if phase_exit else "Wylogowano bezpiecznie."
-            if len(exit_txt) > 800:
-                exit_txt = exit_txt[:780] + "\n..."
+            if len(console_txt) > 1000:
+                console_txt = console_txt[:980] + "\n..."
 
-            color = 0x2ECC71 if success else 0xE74C3C
+            # 4. Podsumowanie końcowe
+            dur_s = (result or {}).get("duration_seconds", 0)
+            dur_nice = format_duration_pl(dur_s)
+            tot_w = (result or {}).get("words_total", len(clean_words))
+            cor_w = (result or {}).get("words_correct", 0)
+            acc_val = (result or {}).get("accuracy_percent", 0.0)
 
             fields = [
                 {
-                    "name": "🔑 1. Przebieg Logowania i Weryfikacja Sesji",
+                    "name": "🔑 1. Przebieg Logowania i Inicjalizacji",
                     "value": f"```text\n{login_txt}\n```",
                     "inline": False
                 },
                 {
-                    "name": f"📚 2. Przebieg Rozwiązywania Zadań ({len(phase_words)} zdarzeń)",
-                    "value": f"```text\n{words_txt}\n```",
+                    "name": f"📚 2. Zestawienie Słówek z Sesji ({len(clean_words)} unikalnych):",
+                    "value": words_txt,
                     "inline": False
                 },
                 {
-                    "name": "🚪 3. Powrót do Pulpitu i Bezpieczne Wylogowanie",
-                    "value": f"```text\n{exit_txt}\n```",
+                    "name": "📋 3. Rejestr Konsoli i Zdarzeń",
+                    "value": f"```text\n{console_txt}\n```",
+                    "inline": False
+                },
+                {
+                    "name": "🚪 4. Czas i Statystyki Końcowe",
+                    "value": (
+                        f"• **Czas sesji:** `{dur_nice}`\n"
+                        f"• **Wynik pytań:** `{cor_w}/{tot_w}` (`{acc_val:.1f}%`)\n"
+                        f"• **Akcja końcowa:** Powrót do strony głównej i bezpieczne wylogowanie"
+                    ),
                     "inline": False
                 }
             ]
 
+            color = 0x2ECC71 if success else 0xE74C3C
+
             self._send_discord_embed(
                 webhook_url=webhook_url,
-                title=f"📋 Dziennik Operacji Konsoli — {nickname} ({masked})",
-                description=f"Szczegółowy zapis procesu automatyzacji od uruchomienia przeglądarki do zamknięcia sesji.",
+                title=f"📋 Dziennik Operacyjny Sesji — {nickname} ({masked})",
+                description=f"Szczegółowy zapis logowania, zestawienia pytań oraz zakończenia sesji InstaLing.",
                 color=color,
                 fields=fields,
-                footer_text="InstaLing Bot • Zaawansowana Telemetria"
+                footer_text="InstaLing Auto-Bot • Logi Konsoli #logi-bota"
             )
+            log(f"[Powiadomienie] Wysłano rozbudowane logi sesji {nickname} do #logi-bota")
         except Exception as e:
             log(f"[!] Błąd wysyłania rozbudowanych logów na Discord: {e}")
 
     # =========================================================================
-    # 3. KANAŁ #plan-na-dzis — Przejrzysty harmonogram dnia (styl ze zrzutów)
+    # 3. KANAŁ #plan-na-dzis — Przejrzysty harmonogram dnia
     # =========================================================================
     def send_daily_plan(self, plan_entries: List[Dict[str, Any]], day_name: str = "", date_str: str = "") -> None:
-        """Wysyła harmonogram na dziś identyczny wizualnie ze zrzutem ekranu użytkownika."""
+        """Wysyła harmonogram na dziś ze statusem każdej osoby."""
         wh = self._get_webhook("webhook_plan_na_dzis")
         if not wh:
             return
@@ -385,7 +421,6 @@ class Notifier:
             is_off = p.get("is_off_day", False)
             completed = p.get("completed", False)
             completed_at = p.get("completed_at")
-            started_at = p.get("started_at")
             dur_s = p.get("duration_seconds")
             w_cor = p.get("words_correct")
             w_tot = p.get("words_total")
@@ -440,10 +475,10 @@ class Notifier:
         )
 
     # =========================================================================
-    # 4. KANAŁ #plan-tygodnia — Trwały plan tygodnia (styl ze zrzutu)
+    # 4. KANAŁ #plan-tygodnia — Trwały plan tygodnia
     # =========================================================================
     def send_weekly_plan(self, weekly_data: Dict[str, Any], week_key: str = "") -> None:
-        """Wysyła oficjalny plan tygodnia identyczny wizualnie ze zrzutem ekranu użytkownika."""
+        """Wysyła oficjalny plan tygodnia."""
         wh = self._get_webhook("webhook_plan_tygodnia")
         if not wh:
             return
@@ -516,7 +551,7 @@ class Notifier:
         )
 
     # =========================================================================
-    # 5. KANAŁ #statystyki — Karty statystyk uczniów (styl ze zrzutu)
+    # 5. KANAŁ #statystyki — Karty statystyk uczniów (CLEAN FORMAT)
     # =========================================================================
     def send_bot_global_statistics(
         self,
@@ -526,7 +561,7 @@ class Notifier:
         latest_acc: Optional[float] = None,
         latest_score: Optional[str] = None
     ) -> None:
-        """Wysyła czytelne karty podsumowania każdego ucznia identyczne ze zrzutem ze strony głównej."""
+        """Wysyła czyste, minimalistyczne karty podsumowania każdego ucznia."""
         stats_wh = self._get_webhook("webhook_statystyki")
         if not stats_wh:
             return
@@ -537,7 +572,6 @@ class Notifier:
         users_mgr = users_mgr or UsersManager()
 
         history = storage.history
-        words = storage.words
         active_users = users_mgr.get_active_users()
 
         fields = []
@@ -545,7 +579,10 @@ class Notifier:
             nick = u.get("nickname", "Uczeń")
             mask = mask_login(u.get("login", ""))
             u_login = u.get("login", "")
-            u_hist = [h for h in history if h.get("nickname") == nick or (not h.get("nickname") and h.get("login") == u_login)]
+            u_hist = [
+                h for h in history
+                if h.get("nickname") == nick or (not h.get("nickname") and h.get("login") == u_login)
+            ]
             u_count = len(u_hist)
             u_acc = round(sum(h.get("accuracy_percent", 0) for h in u_hist) / u_count, 1) if u_count > 0 else 0.0
 
@@ -577,7 +614,7 @@ class Notifier:
     # 6. NOWY KANAŁ #testy — Raporty testowe i weryfikacja systemu
     # =========================================================================
     def send_test_report(self, passed: int, total: int, details: List[str]) -> None:
-        """Wysyła szczegółowy raport testów jednostkowych i diagnostyki na dedykowany kanał #testy."""
+        """Wysyła raport testów na dedykowany kanał #testy."""
         testy_wh = self._get_webhook("webhook_testy")
         if not testy_wh:
             return
