@@ -31,15 +31,15 @@
     "answer": "celebrity",
     "prompt": "znana osoba",
     "sentence": "Kim Kardashian is an American _________\nluka\n.",
-    "updated_at": "2026-10-19T20:02:13.333910",
-    "usage_count": 1
+    "updated_at": "2026-10-30T19:05:33.157980",
+    "usage_count": 3
   },
   "znana osoba": {
     "answer": "celebrity",
     "prompt": "znana osoba",
     "sentence": "Kim Kardashian is an American _________\nluka\n.",
-    "updated_at": "2026-10-19T20:02:13.333910",
-    "usage_count": 1
+    "updated_at": "2026-10-30T19:05:33.157980",
+    "usage_count": 3
   },
   "she _____ luka a brilliant scientist. | grać (np. kogoś w filmie)": {
     "answer": "play",
@@ -171,15 +171,15 @@
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-10-28T16:33:56.540566",
-    "usage_count": 5
+    "updated_at": "2026-10-30T19:06:13.009393",
+    "usage_count": 7
   },
   "ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-10-28T16:33:56.540566",
-    "usage_count": 5
+    "updated_at": "2026-10-30T19:06:13.009393",
+    "usage_count": 7
   },
   "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
     "answer": "it's written by",

@@ -1259,5 +1259,119 @@
       }
     ],
     "timestamp": "2026-10-30T17:48:17.738744"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "20:05",
+    "words_total": 19,
+    "words_correct": 15,
+    "words_mistakes": 4,
+    "new_words_count": 0,
+    "autocorrect_count": 2,
+    "accuracy_percent": 78.9,
+    "duration_seconds": 221.2,
+    "started_at_warsaw": "2026-10-30 20:05:00 CET",
+    "completed_at_warsaw": "2026-10-30 20:08:41 CET",
+    "finished_at": "2026-10-30T20:08:41.862164+01:00",
+    "words_details": [
+      {
+        "prompt": "znana osoba",
+        "answer": "_________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "znana osoba",
+        "answer": "celebrity",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "grać (np. kogoś w filmie)",
+        "answer": "play",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występ",
+        "answer": "performance",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "został napisany przez",
+        "answer": "it's written by",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "targ, jarmark",
+        "answer": "fair",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokaz mody",
+        "answer": "fashion show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "galeria sztuki",
+        "answer": "art gallery",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reklama",
+        "answer": "advertisement",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piosenka",
+        "answer": "song",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "portret",
+        "answer": "portrait",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "śpiewać",
+        "answer": "sing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kanał; kanał telewizyjny",
+        "answer": "channel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "znana osoba",
+        "answer": "celebrity",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-30T19:08:41.862467"
   }
 ]
