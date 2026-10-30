@@ -544,7 +544,8 @@ class Notifier:
         for u in active_users:
             nick = u.get("nickname", "Uczeń")
             mask = mask_login(u.get("login", ""))
-            u_hist = [h for h in history if h.get("nickname") == nick or h.get("masked_login") == mask]
+            u_login = u.get("login", "")
+            u_hist = [h for h in history if h.get("nickname") == nick or (not h.get("nickname") and h.get("login") == u_login)]
             u_count = len(u_hist)
             u_acc = round(sum(h.get("accuracy_percent", 0) for h in u_hist) / u_count, 1) if u_count > 0 else 0.0
 
