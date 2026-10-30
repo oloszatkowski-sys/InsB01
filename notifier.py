@@ -546,27 +546,12 @@ class Notifier:
             mask = mask_login(u.get("login", ""))
             u_hist = [h for h in history if h.get("nickname") == nick or h.get("masked_login") == mask]
             u_count = len(u_hist)
-            u_tot_words = sum(h.get("words_total", 0) for h in u_hist)
-            u_cor_words = sum(h.get("words_correct", 0) for h in u_hist)
             u_acc = round(sum(h.get("accuracy_percent", 0) for h in u_hist) / u_count, 1) if u_count > 0 else 0.0
 
-            u_new = 0
-            for h in u_hist:
-                if "new_words_count" in h and h["new_words_count"] is not None:
-                    u_new += int(h["new_words_count"])
-                else:
-                    u_new += len({
-                        w.get("prompt", "").strip()
-                        for w in h.get("words_details", [])
-                        if w.get("status") == "nowe" and w.get("prompt", "").strip()
-                    })
-
             val = (
-                f"• Liczba ukończonych sesji: **{u_count}**\n"
-                f"• Średnia skuteczność: **{u_acc}%**\n"
-                f"• Rozwiązane słówka: **{u_cor_words}/{u_tot_words}**\n"
-                f"• Poznane nowe słówka: **{u_new}**\n"
-                f"• Status profilu: **Aktywny**"
+                f"• Liczba ukończonych sesji: {u_count}\n"
+                f"• Średnia skuteczność: {u_acc}%\n"
+                f"• Status profilu: Aktywny"
             )
             fields.append({
                 "name": f"📊 Podsumowanie Ucznia: {nick} (`{mask}`)",
@@ -574,21 +559,15 @@ class Notifier:
                 "inline": False
             })
 
-        fields.append({
-            "name": "📚 Słownik Bota",
-            "value": f"• Baza zapamiętanych słówek: **{len(words)} słówek**\n• Wszystkie ukończone sesje: **{len(history)}**",
-            "inline": False
-        })
-
-        title = f"📈 Statystyki Kont Uczniów"
-        if latest_user and latest_score:
-            title = f"📈 Statystyki: Ostatnia sesja {latest_user} ({latest_score})"
+        title = "📈 Statystyki Uczniów"
+        if latest_user:
+            title = f"📈 Statystyki: {latest_user}"
 
         self._send_discord_embed(
             webhook_url=stats_wh,
             title=title,
-            description="Aktualne zestawienie postępów i skuteczności poszczególnych kont.",
-            color=0x3498DB,
+            description=None,
+            color=0x00A8FF,
             fields=fields,
             footer_text="InstaLing Multi-User Manager • Ciemny Styl"
         )
@@ -631,8 +610,8 @@ class Notifier:
         self,
         webhook_url: str,
         title: str,
-        description: str,
-        color: int,
+        description: Optional[str] = None,
+        color: int = 0x3498DB,
         fields: Optional[List[Dict[str, Any]]] = None,
         content: Optional[str] = None,
         footer_text: str = "InstaLing Auto-Bot • Europe/Warsaw • 100% Anty-Detekcja"
@@ -640,13 +619,14 @@ class Notifier:
         try:
             embed_obj = {
                 "title": title,
-                "description": description,
                 "color": color,
                 "footer": {
                     "text": footer_text
                 },
                 "timestamp": datetime.now(timezone.utc).isoformat()
             }
+            if description:
+                embed_obj["description"] = description
             if fields:
                 embed_obj["fields"] = fields
 

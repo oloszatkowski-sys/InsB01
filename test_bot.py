@@ -137,19 +137,7 @@ def run_tests():
                 notifier.send_test_report(passed, total, test_details)
                 print("✅ Wysłano raport testowy do dedykowanego kanału #testy")
 
-                # 2. Test #plan-na-dzis
-                sched.publish_today_plan_to_discord()
-                print("✅ Opublikowano plan na dziś w kanale #plan-na-dzis")
-
-                # 3. Test #plan-tygodnia
-                sched.publish_weekly_plan_to_discord()
-                print("✅ Opublikowano plan tygodnia w kanale #plan-tygodnia")
-
-                # 4. Test #statystyki
-                notifier.send_bot_global_statistics()
-                print("✅ Opublikowano statystyki w kanale #statystyki")
-
-                # 5. Test ntfy.sh
+                # 2. Test ntfy.sh
                 from users_manager import UsersManager
                 um = UsersManager()
                 ntfy_u = um.get_ntfy_user()

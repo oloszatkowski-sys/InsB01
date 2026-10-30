@@ -79,14 +79,6 @@ jobs:
         run: |
           pip install -r requirements.txt
 
-      - name: Wysyłka powiadomień na Discord prosto z GitHuba
-        if: github.event_name == 'push'
-        run: |
-          python main.py --plan
-          python main.py --week
-          python main.py --stats
-          python test_bot.py --discord
-
       - name: Instalacja przeglądarki Chromium
         run: |
           playwright install --with-deps chromium
