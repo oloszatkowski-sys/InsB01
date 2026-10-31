@@ -950,5 +950,47 @@
     "sentence": "He ___\nluka\n ____\nluka\n after he took over his father's firm.",
     "updated_at": "2026-10-31T18:19:45.148735",
     "usage_count": 1
+  },
+  "can you read the ____ luka to the class? | wiersz": {
+    "answer": "poem",
+    "prompt": "wiersz",
+    "sentence": "Can you read the ____\nluka\n to the class?",
+    "updated_at": "2026-10-31T20:09:41.924650",
+    "usage_count": 1
+  },
+  "wiersz": {
+    "answer": "poem",
+    "prompt": "wiersz",
+    "sentence": "Can you read the ____\nluka\n to the class?",
+    "updated_at": "2026-10-31T20:09:41.924650",
+    "usage_count": 1
+  },
+  "i hate _______ luka e-mails, but i have to. | pisać": {
+    "answer": "write",
+    "prompt": "pisać",
+    "sentence": "I hate _______\nluka\n e-mails, but I have to.",
+    "updated_at": "2026-10-31T20:11:10.573364",
+    "usage_count": 3
+  },
+  "pisać": {
+    "answer": "write",
+    "prompt": "pisać",
+    "sentence": "I hate _______\nluka\n e-mails, but I have to.",
+    "updated_at": "2026-10-31T20:11:10.573364",
+    "usage_count": 3
+  },
+  "who _______ luka that picture? it's lovely. | malować": {
+    "answer": "paint",
+    "prompt": "malować",
+    "sentence": "Who _______\nluka\n that picture? It's lovely.",
+    "updated_at": "2026-10-31T20:10:51.442482",
+    "usage_count": 1
+  },
+  "malować": {
+    "answer": "paint",
+    "prompt": "malować",
+    "sentence": "Who _______\nluka\n that picture? It's lovely.",
+    "updated_at": "2026-10-31T20:10:51.442482",
+    "usage_count": 1
   }
 }

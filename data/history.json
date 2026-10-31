@@ -1561,5 +1561,124 @@
       }
     ],
     "timestamp": "2026-10-31T18:21:22.891475"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "20:16",
+    "words_total": 20,
+    "words_correct": 15,
+    "words_mistakes": 5,
+    "new_words_count": 3,
+    "autocorrect_count": 1,
+    "accuracy_percent": 75.0,
+    "duration_seconds": 218.5,
+    "started_at_warsaw": "2026-10-31 21:08:29 CET",
+    "completed_at_warsaw": "2026-10-31 21:12:08 CET",
+    "finished_at": "2026-10-31T21:12:08.242775+01:00",
+    "words_details": [
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "znana osoba",
+        "answer": "celebrity",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "opowiadanie",
+        "answer": "short story",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "put on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "subskrybować; wykupić abonament",
+        "answer": "subscribe",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "poem",
+        "status": "nowe"
+      },
+      {
+        "prompt": "fotografia (dziedzina); fotografika",
+        "answer": "photography",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisarz",
+        "answer": "writer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pop",
+        "answer": "pop",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "write",
+        "status": "nowe"
+      },
+      {
+        "prompt": "poeta",
+        "answer": "poet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malować",
+        "answer": "paint",
+        "status": "nowe"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "write",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "malować",
+        "answer": "paint",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysyłać (np. pliki na serwer internetowy)",
+        "answer": "upload",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "poem",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "write",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-31T20:12:08.243079"
   }
 ]
