@@ -85,10 +85,6 @@ def main():
 
     elif args.user:
         res = sched.run_single_user(args.user, trigger_reason="ręczne uruchomienie (--user)")
-        try:
-            sched.publish_today_plan_to_discord()
-        except Exception:
-            pass
         sys.exit(0 if res.get("success") else 1)
 
     elif args.run or args.cron:
@@ -116,13 +112,6 @@ def main():
             sys.exit(0)
 
         any_failed = any(not r.get("success", False) for r in results)
-        
-        # Aktualizujemy plan na Discordzie po wykonaniu zadania
-        try:
-            sched.publish_today_plan_to_discord()
-        except Exception:
-            pass
-
         sys.exit(1 if any_failed else 0)
 
     elif args.run_all:
@@ -142,11 +131,6 @@ def main():
                 pause_s = random.uniform(30.0, 60.0)
                 log(f"[*] Bezpieczny odstęp {pause_s:.0f}s przed kolejnym użytkownikiem...")
                 time.sleep(pause_s)
-
-        try:
-            sched.publish_today_plan_to_discord()
-        except Exception:
-            pass
 
         sys.exit(1 if any_failed else 0)
 

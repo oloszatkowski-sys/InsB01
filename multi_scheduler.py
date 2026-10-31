@@ -443,6 +443,16 @@ class MultiScheduler:
 
         if updated:
             self._save_weekly_schedule(weekly)
+            # Automatyczna publikacja planu na dziś i planu tygodnia na Discordzie po każdej ukończonej sesji
+            try:
+                self.publish_today_plan_to_discord()
+            except Exception as e:
+                log(f"[!] Błąd aktualizacji planu na dziś po sesji: {e}")
+
+            try:
+                self.publish_weekly_plan_to_discord()
+            except Exception as e:
+                log(f"[!] Błąd aktualizacji planu tygodnia po sesji: {e}")
 
     def mark_slot_in_progress(self, slot_id: str, started_at: str) -> None:
         """Oznacza slot jako 'W trakcie' w momencie wybicia godziny zegara."""

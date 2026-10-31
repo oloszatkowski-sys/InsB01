@@ -527,6 +527,10 @@ class Notifier:
                         extra.append(f"nowe: {new_w}")
 
                     lines.append(f"• {nick}: ✅ `{t}` *({', '.join(extra)})*")
+                elif e.get("status") == "W trakcie":
+                    lines.append(f"• {nick}: ▶️ `{t}` *(W toku...)*")
+                elif e.get("status") == "Błąd":
+                    lines.append(f"• {nick}: ⚠️ `{t}` *(Błąd)*")
                 else:
                     lines.append(f"• {nick}: ⏳ `{t}`")
 
