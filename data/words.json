@@ -227,15 +227,15 @@
     "answer": "song",
     "prompt": "piosenka",
     "sentence": "What is that ____\nluka\n about?",
-    "updated_at": "2026-10-19T20:22:23.028493",
-    "usage_count": 1
+    "updated_at": "2026-10-31T18:18:40.357672",
+    "usage_count": 3
   },
   "piosenka": {
     "answer": "song",
     "prompt": "piosenka",
     "sentence": "What is that ____\nluka\n about?",
-    "updated_at": "2026-10-19T20:22:23.028493",
-    "usage_count": 1
+    "updated_at": "2026-10-31T18:18:40.357672",
+    "usage_count": 3
   },
   "he hung the ________ luka on the wall. | portret": {
     "answer": "portrait",
@@ -921,6 +921,34 @@
     "prompt": "autor",
     "sentence": "Who's the ______\nluka\n of this comic? I like it very much.",
     "updated_at": "2026-10-31T17:31:59.000385",
+    "usage_count": 1
+  },
+  "on the wall there is a beautiful ________ luka . | obraz": {
+    "answer": "painting",
+    "prompt": "obraz",
+    "sentence": "On the wall there is a beautiful ________\nluka\n.",
+    "updated_at": "2026-10-31T18:18:49.183974",
+    "usage_count": 1
+  },
+  "obraz": {
+    "answer": "painting",
+    "prompt": "obraz",
+    "sentence": "On the wall there is a beautiful ________\nluka\n.",
+    "updated_at": "2026-10-31T18:18:49.183974",
+    "usage_count": 1
+  },
+  "he ___ luka ____ luka after he took over his father's firm. | stać się bogatym, wzbogacić się": {
+    "answer": "get rich",
+    "prompt": "stać się bogatym, wzbogacić się",
+    "sentence": "He ___\nluka\n ____\nluka\n after he took over his father's firm.",
+    "updated_at": "2026-10-31T18:19:45.148735",
+    "usage_count": 1
+  },
+  "stać się bogatym, wzbogacić się": {
+    "answer": "get rich",
+    "prompt": "stać się bogatym, wzbogacić się",
+    "sentence": "He ___\nluka\n ____\nluka\n after he took over his father's firm.",
+    "updated_at": "2026-10-31T18:19:45.148735",
     "usage_count": 1
   }
 }

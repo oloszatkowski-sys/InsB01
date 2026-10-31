@@ -1467,5 +1467,99 @@
       }
     ],
     "timestamp": "2026-10-31T17:33:09.640618"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "18:56",
+    "words_total": 15,
+    "words_correct": 11,
+    "words_mistakes": 4,
+    "new_words_count": 2,
+    "autocorrect_count": 1,
+    "accuracy_percent": 73.3,
+    "duration_seconds": 192.4,
+    "started_at_warsaw": "2026-10-31 19:18:10 CET",
+    "completed_at_warsaw": "2026-10-31 19:21:22 CET",
+    "finished_at": "2026-10-31T19:21:22.891243+01:00",
+    "words_details": [
+      {
+        "prompt": "piosenka",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "piosenka",
+        "answer": "song",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "nowe"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "został napisany przez",
+        "answer": "it's written by",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "osoba przeprowadzająca wywiad",
+        "answer": "interviewer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wyprzedaż garażowa",
+        "answer": "garage sale",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "stać się bogatym, wzbogacić się",
+        "answer": "get rich",
+        "status": "nowe"
+      },
+      {
+        "prompt": "piosenka",
+        "answer": "song",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malarz",
+        "answer": "painter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-31T18:21:22.891475"
   }
 ]
