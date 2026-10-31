@@ -1373,5 +1373,99 @@
       }
     ],
     "timestamp": "2026-10-30T19:08:41.862467"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:02",
+    "words_total": 15,
+    "words_correct": 9,
+    "words_mistakes": 6,
+    "new_words_count": 2,
+    "autocorrect_count": 2,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 195.4,
+    "started_at_warsaw": "2026-10-31 18:29:54 CET",
+    "completed_at_warsaw": "2026-10-31 18:33:09 CET",
+    "finished_at": "2026-10-31T18:33:09.640356+01:00",
+    "words_details": [
+      {
+        "prompt": "klasyczny",
+        "answer": "classical",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malarz",
+        "answer": "painter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokaz mody",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pokaz mody",
+        "answer": "fashion show",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "opowiadanie",
+        "answer": "short story",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "klasyczny",
+        "answer": "classical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "autor",
+        "answer": "author",
+        "status": "nowe"
+      },
+      {
+        "prompt": "pokaz mody",
+        "answer": "fashion show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "szczotka; pędzel",
+        "answer": "brush",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysunek",
+        "answer": "drawing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rozsunąć zasłony",
+        "answer": "open the curtains",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-10-31T17:33:09.640618"
   }
 ]

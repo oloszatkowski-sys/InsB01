@@ -73,15 +73,15 @@
     "answer": "fashion show",
     "prompt": "pokaz mody",
     "sentence": "John was sitting in the front row of seats at a Calvin Klein _______\nluka\n ____\nluka\n.",
-    "updated_at": "2026-10-19T20:03:26.181778",
-    "usage_count": 1
+    "updated_at": "2026-10-31T17:31:08.155818",
+    "usage_count": 3
   },
   "pokaz mody": {
     "answer": "fashion show",
     "prompt": "pokaz mody",
     "sentence": "John was sitting in the front row of seats at a Calvin Klein _______\nluka\n ____\nluka\n.",
-    "updated_at": "2026-10-19T20:03:26.181778",
-    "usage_count": 1
+    "updated_at": "2026-10-31T17:31:08.155818",
+    "usage_count": 3
   },
   "i was in the ________ luka of that show. | widownia; publiczność": {
     "answer": "audience",
@@ -857,15 +857,15 @@
     "answer": "design",
     "prompt": "projektować",
     "sentence": "I ______\nluka\n apartments for different clients at work.",
-    "updated_at": "2026-10-30T15:53:03.564320",
-    "usage_count": 1
+    "updated_at": "2026-10-31T17:31:49.968518",
+    "usage_count": 3
   },
   "projektować": {
     "answer": "design",
     "prompt": "projektować",
     "sentence": "I ______\nluka\n apartments for different clients at work.",
-    "updated_at": "2026-10-30T15:53:03.564320",
-    "usage_count": 1
+    "updated_at": "2026-10-31T17:31:49.968518",
+    "usage_count": 3
   },
   "picasso was a famous _______ luka . | malarz": {
     "answer": "painter",
@@ -893,6 +893,34 @@
     "prompt": "wyprzedaż garażowa",
     "sentence": "I've decided to throw a ______\nluka\n ____\nluka\n to sell my child's old toys and clothes.",
     "updated_at": "2026-10-30T17:47:42.813591",
+    "usage_count": 1
+  },
+  "do you like _________ luka music? | klasyczny": {
+    "answer": "classical",
+    "prompt": "klasyczny",
+    "sentence": "Do you like _________\nluka\n music?",
+    "updated_at": "2026-10-31T17:30:13.124872",
+    "usage_count": 1
+  },
+  "klasyczny": {
+    "answer": "classical",
+    "prompt": "klasyczny",
+    "sentence": "Do you like _________\nluka\n music?",
+    "updated_at": "2026-10-31T17:30:13.124872",
+    "usage_count": 1
+  },
+  "who's the ______ luka of this comic? i like it very much. | autor": {
+    "answer": "author",
+    "prompt": "autor",
+    "sentence": "Who's the ______\nluka\n of this comic? I like it very much.",
+    "updated_at": "2026-10-31T17:31:59.000385",
+    "usage_count": 1
+  },
+  "autor": {
+    "answer": "author",
+    "prompt": "autor",
+    "sentence": "Who's the ______\nluka\n of this comic? I like it very much.",
+    "updated_at": "2026-10-31T17:31:59.000385",
     "usage_count": 1
   }
 }
