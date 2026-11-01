@@ -1794,5 +1794,69 @@
       }
     ],
     "timestamp": "2026-11-01T18:05:31.469778"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "18:49",
+    "words_total": 9,
+    "words_correct": 6,
+    "words_mistakes": 3,
+    "new_words_count": 1,
+    "autocorrect_count": 1,
+    "accuracy_percent": 66.7,
+    "duration_seconds": 129.1,
+    "started_at_warsaw": "2026-11-01 19:43:44 CET",
+    "completed_at_warsaw": "2026-11-01 19:45:54 CET",
+    "finished_at": "2026-11-01T19:45:54.007480+01:00",
+    "words_details": [
+      {
+        "prompt": "malować",
+        "answer": "paint",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występ",
+        "answer": "performance",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "serial kryminalny",
+        "answer": "crime series",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "autor",
+        "answer": "author",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokaz mody",
+        "answer": "fashion show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "klasyczny",
+        "answer": "classical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zmniejszyć temperaturę na kaloryferze",
+        "answer": "turn the radiator down",
+        "status": "nowe"
+      }
+    ],
+    "timestamp": "2026-11-01T18:45:54.007864"
   }
 ]

@@ -857,15 +857,15 @@
     "answer": "design",
     "prompt": "projektować",
     "sentence": "I ______\nluka\n apartments for different clients at work.",
-    "updated_at": "2026-10-31T17:31:49.968518",
-    "usage_count": 3
+    "updated_at": "2026-11-01T18:45:19.748780",
+    "usage_count": 5
   },
   "projektować": {
     "answer": "design",
     "prompt": "projektować",
     "sentence": "I ______\nluka\n apartments for different clients at work.",
-    "updated_at": "2026-10-31T17:31:49.968518",
-    "usage_count": 3
+    "updated_at": "2026-11-01T18:45:19.748780",
+    "usage_count": 5
   },
   "picasso was a famous _______ luka . | malarz": {
     "answer": "painter",
@@ -1019,6 +1019,20 @@
     "prompt": "scena (miejsce)",
     "sentence": "The _____\nluka\n is prepared for the actors.",
     "updated_at": "2026-11-01T18:04:44.759619",
+    "usage_count": 1
+  },
+  "____ luka the ________ luka ____ luka , it's so hot in here. | zmniejszyć temperaturę na kaloryferze": {
+    "answer": "turn the radiator down",
+    "prompt": "zmniejszyć temperaturę na kaloryferze",
+    "sentence": "____\nluka\n the ________\nluka\n ____\nluka\n, it's so hot in here.",
+    "updated_at": "2026-11-01T18:45:29.456787",
+    "usage_count": 1
+  },
+  "zmniejszyć temperaturę na kaloryferze": {
+    "answer": "turn the radiator down",
+    "prompt": "zmniejszyć temperaturę na kaloryferze",
+    "sentence": "____\nluka\n the ________\nluka\n ____\nluka\n, it's so hot in here.",
+    "updated_at": "2026-11-01T18:45:29.456787",
     "usage_count": 1
   }
 }
