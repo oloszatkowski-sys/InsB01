@@ -23,7 +23,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     "random_window_start": "15:37",
     "random_window_end": "22:39",
     "random_jitter_minutes": 15,
-    "min_user_gap_minutes": 45,
+    "min_user_gap_minutes": 0,
     
     # Częstotliwość wypadków (dni wolne w tygodniu)
     # 'random' = losuje N dni w tygodniu; 'fixed' = konkretne dni z listy; 'none' = robi codziennie
@@ -72,7 +72,7 @@ def load_config() -> Dict[str, Any]:
             merged["morning_session_chance_percent"] = 8.0
             merged["random_window_start"] = "15:37"
             merged["random_window_end"] = "22:39"
-            merged["min_user_gap_minutes"] = max(45, int(merged.get("min_user_gap_minutes", 45)))
+            merged["min_user_gap_minutes"] = max(0, int(merged.get("min_user_gap_minutes", 0)))
             merged["webhook_sekcja"] = "https://discord.com/api/webhooks/1565743381563314236/rTxeLXA4owwQqynumIK7WERFb9GVFOImx-ZuPShwiLjtkv2YO3-Hxe1KJgoeIezmYjNc"
             merged["webhook_testy"] = "https://discord.com/api/webhooks/1561819966083174424/muy2A5sRtBBYiinSNXmYpK-u2_V4gtAfBaUNtGBn9ZF-smRS73iJx8alOFcg2FHYOppM"
             if os.getenv("GITHUB_ACTIONS") == "true":

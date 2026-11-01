@@ -33,14 +33,14 @@ def run_tests():
         from config import load_config
         cfg = load_config()
         gap = int(cfg.get("min_user_gap_minutes", 0))
-        assert gap >= 45, f"Odstęp między użytkownikami ({gap}m) musi wynosić min. 45 min!"
+        assert gap >= 0, f"Odstęp między użytkownikami ({gap}m) nie może być ujemny!"
         assert cfg.get("max_words_per_session", 0) <= 50, "Limit słówek musi chronić przed pętlą!"
         morn_s = cfg.get("morning_window_start", "06:43")
         morn_e = cfg.get("morning_window_end", "07:34")
         eve_s = cfg.get("random_window_start", "15:37")
         eve_e = cfg.get("random_window_end", "22:39")
         morn_p = cfg.get("morning_session_chance_percent", 8.0)
-        print(f"✅ [2/{total}] Konfiguracja: OK (Okna: {morn_s}-{morn_e} [{morn_p}%] oraz {eve_s}-{eve_e}, odstęp: {gap} min)")
+        print(f"✅ [2/{total}] Konfiguracja: OK (Okna: {morn_s}-{morn_e} [{morn_p}%] oraz {eve_s}-{eve_e}, płynna kolejka bez 45m)")
         passed += 1
     except Exception as e:
         print(f"❌ [2/{total}] Błąd konfiguracji: {e}")
@@ -129,7 +129,7 @@ def run_tests():
                 test_details = [
                     "• ✅ **Strefa czasowa:** `Europe/Warsaw` (CET/CEST) — zsynchronizowana",
                     "• ✅ **Uczniowie:** Olesław 010, Szlucha Jagoda, OliwiercioTheHacker",
-                    "• ✅ **Ochrona:** Odstęp min. 45 min, anty-kolizja aktywna",
+                    "• ✅ **Kolejka sesji:** Płynne przechodzenie bez sztucznego opóźnienia 45m",
                     "• ✅ **Baza wiedzy:** Słownik gotowy do samonaprawiania słówek",
                     "• ✅ **Połączenie InstaLing:** HTTP 200 OK — serwis odpowiada",
                     "• ✅ **GitHub Actions:** Skonfigurowane i gotowe do pracy w chmurze"

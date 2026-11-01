@@ -461,7 +461,7 @@ class Notifier:
             f"**Data:** `{date_str}` ({day_name})\n"
             f"**Postęp sesji:** `{completed_count}/{total_active}` ukończonych dzisiaj\n\n"
             + "\n".join(student_lines)
-            + "\n\n💡 *Każdy uczeń ma własny przedział czasowy z zachowaniem min. 45 min odstępu bez kolizji.*"
+            + "\n\n💡 *Płynna kolejka: gdy czas sesji nadejdzie lub nachodzi na siebie, bot wykonuje kolejne konto od razu.*"
         )
 
         color = 0x9B59B6 if completed_count < total_active else 0x2ECC71

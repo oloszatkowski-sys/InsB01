@@ -384,7 +384,7 @@ class MultiScheduler:
             "---",
             "### 📌 Informacje o harmonogramie:",
             "- 🕒 **Okna sesji (Europe/Warsaw):** Poranne **06:43 – 07:34** (rzadko 8%) oraz Popołudniowo-wieczorne **15:37 – 22:39** (głównie).",
-            "- 🛡️ **Odstępy anty-kolizyjne:** Pomiędzy sesjami różnych uczniów zachowywany jest odstęp minimum **45 minut**.",
+            "- ⚡ **Płynna kolejka sesji:** Gdy godziny sesji nakładają się na siebie lub następna sesja już nadeszła, bot wykonuje ją bezpośrednio po poprzedniej bez sztucznego czekania.",
             "- ⏰ **Wbudowany zegar bota:** Sesje uruchamiają się punktualnie o wyznaczonej godzinie (po jednej sekcji naraz).",
             "- ☀️ **Codzienny przegląd o 06:30:** GitHub Actions każdego ranka weryfikuje gotowość i publikuje plan na dany dzień.",
             "- 🔒 **Niezmienność planu:** Harmonogram wylosowany na dany tydzień obowiązuje od poniedziałku do niedzieli."
@@ -528,26 +528,29 @@ class MultiScheduler:
         target_minute = sched_min % 60
         target_dt = now_pl.replace(hour=target_hour, minute=target_minute, second=0, microsecond=0)
 
-        # Runtime Anti-Collision: wyliczamy najwcześniejszy dozwolony czas po poprzedniej sesji (+45 min)
-        earliest_allowed_dt = target_dt
+        # Jeśli poprzednia sesja zakończyła się dosłownie przed chwilą (np. < 5s), robimy mikro-pauzę techniczną
+        last_comp_dt = None
         for s in slots:
             comp_at = s.get("completed_at")
             if comp_at:
                 try:
                     parts = comp_at.split()
                     if len(parts) >= 2:
-                        comp_dt = datetime.strptime(f"{parts[0]} {parts[1]}", "%Y-%m-%d %H:%M:%S").replace(tzinfo=WARSAW_TZ)
-                        allowed_after_comp = comp_dt + timedelta(minutes=min_user_gap)
-                        if allowed_after_comp > earliest_allowed_dt:
-                            earliest_allowed_dt = allowed_after_comp
+                        cdt = datetime.strptime(f"{parts[0]} {parts[1]}", "%Y-%m-%d %H:%M:%S").replace(tzinfo=WARSAW_TZ)
+                        if last_comp_dt is None or cdt > last_comp_dt:
+                            last_comp_dt = cdt
                 except Exception:
                     pass
 
-        effective_target_dt = max(target_dt, earliest_allowed_dt)
+        effective_target_dt = target_dt
         seconds_until = (effective_target_dt - now_pl).total_seconds()
 
-        # Jeśli godzina (oraz wymagany odstęp 45 min) już nadeszła, slot jest natychmiast gotowy!
+        # Jeśli godzina już nadeszła (lub minęła, bo sesje nachodzą na siebie), slot jest natychmiast gotowy do wykonania!
         if seconds_until <= 0:
+            if last_comp_dt:
+                sec_since = (now_pl - last_comp_dt).total_seconds()
+                if 0 <= sec_since < 5:
+                    time.sleep(max(1.0, 5.0 - sec_since))
             return next_slot
 
         # Jeśli sesja ma wystartować w oknie do max_wait_seconds (domyślnie do 120 min):
@@ -613,27 +616,10 @@ class MultiScheduler:
         return None
 
     def get_due_slots(self) -> List[Dict[str, Any]]:
-        """Zwraca listę slotów na dziś, które nadeszły i nie zostały jeszcze ukończone z gwarancją odstępu."""
+        """Zwraca listę slotów na dziś, które nadeszły i nie zostały jeszcze ukończone (płynna kolejka bez sztucznego 45m odstępu)."""
         slots = self.get_today_slots()
         now_pl = now_warsaw()
         current_minutes = now_pl.hour * 60 + now_pl.minute
-        min_user_gap = int(self.config.get("min_user_gap_minutes", 45))
-
-        for s in slots:
-            comp_at = s.get("completed_at")
-            if comp_at:
-                try:
-                    parts = comp_at.split()
-                    if len(parts) >= 2:
-                        dt_str = f"{parts[0]} {parts[1]}"
-                        comp_dt = datetime.strptime(dt_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=WARSAW_TZ)
-                        diff_sec = (now_pl - comp_dt).total_seconds()
-                        if 0 <= diff_sec < (min_user_gap * 60):
-                            rem_min = int(min_user_gap - (diff_sec / 60))
-                            log(f"[i] Ochrona odstępu: Ostatnia sesja zakończyła się o {comp_at}. Wymagany odstęp: {min_user_gap} min. Kolejne konto wystartuje dopiero za ok. {rem_min} min.")
-                            return []
-                except Exception:
-                    pass
 
         due = [
             s for s in slots
