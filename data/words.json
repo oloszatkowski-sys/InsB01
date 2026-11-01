@@ -1034,5 +1034,47 @@
     "sentence": "____\nluka\n the ________\nluka\n ____\nluka\n, it's so hot in here.",
     "updated_at": "2026-11-01T18:45:29.456787",
     "usage_count": 1
+  },
+  "son, you ___ luka a ___ luka ____ luka again for your maths test. i think i need to get you a tutor. | dostać niską ocenę": {
+    "answer": "get a low mark",
+    "prompt": "dostać niską ocenę",
+    "sentence": "Son, you ___\nluka\n a ___\nluka\n ____\nluka\n again for your maths test. I think I need to get you a tutor.",
+    "updated_at": "2026-11-01T20:05:46.664025",
+    "usage_count": 1
+  },
+  "dostać niską ocenę": {
+    "answer": "get a low mark",
+    "prompt": "dostać niską ocenę",
+    "sentence": "Son, you ___\nluka\n a ___\nluka\n ____\nluka\n again for your maths test. I think I need to get you a tutor.",
+    "updated_at": "2026-11-01T20:05:46.664025",
+    "usage_count": 1
+  },
+  "my __________ luka was right - he dropped out of college after only 1 month. | prognoza": {
+    "answer": "prediction",
+    "prompt": "prognoza",
+    "sentence": "My __________\nluka\n was right - he dropped out of college after only 1 month.",
+    "updated_at": "2026-11-01T20:06:25.014216",
+    "usage_count": 1
+  },
+  "prognoza": {
+    "answer": "prediction",
+    "prompt": "prognoza",
+    "sentence": "My __________\nluka\n was right - he dropped out of college after only 1 month.",
+    "updated_at": "2026-11-01T20:06:25.014216",
+    "usage_count": 1
+  },
+  "let's meet at the ______ luka at half past four. | kino": {
+    "answer": "cinema",
+    "prompt": "kino",
+    "sentence": "Let's meet at the ______\nluka\n at half past four.",
+    "updated_at": "2026-11-01T20:07:29.899080",
+    "usage_count": 1
+  },
+  "kino": {
+    "answer": "cinema",
+    "prompt": "kino",
+    "sentence": "Let's meet at the ______\nluka\n at half past four.",
+    "updated_at": "2026-11-01T20:07:29.899080",
+    "usage_count": 1
   }
 }

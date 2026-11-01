@@ -1858,5 +1858,114 @@
       }
     ],
     "timestamp": "2026-11-01T18:45:54.007864"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "21:05",
+    "words_total": 18,
+    "words_correct": 15,
+    "words_mistakes": 3,
+    "new_words_count": 3,
+    "autocorrect_count": 0,
+    "accuracy_percent": 83.3,
+    "duration_seconds": 199.3,
+    "started_at_warsaw": "2026-11-01 21:05:00 CET",
+    "completed_at_warsaw": "2026-11-01 21:08:19 CET",
+    "finished_at": "2026-11-01T21:08:19.882581+01:00",
+    "words_details": [
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piosenka",
+        "answer": "song",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rock",
+        "answer": "rock",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dostać niską ocenę",
+        "answer": "get a low mark",
+        "status": "nowe"
+      },
+      {
+        "prompt": "stać się bogatym, wzbogacić się",
+        "answer": "get rich",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "portret",
+        "answer": "portrait",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malować",
+        "answer": "paint",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "prediction",
+        "status": "nowe"
+      },
+      {
+        "prompt": "występ",
+        "answer": "performance",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malarz",
+        "answer": "painter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występować",
+        "answer": "perform",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kino",
+        "answer": "cinema",
+        "status": "nowe"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "prediction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "poem",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dostać niską ocenę",
+        "answer": "get a low mark",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kino",
+        "answer": "cinema",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-01T20:08:19.882944"
   }
 ]
