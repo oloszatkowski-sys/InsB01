@@ -1680,5 +1680,119 @@
       }
     ],
     "timestamp": "2026-10-31T20:12:08.243079"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "16:48",
+    "words_total": 19,
+    "words_correct": 15,
+    "words_mistakes": 4,
+    "new_words_count": 2,
+    "autocorrect_count": 1,
+    "accuracy_percent": 78.9,
+    "duration_seconds": 201.6,
+    "started_at_warsaw": "2026-11-01 19:02:09 CET",
+    "completed_at_warsaw": "2026-11-01 19:05:31 CET",
+    "finished_at": "2026-11-01T19:05:31.469400+01:00",
+    "words_details": [
+      {
+        "prompt": "malować",
+        "answer": "paint",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "write",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "śpiewać",
+        "answer": "sing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piosenka",
+        "answer": "song",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "poem",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "portret",
+        "answer": "portrait",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malarz",
+        "answer": "painter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "osoba przeprowadzająca wywiad",
+        "answer": "interviewer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "fabuła; akcja; wątek",
+        "answer": "plot",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "tune",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występować",
+        "answer": "perform",
+        "status": "nowe"
+      },
+      {
+        "prompt": "rock",
+        "answer": "rock",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (miejsce)",
+        "answer": "stage",
+        "status": "nowe"
+      },
+      {
+        "prompt": "scena (miejsce)",
+        "answer": "stage",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysunek",
+        "answer": "drawing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "poem",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występować",
+        "answer": "perform",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-01T18:05:31.469778"
   }
 ]

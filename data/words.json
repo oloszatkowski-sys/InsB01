@@ -955,15 +955,15 @@
     "answer": "poem",
     "prompt": "wiersz",
     "sentence": "Can you read the ____\nluka\n to the class?",
-    "updated_at": "2026-10-31T20:09:41.924650",
-    "usage_count": 1
+    "updated_at": "2026-11-01T18:03:18.528567",
+    "usage_count": 3
   },
   "wiersz": {
     "answer": "poem",
     "prompt": "wiersz",
     "sentence": "Can you read the ____\nluka\n to the class?",
-    "updated_at": "2026-10-31T20:09:41.924650",
-    "usage_count": 1
+    "updated_at": "2026-11-01T18:03:18.528567",
+    "usage_count": 3
   },
   "i hate _______ luka e-mails, but i have to. | pisać": {
     "answer": "write",
@@ -991,6 +991,34 @@
     "prompt": "malować",
     "sentence": "Who _______\nluka\n that picture? It's lovely.",
     "updated_at": "2026-10-31T20:10:51.442482",
+    "usage_count": 1
+  },
+  "i'd like to _______ luka on a big stage one day. | występować": {
+    "answer": "perform",
+    "prompt": "występować",
+    "sentence": "I'd like to _______\nluka\n on a big stage one day.",
+    "updated_at": "2026-11-01T18:04:27.077467",
+    "usage_count": 1
+  },
+  "występować": {
+    "answer": "perform",
+    "prompt": "występować",
+    "sentence": "I'd like to _______\nluka\n on a big stage one day.",
+    "updated_at": "2026-11-01T18:04:27.077467",
+    "usage_count": 1
+  },
+  "the _____ luka is prepared for the actors. | scena (miejsce)": {
+    "answer": "stage",
+    "prompt": "scena (miejsce)",
+    "sentence": "The _____\nluka\n is prepared for the actors.",
+    "updated_at": "2026-11-01T18:04:44.759619",
+    "usage_count": 1
+  },
+  "scena (miejsce)": {
+    "answer": "stage",
+    "prompt": "scena (miejsce)",
+    "sentence": "The _____\nluka\n is prepared for the actors.",
+    "updated_at": "2026-11-01T18:04:44.759619",
     "usage_count": 1
   }
 }
