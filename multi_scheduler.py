@@ -1,4 +1,6 @@
 import json
+import os
+import subprocess
 import random
 import time
 import urllib.request
@@ -453,6 +455,33 @@ class MultiScheduler:
                 self.publish_weekly_plan_to_discord()
             except Exception as e:
                 log(f"[!] Błąd aktualizacji planu tygodnia po sesji: {e}")
+
+            # Natychmiastowa synchronizacja z repozytorium GitHub w CI
+            self.sync_git_repo_if_ci()
+
+    def sync_git_repo_if_ci(self, commit_msg: str = "Auto: Aktualizacja planu tygodnia i stanu sesji [skip ci]") -> bool:
+        """Automatycznie zapisuje i wypycha zaktualizowany harmonogram do repozytorium GitHub w środowisku CI."""
+        if os.getenv("GITHUB_ACTIONS") != "true":
+            return False
+        try:
+            repo_dir = str(Path(__file__).resolve().parent)
+            subprocess.run(["git", "config", "--global", "user.name", "InstaLing Bot"], cwd=repo_dir, capture_output=True, timeout=10)
+            subprocess.run(["git", "config", "--global", "user.email", "bot@github-actions.internal"], cwd=repo_dir, capture_output=True, timeout=10)
+            subprocess.run(["git", "add", "-f", "data/weekly_schedule.json", "data/words.json", "data/history.json", "PLAN_TYGODNIA.md", "data/PLAN_TYGODNIA.md"], cwd=repo_dir, capture_output=True, timeout=15)
+
+            diff_check = subprocess.run(["git", "diff", "--staged", "--quiet"], cwd=repo_dir, timeout=10)
+            if diff_check.returncode != 0:
+                subprocess.run(["git", "commit", "-m", commit_msg], cwd=repo_dir, capture_output=True, timeout=15)
+                subprocess.run(["git", "pull", "--rebase", "--autostash", "-X", "theirs", "origin", "main"], cwd=repo_dir, capture_output=True, timeout=20)
+                push_res = subprocess.run(["git", "push", "origin", "HEAD:main"], cwd=repo_dir, capture_output=True, timeout=25)
+                if push_res.returncode == 0:
+                    log("[+] Pomyślnie zsynchronizowano stan bota i harmonogram z repozytorium GitHub.")
+                    return True
+                else:
+                    log(f"[!] Błąd git push: {push_res.stderr.decode('utf-8', errors='ignore')}")
+        except Exception as e:
+            log(f"[!] Błąd synchronizacji Git w locie: {e}")
+        return False
 
     def mark_slot_in_progress(self, slot_id: str, started_at: str) -> None:
         """Oznacza slot jako 'W trakcie' w momencie wybicia godziny zegara."""

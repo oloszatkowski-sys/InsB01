@@ -101,17 +101,51 @@ def main():
         # Upewniamy się, że ogłoszenia dzienne/tygodniowe są aktualne
         sched.check_and_publish_daily_announcements()
 
-        # Wykonujemy cykl z wbudowanym precyzyjnym zegarem (czeka do dokładnej minuty, bez zbędnego odliczania)
-        results = sched.run_due_cycle(trigger_reason="harmonogram", max_sessions=1)
+        # Inteligentna pętla sesji:
+        # Wykonuje wszystkie sesje na dziś, dopóki mieszczą się w oknie pracy runnera (do 330 min na GitHub Actions)
+        # z wbudowanym precyzyjnym zegarem i 45-minutową ochroną antykolizyjną.
+        executed_all = []
+        start_mono = time.monotonic()
+        max_runner_duration_sec = 330 * 60 if os.getenv("GITHUB_ACTIONS") == "true" else 7200
 
-        if not results:
+        while True:
+            elapsed = time.monotonic() - start_mono
+            remaining_runner_budget = max_runner_duration_sec - elapsed
+            if remaining_runner_budget <= 300:
+                log("[i] Zbliża się limit czasu pracy runnera. Bezpiecznie kończę pętlę na ten cykl.")
+                break
+
+            max_wait = min(int(remaining_runner_budget - 300), 9000)
+            if max_wait <= 0:
+                break
+
+            results = sched.run_due_cycle(trigger_reason="harmonogram", max_sessions=1, max_wait_seconds=max_wait)
+            if not results:
+                today_slots = sched.get_today_slots()
+                pending = [s for s in today_slots if not s.get("is_off_day") and not s.get("completed", False)]
+                status_list = [f"{s['nickname']}: {s['scheduled_time']} ({s['status']})" for s in today_slots]
+                if not pending:
+                    log("[+] Wszystkie zaplanowane sesje na dzisiaj zostały w 100% ukończone!")
+                else:
+                    log("[i] Żadna sesja nie oczekuje na wykonanie w bieżącym oknie czasowym.")
+                log("    Dzisiejszy harmonogram: " + " | ".join(status_list))
+                break
+
+            executed_all.extend(results)
+
+            # Natychmiastowa synchronizacja z Git po ukończeniu sesji
+            sched.sync_git_repo_if_ci("Auto: Aktualizacja planu tygodnia i stanu sesji [skip ci]")
+
+            # Sprawdzamy stan pozostałych sesji na dzisiaj
             today_slots = sched.get_today_slots()
-            status_list = [f"{s['nickname']}: {s['scheduled_time']} ({s['status']})" for s in today_slots]
-            log("[i] Żadna sesja nie oczekuje na wykonanie w tym oknie czasowym.")
-            log("    Dzisiejszy harmonogram: " + " | ".join(status_list))
-            sys.exit(0)
+            pending = [s for s in today_slots if not s.get("is_off_day") and not s.get("completed", False)]
+            if not pending:
+                log("[+] Wszystkie zaplanowane sesje na dzisiaj zostały zrealizowane!")
+                break
 
-        any_failed = any(not r.get("success", False) for r in results)
+            log(f"[*] Na dzisiaj pozostało jeszcze {len(pending)} sesji. Oczekuję na kolejną...")
+
+        any_failed = any(not r.get("success", False) for r in executed_all)
         sys.exit(1 if any_failed else 0)
 
     elif args.run_all:

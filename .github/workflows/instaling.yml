@@ -7,12 +7,13 @@ on:
 
   schedule:
     # 1. Okno poranne: przegląd o 06:30 oraz sesje 06:43 - 07:34 (Europe/Warsaw)
-    # Przesunięte minuty (3,18,33,48) omijają korki kolejki GitHuba na pełnych dziesiątkach minut!
-    - cron: '3,18,33,48 4-6 * * *'
+    # W czasie zimowym CET: 05:30 UTC, w letnim CEST: 04:30 UTC
+    - cron: '20,50 4,5 * * *'
 
-    # 2. Okno popołudniowo-wieczorne: sesje 15:37 - 22:39 (Europe/Warsaw)
-    # Przesunięte minuty + wbudowany zegar bota (czeka do 150 min na dokładną sekundę sesji)
-    - cron: '3,18,33,48 13-22 * * *'
+    # 2. Okno popołudniowo-wieczorne: sesje 15:37 - 22:39 (Europe/Warsaw, czyli 14:37 - 21:39 UTC)
+    # Minuty :20 i :50 omijają korki GitHub Actions (:00 i :30), co zapobiega gubieniu zadań.
+    # Dzięki timeout-minutes: 350 runner po jednym uruchomieniu wykonuje ciągłą pętlę sesji na dany wieczór!
+    - cron: '20,50 13-22 * * *'
 
   workflow_dispatch:
     inputs:
@@ -43,7 +44,7 @@ concurrency:
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    timeout-minutes: 180  # Pozwala wbudowanemu zegarowi bota czekać w gotowości do 150 min na dokładną sekundę sesji!
+    timeout-minutes: 350  # Pozwala runnerowi utrzymać ciągłą pętlę sesji dla całego okna popołudniowego!
     permissions:
       contents: write  # Wymagane do automatycznego commitowania i pushowania danych do GitHuba
 
