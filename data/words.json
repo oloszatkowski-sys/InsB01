@@ -1053,15 +1053,15 @@
     "answer": "prediction",
     "prompt": "prognoza",
     "sentence": "My __________\nluka\n was right - he dropped out of college after only 1 month.",
-    "updated_at": "2026-11-01T20:06:25.014216",
-    "usage_count": 1
+    "updated_at": "2026-11-02T22:23:30.911478",
+    "usage_count": 3
   },
   "prognoza": {
     "answer": "prediction",
     "prompt": "prognoza",
     "sentence": "My __________\nluka\n was right - he dropped out of college after only 1 month.",
-    "updated_at": "2026-11-01T20:06:25.014216",
-    "usage_count": 1
+    "updated_at": "2026-11-02T22:23:30.911478",
+    "usage_count": 3
   },
   "let's meet at the ______ luka at half past four. | kino": {
     "answer": "cinema",

@@ -2011,5 +2011,79 @@
       }
     ],
     "timestamp": "2026-11-02T22:22:29.449351"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "19:54",
+    "words_total": 11,
+    "words_correct": 9,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 81.8,
+    "duration_seconds": 150.9,
+    "started_at_warsaw": "2026-11-02 23:22:35 CET",
+    "completed_at_warsaw": "2026-11-02 23:25:06 CET",
+    "finished_at": "2026-11-02T23:25:06.069994+01:00",
+    "words_details": [
+      {
+        "prompt": "kino",
+        "answer": "cinema",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dostać niską ocenę",
+        "answer": "get a low mark",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "prediction",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "śpiewać",
+        "answer": "sing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "poeta",
+        "answer": "poet",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-02T22:25:06.070375"
   }
 ]
