@@ -1967,5 +1967,49 @@
       }
     ],
     "timestamp": "2026-11-01T20:08:19.882944"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "18:09",
+    "words_total": 5,
+    "words_correct": 5,
+    "words_mistakes": 0,
+    "new_words_count": 0,
+    "autocorrect_count": 0,
+    "accuracy_percent": 100.0,
+    "duration_seconds": 96.2,
+    "started_at_warsaw": "2026-11-02 23:20:53 CET",
+    "completed_at_warsaw": "2026-11-02 23:22:29 CET",
+    "finished_at": "2026-11-02T23:22:29.448962+01:00",
+    "words_details": [
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obsada",
+        "answer": "cast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "znana osoba",
+        "answer": "celebrity",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zmniejszyć temperaturę na kaloryferze",
+        "answer": "turn the radiator down",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dostać niską ocenę",
+        "answer": "get a low mark",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-02T22:22:29.449351"
   }
 ]
