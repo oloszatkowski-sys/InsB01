@@ -1090,5 +1090,33 @@
     "sentence": "He is a great ______\nluka\n, he knows how to move.",
     "updated_at": "2026-11-03T16:13:51.644461",
     "usage_count": 1
+  },
+  "this is my favourite _____ luka . | powieść": {
+    "answer": "novel",
+    "prompt": "powieść",
+    "sentence": "This is my favourite _____\nluka\n.",
+    "updated_at": "2026-11-03T18:23:51.267131",
+    "usage_count": 1
+  },
+  "powieść": {
+    "answer": "novel",
+    "prompt": "powieść",
+    "sentence": "This is my favourite _____\nluka\n.",
+    "updated_at": "2026-11-03T18:23:51.267131",
+    "usage_count": 1
+  },
+  "mike should become an _____ luka - he's very talented! | aktor": {
+    "answer": "actor",
+    "prompt": "aktor",
+    "sentence": "Mike should become an _____\nluka\n - he's very talented!",
+    "updated_at": "2026-11-03T18:26:06.915859",
+    "usage_count": 3
+  },
+  "aktor": {
+    "answer": "actor",
+    "prompt": "aktor",
+    "sentence": "Mike should become an _____\nluka\n - he's very talented!",
+    "updated_at": "2026-11-03T18:26:06.915859",
+    "usage_count": 3
   }
 }
