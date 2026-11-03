@@ -113,9 +113,19 @@ class InstaLingSolver:
         return ""
 
     def is_session_finished(self) -> bool:
-        """Sprawdza czy sesja została ukończona (ekran gratulacji lub powrotu)."""
+        """Sprawdza czy sesja została ukończona (ekran gratulacji, podsumowania lub powrotu)."""
         body_txt = self.page.inner_text("body").lower()
-        if "gratulacje" in body_txt or "ukończyłeś sesję" in body_txt or "koniec sesji" in body_txt:
+        finish_keywords = [
+            "gratulacje", "ukończyłeś sesję", "ukończyłaś sesję",
+            "ukonczyles sesje", "ukonczylas sesje", "koniec sesji",
+            "twoja dzisiejsza sesja została zakończona", "twoja dzisiejsza sesja zostala zakonczona",
+            "sesja została wykonana", "sesja zakonczona", "sesja zakończona",
+            "wykonałeś już dzisiejszą sesję", "wykonales juz dzisiejsza sesje",
+            "nie masz więcej słówek", "nie masz wiecej slowek"
+        ]
+        if any(k in body_txt for k in finish_keywords):
+            return True
+        if ("wróć do strony głównej" in body_txt or "wroc do strony glownej" in body_txt) and self.page.locator("input#answer").count() == 0:
             return True
         return False
 
@@ -129,14 +139,23 @@ class InstaLingSolver:
 
         ans_loc = self.page.locator("input#answer").first
         try:
-            ans_loc.wait_for(state="visible", timeout=4000)
+            ans_loc.wait_for(state="visible", timeout=6000)
             self.consecutive_no_answer = 0
         except Exception:
             if self.is_session_finished():
                 return False
 
-            # Szukamy ewentualnych przycisków kontynuacji lub przejścia dalej
-            cont_btn = self.page.locator("a:has-text('Kontynuuj sesję'), button:has-text('Kontynuuj'), a:has-text('Rozpocznij sesję'), button:has-text('Rozpocznij'), #nextword, button:has-text('Następne')").first
+            # Szukamy wszelkich możliwych przycisków kontynuacji, nowego słówka lub przejścia dalej
+            cont_btn = self.page.locator(
+                "#nextword, input#nextword, button#nextword, a#nextword, "
+                "button:has-text('Następne'), a:has-text('Następne'), input[value*='Następne'], "
+                "button:has-text('Dalej'), a:has-text('Dalej'), input[value*='Dalej'], "
+                "button:has-text('Kontynuuj'), a:has-text('Kontynuuj'), input[value*='Kontynuuj'], "
+                "button:has-text('Rozpocznij'), a:has-text('Rozpocznij'), input[value*='Rozpocznij'], "
+                "#know_new, #dont_know_new, button:has-text('Znam'), button:has-text('Nie znam'), "
+                "button:has-text('Rozumiem'), a:has-text('Rozumiem'), "
+                "#check, button:has-text('Sprawdź'), input[value*='Sprawdź']"
+            ).first
             if cont_btn.count() > 0 and cont_btn.is_visible():
                 try:
                     cont_btn.click(force=True)
@@ -148,14 +167,14 @@ class InstaLingSolver:
                 return True
 
             self.consecutive_no_answer += 1
-            if self.consecutive_no_answer >= 3:
-                print(f"[!] Pole odpowiedzi nie pojawiło się przez {self.consecutive_no_answer} próby. Sprawdzam czy sesja zakończona...")
+            if self.consecutive_no_answer >= 5:
+                print(f"[!] Pole odpowiedzi nie pojawiło się przez {self.consecutive_no_answer} prób. Sprawdzam czy sesja zakończona...")
                 if self.is_session_finished():
                     return False
-                print("[!] Brak pytania i brak przycisków. Kończę rozwiązywanie, aby zapobiec zawieszeniu.")
+                print("[!] Brak pytania i brak przycisków. Kończę ten etap rozwiązywania.")
                 return False
 
-            time.sleep(1.5)
+            time.sleep(2.0)
             return True
 
         prompt, sentence = self.get_prompt_and_sentence()
@@ -227,10 +246,14 @@ class InstaLingSolver:
 
         self.session_words_count += 1
 
-        # Klikamy 'Następne'
-        next_btn = self.page.locator("#nextword, button:has-text('Następne'), a:has-text('Następne')").first
+        # Klikamy 'Następne' / przejście dalej
+        next_btn = self.page.locator(
+            "#nextword, input#nextword, button#nextword, a#nextword, "
+            "button:has-text('Następne'), a:has-text('Następne'), input[value*='Następne'], "
+            "button:has-text('Dalej'), a:has-text('Dalej'), input[value*='Dalej']"
+        ).first
         if next_btn.count() > 0 and next_btn.is_visible():
-            time.sleep(random.uniform(0.8, 1.6))
+            time.sleep(random.uniform(0.8, 1.5))
             next_btn.click(force=True)
             time.sleep(random.uniform(1.0, 1.8))
 

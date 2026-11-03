@@ -117,7 +117,7 @@ def main():
                 log("[i] Zbliża się limit czasu pracy runnera. Bezpiecznie kończę pętlę na ten cykl.")
                 break
 
-            max_wait = min(int(remaining_runner_budget - 300), 9000)
+            max_wait = max(0, int(remaining_runner_budget - 300))
             if max_wait <= 0:
                 break
 

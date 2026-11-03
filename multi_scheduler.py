@@ -499,7 +499,7 @@ class MultiScheduler:
         if updated:
             self._save_weekly_schedule(weekly)
 
-    def wait_for_slot_if_approaching(self, max_wait_seconds: int = 9000) -> Optional[Dict[str, Any]]:
+    def wait_for_slot_if_approaching(self, max_wait_seconds: int = 19500) -> Optional[Dict[str, Any]]:
         """
         Wbudowany precyzyjny zegar bota (Europe/Warsaw):
         Sprawdza harmonogram na dziś. Jeśli kolejna zaplanowana sesja już nadeszła lub ma
@@ -628,7 +628,7 @@ class MultiScheduler:
         due.sort(key=lambda x: x["scheduled_minutes"])
         return due
 
-    def run_due_cycle(self, trigger_reason: str = "harmonogram", max_sessions: int = 1, max_wait_seconds: int = 9000) -> List[Dict[str, Any]]:
+    def run_due_cycle(self, trigger_reason: str = "harmonogram", max_sessions: int = 1, max_wait_seconds: int = 19500) -> List[Dict[str, Any]]:
         """
         Zunifikowany cykl zegara bota:
         Sprawdza harmonogram i uruchamia sesję natychmiast (jeśli jej pora już minęła)

@@ -11,9 +11,9 @@ on:
     - cron: '20,50 4,5 * * *'
 
     # 2. Okno popołudniowo-wieczorne: sesje 15:37 - 22:39 (Europe/Warsaw, czyli 14:37 - 21:39 UTC)
-    # Minuty :20 i :50 omijają korki GitHub Actions (:00 i :30), co zapobiega gubieniu zadań.
-    # Dzięki timeout-minutes: 350 runner po jednym uruchomieniu wykonuje ciągłą pętlę sesji na dany wieczór!
-    - cron: '20,50 13-22 * * *'
+    # Wyzwalacze co 20 minut gwarantują terminowe wybudzenie runnera nawet w przypadku opóźnień kolejki GitHub.
+    # Dzięki timeout-minutes: 350 i rozszerzonemu max_wait runner po wybudzeniu prowadzi ciągłą sesję!
+    - cron: '*/20 13-21 * * *'
 
   workflow_dispatch:
     inputs:

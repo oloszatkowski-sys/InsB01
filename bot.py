@@ -25,6 +25,50 @@ class InstaLingBot:
         self.notifier = Notifier(self.config)
         self.users_mgr = UsersManager()
 
+    def check_dashboard_completion(self, page) -> Tuple[bool, str]:
+        """
+        Weryfikuje na pulpicie ucznia czy dzisiejsza sesja jest w 100% ukończona (zielony znak lub brak przycisków startu).
+        """
+        try:
+            body_txt = page.inner_text("body").lower()
+
+            # 1. Sprawdzamy czy widnieje przycisk 'Dokończ sesję' (sesja wymaga dokończenia!)
+            finish_btn = page.locator("a:has-text('Dokończ sesję'), button:has-text('Dokończ sesję'), a:has-text('Dokoncz sesje'), a[href*='app.php']:has-text('Dokończ')").first
+            if finish_btn.count() > 0 and finish_btn.is_visible():
+                return False, "Wykryto aktywny przycisk 'Dokończ sesję' (sesja wymaga dokończenia!)"
+
+            # 2. Sprawdzamy czy widnieje przycisk 'Rozpocznij codzienną sesję'
+            start_btn = page.locator("a.btn-start-session, a:has-text('Rozpocznij codzienną sesję'), a:has-text('Zacznij codzienną sesję'), a:has-text('Zacznij sesję')").first
+            if start_btn.count() > 0 and start_btn.is_visible():
+                return False, "Wykryto przycisk startu nowej sesji"
+
+            # 3. Sprawdzamy komunikaty o ukończeniu
+            done_phrases = [
+                "wykonałeś już dzisiejszą sesję", "wykonałaś już dzisiejszą sesję",
+                "wykonales juz dzisiejsza sesje", "wykonalas juz dzisiejsza sesje",
+                "dzisiejsza sesja została wykonana", "dzisiejsza sesja zostala wykonana",
+                "dzisiejsza sesja wykonana", "twoja dzisiejsza sesja została zakończona",
+                "twoja dzisiejsza sesja zostala zakonczona", "sesja została wykonana",
+                "sesja wykonana"
+            ]
+            for p in done_phrases:
+                if p in body_txt:
+                    return True, f"Komunikat: '{p}'"
+
+            # 4. Sprawdzamy zielony wskaźnik wykonania
+            done_indicators = page.locator(".session-done, .badge-success, .btn-success, .done, i.fa-check, svg.done, .text-success").all()
+            for ind in done_indicators:
+                if ind.is_visible():
+                    return True, "Wykryto zielony wskaźnik wykonania sesji na pulpicie"
+
+            # 5. Jeśli brak 'Rozpocznij codzienną sesję' i brak 'Dokończ sesję', a jest 'Odrób sesję'
+            if "odrób sesję" in body_txt and "rozpocznij codzienną sesję" not in body_txt and "dokończ sesję" not in body_txt:
+                return True, "Brak przycisku sesji codziennej (dzisiejsza sesja jest zaliczona)"
+
+            return False, "Brak jednoznacznego potwierdzenia wykonania"
+        except Exception as e:
+            return False, f"Błąd weryfikacji: {e}"
+
     def run_session(self, user: Optional[Dict[str, Any]] = None, scheduled_time: Optional[str] = None) -> Dict[str, Any]:
         """Uruchamia pełną sesję dla wybranego użytkownika (lub domyślnego)."""
         if not user:
@@ -145,93 +189,115 @@ class InstaLingBot:
                 track_log(f"✅ [AUTORYZACJA] Zalogowano pomyślnie jako {nickname}! (Adres URL: {current_url})")
 
                 # ==============================
-                # 4. WEJŚCIE DO SESJI Z PANELU
+                # 4. GŁÓWNA PĘTLA WYKONYWANIA I DOKAŃCZANIA SESJI (Master Completion Loop)
                 # ==============================
-                track_log("🔍 [PANEL] Wyszukiwanie kafelka codziennej sesji na pulpicie ucznia...")
-                session_btn = page.locator("a.btn-start-session, a:has-text('Dokończ sesję'), a:has-text('Zacznij codzienną sesję'), a:has-text('Zacznij sesję')").first
-                if session_btn.count() == 0 or not session_btn.is_visible():
-                    page_text = page.inner_text("body")
-                    if "Wykonałeś już dzisiejszą sesję" in page_text or "sesja wykonana" in page_text.lower():
-                        track_log(f"ℹ️ [PANEL] Informacja z systemu: {nickname} wykonał już dzisiejszą sesję wcześniej!")
-                        res = {
-                            "success": True,
-                            "already_completed": True,
-                            "message": f"Dzisiejsza sesja {nickname} była już ukończona."
-                        }
-                        self.notifier.send_session_summary(res, user, session_logs)
-                        return res
-                    track_log("❌ [PANEL] Nie odnaleziono aktywnego przycisku sesji na stronie głównej.")
-                    res = {"success": False, "error": "Nie znaleziono przycisku startu sesji na stronie głównej."}
+                # Zasada: sprawdzamy czy na pulpicie jest zielony znak / potwierdzenie ukończenia.
+                # Jeśli nie lub sesja została przerwana (np. po 5 słówkach), klikamy 'Dokończ sesję' i dokańczamy sesję!
+                MAX_PASSES = 4
+                current_pass = 0
+                all_resolved_words = []
+                total_words = 0
+                total_correct = 0
+                total_mistakes = 0
+                session_confirmed_done = False
+
+                # Najpierw weryfikujemy stan początkowy na pulpicie
+                is_done_init, reason_init = self.check_dashboard_completion(page)
+                if is_done_init:
+                    track_log(f"🟢 [ZIELONY ZNAK / POTWIERDZENIE] {nickname} ma już zaliczoną dzisiejszą sesję ({reason_init})!")
+                    res = {
+                        "success": True,
+                        "already_completed": True,
+                        "message": f"Dzisiejsza sesja {nickname} była już ukończona."
+                    }
                     self.notifier.send_session_summary(res, user, session_logs)
                     return res
 
-                track_log("▶️ [PANEL] Przycisk sesji aktywny — otwieranie formularza zadań...")
-                session_btn.click()
-                time.sleep(2.5)
+                while current_pass < MAX_PASSES:
+                    current_pass += 1
+                    track_log(f"🚀 [ETAP SESJI {current_pass}/{MAX_PASSES}] Uruchamiam/dokańczam sesję dla {nickname}...")
 
-                # ==============================
-                # 5. EKRAN STARTOWY SESJI (Kontynuuj / Rozpocznij)
-                # ==============================
-                cont_btn = page.get_by_text("Kontynuuj sesję").first
-                if cont_btn.count() > 0 and cont_btn.is_visible():
-                    track_log("🔘 [SESJA] Wykryto przerwaną sesję — klikam 'Kontynuuj sesję'")
-                    cont_btn.click(force=True)
-                    time.sleep(2.0)
+                    # Szukamy przycisku wejścia do sesji (Dokończ sesję ma najwyższy priorytet!)
+                    session_btn = page.locator(
+                        "a:has-text('Dokończ sesję'), button:has-text('Dokończ sesję'), a:has-text('Dokoncz sesje'), "
+                        "a.btn-start-session, a:has-text('Rozpocznij codzienną sesję'), a:has-text('Zacznij codzienną sesję'), "
+                        "a:has-text('Zacznij sesję'), a:has-text('Kontynuuj sesję'), button:has-text('Kontynuuj sesję')"
+                    ).first
 
-                start_btn = page.get_by_text("Rozpocznij sesję").first
-                if start_btn.count() > 0 and start_btn.is_visible():
-                    track_log("🔘 [SESJA] Ekran gotowości — klikam 'Rozpocznij sesję'")
-                    start_btn.click(force=True)
-                    time.sleep(2.0)
+                    if session_btn.count() > 0 and session_btn.is_visible():
+                        b_txt = session_btn.inner_text().strip()
+                        track_log(f"▶️ [PANEL] Wykryto przycisk '{b_txt}' — otwieram sesję...")
+                        session_btn.click()
+                        time.sleep(2.5)
 
-                # ==============================
-                # 6. PĘTLA ROZWIĄZYWANIA SŁÓWEK
-                # ==============================
-                track_log("📚 [SESJA] Formularz zadań załadowany — start modułu rozwiązywania słówek InstaLing...")
-                solver = InstaLingSolver(page, self.config, self.storage, log_fn=track_log)
-
-                iterations = 0
-                MAX_SESSION_SEC = 420  # 7 minut twardego limitu na sesję
-
-                while iterations < max_words:
-                    iterations += 1
-                    time.sleep(random.uniform(0.6, 1.2))
-
-                    # Zabezpieczenie przed zbyt długim działaniem
-                    if (time.time() - start_epoch) > MAX_SESSION_SEC:
-                        track_log(f"[!] Przekroczono limit czasu sesji ({MAX_SESSION_SEC}s). Bezpieczne zakończenie sesji.")
-                        break
-
-                    if solver.is_session_finished():
-                        track_log(f"[+] [{nickname}] Sesja ukonczona pomyslnie! Gratulacje!")
-                        break
-
-                    handled = solver.handle_single_word()
-                    if not handled:
+                    # Ekran startowy / wznowienia wewnątrz sesji
+                    cont_btn = page.locator("a:has-text('Kontynuuj sesję'), button:has-text('Kontynuuj sesję'), #continue_session").first
+                    if cont_btn.count() > 0 and cont_btn.is_visible():
+                        track_log(f"🔘 [SESJA] Ekran wznowienia — klikam '{cont_btn.inner_text().strip()}'")
+                        cont_btn.click(force=True)
                         time.sleep(2.0)
-                        if solver.is_session_finished():
-                            track_log(f"[+] [{nickname}] Sesja ukonczona!")
+
+                    start_btn = page.locator("a:has-text('Rozpocznij sesję'), button:has-text('Rozpocznij sesję'), #start_session").first
+                    if start_btn.count() > 0 and start_btn.is_visible():
+                        track_log(f"🔘 [SESJA] Ekran gotowości — klikam '{start_btn.inner_text().strip()}'")
+                        start_btn.click(force=True)
+                        time.sleep(2.0)
+
+                    # Moduł rozwiązywania słówek w tym etapie
+                    solver = InstaLingSolver(page, self.config, self.storage, log_fn=track_log)
+                    iterations = 0
+                    max_words_pass = 50
+
+                    while iterations < max_words_pass:
+                        iterations += 1
+                        time.sleep(random.uniform(0.5, 1.0))
+
+                        if (time.time() - start_epoch) > 600:
+                            track_log("[!] Osiągnięto limit czasu sesji (600s).")
                             break
-                        track_log(f"[i] [{nickname}] Zakonczono pytania w tej sesji.")
+
+                        if solver.is_session_finished():
+                            track_log(f"🎉 [SESJA] Ekran ukończenia sesji wykryty w etapie {current_pass}!")
+                            break
+
+                        handled = solver.handle_single_word()
+                        if not handled:
+                            time.sleep(2.0)
+                            if solver.is_session_finished():
+                                track_log("🎉 [SESJA] Sesja ukończona po ostatnim pytaniu!")
+                                break
+                            break
+
+                    total_words += solver.session_words_count
+                    total_correct += solver.session_correct_count
+                    total_mistakes += solver.session_mistakes_count
+                    all_resolved_words.extend(solver.resolved_words)
+
+                    # Powrót do pulpitu w celu weryfikacji czy sesja jest w 100% zaliczona
+                    time.sleep(2.0)
+                    try:
+                        home_btn = page.locator("a:has-text('Wróć do strony głównej'), a:has-text('Strona główna'), a.btn-return, a[href*='mainPage']").first
+                        if home_btn.count() > 0 and home_btn.is_visible():
+                            track_log("🏠 [POWRÓT] Powrót na stronę główną w celu weryfikacji stanu...")
+                            home_btn.click(force=True)
+                            time.sleep(2.5)
+                        else:
+                            page.goto("https://instaling.pl/student/pages/mainPage.php", timeout=20000)
+                            time.sleep(2.5)
+                    except Exception:
+                        page.goto("https://instaling.pl/student/pages/mainPage.php", timeout=20000)
+                        time.sleep(2.5)
+
+                    # WERYFIKACJA ZIELONEGO ZNAKU / BRAKU PRZYCISKU 'DOKOŃCZ SESJĘ'
+                    is_done_now, reason_now = self.check_dashboard_completion(page)
+                    if is_done_now:
+                        track_log(f"🟢 [ZIELONY ZNAK ZNALEZIONY] Sesja {nickname} została w 100% ukończona ({reason_now})!")
+                        session_confirmed_done = True
                         break
+                    else:
+                        track_log(f"⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia ({reason_now})! Zrobiono dotąd {total_words} słówek. Dokańczam sesję w kolejnym etapie...")
 
-                # ==============================
-                # 7. POWRÓT NA STRONĘ GŁÓWNĄ I WYLOGOWANIE
-                # ==============================
-                time.sleep(random.uniform(2.0, 3.5))
-
-                # Krok A: Powrót na stronę główną
-                try:
-                    home_btn = page.locator("a:has-text('Wróć do strony głównej'), a:has-text('Strona główna'), a.btn-return, a[href*='mainPage']").first
-                    if home_btn.count() > 0 and home_btn.is_visible():
-                        track_log(f"🏠 [POWRÓT] Kliknięcie powrotu do strony głównej ucznia...")
-                        home_btn.click(force=True)
-                        time.sleep(random.uniform(2.0, 3.0))
-                        track_log(f"✅ [POWRÓT] Pomyślnie powrócono do pulpitu głównego.")
-                except Exception:
-                    pass
-
-                # Krok B: Wylogowanie
+                # Wylogowanie po pełnym ukończeniu
                 try:
                     logout_btn = page.locator("a:has-text('Wyloguj'), a[href*='logout']").first
                     if logout_btn.count() > 0 and logout_btn.is_visible():
@@ -244,18 +310,18 @@ class InstaLingBot:
 
                 end_dt = now_warsaw()
                 duration_s = (end_dt - start_dt).total_seconds()
-                total = solver.session_words_count
-                correct = solver.session_correct_count
-                mistakes = solver.session_mistakes_count
+                total = total_words
+                correct = total_correct
+                mistakes = total_mistakes
                 acc = round((correct / total * 100), 1) if total > 0 else 0.0
                 new_words_count = len({
                     w.get("prompt", "").strip()
-                    for w in solver.resolved_words
+                    for w in all_resolved_words
                     if w.get("status") == "nowe" and w.get("prompt", "").strip()
                 })
                 autocorrect_count = len({
                     w.get("prompt", "").strip()
-                    for w in solver.resolved_words
+                    for w in all_resolved_words
                     if w.get("status") == "autokorekta" and w.get("prompt", "").strip()
                 })
 
@@ -278,7 +344,7 @@ class InstaLingBot:
                     "started_at_warsaw": format_warsaw(start_dt),
                     "completed_at_warsaw": format_warsaw(end_dt),
                     "finished_at": end_dt.isoformat(),
-                    "words_details": solver.resolved_words
+                    "words_details": all_resolved_words
                 }
 
                 self.storage.record_session(result)
@@ -286,9 +352,9 @@ class InstaLingBot:
                 track_log(f"    Czas: {format_warsaw(start_dt)} -> {format_warsaw(end_dt)} ({duration_s:.1f}s)")
                 track_log(f"    Rozwiazano: {total} | Poprawne: {correct} ({acc}%)\n")
 
-                if solver.resolved_words:
+                if all_resolved_words:
                     track_log("📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:")
-                    for idx, w in enumerate(solver.resolved_words):
+                    for idx, w in enumerate(all_resolved_words):
                         st = w.get("status", "")
                         tag = "✅ POPRAWNIE" if st == "poprawnie" else ("🆕 NOWE ZAPAMIĘTANO" if st == "nowe" else ("🔄 AUTOKOREKTA" if st == "autokorekta" else "⚠️ BŁĄD"))
                         track_log(f"  {idx+1:2d}. {w['prompt']} ➔ {w['answer']} [{tag}]")
