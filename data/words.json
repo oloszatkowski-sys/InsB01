@@ -157,15 +157,15 @@
     "answer": "festival",
     "prompt": "festiwal",
     "sentence": "I'm only here for a few days of the ________\nluka\n.",
-    "updated_at": "2026-10-28T16:32:51.073131",
-    "usage_count": 5
+    "updated_at": "2026-11-03T16:14:36.571328",
+    "usage_count": 7
   },
   "festiwal": {
     "answer": "festival",
     "prompt": "festiwal",
     "sentence": "I'm only here for a few days of the ________\nluka\n.",
-    "updated_at": "2026-10-28T16:32:51.073131",
-    "usage_count": 5
+    "updated_at": "2026-11-03T16:14:36.571328",
+    "usage_count": 7
   },
   "the kids couldn't take their eyes off the ______ luka . | ekran": {
     "answer": "screen",
@@ -1075,6 +1075,20 @@
     "prompt": "kino",
     "sentence": "Let's meet at the ______\nluka\n at half past four.",
     "updated_at": "2026-11-01T20:07:29.899080",
+    "usage_count": 1
+  },
+  "he is a great ______ luka , he knows how to move. | tancerz": {
+    "answer": "dancer",
+    "prompt": "tancerz",
+    "sentence": "He is a great ______\nluka\n, he knows how to move.",
+    "updated_at": "2026-11-03T16:13:51.644461",
+    "usage_count": 1
+  },
+  "tancerz": {
+    "answer": "dancer",
+    "prompt": "tancerz",
+    "sentence": "He is a great ______\nluka\n, he knows how to move.",
+    "updated_at": "2026-11-03T16:13:51.644461",
     "usage_count": 1
   }
 }

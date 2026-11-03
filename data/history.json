@@ -2085,5 +2085,79 @@
       }
     ],
     "timestamp": "2026-11-02T22:25:06.070375"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "15:48",
+    "words_total": 11,
+    "words_correct": 8,
+    "words_mistakes": 3,
+    "new_words_count": 1,
+    "autocorrect_count": 1,
+    "accuracy_percent": 72.7,
+    "duration_seconds": 322.8,
+    "started_at_warsaw": "2026-11-03 17:12:58 CET",
+    "completed_at_warsaw": "2026-11-03 17:18:21 CET",
+    "finished_at": "2026-11-03T17:18:21.794684+01:00",
+    "words_details": [
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "prediction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zasunąć zasłony",
+        "answer": "close the curtains",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "nowe"
+      },
+      {
+        "prompt": "scena (miejsce)",
+        "answer": "stage",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zmniejszyć temperaturę na kaloryferze",
+        "answer": "turn the radiator down",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "targ, jarmark",
+        "answer": "fair",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisarz",
+        "answer": "writer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "put on",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-03T16:18:21.794993"
   }
 ]
