@@ -124,14 +124,18 @@
           "is_off_day": false,
           "scheduled_minutes": 1235,
           "scheduled_time": "20:35",
-          "status": "Oczekuje",
-          "completed": false,
-          "countdown_sent": false,
-          "started_at": null,
-          "completed_at": null,
-          "duration_seconds": null,
-          "accuracy_percent": null,
-          "error": null
+          "status": "Ukończono",
+          "completed": true,
+          "countdown_sent": true,
+          "started_at": "2026-11-03 20:35:00 CET",
+          "completed_at": "2026-11-03 20:39:20 CET",
+          "duration_seconds": 258.9,
+          "accuracy_percent": 100.0,
+          "error": null,
+          "words_total": 5,
+          "words_correct": 5,
+          "words_mistakes": 0,
+          "new_words_count": 0
         }
       ]
     },

@@ -2273,5 +2273,49 @@
       }
     ],
     "timestamp": "2026-11-03T18:28:51.798054"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:35",
+    "words_total": 5,
+    "words_correct": 5,
+    "words_mistakes": 0,
+    "new_words_count": 0,
+    "autocorrect_count": 0,
+    "accuracy_percent": 100.0,
+    "duration_seconds": 258.9,
+    "started_at_warsaw": "2026-11-03 20:35:00 CET",
+    "completed_at_warsaw": "2026-11-03 20:39:19 CET",
+    "finished_at": "2026-11-03T20:39:19.636137+01:00",
+    "words_details": [
+      {
+        "prompt": "kanał; kanał telewizyjny",
+        "answer": "channel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "write",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "put on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "muzyk",
+        "answer": "musician",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-03T19:39:19.636514"
   }
 ]
