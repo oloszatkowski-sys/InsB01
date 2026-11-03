@@ -2,7 +2,7 @@ import sys
 import time
 import random
 from datetime import datetime
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, Tuple
 from config import load_config
 from storage import Storage
 from solver import InstaLingSolver
