@@ -3,15 +3,15 @@
     "answer": "cartoon",
     "prompt": "kreskówka",
     "sentence": "My little sister watches ________\nluka\n every weekend.",
-    "updated_at": "2026-10-27T16:57:32.693960",
-    "usage_count": 7
+    "updated_at": "2026-11-04T20:21:45.751676",
+    "usage_count": 9
   },
   "kreskówka": {
     "answer": "cartoon",
     "prompt": "kreskówka",
     "sentence": "My little sister watches ________\nluka\n every weekend.",
-    "updated_at": "2026-10-27T16:57:32.693960",
-    "usage_count": 7
+    "updated_at": "2026-11-04T20:21:45.751676",
+    "usage_count": 9
   },
   "his ___________ luka was amazing. | występ": {
     "answer": "performance",
@@ -339,15 +339,15 @@
     "answer": "website",
     "prompt": "strona internetowa",
     "sentence": "I found an interesting _______\nluka\n devoted to role-playing games.",
-    "updated_at": "2026-10-27T16:56:39.455205",
-    "usage_count": 5
+    "updated_at": "2026-11-04T20:20:30.045178",
+    "usage_count": 7
   },
   "strona internetowa": {
     "answer": "website",
     "prompt": "strona internetowa",
     "sentence": "I found an interesting _______\nluka\n devoted to role-playing games.",
-    "updated_at": "2026-10-27T16:56:39.455205",
-    "usage_count": 5
+    "updated_at": "2026-11-04T20:20:30.045178",
+    "usage_count": 7
   },
   "they wanted him to ____ luka in a new television show. | grać główną rolę": {
     "answer": "star",
@@ -507,15 +507,15 @@
     "answer": "instrument",
     "prompt": "instrument; przyrząd",
     "sentence": "Can you play any musical __________\nluka\n?",
-    "updated_at": "2026-10-27T16:46:59.571833",
-    "usage_count": 3
+    "updated_at": "2026-11-04T20:20:52.560252",
+    "usage_count": 5
   },
   "instrument; przyrząd": {
     "answer": "instrument",
     "prompt": "instrument; przyrząd",
     "sentence": "Can you play any musical __________\nluka\n?",
-    "updated_at": "2026-10-27T16:46:59.571833",
-    "usage_count": 3
+    "updated_at": "2026-11-04T20:20:52.560252",
+    "usage_count": 5
   },
   "i ____ luka ___ luka ________ luka every morning, right after i wake up. | rozsunąć zasłony": {
     "answer": "open the curtains",

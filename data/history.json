@@ -2445,5 +2445,129 @@
       }
     ],
     "timestamp": "2026-11-04T17:13:32.864053"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "20:46",
+    "words_total": 21,
+    "words_correct": 15,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 382.4,
+    "started_at_warsaw": "2026-11-04 21:19:58 CET",
+    "completed_at_warsaw": "2026-11-04 21:26:20 CET",
+    "finished_at": "2026-11-04T21:26:20.458163+01:00",
+    "words_details": [
+      {
+        "prompt": "strona internetowa",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "fabuła; akcja; wątek",
+        "answer": "plot",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malarz",
+        "answer": "painter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rock",
+        "answer": "rock",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "poem",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obsada",
+        "answer": "cast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-04T20:26:20.458536"
   }
 ]
