@@ -4,20 +4,20 @@
 
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W45`
-- 📊 **Status tygodnia:** Ukończono **5** z **19** sesji (Pozostało: **14**)
-- 🔄 **Ostatnia aktualizacja:** `2026-11-03 22:51:06 CET`
+- 📊 **Status tygodnia:** Ukończono **6** z **19** sesji (Pozostało: **13**)
+- 🔄 **Ostatnia aktualizacja:** `2026-11-04 17:13:04 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
 | Poniedziałek | `2026-11-02` | **Szlucha Jagoda** | `lasa6####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
 | Poniedziałek | `2026-11-02` | **Oleslaw 010** | `asa61####` | **18:09** | ✅ Ukończono | 2026-11-02 23:20:52 CET | 2026-11-02 23:22:30 CET | **5/5** (100.0%) |
 | Poniedziałek | `2026-11-02` | **OliwiercioTheHacker** | `asa61####` | **19:54** | ✅ Ukończono | 2026-11-02 23:22:35 CET | 2026-11-02 23:25:06 CET | **9/11** (81.8%) |
-| 👉 **Wtorek (DZIŚ)** | `2026-11-03` | **OliwiercioTheHacker** | `asa61####` | **15:48** | ✅ Ukończono | 2026-11-03 17:12:58 CET | 2026-11-03 17:18:22 CET | **8/11** (72.7%) |
-| 👉 **Wtorek (DZIŚ)** | `2026-11-03` | **Szlucha Jagoda** | `lasa6####` | **19:23** | ✅ Ukończono | 2026-11-03 19:23:00 CET | 2026-11-03 19:28:52 CET | **15/19** (78.9%) |
-| 👉 **Wtorek (DZIŚ)** | `2026-11-03` | **Oleslaw 010** | `asa61####` | **20:35** | ✅ Ukończono | 2026-11-03 20:35:00 CET | 2026-11-03 20:39:20 CET | **5/5** (100.0%) |
-| Środa | `2026-11-04` | **OliwiercioTheHacker** | `asa61####` | **17:09** | ⏳ Oczekuje | - | - | - |
-| Środa | `2026-11-04` | **Oleslaw 010** | `asa61####` | **18:08** | ⏳ Oczekuje | - | - | - |
-| Środa | `2026-11-04` | **Szlucha Jagoda** | `lasa6####` | **20:46** | ⏳ Oczekuje | - | - | - |
+| Wtorek | `2026-11-03` | **OliwiercioTheHacker** | `asa61####` | **15:48** | ✅ Ukończono | 2026-11-03 17:12:58 CET | 2026-11-03 17:18:22 CET | **8/11** (72.7%) |
+| Wtorek | `2026-11-03` | **Szlucha Jagoda** | `lasa6####` | **19:23** | ✅ Ukończono | 2026-11-03 19:23:00 CET | 2026-11-03 19:28:52 CET | **15/19** (78.9%) |
+| Wtorek | `2026-11-03` | **Oleslaw 010** | `asa61####` | **20:35** | ✅ Ukończono | 2026-11-03 20:35:00 CET | 2026-11-03 20:39:20 CET | **5/5** (100.0%) |
+| 👉 **Środa (DZIŚ)** | `2026-11-04` | **OliwiercioTheHacker** | `asa61####` | **17:09** | ✅ Ukończono | 2026-11-04 17:09:00 CET | 2026-11-04 17:13:04 CET | **3/3** (100.0%) |
+| 👉 **Środa (DZIŚ)** | `2026-11-04` | **Oleslaw 010** | `asa61####` | **18:08** | ⏳ Oczekuje | - | - | - |
+| 👉 **Środa (DZIŚ)** | `2026-11-04` | **Szlucha Jagoda** | `lasa6####` | **20:46** | ⏳ Oczekuje | - | - | - |
 | Czwartek | `2026-11-05` | **Szlucha Jagoda** | `lasa6####` | **16:52** | ⏳ Oczekuje | - | - | - |
 | Czwartek | `2026-11-05` | **Oleslaw 010** | `asa61####` | **19:20** | ⏳ Oczekuje | - | - | - |
 | Czwartek | `2026-11-05` | **OliwiercioTheHacker** | `asa61####` | **20:52** | ⏳ Oczekuje | - | - | - |
