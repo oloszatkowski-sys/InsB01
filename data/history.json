@@ -2843,5 +2843,16 @@
     "started_at_warsaw": "2026-11-05 20:59:42 CET",
     "completed_at_warsaw": "2026-11-05 21:00:22 CET",
     "timestamp": "2026-11-05T20:00:22.787137"
+  },
+  {
+    "success": false,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:52",
+    "error": "Page.goto: net::ERR_TIMED_OUT at https://instaling.pl/teacher.php?page=login\nCall log:\n  - navigating to \"https://instaling.pl/teacher.php?page=login\", waiting until \"load\"\n",
+    "duration_seconds": 30.5,
+    "started_at_warsaw": "2026-11-05 21:00:29 CET",
+    "completed_at_warsaw": "2026-11-05 21:00:59 CET",
+    "timestamp": "2026-11-05T20:00:59.852678"
   }
 ]
