@@ -2569,5 +2569,109 @@
       }
     ],
     "timestamp": "2026-11-04T20:26:20.458536"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "16:52",
+    "words_total": 17,
+    "words_correct": 15,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 88.2,
+    "duration_seconds": 340.9,
+    "started_at_warsaw": "2026-11-05 16:52:00 CET",
+    "completed_at_warsaw": "2026-11-05 16:57:41 CET",
+    "finished_at": "2026-11-05T16:57:41.435317+01:00",
+    "words_details": [
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "powieść",
+        "answer": "novel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "znana osoba",
+        "answer": "celebrity",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny (pierwszoplanowy) aktor",
+        "answer": "lead actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-05T15:57:41.435508"
   }
 ]
