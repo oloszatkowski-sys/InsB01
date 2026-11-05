@@ -444,7 +444,7 @@ class MultiScheduler:
                         slot["error_count"] = 0
                         slot["retry_after_warsaw"] = None
                     else:
-                        max_retries = int(self.config.get("max_error_retries", 3))
+                        max_retries = int(self.config.get("max_error_retries", 2))
                         curr_err = result.get("error_count") or (slot.get("error_count", 0) + 1)
                         slot["error_count"] = curr_err
                         slot["completed"] = False
@@ -455,8 +455,9 @@ class MultiScheduler:
                         slot["last_error_at"] = result.get("completed_at_warsaw")
 
                         if curr_err >= max_retries:
-                            slot["status"] = f"Błąd (Wyczerpano {max_retries} prób)"
+                            slot["status"] = "Nie wykonano (Pominięto po błędzie)"
                             slot["retry_after_warsaw"] = None
+                            log(f"[!] {slot.get('nickname')} - ponowna próba nie powiodła się. Sesja anulowana na dzisiejszy dzień.")
                         else:
                             retry_after_str = result.get("retry_after_warsaw")
                             if not retry_after_str:
@@ -541,7 +542,7 @@ class MultiScheduler:
         min_user_gap = int(self.config.get("min_user_gap_minutes", 45))
 
         # Szukamy oczekujących slotów na dziś z uwzględnieniem 60-minutowego cooldownu po błędzie
-        max_retries = int(self.config.get("max_error_retries", 3))
+        max_retries = int(self.config.get("max_error_retries", 2))
         pending_candidates = [
             s for s in slots
             if not s["is_off_day"] and not s.get("completed", False)
@@ -551,8 +552,8 @@ class MultiScheduler:
 
         active_pending = []
         for s in pending_candidates:
-            if s.get("error_count", 0) >= max_retries:
-                log(f"[i] Slot dla {s.get('nickname')} wyczerpał limit {max_retries} prób na dziś. Pomijam.")
+            if s.get("error_count", 0) >= max_retries or s.get("status", "").startswith("Nie wykonano"):
+                log(f"[i] Slot dla {s.get('nickname')} został pominięty na dzisiaj po nieudanej próbie. Nie wykonuję.")
                 continue
 
             # Sprawdzamy czy slot ma aktywny czas oczekiwania (cooldown) po błędzie

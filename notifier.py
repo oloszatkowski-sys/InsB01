@@ -202,7 +202,7 @@ class Notifier:
             color = 0xE74C3C
             err = result.get("error", "Nieznany błąd wykonania")
             error_count = result.get("error_count", 1)
-            max_retries = result.get("max_retries") or int(self.config.get("max_error_retries", 3))
+            max_retries = result.get("max_retries") or int(self.config.get("max_error_retries", 2))
             retry_after = result.get("retry_after_warsaw")
             retry_time_str = retry_after[11:16] if retry_after and len(retry_after) >= 16 else "za 60 min"
 
@@ -210,24 +210,26 @@ class Notifier:
                 desc = (
                     f"👤 **Uczeń:** `{nickname}` (`{masked}`)\n"
                     f"⏰ **Planowana godzina:** `{scheduled_time}`\n"
-                    f"**Status:** ⚠️ Wystąpił problem techniczny (Próba {error_count}/{max_retries})\n"
+                    f"**Status:** ⚠️ Błąd serwera (Próba {error_count}/{max_retries})\n"
                     f"**Czas zdarzenia:** `{completed_pl}`\n"
                     f"**Szczegóły błędu:** `{err[:250]}`\n\n"
-                    f"⏳ **Automatyczny Cooldown:** Bot odczeka **60 minut** i ponowi próbę o **{retry_time_str} CET**.\n"
-                    f"📋 **Pełne logi błędu:** Kompletny zapis kroków i ślad wyjątku wysłano do kanału `#logi-bota`."
+                    f"⏳ **Procedura:** Bot odczeka **60 minut** i wykona **dokładnie 1 ponowną próbę** o **{retry_time_str} CET**.\n"
+                    f"🛑 **Zasada:** Jeśli ponowienie znowu nie zadziała, sesja nie będzie już dzisiaj wykonywana.\n"
+                    f"📋 **Pełne logi błędu:** Kompletny zapis kroków i ślad wyjątku w `#logi-bota`."
                 )
                 ping_content = None  # BRAK PINGU @everyone dla prób automatycznych!
             else:
+                title = f"❌ InstaLing Auto-Bot - Sesja Anulowana na Dziś: {nickname}"
                 desc = (
                     f"👤 **Uczeń:** `{nickname}` (`{masked}`)\n"
                     f"⏰ **Planowana godzina:** `{scheduled_time}`\n"
-                    f"**Status:** ❌ Wyczerpano limit {max_retries} prób wykonania sesji\n"
+                    f"**Status:** ❌ Sesja anulowana na dzisiejszy dzień\n"
                     f"**Czas zdarzenia:** `{completed_pl}`\n"
-                    f"**Ostatni błąd:** `{err[:250]}`\n\n"
-                    f"🚨 **Wymagana uwaga:** Wszystkie zaplanowane próby zakończyły się niepowodzeniem.\n"
+                    f"**Błąd:** `{err[:250]}`\n\n"
+                    f"🛑 **Decyzja:** Zgodnie z zasadą, ponowna próba po 60 minutach nie powiodła się. W ten dzień bot nie podejmuje już kolejnych prób.\n"
                     f"📋 **Pełne logi:** Dostępne w kanale `#logi-bota`."
                 )
-                ping_content = ping_role if ping_role else None
+                ping_content = None  # Bez pingu, pełny spokój
 
         if sekcja_wh:
             self._send_discord_embed(
@@ -400,7 +402,7 @@ class Notifier:
                 err_msg = (result or {}).get("error", "Nieznany błąd")
                 tb_msg = (result or {}).get("traceback", "")
                 err_cnt = (result or {}).get("error_count", 1)
-                max_ret = (result or {}).get("max_retries", 3)
+                max_ret = (result or {}).get("max_retries", 2)
                 ret_after = (result or {}).get("retry_after_warsaw", "N/A")
                 ret_time = ret_after[11:16] if len(ret_after) >= 16 else "za 60 min"
 
@@ -436,14 +438,24 @@ class Notifier:
                         "inline": False
                     })
 
-                error_fields.append({
-                    "name": "⏰ 4. Status i Plan Wznowienia",
-                    "value": (
-                        f"• **Próba:** `{err_cnt}/{max_ret}`\n"
-                        f"• **Czas oczekiwania:** `60 minut` (ochrona przed spamem i blokadą)\n"
+                if err_cnt >= max_ret:
+                    status_text = (
+                        f"• **Próba:** `{err_cnt}/{max_ret}` (Ostateczna)\n"
+                        f"• **Decyzja:** Brak kolejnych prób na dzisiaj\n"
+                        f"• **Zasada:** Ponowna próba po 60 minutach nie powiodła się, więc w ten dzień nie wykonuje\n"
+                        f"• **Kolejna sesja:** Następny dzień wg harmonogramu"
+                    )
+                else:
+                    status_text = (
+                        f"• **Próba:** `{err_cnt}/{max_ret}` (Pierwszy błąd)\n"
+                        f"• **Czas oczekiwania:** `60 minut` przed jednorazowym ponowieniem\n"
                         f"• **Planowana godzina ponowienia:** `{ret_time} CET`\n"
-                        f"• **Rekomendacja:** Bot sam podejmie próbę po upływie godziny"
-                    ),
+                        f"• **Zasada:** Jeśli ponowienie znowu nie zadziała, sesja nie będzie już robiona dzisiaj"
+                    )
+
+                error_fields.append({
+                    "name": "⏰ 4. Status i Decyzja",
+                    "value": status_text,
                     "inline": False
                 })
 

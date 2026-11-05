@@ -392,7 +392,7 @@ class InstaLingBot:
 {tb_str}")
 
                 curr_attempt = (slot_info.get("error_count", 0) + 1) if slot_info else 1
-                max_retries = int(self.config.get("max_error_retries", 3))
+                max_retries = int(self.config.get("max_error_retries", 2))
                 retry_min = int(self.config.get("error_retry_delay_minutes", 60))
                 retry_after_dt = end_dt + timedelta(minutes=retry_min)
 
