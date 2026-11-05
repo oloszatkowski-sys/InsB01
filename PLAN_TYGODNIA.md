@@ -4,8 +4,8 @@
 
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W45`
-- 📊 **Status tygodnia:** Ukończono **10** z **19** sesji (Pozostało: **9**)
-- 🔄 **Ostatnia aktualizacja:** `2026-11-05 22:00:40 CET`
+- 📊 **Status tygodnia:** Ukończono **11** z **19** sesji (Pozostało: **8**)
+- 🔄 **Ostatnia aktualizacja:** `2026-11-05 22:11:41 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
@@ -20,7 +20,7 @@
 | Środa | `2026-11-04` | **Slay Emo Girl Jagodka** | `lasa6####` | **20:46** | ✅ Ukończono | 2026-11-04 21:19:57 CET | 2026-11-04 21:26:21 CET | **15/21** (71.4%) |
 | 👉 **Czwartek (DZIŚ)** | `2026-11-05` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:52** | ✅ Ukończono | 2026-11-05 16:52:00 CET | 2026-11-05 16:57:42 CET | **15/17** (88.2%) |
 | 👉 **Czwartek (DZIŚ)** | `2026-11-05` | **Oleslaw 010** | `asa61####` | **19:20** | ✅ Ukończono | 2026-11-05 19:20:00 CET | 2026-11-05 19:24:28 CET | **4/6** (66.7%) |
-| 👉 **Czwartek (DZIŚ)** | `2026-11-05` | **OliwiercioTheHacker** | `asa61####` | **20:52** | ⚠️ Błąd (Próba 1/2) — ponowienie o 22:08 | 2026-11-05 21:40:00 CET | 2026-11-05 21:08:41 CET | Page.goto: Timeout 40000ms exceeded (przekroczono limit czasu ład |
+| 👉 **Czwartek (DZIŚ)** | `2026-11-05` | **OliwiercioTheHacker** | `asa61####` | **20:52** | ✅ Ukończono | 2026-11-05 22:08:00 CET | 2026-11-05 22:11:41 CET | **1/1** (100.0%) |
 | Piątek | `2026-11-06` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:36** | ⏳ Oczekuje | - | - | - |
 | Piątek | `2026-11-06` | **Oleslaw 010** | `asa61####` | **18:21** | ⏳ Oczekuje | - | - | - |
 | Piątek | `2026-11-06` | **OliwiercioTheHacker** | `asa61####` | **20:50** | ⏳ Oczekuje | - | - | - |

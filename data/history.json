@@ -2964,5 +2964,29 @@
     "started_at_warsaw": "2026-11-05 21:08:00 CET",
     "completed_at_warsaw": "2026-11-05 21:08:40 CET",
     "timestamp": "2026-11-05T20:08:40.563893"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:52",
+    "words_total": 1,
+    "words_correct": 1,
+    "words_mistakes": 0,
+    "new_words_count": 0,
+    "autocorrect_count": 0,
+    "accuracy_percent": 100.0,
+    "duration_seconds": 219.6,
+    "started_at_warsaw": "2026-11-05 22:08:00 CET",
+    "completed_at_warsaw": "2026-11-05 22:11:40 CET",
+    "finished_at": "2026-11-05T22:11:40.103782+01:00",
+    "words_details": [
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-05T21:11:40.104033"
   }
 ]
