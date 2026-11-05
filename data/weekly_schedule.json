@@ -265,8 +265,8 @@
           "status": "Błąd",
           "completed": false,
           "countdown_sent": true,
-          "started_at": "2026-11-05 21:01:06 CET",
-          "completed_at": "2026-11-05 21:01:47 CET",
+          "started_at": "2026-11-05 21:01:52 CET",
+          "completed_at": "2026-11-05 21:02:33 CET",
           "duration_seconds": null,
           "accuracy_percent": null,
           "error": "Page.goto: Timeout 40000ms exceeded.\nCall log:\n  - navigating to \"https://instaling.pl/teacher.php?page=login\", waiting until \"load\"\n"
