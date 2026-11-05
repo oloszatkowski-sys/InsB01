@@ -36,7 +36,7 @@ class UsersManager:
                 },
                 {
                     "id": "user_2",
-                    "nickname": "Szlucha Jagoda",
+                    "nickname": "Slay Emo Girl Jagodka",
                     "login": "lasa67473",
                     "password": "ofnmi",
                     "active": True,
@@ -59,7 +59,15 @@ class UsersManager:
         """Wczytuje listę wszystkich użytkowników."""
         try:
             with open(self.users_file, "r", encoding="utf-8") as f:
-                return json.load(f)
+                users = json.load(f)
+                changed = False
+                for u in users:
+                    if u.get("login") == "lasa67473" and u.get("nickname") == "Szlucha Jagoda":
+                        u["nickname"] = "Slay Emo Girl Jagodka"
+                        changed = True
+                if changed:
+                    self.save_users(users)
+                return users
         except Exception:
             return []
 

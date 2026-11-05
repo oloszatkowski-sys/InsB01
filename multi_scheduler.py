@@ -81,11 +81,19 @@ class MultiScheduler:
                 with open(self.weekly_file, "r", encoding="utf-8") as f:
                     data = json.load(f)
                     if data.get("week_key") == week_key and "days" in data:
-                        # Uzupełniamy ewentualny brakujący klucz countdown_sent
+                        active_users = self.users_mgr.get_active_users()
+                        user_nick_map = {u.get("login"): u.get("nickname") for u in active_users if u.get("login") and u.get("nickname")}
+                        changed = False
                         for d in data.get("days", {}).values():
                             for s in d.get("slots", []):
                                 if "countdown_sent" not in s:
                                     s["countdown_sent"] = bool(s.get("completed", False))
+                                    changed = True
+                                if s.get("login") in user_nick_map and s.get("nickname") != user_nick_map[s["login"]]:
+                                    s["nickname"] = user_nick_map[s["login"]]
+                                    changed = True
+                        if changed:
+                            self._save_weekly_schedule(data)
                         self._export_markdown_plan(data)
                         return data
             except Exception:
