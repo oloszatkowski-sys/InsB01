@@ -2673,5 +2673,54 @@
       }
     ],
     "timestamp": "2026-11-05T15:57:41.435508"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "19:20",
+    "words_total": 6,
+    "words_correct": 4,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 66.7,
+    "duration_seconds": 266.5,
+    "started_at_warsaw": "2026-11-05 19:20:00 CET",
+    "completed_at_warsaw": "2026-11-05 19:24:27 CET",
+    "finished_at": "2026-11-05T19:24:27.120991+01:00",
+    "words_details": [
+      {
+        "prompt": "pop",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pop",
+        "answer": "pop",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "fabuła; akcja; wątek",
+        "answer": "plot",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-05T18:24:27.121250"
   }
 ]

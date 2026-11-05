@@ -759,15 +759,15 @@
     "answer": "pop",
     "prompt": "pop",
     "sentence": "I prefer rock to ___\nluka\n.",
-    "updated_at": "2026-10-29T20:08:36.594522",
-    "usage_count": 1
+    "updated_at": "2026-11-05T18:20:28.765348",
+    "usage_count": 3
   },
   "pop": {
     "answer": "pop",
     "prompt": "pop",
     "sentence": "I prefer rock to ___\nluka\n.",
-    "updated_at": "2026-10-29T20:08:36.594522",
-    "usage_count": 1
+    "updated_at": "2026-11-05T18:20:28.765348",
+    "usage_count": 3
   },
   "i need a _____ luka to paint the wall. | szczotka; pędzel": {
     "answer": "brush",
