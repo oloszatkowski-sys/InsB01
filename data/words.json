@@ -1106,17 +1106,17 @@
     "usage_count": 1
   },
   "mike should become an _____ luka - he's very talented! | aktor": {
-    "answer": "actor",
+    "answer": "_____",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-03T18:26:06.915859",
-    "usage_count": 3
+    "updated_at": "2026-11-05T20:40:59.181328",
+    "usage_count": 4
   },
   "aktor": {
-    "answer": "actor",
+    "answer": "_____",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-03T18:26:06.915859",
-    "usage_count": 3
+    "updated_at": "2026-11-05T20:40:59.181328",
+    "usage_count": 4
   }
 }
