@@ -1,7 +1,8 @@
 import sys
 import time
 import random
-from datetime import datetime
+import traceback
+from datetime import datetime, timedelta
 from typing import Dict, Any, Optional, List, Tuple
 from config import load_config
 from storage import Storage
@@ -69,7 +70,7 @@ class InstaLingBot:
         except Exception as e:
             return False, f"Błąd weryfikacji: {e}"
 
-    def run_session(self, user: Optional[Dict[str, Any]] = None, scheduled_time: Optional[str] = None) -> Dict[str, Any]:
+    def run_session(self, user: Optional[Dict[str, Any]] = None, scheduled_time: Optional[str] = None, slot_info: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
         """Uruchamia pełną sesję dla wybranego użytkownika (lub domyślnego)."""
         if not user:
             user = self.users_mgr.get_ntfy_user()
@@ -145,16 +146,33 @@ class InstaLingBot:
 
             try:
                 # ==============================
-                # 1. WEJŚCIE NA STRONĘ LOGOWANIA
+                # 1. WEJŚCIE NA STRONĘ LOGOWANIA (z 3 próbami i domcontentloaded)
                 # ==============================
-                track_log(f"🔗 [NAWIGACJA] Łączenie z adresem logowania: {INSTALING_LOGIN_URL}")
-                t_nav_start = time.time()
-                resp = page.goto(INSTALING_LOGIN_URL, timeout=40000)
-                page.wait_for_load_state("domcontentloaded")
-                status_code = resp.status if resp else "200"
-                nav_time = time.time() - t_nav_start
-                track_log(f"📡 [SERWER] Strona logowania wczytana pomyślnie (kod HTTP {status_code}, czas: {nav_time:.2f}s)")
-                time.sleep(1.5)
+                max_nav_attempts = 3
+                nav_success = False
+                last_nav_err = None
+
+                for nav_i in range(1, max_nav_attempts + 1):
+                    try:
+                        track_log(f"🔗 [NAWIGACJA] Próba {nav_i}/{max_nav_attempts}: Łączenie z {INSTALING_LOGIN_URL} (domcontentloaded)...")
+                        t_nav_start = time.time()
+                        resp = page.goto(INSTALING_LOGIN_URL, timeout=25000, wait_until="domcontentloaded")
+                        page.wait_for_selector("input#log_email, #login_form, form", timeout=12000)
+                        nav_time = time.time() - t_nav_start
+                        status_code = resp.status if resp else "200"
+                        track_log(f"📡 [SERWER] Strona logowania wczytana pomyślnie (kod HTTP {status_code}, czas: {nav_time:.2f}s)")
+                        nav_success = True
+                        break
+                    except Exception as nav_e:
+                        last_nav_err = nav_e
+                        track_log(f"⚠️ [NAWIGACJA] Próba {nav_i}/{max_nav_attempts} nie powiodła się: {nav_e}")
+                        if nav_i < max_nav_attempts:
+                            time.sleep(3.5)
+
+                if not nav_success:
+                    raise RuntimeError(f"Błąd połączenia ze stroną logowania InstaLing po {max_nav_attempts} próbach: {last_nav_err}")
+
+                time.sleep(1.0)
 
                 # ==============================
                 # 2. LOGOWANIE
@@ -365,19 +383,33 @@ class InstaLingBot:
                 return result
 
             except Exception as e:
+                tb_str = traceback.format_exc()
                 err_str = str(e)
                 end_dt = now_warsaw()
                 duration_s = (end_dt - start_dt).total_seconds()
-                track_log(f"[!] Blad w trakcie wykonywania sesji dla {nickname}: {err_str}")
+                track_log(f"[!] Błąd w trakcie wykonywania sesji dla {nickname}: {err_str}")
+                track_log(f"[!] Szczegóły śladu błędu:
+{tb_str}")
+
+                curr_attempt = (slot_info.get("error_count", 0) + 1) if slot_info else 1
+                max_retries = int(self.config.get("max_error_retries", 3))
+                retry_min = int(self.config.get("error_retry_delay_minutes", 60))
+                retry_after_dt = end_dt + timedelta(minutes=retry_min)
+
                 result = {
                     "success": False,
                     "nickname": nickname,
                     "masked_login": masked,
                     "scheduled_time": scheduled_time or start_dt.strftime("%H:%M"),
                     "error": err_str,
+                    "traceback": tb_str,
+                    "error_count": curr_attempt,
+                    "max_retries": max_retries,
+                    "retry_after_warsaw": format_warsaw(retry_after_dt),
                     "duration_seconds": round(duration_s, 1),
                     "started_at_warsaw": format_warsaw(start_dt),
-                    "completed_at_warsaw": format_warsaw(end_dt)
+                    "completed_at_warsaw": format_warsaw(end_dt),
+                    "session_logs": list(session_logs)
                 }
                 self.storage.record_session(result)
                 self.notifier.send_session_summary(result, user, session_logs)

@@ -25,6 +25,10 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     "random_jitter_minutes": 15,
     "min_user_gap_minutes": 0,
     
+    # Obsługa błędów i ponawiania prób (Cooldown & Anti-Spam)
+    "error_retry_delay_minutes": 60,  # Po błędzie bot czeka 60 minut przed ponowieniem próby
+    "max_error_retries": 3,           # Maksymalnie 3 próby ponowienia dla danego slotu dziennie
+    
     # Częstotliwość wypadków (dni wolne w tygodniu)
     # 'random' = losuje N dni w tygodniu; 'fixed' = konkretne dni z listy; 'none' = robi codziennie
     "miss_days_mode": "random",

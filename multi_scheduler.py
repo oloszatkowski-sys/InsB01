@@ -378,9 +378,10 @@ class MultiScheduler:
                 elif s.get("status") == "W trakcie":
                     st_str = "▶️ W trakcie..."
                     res_str = "-"
-                elif s.get("status") == "Błąd":
-                    st_str = "⚠️ Błąd"
-                    res_str = s.get("error") or "Błąd"
+                elif s.get("status", "").startswith("Błąd"):
+                    st_str = f"⚠️ {s.get('status')}"
+                    res_err = s.get("error") or "Błąd sesji"
+                    res_str = res_err.replace("\r", " ").replace("\n", " ").strip()[:65]
                 else:
                     st_str = "⏳ Oczekuje"
                     res_str = "-"
@@ -440,12 +441,31 @@ class MultiScheduler:
                         slot["words_mistakes"] = result.get("words_mistakes")
                         slot["new_words_count"] = result.get("new_words_count", 0)
                         slot["error"] = None
+                        slot["error_count"] = 0
+                        slot["retry_after_warsaw"] = None
                     else:
+                        max_retries = int(self.config.get("max_error_retries", 3))
+                        curr_err = result.get("error_count") or (slot.get("error_count", 0) + 1)
+                        slot["error_count"] = curr_err
                         slot["completed"] = False
-                        slot["status"] = "Błąd"
                         slot["started_at"] = result.get("started_at_warsaw")
                         slot["completed_at"] = result.get("completed_at_warsaw")
-                        slot["error"] = result.get("error", "Nieznany błąd")
+                        clean_err = str(result.get("error", "Nieznany błąd")).replace("\r", " ").replace("\n", " ").strip()
+                        slot["error"] = clean_err[:120]
+                        slot["last_error_at"] = result.get("completed_at_warsaw")
+
+                        if curr_err >= max_retries:
+                            slot["status"] = f"Błąd (Wyczerpano {max_retries} prób)"
+                            slot["retry_after_warsaw"] = None
+                        else:
+                            retry_after_str = result.get("retry_after_warsaw")
+                            if not retry_after_str:
+                                retry_min = int(self.config.get("error_retry_delay_minutes", 60))
+                                retry_after_dt = now_warsaw() + timedelta(minutes=retry_min)
+                                retry_after_str = format_warsaw(retry_after_dt)
+                            slot["retry_after_warsaw"] = retry_after_str
+                            t_str = retry_after_str[11:16] if len(retry_after_str) >= 16 else "za 60 min"
+                            slot["status"] = f"Błąd (Próba {curr_err}/{max_retries}) — ponowienie o {t_str}"
                     updated = True
                     break
             if updated:
@@ -520,21 +540,45 @@ class MultiScheduler:
         now_pl = now_warsaw()
         min_user_gap = int(self.config.get("min_user_gap_minutes", 45))
 
-        # Szukamy najbliższego oczekującego slotu na dziś
-        pending = [
+        # Szukamy oczekujących slotów na dziś z uwzględnieniem 60-minutowego cooldownu po błędzie
+        max_retries = int(self.config.get("max_error_retries", 3))
+        pending_candidates = [
             s for s in slots
             if not s["is_off_day"] and not s.get("completed", False)
         ]
-        if not pending:
+        if not pending_candidates:
             return None
 
-        pending.sort(key=lambda x: x["scheduled_minutes"])
-        next_slot = pending[0]
+        active_pending = []
+        for s in pending_candidates:
+            if s.get("error_count", 0) >= max_retries:
+                log(f"[i] Slot dla {s.get('nickname')} wyczerpał limit {max_retries} prób na dziś. Pomijam.")
+                continue
 
-        sched_min = next_slot["scheduled_minutes"]
-        target_hour = sched_min // 60
-        target_minute = sched_min % 60
-        target_dt = now_pl.replace(hour=target_hour, minute=target_minute, second=0, microsecond=0)
+            # Sprawdzamy czy slot ma aktywny czas oczekiwania (cooldown) po błędzie
+            retry_after_str = s.get("retry_after_warsaw")
+            if retry_after_str:
+                try:
+                    parts = retry_after_str.split()
+                    retry_dt = datetime.strptime(f"{parts[0]} {parts[1]}", "%Y-%m-%d %H:%M:%S").replace(tzinfo=WARSAW_TZ)
+                    if now_pl < retry_dt:
+                        eff_target = retry_dt
+                    else:
+                        eff_target = now_pl
+                except Exception:
+                    sched_m = s["scheduled_minutes"]
+                    eff_target = now_pl.replace(hour=sched_m // 60, minute=sched_m % 60, second=0, microsecond=0)
+            else:
+                sched_m = s["scheduled_minutes"]
+                eff_target = now_pl.replace(hour=sched_m // 60, minute=sched_m % 60, second=0, microsecond=0)
+
+            active_pending.append((s, eff_target))
+
+        if not active_pending:
+            return None
+
+        active_pending.sort(key=lambda item: item[1])
+        next_slot, effective_target_dt = active_pending[0]
 
         # Jeśli poprzednia sesja zakończyła się dosłownie przed chwilą (np. < 5s), robimy mikro-pauzę techniczną
         last_comp_dt = None
@@ -550,7 +594,6 @@ class MultiScheduler:
                 except Exception:
                     pass
 
-        effective_target_dt = target_dt
         seconds_until = (effective_target_dt - now_pl).total_seconds()
 
         # Jeśli godzina już nadeszła (lub minęła, bo sesje nachodzą na siebie), slot jest natychmiast gotowy do wykonania!
@@ -699,7 +742,7 @@ class MultiScheduler:
                 except Exception as e:
                     log(f"[!] Błąd wysyłania powiadomienia startowego: {e}")
 
-                res = bot.run_session(user=user_obj, scheduled_time=slot.get("scheduled_time", "--:--"))
+                res = bot.run_session(user=user_obj, scheduled_time=slot.get("scheduled_time", "--:--"), slot_info=slot)
                 res["scheduled_time"] = slot.get("scheduled_time", "--:--")
                 res["started_at_warsaw"] = started_at_warsaw
                 res["completed_at_warsaw"] = format_warsaw(now_warsaw())

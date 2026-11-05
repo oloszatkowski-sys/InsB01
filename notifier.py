@@ -201,14 +201,33 @@ class Notifier:
             title = f"⚠️ InstaLing Auto-Bot - Błąd Sesji: {nickname}"
             color = 0xE74C3C
             err = result.get("error", "Nieznany błąd wykonania")
-            desc = (
-                f"👤 **Uczeń:** `{nickname}` (`{masked}`)\n"
-                f"⏰ **Planowana godzina:** `{scheduled_time}`\n"
-                f"**Status:** ❌ Wystąpił problem w trakcie sesji\n"
-                f"**Czas zdarzenia:** `{completed_pl}`\n"
-                f"**Szczegóły błędu:** `{err[:250]}`\n\n"
-                f"🔄 *Bot ponowi próbę wykonania sesji w kolejnym cyklu zegara.*"
-            )
+            error_count = result.get("error_count", 1)
+            max_retries = result.get("max_retries") or int(self.config.get("max_error_retries", 3))
+            retry_after = result.get("retry_after_warsaw")
+            retry_time_str = retry_after[11:16] if retry_after and len(retry_after) >= 16 else "za 60 min"
+
+            if error_count < max_retries:
+                desc = (
+                    f"👤 **Uczeń:** `{nickname}` (`{masked}`)\n"
+                    f"⏰ **Planowana godzina:** `{scheduled_time}`\n"
+                    f"**Status:** ⚠️ Wystąpił problem techniczny (Próba {error_count}/{max_retries})\n"
+                    f"**Czas zdarzenia:** `{completed_pl}`\n"
+                    f"**Szczegóły błędu:** `{err[:250]}`\n\n"
+                    f"⏳ **Automatyczny Cooldown:** Bot odczeka **60 minut** i ponowi próbę o **{retry_time_str} CET**.\n"
+                    f"📋 **Pełne logi błędu:** Kompletny zapis kroków i ślad wyjątku wysłano do kanału `#logi-bota`."
+                )
+                ping_content = None  # BRAK PINGU @everyone dla prób automatycznych!
+            else:
+                desc = (
+                    f"👤 **Uczeń:** `{nickname}` (`{masked}`)\n"
+                    f"⏰ **Planowana godzina:** `{scheduled_time}`\n"
+                    f"**Status:** ❌ Wyczerpano limit {max_retries} prób wykonania sesji\n"
+                    f"**Czas zdarzenia:** `{completed_pl}`\n"
+                    f"**Ostatni błąd:** `{err[:250]}`\n\n"
+                    f"🚨 **Wymagana uwaga:** Wszystkie zaplanowane próby zakończyły się niepowodzeniem.\n"
+                    f"📋 **Pełne logi:** Dostępne w kanale `#logi-bota`."
+                )
+                ping_content = ping_role if ping_role else None
 
         if sekcja_wh:
             self._send_discord_embed(
@@ -216,8 +235,8 @@ class Notifier:
                 title=title,
                 description=desc,
                 color=color,
-                fields=None,  # Zgodnie z poleceniem: brak listy słówek w #sekcja!
-                content=ping_role if ping_role else None,
+                fields=None,
+                content=ping_content if not success else (ping_role if ping_role else None),
                 footer_text="InstaLing Multi-User Manager • Ciemny Styl"
             )
 
@@ -376,7 +395,70 @@ class Notifier:
                 }
             ]
 
-            color = 0x2ECC71 if success else 0xE74C3C
+            if not success:
+                # DEDYKOWANY PEŁNY RAPORT BŁĘDU DO #logi-bota
+                err_msg = (result or {}).get("error", "Nieznany błąd")
+                tb_msg = (result or {}).get("traceback", "")
+                err_cnt = (result or {}).get("error_count", 1)
+                max_ret = (result or {}).get("max_retries", 3)
+                ret_after = (result or {}).get("retry_after_warsaw", "N/A")
+                ret_time = ret_after[11:16] if len(ret_after) >= 16 else "za 60 min"
+
+                all_logs_text = "\n".join(log_lines) if log_lines else "Brak zebranych logów."
+                
+                # Bezpieczne dzielenie długich logów
+                log_chunk_1 = all_logs_text[:980]
+                log_chunk_2 = all_logs_text[980:1960] if len(all_logs_text) > 980 else ""
+
+                error_fields = [
+                    {
+                        "name": "🛑 1. Zgłoszony Błąd / Przyczyna",
+                        "value": f"```text\n{err_msg[:950]}\n```",
+                        "inline": False
+                    },
+                    {
+                        "name": "📜 2. Pełny Rejestr Kroków Sesji (Logi)",
+                        "value": f"```text\n{log_chunk_1}\n```",
+                        "inline": False
+                    }
+                ]
+                if log_chunk_2:
+                    error_fields.append({
+                        "name": "📜 2b. Rejestr Kroków (Kontynuacja)",
+                        "value": f"```text\n{log_chunk_2}\n```",
+                        "inline": False
+                    })
+
+                if tb_msg:
+                    error_fields.append({
+                        "name": "🔍 3. Ślad Wyjątku (Python Traceback)",
+                        "value": f"```python\n{tb_msg[:950]}\n```",
+                        "inline": False
+                    })
+
+                error_fields.append({
+                    "name": "⏰ 4. Status i Plan Wznowienia",
+                    "value": (
+                        f"• **Próba:** `{err_cnt}/{max_ret}`\n"
+                        f"• **Czas oczekiwania:** `60 minut` (ochrona przed spamem i blokadą)\n"
+                        f"• **Planowana godzina ponowienia:** `{ret_time} CET`\n"
+                        f"• **Rekomendacja:** Bot sam podejmie próbę po upływie godziny"
+                    ),
+                    "inline": False
+                })
+
+                self._send_discord_embed(
+                    webhook_url=webhook_url,
+                    title=f"🛑 Dziennik Błędu Sesji — {nickname} ({masked})",
+                    description=f"Szczegółowy zapis awarii, rejestr wykonanych kroków oraz ślad wyjątku sesji InstaLing.",
+                    color=0xE74C3C,
+                    fields=error_fields,
+                    footer_text="InstaLing Auto-Bot • Pełne Logi Błędu #logi-bota"
+                )
+                log(f"[Powiadomienie] Wysłano PEŁNE logi błędu sesji {nickname} do #logi-bota")
+                return
+
+            color = 0x2ECC71
 
             self._send_discord_embed(
                 webhook_url=webhook_url,
