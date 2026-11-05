@@ -388,8 +388,7 @@ class InstaLingBot:
                 end_dt = now_warsaw()
                 duration_s = (end_dt - start_dt).total_seconds()
                 track_log(f"[!] Błąd w trakcie wykonywania sesji dla {nickname}: {err_str}")
-                track_log(f"[!] Szczegóły śladu błędu:
-{tb_str}")
+                track_log(f"[!] Błąd sesji - szczegóły: {err_str}")
 
                 curr_attempt = (slot_info.get("error_count", 0) + 1) if slot_info else 1
                 max_retries = int(self.config.get("max_error_retries", 2))
