@@ -262,14 +262,14 @@
           "is_off_day": false,
           "scheduled_minutes": 1252,
           "scheduled_time": "20:52",
-          "status": "Oczekuje",
+          "status": "Błąd",
           "completed": false,
-          "countdown_sent": false,
-          "started_at": null,
-          "completed_at": null,
+          "countdown_sent": true,
+          "started_at": "2026-11-05 20:52:00 CET",
+          "completed_at": "2026-11-05 20:52:41 CET",
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": "Page.goto: Timeout 40000ms exceeded.\nCall log:\n  - navigating to \"https://instaling.pl/teacher.php?page=login\", waiting until \"load\"\n"
         }
       ]
     },
