@@ -3117,5 +3117,54 @@
       }
     ],
     "timestamp": "2026-11-06T15:42:42.482845"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "18:21",
+    "words_total": 6,
+    "words_correct": 4,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 66.7,
+    "duration_seconds": 272.1,
+    "started_at_warsaw": "2026-11-06 18:21:00 CET",
+    "completed_at_warsaw": "2026-11-06 18:25:32 CET",
+    "finished_at": "2026-11-06T18:25:32.617634+01:00",
+    "words_details": [
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "poeta",
+        "answer": "poet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pop",
+        "answer": "pop",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reklama",
+        "answer": "_____________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "reklama",
+        "answer": "advertisement",
+        "status": "autokorekta"
+      }
+    ],
+    "timestamp": "2026-11-06T17:25:32.617907"
   }
 ]
