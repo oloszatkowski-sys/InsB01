@@ -8,6 +8,18 @@ from users_manager import mask_login
 from timezone_utils import WARSAW_TZ, now_warsaw, today_warsaw
 
 
+def mask_webhook_url(url: Optional[str]) -> str:
+    """Maskuje token webhooka Discorda, by poufny klucz nie wyciekł do logów ani konsoli."""
+    if not url:
+        return "<brak_webhooka>"
+    clean = str(url).strip()
+    if "/api/webhooks/" in clean:
+        parts = clean.split("/")
+        if len(parts) >= 2:
+            return f"{'/'.join(parts[:-1])}/********"
+    return "***"
+
+
 def to_discord_unix(date_str: str, time_str: str) -> Optional[int]:
     """Konwertuje datę (YYYY-MM-DD) i godzinę (HH:MM) w strefie Europe/Warsaw na znacznik UNIX dla Discorda."""
     try:
@@ -711,11 +723,12 @@ class Notifier:
     # =========================================================================
     # 6. NOWY KANAŁ #testy — Raporty testowe i weryfikacja systemu
     # =========================================================================
-    def send_test_report(self, passed: int, total: int, details: List[str]) -> None:
+    def send_test_report(self, passed: int, total: int, details: List[str]) -> bool:
         """Wysyła raport testów na dedykowany kanał #testy."""
         testy_wh = self._get_webhook("webhook_testy")
         if not testy_wh:
-            return
+            log("[!] Brak skonfigurowanego webhooka dla kanału #testy (webhook_testy).")
+            return False
 
         all_ok = (passed == total)
         color = 0x2ECC71 if all_ok else 0xE74C3C
@@ -729,7 +742,7 @@ class Notifier:
             + "\n".join(details)
         )
 
-        self._send_discord_embed(
+        return self._send_discord_embed(
             webhook_url=testy_wh,
             title=title,
             description=desc,
@@ -751,7 +764,11 @@ class Notifier:
         fields: Optional[List[Dict[str, Any]]] = None,
         content: Optional[str] = None,
         footer_text: str = "InstaLing Auto-Bot • Europe/Warsaw • 100% Anty-Detekcja"
-    ) -> None:
+    ) -> bool:
+        if not webhook_url or not webhook_url.startswith(("https://discord.com/api/webhooks/", "https://discordapp.com/api/webhooks/")):
+            log(f"[!] Pominięto wysyłanie '{title}': brak poprawnego webhooka Discord ({mask_webhook_url(webhook_url)})")
+            return False
+
         try:
             embed_obj = {
                 "title": title,
@@ -766,7 +783,12 @@ class Notifier:
             if fields:
                 embed_obj["fields"] = fields
 
-            payload = {"embeds": [embed_obj]}
+            # BEZPIECZEŃSTWO: 'allowed_mentions': {'parse': []} uniemożliwia
+            # jakimkolwiek powiadomieniom z webhooka pingowanie @everyone / @here / ról na Discordzie!
+            payload = {
+                "embeds": [embed_obj],
+                "allowed_mentions": {"parse": []}
+            }
             if content:
                 payload["content"] = content
 
@@ -778,9 +800,11 @@ class Notifier:
                 method="POST"
             )
             with urllib.request.urlopen(req, timeout=10) as resp:
-                log(f"[Powiadomienie] Wysłano '{title}' na Discord")
+                log(f"[Powiadomienie] Wysłano '{title}' na Discord ({mask_webhook_url(webhook_url)})")
+                return True
         except Exception as e:
-            log(f"[!] Błąd wysyłania powiadomienia Discord: {e}")
+            log(f"[!] Błąd wysyłania powiadomienia Discord ({mask_webhook_url(webhook_url)}): {e}")
+            return False
 
     def _send_ntfy(self, topic: str, title: str, message: str, priority: str = "default", tags: str = "robot") -> None:
         try:

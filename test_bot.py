@@ -134,8 +134,11 @@ def run_tests():
                     "• ✅ **Połączenie InstaLing:** HTTP 200 OK — serwis odpowiada",
                     "• ✅ **GitHub Actions:** Skonfigurowane i gotowe do pracy w chmurze"
                 ]
-                notifier.send_test_report(passed, total, test_details)
-                print("✅ Wysłano raport testowy do dedykowanego kanału #testy")
+                ok_wh = notifier.send_test_report(passed, total, test_details)
+                if ok_wh:
+                    print("✅ Wysłano raport testowy do dedykowanego kanału #testy")
+                else:
+                    print("ℹ️ Discord #testy: powiadomienie pominięte (webhook nie jest jeszcze skonfigurowany w Secrets/data).")
 
                 # 2. Test ntfy.sh
                 from users_manager import UsersManager
