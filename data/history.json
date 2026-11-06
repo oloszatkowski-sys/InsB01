@@ -3166,5 +3166,99 @@
       }
     ],
     "timestamp": "2026-11-06T17:25:32.617907"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:50",
+    "words_total": 15,
+    "words_correct": 12,
+    "words_mistakes": 3,
+    "new_words_count": 0,
+    "autocorrect_count": 2,
+    "accuracy_percent": 80.0,
+    "duration_seconds": 370.0,
+    "started_at_warsaw": "2026-11-06 20:52:57 CET",
+    "completed_at_warsaw": "2026-11-06 20:59:07 CET",
+    "finished_at": "2026-11-06T20:59:07.286885+01:00",
+    "words_details": [
+      {
+        "prompt": "muzyk",
+        "answer": "musician",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obsada",
+        "answer": "cast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koncert",
+        "answer": "concert",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny (pierwszoplanowy) aktor",
+        "answer": "lead actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "oszczędzać wodę",
+        "answer": "save water",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występować",
+        "answer": "perform",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zmniejszyć temperaturę na kaloryferze",
+        "answer": "turn the radiator down",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "klasyczny",
+        "answer": "classical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "osoba przeprowadzająca wywiad",
+        "answer": "interviewer",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-06T19:59:07.287118"
   }
 ]

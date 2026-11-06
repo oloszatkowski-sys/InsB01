@@ -4,8 +4,8 @@
 
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W45`
-- 📊 **Status tygodnia:** Ukończono **13** z **19** sesji (Pozostało: **6**)
-- 🔄 **Ostatnia aktualizacja:** `2026-11-06 18:25:35 CET`
+- 📊 **Status tygodnia:** Ukończono **14** z **19** sesji (Pozostało: **5**)
+- 🔄 **Ostatnia aktualizacja:** `2026-11-06 20:59:07 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
@@ -23,7 +23,7 @@
 | Czwartek | `2026-11-05` | **OliwiercioTheHacker** | `asa61####` | **20:52** | ✅ Ukończono | 2026-11-05 22:08:00 CET | 2026-11-05 22:11:41 CET | **1/1** (100.0%) |
 | 👉 **Piątek (DZIŚ)** | `2026-11-06` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:36** | ✅ Ukończono | 2026-11-06 16:36:00 CET | 2026-11-06 16:42:43 CET | **15/22** (68.2%) |
 | 👉 **Piątek (DZIŚ)** | `2026-11-06` | **Oleslaw 010** | `asa61####` | **18:21** | ✅ Ukończono | 2026-11-06 18:21:00 CET | 2026-11-06 18:25:33 CET | **4/6** (66.7%) |
-| 👉 **Piątek (DZIŚ)** | `2026-11-06` | **OliwiercioTheHacker** | `asa61####` | **20:50** | ⏳ Oczekuje | - | - | - |
+| 👉 **Piątek (DZIŚ)** | `2026-11-06` | **OliwiercioTheHacker** | `asa61####` | **20:50** | ✅ Ukończono | 2026-11-06 20:52:57 CET | 2026-11-06 20:59:07 CET | **12/15** (80.0%) |
 | Sobota | `2026-11-07` | **OliwiercioTheHacker** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
 | Sobota | `2026-11-07` | **Oleslaw 010** | `asa61####` | **17:05** | ⏳ Oczekuje | - | - | - |
 | Sobota | `2026-11-07` | **Slay Emo Girl Jagodka** | `lasa6####` | **19:20** | ⏳ Oczekuje | - | - | - |

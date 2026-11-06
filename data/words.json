@@ -633,15 +633,15 @@
     "answer": "turn the radiator up",
     "prompt": "zwiększyć temperaturę na kaloryferze",
     "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
-    "updated_at": "2026-10-28T16:29:22.483877",
-    "usage_count": 1
+    "updated_at": "2026-11-06T19:54:33.448194",
+    "usage_count": 3
   },
   "zwiększyć temperaturę na kaloryferze": {
     "answer": "turn the radiator up",
     "prompt": "zwiększyć temperaturę na kaloryferze",
     "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
-    "updated_at": "2026-10-28T16:29:22.483877",
-    "usage_count": 1
+    "updated_at": "2026-11-06T19:54:33.448194",
+    "usage_count": 3
   },
   "if you want to ____ luka _____ luka , you can take quicker showers. | oszczędzać wodę": {
     "answer": "save water",
@@ -1106,18 +1106,18 @@
     "usage_count": 1
   },
   "mike should become an _____ luka - he's very talented! | aktor": {
-    "answer": "_____",
+    "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-05T20:40:59.181328",
-    "usage_count": 4
+    "updated_at": "2026-11-06T19:53:28.080657",
+    "usage_count": 5
   },
   "aktor": {
-    "answer": "_____",
+    "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-05T20:40:59.181328",
-    "usage_count": 4
+    "updated_at": "2026-11-06T19:53:28.080657",
+    "usage_count": 5
   },
   "students, stop talking and ___ luka _________ luka during the class! | uważać (np. na lekcji)": {
     "answer": "pay attention",
