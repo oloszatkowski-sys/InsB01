@@ -2988,5 +2988,134 @@
       }
     ],
     "timestamp": "2026-11-05T21:11:40.104033"
+  },
+  {
+    "success": true,
+    "nickname": "Slay Emo Girl Jagodka",
+    "masked_login": "lasa6####",
+    "scheduled_time": "16:36",
+    "words_total": 22,
+    "words_correct": 15,
+    "words_mistakes": 7,
+    "new_words_count": 1,
+    "autocorrect_count": 3,
+    "accuracy_percent": 68.2,
+    "duration_seconds": 401.8,
+    "started_at_warsaw": "2026-11-06 16:36:00 CET",
+    "completed_at_warsaw": "2026-11-06 16:42:42 CET",
+    "finished_at": "2026-11-06T16:42:42.482528+01:00",
+    "words_details": [
+      {
+        "prompt": "obsada",
+        "answer": "cast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "dostać niską ocenę",
+        "answer": "get a low mark",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uważać (np. na lekcji)",
+        "answer": "pay attention",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zmniejszyć temperaturę na kaloryferze",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zmniejszyć temperaturę na kaloryferze",
+        "answer": "turn the radiator down",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "uważać (np. na lekcji)",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "prediction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (miejsce)",
+        "answer": "stage",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "został napisany przez",
+        "answer": "it's written by",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koncert",
+        "answer": "concert",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kanał; kanał telewizyjny",
+        "answer": "channel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny (pierwszoplanowy) aktor",
+        "answer": "lead actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "put on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zmniejszyć temperaturę na kaloryferze",
+        "answer": "turn the radiator down",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uważać (np. na lekcji)",
+        "answer": "pay attention",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "uważać (np. na lekcji)",
+        "answer": "pay attention",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-06T15:42:42.482845"
   }
 ]

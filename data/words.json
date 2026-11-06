@@ -87,15 +87,15 @@
     "answer": "audience",
     "prompt": "widownia; publiczność",
     "sentence": "I was in the ________\nluka\n of that show.",
-    "updated_at": "2026-11-05T15:52:50.998279",
-    "usage_count": 5
+    "updated_at": "2026-11-06T15:36:49.025859",
+    "usage_count": 7
   },
   "widownia; publiczność": {
     "answer": "audience",
     "prompt": "widownia; publiczność",
     "sentence": "I was in the ________\nluka\n of that show.",
-    "updated_at": "2026-11-05T15:52:50.998279",
-    "usage_count": 5
+    "updated_at": "2026-11-06T15:36:49.025859",
+    "usage_count": 7
   },
   "sherlock holmes is a popular _____ luka ______ luka known all over the world. | serial kryminalny": {
     "answer": "crime series",
@@ -1025,15 +1025,15 @@
     "answer": "turn the radiator down",
     "prompt": "zmniejszyć temperaturę na kaloryferze",
     "sentence": "____\nluka\n the ________\nluka\n ____\nluka\n, it's so hot in here.",
-    "updated_at": "2026-11-01T18:45:29.456787",
-    "usage_count": 1
+    "updated_at": "2026-11-06T15:37:34.404405",
+    "usage_count": 3
   },
   "zmniejszyć temperaturę na kaloryferze": {
     "answer": "turn the radiator down",
     "prompt": "zmniejszyć temperaturę na kaloryferze",
     "sentence": "____\nluka\n the ________\nluka\n ____\nluka\n, it's so hot in here.",
-    "updated_at": "2026-11-01T18:45:29.456787",
-    "usage_count": 1
+    "updated_at": "2026-11-06T15:37:34.404405",
+    "usage_count": 3
   },
   "son, you ___ luka a ___ luka ____ luka again for your maths test. i think i need to get you a tutor. | dostać niską ocenę": {
     "answer": "get a low mark",
@@ -1118,5 +1118,19 @@
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
     "updated_at": "2026-11-05T20:40:59.181328",
     "usage_count": 4
+  },
+  "students, stop talking and ___ luka _________ luka during the class! | uważać (np. na lekcji)": {
+    "answer": "pay attention",
+    "prompt": "uważać (np. na lekcji)",
+    "sentence": "Students, stop talking and ___\nluka\n _________\nluka\n during the class!",
+    "updated_at": "2026-11-06T15:39:55.039314",
+    "usage_count": 3
+  },
+  "uważać (np. na lekcji)": {
+    "answer": "pay attention",
+    "prompt": "uważać (np. na lekcji)",
+    "sentence": "Students, stop talking and ___\nluka\n _________\nluka\n during the class!",
+    "updated_at": "2026-11-06T15:39:55.039314",
+    "usage_count": 3
   }
 }
