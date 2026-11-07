@@ -423,15 +423,15 @@
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-10-20T19:30:00.483810",
-    "usage_count": 3
+    "updated_at": "2026-11-07T16:06:13.372079",
+    "usage_count": 5
   },
   "film dokumentalny; program dokumentalny": {
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-10-20T19:30:00.483810",
-    "usage_count": 3
+    "updated_at": "2026-11-07T16:06:13.372079",
+    "usage_count": 5
   },
   "can you _____ luka ___ luka ________ luka , please? the sun is blinding me. | zasunąć zasłony": {
     "answer": "close the curtains",
@@ -899,15 +899,15 @@
     "answer": "classical",
     "prompt": "klasyczny",
     "sentence": "Do you like _________\nluka\n music?",
-    "updated_at": "2026-10-31T17:30:13.124872",
-    "usage_count": 1
+    "updated_at": "2026-11-07T16:07:15.699225",
+    "usage_count": 3
   },
   "klasyczny": {
     "answer": "classical",
     "prompt": "klasyczny",
     "sentence": "Do you like _________\nluka\n music?",
-    "updated_at": "2026-10-31T17:30:13.124872",
-    "usage_count": 1
+    "updated_at": "2026-11-07T16:07:15.699225",
+    "usage_count": 3
   },
   "who's the ______ luka of this comic? i like it very much. | autor": {
     "answer": "author",
@@ -927,15 +927,15 @@
     "answer": "painting",
     "prompt": "obraz",
     "sentence": "On the wall there is a beautiful ________\nluka\n.",
-    "updated_at": "2026-10-31T18:18:49.183974",
-    "usage_count": 1
+    "updated_at": "2026-11-07T16:05:40.698903",
+    "usage_count": 3
   },
   "obraz": {
     "answer": "painting",
     "prompt": "obraz",
     "sentence": "On the wall there is a beautiful ________\nluka\n.",
-    "updated_at": "2026-10-31T18:18:49.183974",
-    "usage_count": 1
+    "updated_at": "2026-11-07T16:05:40.698903",
+    "usage_count": 3
   },
   "he ___ luka ____ luka after he took over his father's firm. | stać się bogatym, wzbogacić się": {
     "answer": "get rich",

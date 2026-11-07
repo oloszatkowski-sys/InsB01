@@ -3260,5 +3260,99 @@
       }
     ],
     "timestamp": "2026-11-06T19:59:07.287118"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:05",
+    "words_total": 15,
+    "words_correct": 9,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 364.3,
+    "started_at_warsaw": "2026-11-07 17:05:00 CET",
+    "completed_at_warsaw": "2026-11-07 17:11:04 CET",
+    "finished_at": "2026-11-07T17:11:04.828602+01:00",
+    "words_details": [
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "autor",
+        "answer": "author",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "___________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "powieść",
+        "answer": "novel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "klasyczny",
+        "answer": "_________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "klasyczny",
+        "answer": "classical",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysyłać (np. pliki na serwer internetowy)",
+        "answer": "upload",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "znana osoba",
+        "answer": "celebrity",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-07T16:11:04.828793"
   }
 ]
