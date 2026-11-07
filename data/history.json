@@ -3354,5 +3354,109 @@
       }
     ],
     "timestamp": "2026-11-07T16:11:04.828793"
+  },
+  {
+    "success": true,
+    "nickname": "Slay Emo Girl Jagodka",
+    "masked_login": "lasa6####",
+    "scheduled_time": "19:20",
+    "words_total": 17,
+    "words_correct": 15,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 88.2,
+    "duration_seconds": 349.8,
+    "started_at_warsaw": "2026-11-07 19:20:00 CET",
+    "completed_at_warsaw": "2026-11-07 19:25:50 CET",
+    "finished_at": "2026-11-07T19:25:50.326309+01:00",
+    "words_details": [
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malować",
+        "answer": "paint",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uważać (np. na lekcji)",
+        "answer": "pay attention",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisarz",
+        "answer": "writer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-07T18:25:50.326557"
   }
 ]
