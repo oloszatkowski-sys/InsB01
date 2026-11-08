@@ -3512,5 +3512,54 @@
       }
     ],
     "timestamp": "2026-11-08T15:28:40.211382"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "18:32",
+    "words_total": 6,
+    "words_correct": 6,
+    "words_mistakes": 0,
+    "new_words_count": 0,
+    "autocorrect_count": 0,
+    "accuracy_percent": 100.0,
+    "duration_seconds": 273.0,
+    "started_at_warsaw": "2026-11-08 19:15:47 CET",
+    "completed_at_warsaw": "2026-11-08 19:20:20 CET",
+    "finished_at": "2026-11-08T19:20:20.993301+01:00",
+    "words_details": [
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "opowiadanie",
+        "answer": "short story",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malarz",
+        "answer": "painter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-08T18:20:20.993503"
   }
 ]
