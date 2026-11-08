@@ -185,15 +185,15 @@
     "answer": "it's written by",
     "prompt": "został napisany przez",
     "sentence": "It's a well-known play _______\nluka\n __\nluka\n William Shakespeare.",
-    "updated_at": "2026-10-29T16:55:23.730585",
-    "usage_count": 3
+    "updated_at": "2026-11-08T15:24:32.608640",
+    "usage_count": 5
   },
   "został napisany przez": {
     "answer": "it's written by",
     "prompt": "został napisany przez",
     "sentence": "It's a well-known play _______\nluka\n __\nluka\n William Shakespeare.",
-    "updated_at": "2026-10-29T16:55:23.730585",
-    "usage_count": 3
+    "updated_at": "2026-11-08T15:24:32.608640",
+    "usage_count": 5
   },
   "i prefer novels to _____ luka _______ luka . | opowiadanie": {
     "answer": "short story",

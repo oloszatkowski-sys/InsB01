@@ -3458,5 +3458,59 @@
       }
     ],
     "timestamp": "2026-11-07T18:25:50.326557"
+  },
+  {
+    "success": true,
+    "nickname": "Slay Emo Girl Jagodka",
+    "masked_login": "lasa6####",
+    "scheduled_time": "16:24",
+    "words_total": 7,
+    "words_correct": 5,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 279.7,
+    "started_at_warsaw": "2026-11-08 16:24:00 CET",
+    "completed_at_warsaw": "2026-11-08 16:28:40 CET",
+    "finished_at": "2026-11-08T16:28:40.211053+01:00",
+    "words_details": [
+      {
+        "prompt": "został napisany przez",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "został napisany przez",
+        "answer": "it's written by",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "write",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kino",
+        "answer": "cinema",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zmniejszyć temperaturę na kaloryferze",
+        "answer": "turn the radiator down",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "fabuła; akcja; wątek",
+        "answer": "plot",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-08T15:28:40.211382"
   }
 ]

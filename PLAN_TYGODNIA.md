@@ -4,8 +4,8 @@
 
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W45`
-- 📊 **Status tygodnia:** Ukończono **16** z **19** sesji (Pozostało: **3**)
-- 🔄 **Ostatnia aktualizacja:** `2026-11-07 22:43:09 CET`
+- 📊 **Status tygodnia:** Ukończono **17** z **19** sesji (Pozostało: **2**)
+- 🔄 **Ostatnia aktualizacja:** `2026-11-08 16:28:40 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
@@ -24,12 +24,12 @@
 | Piątek | `2026-11-06` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:36** | ✅ Ukończono | 2026-11-06 16:36:00 CET | 2026-11-06 16:42:43 CET | **15/22** (68.2%) |
 | Piątek | `2026-11-06` | **Oleslaw 010** | `asa61####` | **18:21** | ✅ Ukończono | 2026-11-06 18:21:00 CET | 2026-11-06 18:25:33 CET | **4/6** (66.7%) |
 | Piątek | `2026-11-06` | **OliwiercioTheHacker** | `asa61####` | **20:50** | ✅ Ukończono | 2026-11-06 20:52:57 CET | 2026-11-06 20:59:07 CET | **12/15** (80.0%) |
-| 👉 **Sobota (DZIŚ)** | `2026-11-07` | **OliwiercioTheHacker** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
-| 👉 **Sobota (DZIŚ)** | `2026-11-07` | **Oleslaw 010** | `asa61####` | **17:05** | ✅ Ukończono | 2026-11-07 17:05:00 CET | 2026-11-07 17:11:05 CET | **9/15** (60.0%) |
-| 👉 **Sobota (DZIŚ)** | `2026-11-07` | **Slay Emo Girl Jagodka** | `lasa6####` | **19:20** | ✅ Ukończono | 2026-11-07 19:20:00 CET | 2026-11-07 19:25:50 CET | **15/17** (88.2%) |
-| Niedziela | `2026-11-08` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:24** | ⏳ Oczekuje | - | - | - |
-| Niedziela | `2026-11-08` | **Oleslaw 010** | `asa61####` | **18:32** | ⏳ Oczekuje | - | - | - |
-| Niedziela | `2026-11-08` | **OliwiercioTheHacker** | `asa61####` | **20:58** | ⏳ Oczekuje | - | - | - |
+| Sobota | `2026-11-07` | **OliwiercioTheHacker** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
+| Sobota | `2026-11-07` | **Oleslaw 010** | `asa61####` | **17:05** | ✅ Ukończono | 2026-11-07 17:05:00 CET | 2026-11-07 17:11:05 CET | **9/15** (60.0%) |
+| Sobota | `2026-11-07` | **Slay Emo Girl Jagodka** | `lasa6####` | **19:20** | ✅ Ukończono | 2026-11-07 19:20:00 CET | 2026-11-07 19:25:50 CET | **15/17** (88.2%) |
+| 👉 **Niedziela (DZIŚ)** | `2026-11-08` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:24** | ✅ Ukończono | 2026-11-08 16:24:00 CET | 2026-11-08 16:28:40 CET | **5/7** (71.4%) |
+| 👉 **Niedziela (DZIŚ)** | `2026-11-08` | **Oleslaw 010** | `asa61####` | **18:32** | ⏳ Oczekuje | - | - | - |
+| 👉 **Niedziela (DZIŚ)** | `2026-11-08` | **OliwiercioTheHacker** | `asa61####` | **20:58** | ⏳ Oczekuje | - | - | - |
 
 ---
 ### 📌 Informacje o harmonogramie:
