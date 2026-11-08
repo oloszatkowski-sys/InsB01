@@ -3561,5 +3561,74 @@
       }
     ],
     "timestamp": "2026-11-08T18:20:20.993503"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:58",
+    "words_total": 10,
+    "words_correct": 8,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 80.0,
+    "duration_seconds": 313.7,
+    "started_at_warsaw": "2026-11-08 20:58:00 CET",
+    "completed_at_warsaw": "2026-11-08 21:03:14 CET",
+    "finished_at": "2026-11-08T21:03:14.108397+01:00",
+    "words_details": [
+      {
+        "prompt": "rola",
+        "answer": "role",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "serial kryminalny",
+        "answer": "crime series",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "write",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "prediction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "fotografia (dziedzina); fotografika",
+        "answer": "photography",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "subskrybować; wykupić abonament",
+        "answer": "subscribe",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-08T20:03:14.108600"
   }
 ]
