@@ -29,7 +29,7 @@ class UsersManager:
                     "id": "user_1",
                     "nickname": "Oleslaw 010",
                     "login": "asa614845",
-                    "password": "jorto",
+                    "password": "",
                     "active": True,
                     "created_at": "2026-10-20",
                     "track_in_ntfy": True
@@ -38,7 +38,7 @@ class UsersManager:
                     "id": "user_2",
                     "nickname": "Slay Emo Girl Jagodka",
                     "login": "lasa67473",
-                    "password": "ofnmi",
+                    "password": "",
                     "active": True,
                     "created_at": "2026-10-27",
                     "track_in_ntfy": False
@@ -47,9 +47,18 @@ class UsersManager:
                     "id": "user_3",
                     "nickname": "OliwiercioTheHacker",
                     "login": "asa610791",
-                    "password": "ofjdh",
+                    "password": "",
                     "active": True,
                     "created_at": "2026-10-20",
+                    "track_in_ntfy": False
+                },
+                {
+                    "id": "user_4",
+                    "nickname": "Oliwka Pożeracz Tostów",
+                    "login": "kl7990038",
+                    "password": "",
+                    "active": True,
+                    "created_at": "2026-11-09",
                     "track_in_ntfy": False
                 }
             ]

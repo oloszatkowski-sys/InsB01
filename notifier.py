@@ -20,6 +20,56 @@ def mask_webhook_url(url: Optional[str]) -> str:
     return "***"
 
 
+import re
+
+
+def sanitize_secret_data(data: Any) -> Any:
+    """
+    Ekstremalne zabezpieczenie (Zero-Leak Sanitizer):
+    Cenzuruje ze wszystkich tekstów, embedów i logów:
+    1. Wszystkie hasła użytkowników z bazy users.json
+    2. Wszystkie pełne loginy (zastępuje zamaskowanymi asa61####)
+    3. Tokeny webhooków Discord
+    4. Wzmianki @everyone i @here (wstawia zero-width space)
+    """
+    if isinstance(data, dict):
+        return {k: sanitize_secret_data(v) for k, v in data.items()}
+    if isinstance(data, list):
+        return [sanitize_secret_data(item) for item in data]
+    if not isinstance(data, str):
+        return data
+
+    clean = data
+    # 1. Neutralizacja wzmianek masowych (dodanie zero-width space)
+    clean = clean.replace("@everyone", "@\u200beveryone").replace("@here", "@\u200bhere")
+
+    # 2. Cenzura tokenów webhooków w treści wiadomości
+    clean = re.sub(
+        r"https?://(?:canary\.|ptb\.)?discord(?:app)?\.com/api/webhooks/(\d+)/([A-Za-z0-9_-]+)",
+        r"https://discord.com/api/webhooks/\1/********",
+        clean
+    )
+
+    # 3. Cenzura haseł i pełnych loginów użytkowników
+    try:
+        from users_manager import UsersManager, mask_login
+        users = UsersManager().get_users()
+        for u in users:
+            pwd = str(u.get("password", "")).strip()
+            if pwd and len(pwd) >= 3:
+                clean = clean.replace(pwd, "******")
+            full_login = str(u.get("login", "")).strip()
+            if full_login and len(full_login) >= 5:
+                # Zamiana pełnego loginu na postać zamaskowaną
+                if full_login in clean:
+                    clean = clean.replace(full_login, mask_login(full_login))
+    except Exception:
+        pass
+
+    return clean
+
+
+
 def to_discord_unix(date_str: str, time_str: str) -> Optional[int]:
     """Konwertuje datę (YYYY-MM-DD) i godzinę (HH:MM) w strefie Europe/Warsaw na znacznik UNIX dla Discorda."""
     try:
@@ -791,6 +841,10 @@ class Notifier:
             }
             if content:
                 payload["content"] = content
+
+            # TWARDA DEZYNFEKCJA DANYCH (Zero-Leak Sanitizer):
+            # Cenzuruje jakiekolwiek hasła, pełne loginy czy tokeny przed wysłaniem na Discorda!
+            payload = sanitize_secret_data(payload)
 
             data = json.dumps(payload).encode("utf-8")
             req = urllib.request.Request(

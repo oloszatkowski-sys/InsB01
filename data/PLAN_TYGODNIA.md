@@ -3,33 +3,40 @@
 > **Automatycznie synchronizowany plan sesji w strefie `Europe/Warsaw` z pełną ochroną anty-detekcyjną.**
 
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
-- 📅 **Tydzień ISO:** `2026-W45`
-- 📊 **Status tygodnia:** Ukończono **19** z **19** sesji (Pozostało: **0**)
-- 🔄 **Ostatnia aktualizacja:** `2026-11-08 23:15:59 CET`
+- 📅 **Tydzień ISO:** `2026-W46`
+- 📊 **Status tygodnia:** Ukończono **0** z **25** sesji (Pozostało: **25**)
+- 🔄 **Ostatnia aktualizacja:** `2026-11-09 16:20:03 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
-| Poniedziałek | `2026-11-02` | **Slay Emo Girl Jagodka** | `lasa6####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
-| Poniedziałek | `2026-11-02` | **Oleslaw 010** | `asa61####` | **18:09** | ✅ Ukończono | 2026-11-02 23:20:52 CET | 2026-11-02 23:22:30 CET | **5/5** (100.0%) |
-| Poniedziałek | `2026-11-02` | **OliwiercioTheHacker** | `asa61####` | **19:54** | ✅ Ukończono | 2026-11-02 23:22:35 CET | 2026-11-02 23:25:06 CET | **9/11** (81.8%) |
-| Wtorek | `2026-11-03` | **OliwiercioTheHacker** | `asa61####` | **15:48** | ✅ Ukończono | 2026-11-03 17:12:58 CET | 2026-11-03 17:18:22 CET | **8/11** (72.7%) |
-| Wtorek | `2026-11-03` | **Slay Emo Girl Jagodka** | `lasa6####` | **19:23** | ✅ Ukończono | 2026-11-03 19:23:00 CET | 2026-11-03 19:28:52 CET | **15/19** (78.9%) |
-| Wtorek | `2026-11-03` | **Oleslaw 010** | `asa61####` | **20:35** | ✅ Ukończono | 2026-11-03 20:35:00 CET | 2026-11-03 20:39:20 CET | **5/5** (100.0%) |
-| Środa | `2026-11-04` | **OliwiercioTheHacker** | `asa61####` | **17:09** | ✅ Ukończono | 2026-11-04 17:09:00 CET | 2026-11-04 17:13:04 CET | **3/3** (100.0%) |
-| Środa | `2026-11-04` | **Oleslaw 010** | `asa61####` | **18:08** | ✅ Ukończono | 2026-11-04 18:08:00 CET | 2026-11-04 18:13:34 CET | **15/15** (100.0%) |
-| Środa | `2026-11-04` | **Slay Emo Girl Jagodka** | `lasa6####` | **20:46** | ✅ Ukończono | 2026-11-04 21:19:57 CET | 2026-11-04 21:26:21 CET | **15/21** (71.4%) |
-| Czwartek | `2026-11-05` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:52** | ✅ Ukończono | 2026-11-05 16:52:00 CET | 2026-11-05 16:57:42 CET | **15/17** (88.2%) |
-| Czwartek | `2026-11-05` | **Oleslaw 010** | `asa61####` | **19:20** | ✅ Ukończono | 2026-11-05 19:20:00 CET | 2026-11-05 19:24:28 CET | **4/6** (66.7%) |
-| Czwartek | `2026-11-05` | **OliwiercioTheHacker** | `asa61####` | **20:52** | ✅ Ukończono | 2026-11-05 22:08:00 CET | 2026-11-05 22:11:41 CET | **1/1** (100.0%) |
-| Piątek | `2026-11-06` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:36** | ✅ Ukończono | 2026-11-06 16:36:00 CET | 2026-11-06 16:42:43 CET | **15/22** (68.2%) |
-| Piątek | `2026-11-06` | **Oleslaw 010** | `asa61####` | **18:21** | ✅ Ukończono | 2026-11-06 18:21:00 CET | 2026-11-06 18:25:33 CET | **4/6** (66.7%) |
-| Piątek | `2026-11-06` | **OliwiercioTheHacker** | `asa61####` | **20:50** | ✅ Ukończono | 2026-11-06 20:52:57 CET | 2026-11-06 20:59:07 CET | **12/15** (80.0%) |
-| Sobota | `2026-11-07` | **OliwiercioTheHacker** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
-| Sobota | `2026-11-07` | **Oleslaw 010** | `asa61####` | **17:05** | ✅ Ukończono | 2026-11-07 17:05:00 CET | 2026-11-07 17:11:05 CET | **9/15** (60.0%) |
-| Sobota | `2026-11-07` | **Slay Emo Girl Jagodka** | `lasa6####` | **19:20** | ✅ Ukończono | 2026-11-07 19:20:00 CET | 2026-11-07 19:25:50 CET | **15/17** (88.2%) |
-| 👉 **Niedziela (DZIŚ)** | `2026-11-08` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:24** | ✅ Ukończono | 2026-11-08 16:24:00 CET | 2026-11-08 16:28:40 CET | **5/7** (71.4%) |
-| 👉 **Niedziela (DZIŚ)** | `2026-11-08` | **Oleslaw 010** | `asa61####` | **18:32** | ✅ Ukończono | 2026-11-08 19:15:47 CET | 2026-11-08 19:20:21 CET | **6/6** (100.0%) |
-| 👉 **Niedziela (DZIŚ)** | `2026-11-08` | **OliwiercioTheHacker** | `asa61####` | **20:58** | ✅ Ukończono | 2026-11-08 20:58:00 CET | 2026-11-08 21:03:14 CET | **8/10** (80.0%) |
+| 👉 **Poniedziałek (DZIŚ)** | `2026-11-09` | **Slay Emo Girl Jagodka** | `lasa6####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
+| 👉 **Poniedziałek (DZIŚ)** | `2026-11-09` | **Oliwka Pożeracz Tostów** | `kl799####` | **18:50** | ⏳ Oczekuje | - | - | - |
+| 👉 **Poniedziałek (DZIŚ)** | `2026-11-09` | **Oleslaw 010** | `asa61####` | **17:20** | ⏳ Oczekuje | - | - | - |
+| 👉 **Poniedziałek (DZIŚ)** | `2026-11-09` | **OliwiercioTheHacker** | `asa61####` | **20:27** | ⏳ Oczekuje | - | - | - |
+| Wtorek | `2026-11-10` | **Oliwka Pożeracz Tostów** | `kl799####` | **16:21** | ⏳ Oczekuje | - | - | - |
+| Wtorek | `2026-11-10` | **Oleslaw 010** | `asa61####` | **17:26** | ⏳ Oczekuje | - | - | - |
+| Wtorek | `2026-11-10` | **OliwiercioTheHacker** | `asa61####` | **19:18** | ⏳ Oczekuje | - | - | - |
+| Wtorek | `2026-11-10` | **Slay Emo Girl Jagodka** | `lasa6####` | **21:43** | ⏳ Oczekuje | - | - | - |
+| Środa | `2026-11-11` | **Oleslaw 010** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
+| Środa | `2026-11-11` | **Oliwka Pożeracz Tostów** | `kl799####` | **16:17** | ⏳ Oczekuje | - | - | - |
+| Środa | `2026-11-11` | **Slay Emo Girl Jagodka** | `lasa6####` | **18:12** | ⏳ Oczekuje | - | - | - |
+| Środa | `2026-11-11` | **OliwiercioTheHacker** | `asa61####` | **22:31** | ⏳ Oczekuje | - | - | - |
+| Czwartek | `2026-11-12` | **Slay Emo Girl Jagodka** | `lasa6####` | **16:06** | ⏳ Oczekuje | - | - | - |
+| Czwartek | `2026-11-12` | **OliwiercioTheHacker** | `asa61####` | **19:06** | ⏳ Oczekuje | - | - | - |
+| Czwartek | `2026-11-12` | **Oleslaw 010** | `asa61####` | **19:22** | ⏳ Oczekuje | - | - | - |
+| Czwartek | `2026-11-12` | **Oliwka Pożeracz Tostów** | `kl799####` | **21:48** | ⏳ Oczekuje | - | - | - |
+| Piątek | `2026-11-13` | **Oleslaw 010** | `asa61####` | **17:01** | ⏳ Oczekuje | - | - | - |
+| Piątek | `2026-11-13` | **OliwiercioTheHacker** | `asa61####` | **18:15** | ⏳ Oczekuje | - | - | - |
+| Piątek | `2026-11-13` | **Oliwka Pożeracz Tostów** | `kl799####` | **20:30** | ⏳ Oczekuje | - | - | - |
+| Piątek | `2026-11-13` | **Slay Emo Girl Jagodka** | `lasa6####` | **20:52** | ⏳ Oczekuje | - | - | - |
+| Sobota | `2026-11-14` | **Oleslaw 010** | `asa61####` | **15:47** | ⏳ Oczekuje | - | - | - |
+| Sobota | `2026-11-14` | **Slay Emo Girl Jagodka** | `lasa6####` | **18:31** | ⏳ Oczekuje | - | - | - |
+| Sobota | `2026-11-14` | **OliwiercioTheHacker** | `asa61####` | **19:14** | ⏳ Oczekuje | - | - | - |
+| Sobota | `2026-11-14` | **Oliwka Pożeracz Tostów** | `kl799####` | **21:47** | ⏳ Oczekuje | - | - | - |
+| Niedziela | `2026-11-15` | **Oleslaw 010** | `asa61####` | **06:51** | ⏳ Oczekuje | - | - | - |
+| Niedziela | `2026-11-15` | **Oliwka Pożeracz Tostów** | `kl799####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
+| Niedziela | `2026-11-15` | **OliwiercioTheHacker** | `asa61####` | **20:13** | ⏳ Oczekuje | - | - | - |
+| Niedziela | `2026-11-15` | **Slay Emo Girl Jagodka** | `lasa6####` | **21:19** | ⏳ Oczekuje | - | - | - |
 
 ---
 ### 📌 Informacje o harmonogramie:
