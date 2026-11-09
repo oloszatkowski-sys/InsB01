@@ -92,6 +92,73 @@ class MultiScheduler:
                                 if s.get("login") in user_nick_map and s.get("nickname") != user_nick_map[s["login"]]:
                                     s["nickname"] = user_nick_map[s["login"]]
                                     changed = True
+
+                        # Automatyczne dołączanie nowo dodanych uczniów do istniejącego harmonogramu tygodnia:
+                        existing_logins = {s.get("login") for d in data.get("days", {}).values() for s in d.get("slots", [])}
+                        missing_users = [u for u in active_users if u.get("login") not in existing_logins]
+                        if missing_users:
+                            for u in missing_users:
+                                u_id = u.get("id") or u.get("login")
+                                nick = u.get("nickname", "Uczeń")
+                                login = u.get("login", "")
+                                for day_idx_str, d in data.get("days", {}).items():
+                                    day_idx = int(day_idx_str)
+                                    day_date_str = d.get("date", "")
+                                    slot_id = f"{day_date_str}_{u_id}"
+                                    if any(s.get("login") == login for s in d.get("slots", [])):
+                                        continue
+                                    if day_idx == 6:
+                                        new_slot = {
+                                            "slot_id": slot_id,
+                                            "user_id": u_id,
+                                            "nickname": nick,
+                                            "login": login,
+                                            "is_off_day": True,
+                                            "scheduled_minutes": 0,
+                                            "scheduled_time": "Wolne",
+                                            "status": "Dzień wolny",
+                                            "completed": True,
+                                            "countdown_sent": True,
+                                            "started_at": None,
+                                            "completed_at": None,
+                                            "duration_seconds": None,
+                                            "accuracy_percent": None,
+                                            "error": None
+                                        }
+                                    else:
+                                        if day_idx == 0:
+                                            chosen_min = 1130  # 18:50 (Poniedziałek)
+                                        elif day_idx == 1:
+                                            chosen_min = 981   # 16:21 (Wtorek)
+                                        elif day_idx == 2:
+                                            chosen_min = 977   # 16:17 (Środa)
+                                        elif day_idx == 3:
+                                            chosen_min = 1308  # 21:48 (Czwartek)
+                                        elif day_idx == 4:
+                                            chosen_min = 1230  # 20:30 (Piątek)
+                                        else:
+                                            chosen_min = 1307  # 21:47 (Sobota)
+
+                                        new_slot = {
+                                            "slot_id": slot_id,
+                                            "user_id": u_id,
+                                            "nickname": nick,
+                                            "login": login,
+                                            "is_off_day": False,
+                                            "scheduled_minutes": chosen_min,
+                                            "scheduled_time": minutes_to_time(chosen_min),
+                                            "status": "Oczekuje",
+                                            "completed": False,
+                                            "countdown_sent": False,
+                                            "started_at": None,
+                                            "completed_at": None,
+                                            "duration_seconds": None,
+                                            "accuracy_percent": None,
+                                            "error": None
+                                        }
+                                    d.setdefault("slots", []).append(new_slot)
+                                    changed = True
+
                         if changed:
                             self._save_weekly_schedule(data)
                         self._export_markdown_plan(data)
