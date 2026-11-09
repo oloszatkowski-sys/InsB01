@@ -7,6 +7,18 @@ from logger import log
 from users_manager import mask_login
 from timezone_utils import WARSAW_TZ, now_warsaw, today_warsaw
 
+def get_user_mention(user_or_dict: Dict[str, Any]) -> str:
+    """Zwraca właściwy znacznik wzmianki Discorda: <@USER_ID> (jeśli podano ID) lub @display_name."""
+    disc_id = str(user_or_dict.get("discord_id", "")).strip()
+    if disc_id and disc_id.isdigit():
+        return f"<@{disc_id}>"
+    ping = str(user_or_dict.get("discord_ping", "")).strip()
+    if ping:
+        return ping if ping.startswith(("<@", "@")) else f"@{ping}"
+    disp = str(user_or_dict.get("discord_display", "")).strip() or str(user_or_dict.get("discord_username", "")).strip()
+    return f"@{disp}" if disp else ""
+
+
 
 def mask_webhook_url(url: Optional[str]) -> str:
     """Maskuje token webhooka Discorda, by poufny klucz nie wyciekł do logów ani konsoli."""
