@@ -3711,5 +3711,123 @@
       "[17:28:10] [!] Błąd sesji - szczegóły: name 'user_line' is not defined"
     ],
     "timestamp": "2026-11-09T16:28:10.991726"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:20",
+    "words_total": 7,
+    "words_correct": 5,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 244.9,
+    "started_at_warsaw": "2026-11-09 17:36:22 CET",
+    "completed_at_warsaw": "2026-11-09 17:40:27 CET",
+    "finished_at": "2026-11-09T17:40:27.421677+01:00",
+    "words_details": [
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "osoba przeprowadzająca wywiad",
+        "answer": "interviewer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rysunek",
+        "answer": "drawing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "poeta",
+        "answer": "poet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-09T16:40:27.422014"
+  },
+  {
+    "success": false,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:20",
+    "error": "name 'user_line' is not defined",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/InsB01/InsB01/bot.py\", line 588, in run_session\n    self.notifier.send_session_summary(result, user, session_logs)\n  File \"/home/runner/work/InsB01/InsB01/notifier.py\", line 267, in send_session_summary\n    f\"👤 **Uczeń:** {user_line}\\n\"\n                     ^^^^^^^^^\nNameError: name 'user_line' is not defined\n",
+    "error_count": 1,
+    "max_retries": 2,
+    "retry_after_warsaw": "2026-11-09 18:40:27 CET",
+    "duration_seconds": 244.9,
+    "started_at_warsaw": "2026-11-09 17:36:22 CET",
+    "completed_at_warsaw": "2026-11-09 17:40:27 CET",
+    "session_logs": [
+      "[17:36:22] 🚀 [START] Rozpoczęcie procedury sesji dla ucznia: Oleslaw 010 (login: asa61####)",
+      "[17:36:22] ⚙️ [KONFIGURACJA] Headless=True, wyciszenie dźwięku=True, limit słówek=45",
+      "[17:36:23] 🌐 [PRZEGLĄDARKA] Uruchomiono silnik Chromium (wersja standardowa, locale=pl-PL)",
+      "[17:36:23] 🛡️ [FILTR] Aktywowano skrypt blokujący wyskakujące banery zgód RODO/Cookies",
+      "[17:36:23] 🔗 [NAWIGACJA] Próba 1/3: Łączenie z https://instaling.pl/teacher.php?page=login (domcontentloaded)...",
+      "[17:36:24] 📡 [SERWER] Strona logowania wczytana pomyślnie (kod HTTP 200, czas: 1.55s)",
+      "[17:36:25] 🔑 [LOGOWANIE] Wprowadzanie identyfikatora ucznia: 'asa61####'",
+      "[17:36:26] 🔒 [LOGOWANIE] Wprowadzanie hasła użytkownika (znaki ukryte)",
+      "[17:36:26] 🖱️ [LOGOWANIE] Kliknięcie przycisku 'ZALOGUJ' i oczekiwanie na autoryzację...",
+      "[17:36:30] ✅ [AUTORYZACJA] Zalogowano pomyślnie jako Oleslaw 010! (Adres URL: https://instaling.pl/student/pages/mainPage.php?student_id=2571886)",
+      "[17:36:30] 🛡️ [SKANER DETEKCJI NAUCZYCIELA] Status panelu: Brak uwag w panelu ucznia (Profil w 100% czysty, brak komunikatów od nauczyciela)",
+      "[17:36:30] 🚀 [ETAP SESJI 1/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[17:36:30] ▶️ [PANEL] Wykryto przycisk 'Dokończ sesję' — otwieram sesję...",
+      "[17:36:33] 🔘 [SESJA] Ekran wznowienia — klikam 'Kontynuuj sesję'",
+      "[17:36:46] ✅ [POPRAWNIE #1] 'udostępniać w sieci' ➔ 'share online'",
+      "[17:36:58] ✅ [POPRAWNIE #2] 'osoba przeprowadzająca wywiad' ➔ 'interviewer'",
+      "[17:37:07] 🎯 [CELOWY BŁĄD #3] 'zwiększyć temperaturę na kaloryferze' -> wpisano 'turn the radiator u' (docelowo: 'turn the radiator up')",
+      "[17:37:19] 🔄 [AUTOKOREKTA #4] 'zwiększyć temperaturę na kaloryferze': zmieniono '____' ➔ 'turn the radiator up' w bazie bota!",
+      "[17:37:30] ✅ [POPRAWNIE #5] 'rysunek' ➔ 'drawing'",
+      "[17:37:39] ✅ [POPRAWNIE #6] 'poeta' ➔ 'poet'",
+      "[17:37:51] ✅ [POPRAWNIE #7] 'zwiększyć temperaturę na kaloryferze' ➔ 'turn the radiator up'",
+      "[17:37:55] 🎉 [SESJA] Ekran ukończenia sesji wykryty w etapie 1!",
+      "[17:38:00] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 7 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[17:38:00] 🚀 [ETAP SESJI 2/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[17:38:49] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 7 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[17:38:49] 🚀 [ETAP SESJI 3/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[17:39:38] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 7 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[17:39:38] 🚀 [ETAP SESJI 4/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[17:40:27] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 7 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[17:40:27] 🏁 [STATYSTYKA KOŃCOWA] Rozwiązano łącznie: 7 pytań | Poprawne: 5 (71.4%) | Błędy: 2",
+      "[17:40:27] 🆕 [NOWE SŁÓWKA] Wykryto i zapamiętano: 0 nowych słówek",
+      "[17:40:27] ⏱️ [CZAS SESJI] Całkowity czas od zalogowania do wylogowania: 244.9s (~4.1 min)",
+      "[17:40:27] \n[OK] SESJA DLA Oleslaw 010 (asa61####) ZAKONCZONA SUKCESEM!",
+      "[17:40:27]     Czas: 2026-11-09 17:36:22 CET -> 2026-11-09 17:40:27 CET (244.9s)",
+      "[17:40:27]     Rozwiazano: 7 | Poprawne: 5 (71.4%)\n",
+      "[17:40:27] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:",
+      "[17:40:27]    1. udostępniać w sieci ➔ share online [✅ POPRAWNIE]",
+      "[17:40:27]    2. osoba przeprowadzająca wywiad ➔ interviewer [✅ POPRAWNIE]",
+      "[17:40:27]    3. zwiększyć temperaturę na kaloryferze ➔ ____ [⚠️ BŁĄD]",
+      "[17:40:27]    4. zwiększyć temperaturę na kaloryferze ➔ turn the radiator up [🔄 AUTOKOREKTA]",
+      "[17:40:27]    5. rysunek ➔ drawing [✅ POPRAWNIE]",
+      "[17:40:27]    6. poeta ➔ poet [✅ POPRAWNIE]",
+      "[17:40:27]    7. zwiększyć temperaturę na kaloryferze ➔ turn the radiator up [✅ POPRAWNIE]",
+      "[17:40:27] ",
+      "[17:40:27] [!] Błąd w trakcie wykonywania sesji dla Oleslaw 010: name 'user_line' is not defined",
+      "[17:40:27] [!] Błąd sesji - szczegóły: name 'user_line' is not defined"
+    ],
+    "timestamp": "2026-11-09T16:40:27.428013"
   }
 ]

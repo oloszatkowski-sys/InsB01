@@ -633,15 +633,15 @@
     "answer": "turn the radiator up",
     "prompt": "zwiększyć temperaturę na kaloryferze",
     "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
-    "updated_at": "2026-11-08T19:59:34.130950",
-    "usage_count": 5
+    "updated_at": "2026-11-09T16:37:19.026332",
+    "usage_count": 7
   },
   "zwiększyć temperaturę na kaloryferze": {
     "answer": "turn the radiator up",
     "prompt": "zwiększyć temperaturę na kaloryferze",
     "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
-    "updated_at": "2026-11-08T19:59:34.130950",
-    "usage_count": 5
+    "updated_at": "2026-11-09T16:37:19.026332",
+    "usage_count": 7
   },
   "if you want to ____ luka _____ luka , you can take quicker showers. | oszczędzać wodę": {
     "answer": "save water",
