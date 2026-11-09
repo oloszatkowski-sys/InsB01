@@ -56,6 +56,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
     "webhook_plan_tygodnia": "",
     "webhook_logi_bota": "",
     "webhook_statystyki": "",
+    "webhook_wykrywanie": "",
     "discord_webhook_url": ""
 }
 
@@ -88,6 +89,7 @@ def load_config() -> Dict[str, Any]:
                 "webhook_plan_tygodnia": "DISCORD_WEBHOOK_PLAN_TYDZIEN",
                 "webhook_logi_bota": "DISCORD_WEBHOOK_LOGI",
                 "webhook_statystyki": "DISCORD_WEBHOOK_STATYSTYKI",
+                "webhook_wykrywanie": "DISCORD_WEBHOOK_WYKRYWANIE",
                 "discord_webhook_url": "DISCORD_WEBHOOK_URL",
             }
             for cfg_key, env_var in env_webhooks.items():

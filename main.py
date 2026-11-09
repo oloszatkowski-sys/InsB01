@@ -44,6 +44,7 @@ def main():
     parser.add_argument("--test", "--test-discord", action="store_true", dest="test", help="Uruchom pełny zestaw testów z powiadomieniami na Discord i ntfy")
     parser.add_argument("--reset-schedule", action="store_true", help="Zresetuj stary harmonogram i wygeneruj nowy plan tygodnia")
     parser.add_argument("--daemon", action="store_true", help="Uruchom ciągły proces harmonogramu w tle (kolejka lokalna)")
+    parser.add_argument("--wykrywanie", "--audit", action="store_true", dest="audit", help="Wykonaj audyt detekcji nauczyciela i wyślij mega-raport do #wykrywanie")
 
     args = parser.parse_args()
     cfg = load_config()
@@ -73,6 +74,16 @@ def main():
         log(f"[*] Generowanie i publikowanie planu tygodnia na Discordzie (strefa {get_current_polish_tzname()})...")
         sched.publish_weekly_plan_to_discord()
         log("[+] Plan tygodnia został wysłany.")
+
+    elif args.audit:
+        log("[*] Uruchamianie audytu bezpieczeństwa i detekcji nauczyciela (#wykrywanie)...")
+        bot = InstaLingBot(cfg)
+        active = sched.users_mgr.get_active_users()
+        target_list = [u for u in active if args.user in (u.get("nickname"), u.get("login"))] if args.user else active
+        for u in target_list:
+            bot.audit_teacher_detection(u)
+        log("[+] Audyt detekcji nauczyciela został ukończony i opublikowany na kanale #wykrywanie.")
+        sys.exit(0)
 
     elif args.stats:
         log(f"[*] Wysyłanie globalnych statystyk bota na kanał #statystyki...")

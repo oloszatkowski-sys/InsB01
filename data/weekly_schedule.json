@@ -12,7 +12,7 @@
         {
           "slot_id": "2026-11-09_user_2",
           "user_id": "user_2",
-          "nickname": "Slay Emo Girl Jagodka",
+          "nickname": "Szlucha Jagoda",
           "login": "lasa67473",
           "is_off_day": true,
           "scheduled_minutes": 0,
@@ -24,7 +24,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "j_janow3kq",
+          "discord_display": "janow3kq",
+          "discord_ping": "@janow3kq",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-09_user_1",
@@ -41,7 +45,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "szatek_010",
+          "discord_display": "Szatek_Olo",
+          "discord_ping": "@Szatek_Olo",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-09_user_3",
@@ -58,7 +66,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "gonia0011",
+          "discord_display": "Как дела",
+          "discord_ping": "@Как дела",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-09_user_4",
@@ -75,7 +87,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "oliwka_222._",
+          "discord_display": "oliwka_222.",
+          "discord_ping": "@oliwka_222.",
+          "discord_id": ""
         }
       ]
     },
@@ -86,7 +102,7 @@
         {
           "slot_id": "2026-11-10_user_2",
           "user_id": "user_2",
-          "nickname": "Slay Emo Girl Jagodka",
+          "nickname": "Szlucha Jagoda",
           "login": "lasa67473",
           "is_off_day": false,
           "scheduled_minutes": 988,
@@ -98,7 +114,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "j_janow3kq",
+          "discord_display": "janow3kq",
+          "discord_ping": "@janow3kq",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-10_user_3",
@@ -115,7 +135,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "gonia0011",
+          "discord_display": "Как дела",
+          "discord_ping": "@Как дела",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-10_user_1",
@@ -132,7 +156,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "szatek_010",
+          "discord_display": "Szatek_Olo",
+          "discord_ping": "@Szatek_Olo",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-10_user_4",
@@ -149,7 +177,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "oliwka_222._",
+          "discord_display": "oliwka_222.",
+          "discord_ping": "@oliwka_222.",
+          "discord_id": ""
         }
       ]
     },
@@ -172,7 +204,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "szatek_010",
+          "discord_display": "Szatek_Olo",
+          "discord_ping": "@Szatek_Olo",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-11_user_3",
@@ -189,12 +225,16 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "gonia0011",
+          "discord_display": "Как дела",
+          "discord_ping": "@Как дела",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-11_user_2",
           "user_id": "user_2",
-          "nickname": "Slay Emo Girl Jagodka",
+          "nickname": "Szlucha Jagoda",
           "login": "lasa67473",
           "is_off_day": false,
           "scheduled_minutes": 1163,
@@ -206,7 +246,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "j_janow3kq",
+          "discord_display": "janow3kq",
+          "discord_ping": "@janow3kq",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-11_user_4",
@@ -223,7 +267,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "oliwka_222._",
+          "discord_display": "oliwka_222.",
+          "discord_ping": "@oliwka_222.",
+          "discord_id": ""
         }
       ]
     },
@@ -246,7 +294,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "gonia0011",
+          "discord_display": "Как дела",
+          "discord_ping": "@Как дела",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-12_user_1",
@@ -263,12 +315,16 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "szatek_010",
+          "discord_display": "Szatek_Olo",
+          "discord_ping": "@Szatek_Olo",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-12_user_2",
           "user_id": "user_2",
-          "nickname": "Slay Emo Girl Jagodka",
+          "nickname": "Szlucha Jagoda",
           "login": "lasa67473",
           "is_off_day": false,
           "scheduled_minutes": 1206,
@@ -280,7 +336,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "j_janow3kq",
+          "discord_display": "janow3kq",
+          "discord_ping": "@janow3kq",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-12_user_4",
@@ -297,7 +357,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "oliwka_222._",
+          "discord_display": "oliwka_222.",
+          "discord_ping": "@oliwka_222.",
+          "discord_id": ""
         }
       ]
     },
@@ -320,12 +384,16 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "gonia0011",
+          "discord_display": "Как дела",
+          "discord_ping": "@Как дела",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-13_user_2",
           "user_id": "user_2",
-          "nickname": "Slay Emo Girl Jagodka",
+          "nickname": "Szlucha Jagoda",
           "login": "lasa67473",
           "is_off_day": false,
           "scheduled_minutes": 1077,
@@ -337,7 +405,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "j_janow3kq",
+          "discord_display": "janow3kq",
+          "discord_ping": "@janow3kq",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-13_user_1",
@@ -354,7 +426,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "szatek_010",
+          "discord_display": "Szatek_Olo",
+          "discord_ping": "@Szatek_Olo",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-13_user_4",
@@ -371,7 +447,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "oliwka_222._",
+          "discord_display": "oliwka_222.",
+          "discord_ping": "@oliwka_222.",
+          "discord_id": ""
         }
       ]
     },
@@ -394,7 +474,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "szatek_010",
+          "discord_display": "Szatek_Olo",
+          "discord_ping": "@Szatek_Olo",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-14_user_3",
@@ -411,12 +495,16 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "gonia0011",
+          "discord_display": "Как дела",
+          "discord_ping": "@Как дела",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-14_user_2",
           "user_id": "user_2",
-          "nickname": "Slay Emo Girl Jagodka",
+          "nickname": "Szlucha Jagoda",
           "login": "lasa67473",
           "is_off_day": false,
           "scheduled_minutes": 1286,
@@ -428,7 +516,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "j_janow3kq",
+          "discord_display": "janow3kq",
+          "discord_ping": "@janow3kq",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-14_user_4",
@@ -445,7 +537,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "oliwka_222._",
+          "discord_display": "oliwka_222.",
+          "discord_ping": "@oliwka_222.",
+          "discord_id": ""
         }
       ]
     },
@@ -468,12 +564,16 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "gonia0011",
+          "discord_display": "Как дела",
+          "discord_ping": "@Как дела",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-15_user_2",
           "user_id": "user_2",
-          "nickname": "Slay Emo Girl Jagodka",
+          "nickname": "Szlucha Jagoda",
           "login": "lasa67473",
           "is_off_day": false,
           "scheduled_minutes": 999,
@@ -485,7 +585,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "j_janow3kq",
+          "discord_display": "janow3kq",
+          "discord_ping": "@janow3kq",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-15_user_1",
@@ -502,7 +606,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "szatek_010",
+          "discord_display": "Szatek_Olo",
+          "discord_ping": "@Szatek_Olo",
+          "discord_id": ""
         },
         {
           "slot_id": "2026-11-15_user_4",
@@ -519,7 +627,11 @@
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
-          "error": null
+          "error": null,
+          "discord_username": "oliwka_222._",
+          "discord_display": "oliwka_222.",
+          "discord_ping": "@oliwka_222.",
+          "discord_id": ""
         }
       ]
     }

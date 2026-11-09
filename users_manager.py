@@ -71,8 +71,8 @@ class UsersManager:
                 users = json.load(f)
                 changed = False
                 for u in users:
-                    if u.get("login") == "lasa67473" and u.get("nickname") == "Szlucha Jagoda":
-                        u["nickname"] = "Slay Emo Girl Jagodka"
+                    if u.get("login") == "lasa67473" and not u.get("alias"):
+                        u["alias"] = "Slay Emo Girl Jagodka"
                         changed = True
                 if changed:
                     self.save_users(users)

@@ -31,6 +31,7 @@ on:
           - 'plan'
           - 'week'
           - 'reset'
+          - 'audit'
       user:
         description: 'Opcjonalnie: pseudonim lub login konkretnego użytkownika'
         required: false
@@ -107,6 +108,8 @@ jobs:
             python main.py --plan
           elif [ "$RUN_MODE" = "week" ]; then
             python main.py --week
+          elif [ "$RUN_MODE" = "audit" ] || [ "$RUN_MODE" = "wykrywanie" ]; then
+            python main.py --wykrywanie
           elif [ "$RUN_MODE" = "all" ]; then
             python main.py --run-all
           elif [ -n "$TARGET_USER" ]; then
