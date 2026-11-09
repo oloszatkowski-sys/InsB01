@@ -29,28 +29,39 @@ class InstaLingBot:
     def check_teacher_alerts(self, page) -> Dict[str, Any]:
         """
         Skanuje stronę główną ucznia (mainPage.php) pod kątem komunikatów, uwag i blokad od nauczyciela.
+        Ignoruje standardowe banery marketingowe/informacyjne InstaLing (np. prośbę o konto rodzica, InstaLing Plus).
         """
         try:
             alerts = []
+            # Wykluczenia: standardowe banery promocyjne/techniczne platformy InstaLing (to NIE są uwagi nauczyciela!)
+            ignored_prompts = [
+                "rodo", "cookie", "polityka prywatności", "deklaracja dostępności",
+                "poproś rodzica", "konto rodzica", "konta rodzica", "słówek ponadprogramowych",
+                "instaling plus", "kup instaling plus", "nie posiadasz instaling plus",
+                "rankingi twojej klasy", "tygodniowe wyzwanie"
+            ]
+
             # 1. Kontenery powiadomień i alertów w Bootstrap / InstaLing
             alert_locators = page.locator(".alert, .alert-warning, .alert-danger, .alert-info, #system_message, .komunikat, .wiadomosc, .teacher-note, .uwagi").all()
             for loc in alert_locators:
                 try:
                     if loc.is_visible():
                         txt = loc.inner_text().strip()
-                        if txt and len(txt) > 3 and not any(ign in txt.lower() for ign in ["rodo", "cookie", "polityka prywatności"]):
+                        txt_lower = txt.lower()
+                        if txt and len(txt) > 3 and not any(ign in txt_lower for ign in ignored_prompts):
+                            # Jeśli komunikat nie jest marketingiem i dotyczy szkoły/nauczyciela/blokady
                             alerts.append(txt)
                 except Exception:
                     pass
 
-            # 2. Sprawdzamy słowa kluczowe w całym body pod kątem blokad
+            # 2. Sprawdzamy słowa kluczowe w całym body pod kątem blokad lub uwag nauczyciela
             body_txt = page.inner_text("body").lower()
             suspicious_keywords = ["zablokowan", "zawieszon", "skontaktuj się z nauczycielem", "anulowan", "uwaga nauczyciela", "nauczyciel zgłosił"]
             flagged = any(kw in body_txt for kw in suspicious_keywords)
 
             has_alerts = len(alerts) > 0 or flagged
             is_blocked = "zablokowan" in body_txt or "zawieszon" in body_txt
-            details = " | ".join(alerts) if alerts else ("Brak uwag w panelu ucznia (Profil czysty, brak powiadomień)" if not flagged else "Wykryto uwagę nauczyciela w treści")
+            details = " | ".join(alerts) if alerts else ("Brak uwag w panelu ucznia (Profil w 100% czysty, brak komunikatów od nauczyciela)" if not flagged else "Wykryto uwagę nauczyciela w treści")
 
             return {
                 "has_alerts": has_alerts,
