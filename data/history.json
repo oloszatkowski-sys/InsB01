@@ -3630,5 +3630,86 @@
       }
     ],
     "timestamp": "2026-11-08T20:03:14.108600"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:20",
+    "words_total": 2,
+    "words_correct": 2,
+    "words_mistakes": 0,
+    "new_words_count": 0,
+    "autocorrect_count": 0,
+    "accuracy_percent": 100.0,
+    "duration_seconds": 227.2,
+    "started_at_warsaw": "2026-11-09 17:24:23 CET",
+    "completed_at_warsaw": "2026-11-09 17:28:10 CET",
+    "finished_at": "2026-11-09T17:28:10.987808+01:00",
+    "words_details": [
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malować",
+        "answer": "paint",
+        "status": "poprawnie"
+      }
+    ],
+    "timestamp": "2026-11-09T16:28:10.988008"
+  },
+  {
+    "success": false,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:20",
+    "error": "name 'user_line' is not defined",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/InsB01/InsB01/bot.py\", line 496, in run_session\n    self.notifier.send_session_summary(result, user, session_logs)\n  File \"/home/runner/work/InsB01/InsB01/notifier.py\", line 267, in send_session_summary\n    f\"👤 **Uczeń:** {user_line}\\n\"\n                     ^^^^^^^^^\nNameError: name 'user_line' is not defined\n",
+    "error_count": 1,
+    "max_retries": 2,
+    "retry_after_warsaw": "2026-11-09 18:28:10 CET",
+    "duration_seconds": 227.2,
+    "started_at_warsaw": "2026-11-09 17:24:23 CET",
+    "completed_at_warsaw": "2026-11-09 17:28:10 CET",
+    "session_logs": [
+      "[17:24:23] 🚀 [START] Rozpoczęcie procedury sesji dla ucznia: Oleslaw 010 (login: asa61####)",
+      "[17:24:23] ⚙️ [KONFIGURACJA] Headless=True, wyciszenie dźwięku=True, limit słówek=45",
+      "[17:24:25] 🌐 [PRZEGLĄDARKA] Uruchomiono silnik Chromium (wersja standardowa, locale=pl-PL)",
+      "[17:24:25] 🛡️ [FILTR] Aktywowano skrypt blokujący wyskakujące banery zgód RODO/Cookies",
+      "[17:24:25] 🔗 [NAWIGACJA] Próba 1/3: Łączenie z https://instaling.pl/teacher.php?page=login (domcontentloaded)...",
+      "[17:24:26] 📡 [SERWER] Strona logowania wczytana pomyślnie (kod HTTP 200, czas: 1.60s)",
+      "[17:24:27] 🔑 [LOGOWANIE] Wprowadzanie identyfikatora ucznia: 'asa61####'",
+      "[17:24:28] 🔒 [LOGOWANIE] Wprowadzanie hasła użytkownika (znaki ukryte)",
+      "[17:24:28] 🖱️ [LOGOWANIE] Kliknięcie przycisku 'ZALOGUJ' i oczekiwanie na autoryzację...",
+      "[17:24:32] ✅ [AUTORYZACJA] Zalogowano pomyślnie jako Oleslaw 010! (Adres URL: https://instaling.pl/student/pages/mainPage.php?student_id=2571886)",
+      "[17:24:32] 🛡️ [SKANER DETEKCJI NAUCZYCIELA] Status panelu: Poproś rodzica o założenie konta rodzica, aby pochwalić się postępami i uzyskać dostęp do słówek ponadprogramowych.",
+      "[17:24:32] 🚀 [ETAP SESJI 1/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[17:24:32] ▶️ [PANEL] Wykryto przycisk 'Dokończ sesję' — otwieram sesję...",
+      "[17:24:35] 🔘 [SESJA] Ekran wznowienia — klikam 'Kontynuuj sesję'",
+      "[17:24:45] ✅ [POPRAWNIE #1] 'aktorstwo; gra aktorska' ➔ 'acting'",
+      "[17:24:52] ✅ [POPRAWNIE #2] 'malować' ➔ 'paint'",
+      "[17:25:44] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 2 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[17:25:44] 🚀 [ETAP SESJI 2/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[17:26:33] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 2 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[17:26:33] 🚀 [ETAP SESJI 3/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[17:27:22] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 2 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[17:27:22] 🚀 [ETAP SESJI 4/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[17:28:10] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 2 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[17:28:10] 🏁 [STATYSTYKA KOŃCOWA] Rozwiązano łącznie: 2 pytań | Poprawne: 2 (100.0%) | Błędy: 0",
+      "[17:28:10] 🆕 [NOWE SŁÓWKA] Wykryto i zapamiętano: 0 nowych słówek",
+      "[17:28:10] ⏱️ [CZAS SESJI] Całkowity czas od zalogowania do wylogowania: 227.2s (~3.8 min)",
+      "[17:28:10] \n[OK] SESJA DLA Oleslaw 010 (asa61####) ZAKONCZONA SUKCESEM!",
+      "[17:28:10]     Czas: 2026-11-09 17:24:23 CET -> 2026-11-09 17:28:10 CET (227.2s)",
+      "[17:28:10]     Rozwiazano: 2 | Poprawne: 2 (100.0%)\n",
+      "[17:28:10] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:",
+      "[17:28:10]    1. aktorstwo; gra aktorska ➔ acting [✅ POPRAWNIE]",
+      "[17:28:10]    2. malować ➔ paint [✅ POPRAWNIE]",
+      "[17:28:10] ",
+      "[17:28:10] [!] Błąd w trakcie wykonywania sesji dla Oleslaw 010: name 'user_line' is not defined",
+      "[17:28:10] [!] Błąd sesji - szczegóły: name 'user_line' is not defined"
+    ],
+    "timestamp": "2026-11-09T16:28:10.991726"
   }
 ]
