@@ -128,7 +128,7 @@ def run_tests():
                 # 1. Test #testy (Nowy kanał)
                 test_details = [
                     "• ✅ **Strefa czasowa:** `Europe/Warsaw` (CET/CEST) — zsynchronizowana",
-                    "• ✅ **Uczniowie:** Olesław 010, Slay Emo Girl Jagodka, OliwiercioTheHacker",
+                    f"• ✅ **Uczniowie:** {', '.join([u.get('nickname', 'Uczeń') for u in UsersManager().get_active_users()])}",
                     "• ✅ **Kolejka sesji:** Płynne przechodzenie bez sztucznego opóźnienia 45m",
                     "• ✅ **Baza wiedzy:** Słownik gotowy do samonaprawiania słówek",
                     "• ✅ **Połączenie InstaLing:** HTTP 200 OK — serwis odpowiada",

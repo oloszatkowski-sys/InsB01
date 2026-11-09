@@ -54,7 +54,7 @@ class UsersManager:
                 },
                 {
                     "id": "user_4",
-                    "nickname": "Oliwka Pożeracz Tostów",
+                    "nickname": "Oliwka Pożeraczka Tostów",
                     "login": "kl7990038",
                     "password": "",
                     "active": True,
