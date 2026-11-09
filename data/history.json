@@ -3829,5 +3829,136 @@
       "[17:40:27] [!] Błąd sesji - szczegóły: name 'user_line' is not defined"
     ],
     "timestamp": "2026-11-09T16:40:27.428013"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:20",
+    "words_total": 9,
+    "words_correct": 5,
+    "words_mistakes": 4,
+    "new_words_count": 0,
+    "autocorrect_count": 2,
+    "accuracy_percent": 55.6,
+    "duration_seconds": 300.7,
+    "started_at_warsaw": "2026-11-09 23:54:39 CET",
+    "completed_at_warsaw": "2026-11-09 23:59:39 CET",
+    "finished_at": "2026-11-09T23:59:39.968925+01:00",
+    "words_details": [
+      {
+        "prompt": "targ, jarmark",
+        "answer": "fair",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "serial kryminalny",
+        "answer": "crime series",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "muzyk",
+        "answer": "musician",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "śpiewać",
+        "answer": "sing",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-09T22:59:39.969249"
+  },
+  {
+    "success": false,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:20",
+    "error": "name 'user_line' is not defined",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/InsB01/InsB01/bot.py\", line 588, in run_session\n    self.notifier.send_session_summary(result, user, session_logs)\n  File \"/home/runner/work/InsB01/InsB01/notifier.py\", line 267, in send_session_summary\n    f\"👤 **Uczeń:** {user_line}\\n\"\n                     ^^^^^^^^^\nNameError: name 'user_line' is not defined\n",
+    "error_count": 1,
+    "max_retries": 2,
+    "retry_after_warsaw": "2026-11-10 00:59:39 CET",
+    "duration_seconds": 300.7,
+    "started_at_warsaw": "2026-11-09 23:54:39 CET",
+    "completed_at_warsaw": "2026-11-09 23:59:39 CET",
+    "session_logs": [
+      "[23:54:39] 🚀 [START] Rozpoczęcie procedury sesji dla ucznia: Oleslaw 010 (login: asa61####)",
+      "[23:54:39] ⚙️ [KONFIGURACJA] Headless=True, wyciszenie dźwięku=True, limit słówek=45",
+      "[23:54:40] 🌐 [PRZEGLĄDARKA] Uruchomiono silnik Chromium (wersja standardowa, locale=pl-PL)",
+      "[23:54:40] 🛡️ [FILTR] Aktywowano skrypt blokujący wyskakujące banery zgód RODO/Cookies",
+      "[23:54:40] 🔗 [NAWIGACJA] Próba 1/3: Łączenie z https://instaling.pl/teacher.php?page=login (domcontentloaded)...",
+      "[23:54:42] 📡 [SERWER] Strona logowania wczytana pomyślnie (kod HTTP 200, czas: 1.74s)",
+      "[23:54:43] 🔑 [LOGOWANIE] Wprowadzanie identyfikatora ucznia: 'asa61####'",
+      "[23:54:44] 🔒 [LOGOWANIE] Wprowadzanie hasła użytkownika (znaki ukryte)",
+      "[23:54:44] 🖱️ [LOGOWANIE] Kliknięcie przycisku 'ZALOGUJ' i oczekiwanie na autoryzację...",
+      "[23:54:48] ✅ [AUTORYZACJA] Zalogowano pomyślnie jako Oleslaw 010! (Adres URL: https://instaling.pl/student/pages/mainPage.php?student_id=2571886)",
+      "[23:54:48] 🛡️ [SKANER DETEKCJI NAUCZYCIELA] Status panelu: Brak uwag w panelu ucznia (Profil w 100% czysty, brak komunikatów od nauczyciela)",
+      "[23:54:48] 🚀 [ETAP SESJI 1/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[23:54:48] ▶️ [PANEL] Wykryto przycisk 'Rozpocznij kolejną sesję' — otwieram sesję...",
+      "[23:54:50] 🔘 [SESJA] Ekran gotowości — klikam 'Rozpocznij sesję'",
+      "[23:55:00] ✅ [POPRAWNIE #1] 'targ, jarmark' ➔ 'fair'",
+      "[23:55:09] 🎯 [CELOWY BŁĄD #2] 'grupa' -> wpisano 'grou' (docelowo: 'group')",
+      "[23:55:19] 🔄 [AUTOKOREKTA #3] 'grupa': zmieniono '_____' ➔ 'group' w bazie bota!",
+      "[23:55:28] ✅ [POPRAWNIE #4] 'aktor' ➔ 'actor'",
+      "[23:55:38] 🎯 [CELOWY BŁĄD #5] 'obraz' -> wpisano 'paintin' (docelowo: 'painting')",
+      "[23:55:50] 🔄 [AUTOKOREKTA #6] 'obraz': zmieniono '________' ➔ 'painting' w bazie bota!",
+      "[23:56:02] ✅ [POPRAWNIE #7] 'serial kryminalny' ➔ 'crime series'",
+      "[23:56:13] ✅ [POPRAWNIE #8] 'muzyk' ➔ 'musician'",
+      "[23:56:22] ✅ [POPRAWNIE #9] 'śpiewać' ➔ 'sing'",
+      "[23:57:13] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 9 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[23:57:13] 🚀 [ETAP SESJI 2/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[23:58:01] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 9 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[23:58:01] 🚀 [ETAP SESJI 3/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[23:58:50] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 9 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[23:58:50] 🚀 [ETAP SESJI 4/4] Uruchamiam/dokańczam sesję dla Oleslaw 010...",
+      "[23:59:39] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 9 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[23:59:39] 🏁 [STATYSTYKA KOŃCOWA] Rozwiązano łącznie: 9 pytań | Poprawne: 5 (55.6%) | Błędy: 4",
+      "[23:59:39] 🆕 [NOWE SŁÓWKA] Wykryto i zapamiętano: 0 nowych słówek",
+      "[23:59:39] ⏱️ [CZAS SESJI] Całkowity czas od zalogowania do wylogowania: 300.7s (~5.0 min)",
+      "[23:59:39] \n[OK] SESJA DLA Oleslaw 010 (asa61####) ZAKONCZONA SUKCESEM!",
+      "[23:59:39]     Czas: 2026-11-09 23:54:39 CET -> 2026-11-09 23:59:39 CET (300.7s)",
+      "[23:59:39]     Rozwiazano: 9 | Poprawne: 5 (55.6%)\n",
+      "[23:59:39] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:",
+      "[23:59:39]    1. targ, jarmark ➔ fair [✅ POPRAWNIE]",
+      "[23:59:39]    2. grupa ➔ _____ [⚠️ BŁĄD]",
+      "[23:59:39]    3. grupa ➔ group [🔄 AUTOKOREKTA]",
+      "[23:59:39]    4. aktor ➔ actor [✅ POPRAWNIE]",
+      "[23:59:39]    5. obraz ➔ ________ [⚠️ BŁĄD]",
+      "[23:59:39]    6. obraz ➔ painting [🔄 AUTOKOREKTA]",
+      "[23:59:39]    7. serial kryminalny ➔ crime series [✅ POPRAWNIE]",
+      "[23:59:39]    8. muzyk ➔ musician [✅ POPRAWNIE]",
+      "[23:59:39]    9. śpiewać ➔ sing [✅ POPRAWNIE]",
+      "[23:59:39] ",
+      "[23:59:39] [!] Błąd w trakcie wykonywania sesji dla Oleslaw 010: name 'user_line' is not defined",
+      "[23:59:39] [!] Błąd sesji - szczegóły: name 'user_line' is not defined"
+    ],
+    "timestamp": "2026-11-09T22:59:39.976238"
   }
 ]

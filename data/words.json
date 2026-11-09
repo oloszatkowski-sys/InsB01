@@ -829,15 +829,15 @@
     "answer": "group",
     "prompt": "grupa",
     "sentence": "It's my favourite music _____\nluka\n.",
-    "updated_at": "2026-10-29T20:11:46.235171",
-    "usage_count": 3
+    "updated_at": "2026-11-09T22:55:19.589866",
+    "usage_count": 5
   },
   "grupa": {
     "answer": "group",
     "prompt": "grupa",
     "sentence": "It's my favourite music _____\nluka\n.",
-    "updated_at": "2026-10-29T20:11:46.235171",
-    "usage_count": 3
+    "updated_at": "2026-11-09T22:55:19.589866",
+    "usage_count": 5
   },
   "can you describe the _____________ luka ? | ilustracje": {
     "answer": "illustrations",
@@ -927,15 +927,15 @@
     "answer": "painting",
     "prompt": "obraz",
     "sentence": "On the wall there is a beautiful ________\nluka\n.",
-    "updated_at": "2026-11-07T16:05:40.698903",
-    "usage_count": 3
+    "updated_at": "2026-11-09T22:55:50.499763",
+    "usage_count": 5
   },
   "obraz": {
     "answer": "painting",
     "prompt": "obraz",
     "sentence": "On the wall there is a beautiful ________\nluka\n.",
-    "updated_at": "2026-11-07T16:05:40.698903",
-    "usage_count": 3
+    "updated_at": "2026-11-09T22:55:50.499763",
+    "usage_count": 5
   },
   "he ___ luka ____ luka after he took over his father's firm. | stać się bogatym, wzbogacić się": {
     "answer": "get rich",
