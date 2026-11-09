@@ -170,6 +170,8 @@ class Notifier:
     def _get_webhook(self, key: str) -> Optional[str]:
         url = self.config.get(key, "").strip()
         if not url:
+            url = self.config.get("webhook_sekcja", "").strip()
+        if not url:
             url = self.config.get("discord_webhook_url", "").strip()
         return url if url else None
 
