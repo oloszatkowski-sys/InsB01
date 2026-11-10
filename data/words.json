@@ -1132,5 +1132,159 @@
     "sentence": "Students, stop talking and ___\nluka\n _________\nluka\n during the class!",
     "updated_at": "2026-11-06T15:39:55.039314",
     "usage_count": 3
+  },
+  "i’m so happy her latest novel finally ____ luka ___ luka ! | ukazywać się; wychodzić": {
+    "answer": "come out",
+    "prompt": "ukazywać się; wychodzić",
+    "sentence": "I’m so happy her latest novel finally ____\nluka\n ___\nluka\n!",
+    "updated_at": "2026-11-10T15:21:42.853661",
+    "usage_count": 1
+  },
+  "ukazywać się; wychodzić": {
+    "answer": "come out",
+    "prompt": "ukazywać się; wychodzić",
+    "sentence": "I’m so happy her latest novel finally ____\nluka\n ___\nluka\n!",
+    "updated_at": "2026-11-10T15:21:42.853661",
+    "usage_count": 1
+  },
+  "i'm __________ luka against this rule. | zdecydowanie; definitywnie": {
+    "answer": "definitely",
+    "prompt": "zdecydowanie; definitywnie",
+    "sentence": "I'm __________\nluka\n against this rule.",
+    "updated_at": "2026-11-10T15:23:07.872225",
+    "usage_count": 3
+  },
+  "zdecydowanie; definitywnie": {
+    "answer": "definitely",
+    "prompt": "zdecydowanie; definitywnie",
+    "sentence": "I'm __________\nluka\n against this rule.",
+    "updated_at": "2026-11-10T15:23:07.872225",
+    "usage_count": 3
+  },
+  "are there any science fiction ______ luka ______ luka ? | film niemy": {
+    "answer": "silent movie",
+    "prompt": "film niemy",
+    "sentence": "Are there any science fiction ______\nluka\n ______\nluka\n?",
+    "updated_at": "2026-11-10T15:22:09.564841",
+    "usage_count": 1
+  },
+  "film niemy": {
+    "answer": "silent movie",
+    "prompt": "film niemy",
+    "sentence": "Are there any science fiction ______\nluka\n ______\nluka\n?",
+    "updated_at": "2026-11-10T15:22:09.564841",
+    "usage_count": 1
+  },
+  "could you turn the _________ luka on? i don't understand everything they say. | napisy (w filmie)": {
+    "answer": "subtitles",
+    "prompt": "napisy (w filmie)",
+    "sentence": "Could you turn the _________\nluka\n on? I don't understand everything they say.",
+    "updated_at": "2026-11-10T15:22:30.948274",
+    "usage_count": 1
+  },
+  "napisy (w filmie)": {
+    "answer": "subtitles",
+    "prompt": "napisy (w filmie)",
+    "sentence": "Could you turn the _________\nluka\n on? I don't understand everything they say.",
+    "updated_at": "2026-11-10T15:22:30.948274",
+    "usage_count": 1
+  },
+  "can you prepare a _______ luka version? | cyfrowy": {
+    "answer": "digital",
+    "prompt": "cyfrowy",
+    "sentence": "Can you prepare a _______\nluka\n version?",
+    "updated_at": "2026-11-10T15:22:57.251567",
+    "usage_count": 1
+  },
+  "cyfrowy": {
+    "answer": "digital",
+    "prompt": "cyfrowy",
+    "sentence": "Can you prepare a _______\nluka\n version?",
+    "updated_at": "2026-11-10T15:22:57.251567",
+    "usage_count": 1
+  },
+  "the film was _____ luka __ luka facts. | oparty na": {
+    "answer": "based on",
+    "prompt": "oparty na",
+    "sentence": "The film was _____\nluka\n __\nluka\n facts.",
+    "updated_at": "2026-11-10T15:23:29.818106",
+    "usage_count": 1
+  },
+  "oparty na": {
+    "answer": "based on",
+    "prompt": "oparty na",
+    "sentence": "The film was _____\nluka\n __\nluka\n facts.",
+    "updated_at": "2026-11-10T15:23:29.818106",
+    "usage_count": 1
+  },
+  "that's our newest __________ luka . | technologia": {
+    "answer": "technology",
+    "prompt": "technologia",
+    "sentence": "That's our newest __________\nluka\n.",
+    "updated_at": "2026-11-10T15:25:20.577523",
+    "usage_count": 3
+  },
+  "technologia": {
+    "answer": "technology",
+    "prompt": "technologia",
+    "sentence": "That's our newest __________\nluka\n.",
+    "updated_at": "2026-11-10T15:25:20.577523",
+    "usage_count": 3
+  },
+  "they say in the ______ luka that it's an amazing film. | recenzja": {
+    "answer": "review",
+    "prompt": "recenzja",
+    "sentence": "They say in the ______\nluka\n that it's an amazing film.",
+    "updated_at": "2026-11-10T15:24:07.782170",
+    "usage_count": 1
+  },
+  "recenzja": {
+    "answer": "review",
+    "prompt": "recenzja",
+    "sentence": "They say in the ______\nluka\n that it's an amazing film.",
+    "updated_at": "2026-11-10T15:24:07.782170",
+    "usage_count": 1
+  },
+  "i like watching ________ luka . | western (film o dzikim zachodzie)": {
+    "answer": "western",
+    "prompt": "western (film o Dzikim Zachodzie)",
+    "sentence": "I like watching ________\nluka\n.",
+    "updated_at": "2026-11-10T15:25:39.939565",
+    "usage_count": 3
+  },
+  "western (film o dzikim zachodzie)": {
+    "answer": "western",
+    "prompt": "western (film o Dzikim Zachodzie)",
+    "sentence": "I like watching ________\nluka\n.",
+    "updated_at": "2026-11-10T15:25:39.939565",
+    "usage_count": 3
+  },
+  "my grandma watches a lot of ______ luka . | serial": {
+    "answer": "drama",
+    "prompt": "serial",
+    "sentence": "My grandma watches a lot of ______\nluka\n.",
+    "updated_at": "2026-11-10T15:25:48.925742",
+    "usage_count": 3
+  },
+  "serial": {
+    "answer": "drama",
+    "prompt": "serial",
+    "sentence": "My grandma watches a lot of ______\nluka\n.",
+    "updated_at": "2026-11-10T15:25:48.925742",
+    "usage_count": 3
+  },
+  "what a ________ luka ! | katastrofa": {
+    "answer": "disaster",
+    "prompt": "katastrofa",
+    "sentence": "What a ________\nluka\n!",
+    "updated_at": "2026-11-10T15:26:42.390788",
+    "usage_count": 3
+  },
+  "katastrofa": {
+    "answer": "disaster",
+    "prompt": "katastrofa",
+    "sentence": "What a ________\nluka\n!",
+    "updated_at": "2026-11-10T15:26:42.390788",
+    "usage_count": 3
   }
 }

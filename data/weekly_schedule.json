@@ -170,10 +170,10 @@
           "is_off_day": false,
           "scheduled_minutes": 981,
           "scheduled_time": "16:21",
-          "status": "Oczekuje",
+          "status": "W trakcie",
           "completed": false,
           "countdown_sent": false,
-          "started_at": null,
+          "started_at": "2026-11-10 16:21:00 CET",
           "completed_at": null,
           "duration_seconds": null,
           "accuracy_percent": null,
@@ -637,5 +637,5 @@
     }
   },
   "last_weekly_plan_week": "2026-W46",
-  "last_daily_plan_date": "2026-11-09"
+  "last_daily_plan_date": "2026-11-10"
 }

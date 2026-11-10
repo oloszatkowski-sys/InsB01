@@ -3960,5 +3960,337 @@
       "[23:59:39] [!] Błąd sesji - szczegóły: name 'user_line' is not defined"
     ],
     "timestamp": "2026-11-09T22:59:39.976238"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "16:21",
+    "words_total": 36,
+    "words_correct": 15,
+    "words_mistakes": 21,
+    "new_words_count": 11,
+    "autocorrect_count": 5,
+    "accuracy_percent": 41.7,
+    "duration_seconds": 506.6,
+    "started_at_warsaw": "2026-11-10 16:21:00 CET",
+    "completed_at_warsaw": "2026-11-10 16:29:27 CET",
+    "finished_at": "2026-11-10T16:29:27.500266+01:00",
+    "words_details": [
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grać główną rolę",
+        "answer": "star",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ukazywać się; wychodzić",
+        "answer": "come out",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "nowe"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "napisy (w filmie)",
+        "answer": "subtitles",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ukazywać się; wychodzić",
+        "answer": "come out",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "cyfrowy",
+        "answer": "digital",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "oparty na",
+        "answer": "based on",
+        "status": "nowe"
+      },
+      {
+        "prompt": "cyfrowy",
+        "answer": "digital",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "technologia",
+        "answer": "technology",
+        "status": "nowe"
+      },
+      {
+        "prompt": "oparty na",
+        "answer": "based on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "recenzja",
+        "answer": "review",
+        "status": "nowe"
+      },
+      {
+        "prompt": "napisy (w filmie)",
+        "answer": "subtitles",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obsada",
+        "answer": "cast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "western",
+        "status": "nowe"
+      },
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "recenzja",
+        "answer": "review",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "serial",
+        "answer": "drama",
+        "status": "nowe"
+      },
+      {
+        "prompt": "technologia",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "technologia",
+        "answer": "technology",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "serial",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "western",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "serial",
+        "answer": "drama",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "western",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "disaster",
+        "status": "nowe"
+      },
+      {
+        "prompt": "serial",
+        "answer": "drama",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "technologia",
+        "answer": "technology",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "disaster",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "disaster",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-10T15:29:27.500521"
+  },
+  {
+    "success": false,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "16:21",
+    "error": "name 'user_line' is not defined",
+    "traceback": "Traceback (most recent call last):\n  File \"/home/runner/work/InsB01/InsB01/bot.py\", line 588, in run_session\n    self.notifier.send_session_summary(result, user, session_logs)\n  File \"/home/runner/work/InsB01/InsB01/notifier.py\", line 267, in send_session_summary\n    f\"👤 **Uczeń:** {user_line}\\n\"\n                     ^^^^^^^^^\nNameError: name 'user_line' is not defined\n",
+    "error_count": 1,
+    "max_retries": 2,
+    "retry_after_warsaw": "2026-11-10 17:29:27 CET",
+    "duration_seconds": 506.7,
+    "started_at_warsaw": "2026-11-10 16:21:00 CET",
+    "completed_at_warsaw": "2026-11-10 16:29:27 CET",
+    "session_logs": [
+      "[16:21:00] 🚀 [START] Rozpoczęcie procedury sesji dla ucznia: Oliwka Pożeraczka Tostów (login: kl799####)",
+      "[16:21:00] ⚙️ [KONFIGURACJA] Headless=True, wyciszenie dźwięku=True, limit słówek=45",
+      "[16:21:01] 🌐 [PRZEGLĄDARKA] Uruchomiono silnik Chromium (wersja standardowa, locale=pl-PL)",
+      "[16:21:01] 🛡️ [FILTR] Aktywowano skrypt blokujący wyskakujące banery zgód RODO/Cookies",
+      "[16:21:01] 🔗 [NAWIGACJA] Próba 1/3: Łączenie z https://instaling.pl/teacher.php?page=login (domcontentloaded)...",
+      "[16:21:03] 📡 [SERWER] Strona logowania wczytana pomyślnie (kod HTTP 200, czas: 1.88s)",
+      "[16:21:04] 🔑 [LOGOWANIE] Wprowadzanie identyfikatora ucznia: 'kl799####'",
+      "[16:21:04] 🔒 [LOGOWANIE] Wprowadzanie hasła użytkownika (znaki ukryte)",
+      "[16:21:05] 🖱️ [LOGOWANIE] Kliknięcie przycisku 'ZALOGUJ' i oczekiwanie na autoryzację...",
+      "[16:21:08] ✅ [AUTORYZACJA] Zalogowano pomyślnie jako Oliwka Pożeraczka Tostów! (Adres URL: https://instaling.pl/student/pages/mainPage.php?student_id=3236758)",
+      "[16:21:08] 🛡️ [SKANER DETEKCJI NAUCZYCIELA] Status panelu: Brak uwag w panelu ucznia (Profil w 100% czysty, brak komunikatów od nauczyciela)",
+      "[16:21:08] 🚀 [ETAP SESJI 1/4] Uruchamiam/dokańczam sesję dla Oliwka Pożeraczka Tostów...",
+      "[16:21:08] ▶️ [PANEL] Wykryto przycisk 'Rozpocznij codzienną sesję' — otwieram sesję...",
+      "[16:21:11] 🔘 [SESJA] Ekran gotowości — klikam 'Rozpocznij sesję'",
+      "[16:21:21] ✅ [POPRAWNIE #1] 'festiwal' ➔ 'festival'",
+      "[16:21:32] ✅ [POPRAWNIE #2] 'grać główną rolę' ➔ 'star'",
+      "[16:21:41] 🆕 [NOWE SŁÓWKO #3] 'ukazywać się; wychodzić' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:21:42] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'ukazywać się; wychodzić' ➔ 'come out'",
+      "[16:21:49] 🆕 [NOWE SŁÓWKO #4] 'zdecydowanie; definitywnie' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:21:50] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'zdecydowanie; definitywnie' ➔ 'definitely'",
+      "[16:22:01] ✅ [POPRAWNIE #5] 'kreskówka' ➔ 'cartoon'",
+      "[16:22:07] 🆕 [NOWE SŁÓWKO #6] 'film niemy' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:22:09] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'film niemy' ➔ 'silent movie'",
+      "[16:22:21] ✅ [POPRAWNIE #7] 'film niemy' ➔ 'silent movie'",
+      "[16:22:29] 🆕 [NOWE SŁÓWKO #8] 'napisy (w filmie)' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:22:30] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'napisy (w filmie)' ➔ 'subtitles'",
+      "[16:22:39] 🎯 [CELOWY BŁĄD #9] 'zdecydowanie; definitywnie' -> wpisano 'definitel' (docelowo: 'definitely')",
+      "[16:22:49] ✅ [POPRAWNIE #10] 'ukazywać się; wychodzić' ➔ 'come out'",
+      "[16:22:55] 🆕 [NOWE SŁÓWKO #11] 'cyfrowy' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:22:57] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'cyfrowy' ➔ 'digital'",
+      "[16:23:07] 🔄 [AUTOKOREKTA #12] 'zdecydowanie; definitywnie': zmieniono '__________' ➔ 'definitely' w bazie bota!",
+      "[16:23:19] ✅ [POPRAWNIE #13] 'zdecydowanie; definitywnie' ➔ 'definitely'",
+      "[16:23:28] 🆕 [NOWE SŁÓWKO #14] 'oparty na' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:23:29] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'oparty na' ➔ 'based on'",
+      "[16:23:39] ✅ [POPRAWNIE #15] 'cyfrowy' ➔ 'digital'",
+      "[16:23:47] 🆕 [NOWE SŁÓWKO #16] 'technologia' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:23:49] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'technologia' ➔ 'technology'",
+      "[16:23:59] ✅ [POPRAWNIE #17] 'oparty na' ➔ 'based on'",
+      "[16:24:05] 🆕 [NOWE SŁÓWKO #18] 'recenzja' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:24:07] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'recenzja' ➔ 'review'",
+      "[16:24:18] ✅ [POPRAWNIE #19] 'napisy (w filmie)' ➔ 'subtitles'",
+      "[16:24:26] ✅ [POPRAWNIE #20] 'obsada' ➔ 'cast'",
+      "[16:24:30] 🆕 [NOWE SŁÓWKO #21] 'western (film o Dzikim Zachodzie)' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:24:32] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'western (film o Dzikim Zachodzie)' ➔ 'western'",
+      "[16:24:41] 🎯 [CELOWY BŁĄD #22] 'western (film o Dzikim Zachodzie)' -> wpisano 'wester' (docelowo: 'western')",
+      "[16:24:54] ✅ [POPRAWNIE #23] 'recenzja' ➔ 'review'",
+      "[16:25:00] 🆕 [NOWE SŁÓWKO #24] 'serial' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:25:02] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'serial' ➔ 'drama'",
+      "[16:25:09] 🎯 [CELOWY BŁĄD #25] 'technologia' -> wpisano 'technolog' (docelowo: 'technology')",
+      "[16:25:20] 🔄 [AUTOKOREKTA #26] 'technologia': zmieniono '__________' ➔ 'technology' w bazie bota!",
+      "[16:25:29] 🎯 [CELOWY BŁĄD #27] 'serial' -> wpisano 'dram' (docelowo: 'drama')",
+      "[16:25:39] 🔄 [AUTOKOREKTA #28] 'western (film o Dzikim Zachodzie)': zmieniono '________' ➔ 'western' w bazie bota!",
+      "[16:25:48] 🔄 [AUTOKOREKTA #29] 'serial': zmieniono '______' ➔ 'drama' w bazie bota!",
+      "[16:25:57] ✅ [POPRAWNIE #30] 'western (film o Dzikim Zachodzie)' ➔ 'western'",
+      "[16:26:04] 🆕 [NOWE SŁÓWKO #31] 'katastrofa' -> brak w bazie, pobieranie poprawnej odpowiedzi...",
+      "[16:26:06] 💾 [ZAPISANO] Odczytano i dodano do bazy bota: 'katastrofa' ➔ 'disaster'",
+      "[16:26:12] ✅ [POPRAWNIE #32] 'serial' ➔ 'drama'",
+      "[16:26:24] ✅ [POPRAWNIE #33] 'technologia' ➔ 'technology'",
+      "[16:26:30] 🎯 [CELOWY BŁĄD #34] 'katastrofa' -> wpisano 'disaste' (docelowo: 'disaster')",
+      "[16:26:42] 🔄 [AUTOKOREKTA #35] 'katastrofa': zmieniono '________' ➔ 'disaster' w bazie bota!",
+      "[16:26:51] ✅ [POPRAWNIE #36] 'katastrofa' ➔ 'disaster'",
+      "[16:26:55] 🎉 [SESJA] Ekran ukończenia sesji wykryty w etapie 1!",
+      "[16:27:00] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 36 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[16:27:00] 🚀 [ETAP SESJI 2/4] Uruchamiam/dokańczam sesję dla Oliwka Pożeraczka Tostów...",
+      "[16:27:50] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 36 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[16:27:50] 🚀 [ETAP SESJI 3/4] Uruchamiam/dokańczam sesję dla Oliwka Pożeraczka Tostów...",
+      "[16:28:38] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 36 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[16:28:38] 🚀 [ETAP SESJI 4/4] Uruchamiam/dokańczam sesję dla Oliwka Pożeraczka Tostów...",
+      "[16:29:27] ⚠️ [SESJA NIEUKOŃCZONA] Na pulpicie nadal brak potwierdzenia (Brak jednoznacznego potwierdzenia wykonania)! Zrobiono dotąd 36 słówek. Dokańczam sesję w kolejnym etapie...",
+      "[16:29:27] 🏁 [STATYSTYKA KOŃCOWA] Rozwiązano łącznie: 36 pytań | Poprawne: 15 (41.7%) | Błędy: 21",
+      "[16:29:27] 🆕 [NOWE SŁÓWKA] Wykryto i zapamiętano: 11 nowych słówek",
+      "[16:29:27] ⏱️ [CZAS SESJI] Całkowity czas od zalogowania do wylogowania: 506.6s (~8.4 min)",
+      "[16:29:27] \n[OK] SESJA DLA Oliwka Pożeraczka Tostów (kl799####) ZAKONCZONA SUKCESEM!",
+      "[16:29:27]     Czas: 2026-11-10 16:21:00 CET -> 2026-11-10 16:29:27 CET (506.6s)",
+      "[16:29:27]     Rozwiazano: 36 | Poprawne: 15 (41.7%)\n",
+      "[16:29:27] 📚 SŁÓWKA ROZWIĄZANE W TEJ SESJI:",
+      "[16:29:27]    1. festiwal ➔ festival [✅ POPRAWNIE]",
+      "[16:29:27]    2. grać główną rolę ➔ star [✅ POPRAWNIE]",
+      "[16:29:27]    3. ukazywać się; wychodzić ➔ come out [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]    4. zdecydowanie; definitywnie ➔ definitely [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]    5. kreskówka ➔ cartoon [✅ POPRAWNIE]",
+      "[16:29:27]    6. film niemy ➔ silent movie [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]    7. film niemy ➔ silent movie [✅ POPRAWNIE]",
+      "[16:29:27]    8. napisy (w filmie) ➔ subtitles [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]    9. zdecydowanie; definitywnie ➔ __________ [⚠️ BŁĄD]",
+      "[16:29:27]   10. ukazywać się; wychodzić ➔ come out [✅ POPRAWNIE]",
+      "[16:29:27]   11. cyfrowy ➔ digital [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]   12. zdecydowanie; definitywnie ➔ definitely [🔄 AUTOKOREKTA]",
+      "[16:29:27]   13. zdecydowanie; definitywnie ➔ definitely [✅ POPRAWNIE]",
+      "[16:29:27]   14. oparty na ➔ based on [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]   15. cyfrowy ➔ digital [✅ POPRAWNIE]",
+      "[16:29:27]   16. technologia ➔ technology [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]   17. oparty na ➔ based on [✅ POPRAWNIE]",
+      "[16:29:27]   18. recenzja ➔ review [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]   19. napisy (w filmie) ➔ subtitles [✅ POPRAWNIE]",
+      "[16:29:27]   20. obsada ➔ cast [✅ POPRAWNIE]",
+      "[16:29:27]   21. western (film o Dzikim Zachodzie) ➔ western [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]   22. western (film o Dzikim Zachodzie) ➔ ________ [⚠️ BŁĄD]",
+      "[16:29:27]   23. recenzja ➔ review [✅ POPRAWNIE]",
+      "[16:29:27]   24. serial ➔ drama [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]   25. technologia ➔ __________ [⚠️ BŁĄD]",
+      "[16:29:27]   26. technologia ➔ technology [🔄 AUTOKOREKTA]",
+      "[16:29:27]   27. serial ➔ ______ [⚠️ BŁĄD]",
+      "[16:29:27]   28. western (film o Dzikim Zachodzie) ➔ western [🔄 AUTOKOREKTA]",
+      "[16:29:27]   29. serial ➔ drama [🔄 AUTOKOREKTA]",
+      "[16:29:27]   30. western (film o Dzikim Zachodzie) ➔ western [✅ POPRAWNIE]",
+      "[16:29:27]   31. katastrofa ➔ disaster [🆕 NOWE ZAPAMIĘTANO]",
+      "[16:29:27]   32. serial ➔ drama [✅ POPRAWNIE]",
+      "[16:29:27]   33. technologia ➔ technology [✅ POPRAWNIE]",
+      "[16:29:27]   34. katastrofa ➔ ________ [⚠️ BŁĄD]",
+      "[16:29:27]   35. katastrofa ➔ disaster [🔄 AUTOKOREKTA]",
+      "[16:29:27]   36. katastrofa ➔ disaster [✅ POPRAWNIE]",
+      "[16:29:27] ",
+      "[16:29:27] [!] Błąd w trakcie wykonywania sesji dla Oliwka Pożeraczka Tostów: name 'user_line' is not defined",
+      "[16:29:27] [!] Błąd sesji - szczegóły: name 'user_line' is not defined"
+    ],
+    "timestamp": "2026-11-10T15:29:27.555447"
   }
 ]
