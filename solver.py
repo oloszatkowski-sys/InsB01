@@ -65,11 +65,13 @@ class InstaLingSolver:
             self.page.keyboard.type(char, delay=int(random.uniform(speed_min, speed_max) * 1000))
             time.sleep(random.uniform(speed_min, speed_max))
 
-    def human_read_delay(self) -> None:
+    def human_read_delay(self) -> float:
         """Symuluje czas potrzebny człowiekowi na przeczytanie zdania."""
         t_min = min(float(self.config.get("read_time_min_s", 1.8)), 4.0)
         t_max = min(float(self.config.get("read_time_max_s", 4.0)), 7.0)
-        time.sleep(random.uniform(t_min, t_max))
+        delay = random.uniform(t_min, t_max)
+        time.sleep(delay)
+        return delay
 
     def get_prompt_and_sentence(self) -> Tuple[str, str]:
         """Pobiera polskie słowo (prompt) oraz kontekst zdania."""
@@ -178,7 +180,11 @@ class InstaLingSolver:
             return True
 
         prompt, sentence = self.get_prompt_and_sentence()
-        self.human_read_delay()
+        word_num = self.session_words_count + 1
+        read_s = self.human_read_delay()
+
+        self.log_fn(f"📝 [PYTANIE #{word_num}] Słówko: '{prompt}'" + (f" | Zdanie: '{sentence[:50]}...'" if sentence else ""))
+        self.log_fn(f"⏱️ [PERCEPCJA #{word_num}] Czas czytania pytania: {read_s:.2f}s (naturalne skupienie wzroku)")
 
         known_answer = self.storage.get_word(prompt, sentence)
         # Odrzucamy z bazy słowa systemowe jeśli przypadkowo tam trafiły
@@ -220,6 +226,8 @@ class InstaLingSolver:
 
             self.session_mistakes_count += 1
         else:
+            self.log_fn(f"🔍 [BAZA WIEDZY #{word_num}] Rozpoznano w bazie: '{known_answer}'")
+            self.log_fn(f"⌨️ [KLAWIATURA #{word_num}] Wpisywanie fizyczne: '{known_answer}'...")
             self.human_type("input#answer", known_answer)
 
             check_btn = self.page.locator("#check, button:has-text('Sprawdź')").first
@@ -240,7 +248,7 @@ class InstaLingSolver:
                     self.resolved_words.append({"prompt": prompt, "answer": known_answer, "status": "blad"})
                 self.session_mistakes_count += 1
             else:
-                self.log_fn(f"✅ [POPRAWNIE #{self.session_words_count + 1}] '{prompt}' ➔ '{known_answer}'")
+                self.log_fn(f"✅ [WERYFIKACJA #{word_num}] Serwer potwierdził: POPRAWNIE! (Odpowiedź: '{known_answer}')")
                 self.resolved_words.append({"prompt": prompt, "answer": known_answer, "status": "poprawnie"})
                 self.session_correct_count += 1
 

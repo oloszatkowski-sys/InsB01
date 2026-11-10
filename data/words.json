@@ -227,15 +227,15 @@
     "answer": "song",
     "prompt": "piosenka",
     "sentence": "What is that ____\nluka\n about?",
-    "updated_at": "2026-10-31T18:18:40.357672",
-    "usage_count": 3
+    "updated_at": "2026-11-10T17:56:07.717080",
+    "usage_count": 5
   },
   "piosenka": {
     "answer": "song",
     "prompt": "piosenka",
     "sentence": "What is that ____\nluka\n about?",
-    "updated_at": "2026-10-31T18:18:40.357672",
-    "usage_count": 3
+    "updated_at": "2026-11-10T17:56:07.717080",
+    "usage_count": 5
   },
   "he hung the ________ luka on the wall. | portret": {
     "answer": "portrait",

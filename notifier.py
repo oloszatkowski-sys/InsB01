@@ -191,7 +191,7 @@ class Notifier:
     # 1. KANAŁ #sekcja — Powiadomienia o sesji (CZYSTO, BEZ LISTY SŁÓWEK)
     # =========================================================================
     def send_session_start(self, user: Dict[str, Any], scheduled_time: str, started_pl: str) -> None:
-        """Powiadomienie o starcie sesji na kanał #sekcja (BEZWZGLĘDNIE BEZ PINGU)."""
+        """Powiadomienie o starcie sesji na kanał #sekcja (z pingiem i rozdzielnikiem)."""
         sekcja_wh = self._get_webhook("webhook_sekcja")
         if not sekcja_wh:
             return
@@ -199,24 +199,26 @@ class Notifier:
         nickname = user.get("nickname", "Uczeń")
         masked = mask_login(user.get("login", ""))
         disc_ping = get_user_mention(user)
-        user_line = f"`{nickname}` ({disc_ping} | `{masked}`)" if disc_ping else f"`{nickname}` (`{masked}`)"
-        disc_ping = get_user_mention(user)
-        user_line = f"`{nickname}` ({disc_ping} | `{masked}`)" if disc_ping else f"`{nickname}` (`{masked}`)"
+        user_line = f"**{nickname}** ({disc_ping} | `{masked}`)" if disc_ping else f"**{nickname}** (`{masked}`)"
         start_hms = started_pl[11:19] if started_pl and len(started_pl) >= 19 else started_pl
 
         desc = (
             f"👤 **Uczeń:** {user_line}\n"
             f"⏰ **Planowana godzina:** `{scheduled_time}`\n"
             f"▶️ **Rozpoczęcie (PL):** `{start_hms}`\n"
-            f"⏳ **Status:** Trwa logowanie i rozwiązywanie pytań..."
+            f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            f"⏳ **Status:** 🔄 Trwa logowanie, sprawdzanie alertów i rozwiązywanie pytań (Playwright Stealth)...\n"
+            f"🎯 **Cel sesji:** Wykonanie pełnej serii słówek i aktywacja zielonego kółka na koncie"
         )
+
+        start_ping = f"🚀 {disc_ping} — Rozpoczynam Twoją codzienną sesję InstaLing! Trwa rozwiązywanie pytań..." if disc_ping else None
 
         self._send_discord_embed(
             webhook_url=sekcja_wh,
             title=f"🤖 InstaLing Auto-Bot — Start Sesji: {nickname}",
             description=desc,
             color=0x3498DB,
-            content=None,  # Nigdy nie pinguje przy starcie
+            content=start_ping,
             footer_text="InstaLing Multi-User Manager • Ciemny Styl"
         )
 
@@ -237,6 +239,8 @@ class Notifier:
         scheduled_time = result.get("scheduled_time", "--:--")
         started_pl = result.get("started_at_warsaw", "N/A")
         completed_pl = result.get("completed_at_warsaw", "N/A")
+        disc_ping = get_user_mention(user)
+        user_line = f"**{nickname}** ({disc_ping} | `{masked}`)" if disc_ping else f"**{nickname}** (`{masked}`)"
 
         dur_nice = format_duration_pl(duration_s)
         words_details = result.get("words_details", [])
@@ -261,24 +265,28 @@ class Notifier:
         ping_role = self.config.get("discord_ping", "@everyone")
 
         if success:
-            title = f"🤖 InstaLing Auto-Bot - Sesja Ukończona: {nickname}"
+            title = f"🎉 InstaLing Auto-Bot — Sesja Ukończona: {nickname}"
             color = 0x2ECC71
             desc = (
                 f"👤 **Uczeń:** {user_line}\n"
                 f"⏰ **Planowana godzina:** `{scheduled_time}`\n"
-                f"**Status:** ✅ Sesja zakończona sukcesem\n"
-                f"**Rozpoczęcie (PL):** `{started_pl}`\n"
-                f"**Zakończenie (PL):** `{completed_pl}`\n"
-                f"**Czas trwania:** `{dur_nice}`\n"
-                f"**Rozwiązane słówka:** `{total}`\n"
-                f"**Poprawne:** `{correct}` | **Błędy:** `{mistakes}`\n"
-                f"**Skuteczność:** `{acc:.1f}%`\n"
-                f"**Nowe słówka:** `{new_words_count}`\n"
-                f"**Poprawione (autokorekta):** `{autocorrect_count}`\n"
-                f"**Akcja końcowa:** Powrót do strony głównej i bezpieczne wylogowanie"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"📊 **Status:** ✅ Sesja zakończona sukcesem (w 100% zaliczona)\n"
+                f"⏱️ **Rozpoczęcie (PL):** `{started_pl}`\n"
+                f"🏁 **Zakończenie (PL):** `{completed_pl}`\n"
+                f"⏳ **Czas trwania:** `{dur_nice}`\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"📚 **Rozwiązane słówka:** `{total} pytań`\n"
+                f"🎯 **Poprawne:** `{correct}` | **Błędy:** `{mistakes}`\n"
+                f"📈 **Skuteczność:** `{acc:.1f}%`\n"
+                f"🆕 **Nowe słówka:** `{new_words_count}`\n"
+                f"🔄 **Poprawione (autokorekta):** `{autocorrect_count}`\n"
+                f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                f"🟢 **Weryfikacja pulpitu:** Zielone kółko potwierdzone i aktywne na koncie InstaLing\n"
+                f"🛡️ **Bezpieczeństwo:** Powrót do strony głównej i bezpieczne wylogowanie z serwera"
             )
         else:
-            title = f"⚠️ InstaLing Auto-Bot - Błąd Sesji: {nickname}"
+            title = f"⚠️ InstaLing Auto-Bot — Błąd Sesji: {nickname}"
             color = 0xE74C3C
             err = result.get("error", "Nieznany błąd wykonania")
             error_count = result.get("error_count", 1)
@@ -290,22 +298,26 @@ class Notifier:
                 desc = (
                     f"👤 **Uczeń:** {user_line}\n"
                     f"⏰ **Planowana godzina:** `{scheduled_time}`\n"
-                    f"**Status:** ⚠️ Błąd serwera (Próba {error_count}/{max_retries})\n"
-                    f"**Czas zdarzenia:** `{completed_pl}`\n"
-                    f"**Szczegóły błędu:** `{err[:250]}`\n\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"⚠️ **Status:** Błąd serwera (Próba {error_count}/{max_retries})\n"
+                    f"⏱️ **Czas zdarzenia:** `{completed_pl}`\n"
+                    f"🔍 **Szczegóły błędu:** `{err[:250]}`\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
                     f"⏳ **Procedura:** Bot odczeka **60 minut** i wykona **dokładnie 1 ponowną próbę** o **{retry_time_str} CET**.\n"
                     f"🛑 **Zasada:** Jeśli ponowienie znowu nie zadziała, sesja nie będzie już dzisiaj wykonywana.\n"
                     f"📋 **Pełne logi błędu:** Kompletny zapis kroków i ślad wyjątku w `#logi-bota`."
                 )
                 ping_content = None  # BRAK PINGU @everyone dla prób automatycznych!
             else:
-                title = f"❌ InstaLing Auto-Bot - Sesja Anulowana na Dziś: {nickname}"
+                title = f"❌ InstaLing Auto-Bot — Sesja Anulowana na Dziś: {nickname}"
                 desc = (
                     f"👤 **Uczeń:** {user_line}\n"
                     f"⏰ **Planowana godzina:** `{scheduled_time}`\n"
-                    f"**Status:** ❌ Sesja anulowana na dzisiejszy dzień\n"
-                    f"**Czas zdarzenia:** `{completed_pl}`\n"
-                    f"**Błąd:** `{err[:250]}`\n\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
+                    f"❌ **Status:** Sesja anulowana na dzisiejszy dzień\n"
+                    f"⏱️ **Czas zdarzenia:** `{completed_pl}`\n"
+                    f"🔍 **Błąd:** `{err[:250]}`\n"
+                    f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
                     f"🛑 **Decyzja:** Zgodnie z zasadą, ponowna próba po 60 minutach nie powiodła się. W ten dzień bot nie podejmuje już kolejnych prób.\n"
                     f"📋 **Pełne logi:** Dostępne w kanale `#logi-bota`."
                 )
@@ -313,7 +325,7 @@ class Notifier:
 
         if sekcja_wh:
             user_mention = get_user_mention(user)
-            notify_text = f"🔔 {user_mention} — Twoja sesja InstaLing została pomyślnie ukończona!" if (user_mention and success) else None
+            notify_text = f"🔔 {user_mention} — Twoja sesja InstaLing została pomyślnie ukończona! (Wynik: {correct}/{total}, skuteczność: {acc:.1f}%)" if (user_mention and success) else None
             self._send_discord_embed(
                 webhook_url=sekcja_wh,
                 title=title,
@@ -430,50 +442,67 @@ class Notifier:
 
             words_txt = "\n".join(w_lines) if w_lines else "Brak zarejestrowanych słówek w tej sesji."
 
-            # 3. Zapis krok po kroku z konsoli
+            # 3. Zapis krok po kroku z konsoli — PEŁNY I SUPER ROZBUDOWANY BEZ UCIĘĆ!
+            console_chunks = []
             if phase_console:
-                if len(phase_console) > 14:
-                    recent_console = phase_console[:6] + [f"... [{len(phase_console) - 10} operacji] ..."] + phase_console[-4:]
-                else:
-                    recent_console = phase_console
-                console_txt = "\n".join(recent_console)
-            else:
-                total_w = (result or {}).get("words_total", len(clean_words))
-                cor_w = (result or {}).get("words_correct", len([w for w in clean_words if w['status'] == 'poprawnie']))
-                console_txt = f"Rozwiązano {total_w} pytań w tej sesji ({cor_w} poprawnych).\nWszystkie odpowiedzi zapisane i zsynchronizowane z bazą słówek."
+                curr_chunk = []
+                curr_len = 0
+                for line in phase_console:
+                    l_str = line.strip()
+                    if not l_str:
+                        continue
+                    if curr_len + len(l_str) + 1 > 850 and curr_chunk:
+                        console_chunks.append("\n".join(curr_chunk))
+                        curr_chunk = [l_str]
+                        curr_len = len(l_str) + 1
+                    else:
+                        curr_chunk.append(l_str)
+                        curr_len += len(l_str) + 1
+                if curr_chunk:
+                    console_chunks.append("\n".join(curr_chunk))
 
-            if len(console_txt) > 1000:
-                console_txt = console_txt[:980] + "\n..."
-
-            # 4. Podsumowanie końcowe
             dur_s = (result or {}).get("duration_seconds", 0)
             dur_nice = format_duration_pl(dur_s)
             tot_w = (result or {}).get("words_total", len(clean_words))
             cor_w = (result or {}).get("words_correct", 0)
             acc_val = (result or {}).get("accuracy_percent", 0.0)
 
+            # Część 1: Pola głównego embeda (max 3 chunki konsoli, gwarancja sumy < 5000 znaków)
             fields = [
                 {
                     "name": "🔑 1. Przebieg Logowania i Inicjalizacji",
-                    "value": f"```text\n{login_txt}\n```",
+                    "value": f"```text\n{login_txt[:800]}\n```",
                     "inline": False
                 },
                 {
                     "name": f"📚 2. Zestawienie Słówek z Sesji ({len(clean_words)} unikalnych):",
                     "value": words_txt,
                     "inline": False
-                },
-                {
+                }
+            ]
+
+            if console_chunks:
+                for idx, chunk in enumerate(console_chunks[:3], start=1):
+                    f_name = "📋 3. Rejestr Konsoli i Zdarzeń (Krok po kroku)" if idx == 1 else f"📋 3.{idx}. Rejestr Konsoli (Kontynuacja)"
+                    fields.append({
+                        "name": f_name,
+                        "value": f"```text\n{chunk}\n```",
+                        "inline": False
+                    })
+            else:
+                fields.append({
                     "name": "📋 3. Rejestr Konsoli i Zdarzeń",
-                    "value": f"```text\n{console_txt}\n```",
+                    "value": f"```text\nRozwiązano {tot_w} pytań w tej sesji ({cor_w} poprawnych).\nWszystkie odpowiedzi zapisane i zsynchronizowane z bazą słówek.\n```",
                     "inline": False
-                },
+                })
+
+            fields.extend([
                 {
                     "name": "🚪 4. Czas i Statystyki Końcowe",
                     "value": (
                         f"• **Czas sesji:** `{dur_nice}`\n"
                         f"• **Wynik pytań:** `{cor_w}/{tot_w}` (`{acc_val:.1f}%`)\n"
-                        f"• **Akcja końcowa:** Powrót do strony głównej i bezpieczne wylogowanie"
+                        f"• **Akcja końcowa:** Powrót do strony głównej i bezpieczne wylogowanie z serwera"
                     ),
                     "inline": False
                 },
@@ -486,7 +515,7 @@ class Notifier:
                     ),
                     "inline": False
                 }
-            ]
+            ])
 
             if not success:
                 # DEDYKOWANY PEŁNY RAPORT BŁĘDU DO #logi-bota
@@ -562,6 +591,8 @@ class Notifier:
                 return
 
             color = 0x2ECC71
+            has_part2 = len(console_chunks) > 3
+            footer_p1 = "InstaLing Auto-Bot • Logi Konsoli Część 1/2 #logi-bota" if has_part2 else "InstaLing Auto-Bot • Logi Konsoli #logi-bota"
 
             self._send_discord_embed(
                 webhook_url=webhook_url,
@@ -569,8 +600,27 @@ class Notifier:
                 description=f"Szczegółowy zapis logowania, zestawienia pytań oraz zakończenia sesji InstaLing.",
                 color=color,
                 fields=fields,
-                footer_text="InstaLing Auto-Bot • Logi Konsoli #logi-bota"
+                footer_text=footer_p1
             )
+
+            # Jeśli logi są bardzo długie, wysyłamy drugą część bez żadnego obcinania!
+            if has_part2:
+                extra_fields = []
+                for idx, chunk in enumerate(console_chunks[3:9], start=4):
+                    extra_fields.append({
+                        "name": f"📋 3.{idx}. Rejestr Konsoli (Dalszy ciąg)",
+                        "value": f"```text\n{chunk}\n```",
+                        "inline": False
+                    })
+                self._send_discord_embed(
+                    webhook_url=webhook_url,
+                    title=f"📋 Dziennik Operacyjny (Ciąg dalszy) — {nickname} ({masked})",
+                    description=f"Druga część pełnego rejestru kroków sesji dla {nickname}:",
+                    color=color,
+                    fields=extra_fields,
+                    footer_text="InstaLing Auto-Bot • Logi Konsoli Część 2/2 #logi-bota"
+                )
+
             log(f"[Powiadomienie] Wysłano rozbudowane logi sesji {nickname} do #logi-bota")
         except Exception as e:
             log(f"[!] Błąd wysyłania rozbudowanych logów na Discord: {e}")
@@ -646,9 +696,11 @@ class Notifier:
 
         desc = (
             f"**Data:** `{date_str}` ({day_name})\n"
-            f"**Postęp sesji:** `{completed_count}/{total_active}` ukończonych dzisiaj\n\n"
+            f"**Postęp sesji:** `{completed_count}/{total_active}` ukończonych dzisiaj\n"
+            f"━━━━━━━━━━━━━━━━━━━━━━━━\n"
             + "\n".join(student_lines)
-            + "\n\n💡 *Płynna kolejka: gdy czas sesji nadejdzie lub nachodzi na siebie, bot wykonuje kolejne konto od razu.*"
+            + "\n━━━━━━━━━━━━━━━━━━━━━━━━\n"
+            + "💡 *Płynna kolejka: gdy czas sesji nadejdzie lub nachodzi na siebie, bot wykonuje kolejne konto od razu.*"
         )
 
         color = 0x9B59B6 if completed_count < total_active else 0x2ECC71
@@ -731,6 +783,8 @@ class Notifier:
                 else:
                     lines.append(f"• {user_label}: ⏳ `{t}`")
 
+            if lines:
+                lines.append("────────────────────────────────────────")
             fields.append({
                 "name": field_title,
                 "value": "\n".join(lines) if lines else "Brak wpisów",

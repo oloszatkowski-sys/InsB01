@@ -895,6 +895,7 @@ class MultiScheduler:
                 s["discord_ping"] = u_meta.get("discord_ping", s.get("discord_ping", ""))
                 s["discord_display"] = u_meta.get("discord_display", s.get("discord_display", ""))
                 s["discord_username"] = u_meta.get("discord_username", s.get("discord_username", ""))
+                s["discord_id"] = u_meta.get("discord_id", s.get("discord_id", ""))
         self.notifier.send_daily_plan(slots, day_name=day_name, date_str=today_pl.isoformat())
 
     def publish_weekly_plan_to_discord(self) -> None:
@@ -912,11 +913,13 @@ class MultiScheduler:
             entries = []
             for s in day_slots:
                 u_meta = users_by_login.get(s.get("login"))
+                disc_id = (u_meta.get("discord_id") if u_meta else s.get("discord_id")) or ""
                 disc_ping = (u_meta.get("discord_ping") if u_meta else s.get("discord_ping")) or ""
                 disc_disp = (u_meta.get("discord_display") if u_meta else s.get("discord_display")) or ""
                 disc_user = (u_meta.get("discord_username") if u_meta else s.get("discord_username")) or ""
                 entries.append({
                     "nickname": s.get("nickname", "Uczeń"),
+                    "discord_id": disc_id,
                     "discord_ping": disc_ping,
                     "discord_display": disc_disp,
                     "discord_username": disc_user,

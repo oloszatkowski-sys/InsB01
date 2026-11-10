@@ -253,7 +253,8 @@ class InstaLingBot:
                 "dzisiejsza sesja została wykonana", "dzisiejsza sesja zostala wykonana",
                 "dzisiejsza sesja wykonana", "twoja dzisiejsza sesja została zakończona",
                 "twoja dzisiejsza sesja zostala zakonczona", "sesja została wykonana",
-                "sesja wykonana"
+                "sesja wykonana", "rozpocznij kolejną sesję", "rozpocznij kolejna sesje",
+                "kolejną sesję", "kolejna sesje"
             ]
             for p in done_phrases:
                 if p in body_txt:
@@ -452,6 +453,10 @@ class InstaLingBot:
                         track_log(f"▶️ [PANEL] Wykryto przycisk '{b_txt}' — otwieram sesję...")
                         session_btn.click()
                         time.sleep(2.5)
+                    else:
+                        if current_pass > 1:
+                            track_log("✅ [PANEL] Brak przycisków nierozpoczętej sesji na pulpicie — sesja została pomyślnie ukończona!")
+                            break
 
                     # Ekran startowy / wznowienia wewnątrz sesji
                     cont_btn = page.locator("a:has-text('Kontynuuj sesję'), button:has-text('Kontynuuj sesję'), #continue_session").first
