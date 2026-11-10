@@ -4993,5 +4993,115 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-10T17:12:10.954925"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:21",
+    "words_total": 18,
+    "words_correct": 12,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 66.7,
+    "duration_seconds": 228.7,
+    "started_at_warsaw": "2026-11-10 20:21:00 CET",
+    "completed_at_warsaw": "2026-11-10 20:24:49 CET",
+    "finished_at": "2026-11-10T20:24:49.122433+01:00",
+    "words_details": [
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "tune",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koncert",
+        "answer": "concert",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kanał; kanał telewizyjny",
+        "answer": "channel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "stać się bogatym, wzbogacić się",
+        "answer": "get rich",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-10T19:24:49.122765"
   }
 ]

@@ -479,15 +479,15 @@
     "answer": "fashion designer",
     "prompt": "projektant mody",
     "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
-    "updated_at": "2026-10-27T16:44:54.579867",
-    "usage_count": 1
+    "updated_at": "2026-11-10T19:23:40.912470",
+    "usage_count": 3
   },
   "projektant mody": {
     "answer": "fashion designer",
     "prompt": "projektant mody",
     "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
-    "updated_at": "2026-10-27T16:44:54.579867",
-    "usage_count": 1
+    "updated_at": "2026-11-10T19:23:40.912470",
+    "usage_count": 3
   },
   "i saw your ______ luka . i think it's great! | projekt; konstrukcja": {
     "answer": "design",
@@ -633,15 +633,15 @@
     "answer": "turn the radiator up",
     "prompt": "zwiększyć temperaturę na kaloryferze",
     "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
-    "updated_at": "2026-11-10T17:10:03.858010",
-    "usage_count": 9
+    "updated_at": "2026-11-10T19:22:00.722920",
+    "usage_count": 11
   },
   "zwiększyć temperaturę na kaloryferze": {
     "answer": "turn the radiator up",
     "prompt": "zwiększyć temperaturę na kaloryferze",
     "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
-    "updated_at": "2026-11-10T17:10:03.858010",
-    "usage_count": 9
+    "updated_at": "2026-11-10T19:22:00.722920",
+    "usage_count": 11
   },
   "if you want to ____ luka _____ luka , you can take quicker showers. | oszczędzać wodę": {
     "answer": "save water",
@@ -1109,15 +1109,15 @@
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-06T19:53:28.080657",
-    "usage_count": 5
+    "updated_at": "2026-11-10T19:22:17.513784",
+    "usage_count": 7
   },
   "aktor": {
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-06T19:53:28.080657",
-    "usage_count": 5
+    "updated_at": "2026-11-10T19:22:17.513784",
+    "usage_count": 7
   },
   "students, stop talking and ___ luka _________ luka during the class! | uważać (np. na lekcji)": {
     "answer": "pay attention",
