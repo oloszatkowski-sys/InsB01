@@ -4858,5 +4858,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-10T17:59:35.529659"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "18:08",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 0,
+    "autocorrect_count": 4,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 250.5,
+    "started_at_warsaw": "2026-11-10 18:08:00 CET",
+    "completed_at_warsaw": "2026-11-10 18:12:10 CET",
+    "finished_at": "2026-11-10T18:12:10.954599+01:00",
+    "words_details": [
+      {
+        "prompt": "rysunek",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rysunek",
+        "answer": "drawing",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dostać niską ocenę",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "dostać niską ocenę",
+        "answer": "get a low mark",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "stać się bogatym, wzbogacić się",
+        "answer": "get rich",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wyprzedaż garażowa",
+        "answer": "garage sale",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "dostać niską ocenę",
+        "answer": "get a low mark",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "uważać (np. na lekcji)",
+        "answer": "pay attention",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pop",
+        "answer": "pop",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "tune",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "write",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "tune",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysunek",
+        "answer": "drawing",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-10T17:12:10.954925"
   }
 ]
