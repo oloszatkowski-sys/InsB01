@@ -5363,5 +5363,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-11T16:54:46.534080"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "19:23",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 0,
+    "autocorrect_count": 4,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 254.3,
+    "started_at_warsaw": "2026-11-11 21:02:44 CET",
+    "completed_at_warsaw": "2026-11-11 21:06:58 CET",
+    "finished_at": "2026-11-11T21:06:58.631415+01:00",
+    "words_details": [
+      {
+        "prompt": "rock",
+        "answer": "rock",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "piosenka",
+        "answer": "song",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "poem",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występ",
+        "answer": "performance",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malować",
+        "answer": "paint",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysyłać (np. pliki na serwer internetowy)",
+        "answer": "upload",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występować",
+        "answer": "perform",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-11T20:06:58.631662"
   }
 ]

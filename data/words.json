@@ -339,15 +339,15 @@
     "answer": "website",
     "prompt": "strona internetowa",
     "sentence": "I found an interesting _______\nluka\n devoted to role-playing games.",
-    "updated_at": "2026-11-04T20:20:30.045178",
-    "usage_count": 7
+    "updated_at": "2026-11-11T20:03:21.351687",
+    "usage_count": 9
   },
   "strona internetowa": {
     "answer": "website",
     "prompt": "strona internetowa",
     "sentence": "I found an interesting _______\nluka\n devoted to role-playing games.",
-    "updated_at": "2026-11-04T20:20:30.045178",
-    "usage_count": 7
+    "updated_at": "2026-11-11T20:03:21.351687",
+    "usage_count": 9
   },
   "they wanted him to ____ luka in a new television show. | grać główną rolę": {
     "answer": "star",
@@ -409,15 +409,15 @@
     "answer": "article",
     "prompt": "artykuł",
     "sentence": "You absolutely must read this _______\nluka\n.",
-    "updated_at": "2026-10-29T16:54:13.357419",
-    "usage_count": 5
+    "updated_at": "2026-11-11T20:06:08.387784",
+    "usage_count": 7
   },
   "artykuł": {
     "answer": "article",
     "prompt": "artykuł",
     "sentence": "You absolutely must read this _______\nluka\n.",
-    "updated_at": "2026-10-29T16:54:13.357419",
-    "usage_count": 5
+    "updated_at": "2026-11-11T20:06:08.387784",
+    "usage_count": 7
   },
   "that ___________ luka is terribly boring. | film dokumentalny; program dokumentalny": {
     "answer": "documentary",
@@ -507,15 +507,15 @@
     "answer": "instrument",
     "prompt": "instrument; przyrząd",
     "sentence": "Can you play any musical __________\nluka\n?",
-    "updated_at": "2026-11-04T20:20:52.560252",
-    "usage_count": 5
+    "updated_at": "2026-11-11T20:05:49.017321",
+    "usage_count": 7
   },
   "instrument; przyrząd": {
     "answer": "instrument",
     "prompt": "instrument; przyrząd",
     "sentence": "Can you play any musical __________\nluka\n?",
-    "updated_at": "2026-11-04T20:20:52.560252",
-    "usage_count": 5
+    "updated_at": "2026-11-11T20:05:49.017321",
+    "usage_count": 7
   },
   "i ____ luka ___ luka ________ luka every morning, right after i wake up. | rozsunąć zasłony": {
     "answer": "open the curtains",
@@ -1081,15 +1081,15 @@
     "answer": "dancer",
     "prompt": "tancerz",
     "sentence": "He is a great ______\nluka\n, he knows how to move.",
-    "updated_at": "2026-11-03T16:13:51.644461",
-    "usage_count": 1
+    "updated_at": "2026-11-11T20:04:27.024143",
+    "usage_count": 3
   },
   "tancerz": {
     "answer": "dancer",
     "prompt": "tancerz",
     "sentence": "He is a great ______\nluka\n, he knows how to move.",
-    "updated_at": "2026-11-03T16:13:51.644461",
-    "usage_count": 1
+    "updated_at": "2026-11-11T20:04:27.024143",
+    "usage_count": 3
   },
   "this is my favourite _____ luka . | powieść": {
     "answer": "novel",
