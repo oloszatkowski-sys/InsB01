@@ -5258,5 +5258,110 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-11T15:21:46.104952"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:51",
+    "words_total": 17,
+    "words_correct": 11,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 64.7,
+    "duration_seconds": 225.8,
+    "started_at_warsaw": "2026-11-11 17:51:00 CET",
+    "completed_at_warsaw": "2026-11-11 17:54:46 CET",
+    "finished_at": "2026-11-11T17:54:46.533871+01:00",
+    "words_details": [
+      {
+        "prompt": "klasyczny",
+        "answer": "classical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rozsunąć zasłony",
+        "answer": "open the curtains",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "targ, jarmark",
+        "answer": "fair",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "znana osoba",
+        "answer": "celebrity",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piosenka",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "piosenka",
+        "answer": "song",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "portret",
+        "answer": "portrait",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisać",
+        "answer": "write",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koncert",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "koncert",
+        "answer": "concert",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-11T16:54:46.534080"
   }
 ]

@@ -227,15 +227,15 @@
     "answer": "song",
     "prompt": "piosenka",
     "sentence": "What is that ____\nluka\n about?",
-    "updated_at": "2026-11-10T17:56:07.717080",
-    "usage_count": 5
+    "updated_at": "2026-11-11T16:52:58.271316",
+    "usage_count": 7
   },
   "piosenka": {
     "answer": "song",
     "prompt": "piosenka",
     "sentence": "What is that ____\nluka\n about?",
-    "updated_at": "2026-11-10T17:56:07.717080",
-    "usage_count": 5
+    "updated_at": "2026-11-11T16:52:58.271316",
+    "usage_count": 7
   },
   "he hung the ________ luka on the wall. | portret": {
     "answer": "portrait",
@@ -689,15 +689,15 @@
     "answer": "concert",
     "prompt": "koncert",
     "sentence": "I've never been to a rock _______\nluka\n before.",
-    "updated_at": "2026-10-29T18:30:21.900036",
-    "usage_count": 1
+    "updated_at": "2026-11-11T16:53:36.229476",
+    "usage_count": 3
   },
   "koncert": {
     "answer": "concert",
     "prompt": "koncert",
     "sentence": "I've never been to a rock _______\nluka\n before.",
-    "updated_at": "2026-10-29T18:30:21.900036",
-    "usage_count": 1
+    "updated_at": "2026-11-11T16:53:36.229476",
+    "usage_count": 3
   },
   "who is the ____ luka _________ luka of the book? | główny bohater": {
     "answer": "main character",
@@ -829,15 +829,15 @@
     "answer": "group",
     "prompt": "grupa",
     "sentence": "It's my favourite music _____\nluka\n.",
-    "updated_at": "2026-11-09T22:55:19.589866",
-    "usage_count": 5
+    "updated_at": "2026-11-11T16:51:37.156733",
+    "usage_count": 7
   },
   "grupa": {
     "answer": "group",
     "prompt": "grupa",
     "sentence": "It's my favourite music _____\nluka\n.",
-    "updated_at": "2026-11-09T22:55:19.589866",
-    "usage_count": 5
+    "updated_at": "2026-11-11T16:51:37.156733",
+    "usage_count": 7
   },
   "can you describe the _____________ luka ? | ilustracje": {
     "answer": "illustrations",
