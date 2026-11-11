@@ -5103,5 +5103,160 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-10T19:24:49.122765"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "16:17",
+    "words_total": 27,
+    "words_correct": 15,
+    "words_mistakes": 12,
+    "new_words_count": 4,
+    "autocorrect_count": 4,
+    "accuracy_percent": 55.6,
+    "duration_seconds": 285.4,
+    "started_at_warsaw": "2026-11-11 16:17:00 CET",
+    "completed_at_warsaw": "2026-11-11 16:21:46 CET",
+    "finished_at": "2026-11-11T16:21:46.104734+01:00",
+    "words_details": [
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "oparty na",
+        "answer": "based on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "western",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "napisy (w filmie)",
+        "answer": "subtitles",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "disaster",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "cyfrowy",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "disaster",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "cyfrowy",
+        "answer": "digital",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "technologia",
+        "answer": "technology",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "recenzja",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "cyfrowy",
+        "answer": "digital",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "recenzja",
+        "answer": "review",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "serial",
+        "answer": "drama",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ukazywać się; wychodzić",
+        "answer": "come out",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "doskonały",
+        "answer": "excellent",
+        "status": "nowe"
+      },
+      {
+        "prompt": "doskonały",
+        "answer": "excellent",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "opowieść; historia",
+        "answer": "story",
+        "status": "nowe"
+      },
+      {
+        "prompt": "opowieść; historia",
+        "answer": "story",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "akcja",
+        "answer": "action",
+        "status": "nowe"
+      },
+      {
+        "prompt": "akcja",
+        "answer": "action",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "mieć miejsce, odbywać się",
+        "answer": "take place",
+        "status": "nowe"
+      },
+      {
+        "prompt": "recenzja",
+        "answer": "review",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "western",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "mieć miejsce, odbywać się",
+        "answer": "take place",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-11T15:21:46.104952"
   }
 ]

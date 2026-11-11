@@ -1193,15 +1193,15 @@
     "answer": "digital",
     "prompt": "cyfrowy",
     "sentence": "Can you prepare a _______\nluka\n version?",
-    "updated_at": "2026-11-10T15:22:57.251567",
-    "usage_count": 1
+    "updated_at": "2026-11-11T15:19:04.566181",
+    "usage_count": 3
   },
   "cyfrowy": {
     "answer": "digital",
     "prompt": "cyfrowy",
     "sentence": "Can you prepare a _______\nluka\n version?",
-    "updated_at": "2026-11-10T15:22:57.251567",
-    "usage_count": 1
+    "updated_at": "2026-11-11T15:19:04.566181",
+    "usage_count": 3
   },
   "the film was _____ luka __ luka facts. | oparty na": {
     "answer": "based on",
@@ -1235,29 +1235,29 @@
     "answer": "review",
     "prompt": "recenzja",
     "sentence": "They say in the ______\nluka\n that it's an amazing film.",
-    "updated_at": "2026-11-10T15:24:07.782170",
-    "usage_count": 1
+    "updated_at": "2026-11-11T15:19:43.791679",
+    "usage_count": 3
   },
   "recenzja": {
     "answer": "review",
     "prompt": "recenzja",
     "sentence": "They say in the ______\nluka\n that it's an amazing film.",
-    "updated_at": "2026-11-10T15:24:07.782170",
-    "usage_count": 1
+    "updated_at": "2026-11-11T15:19:43.791679",
+    "usage_count": 3
   },
   "i like watching ________ luka . | western (film o dzikim zachodzie)": {
     "answer": "western",
     "prompt": "western (film o Dzikim Zachodzie)",
     "sentence": "I like watching ________\nluka\n.",
-    "updated_at": "2026-11-10T15:25:39.939565",
-    "usage_count": 3
+    "updated_at": "2026-11-11T15:18:00.736448",
+    "usage_count": 5
   },
   "western (film o dzikim zachodzie)": {
     "answer": "western",
     "prompt": "western (film o Dzikim Zachodzie)",
     "sentence": "I like watching ________\nluka\n.",
-    "updated_at": "2026-11-10T15:25:39.939565",
-    "usage_count": 3
+    "updated_at": "2026-11-11T15:18:00.736448",
+    "usage_count": 5
   },
   "my grandma watches a lot of ______ luka . | serial": {
     "answer": "drama",
@@ -1277,14 +1277,70 @@
     "answer": "disaster",
     "prompt": "katastrofa",
     "sentence": "What a ________\nluka\n!",
-    "updated_at": "2026-11-10T15:26:42.390788",
-    "usage_count": 3
+    "updated_at": "2026-11-11T15:18:34.773969",
+    "usage_count": 5
   },
   "katastrofa": {
     "answer": "disaster",
     "prompt": "katastrofa",
     "sentence": "What a ________\nluka\n!",
-    "updated_at": "2026-11-10T15:26:42.390788",
-    "usage_count": 3
+    "updated_at": "2026-11-11T15:18:34.773969",
+    "usage_count": 5
+  },
+  "the dish she prepared was _________ luka . | doskonały": {
+    "answer": "excellent",
+    "prompt": "doskonały",
+    "sentence": "The dish she prepared was _________\nluka\n.",
+    "updated_at": "2026-11-11T15:20:16.028032",
+    "usage_count": 1
+  },
+  "doskonały": {
+    "answer": "excellent",
+    "prompt": "doskonały",
+    "sentence": "The dish she prepared was _________\nluka\n.",
+    "updated_at": "2026-11-11T15:20:16.028032",
+    "usage_count": 1
+  },
+  "the _____ luka was a little boring. | opowieść; historia": {
+    "answer": "story",
+    "prompt": "opowieść; historia",
+    "sentence": "The _____\nluka\n was a little boring.",
+    "updated_at": "2026-11-11T15:20:33.719930",
+    "usage_count": 1
+  },
+  "opowieść; historia": {
+    "answer": "story",
+    "prompt": "opowieść; historia",
+    "sentence": "The _____\nluka\n was a little boring.",
+    "updated_at": "2026-11-11T15:20:33.719930",
+    "usage_count": 1
+  },
+  "you should take some ______ luka . | akcja": {
+    "answer": "action",
+    "prompt": "akcja",
+    "sentence": "You should take some ______\nluka\n.",
+    "updated_at": "2026-11-11T15:20:49.388602",
+    "usage_count": 1
+  },
+  "akcja": {
+    "answer": "action",
+    "prompt": "akcja",
+    "sentence": "You should take some ______\nluka\n.",
+    "updated_at": "2026-11-11T15:20:49.388602",
+    "usage_count": 1
+  },
+  "the concert will ____ luka _____ luka in the park. | mieć miejsce, odbywać się": {
+    "answer": "take place",
+    "prompt": "mieć miejsce, odbywać się",
+    "sentence": "The concert will ____\nluka\n _____\nluka\n in the park.",
+    "updated_at": "2026-11-11T15:21:07.831830",
+    "usage_count": 1
+  },
+  "mieć miejsce, odbywać się": {
+    "answer": "take place",
+    "prompt": "mieć miejsce, odbywać się",
+    "sentence": "The concert will ____\nluka\n _____\nluka\n in the park.",
+    "updated_at": "2026-11-11T15:21:07.831830",
+    "usage_count": 1
   }
 }
