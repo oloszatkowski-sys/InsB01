@@ -619,15 +619,15 @@
     "answer": "tune",
     "prompt": "melodia",
     "sentence": "She was humming a merry ____\nluka\n.",
-    "updated_at": "2026-11-10T17:11:23.895238",
-    "usage_count": 7
+    "updated_at": "2026-11-12T06:13:38.531429",
+    "usage_count": 9
   },
   "melodia": {
     "answer": "tune",
     "prompt": "melodia",
     "sentence": "She was humming a merry ____\nluka\n.",
-    "updated_at": "2026-11-10T17:11:23.895238",
-    "usage_count": 7
+    "updated_at": "2026-11-12T06:13:38.531429",
+    "usage_count": 9
   },
   "it's absolutely freezing in here! can you ____ luka the ________ luka __ luka ? | zwiększyć temperaturę na kaloryferze": {
     "answer": "turn the radiator up",
@@ -717,15 +717,15 @@
     "answer": "cast",
     "prompt": "obsada",
     "sentence": "The film has an excellent ____\nluka\n of great actors.",
-    "updated_at": "2026-10-29T18:31:34.345615",
-    "usage_count": 1
+    "updated_at": "2026-11-12T06:14:05.985568",
+    "usage_count": 3
   },
   "obsada": {
     "answer": "cast",
     "prompt": "obsada",
     "sentence": "The film has an excellent ____\nluka\n of great actors.",
-    "updated_at": "2026-10-29T18:31:34.345615",
-    "usage_count": 1
+    "updated_at": "2026-11-12T06:14:05.985568",
+    "usage_count": 3
   },
   "patty can't ____ luka at all! | rysować": {
     "answer": "draw",
@@ -885,15 +885,15 @@
     "answer": "garage sale",
     "prompt": "wyprzedaż garażowa",
     "sentence": "I've decided to throw a ______\nluka\n ____\nluka\n to sell my child's old toys and clothes.",
-    "updated_at": "2026-10-30T17:47:42.813591",
-    "usage_count": 1
+    "updated_at": "2026-11-12T06:14:38.666351",
+    "usage_count": 3
   },
   "wyprzedaż garażowa": {
     "answer": "garage sale",
     "prompt": "wyprzedaż garażowa",
     "sentence": "I've decided to throw a ______\nluka\n ____\nluka\n to sell my child's old toys and clothes.",
-    "updated_at": "2026-10-30T17:47:42.813591",
-    "usage_count": 1
+    "updated_at": "2026-11-12T06:14:38.666351",
+    "usage_count": 3
   },
   "do you like _________ luka music? | klasyczny": {
     "answer": "classical",
@@ -1081,15 +1081,15 @@
     "answer": "dancer",
     "prompt": "tancerz",
     "sentence": "He is a great ______\nluka\n, he knows how to move.",
-    "updated_at": "2026-11-11T20:04:27.024143",
-    "usage_count": 3
+    "updated_at": "2026-11-12T06:15:42.598185",
+    "usage_count": 5
   },
   "tancerz": {
     "answer": "dancer",
     "prompt": "tancerz",
     "sentence": "He is a great ______\nluka\n, he knows how to move.",
-    "updated_at": "2026-11-11T20:04:27.024143",
-    "usage_count": 3
+    "updated_at": "2026-11-12T06:15:42.598185",
+    "usage_count": 5
   },
   "this is my favourite _____ luka . | powieść": {
     "answer": "novel",
