@@ -5608,5 +5608,60 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-12T06:17:07.456442"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "16:07",
+    "words_total": 7,
+    "words_correct": 5,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 131.2,
+    "started_at_warsaw": "2026-11-12 16:07:01 CET",
+    "completed_at_warsaw": "2026-11-12 16:09:12 CET",
+    "finished_at": "2026-11-12T16:09:12.311462+01:00",
+    "words_details": [
+      {
+        "prompt": "pop",
+        "answer": "pop",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reklama",
+        "answer": "advertisement",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "serial kryminalny",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "serial kryminalny",
+        "answer": "crime series",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rozsunąć zasłony",
+        "answer": "open the curtains",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "poem",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-12T15:09:12.311743"
   }
 ]
