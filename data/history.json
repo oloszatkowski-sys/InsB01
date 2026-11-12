@@ -5663,5 +5663,70 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-12T15:09:12.311743"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "20:06",
+    "words_total": 9,
+    "words_correct": 7,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 77.8,
+    "duration_seconds": 152.8,
+    "started_at_warsaw": "2026-11-12 21:41:24 CET",
+    "completed_at_warsaw": "2026-11-12 21:43:57 CET",
+    "finished_at": "2026-11-12T21:43:57.360663+01:00",
+    "words_details": [
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "prediction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dostać niską ocenę",
+        "answer": "get a low mark",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokaz mody",
+        "answer": "fashion show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysunek",
+        "answer": "drawing",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-12T20:43:57.361027"
   }
 ]
