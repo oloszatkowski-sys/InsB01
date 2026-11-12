@@ -5728,5 +5728,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-12T20:43:57.361027"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "21:48",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 4,
+    "autocorrect_count": 2,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 250.6,
+    "started_at_warsaw": "2026-11-12 21:48:00 CET",
+    "completed_at_warsaw": "2026-11-12 21:52:11 CET",
+    "finished_at": "2026-11-12T21:52:11.239620+01:00",
+    "words_details": [
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "western",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "disaster",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "akcja",
+        "answer": "action",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "recenzja",
+        "answer": "review",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "mieć miejsce, odbywać się",
+        "answer": "take place",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "cyfrowy",
+        "answer": "digital",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "doskonały",
+        "answer": "excellent",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "opowieść; historia",
+        "answer": "story",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "efekty specjalne",
+        "answer": "special effects",
+        "status": "nowe"
+      },
+      {
+        "prompt": "inspirować; wzbudzać (coś w kimś)",
+        "answer": "inspire",
+        "status": "nowe"
+      },
+      {
+        "prompt": "oparty na",
+        "answer": "based on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "title",
+        "status": "nowe"
+      },
+      {
+        "prompt": "efekty specjalne",
+        "answer": "special effects",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film akcji",
+        "answer": "action film",
+        "status": "nowe"
+      },
+      {
+        "prompt": "inspirować; wzbudzać (coś w kimś)",
+        "answer": "inspire",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film akcji",
+        "answer": "action film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "title",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-12T20:52:11.239977"
   }
 ]

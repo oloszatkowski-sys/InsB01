@@ -171,15 +171,15 @@
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-10-30T19:06:13.009393",
-    "usage_count": 7
+    "updated_at": "2026-11-12T20:51:09.560141",
+    "usage_count": 9
   },
   "ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-10-30T19:06:13.009393",
-    "usage_count": 7
+    "updated_at": "2026-11-12T20:51:09.560141",
+    "usage_count": 9
   },
   "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
     "answer": "it's written by",
@@ -1109,15 +1109,15 @@
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-10T19:22:17.513784",
-    "usage_count": 7
+    "updated_at": "2026-11-12T20:51:39.672754",
+    "usage_count": 9
   },
   "aktor": {
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-10T19:22:17.513784",
-    "usage_count": 7
+    "updated_at": "2026-11-12T20:51:39.672754",
+    "usage_count": 9
   },
   "students, stop talking and ___ luka _________ luka during the class! | uważać (np. na lekcji)": {
     "answer": "pay attention",
@@ -1341,6 +1341,62 @@
     "prompt": "mieć miejsce, odbywać się",
     "sentence": "The concert will ____\nluka\n _____\nluka\n in the park.",
     "updated_at": "2026-11-11T15:21:07.831830",
+    "usage_count": 1
+  },
+  "the screenplay was not as good as i expected. however, i really enjoyed the _______ luka _______ luka . | efekty specjalne": {
+    "answer": "special effects",
+    "prompt": "efekty specjalne",
+    "sentence": "The screenplay was not as good as I expected. However, I really enjoyed the _______\nluka\n _______\nluka\n.",
+    "updated_at": "2026-11-12T20:49:39.663560",
+    "usage_count": 1
+  },
+  "efekty specjalne": {
+    "answer": "special effects",
+    "prompt": "efekty specjalne",
+    "sentence": "The screenplay was not as good as I expected. However, I really enjoyed the _______\nluka\n _______\nluka\n.",
+    "updated_at": "2026-11-12T20:49:39.663560",
+    "usage_count": 1
+  },
+  "he says travel has always ________ luka him as a writer. | inspirować; wzbudzać (coś w kimś)": {
+    "answer": "inspire",
+    "prompt": "inspirować; wzbudzać (coś w kimś)",
+    "sentence": "He says travel has always ________\nluka\n him as a writer.",
+    "updated_at": "2026-11-12T20:49:50.062054",
+    "usage_count": 1
+  },
+  "inspirować; wzbudzać (coś w kimś)": {
+    "answer": "inspire",
+    "prompt": "inspirować; wzbudzać (coś w kimś)",
+    "sentence": "He says travel has always ________\nluka\n him as a writer.",
+    "updated_at": "2026-11-12T20:49:50.062054",
+    "usage_count": 1
+  },
+  "what was the _____ luka of this book? | tytuł": {
+    "answer": "title",
+    "prompt": "tytuł",
+    "sentence": "What was the _____\nluka\n of this book?",
+    "updated_at": "2026-11-12T20:50:10.797980",
+    "usage_count": 1
+  },
+  "tytuł": {
+    "answer": "title",
+    "prompt": "tytuł",
+    "sentence": "What was the _____\nluka\n of this book?",
+    "updated_at": "2026-11-12T20:50:10.797980",
+    "usage_count": 1
+  },
+  "does your brother enjoy ______ luka _____ luka ? | film akcji": {
+    "answer": "action film",
+    "prompt": "film akcji",
+    "sentence": "Does your brother enjoy ______\nluka\n _____\nluka\n?",
+    "updated_at": "2026-11-12T20:50:32.367441",
+    "usage_count": 1
+  },
+  "film akcji": {
+    "answer": "action film",
+    "prompt": "film akcji",
+    "sentence": "Does your brother enjoy ______\nluka\n _____\nluka\n?",
+    "updated_at": "2026-11-12T20:50:32.367441",
     "usage_count": 1
   }
 }
