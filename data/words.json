@@ -157,29 +157,29 @@
     "answer": "festival",
     "prompt": "festiwal",
     "sentence": "I'm only here for a few days of the ________\nluka\n.",
-    "updated_at": "2026-11-03T16:14:36.571328",
-    "usage_count": 7
+    "updated_at": "2026-11-13T20:41:32.561646",
+    "usage_count": 9
   },
   "festiwal": {
     "answer": "festival",
     "prompt": "festiwal",
     "sentence": "I'm only here for a few days of the ________\nluka\n.",
-    "updated_at": "2026-11-03T16:14:36.571328",
-    "usage_count": 7
+    "updated_at": "2026-11-13T20:41:32.561646",
+    "usage_count": 9
   },
   "the kids couldn't take their eyes off the ______ luka . | ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-11-13T20:24:39.975169",
-    "usage_count": 11
+    "updated_at": "2026-11-13T20:42:26.417054",
+    "usage_count": 13
   },
   "ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-11-13T20:24:39.975169",
-    "usage_count": 11
+    "updated_at": "2026-11-13T20:42:26.417054",
+    "usage_count": 13
   },
   "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
     "answer": "it's written by",
@@ -479,15 +479,15 @@
     "answer": "fashion designer",
     "prompt": "projektant mody",
     "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
-    "updated_at": "2026-11-13T15:31:10.366916",
-    "usage_count": 5
+    "updated_at": "2026-11-13T20:41:57.012579",
+    "usage_count": 7
   },
   "projektant mody": {
     "answer": "fashion designer",
     "prompt": "projektant mody",
     "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
-    "updated_at": "2026-11-13T15:31:10.366916",
-    "usage_count": 5
+    "updated_at": "2026-11-13T20:41:57.012579",
+    "usage_count": 7
   },
   "i saw your ______ luka . i think it's great! | projekt; konstrukcja": {
     "answer": "design",
@@ -1109,15 +1109,15 @@
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-13T20:24:08.035233",
-    "usage_count": 11
+    "updated_at": "2026-11-13T20:42:44.301041",
+    "usage_count": 13
   },
   "aktor": {
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-13T20:24:08.035233",
-    "usage_count": 11
+    "updated_at": "2026-11-13T20:42:44.301041",
+    "usage_count": 13
   },
   "students, stop talking and ___ luka _________ luka during the class! | uważać (np. na lekcji)": {
     "answer": "pay attention",
