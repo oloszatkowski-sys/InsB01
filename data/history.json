@@ -5863,5 +5863,60 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-12T20:52:11.239977"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "16:30",
+    "words_total": 7,
+    "words_correct": 3,
+    "words_mistakes": 4,
+    "new_words_count": 0,
+    "autocorrect_count": 2,
+    "accuracy_percent": 42.9,
+    "duration_seconds": 134.8,
+    "started_at_warsaw": "2026-11-13 16:30:01 CET",
+    "completed_at_warsaw": "2026-11-13 16:32:15 CET",
+    "finished_at": "2026-11-13T16:32:15.897339+01:00",
+    "words_details": [
+      {
+        "prompt": "fabuła; akcja; wątek",
+        "answer": "plot",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "osoba przeprowadzająca wywiad",
+        "answer": "interviewer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rozsunąć zasłony",
+        "answer": "open the curtains",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-13T15:32:15.897541"
   }
 ]

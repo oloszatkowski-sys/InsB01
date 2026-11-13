@@ -479,15 +479,15 @@
     "answer": "fashion designer",
     "prompt": "projektant mody",
     "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
-    "updated_at": "2026-11-10T19:23:40.912470",
-    "usage_count": 3
+    "updated_at": "2026-11-13T15:31:10.366916",
+    "usage_count": 5
   },
   "projektant mody": {
     "answer": "fashion designer",
     "prompt": "projektant mody",
     "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
-    "updated_at": "2026-11-10T19:23:40.912470",
-    "usage_count": 3
+    "updated_at": "2026-11-13T15:31:10.366916",
+    "usage_count": 5
   },
   "i saw your ______ luka . i think it's great! | projekt; konstrukcja": {
     "answer": "design",
@@ -1081,15 +1081,15 @@
     "answer": "dancer",
     "prompt": "tancerz",
     "sentence": "He is a great ______\nluka\n, he knows how to move.",
-    "updated_at": "2026-11-12T20:42:08.100715",
-    "usage_count": 7
+    "updated_at": "2026-11-13T15:30:42.468379",
+    "usage_count": 9
   },
   "tancerz": {
     "answer": "dancer",
     "prompt": "tancerz",
     "sentence": "He is a great ______\nluka\n, he knows how to move.",
-    "updated_at": "2026-11-12T20:42:08.100715",
-    "usage_count": 7
+    "updated_at": "2026-11-13T15:30:42.468379",
+    "usage_count": 9
   },
   "this is my favourite _____ luka . | powieść": {
     "answer": "novel",
