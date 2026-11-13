@@ -311,15 +311,15 @@
     "answer": "scene",
     "prompt": "scena (np. z filmu)",
     "sentence": "It's that funny _____\nluka\n from my favourite movie.",
-    "updated_at": "2026-10-20T19:28:31.654213",
-    "usage_count": 3
+    "updated_at": "2026-11-13T16:58:35.108510",
+    "usage_count": 5
   },
   "scena (np. z filmu)": {
     "answer": "scene",
     "prompt": "scena (np. z filmu)",
     "sentence": "It's that funny _____\nluka\n from my favourite movie.",
-    "updated_at": "2026-10-20T19:28:31.654213",
-    "usage_count": 3
+    "updated_at": "2026-11-13T16:58:35.108510",
+    "usage_count": 5
   },
   "i want to _________ luka to this channel. | subskrybować; wykupić abonament": {
     "answer": "subscribe",
@@ -409,15 +409,15 @@
     "answer": "article",
     "prompt": "artykuł",
     "sentence": "You absolutely must read this _______\nluka\n.",
-    "updated_at": "2026-11-11T20:06:08.387784",
-    "usage_count": 7
+    "updated_at": "2026-11-13T16:57:27.217220",
+    "usage_count": 9
   },
   "artykuł": {
     "answer": "article",
     "prompt": "artykuł",
     "sentence": "You absolutely must read this _______\nluka\n.",
-    "updated_at": "2026-11-11T20:06:08.387784",
-    "usage_count": 7
+    "updated_at": "2026-11-13T16:57:27.217220",
+    "usage_count": 9
   },
   "that ___________ luka is terribly boring. | film dokumentalny; program dokumentalny": {
     "answer": "documentary",
@@ -661,15 +661,15 @@
     "answer": "band",
     "prompt": "zespół",
     "sentence": "I love this ____\nluka\n! I'm going to their concert next week!",
-    "updated_at": "2026-11-07T18:21:45.968554",
-    "usage_count": 5
+    "updated_at": "2026-11-13T16:57:41.839558",
+    "usage_count": 7
   },
   "zespół": {
     "answer": "band",
     "prompt": "zespół",
     "sentence": "I love this ____\nluka\n! I'm going to their concert next week!",
-    "updated_at": "2026-11-07T18:21:45.968554",
-    "usage_count": 5
+    "updated_at": "2026-11-13T16:57:41.839558",
+    "usage_count": 7
   },
   "edward norton's ______ luka is the main asset of this film. | aktorstwo; gra aktorska": {
     "answer": "acting",
@@ -927,15 +927,15 @@
     "answer": "painting",
     "prompt": "obraz",
     "sentence": "On the wall there is a beautiful ________\nluka\n.",
-    "updated_at": "2026-11-09T22:55:50.499763",
-    "usage_count": 5
+    "updated_at": "2026-11-13T16:59:27.304457",
+    "usage_count": 7
   },
   "obraz": {
     "answer": "painting",
     "prompt": "obraz",
     "sentence": "On the wall there is a beautiful ________\nluka\n.",
-    "updated_at": "2026-11-09T22:55:50.499763",
-    "usage_count": 5
+    "updated_at": "2026-11-13T16:59:27.304457",
+    "usage_count": 7
   },
   "he ___ luka ____ luka after he took over his father's firm. | stać się bogatym, wzbogacić się": {
     "answer": "get rich",

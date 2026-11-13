@@ -5918,5 +5918,100 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-13T15:32:15.897541"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "17:57",
+    "words_total": 15,
+    "words_correct": 7,
+    "words_mistakes": 8,
+    "new_words_count": 0,
+    "autocorrect_count": 4,
+    "accuracy_percent": 46.7,
+    "duration_seconds": 206.0,
+    "started_at_warsaw": "2026-11-13 17:57:00 CET",
+    "completed_at_warsaw": "2026-11-13 18:00:26 CET",
+    "finished_at": "2026-11-13T18:00:26.864736+01:00",
+    "words_details": [
+      {
+        "prompt": "artykuł",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "dziennikarz",
+        "answer": "journalist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (np. z filmu)",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (np. z filmu)",
+        "answer": "scene",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "scena (np. z filmu)",
+        "answer": "scene",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-13T17:00:26.864970"
   }
 ]
