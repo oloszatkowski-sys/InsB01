@@ -171,15 +171,15 @@
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-11-12T20:51:09.560141",
-    "usage_count": 9
+    "updated_at": "2026-11-13T20:24:39.975169",
+    "usage_count": 11
   },
   "ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-11-12T20:51:09.560141",
-    "usage_count": 9
+    "updated_at": "2026-11-13T20:24:39.975169",
+    "usage_count": 11
   },
   "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
     "answer": "it's written by",
@@ -1109,15 +1109,15 @@
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-12T20:51:39.672754",
-    "usage_count": 9
+    "updated_at": "2026-11-13T20:24:08.035233",
+    "usage_count": 11
   },
   "aktor": {
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-12T20:51:39.672754",
-    "usage_count": 9
+    "updated_at": "2026-11-13T20:24:08.035233",
+    "usage_count": 11
   },
   "students, stop talking and ___ luka _________ luka during the class! | uważać (np. na lekcji)": {
     "answer": "pay attention",
@@ -1375,15 +1375,15 @@
     "answer": "title",
     "prompt": "tytuł",
     "sentence": "What was the _____\nluka\n of this book?",
-    "updated_at": "2026-11-12T20:50:10.797980",
-    "usage_count": 1
+    "updated_at": "2026-11-13T20:25:07.566449",
+    "usage_count": 3
   },
   "tytuł": {
     "answer": "title",
     "prompt": "tytuł",
     "sentence": "What was the _____\nluka\n of this book?",
-    "updated_at": "2026-11-12T20:50:10.797980",
-    "usage_count": 1
+    "updated_at": "2026-11-13T20:25:07.566449",
+    "usage_count": 3
   },
   "does your brother enjoy ______ luka _____ luka ? | film akcji": {
     "answer": "action film",
@@ -1397,6 +1397,104 @@
     "prompt": "film akcji",
     "sentence": "Does your brother enjoy ______\nluka\n _____\nluka\n?",
     "updated_at": "2026-11-12T20:50:32.367441",
+    "usage_count": 1
+  },
+  "a good ______ luka will make you feel better. | komedia": {
+    "answer": "comedy",
+    "prompt": "komedia",
+    "sentence": "A good ______\nluka\n will make you feel better.",
+    "updated_at": "2026-11-13T20:26:56.870401",
+    "usage_count": 3
+  },
+  "komedia": {
+    "answer": "comedy",
+    "prompt": "komedia",
+    "sentence": "A good ______\nluka\n will make you feel better.",
+    "updated_at": "2026-11-13T20:26:56.870401",
+    "usage_count": 3
+  },
+  "i'm not keen on ________ luka . | film lub sztuka muzyczna": {
+    "answer": "musical",
+    "prompt": "film lub sztuka muzyczna",
+    "sentence": "I'm not keen on ________\nluka\n.",
+    "updated_at": "2026-11-13T20:27:37.570373",
+    "usage_count": 3
+  },
+  "film lub sztuka muzyczna": {
+    "answer": "musical",
+    "prompt": "film lub sztuka muzyczna",
+    "sentence": "I'm not keen on ________\nluka\n.",
+    "updated_at": "2026-11-13T20:27:37.570373",
+    "usage_count": 3
+  },
+  "ice age is my favourite ________ luka ____ luka . | film animowany": {
+    "answer": "animated film",
+    "prompt": "film animowany",
+    "sentence": "Ice Age is my favourite ________\nluka\n ____\nluka\n.",
+    "updated_at": "2026-11-13T20:26:22.885849",
+    "usage_count": 1
+  },
+  "film animowany": {
+    "answer": "animated film",
+    "prompt": "film animowany",
+    "sentence": "Ice Age is my favourite ________\nluka\n ____\nluka\n.",
+    "updated_at": "2026-11-13T20:26:22.885849",
+    "usage_count": 1
+  },
+  "he first appeared in a film as an _____ luka . | statysta": {
+    "answer": "extra",
+    "prompt": "statysta",
+    "sentence": "He first appeared in a film as an _____\nluka\n.",
+    "updated_at": "2026-11-13T20:26:48.955033",
+    "usage_count": 1
+  },
+  "statysta": {
+    "answer": "extra",
+    "prompt": "statysta",
+    "sentence": "He first appeared in a film as an _____\nluka\n.",
+    "updated_at": "2026-11-13T20:26:48.955033",
+    "usage_count": 1
+  },
+  "my sister likes _______ luka _____ luka . | film fantasy": {
+    "answer": "fantasy film",
+    "prompt": "film fantasy",
+    "sentence": "My sister likes _______\nluka\n _____\nluka\n.",
+    "updated_at": "2026-11-13T20:27:26.486680",
+    "usage_count": 1
+  },
+  "film fantasy": {
+    "answer": "fantasy film",
+    "prompt": "film fantasy",
+    "sentence": "My sister likes _______\nluka\n _____\nluka\n.",
+    "updated_at": "2026-11-13T20:27:26.486680",
+    "usage_count": 1
+  },
+  "i like watching _______ luka _______ luka _____ luka . | film fantastycznonaukowy": {
+    "answer": "science fiction film",
+    "prompt": "film fantastycznonaukowy",
+    "sentence": "I like watching _______\nluka\n _______\nluka\n _____\nluka\n.",
+    "updated_at": "2026-11-13T20:27:57.683306",
+    "usage_count": 1
+  },
+  "film fantastycznonaukowy": {
+    "answer": "science fiction film",
+    "prompt": "film fantastycznonaukowy",
+    "sentence": "I like watching _______\nluka\n _______\nluka\n _____\nluka\n.",
+    "updated_at": "2026-11-13T20:27:57.683306",
+    "usage_count": 1
+  },
+  "i'm always afraid of ______ luka _____ luka ! | horror": {
+    "answer": "horror film",
+    "prompt": "horror",
+    "sentence": "I'm always afraid of ______\nluka\n _____\nluka\n!",
+    "updated_at": "2026-11-13T20:28:17.272150",
+    "usage_count": 1
+  },
+  "horror": {
+    "answer": "horror film",
+    "prompt": "horror",
+    "sentence": "I'm always afraid of ______\nluka\n _____\nluka\n!",
+    "updated_at": "2026-11-13T20:28:17.272150",
     "usage_count": 1
   }
 }

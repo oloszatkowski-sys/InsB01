@@ -6013,5 +6013,185 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-13T17:00:26.864970"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "20:30",
+    "words_total": 32,
+    "words_correct": 15,
+    "words_mistakes": 17,
+    "new_words_count": 7,
+    "autocorrect_count": 5,
+    "accuracy_percent": 46.9,
+    "duration_seconds": 336.8,
+    "started_at_warsaw": "2026-11-13 21:23:23 CET",
+    "completed_at_warsaw": "2026-11-13 21:29:00 CET",
+    "finished_at": "2026-11-13T21:29:00.280338+01:00",
+    "words_details": [
+      {
+        "prompt": "film akcji",
+        "answer": "action film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "efekty specjalne",
+        "answer": "special effects",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "title",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "inspirować; wzbudzać (coś w kimś)",
+        "answer": "inspire",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grać główną rolę",
+        "answer": "star",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "komedia",
+        "answer": "comedy",
+        "status": "nowe"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "title",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film lub sztuka muzyczna",
+        "answer": "musical",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film animowany",
+        "answer": "animated film",
+        "status": "nowe"
+      },
+      {
+        "prompt": "komedia",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film animowany",
+        "answer": "animated film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "statysta",
+        "answer": "extra",
+        "status": "nowe"
+      },
+      {
+        "prompt": "komedia",
+        "answer": "comedy",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "film lub sztuka muzyczna",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "komedia",
+        "answer": "comedy",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantasy",
+        "answer": "fantasy film",
+        "status": "nowe"
+      },
+      {
+        "prompt": "film lub sztuka muzyczna",
+        "answer": "musical",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "film fantasy",
+        "answer": "fantasy film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantastycznonaukowy",
+        "answer": "science fiction film",
+        "status": "nowe"
+      },
+      {
+        "prompt": "film lub sztuka muzyczna",
+        "answer": "musical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "horror",
+        "answer": "horror film",
+        "status": "nowe"
+      },
+      {
+        "prompt": "horror",
+        "answer": "horror film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantastycznonaukowy",
+        "answer": "science fiction film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "statysta",
+        "answer": "extra",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-13T20:29:00.280567"
   }
 ]
