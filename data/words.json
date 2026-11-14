@@ -801,15 +801,15 @@
     "answer": "soundtrack",
     "prompt": "ścieżka dźwiękowa",
     "sentence": "The film was totally lame - except for the __________\nluka\n! Yes, the music was really cool.",
-    "updated_at": "2026-10-29T20:10:03.334986",
-    "usage_count": 1
+    "updated_at": "2026-11-14T20:29:04.399349",
+    "usage_count": 3
   },
   "ścieżka dźwiękowa": {
     "answer": "soundtrack",
     "prompt": "ścieżka dźwiękowa",
     "sentence": "The film was totally lame - except for the __________\nluka\n! Yes, the music was really cool.",
-    "updated_at": "2026-10-29T20:10:03.334986",
-    "usage_count": 1
+    "updated_at": "2026-11-14T20:29:04.399349",
+    "usage_count": 3
   },
   "i gave the _______ luka to my mother and she really likes it. | rysunek": {
     "answer": "drawing",
@@ -927,15 +927,15 @@
     "answer": "painting",
     "prompt": "obraz",
     "sentence": "On the wall there is a beautiful ________\nluka\n.",
-    "updated_at": "2026-11-13T16:59:27.304457",
-    "usage_count": 7
+    "updated_at": "2026-11-14T20:27:08.473006",
+    "usage_count": 9
   },
   "obraz": {
     "answer": "painting",
     "prompt": "obraz",
     "sentence": "On the wall there is a beautiful ________\nluka\n.",
-    "updated_at": "2026-11-13T16:59:27.304457",
-    "usage_count": 7
+    "updated_at": "2026-11-14T20:27:08.473006",
+    "usage_count": 9
   },
   "he ___ luka ____ luka after he took over his father's firm. | stać się bogatym, wzbogacić się": {
     "answer": "get rich",
@@ -1067,15 +1067,15 @@
     "answer": "cinema",
     "prompt": "kino",
     "sentence": "Let's meet at the ______\nluka\n at half past four.",
-    "updated_at": "2026-11-01T20:07:29.899080",
-    "usage_count": 1
+    "updated_at": "2026-11-14T20:26:48.324315",
+    "usage_count": 3
   },
   "kino": {
     "answer": "cinema",
     "prompt": "kino",
     "sentence": "Let's meet at the ______\nluka\n at half past four.",
-    "updated_at": "2026-11-01T20:07:29.899080",
-    "usage_count": 1
+    "updated_at": "2026-11-14T20:26:48.324315",
+    "usage_count": 3
   },
   "he is a great ______ luka , he knows how to move. | tancerz": {
     "answer": "dancer",

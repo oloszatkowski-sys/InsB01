@@ -6413,5 +6413,115 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-14T18:41:57.612874"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "21:26",
+    "words_total": 18,
+    "words_correct": 12,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 66.7,
+    "duration_seconds": 235.5,
+    "started_at_warsaw": "2026-11-14 21:26:00 CET",
+    "completed_at_warsaw": "2026-11-14 21:29:56 CET",
+    "finished_at": "2026-11-14T21:29:56.096467+01:00",
+    "words_details": [
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny (pierwszoplanowy) aktor",
+        "answer": "lead actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kino",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kino",
+        "answer": "cinema",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rola",
+        "answer": "role",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (np. z filmu)",
+        "answer": "scene",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (miejsce)",
+        "answer": "stage",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "szczotka; pędzel",
+        "answer": "brush",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obsada",
+        "answer": "cast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "autokorekta"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-14T20:29:56.096781"
   }
 ]
