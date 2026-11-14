@@ -6273,5 +6273,110 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-13T20:44:05.682689"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "15:47",
+    "words_total": 17,
+    "words_correct": 9,
+    "words_mistakes": 8,
+    "new_words_count": 0,
+    "autocorrect_count": 4,
+    "accuracy_percent": 52.9,
+    "duration_seconds": 232.0,
+    "started_at_warsaw": "2026-11-14 15:47:00 CET",
+    "completed_at_warsaw": "2026-11-14 15:50:52 CET",
+    "finished_at": "2026-11-14T15:50:52.632924+01:00",
+    "words_details": [
+      {
+        "prompt": "ekran",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "szczotka; pędzel",
+        "answer": "brush",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (np. z filmu)",
+        "answer": "scene",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "klasyczny",
+        "answer": "classical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (miejsce)",
+        "answer": "stage",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "put on",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-14T14:50:52.633258"
   }
 ]

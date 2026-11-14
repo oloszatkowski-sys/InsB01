@@ -171,15 +171,15 @@
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-11-13T20:42:26.417054",
-    "usage_count": 13
+    "updated_at": "2026-11-14T14:47:27.950207",
+    "usage_count": 15
   },
   "ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-11-13T20:42:26.417054",
-    "usage_count": 13
+    "updated_at": "2026-11-14T14:47:27.950207",
+    "usage_count": 15
   },
   "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
     "answer": "it's written by",
@@ -213,15 +213,15 @@
     "answer": "put on",
     "prompt": "wystawiać (sztukę, przedstawienie)",
     "sentence": "My class ___\nluka\n __\nluka\n an amazing play last week.",
-    "updated_at": "2026-10-19T20:21:45.254171",
-    "usage_count": 1
+    "updated_at": "2026-11-14T14:49:48.131854",
+    "usage_count": 3
   },
   "wystawiać (sztukę, przedstawienie)": {
     "answer": "put on",
     "prompt": "wystawiać (sztukę, przedstawienie)",
     "sentence": "My class ___\nluka\n __\nluka\n an amazing play last week.",
-    "updated_at": "2026-10-19T20:21:45.254171",
-    "usage_count": 1
+    "updated_at": "2026-11-14T14:49:48.131854",
+    "usage_count": 3
   },
   "what is that ____ luka about? | piosenka": {
     "answer": "song",
@@ -479,15 +479,15 @@
     "answer": "fashion designer",
     "prompt": "projektant mody",
     "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
-    "updated_at": "2026-11-13T20:41:57.012579",
-    "usage_count": 7
+    "updated_at": "2026-11-14T14:48:29.282851",
+    "usage_count": 9
   },
   "projektant mody": {
     "answer": "fashion designer",
     "prompt": "projektant mody",
     "sentence": "Sheila loves clothes and she'd like to become a _______\nluka\n ________\nluka\n one day.",
-    "updated_at": "2026-11-13T20:41:57.012579",
-    "usage_count": 7
+    "updated_at": "2026-11-14T14:48:29.282851",
+    "usage_count": 9
   },
   "i saw your ______ luka . i think it's great! | projekt; konstrukcja": {
     "answer": "design",
@@ -787,15 +787,15 @@
     "answer": "director",
     "prompt": "reżyser",
     "sentence": "The ________\nluka\n should cooperate with the film crew.",
-    "updated_at": "2026-10-29T20:09:24.456102",
-    "usage_count": 1
+    "updated_at": "2026-11-14T14:47:44.558240",
+    "usage_count": 3
   },
   "reżyser": {
     "answer": "director",
     "prompt": "reżyser",
     "sentence": "The ________\nluka\n should cooperate with the film crew.",
-    "updated_at": "2026-10-29T20:09:24.456102",
-    "usage_count": 1
+    "updated_at": "2026-11-14T14:47:44.558240",
+    "usage_count": 3
   },
   "the film was totally lame - except for the __________ luka ! yes, the music was really cool. | ścieżka dźwiękowa": {
     "answer": "soundtrack",
