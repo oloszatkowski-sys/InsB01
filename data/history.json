@@ -6523,5 +6523,165 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-14T20:29:56.096781"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "21:47",
+    "words_total": 28,
+    "words_correct": 15,
+    "words_mistakes": 13,
+    "new_words_count": 3,
+    "autocorrect_count": 5,
+    "accuracy_percent": 53.6,
+    "duration_seconds": 294.3,
+    "started_at_warsaw": "2026-11-14 21:47:01 CET",
+    "completed_at_warsaw": "2026-11-14 21:51:55 CET",
+    "finished_at": "2026-11-14T21:51:55.919316+01:00",
+    "words_details": [
+      {
+        "prompt": "film lub sztuka muzyczna",
+        "answer": "musical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "komedia",
+        "answer": "comedy",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film animowany",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film animowany",
+        "answer": "animated film",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "title",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "statysta",
+        "answer": "extra",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "film fantasy",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantasy",
+        "answer": "fantasy film",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "horror",
+        "answer": "horror film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantastycznonaukowy",
+        "answer": "science fiction film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obsada",
+        "answer": "cast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "superbohater",
+        "answer": "superhero",
+        "status": "nowe"
+      },
+      {
+        "prompt": "film fantasy",
+        "answer": "fantasy film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sławny",
+        "answer": "famous",
+        "status": "nowe"
+      },
+      {
+        "prompt": "sławny",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film animowany",
+        "answer": "animated film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film (BrE)",
+        "answer": "film",
+        "status": "nowe"
+      },
+      {
+        "prompt": "film (BrE)",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "superbohater",
+        "answer": "superhero",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sławny",
+        "answer": "famous",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "film (BrE)",
+        "answer": "film",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "film (BrE)",
+        "answer": "film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sławny",
+        "answer": "famous",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-14T20:51:55.919649"
   }
 ]

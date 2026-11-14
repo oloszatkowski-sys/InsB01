@@ -171,15 +171,15 @@
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-11-14T14:47:27.950207",
-    "usage_count": 15
+    "updated_at": "2026-11-14T20:48:33.662820",
+    "usage_count": 17
   },
   "ekran": {
     "answer": "screen",
     "prompt": "ekran",
     "sentence": "The kids couldn't take their eyes off the ______\nluka\n.",
-    "updated_at": "2026-11-14T14:47:27.950207",
-    "usage_count": 15
+    "updated_at": "2026-11-14T20:48:33.662820",
+    "usage_count": 17
   },
   "it's a well-known play _______ luka __ luka william shakespeare. | został napisany przez": {
     "answer": "it's written by",
@@ -1431,15 +1431,15 @@
     "answer": "animated film",
     "prompt": "film animowany",
     "sentence": "Ice Age is my favourite ________\nluka\n ____\nluka\n.",
-    "updated_at": "2026-11-13T20:26:22.885849",
-    "usage_count": 1
+    "updated_at": "2026-11-14T20:47:49.587897",
+    "usage_count": 3
   },
   "film animowany": {
     "answer": "animated film",
     "prompt": "film animowany",
     "sentence": "Ice Age is my favourite ________\nluka\n ____\nluka\n.",
-    "updated_at": "2026-11-13T20:26:22.885849",
-    "usage_count": 1
+    "updated_at": "2026-11-14T20:47:49.587897",
+    "usage_count": 3
   },
   "he first appeared in a film as an _____ luka . | statysta": {
     "answer": "extra",
@@ -1459,15 +1459,15 @@
     "answer": "fantasy film",
     "prompt": "film fantasy",
     "sentence": "My sister likes _______\nluka\n _____\nluka\n.",
-    "updated_at": "2026-11-13T20:27:26.486680",
-    "usage_count": 1
+    "updated_at": "2026-11-14T20:49:07.414613",
+    "usage_count": 3
   },
   "film fantasy": {
     "answer": "fantasy film",
     "prompt": "film fantasy",
     "sentence": "My sister likes _______\nluka\n _____\nluka\n.",
-    "updated_at": "2026-11-13T20:27:26.486680",
-    "usage_count": 1
+    "updated_at": "2026-11-14T20:49:07.414613",
+    "usage_count": 3
   },
   "i like watching _______ luka _______ luka _____ luka . | film fantastycznonaukowy": {
     "answer": "science fiction film",
@@ -1496,5 +1496,47 @@
     "sentence": "I'm always afraid of ______\nluka\n _____\nluka\n!",
     "updated_at": "2026-11-13T20:28:17.272150",
     "usage_count": 1
+  },
+  "i love movies about this _________ luka . | superbohater": {
+    "answer": "superhero",
+    "prompt": "superbohater",
+    "sentence": "I love movies about this _________\nluka\n.",
+    "updated_at": "2026-11-14T20:50:04.207133",
+    "usage_count": 1
+  },
+  "superbohater": {
+    "answer": "superhero",
+    "prompt": "superbohater",
+    "sentence": "I love movies about this _________\nluka\n.",
+    "updated_at": "2026-11-14T20:50:04.207133",
+    "usage_count": 1
+  },
+  "she is a very ______ luka person. | sławny": {
+    "answer": "famous",
+    "prompt": "sławny",
+    "sentence": "She is a very ______\nluka\n person.",
+    "updated_at": "2026-11-14T20:51:19.334213",
+    "usage_count": 3
+  },
+  "sławny": {
+    "answer": "famous",
+    "prompt": "sławny",
+    "sentence": "She is a very ______\nluka\n person.",
+    "updated_at": "2026-11-14T20:51:19.334213",
+    "usage_count": 3
+  },
+  "what time is the ____ luka ? | film (bre)": {
+    "answer": "film",
+    "prompt": "film (BrE)",
+    "sentence": "What time is the ____\nluka\n?",
+    "updated_at": "2026-11-14T20:51:30.120523",
+    "usage_count": 3
+  },
+  "film (bre)": {
+    "answer": "film",
+    "prompt": "film (BrE)",
+    "sentence": "What time is the ____\nluka\n?",
+    "updated_at": "2026-11-14T20:51:30.120523",
+    "usage_count": 3
   }
 }
