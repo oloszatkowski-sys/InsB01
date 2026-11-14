@@ -6378,5 +6378,40 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-14T14:50:52.633258"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "18:04",
+    "words_total": 3,
+    "words_correct": 1,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 33.3,
+    "duration_seconds": 86.4,
+    "started_at_warsaw": "2026-11-14 19:40:31 CET",
+    "completed_at_warsaw": "2026-11-14 19:41:57 CET",
+    "finished_at": "2026-11-14T19:41:57.612550+01:00",
+    "words_details": [
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-14T18:41:57.612874"
   }
 ]
