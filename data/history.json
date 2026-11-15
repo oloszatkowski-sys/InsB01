@@ -6808,5 +6808,60 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-15T12:07:06.908289"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "16:39",
+    "words_total": 7,
+    "words_correct": 5,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 135.6,
+    "started_at_warsaw": "2026-11-15 16:39:00 CET",
+    "completed_at_warsaw": "2026-11-15 16:41:16 CET",
+    "finished_at": "2026-11-15T16:41:16.407154+01:00",
+    "words_details": [
+      {
+        "prompt": "kino",
+        "answer": "cinema",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dziennikarz",
+        "answer": "journalist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "powieść",
+        "answer": "novel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "prediction",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-15T15:41:16.407367"
   }
 ]

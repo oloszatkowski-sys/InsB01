@@ -745,15 +745,15 @@
     "answer": "science fiction",
     "prompt": "science fiction; fantastyka naukowa",
     "sentence": "I prefer fantasy to _______\nluka\n _______\nluka\n.",
-    "updated_at": "2026-10-29T20:08:15.319263",
-    "usage_count": 1
+    "updated_at": "2026-11-15T15:40:12.021736",
+    "usage_count": 3
   },
   "science fiction; fantastyka naukowa": {
     "answer": "science fiction",
     "prompt": "science fiction; fantastyka naukowa",
     "sentence": "I prefer fantasy to _______\nluka\n _______\nluka\n.",
-    "updated_at": "2026-10-29T20:08:15.319263",
-    "usage_count": 1
+    "updated_at": "2026-11-15T15:40:12.021736",
+    "usage_count": 3
   },
   "i prefer rock to ___ luka . | pop": {
     "answer": "pop",
