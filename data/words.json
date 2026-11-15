@@ -1538,5 +1538,145 @@
     "sentence": "What time is the ____\nluka\n?",
     "updated_at": "2026-11-14T20:51:30.120523",
     "usage_count": 3
+  },
+  "the ______ luka sat at the table and tim started to shuffle the cards. | gracz": {
+    "answer": "player",
+    "prompt": "gracz",
+    "sentence": "The ______\nluka\n sat at the table and Tim started to shuffle the cards.",
+    "updated_at": "2026-11-15T20:39:58.458398",
+    "usage_count": 3
+  },
+  "gracz": {
+    "answer": "player",
+    "prompt": "gracz",
+    "sentence": "The ______\nluka\n sat at the table and Tim started to shuffle the cards.",
+    "updated_at": "2026-11-15T20:39:58.458398",
+    "usage_count": 3
+  },
+  "neil ______ luka the ball. | kopać; kopnąć": {
+    "answer": "kick",
+    "prompt": "kopać; kopnąć",
+    "sentence": "Neil ______\nluka\n the ball.",
+    "updated_at": "2026-11-15T20:39:08.381180",
+    "usage_count": 1
+  },
+  "kopać; kopnąć": {
+    "answer": "kick",
+    "prompt": "kopać; kopnąć",
+    "sentence": "Neil ______\nluka\n the ball.",
+    "updated_at": "2026-11-15T20:39:08.381180",
+    "usage_count": 1
+  },
+  "the fans _________ luka their team. | popierać; pomagać; kibicować": {
+    "answer": "support",
+    "prompt": "popierać; pomagać; kibicować",
+    "sentence": "The fans _________\nluka\n their team.",
+    "updated_at": "2026-11-15T20:43:40.699003",
+    "usage_count": 3
+  },
+  "popierać; pomagać; kibicować": {
+    "answer": "support",
+    "prompt": "popierać; pomagać; kibicować",
+    "sentence": "The fans _________\nluka\n their team.",
+    "updated_at": "2026-11-15T20:43:40.699003",
+    "usage_count": 3
+  },
+  "would you like to ____ luka us? we're going to the cinema tonight. | łączyć; przyłączać (się); dołączyć": {
+    "answer": "join",
+    "prompt": "łączyć; przyłączać (się); dołączyć",
+    "sentence": "Would you like to ____\nluka\n us? We're going to the cinema tonight.",
+    "updated_at": "2026-11-15T20:39:46.564529",
+    "usage_count": 1
+  },
+  "łączyć; przyłączać (się); dołączyć": {
+    "answer": "join",
+    "prompt": "łączyć; przyłączać (się); dołączyć",
+    "sentence": "Would you like to ____\nluka\n us? We're going to the cinema tonight.",
+    "updated_at": "2026-11-15T20:39:46.564529",
+    "usage_count": 1
+  },
+  "the doctor told her to lie in a comfortable ________ luka . | pozycja; położenie": {
+    "answer": "position",
+    "prompt": "pozycja; położenie",
+    "sentence": "The doctor told her to lie in a comfortable ________\nluka\n.",
+    "updated_at": "2026-11-15T20:41:01.822062",
+    "usage_count": 3
+  },
+  "pozycja; położenie": {
+    "answer": "position",
+    "prompt": "pozycja; położenie",
+    "sentence": "The doctor told her to lie in a comfortable ________\nluka\n.",
+    "updated_at": "2026-11-15T20:41:01.822062",
+    "usage_count": 3
+  },
+  "he's the best player on the pitch. he always ______ luka many _____ luka ! | strzelać gole": {
+    "answer": "score goals",
+    "prompt": "strzelać gole",
+    "sentence": "He's the best player on the pitch. He always ______\nluka\n many _____\nluka\n!",
+    "updated_at": "2026-11-15T20:41:41.180236",
+    "usage_count": 3
+  },
+  "strzelać gole": {
+    "answer": "score goals",
+    "prompt": "strzelać gole",
+    "sentence": "He's the best player on the pitch. He always ______\nluka\n many _____\nluka\n!",
+    "updated_at": "2026-11-15T20:41:41.180236",
+    "usage_count": 3
+  },
+  "_____ luka the ball, and i'll catch it. | rzucać; wyrzucić": {
+    "answer": "throw",
+    "prompt": "rzucać; wyrzucić",
+    "sentence": "_____\nluka\n the ball, and I'll catch it.",
+    "updated_at": "2026-11-15T20:42:01.193640",
+    "usage_count": 3
+  },
+  "rzucać; wyrzucić": {
+    "answer": "throw",
+    "prompt": "rzucać; wyrzucić",
+    "sentence": "_____\nluka\n the ball, and I'll catch it.",
+    "updated_at": "2026-11-15T20:42:01.193640",
+    "usage_count": 3
+  },
+  "how did he ____ luka the goal? | chybić, spudłować, nie trafić": {
+    "answer": "miss",
+    "prompt": "chybić, spudłować, nie trafić",
+    "sentence": "How did he ____\nluka\n the goal?",
+    "updated_at": "2026-11-15T20:42:20.634011",
+    "usage_count": 1
+  },
+  "chybić, spudłować, nie trafić": {
+    "answer": "miss",
+    "prompt": "chybić, spudłować, nie trafić",
+    "sentence": "How did he ____\nluka\n the goal?",
+    "updated_at": "2026-11-15T20:42:20.634011",
+    "usage_count": 1
+  },
+  "he should have brought his medical ___ luka to the game. | zestaw; komplet": {
+    "answer": "kit",
+    "prompt": "zestaw; komplet",
+    "sentence": "He should have brought his medical ___\nluka\n to the game.",
+    "updated_at": "2026-11-15T20:42:34.687932",
+    "usage_count": 1
+  },
+  "zestaw; komplet": {
+    "answer": "kit",
+    "prompt": "zestaw; komplet",
+    "sentence": "He should have brought his medical ___\nluka\n to the game.",
+    "updated_at": "2026-11-15T20:42:34.687932",
+    "usage_count": 1
+  },
+  "should i _____ luka the singing competition? | brać udział (w zawodach)": {
+    "answer": "enter",
+    "prompt": "brać udział (w zawodach)",
+    "sentence": "Should I _____\nluka\n the singing competition?",
+    "updated_at": "2026-11-15T20:43:03.388732",
+    "usage_count": 1
+  },
+  "brać udział (w zawodach)": {
+    "answer": "enter",
+    "prompt": "brać udział (w zawodach)",
+    "sentence": "Should I _____\nluka\n the singing competition?",
+    "updated_at": "2026-11-15T20:43:03.388732",
+    "usage_count": 1
   }
 }

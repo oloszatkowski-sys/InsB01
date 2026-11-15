@@ -6863,5 +6863,200 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-15T15:41:16.407367"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "21:38",
+    "words_total": 35,
+    "words_correct": 15,
+    "words_mistakes": 20,
+    "new_words_count": 10,
+    "autocorrect_count": 5,
+    "accuracy_percent": 42.9,
+    "duration_seconds": 361.7,
+    "started_at_warsaw": "2026-11-15 21:38:00 CET",
+    "completed_at_warsaw": "2026-11-15 21:44:02 CET",
+    "finished_at": "2026-11-15T21:44:02.488320+01:00",
+    "words_details": [
+      {
+        "prompt": "reality show",
+        "answer": "reality show",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "serial kryminalny",
+        "answer": "crime series",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gracz",
+        "answer": "player",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "nowe"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "nowe"
+      },
+      {
+        "prompt": "gracz",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "łączyć; przyłączać (się); dołączyć",
+        "answer": "join",
+        "status": "nowe"
+      },
+      {
+        "prompt": "gracz",
+        "answer": "player",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "gracz",
+        "answer": "player",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "position",
+        "status": "nowe"
+      },
+      {
+        "prompt": "łączyć; przyłączać (się); dołączyć",
+        "answer": "join",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "nowe"
+      },
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "position",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "position",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "nowe"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "chybić, spudłować, nie trafić",
+        "answer": "miss",
+        "status": "nowe"
+      },
+      {
+        "prompt": "chybić, spudłować, nie trafić",
+        "answer": "miss",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zestaw; komplet",
+        "answer": "kit",
+        "status": "nowe"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uważać (np. na lekcji)",
+        "answer": "pay attention",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "brać udział (w zawodach)",
+        "answer": "enter",
+        "status": "nowe"
+      },
+      {
+        "prompt": "brać udział (w zawodach)",
+        "answer": "enter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "_________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zestaw; komplet",
+        "answer": "kit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-15T20:44:02.488644"
   }
 ]
