@@ -493,15 +493,15 @@
     "answer": "design",
     "prompt": "projekt; konstrukcja",
     "sentence": "I saw your ______\nluka\n. I think it's great!",
-    "updated_at": "2026-11-14T18:40:57.163820",
-    "usage_count": 5
+    "updated_at": "2026-11-15T12:03:38.922055",
+    "usage_count": 7
   },
   "projekt; konstrukcja": {
     "answer": "design",
     "prompt": "projekt; konstrukcja",
     "sentence": "I saw your ______\nluka\n. I think it's great!",
-    "updated_at": "2026-11-14T18:40:57.163820",
-    "usage_count": 5
+    "updated_at": "2026-11-15T12:03:38.922055",
+    "usage_count": 7
   },
   "can you play any musical __________ luka ? | instrument; przyrząd": {
     "answer": "instrument",
@@ -535,15 +535,15 @@
     "answer": "musician",
     "prompt": "muzyk",
     "sentence": "She's a ________\nluka\n and plays the violin.",
-    "updated_at": "2026-10-27T16:47:29.474011",
-    "usage_count": 1
+    "updated_at": "2026-11-15T12:06:17.393656",
+    "usage_count": 3
   },
   "muzyk": {
     "answer": "musician",
     "prompt": "muzyk",
     "sentence": "She's a ________\nluka\n and plays the violin.",
-    "updated_at": "2026-10-27T16:47:29.474011",
-    "usage_count": 1
+    "updated_at": "2026-11-15T12:06:17.393656",
+    "usage_count": 3
   },
   "the ____ luka in the book is really complicated. i'll have to read it again to understand what's going on. | fabuła; akcja; wątek": {
     "answer": "plot",
@@ -591,15 +591,15 @@
     "answer": "writer",
     "prompt": "pisarz",
     "sentence": "The famous ______\nluka\n died at the age of 94.",
-    "updated_at": "2026-10-29T18:29:13.177472",
-    "usage_count": 3
+    "updated_at": "2026-11-15T12:05:32.608943",
+    "usage_count": 5
   },
   "pisarz": {
     "answer": "writer",
     "prompt": "pisarz",
     "sentence": "The famous ______\nluka\n died at the age of 94.",
-    "updated_at": "2026-10-29T18:29:13.177472",
-    "usage_count": 3
+    "updated_at": "2026-11-15T12:05:32.608943",
+    "usage_count": 5
   },
   "who's your favourite _______ luka ? | aktorka": {
     "answer": "actress",

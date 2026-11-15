@@ -671,18 +671,24 @@
           "is_off_day": false,
           "scheduled_minutes": 430,
           "scheduled_time": "07:10",
-          "status": "Oczekuje",
-          "completed": false,
-          "countdown_sent": false,
-          "started_at": null,
-          "completed_at": null,
-          "duration_seconds": null,
-          "accuracy_percent": null,
+          "status": "Ukończono",
+          "completed": true,
+          "countdown_sent": true,
+          "started_at": "2026-11-15 13:03:03 CET",
+          "completed_at": "2026-11-15 13:07:08 CET",
+          "duration_seconds": 239.8,
+          "accuracy_percent": 71.4,
           "error": null,
           "discord_username": "gonia0011",
           "discord_display": "Как дела",
           "discord_ping": "<@1124798692193476608>",
-          "discord_id": "1124798692193476608"
+          "discord_id": "1124798692193476608",
+          "words_total": 21,
+          "words_correct": 15,
+          "words_mistakes": 6,
+          "new_words_count": 0,
+          "error_count": 0,
+          "retry_after_warsaw": null
         },
         {
           "slot_id": "2026-11-15_user_2",
@@ -751,5 +757,5 @@
     }
   },
   "last_weekly_plan_week": "2026-W46",
-  "last_daily_plan_date": "2026-11-14"
+  "last_daily_plan_date": "2026-11-15"
 }

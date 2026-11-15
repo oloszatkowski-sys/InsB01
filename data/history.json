@@ -6683,5 +6683,130 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-14T20:51:55.919649"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "07:10",
+    "words_total": 21,
+    "words_correct": 15,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 239.8,
+    "started_at_warsaw": "2026-11-15 13:03:07 CET",
+    "completed_at_warsaw": "2026-11-15 13:07:06 CET",
+    "finished_at": "2026-11-15T13:07:06.908079+01:00",
+    "words_details": [
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "prognoza",
+        "answer": "prediction",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiersz",
+        "answer": "poem",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "powieść",
+        "answer": "novel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "malarz",
+        "answer": "painter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "serial kryminalny",
+        "answer": "crime series",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "występ",
+        "answer": "performance",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisarz",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pisarz",
+        "answer": "writer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "instrument; przyrząd",
+        "answer": "instrument",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "klasyczny",
+        "answer": "classical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "muzyk",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "muzyk",
+        "answer": "musician",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "muzyk",
+        "answer": "musician",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisarz",
+        "answer": "writer",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-15T12:07:06.908289"
   }
 ]
