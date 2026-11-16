@@ -143,15 +143,15 @@
     "answer": "art gallery",
     "prompt": "galeria sztuki",
     "sentence": "Are there any ___\nluka\n _________\nluka\n in your town?",
-    "updated_at": "2026-10-19T20:08:04.721015",
-    "usage_count": 1
+    "updated_at": "2026-11-16T12:57:42.984766",
+    "usage_count": 3
   },
   "galeria sztuki": {
     "answer": "art gallery",
     "prompt": "galeria sztuki",
     "sentence": "Are there any ___\nluka\n _________\nluka\n in your town?",
-    "updated_at": "2026-10-19T20:08:04.721015",
-    "usage_count": 1
+    "updated_at": "2026-11-16T12:57:42.984766",
+    "usage_count": 3
   },
   "i'm only here for a few days of the ________ luka . | festiwal": {
     "answer": "festival",
@@ -605,15 +605,15 @@
     "answer": "actress",
     "prompt": "aktorka",
     "sentence": "Who's your favourite _______\nluka\n?",
-    "updated_at": "2026-10-29T20:07:55.656118",
-    "usage_count": 3
+    "updated_at": "2026-11-16T12:57:01.240545",
+    "usage_count": 5
   },
   "aktorka": {
     "answer": "actress",
     "prompt": "aktorka",
     "sentence": "Who's your favourite _______\nluka\n?",
-    "updated_at": "2026-10-29T20:07:55.656118",
-    "usage_count": 3
+    "updated_at": "2026-11-16T12:57:01.240545",
+    "usage_count": 5
   },
   "she was humming a merry ____ luka . | melodia": {
     "answer": "tune",
@@ -1677,6 +1677,104 @@
     "prompt": "brać udział (w zawodach)",
     "sentence": "Should I _____\nluka\n the singing competition?",
     "updated_at": "2026-11-15T20:43:03.388732",
+    "usage_count": 1
+  },
+  "i'm the _________ luka of the hosting country. | kibic": {
+    "answer": "supporter",
+    "prompt": "kibic",
+    "sentence": "I'm the _________\nluka\n of the hosting country.",
+    "updated_at": "2026-11-16T12:55:52.055621",
+    "usage_count": 1
+  },
+  "kibic": {
+    "answer": "supporter",
+    "prompt": "kibic",
+    "sentence": "I'm the _________\nluka\n of the hosting country.",
+    "updated_at": "2026-11-16T12:55:52.055621",
+    "usage_count": 1
+  },
+  "despite some terrible plays by their quarterback, they managed to ____ luka . | remisować": {
+    "answer": "draw",
+    "prompt": "remisować",
+    "sentence": "Despite some terrible plays by their quarterback, they managed to ____\nluka\n.",
+    "updated_at": "2026-11-16T12:56:50.801488",
+    "usage_count": 3
+  },
+  "remisować": {
+    "answer": "draw",
+    "prompt": "remisować",
+    "sentence": "Despite some terrible plays by their quarterback, they managed to ____\nluka\n.",
+    "updated_at": "2026-11-16T12:56:50.801488",
+    "usage_count": 3
+  },
+  "the _______ luka held up a red card. | sędzia sportowy": {
+    "answer": "referee",
+    "prompt": "sędzia sportowy",
+    "sentence": "The _______\nluka\n held up a red card.",
+    "updated_at": "2026-11-16T12:58:09.343921",
+    "usage_count": 1
+  },
+  "sędzia sportowy": {
+    "answer": "referee",
+    "prompt": "sędzia sportowy",
+    "sentence": "The _______\nluka\n held up a red card.",
+    "updated_at": "2026-11-16T12:58:09.343921",
+    "usage_count": 1
+  },
+  "you can often ___ luka _____ luka on an obstacle course. | ubrudzić się błotem": {
+    "answer": "get muddy",
+    "prompt": "ubrudzić się błotem",
+    "sentence": "You can often ___\nluka\n _____\nluka\n on an obstacle course.",
+    "updated_at": "2026-11-16T12:58:35.009129",
+    "usage_count": 1
+  },
+  "ubrudzić się błotem": {
+    "answer": "get muddy",
+    "prompt": "ubrudzić się błotem",
+    "sentence": "You can often ___\nluka\n _____\nluka\n on an obstacle course.",
+    "updated_at": "2026-11-16T12:58:35.009129",
+    "usage_count": 1
+  },
+  "i'm sure you won't ____ luka the match. you're great! | przegrać": {
+    "answer": "lose",
+    "prompt": "przegrać",
+    "sentence": "I'm sure you won't ____\nluka\n the match. You're great!",
+    "updated_at": "2026-11-16T13:00:22.976893",
+    "usage_count": 3
+  },
+  "przegrać": {
+    "answer": "lose",
+    "prompt": "przegrać",
+    "sentence": "I'm sure you won't ____\nluka\n the match. You're great!",
+    "updated_at": "2026-11-16T13:00:22.976893",
+    "usage_count": 3
+  },
+  "they always _______ luka with each other. | konkurować": {
+    "answer": "compete",
+    "prompt": "konkurować",
+    "sentence": "They always _______\nluka\n with each other.",
+    "updated_at": "2026-11-16T12:59:27.006748",
+    "usage_count": 1
+  },
+  "konkurować": {
+    "answer": "compete",
+    "prompt": "konkurować",
+    "sentence": "They always _______\nluka\n with each other.",
+    "updated_at": "2026-11-16T12:59:27.006748",
+    "usage_count": 1
+  },
+  "i've got my tennis __________ luka at the weekend. i must win! | zawody; turniej": {
+    "answer": "tournament",
+    "prompt": "zawody; turniej",
+    "sentence": "I've got my tennis __________\nluka\n at the weekend. I must win!",
+    "updated_at": "2026-11-16T12:59:54.818913",
+    "usage_count": 1
+  },
+  "zawody; turniej": {
+    "answer": "tournament",
+    "prompt": "zawody; turniej",
+    "sentence": "I've got my tennis __________\nluka\n at the weekend. I must win!",
+    "updated_at": "2026-11-16T12:59:54.818913",
     "usage_count": 1
   }
 }

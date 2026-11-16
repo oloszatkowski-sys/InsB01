@@ -7058,5 +7058,175 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-15T20:44:02.488644"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "06:51",
+    "words_total": 30,
+    "words_correct": 15,
+    "words_mistakes": 15,
+    "new_words_count": 7,
+    "autocorrect_count": 4,
+    "accuracy_percent": 50.0,
+    "duration_seconds": 308.5,
+    "started_at_warsaw": "2026-11-16 13:55:33 CET",
+    "completed_at_warsaw": "2026-11-16 14:00:41 CET",
+    "finished_at": "2026-11-16T14:00:41.595889+01:00",
+    "words_details": [
+      {
+        "prompt": "kibic",
+        "answer": "supporter",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "remisować",
+        "answer": "draw",
+        "status": "nowe"
+      },
+      {
+        "prompt": "brać udział (w zawodach)",
+        "answer": "enter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "remisować",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "remisować",
+        "answer": "draw",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "galeria sztuki",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "remisować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "galeria sztuki",
+        "answer": "art gallery",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "position",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "nowe"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zestaw; komplet",
+        "answer": "kit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ubrudzić się błotem",
+        "answer": "get muddy",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kibic",
+        "answer": "supporter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "nowe"
+      },
+      {
+        "prompt": "galeria sztuki",
+        "answer": "art gallery",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "konkurować",
+        "answer": "compete",
+        "status": "nowe"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "konkurować",
+        "answer": "compete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zawody; turniej",
+        "answer": "tournament",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zawody; turniej",
+        "answer": "tournament",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ubrudzić się błotem",
+        "answer": "get muddy",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-16T13:00:41.596106"
   }
 ]
