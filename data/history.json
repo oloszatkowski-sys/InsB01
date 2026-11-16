@@ -7368,5 +7368,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-16T15:22:52.024684"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "19:42",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 0,
+    "autocorrect_count": 4,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 231.6,
+    "started_at_warsaw": "2026-11-16 23:47:14 CET",
+    "completed_at_warsaw": "2026-11-16 23:51:05 CET",
+    "finished_at": "2026-11-16T23:51:05.910650+01:00",
+    "words_details": [
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reklama",
+        "answer": "advertisement",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "_________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "widownia; publiczność",
+        "answer": "audience",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "position",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "łączyć; przyłączać (się); dołączyć",
+        "answer": "join",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gracz",
+        "answer": "player",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "brać udział (w zawodach)",
+        "answer": "enter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zestaw; komplet",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zestaw; komplet",
+        "answer": "kit",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "chybić, spudłować, nie trafić",
+        "answer": "miss",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kino",
+        "answer": "cinema",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "remisować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zestaw; komplet",
+        "answer": "kit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-16T22:51:05.910832"
   }
 ]

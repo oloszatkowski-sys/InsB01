@@ -1571,15 +1571,15 @@
     "answer": "support",
     "prompt": "popierać; pomagać; kibicować",
     "sentence": "The fans _________\nluka\n their team.",
-    "updated_at": "2026-11-15T20:43:40.699003",
-    "usage_count": 3
+    "updated_at": "2026-11-16T22:48:15.585360",
+    "usage_count": 5
   },
   "popierać; pomagać; kibicować": {
     "answer": "support",
     "prompt": "popierać; pomagać; kibicować",
     "sentence": "The fans _________\nluka\n their team.",
-    "updated_at": "2026-11-15T20:43:40.699003",
-    "usage_count": 3
+    "updated_at": "2026-11-16T22:48:15.585360",
+    "usage_count": 5
   },
   "would you like to ____ luka us? we're going to the cinema tonight. | łączyć; przyłączać (się); dołączyć": {
     "answer": "join",
@@ -1627,15 +1627,15 @@
     "answer": "throw",
     "prompt": "rzucać; wyrzucić",
     "sentence": "_____\nluka\n the ball, and I'll catch it.",
-    "updated_at": "2026-11-15T20:42:01.193640",
-    "usage_count": 3
+    "updated_at": "2026-11-16T22:49:18.656360",
+    "usage_count": 5
   },
   "rzucać; wyrzucić": {
     "answer": "throw",
     "prompt": "rzucać; wyrzucić",
     "sentence": "_____\nluka\n the ball, and I'll catch it.",
-    "updated_at": "2026-11-15T20:42:01.193640",
-    "usage_count": 3
+    "updated_at": "2026-11-16T22:49:18.656360",
+    "usage_count": 5
   },
   "how did he ____ luka the goal? | chybić, spudłować, nie trafić": {
     "answer": "miss",
@@ -1655,15 +1655,15 @@
     "answer": "kit",
     "prompt": "zestaw; komplet",
     "sentence": "He should have brought his medical ___\nluka\n to the game.",
-    "updated_at": "2026-11-15T20:42:34.687932",
-    "usage_count": 1
+    "updated_at": "2026-11-16T22:50:13.215461",
+    "usage_count": 3
   },
   "zestaw; komplet": {
     "answer": "kit",
     "prompt": "zestaw; komplet",
     "sentence": "He should have brought his medical ___\nluka\n to the game.",
-    "updated_at": "2026-11-15T20:42:34.687932",
-    "usage_count": 1
+    "updated_at": "2026-11-16T22:50:13.215461",
+    "usage_count": 3
   },
   "should i _____ luka the singing competition? | brać udział (w zawodach)": {
     "answer": "enter",
@@ -1711,15 +1711,15 @@
     "answer": "referee",
     "prompt": "sędzia sportowy",
     "sentence": "The _______\nluka\n held up a red card.",
-    "updated_at": "2026-11-16T12:58:09.343921",
-    "usage_count": 1
+    "updated_at": "2026-11-16T22:49:47.777909",
+    "usage_count": 3
   },
   "sędzia sportowy": {
     "answer": "referee",
     "prompt": "sędzia sportowy",
     "sentence": "The _______\nluka\n held up a red card.",
-    "updated_at": "2026-11-16T12:58:09.343921",
-    "usage_count": 1
+    "updated_at": "2026-11-16T22:49:47.777909",
+    "usage_count": 3
   },
   "you can often ___ luka _____ luka on an obstacle course. | ubrudzić się błotem": {
     "answer": "get muddy",
