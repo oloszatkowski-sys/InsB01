@@ -1613,43 +1613,43 @@
     "answer": "score goals",
     "prompt": "strzelać gole",
     "sentence": "He's the best player on the pitch. He always ______\nluka\n many _____\nluka\n!",
-    "updated_at": "2026-11-15T20:41:41.180236",
-    "usage_count": 3
+    "updated_at": "2026-11-16T22:54:00.073671",
+    "usage_count": 5
   },
   "strzelać gole": {
     "answer": "score goals",
     "prompt": "strzelać gole",
     "sentence": "He's the best player on the pitch. He always ______\nluka\n many _____\nluka\n!",
-    "updated_at": "2026-11-15T20:41:41.180236",
-    "usage_count": 3
+    "updated_at": "2026-11-16T22:54:00.073671",
+    "usage_count": 5
   },
   "_____ luka the ball, and i'll catch it. | rzucać; wyrzucić": {
     "answer": "throw",
     "prompt": "rzucać; wyrzucić",
     "sentence": "_____\nluka\n the ball, and I'll catch it.",
-    "updated_at": "2026-11-16T22:49:18.656360",
-    "usage_count": 5
+    "updated_at": "2026-11-16T22:52:20.115766",
+    "usage_count": 7
   },
   "rzucać; wyrzucić": {
     "answer": "throw",
     "prompt": "rzucać; wyrzucić",
     "sentence": "_____\nluka\n the ball, and I'll catch it.",
-    "updated_at": "2026-11-16T22:49:18.656360",
-    "usage_count": 5
+    "updated_at": "2026-11-16T22:52:20.115766",
+    "usage_count": 7
   },
   "how did he ____ luka the goal? | chybić, spudłować, nie trafić": {
     "answer": "miss",
     "prompt": "chybić, spudłować, nie trafić",
     "sentence": "How did he ____\nluka\n the goal?",
-    "updated_at": "2026-11-15T20:42:20.634011",
-    "usage_count": 1
+    "updated_at": "2026-11-16T22:53:01.421291",
+    "usage_count": 3
   },
   "chybić, spudłować, nie trafić": {
     "answer": "miss",
     "prompt": "chybić, spudłować, nie trafić",
     "sentence": "How did he ____\nluka\n the goal?",
-    "updated_at": "2026-11-15T20:42:20.634011",
-    "usage_count": 1
+    "updated_at": "2026-11-16T22:53:01.421291",
+    "usage_count": 3
   },
   "he should have brought his medical ___ luka to the game. | zestaw; komplet": {
     "answer": "kit",

@@ -7503,5 +7503,130 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-16T22:51:05.910832"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "22:19",
+    "words_total": 21,
+    "words_correct": 15,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 229.4,
+    "started_at_warsaw": "2026-11-16 23:51:12 CET",
+    "completed_at_warsaw": "2026-11-16 23:55:01 CET",
+    "finished_at": "2026-11-16T23:55:01.726738+01:00",
+    "words_details": [
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "brać udział (w zawodach)",
+        "answer": "enter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "łączyć; przyłączać (się); dołączyć",
+        "answer": "join",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektant mody",
+        "answer": "fashion designer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "chybić, spudłować, nie trafić",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "chybić, spudłować, nie trafić",
+        "answer": "miss",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "gracz",
+        "answer": "player",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "position",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zestaw; komplet",
+        "answer": "kit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "został napisany przez",
+        "answer": "it's written by",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "chybić, spudłować, nie trafić",
+        "answer": "miss",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-16T22:55:01.726939"
   }
 ]
