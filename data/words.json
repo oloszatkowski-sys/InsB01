@@ -703,15 +703,15 @@
     "answer": "main character",
     "prompt": "główny bohater",
     "sentence": "Who is the ____\nluka\n _________\nluka\n of the book?",
-    "updated_at": "2026-10-29T18:31:04.267618",
-    "usage_count": 1
+    "updated_at": "2026-11-16T15:20:15.282035",
+    "usage_count": 3
   },
   "główny bohater": {
     "answer": "main character",
     "prompt": "główny bohater",
     "sentence": "Who is the ____\nluka\n _________\nluka\n of the book?",
-    "updated_at": "2026-10-29T18:31:04.267618",
-    "usage_count": 1
+    "updated_at": "2026-11-16T15:20:15.282035",
+    "usage_count": 3
   },
   "the film has an excellent ____ luka of great actors. | obsada": {
     "answer": "cast",
@@ -1775,6 +1775,76 @@
     "prompt": "zawody; turniej",
     "sentence": "I've got my tennis __________\nluka\n at the weekend. I must win!",
     "updated_at": "2026-11-16T12:59:54.818913",
+    "usage_count": 1
+  },
+  "he took a note out of his ______ luka . | portfel": {
+    "answer": "wallet",
+    "prompt": "portfel",
+    "sentence": "He took a note out of his ______\nluka\n.",
+    "updated_at": "2026-11-16T15:20:41.774472",
+    "usage_count": 1
+  },
+  "portfel": {
+    "answer": "wallet",
+    "prompt": "portfel",
+    "sentence": "He took a note out of his ______\nluka\n.",
+    "updated_at": "2026-11-16T15:20:41.774472",
+    "usage_count": 1
+  },
+  "a dog ______ luka ___ luka of the box. | wyskakiwać": {
+    "answer": "jump out",
+    "prompt": "wyskakiwać",
+    "sentence": "A dog ______\nluka\n ___\nluka\n of the box.",
+    "updated_at": "2026-11-16T15:22:33.673588",
+    "usage_count": 3
+  },
+  "wyskakiwać": {
+    "answer": "jump out",
+    "prompt": "wyskakiwać",
+    "sentence": "A dog ______\nluka\n ___\nluka\n of the box.",
+    "updated_at": "2026-11-16T15:22:33.673588",
+    "usage_count": 3
+  },
+  "someone ______ luka my aunt last week. | obrabować; okraść": {
+    "answer": "rob",
+    "prompt": "obrabować; okraść",
+    "sentence": "Someone ______\nluka\n my aunt last week.",
+    "updated_at": "2026-11-16T15:21:11.283528",
+    "usage_count": 1
+  },
+  "obrabować; okraść": {
+    "answer": "rob",
+    "prompt": "obrabować; okraść",
+    "sentence": "Someone ______\nluka\n my aunt last week.",
+    "updated_at": "2026-11-16T15:21:11.283528",
+    "usage_count": 1
+  },
+  "danielle took a coin out of her _____ luka . | portmonetka; torebka": {
+    "answer": "purse",
+    "prompt": "portmonetka; torebka",
+    "sentence": "Danielle took a coin out of her _____\nluka\n.",
+    "updated_at": "2026-11-16T15:21:36.111657",
+    "usage_count": 1
+  },
+  "portmonetka; torebka": {
+    "answer": "purse",
+    "prompt": "portmonetka; torebka",
+    "sentence": "Danielle took a coin out of her _____\nluka\n.",
+    "updated_at": "2026-11-16T15:21:36.111657",
+    "usage_count": 1
+  },
+  "try not to ____ luka it. it's very delicate. | upuścić": {
+    "answer": "drop",
+    "prompt": "upuścić",
+    "sentence": "Try not to ____\nluka\n it. It's very delicate.",
+    "updated_at": "2026-11-16T15:21:53.461489",
+    "usage_count": 1
+  },
+  "upuścić": {
+    "answer": "drop",
+    "prompt": "upuścić",
+    "sentence": "Try not to ____\nluka\n it. It's very delicate.",
+    "updated_at": "2026-11-16T15:21:53.461489",
     "usage_count": 1
   }
 }

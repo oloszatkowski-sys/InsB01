@@ -7228,5 +7228,145 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-16T13:00:41.596106"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "16:19",
+    "words_total": 24,
+    "words_correct": 15,
+    "words_mistakes": 9,
+    "new_words_count": 5,
+    "autocorrect_count": 2,
+    "accuracy_percent": 62.5,
+    "duration_seconds": 231.3,
+    "started_at_warsaw": "2026-11-16 16:19:00 CET",
+    "completed_at_warsaw": "2026-11-16 16:22:52 CET",
+    "finished_at": "2026-11-16T16:22:52.024431+01:00",
+    "words_details": [
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantasy",
+        "answer": "fantasy film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sławny",
+        "answer": "famous",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film (BrE)",
+        "answer": "film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "superbohater",
+        "answer": "superhero",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film animowany",
+        "answer": "animated film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "portfel",
+        "answer": "wallet",
+        "status": "nowe"
+      },
+      {
+        "prompt": "wyskakiwać",
+        "answer": "jump out",
+        "status": "nowe"
+      },
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obrabować; okraść",
+        "answer": "rob",
+        "status": "nowe"
+      },
+      {
+        "prompt": "wyskakiwać",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "portfel",
+        "answer": "wallet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "portmonetka; torebka",
+        "answer": "purse",
+        "status": "nowe"
+      },
+      {
+        "prompt": "portmonetka; torebka",
+        "answer": "purse",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "upuścić",
+        "answer": "drop",
+        "status": "nowe"
+      },
+      {
+        "prompt": "upuścić",
+        "answer": "drop",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "opowieść; historia",
+        "answer": "story",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "recenzja",
+        "answer": "review",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obrabować; okraść",
+        "answer": "rob",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wyskakiwać",
+        "answer": "jump out",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wyskakiwać",
+        "answer": "jump out",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-16T15:22:52.024684"
   }
 ]
