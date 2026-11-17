@@ -745,15 +745,15 @@
     "answer": "science fiction",
     "prompt": "science fiction; fantastyka naukowa",
     "sentence": "I prefer fantasy to _______\nluka\n _______\nluka\n.",
-    "updated_at": "2026-11-15T15:40:12.021736",
-    "usage_count": 3
+    "updated_at": "2026-11-17T21:34:09.329621",
+    "usage_count": 5
   },
   "science fiction; fantastyka naukowa": {
     "answer": "science fiction",
     "prompt": "science fiction; fantastyka naukowa",
     "sentence": "I prefer fantasy to _______\nluka\n _______\nluka\n.",
-    "updated_at": "2026-11-15T15:40:12.021736",
-    "usage_count": 3
+    "updated_at": "2026-11-17T21:34:09.329621",
+    "usage_count": 5
   },
   "i prefer rock to ___ luka . | pop": {
     "answer": "pop",
@@ -1711,15 +1711,15 @@
     "answer": "referee",
     "prompt": "sędzia sportowy",
     "sentence": "The _______\nluka\n held up a red card.",
-    "updated_at": "2026-11-16T22:49:47.777909",
-    "usage_count": 3
+    "updated_at": "2026-11-17T21:35:42.148353",
+    "usage_count": 5
   },
   "sędzia sportowy": {
     "answer": "referee",
     "prompt": "sędzia sportowy",
     "sentence": "The _______\nluka\n held up a red card.",
-    "updated_at": "2026-11-16T22:49:47.777909",
-    "usage_count": 3
+    "updated_at": "2026-11-17T21:35:42.148353",
+    "usage_count": 5
   },
   "you can often ___ luka _____ luka on an obstacle course. | ubrudzić się błotem": {
     "answer": "get muddy",

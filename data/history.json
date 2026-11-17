@@ -7888,5 +7888,120 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-17T17:28:10.833137"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "20:35",
+    "words_total": 19,
+    "words_correct": 15,
+    "words_mistakes": 4,
+    "new_words_count": 0,
+    "autocorrect_count": 2,
+    "accuracy_percent": 78.9,
+    "duration_seconds": 205.1,
+    "started_at_warsaw": "2026-11-17 22:33:10 CET",
+    "completed_at_warsaw": "2026-11-17 22:36:35 CET",
+    "finished_at": "2026-11-17T22:36:35.213869+01:00",
+    "words_details": [
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "remisować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "gracz",
+        "answer": "player",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "klasyczny",
+        "answer": "classical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "łączyć; przyłączać (się); dołączyć",
+        "answer": "join",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zawody; turniej",
+        "answer": "tournament",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "konkurować",
+        "answer": "compete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ubrudzić się błotem",
+        "answer": "get muddy",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "galeria sztuki",
+        "answer": "art gallery",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "science fiction; fantastyka naukowa",
+        "answer": "science fiction",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-17T21:36:35.214196"
   }
 ]
