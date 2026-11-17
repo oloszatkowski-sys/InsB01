@@ -885,15 +885,15 @@
     "answer": "garage sale",
     "prompt": "wyprzedaż garażowa",
     "sentence": "I've decided to throw a ______\nluka\n ____\nluka\n to sell my child's old toys and clothes.",
-    "updated_at": "2026-11-12T06:14:38.666351",
-    "usage_count": 3
+    "updated_at": "2026-11-17T16:40:52.278988",
+    "usage_count": 5
   },
   "wyprzedaż garażowa": {
     "answer": "garage sale",
     "prompt": "wyprzedaż garażowa",
     "sentence": "I've decided to throw a ______\nluka\n ____\nluka\n to sell my child's old toys and clothes.",
-    "updated_at": "2026-11-12T06:14:38.666351",
-    "usage_count": 3
+    "updated_at": "2026-11-17T16:40:52.278988",
+    "usage_count": 5
   },
   "do you like _________ luka music? | klasyczny": {
     "answer": "classical",
@@ -1739,15 +1739,15 @@
     "answer": "lose",
     "prompt": "przegrać",
     "sentence": "I'm sure you won't ____\nluka\n the match. You're great!",
-    "updated_at": "2026-11-16T13:00:22.976893",
-    "usage_count": 3
+    "updated_at": "2026-11-17T16:41:26.741135",
+    "usage_count": 5
   },
   "przegrać": {
     "answer": "lose",
     "prompt": "przegrać",
     "sentence": "I'm sure you won't ____\nluka\n the match. You're great!",
-    "updated_at": "2026-11-16T13:00:22.976893",
-    "usage_count": 3
+    "updated_at": "2026-11-17T16:41:26.741135",
+    "usage_count": 5
   },
   "they always _______ luka with each other. | konkurować": {
     "answer": "compete",
@@ -1845,6 +1845,20 @@
     "prompt": "upuścić",
     "sentence": "Try not to ____\nluka\n it. It's very delicate.",
     "updated_at": "2026-11-16T15:21:53.461489",
+    "usage_count": 1
+  },
+  "i'm in the football ____ luka . | drużyna": {
+    "answer": "team",
+    "prompt": "drużyna",
+    "sentence": "I'm in the football ____\nluka\n.",
+    "updated_at": "2026-11-17T16:41:55.404362",
+    "usage_count": 1
+  },
+  "drużyna": {
+    "answer": "team",
+    "prompt": "drużyna",
+    "sentence": "I'm in the football ____\nluka\n.",
+    "updated_at": "2026-11-17T16:41:55.404362",
     "usage_count": 1
   }
 }

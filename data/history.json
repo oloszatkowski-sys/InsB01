@@ -7628,5 +7628,125 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-16T22:55:01.726939"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "17:39",
+    "words_total": 20,
+    "words_correct": 15,
+    "words_mistakes": 5,
+    "new_words_count": 1,
+    "autocorrect_count": 2,
+    "accuracy_percent": 75.0,
+    "duration_seconds": 209.3,
+    "started_at_warsaw": "2026-11-17 17:39:00 CET",
+    "completed_at_warsaw": "2026-11-17 17:42:29 CET",
+    "finished_at": "2026-11-17T17:42:29.877372+01:00",
+    "words_details": [
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "melodia",
+        "answer": "tune",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obsada",
+        "answer": "cast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pisarz",
+        "answer": "writer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "muzyk",
+        "answer": "musician",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zestaw; komplet",
+        "answer": "kit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wyprzedaż garażowa",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wyprzedaż garażowa",
+        "answer": "garage sale",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kibic",
+        "answer": "supporter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ubrudzić się błotem",
+        "answer": "get muddy",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "konkurować",
+        "answer": "compete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zawody; turniej",
+        "answer": "tournament",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "drużyna",
+        "answer": "team",
+        "status": "nowe"
+      },
+      {
+        "prompt": "wyprzedaż garażowa",
+        "answer": "garage sale",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "drużyna",
+        "answer": "team",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-17T16:42:29.877700"
   }
 ]
