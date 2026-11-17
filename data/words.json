@@ -423,15 +423,15 @@
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-11-07T16:06:13.372079",
-    "usage_count": 5
+    "updated_at": "2026-11-17T17:24:50.260963",
+    "usage_count": 7
   },
   "film dokumentalny; program dokumentalny": {
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-11-07T16:06:13.372079",
-    "usage_count": 5
+    "updated_at": "2026-11-17T17:24:50.260963",
+    "usage_count": 7
   },
   "can you _____ luka ___ luka ________ luka , please? the sun is blinding me. | zasunąć zasłony": {
     "answer": "close the curtains",
@@ -1095,15 +1095,15 @@
     "answer": "novel",
     "prompt": "powieść",
     "sentence": "This is my favourite _____\nluka\n.",
-    "updated_at": "2026-11-03T18:23:51.267131",
-    "usage_count": 1
+    "updated_at": "2026-11-17T17:25:39.741553",
+    "usage_count": 3
   },
   "powieść": {
     "answer": "novel",
     "prompt": "powieść",
     "sentence": "This is my favourite _____\nluka\n.",
-    "updated_at": "2026-11-03T18:23:51.267131",
-    "usage_count": 1
+    "updated_at": "2026-11-17T17:25:39.741553",
+    "usage_count": 3
   },
   "mike should become an _____ luka - he's very talented! | aktor": {
     "answer": "actor",
@@ -1739,15 +1739,15 @@
     "answer": "lose",
     "prompt": "przegrać",
     "sentence": "I'm sure you won't ____\nluka\n the match. You're great!",
-    "updated_at": "2026-11-17T16:41:26.741135",
-    "usage_count": 5
+    "updated_at": "2026-11-17T17:26:36.883523",
+    "usage_count": 7
   },
   "przegrać": {
     "answer": "lose",
     "prompt": "przegrać",
     "sentence": "I'm sure you won't ____\nluka\n the match. You're great!",
-    "updated_at": "2026-11-17T16:41:26.741135",
-    "usage_count": 5
+    "updated_at": "2026-11-17T17:26:36.883523",
+    "usage_count": 7
   },
   "they always _______ luka with each other. | konkurować": {
     "answer": "compete",
@@ -1860,5 +1860,19 @@
     "sentence": "I'm in the football ____\nluka\n.",
     "updated_at": "2026-11-17T16:41:55.404362",
     "usage_count": 1
+  },
+  "why did you ___ luka him? | uderzać; stuknąć; dotknąć": {
+    "answer": "hit",
+    "prompt": "uderzać; stuknąć; dotknąć",
+    "sentence": "Why did you ___\nluka\n him?",
+    "updated_at": "2026-11-17T17:27:52.981552",
+    "usage_count": 3
+  },
+  "uderzać; stuknąć; dotknąć": {
+    "answer": "hit",
+    "prompt": "uderzać; stuknąć; dotknąć",
+    "sentence": "Why did you ___\nluka\n him?",
+    "updated_at": "2026-11-17T17:27:52.981552",
+    "usage_count": 3
   }
 }

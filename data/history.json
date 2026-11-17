@@ -7748,5 +7748,145 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-17T16:42:29.877700"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "18:24",
+    "words_total": 24,
+    "words_correct": 15,
+    "words_mistakes": 9,
+    "new_words_count": 1,
+    "autocorrect_count": 4,
+    "accuracy_percent": 62.5,
+    "duration_seconds": 250.4,
+    "started_at_warsaw": "2026-11-17 18:24:00 CET",
+    "completed_at_warsaw": "2026-11-17 18:28:10 CET",
+    "finished_at": "2026-11-17T18:28:10.832816+01:00",
+    "words_details": [
+      {
+        "prompt": "chybić, spudłować, nie trafić",
+        "answer": "miss",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "___________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grać (np. kogoś w filmie)",
+        "answer": "play",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "put on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "powieść",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "powieść",
+        "answer": "novel",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "remisować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kibic",
+        "answer": "supporter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ubrudzić się błotem",
+        "answer": "get muddy",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "konkurować",
+        "answer": "compete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zawody; turniej",
+        "answer": "tournament",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "drużyna",
+        "answer": "team",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "nowe"
+      },
+      {
+        "prompt": "powieść",
+        "answer": "novel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-17T17:28:10.833137"
   }
 ]

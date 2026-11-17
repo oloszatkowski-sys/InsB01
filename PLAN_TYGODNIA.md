@@ -4,8 +4,8 @@
 
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W47`
-- 📊 **Status tygodnia:** Ukończono **5** z **25** sesji (Pozostało: **20**)
-- 🔄 **Ostatnia aktualizacja:** `2026-11-17 17:42:32 CET`
+- 📊 **Status tygodnia:** Ukończono **6** z **25** sesji (Pozostało: **19**)
+- 🔄 **Ostatnia aktualizacja:** `2026-11-17 18:28:13 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
@@ -15,7 +15,7 @@
 | Poniedziałek | `2026-11-16` | **Oleslaw 010** | `asa61####` | **22:19** | ✅ Ukończono | 2026-11-16 23:51:12 CET | 2026-11-16 23:55:05 CET | **15/21** (71.4%) |
 | 👉 **Wtorek (DZIŚ)** | `2026-11-17` | **Oliwka Pożeraczka Tostów** | `kl799####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
 | 👉 **Wtorek (DZIŚ)** | `2026-11-17` | **OliwiercioTheHacker** | `asa61####` | **17:39** | ✅ Ukończono | 2026-11-17 17:39:00 CET | 2026-11-17 17:42:31 CET | **15/20** (75.0%) |
-| 👉 **Wtorek (DZIŚ)** | `2026-11-17` | **Oleslaw 010** | `asa61####` | **18:24** | ⏳ Oczekuje | - | - | - |
+| 👉 **Wtorek (DZIŚ)** | `2026-11-17` | **Oleslaw 010** | `asa61####` | **18:24** | ✅ Ukończono | 2026-11-17 18:24:00 CET | 2026-11-17 18:28:12 CET | **15/24** (62.5%) |
 | 👉 **Wtorek (DZIŚ)** | `2026-11-17` | **Szlucha Jagoda** | `lasa6####` | **20:35** | ⏳ Oczekuje | - | - | - |
 | Środa | `2026-11-18` | **Oleslaw 010** | `asa61####` | **16:58** | ⏳ Oczekuje | - | - | - |
 | Środa | `2026-11-18` | **Oliwka Pożeraczka Tostów** | `kl799####` | **18:10** | ⏳ Oczekuje | - | - | - |
