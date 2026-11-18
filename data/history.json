@@ -8153,5 +8153,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-18T16:02:36.535723"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "18:10",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 2,
+    "autocorrect_count": 3,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 228.8,
+    "started_at_warsaw": "2026-11-18 18:10:00 CET",
+    "completed_at_warsaw": "2026-11-18 18:13:49 CET",
+    "finished_at": "2026-11-18T18:13:49.434181+01:00",
+    "words_details": [
+      {
+        "prompt": "główny bohater",
+        "answer": "main character",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wyskakiwać",
+        "answer": "jump out",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obrabować; okraść",
+        "answer": "rob",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "technologia",
+        "answer": "technology",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "ukazywać się; wychodzić",
+        "answer": "come out",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "portmonetka; torebka",
+        "answer": "purse",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "serial",
+        "answer": "drama",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "portfel",
+        "answer": "wallet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "napisy (w filmie)",
+        "answer": "subtitles",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "upuścić",
+        "answer": "drop",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wandal",
+        "answer": "vandal",
+        "status": "nowe"
+      },
+      {
+        "prompt": "wandal",
+        "answer": "vandal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "title",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "włamywacz",
+        "answer": "burglar",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "włamywacz",
+        "answer": "burglar",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "title",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-18T17:13:49.434415"
   }
 ]

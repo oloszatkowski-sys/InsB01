@@ -1151,29 +1151,29 @@
     "answer": "definitely",
     "prompt": "zdecydowanie; definitywnie",
     "sentence": "I'm __________\nluka\n against this rule.",
-    "updated_at": "2026-11-10T15:23:07.872225",
-    "usage_count": 3
+    "updated_at": "2026-11-18T17:11:09.185185",
+    "usage_count": 5
   },
   "zdecydowanie; definitywnie": {
     "answer": "definitely",
     "prompt": "zdecydowanie; definitywnie",
     "sentence": "I'm __________\nluka\n against this rule.",
-    "updated_at": "2026-11-10T15:23:07.872225",
-    "usage_count": 3
+    "updated_at": "2026-11-18T17:11:09.185185",
+    "usage_count": 5
   },
   "are there any science fiction ______ luka ______ luka ? | film niemy": {
     "answer": "silent movie",
     "prompt": "film niemy",
     "sentence": "Are there any science fiction ______\nluka\n ______\nluka\n?",
-    "updated_at": "2026-11-10T15:22:09.564841",
-    "usage_count": 1
+    "updated_at": "2026-11-18T17:11:56.986119",
+    "usage_count": 3
   },
   "film niemy": {
     "answer": "silent movie",
     "prompt": "film niemy",
     "sentence": "Are there any science fiction ______\nluka\n ______\nluka\n?",
-    "updated_at": "2026-11-10T15:22:09.564841",
-    "usage_count": 1
+    "updated_at": "2026-11-18T17:11:56.986119",
+    "usage_count": 3
   },
   "could you turn the _________ luka on? i don't understand everything they say. | napisy (w filmie)": {
     "answer": "subtitles",
@@ -1375,15 +1375,15 @@
     "answer": "title",
     "prompt": "tytuł",
     "sentence": "What was the _____\nluka\n of this book?",
-    "updated_at": "2026-11-13T20:25:07.566449",
-    "usage_count": 3
+    "updated_at": "2026-11-18T17:13:04.808958",
+    "usage_count": 5
   },
   "tytuł": {
     "answer": "title",
     "prompt": "tytuł",
     "sentence": "What was the _____\nluka\n of this book?",
-    "updated_at": "2026-11-13T20:25:07.566449",
-    "usage_count": 3
+    "updated_at": "2026-11-18T17:13:04.808958",
+    "usage_count": 5
   },
   "does your brother enjoy ______ luka _____ luka ? | film akcji": {
     "answer": "action film",
@@ -1999,6 +1999,34 @@
     "prompt": "piłkarz",
     "sentence": "You must train really hard to become a __________\nluka\n.",
     "updated_at": "2026-11-18T16:01:58.446647",
+    "usage_count": 1
+  },
+  "they'll call you a ______ luka if you make graffiti. | wandal": {
+    "answer": "vandal",
+    "prompt": "wandal",
+    "sentence": "They'll call you a ______\nluka\n if you make graffiti.",
+    "updated_at": "2026-11-18T17:12:30.820984",
+    "usage_count": 1
+  },
+  "wandal": {
+    "answer": "vandal",
+    "prompt": "wandal",
+    "sentence": "They'll call you a ______\nluka\n if you make graffiti.",
+    "updated_at": "2026-11-18T17:12:30.820984",
+    "usage_count": 1
+  },
+  "a _______ luka entered quietly into their house. | włamywacz": {
+    "answer": "burglar",
+    "prompt": "włamywacz",
+    "sentence": "A _______\nluka\n entered quietly into their house.",
+    "updated_at": "2026-11-18T17:13:11.201586",
+    "usage_count": 1
+  },
+  "włamywacz": {
+    "answer": "burglar",
+    "prompt": "włamywacz",
+    "sentence": "A _______\nluka\n entered quietly into their house.",
+    "updated_at": "2026-11-18T17:13:11.201586",
     "usage_count": 1
   }
 }
