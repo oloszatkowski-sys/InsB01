@@ -1907,15 +1907,15 @@
     "answer": "weightlifter",
     "prompt": "ciężarowiec; sztangista",
     "sentence": "A ____________\nluka\n must be strong.",
-    "updated_at": "2026-11-18T15:59:48.412951",
-    "usage_count": 1
+    "updated_at": "2026-11-18T21:14:29.106893",
+    "usage_count": 3
   },
   "ciężarowiec; sztangista": {
     "answer": "weightlifter",
     "prompt": "ciężarowiec; sztangista",
     "sentence": "A ____________\nluka\n must be strong.",
-    "updated_at": "2026-11-18T15:59:48.412951",
-    "usage_count": 1
+    "updated_at": "2026-11-18T21:14:29.106893",
+    "usage_count": 3
   },
   "the _____ luka congratulated his team on the victory. | trener": {
     "answer": "coach",
@@ -1949,15 +1949,15 @@
     "answer": "cyclist",
     "prompt": "rowerzysta; kolarz",
     "sentence": "The _______\nluka\n was doing his best to win the race.",
-    "updated_at": "2026-11-18T16:00:58.775120",
-    "usage_count": 1
+    "updated_at": "2026-11-18T21:15:07.452832",
+    "usage_count": 3
   },
   "rowerzysta; kolarz": {
     "answer": "cyclist",
     "prompt": "rowerzysta; kolarz",
     "sentence": "The _______\nluka\n was doing his best to win the race.",
-    "updated_at": "2026-11-18T16:00:58.775120",
-    "usage_count": 1
+    "updated_at": "2026-11-18T21:15:07.452832",
+    "usage_count": 3
   },
   "he can perform twists, he is a _______ luka . | gimnastyk; gimnastyczka": {
     "answer": "gymnast",
@@ -1977,15 +1977,15 @@
     "answer": "cheer",
     "prompt": "wiwatować; robić owację",
     "sentence": "The audience _______\nluka\n the team.",
-    "updated_at": "2026-11-18T16:01:36.769911",
-    "usage_count": 1
+    "updated_at": "2026-11-18T21:15:44.646411",
+    "usage_count": 3
   },
   "wiwatować; robić owację": {
     "answer": "cheer",
     "prompt": "wiwatować; robić owację",
     "sentence": "The audience _______\nluka\n the team.",
-    "updated_at": "2026-11-18T16:01:36.769911",
-    "usage_count": 1
+    "updated_at": "2026-11-18T21:15:44.646411",
+    "usage_count": 3
   },
   "you must train really hard to become a __________ luka . | piłkarz": {
     "answer": "footballer",

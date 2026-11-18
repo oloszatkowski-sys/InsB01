@@ -8288,5 +8288,130 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-18T17:13:49.434415"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "19:46",
+    "words_total": 21,
+    "words_correct": 15,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 215.2,
+    "started_at_warsaw": "2026-11-18 22:12:34 CET",
+    "completed_at_warsaw": "2026-11-18 22:16:09 CET",
+    "finished_at": "2026-11-18T22:16:09.589279+01:00",
+    "words_details": [
+      {
+        "prompt": "remisować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "drużyna",
+        "answer": "team",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wyprzedaż garażowa",
+        "answer": "garage sale",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bokser",
+        "answer": "boxer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "targ, jarmark",
+        "answer": "fair",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływak",
+        "answer": "swimmer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ciężarowiec; sztangista",
+        "answer": "____________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ciężarowiec; sztangista",
+        "answer": "weightlifter",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "trener",
+        "answer": "coach",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "biegacz",
+        "answer": "runner",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "gimnastyk; gimnastyczka",
+        "answer": "gymnast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ciężarowiec; sztangista",
+        "answer": "weightlifter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-18T21:16:09.589461"
   }
 ]
