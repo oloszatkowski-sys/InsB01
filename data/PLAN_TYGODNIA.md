@@ -5,7 +5,7 @@
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W47`
 - 📊 **Status tygodnia:** Ukończono **9** z **25** sesji (Pozostało: **16**)
-- 🔄 **Ostatnia aktualizacja:** `2026-11-18 18:13:51 CET`
+- 🔄 **Ostatnia aktualizacja:** `2026-11-18 18:13:53 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
