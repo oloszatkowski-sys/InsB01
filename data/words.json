@@ -143,15 +143,15 @@
     "answer": "art gallery",
     "prompt": "galeria sztuki",
     "sentence": "Are there any ___\nluka\n _________\nluka\n in your town?",
-    "updated_at": "2026-11-16T12:57:42.984766",
-    "usage_count": 3
+    "updated_at": "2026-11-18T21:19:09.834692",
+    "usage_count": 5
   },
   "galeria sztuki": {
     "answer": "art gallery",
     "prompt": "galeria sztuki",
     "sentence": "Are there any ___\nluka\n _________\nluka\n in your town?",
-    "updated_at": "2026-11-16T12:57:42.984766",
-    "usage_count": 3
+    "updated_at": "2026-11-18T21:19:09.834692",
+    "usage_count": 5
   },
   "i'm only here for a few days of the ________ luka . | festiwal": {
     "answer": "festival",
@@ -843,15 +843,15 @@
     "answer": "illustrations",
     "prompt": "ilustracje",
     "sentence": "Can you describe the _____________\nluka\n?",
-    "updated_at": "2026-10-30T15:55:28.026287",
-    "usage_count": 3
+    "updated_at": "2026-11-18T21:17:31.671175",
+    "usage_count": 5
   },
   "ilustracje": {
     "answer": "illustrations",
     "prompt": "ilustracje",
     "sentence": "Can you describe the _____________\nluka\n?",
-    "updated_at": "2026-10-30T15:55:28.026287",
-    "usage_count": 3
+    "updated_at": "2026-11-18T21:17:31.671175",
+    "usage_count": 5
   },
   "i ______ luka apartments for different clients at work. | projektować": {
     "answer": "design",
@@ -1865,15 +1865,15 @@
     "answer": "hit",
     "prompt": "uderzać; stuknąć; dotknąć",
     "sentence": "Why did you ___\nluka\n him?",
-    "updated_at": "2026-11-17T17:27:52.981552",
-    "usage_count": 3
+    "updated_at": "2026-11-18T21:16:53.476003",
+    "usage_count": 5
   },
   "uderzać; stuknąć; dotknąć": {
     "answer": "hit",
     "prompt": "uderzać; stuknąć; dotknąć",
     "sentence": "Why did you ___\nluka\n him?",
-    "updated_at": "2026-11-17T17:27:52.981552",
-    "usage_count": 3
+    "updated_at": "2026-11-18T21:16:53.476003",
+    "usage_count": 5
   },
   "the _____ luka lost the fight. | bokser": {
     "answer": "boxer",
