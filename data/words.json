@@ -423,15 +423,15 @@
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-11-17T17:24:50.260963",
-    "usage_count": 7
+    "updated_at": "2026-11-18T15:58:58.729779",
+    "usage_count": 9
   },
   "film dokumentalny; program dokumentalny": {
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-11-17T17:24:50.260963",
-    "usage_count": 7
+    "updated_at": "2026-11-18T15:58:58.729779",
+    "usage_count": 9
   },
   "can you _____ luka ___ luka ________ luka , please? the sun is blinding me. | zasunąć zasłony": {
     "answer": "close the curtains",
@@ -1874,5 +1874,131 @@
     "sentence": "Why did you ___\nluka\n him?",
     "updated_at": "2026-11-17T17:27:52.981552",
     "usage_count": 3
+  },
+  "the _____ luka lost the fight. | bokser": {
+    "answer": "boxer",
+    "prompt": "bokser",
+    "sentence": "The _____\nluka\n lost the fight.",
+    "updated_at": "2026-11-18T15:59:23.304333",
+    "usage_count": 1
+  },
+  "bokser": {
+    "answer": "boxer",
+    "prompt": "bokser",
+    "sentence": "The _____\nluka\n lost the fight.",
+    "updated_at": "2026-11-18T15:59:23.304333",
+    "usage_count": 1
+  },
+  "anna's a great _______ luka . she won a medal last week. | pływak": {
+    "answer": "swimmer",
+    "prompt": "pływak",
+    "sentence": "Anna's a great _______\nluka\n. She won a medal last week.",
+    "updated_at": "2026-11-18T15:59:32.088971",
+    "usage_count": 1
+  },
+  "pływak": {
+    "answer": "swimmer",
+    "prompt": "pływak",
+    "sentence": "Anna's a great _______\nluka\n. She won a medal last week.",
+    "updated_at": "2026-11-18T15:59:32.088971",
+    "usage_count": 1
+  },
+  "a ____________ luka must be strong. | ciężarowiec; sztangista": {
+    "answer": "weightlifter",
+    "prompt": "ciężarowiec; sztangista",
+    "sentence": "A ____________\nluka\n must be strong.",
+    "updated_at": "2026-11-18T15:59:48.412951",
+    "usage_count": 1
+  },
+  "ciężarowiec; sztangista": {
+    "answer": "weightlifter",
+    "prompt": "ciężarowiec; sztangista",
+    "sentence": "A ____________\nluka\n must be strong.",
+    "updated_at": "2026-11-18T15:59:48.412951",
+    "usage_count": 1
+  },
+  "the _____ luka congratulated his team on the victory. | trener": {
+    "answer": "coach",
+    "prompt": "trener",
+    "sentence": "The _____\nluka\n congratulated his team on the victory.",
+    "updated_at": "2026-11-18T16:00:20.992195",
+    "usage_count": 1
+  },
+  "trener": {
+    "answer": "coach",
+    "prompt": "trener",
+    "sentence": "The _____\nluka\n congratulated his team on the victory.",
+    "updated_at": "2026-11-18T16:00:20.992195",
+    "usage_count": 1
+  },
+  "mike is a fast ______ luka , but jack seems fitter. | biegacz": {
+    "answer": "runner",
+    "prompt": "biegacz",
+    "sentence": "Mike is a fast ______\nluka\n, but Jack seems fitter.",
+    "updated_at": "2026-11-18T16:00:36.787819",
+    "usage_count": 1
+  },
+  "biegacz": {
+    "answer": "runner",
+    "prompt": "biegacz",
+    "sentence": "Mike is a fast ______\nluka\n, but Jack seems fitter.",
+    "updated_at": "2026-11-18T16:00:36.787819",
+    "usage_count": 1
+  },
+  "the _______ luka was doing his best to win the race. | rowerzysta; kolarz": {
+    "answer": "cyclist",
+    "prompt": "rowerzysta; kolarz",
+    "sentence": "The _______\nluka\n was doing his best to win the race.",
+    "updated_at": "2026-11-18T16:00:58.775120",
+    "usage_count": 1
+  },
+  "rowerzysta; kolarz": {
+    "answer": "cyclist",
+    "prompt": "rowerzysta; kolarz",
+    "sentence": "The _______\nluka\n was doing his best to win the race.",
+    "updated_at": "2026-11-18T16:00:58.775120",
+    "usage_count": 1
+  },
+  "he can perform twists, he is a _______ luka . | gimnastyk; gimnastyczka": {
+    "answer": "gymnast",
+    "prompt": "gimnastyk; gimnastyczka",
+    "sentence": "He can perform twists, he is a _______\nluka\n.",
+    "updated_at": "2026-11-18T16:01:16.057608",
+    "usage_count": 1
+  },
+  "gimnastyk; gimnastyczka": {
+    "answer": "gymnast",
+    "prompt": "gimnastyk; gimnastyczka",
+    "sentence": "He can perform twists, he is a _______\nluka\n.",
+    "updated_at": "2026-11-18T16:01:16.057608",
+    "usage_count": 1
+  },
+  "the audience _______ luka the team. | wiwatować; robić owację": {
+    "answer": "cheer",
+    "prompt": "wiwatować; robić owację",
+    "sentence": "The audience _______\nluka\n the team.",
+    "updated_at": "2026-11-18T16:01:36.769911",
+    "usage_count": 1
+  },
+  "wiwatować; robić owację": {
+    "answer": "cheer",
+    "prompt": "wiwatować; robić owację",
+    "sentence": "The audience _______\nluka\n the team.",
+    "updated_at": "2026-11-18T16:01:36.769911",
+    "usage_count": 1
+  },
+  "you must train really hard to become a __________ luka . | piłkarz": {
+    "answer": "footballer",
+    "prompt": "piłkarz",
+    "sentence": "You must train really hard to become a __________\nluka\n.",
+    "updated_at": "2026-11-18T16:01:58.446647",
+    "usage_count": 1
+  },
+  "piłkarz": {
+    "answer": "footballer",
+    "prompt": "piłkarz",
+    "sentence": "You must train really hard to become a __________\nluka\n.",
+    "updated_at": "2026-11-18T16:01:58.446647",
+    "usage_count": 1
   }
 }

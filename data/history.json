@@ -8003,5 +8003,155 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-17T21:36:35.214196"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "16:58",
+    "words_total": 26,
+    "words_correct": 15,
+    "words_mistakes": 11,
+    "new_words_count": 9,
+    "autocorrect_count": 1,
+    "accuracy_percent": 57.7,
+    "duration_seconds": 274.5,
+    "started_at_warsaw": "2026-11-18 16:58:01 CET",
+    "completed_at_warsaw": "2026-11-18 17:02:36 CET",
+    "finished_at": "2026-11-18T17:02:36.535456+01:00",
+    "words_details": [
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "___________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "powieść",
+        "answer": "novel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bokser",
+        "answer": "boxer",
+        "status": "nowe"
+      },
+      {
+        "prompt": "pływak",
+        "answer": "swimmer",
+        "status": "nowe"
+      },
+      {
+        "prompt": "pływak",
+        "answer": "swimmer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ciężarowiec; sztangista",
+        "answer": "weightlifter",
+        "status": "nowe"
+      },
+      {
+        "prompt": "bokser",
+        "answer": "boxer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "został napisany przez",
+        "answer": "it's written by",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "trener",
+        "answer": "coach",
+        "status": "nowe"
+      },
+      {
+        "prompt": "trener",
+        "answer": "coach",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "biegacz",
+        "answer": "runner",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ciężarowiec; sztangista",
+        "answer": "weightlifter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "nowe"
+      },
+      {
+        "prompt": "biegacz",
+        "answer": "runner",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyk; gimnastyczka",
+        "answer": "gymnast",
+        "status": "nowe"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "nowe"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłkarz",
+        "answer": "footballer",
+        "status": "nowe"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłkarz",
+        "answer": "footballer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyk; gimnastyczka",
+        "answer": "gymnast",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-18T16:02:36.535723"
   }
 ]
