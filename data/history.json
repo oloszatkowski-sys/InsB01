@@ -8538,5 +8538,210 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-18T21:20:05.645202"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "17:30",
+    "words_total": 37,
+    "words_correct": 15,
+    "words_mistakes": 22,
+    "new_words_count": 8,
+    "autocorrect_count": 7,
+    "accuracy_percent": 40.5,
+    "duration_seconds": 361.9,
+    "started_at_warsaw": "2026-11-19 17:30:00 CET",
+    "completed_at_warsaw": "2026-11-19 17:36:02 CET",
+    "finished_at": "2026-11-19T17:36:02.553719+01:00",
+    "words_details": [
+      {
+        "prompt": "film niemy",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "tytuł",
+        "answer": "title",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "włamywacz",
+        "answer": "burglar",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wandal",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wandal",
+        "answer": "vandal",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wandal",
+        "answer": "vandal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "iść do więzienia",
+        "answer": "go to prison",
+        "status": "nowe"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popełnić przestępstwo",
+        "answer": "commit a crime",
+        "status": "nowe"
+      },
+      {
+        "prompt": "iść do więzienia",
+        "answer": "go to prison",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "doskonały",
+        "answer": "excellent",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obrabować; okraść",
+        "answer": "rob",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nóż",
+        "answer": "knife",
+        "status": "nowe"
+      },
+      {
+        "prompt": "popełnić przestępstwo",
+        "answer": "commit a crime",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złodziej",
+        "answer": "thief",
+        "status": "nowe"
+      },
+      {
+        "prompt": "nóż",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ucieczka",
+        "answer": "escape",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ucieczka",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ucieczka",
+        "answer": "escape",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "ucieczka",
+        "answer": "escape",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rabuś; złodziej",
+        "answer": "robber",
+        "status": "nowe"
+      },
+      {
+        "prompt": "nóż",
+        "answer": "knife",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "złodziej",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rabuś; złodziej",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "nóż",
+        "answer": "knife",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uszkadzać, psuć; niszczyć",
+        "answer": "damage",
+        "status": "nowe"
+      },
+      {
+        "prompt": "uszkadzać, psuć; niszczyć",
+        "answer": "damage",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kraść",
+        "answer": "steal",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kraść",
+        "answer": "steal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złodziej",
+        "answer": "thief",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rabuś; złodziej",
+        "answer": "robber",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "złodziej",
+        "answer": "thief",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rabuś; złodziej",
+        "answer": "robber",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-19T16:36:02.554045"
   }
 ]

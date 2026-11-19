@@ -1151,29 +1151,29 @@
     "answer": "definitely",
     "prompt": "zdecydowanie; definitywnie",
     "sentence": "I'm __________\nluka\n against this rule.",
-    "updated_at": "2026-11-18T17:11:09.185185",
-    "usage_count": 5
+    "updated_at": "2026-11-19T16:31:07.574530",
+    "usage_count": 7
   },
   "zdecydowanie; definitywnie": {
     "answer": "definitely",
     "prompt": "zdecydowanie; definitywnie",
     "sentence": "I'm __________\nluka\n against this rule.",
-    "updated_at": "2026-11-18T17:11:09.185185",
-    "usage_count": 5
+    "updated_at": "2026-11-19T16:31:07.574530",
+    "usage_count": 7
   },
   "are there any science fiction ______ luka ______ luka ? | film niemy": {
     "answer": "silent movie",
     "prompt": "film niemy",
     "sentence": "Are there any science fiction ______\nluka\n ______\nluka\n?",
-    "updated_at": "2026-11-18T17:11:56.986119",
-    "usage_count": 3
+    "updated_at": "2026-11-19T16:30:28.090676",
+    "usage_count": 5
   },
   "film niemy": {
     "answer": "silent movie",
     "prompt": "film niemy",
     "sentence": "Are there any science fiction ______\nluka\n ______\nluka\n?",
-    "updated_at": "2026-11-18T17:11:56.986119",
-    "usage_count": 3
+    "updated_at": "2026-11-19T16:30:28.090676",
+    "usage_count": 5
   },
   "could you turn the _________ luka on? i don't understand everything they say. | napisy (w filmie)": {
     "answer": "subtitles",
@@ -2005,15 +2005,15 @@
     "answer": "vandal",
     "prompt": "wandal",
     "sentence": "They'll call you a ______\nluka\n if you make graffiti.",
-    "updated_at": "2026-11-18T17:12:30.820984",
-    "usage_count": 1
+    "updated_at": "2026-11-19T16:31:29.762462",
+    "usage_count": 3
   },
   "wandal": {
     "answer": "vandal",
     "prompt": "wandal",
     "sentence": "They'll call you a ______\nluka\n if you make graffiti.",
-    "updated_at": "2026-11-18T17:12:30.820984",
-    "usage_count": 1
+    "updated_at": "2026-11-19T16:31:29.762462",
+    "usage_count": 3
   },
   "a _______ luka entered quietly into their house. | włamywacz": {
     "answer": "burglar",
@@ -2027,6 +2027,118 @@
     "prompt": "włamywacz",
     "sentence": "A _______\nluka\n entered quietly into their house.",
     "updated_at": "2026-11-18T17:13:11.201586",
+    "usage_count": 1
+  },
+  "he has ____ luka __ luka ______ luka for shoplifting. | iść do więzienia": {
+    "answer": "go to prison",
+    "prompt": "iść do więzienia",
+    "sentence": "He has ____\nluka\n __\nluka\n ______\nluka\n for shoplifting.",
+    "updated_at": "2026-11-19T16:31:44.086442",
+    "usage_count": 1
+  },
+  "iść do więzienia": {
+    "answer": "go to prison",
+    "prompt": "iść do więzienia",
+    "sentence": "He has ____\nluka\n __\nluka\n ______\nluka\n for shoplifting.",
+    "updated_at": "2026-11-19T16:31:44.086442",
+    "usage_count": 1
+  },
+  "if you ______ luka _ luka _____ luka you will be punished. | popełnić przestępstwo": {
+    "answer": "commit a crime",
+    "prompt": "popełnić przestępstwo",
+    "sentence": "If you ______\nluka\n _\nluka\n _____\nluka\n you will be punished.",
+    "updated_at": "2026-11-19T16:32:00.905541",
+    "usage_count": 1
+  },
+  "popełnić przestępstwo": {
+    "answer": "commit a crime",
+    "prompt": "popełnić przestępstwo",
+    "sentence": "If you ______\nluka\n _\nluka\n _____\nluka\n you will be punished.",
+    "updated_at": "2026-11-19T16:32:00.905541",
+    "usage_count": 1
+  },
+  "be careful with this _____ luka . it's very sharp. | nóż": {
+    "answer": "knife",
+    "prompt": "nóż",
+    "sentence": "Be careful with this _____\nluka\n. It's very sharp.",
+    "updated_at": "2026-11-19T16:34:12.937839",
+    "usage_count": 3
+  },
+  "nóż": {
+    "answer": "knife",
+    "prompt": "nóż",
+    "sentence": "Be careful with this _____\nluka\n. It's very sharp.",
+    "updated_at": "2026-11-19T16:34:12.937839",
+    "usage_count": 3
+  },
+  "a _____ luka stole his car yesterday. | złodziej": {
+    "answer": "thief",
+    "prompt": "złodziej",
+    "sentence": "A _____\nluka\n stole his car yesterday.",
+    "updated_at": "2026-11-19T16:35:27.049950",
+    "usage_count": 3
+  },
+  "złodziej": {
+    "answer": "thief",
+    "prompt": "złodziej",
+    "sentence": "A _____\nluka\n stole his car yesterday.",
+    "updated_at": "2026-11-19T16:35:27.049950",
+    "usage_count": 3
+  },
+  "the daring ______ luka of the criminals was not successful. | ucieczka": {
+    "answer": "escape",
+    "prompt": "ucieczka",
+    "sentence": "The daring ______\nluka\n of the criminals was not successful.",
+    "updated_at": "2026-11-19T16:33:46.428168",
+    "usage_count": 3
+  },
+  "ucieczka": {
+    "answer": "escape",
+    "prompt": "ucieczka",
+    "sentence": "The daring ______\nluka\n of the criminals was not successful.",
+    "updated_at": "2026-11-19T16:33:46.428168",
+    "usage_count": 3
+  },
+  "a group of _______ luka broke into the shop downstairs. | rabuś; złodziej": {
+    "answer": "robber",
+    "prompt": "rabuś; złodziej",
+    "sentence": "A group of _______\nluka\n broke into the shop downstairs.",
+    "updated_at": "2026-11-19T16:35:35.744032",
+    "usage_count": 3
+  },
+  "rabuś; złodziej": {
+    "answer": "robber",
+    "prompt": "rabuś; złodziej",
+    "sentence": "A group of _______\nluka\n broke into the shop downstairs.",
+    "updated_at": "2026-11-19T16:35:35.744032",
+    "usage_count": 3
+  },
+  "the fire has _______ luka many buildings. | uszkadzać, psuć; niszczyć": {
+    "answer": "damage",
+    "prompt": "uszkadzać, psuć; niszczyć",
+    "sentence": "The fire has _______\nluka\n many buildings.",
+    "updated_at": "2026-11-19T16:34:49.801332",
+    "usage_count": 1
+  },
+  "uszkadzać, psuć; niszczyć": {
+    "answer": "damage",
+    "prompt": "uszkadzać, psuć; niszczyć",
+    "sentence": "The fire has _______\nluka\n many buildings.",
+    "updated_at": "2026-11-19T16:34:49.801332",
+    "usage_count": 1
+  },
+  "someone has ______ luka my wallet. | kraść": {
+    "answer": "steal",
+    "prompt": "kraść",
+    "sentence": "Someone has ______\nluka\n my wallet.",
+    "updated_at": "2026-11-19T16:35:09.679910",
+    "usage_count": 1
+  },
+  "kraść": {
+    "answer": "steal",
+    "prompt": "kraść",
+    "sentence": "Someone has ______\nluka\n my wallet.",
+    "updated_at": "2026-11-19T16:35:09.679910",
     "usage_count": 1
   }
 }
