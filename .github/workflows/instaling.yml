@@ -62,7 +62,7 @@ jobs:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Wczytanie bezpiecznych danych z GitHub Secrets
+      - name: Wczytanie bezpiecznych danych z GitHub Secrets & Aktywacja Maskowania (Zero-Leak)
         env:
           USERS_JSON_SECRET: ${{ secrets.USERS_JSON }}
           CONFIG_JSON_SECRET: ${{ secrets.CONFIG_JSON }}
@@ -76,6 +76,23 @@ jobs:
             printf '%s\n' "$CONFIG_JSON_SECRET" > data/config.json
             echo "[+] Wczytano konfigurację i webhooki z GitHub Secrets."
           fi
+
+          # Twarde maskowanie wszystkich haseł, loginów i webhooków w konsoli GitHub Actions (Zero-Leak)
+          python3 -c "
+          import json, os
+          if os.path.exists('data/users.json'):
+              with open('data/users.json', 'r', encoding='utf-8') as f:
+                  for u in json.load(f):
+                      for k in ['password', 'login']:
+                          val = str(u.get(k, '')).strip()
+                          if len(val) >= 3:
+                              print(f'::add-mask::{val}')
+          if os.path.exists('data/config.json'):
+              with open('data/config.json', 'r', encoding='utf-8') as f:
+                  for k, v in json.load(f).items():
+                      if isinstance(v, str) and ('webhook' in k or v.startswith('http')):
+                          print(f'::add-mask::{v}')
+          " 2>/dev/null || true
 
       - name: Instalacja pakietów Pythona
         run: |

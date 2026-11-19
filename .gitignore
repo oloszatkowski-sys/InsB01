@@ -8,3 +8,6 @@ data/bot.lock
 data/bot.log
 BACKUP_BOT_INFO.md
 instaling-bot.zip
+scratch/
+*.tmp
+*.log

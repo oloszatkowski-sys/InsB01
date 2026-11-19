@@ -82,20 +82,27 @@ class MultiScheduler:
                     data = json.load(f)
                     if data.get("week_key") == week_key and "days" in data:
                         active_users = self.users_mgr.get_active_users()
-                        user_nick_map = {u.get("login"): u.get("nickname") for u in active_users if u.get("login") and u.get("nickname")}
+                        user_nick_map = {u.get("id"): u.get("nickname") for u in active_users if u.get("id") and u.get("nickname")}
+                        user_id_by_login = {u.get("login"): u.get("id") for u in active_users if u.get("login") and u.get("id")}
                         changed = False
                         for d in data.get("days", {}).values():
                             for s in d.get("slots", []):
+                                u_id = s.get("user_id") or user_id_by_login.get(s.get("login"))
+                                if u_id:
+                                    s["user_id"] = u_id
                                 if "countdown_sent" not in s:
                                     s["countdown_sent"] = bool(s.get("completed", False))
                                     changed = True
-                                if s.get("login") in user_nick_map and s.get("nickname") != user_nick_map[s["login"]]:
-                                    s["nickname"] = user_nick_map[s["login"]]
+                                if u_id in user_nick_map and s.get("nickname") != user_nick_map[u_id]:
+                                    s["nickname"] = user_nick_map[u_id]
+                                    changed = True
+                                if s.get("login") and not s["login"].endswith("####"):
+                                    s["login"] = mask_login(s["login"])
                                     changed = True
 
                         # Automatyczne dołączanie nowo dodanych uczniów do istniejącego harmonogramu tygodnia:
-                        existing_logins = {s.get("login") for d in data.get("days", {}).values() for s in d.get("slots", [])}
-                        missing_users = [u for u in active_users if u.get("login") not in existing_logins]
+                        existing_uids = {s.get("user_id") for d in data.get("days", {}).values() for s in d.get("slots", []) if s.get("user_id")}
+                        missing_users = [u for u in active_users if u.get("id") not in existing_uids]
                         if missing_users:
                             for u in missing_users:
                                 u_id = u.get("id") or u.get("login")
@@ -888,9 +895,10 @@ class MultiScheduler:
         today_pl = today_warsaw()
         day_name = DAY_NAMES_PL[today_pl.weekday()]
         slots = self.get_today_slots()
+        users_by_id = {u.get("id"): u for u in self.users_mgr.get_users()}
         users_by_login = {u.get("login"): u for u in self.users_mgr.get_users()}
         for s in slots:
-            u_meta = users_by_login.get(s.get("login"))
+            u_meta = users_by_id.get(s.get("user_id")) or users_by_login.get(s.get("login"))
             if u_meta:
                 s["discord_ping"] = u_meta.get("discord_ping", s.get("discord_ping", ""))
                 s["discord_display"] = u_meta.get("discord_display", s.get("discord_display", ""))
@@ -909,10 +917,11 @@ class MultiScheduler:
             day_date = day_data.get("date", "")
             day_slots = day_data.get("slots", [])
 
+            users_by_id = {u.get("id"): u for u in self.users_mgr.get_users()}
             users_by_login = {u.get("login"): u for u in self.users_mgr.get_users()}
             entries = []
             for s in day_slots:
-                u_meta = users_by_login.get(s.get("login"))
+                u_meta = users_by_id.get(s.get("user_id")) or users_by_login.get(s.get("login"))
                 disc_id = (u_meta.get("discord_id") if u_meta else s.get("discord_id")) or ""
                 disc_ping = (u_meta.get("discord_ping") if u_meta else s.get("discord_ping")) or ""
                 disc_disp = (u_meta.get("discord_display") if u_meta else s.get("discord_display")) or ""
