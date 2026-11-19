@@ -1907,15 +1907,15 @@
     "answer": "weightlifter",
     "prompt": "ciężarowiec; sztangista",
     "sentence": "A ____________\nluka\n must be strong.",
-    "updated_at": "2026-11-18T21:14:29.106893",
-    "usage_count": 3
+    "updated_at": "2026-11-19T21:18:21.349844",
+    "usage_count": 5
   },
   "ciężarowiec; sztangista": {
     "answer": "weightlifter",
     "prompt": "ciężarowiec; sztangista",
     "sentence": "A ____________\nluka\n must be strong.",
-    "updated_at": "2026-11-18T21:14:29.106893",
-    "usage_count": 3
+    "updated_at": "2026-11-19T21:18:21.349844",
+    "usage_count": 5
   },
   "the _____ luka congratulated his team on the victory. | trener": {
     "answer": "coach",
@@ -1977,15 +1977,15 @@
     "answer": "cheer",
     "prompt": "wiwatować; robić owację",
     "sentence": "The audience _______\nluka\n the team.",
-    "updated_at": "2026-11-18T21:15:44.646411",
-    "usage_count": 3
+    "updated_at": "2026-11-19T21:16:59.667602",
+    "usage_count": 5
   },
   "wiwatować; robić owację": {
     "answer": "cheer",
     "prompt": "wiwatować; robić owację",
     "sentence": "The audience _______\nluka\n the team.",
-    "updated_at": "2026-11-18T21:15:44.646411",
-    "usage_count": 3
+    "updated_at": "2026-11-19T21:16:59.667602",
+    "usage_count": 5
   },
   "you must train really hard to become a __________ luka . | piłkarz": {
     "answer": "footballer",
@@ -2140,5 +2140,117 @@
     "sentence": "Someone has ______\nluka\n my wallet.",
     "updated_at": "2026-11-19T16:35:09.679910",
     "usage_count": 1
+  },
+  "put on your ______ luka if you're going cycling. | kask": {
+    "answer": "helmet",
+    "prompt": "kask",
+    "sentence": "Put on your ______\nluka\n if you're going cycling.",
+    "updated_at": "2026-11-19T21:14:32.903083",
+    "usage_count": 1
+  },
+  "kask": {
+    "answer": "helmet",
+    "prompt": "kask",
+    "sentence": "Put on your ______\nluka\n if you're going cycling.",
+    "updated_at": "2026-11-19T21:14:32.903083",
+    "usage_count": 1
+  },
+  "she's the world's ________ luka in karate. | mistrz": {
+    "answer": "champion",
+    "prompt": "mistrz",
+    "sentence": "She's the world's ________\nluka\n in karate.",
+    "updated_at": "2026-11-19T21:14:43.519200",
+    "usage_count": 1
+  },
+  "mistrz": {
+    "answer": "champion",
+    "prompt": "mistrz",
+    "sentence": "She's the world's ________\nluka\n in karate.",
+    "updated_at": "2026-11-19T21:14:43.519200",
+    "usage_count": 1
+  },
+  "the _______ luka said the ship was about to leave port. | kapitan; dowódca": {
+    "answer": "captain",
+    "prompt": "kapitan; dowódca",
+    "sentence": "The _______\nluka\n said the ship was about to leave port.",
+    "updated_at": "2026-11-19T21:14:54.481843",
+    "usage_count": 1
+  },
+  "kapitan; dowódca": {
+    "answer": "captain",
+    "prompt": "kapitan; dowódca",
+    "sentence": "The _______\nluka\n said the ship was about to leave port.",
+    "updated_at": "2026-11-19T21:14:54.481843",
+    "usage_count": 1
+  },
+  "this team was ______ luka by 10 points. | pokonać; pobić": {
+    "answer": "beat",
+    "prompt": "pokonać; pobić",
+    "sentence": "This team was ______\nluka\n by 10 points.",
+    "updated_at": "2026-11-19T21:15:12.809115",
+    "usage_count": 1
+  },
+  "pokonać; pobić": {
+    "answer": "beat",
+    "prompt": "pokonać; pobić",
+    "sentence": "This team was ______\nluka\n by 10 points.",
+    "updated_at": "2026-11-19T21:15:12.809115",
+    "usage_count": 1
+  },
+  "the caribbeans are a paradise for ______ luka . | nurek; skoczek do wody": {
+    "answer": "diver",
+    "prompt": "nurek; skoczek do wody",
+    "sentence": "The Caribbeans are a paradise for ______\nluka\n.",
+    "updated_at": "2026-11-19T21:15:31.423474",
+    "usage_count": 1
+  },
+  "nurek; skoczek do wody": {
+    "answer": "diver",
+    "prompt": "nurek; skoczek do wody",
+    "sentence": "The Caribbeans are a paradise for ______\nluka\n.",
+    "updated_at": "2026-11-19T21:15:31.423474",
+    "usage_count": 1
+  },
+  "leo wants to become an _______ luka . | lekkoatleta; sportowiec": {
+    "answer": "athlete",
+    "prompt": "lekkoatleta; sportowiec",
+    "sentence": "Leo wants to become an _______\nluka\n.",
+    "updated_at": "2026-11-19T21:15:55.570290",
+    "usage_count": 1
+  },
+  "lekkoatleta; sportowiec": {
+    "answer": "athlete",
+    "prompt": "lekkoatleta; sportowiec",
+    "sentence": "Leo wants to become an _______\nluka\n.",
+    "updated_at": "2026-11-19T21:15:55.570290",
+    "usage_count": 1
+  },
+  "just _____ luka the ball and then throw it to her. | złapać": {
+    "answer": "catch",
+    "prompt": "złapać",
+    "sentence": "Just _____\nluka\n the ball and then throw it to her.",
+    "updated_at": "2026-11-19T21:16:12.109878",
+    "usage_count": 1
+  },
+  "złapać": {
+    "answer": "catch",
+    "prompt": "złapać",
+    "sentence": "Just _____\nluka\n the ball and then throw it to her.",
+    "updated_at": "2026-11-19T21:16:12.109878",
+    "usage_count": 1
+  },
+  "george is an ________ luka boy. | wysportowany": {
+    "answer": "athletic",
+    "prompt": "wysportowany",
+    "sentence": "George is an ________\nluka\n boy.",
+    "updated_at": "2026-11-19T21:18:11.642910",
+    "usage_count": 3
+  },
+  "wysportowany": {
+    "answer": "athletic",
+    "prompt": "wysportowany",
+    "sentence": "George is an ________\nluka\n boy.",
+    "updated_at": "2026-11-19T21:18:11.642910",
+    "usage_count": 3
   }
 }

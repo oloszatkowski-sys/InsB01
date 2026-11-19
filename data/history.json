@@ -8743,5 +8743,170 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-19T16:36:02.554045"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:14",
+    "words_total": 29,
+    "words_correct": 15,
+    "words_mistakes": 14,
+    "new_words_count": 8,
+    "autocorrect_count": 3,
+    "accuracy_percent": 51.7,
+    "duration_seconds": 292.5,
+    "started_at_warsaw": "2026-11-19 22:14:14 CET",
+    "completed_at_warsaw": "2026-11-19 22:19:06 CET",
+    "finished_at": "2026-11-19T22:19:06.882953+01:00",
+    "words_details": [
+      {
+        "prompt": "kask",
+        "answer": "helmet",
+        "status": "nowe"
+      },
+      {
+        "prompt": "mistrz",
+        "answer": "champion",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "captain",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kask",
+        "answer": "helmet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "nowe"
+      },
+      {
+        "prompt": "mistrz",
+        "answer": "champion",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurek; skoczek do wody",
+        "answer": "diver",
+        "status": "nowe"
+      },
+      {
+        "prompt": "nurek; skoczek do wody",
+        "answer": "diver",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłkarz",
+        "answer": "footballer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "lekkoatleta; sportowiec",
+        "answer": "athlete",
+        "status": "nowe"
+      },
+      {
+        "prompt": "lekkoatleta; sportowiec",
+        "answer": "athlete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złapać",
+        "answer": "catch",
+        "status": "nowe"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "captain",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "nowe"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "złapać",
+        "answer": "catch",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zawody; turniej",
+        "answer": "tournament",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "konkurować",
+        "answer": "compete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ciężarowiec; sztangista",
+        "answer": "____________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "ciężarowiec; sztangista",
+        "answer": "weightlifter",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kibic",
+        "answer": "supporter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ciężarowiec; sztangista",
+        "answer": "weightlifter",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-19T21:19:06.883297"
   }
 ]
