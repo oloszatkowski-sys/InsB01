@@ -8908,5 +8908,115 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-19T21:19:06.883297"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "21:00",
+    "words_total": 18,
+    "words_correct": 15,
+    "words_mistakes": 3,
+    "new_words_count": 1,
+    "autocorrect_count": 1,
+    "accuracy_percent": 83.3,
+    "duration_seconds": 206.8,
+    "started_at_warsaw": "2026-11-19 22:19:13 CET",
+    "completed_at_warsaw": "2026-11-19 22:22:40 CET",
+    "finished_at": "2026-11-19T22:22:40.066103+01:00",
+    "words_details": [
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "_____________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "galeria sztuki",
+        "answer": "art gallery",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "muzyk",
+        "answer": "musician",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tancerz",
+        "answer": "dancer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "mistrz",
+        "answer": "champion",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "captain",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "trener",
+        "answer": "coach",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złapać",
+        "answer": "catch",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurek; skoczek do wody",
+        "answer": "diver",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "lekkoatleta; sportowiec",
+        "answer": "athlete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłka",
+        "answer": "ball",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kask",
+        "answer": "helmet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłka",
+        "answer": "ball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ilustracje",
+        "answer": "illustrations",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-19T21:22:40.066420"
   }
 ]

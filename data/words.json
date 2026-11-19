@@ -843,15 +843,15 @@
     "answer": "illustrations",
     "prompt": "ilustracje",
     "sentence": "Can you describe the _____________\nluka\n?",
-    "updated_at": "2026-11-18T21:17:31.671175",
-    "usage_count": 5
+    "updated_at": "2026-11-19T21:19:51.065046",
+    "usage_count": 7
   },
   "ilustracje": {
     "answer": "illustrations",
     "prompt": "ilustracje",
     "sentence": "Can you describe the _____________\nluka\n?",
-    "updated_at": "2026-11-18T21:17:31.671175",
-    "usage_count": 5
+    "updated_at": "2026-11-19T21:19:51.065046",
+    "usage_count": 7
   },
   "i ______ luka apartments for different clients at work. | projektować": {
     "answer": "design",
@@ -2252,5 +2252,19 @@
     "sentence": "George is an ________\nluka\n boy.",
     "updated_at": "2026-11-19T21:18:11.642910",
     "usage_count": 3
+  },
+  "he threw the ____ luka at me, but i couldn't catch it. | piłka": {
+    "answer": "ball",
+    "prompt": "piłka",
+    "sentence": "He threw the ____\nluka\n at me, but I couldn't catch it.",
+    "updated_at": "2026-11-19T21:21:55.971640",
+    "usage_count": 1
+  },
+  "piłka": {
+    "answer": "ball",
+    "prompt": "piłka",
+    "sentence": "He threw the ____\nluka\n at me, but I couldn't catch it.",
+    "updated_at": "2026-11-19T21:21:55.971640",
+    "usage_count": 1
   }
 }
