@@ -675,15 +675,15 @@
     "answer": "acting",
     "prompt": "aktorstwo; gra aktorska",
     "sentence": "Edward Norton's ______\nluka\n is the main asset of this film.",
-    "updated_at": "2026-10-28T16:34:45.379188",
-    "usage_count": 1
+    "updated_at": "2026-11-20T17:01:23.649849",
+    "usage_count": 3
   },
   "aktorstwo; gra aktorska": {
     "answer": "acting",
     "prompt": "aktorstwo; gra aktorska",
     "sentence": "Edward Norton's ______\nluka\n is the main asset of this film.",
-    "updated_at": "2026-10-28T16:34:45.379188",
-    "usage_count": 1
+    "updated_at": "2026-11-20T17:01:23.649849",
+    "usage_count": 3
   },
   "i've never been to a rock _______ luka before. | koncert": {
     "answer": "concert",
@@ -2279,6 +2279,118 @@
     "prompt": "uciekać",
     "sentence": "The cat ___\nluka\n ____\nluka\n when it saw us.",
     "updated_at": "2026-11-20T15:13:10.154786",
+    "usage_count": 1
+  },
+  "you need a ___ luka to play baseball. | kij (do baseballa, krykieta)": {
+    "answer": "bat",
+    "prompt": "kij (do baseballa, krykieta)",
+    "sentence": "You need a ___\nluka\n to play baseball.",
+    "updated_at": "2026-11-20T16:58:24.843509",
+    "usage_count": 1
+  },
+  "kij (do baseballa, krykieta)": {
+    "answer": "bat",
+    "prompt": "kij (do baseballa, krykieta)",
+    "sentence": "You need a ___\nluka\n to play baseball.",
+    "updated_at": "2026-11-20T16:58:24.843509",
+    "usage_count": 1
+  },
+  "these football _____ luka are really uncomfortable. | buty (np. korki)": {
+    "answer": "boots",
+    "prompt": "buty (np. korki)",
+    "sentence": "These football _____\nluka\n are really uncomfortable.",
+    "updated_at": "2026-11-20T16:58:31.392865",
+    "usage_count": 1
+  },
+  "buty (np. korki)": {
+    "answer": "boots",
+    "prompt": "buty (np. korki)",
+    "sentence": "These football _____\nluka\n are really uncomfortable.",
+    "updated_at": "2026-11-20T16:58:31.392865",
+    "usage_count": 1
+  },
+  "we're going swimming so put on your _______ luka . | pianka do nurkowania": {
+    "answer": "wetsuit",
+    "prompt": "pianka do nurkowania",
+    "sentence": "We're going swimming so put on your _______\nluka\n.",
+    "updated_at": "2026-11-20T16:58:39.988142",
+    "usage_count": 1
+  },
+  "pianka do nurkowania": {
+    "answer": "wetsuit",
+    "prompt": "pianka do nurkowania",
+    "sentence": "We're going swimming so put on your _______\nluka\n.",
+    "updated_at": "2026-11-20T16:58:39.988142",
+    "usage_count": 1
+  },
+  "i don't think _________ luka is my favourite sport. i don't like watching people fight. | zapasy (sport)": {
+    "answer": "wrestling",
+    "prompt": "zapasy (sport)",
+    "sentence": "I don't think _________\nluka\n is my favourite sport. I don't like watching people fight.",
+    "updated_at": "2026-11-20T16:59:10.169843",
+    "usage_count": 1
+  },
+  "zapasy (sport)": {
+    "answer": "wrestling",
+    "prompt": "zapasy (sport)",
+    "sentence": "I don't think _________\nluka\n is my favourite sport. I don't like watching people fight.",
+    "updated_at": "2026-11-20T16:59:10.169843",
+    "usage_count": 1
+  },
+  "to play golf you need a ball and a ____ luka . | kij golfowy": {
+    "answer": "club",
+    "prompt": "kij golfowy",
+    "sentence": "To play golf you need a ball and a ____\nluka\n.",
+    "updated_at": "2026-11-20T17:02:33.064763",
+    "usage_count": 3
+  },
+  "kij golfowy": {
+    "answer": "club",
+    "prompt": "kij golfowy",
+    "sentence": "To play golf you need a ball and a ____\nluka\n.",
+    "updated_at": "2026-11-20T17:02:33.064763",
+    "usage_count": 3
+  },
+  "_____________ luka is not very popular with women. | podnoszenie ciężarów; kulturystyka": {
+    "answer": "weightlifting",
+    "prompt": "podnoszenie ciężarów; kulturystyka",
+    "sentence": "_____________\nluka\n is not very popular with women.",
+    "updated_at": "2026-11-20T17:00:09.290821",
+    "usage_count": 1
+  },
+  "podnoszenie ciężarów; kulturystyka": {
+    "answer": "weightlifting",
+    "prompt": "podnoszenie ciężarów; kulturystyka",
+    "sentence": "_____________\nluka\n is not very popular with women.",
+    "updated_at": "2026-11-20T17:00:09.290821",
+    "usage_count": 1
+  },
+  "do you think i should buy this _______ luka ? | strój kąpielowy": {
+    "answer": "costume",
+    "prompt": "strój kąpielowy",
+    "sentence": "Do you think I should buy this _______\nluka\n?",
+    "updated_at": "2026-11-20T17:02:10.404647",
+    "usage_count": 3
+  },
+  "strój kąpielowy": {
+    "answer": "costume",
+    "prompt": "strój kąpielowy",
+    "sentence": "Do you think I should buy this _______\nluka\n?",
+    "updated_at": "2026-11-20T17:02:10.404647",
+    "usage_count": 3
+  },
+  "don't forget your _______ luka if you're going skiing. | gogle; okulary ochronne; okulary do pływania": {
+    "answer": "goggles",
+    "prompt": "gogle; okulary ochronne; okulary do pływania",
+    "sentence": "Don't forget your _______\nluka\n if you're going skiing.",
+    "updated_at": "2026-11-20T17:01:43.143633",
+    "usage_count": 1
+  },
+  "gogle; okulary ochronne; okulary do pływania": {
+    "answer": "goggles",
+    "prompt": "gogle; okulary ochronne; okulary do pływania",
+    "sentence": "Don't forget your _______\nluka\n if you're going skiing.",
+    "updated_at": "2026-11-20T17:01:43.143633",
     "usage_count": 1
   }
 }

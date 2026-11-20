@@ -9148,5 +9148,170 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-20T15:14:08.621102"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "17:58",
+    "words_total": 29,
+    "words_correct": 15,
+    "words_mistakes": 14,
+    "new_words_count": 8,
+    "autocorrect_count": 3,
+    "accuracy_percent": 51.7,
+    "duration_seconds": 291.6,
+    "started_at_warsaw": "2026-11-20 17:58:00 CET",
+    "completed_at_warsaw": "2026-11-20 18:02:52 CET",
+    "finished_at": "2026-11-20T18:02:52.254712+01:00",
+    "words_details": [
+      {
+        "prompt": "piosenka",
+        "answer": "song",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kij (do baseballa, krykieta)",
+        "answer": "bat",
+        "status": "nowe"
+      },
+      {
+        "prompt": "buty (np. korki)",
+        "answer": "boots",
+        "status": "nowe"
+      },
+      {
+        "prompt": "pianka do nurkowania",
+        "answer": "wetsuit",
+        "status": "nowe"
+      },
+      {
+        "prompt": "buty (np. korki)",
+        "answer": "boots",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłka",
+        "answer": "ball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zapasy (sport)",
+        "answer": "wrestling",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kij (do baseballa, krykieta)",
+        "answer": "bat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kij golfowy",
+        "answer": "club",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zapasy (sport)",
+        "answer": "wrestling",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyk; gimnastyczka",
+        "answer": "gymnast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "weightlifting",
+        "status": "nowe"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "weightlifting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój kąpielowy",
+        "answer": "costume",
+        "status": "nowe"
+      },
+      {
+        "prompt": "strój kąpielowy",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pianka do nurkowania",
+        "answer": "wetsuit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strona internetowa",
+        "answer": "website",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłkarz",
+        "answer": "footballer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gogle; okulary ochronne; okulary do pływania",
+        "answer": "goggles",
+        "status": "nowe"
+      },
+      {
+        "prompt": "gogle; okulary ochronne; okulary do pływania",
+        "answer": "goggles",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kij golfowy",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strój kąpielowy",
+        "answer": "costume",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strój kąpielowy",
+        "answer": "costume",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kij golfowy",
+        "answer": "club",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kij golfowy",
+        "answer": "club",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-20T17:02:52.255010"
   }
 ]
