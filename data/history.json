@@ -9018,5 +9018,135 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-19T21:22:40.066420"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "16:10",
+    "words_total": 22,
+    "words_correct": 15,
+    "words_mistakes": 7,
+    "new_words_count": 1,
+    "autocorrect_count": 3,
+    "accuracy_percent": 68.2,
+    "duration_seconds": 248.0,
+    "started_at_warsaw": "2026-11-20 16:10:00 CET",
+    "completed_at_warsaw": "2026-11-20 16:14:08 CET",
+    "finished_at": "2026-11-20T16:14:08.620813+01:00",
+    "words_details": [
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wandal",
+        "answer": "vandal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nóż",
+        "answer": "knife",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uszkadzać, psuć; niszczyć",
+        "answer": "damage",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kraść",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kraść",
+        "answer": "steal",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "złodziej",
+        "answer": "thief",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popełnić przestępstwo",
+        "answer": "commit a crime",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "inspirować; wzbudzać (coś w kimś)",
+        "answer": "inspire",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ucieczka",
+        "answer": "escape",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "iść do więzienia",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kraść",
+        "answer": "steal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "iść do więzienia",
+        "answer": "go to prison",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rabuś; złodziej",
+        "answer": "robber",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "oparty na",
+        "answer": "based on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uciekać",
+        "answer": "run away",
+        "status": "nowe"
+      },
+      {
+        "prompt": "uciekać",
+        "answer": "run away",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "festiwal",
+        "answer": "festival",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "iść do więzienia",
+        "answer": "go to prison",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-20T15:14:08.621102"
   }
 ]

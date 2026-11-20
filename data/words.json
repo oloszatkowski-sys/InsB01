@@ -1151,15 +1151,15 @@
     "answer": "definitely",
     "prompt": "zdecydowanie; definitywnie",
     "sentence": "I'm __________\nluka\n against this rule.",
-    "updated_at": "2026-11-19T16:31:07.574530",
-    "usage_count": 7
+    "updated_at": "2026-11-20T15:10:30.250580",
+    "usage_count": 9
   },
   "zdecydowanie; definitywnie": {
     "answer": "definitely",
     "prompt": "zdecydowanie; definitywnie",
     "sentence": "I'm __________\nluka\n against this rule.",
-    "updated_at": "2026-11-19T16:31:07.574530",
-    "usage_count": 7
+    "updated_at": "2026-11-20T15:10:30.250580",
+    "usage_count": 9
   },
   "are there any science fiction ______ luka ______ luka ? | film niemy": {
     "answer": "silent movie",
@@ -2033,15 +2033,15 @@
     "answer": "go to prison",
     "prompt": "iść do więzienia",
     "sentence": "He has ____\nluka\n __\nluka\n ______\nluka\n for shoplifting.",
-    "updated_at": "2026-11-19T16:31:44.086442",
-    "usage_count": 1
+    "updated_at": "2026-11-20T15:12:26.846550",
+    "usage_count": 3
   },
   "iść do więzienia": {
     "answer": "go to prison",
     "prompt": "iść do więzienia",
     "sentence": "He has ____\nluka\n __\nluka\n ______\nluka\n for shoplifting.",
-    "updated_at": "2026-11-19T16:31:44.086442",
-    "usage_count": 1
+    "updated_at": "2026-11-20T15:12:26.846550",
+    "usage_count": 3
   },
   "if you ______ luka _ luka _____ luka you will be punished. | popełnić przestępstwo": {
     "answer": "commit a crime",
@@ -2131,15 +2131,15 @@
     "answer": "steal",
     "prompt": "kraść",
     "sentence": "Someone has ______\nluka\n my wallet.",
-    "updated_at": "2026-11-19T16:35:09.679910",
-    "usage_count": 1
+    "updated_at": "2026-11-20T15:11:21.157647",
+    "usage_count": 3
   },
   "kraść": {
     "answer": "steal",
     "prompt": "kraść",
     "sentence": "Someone has ______\nluka\n my wallet.",
-    "updated_at": "2026-11-19T16:35:09.679910",
-    "usage_count": 1
+    "updated_at": "2026-11-20T15:11:21.157647",
+    "usage_count": 3
   },
   "put on your ______ luka if you're going cycling. | kask": {
     "answer": "helmet",
@@ -2265,6 +2265,20 @@
     "prompt": "piłka",
     "sentence": "He threw the ____\nluka\n at me, but I couldn't catch it.",
     "updated_at": "2026-11-19T21:21:55.971640",
+    "usage_count": 1
+  },
+  "the cat ___ luka ____ luka when it saw us. | uciekać": {
+    "answer": "run away",
+    "prompt": "uciekać",
+    "sentence": "The cat ___\nluka\n ____\nluka\n when it saw us.",
+    "updated_at": "2026-11-20T15:13:10.154786",
+    "usage_count": 1
+  },
+  "uciekać": {
+    "answer": "run away",
+    "prompt": "uciekać",
+    "sentence": "The cat ___\nluka\n ____\nluka\n when it saw us.",
+    "updated_at": "2026-11-20T15:13:10.154786",
     "usage_count": 1
   }
 }
