@@ -423,15 +423,15 @@
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-11-18T15:58:58.729779",
-    "usage_count": 9
+    "updated_at": "2026-11-20T21:03:58.780745",
+    "usage_count": 11
   },
   "film dokumentalny; program dokumentalny": {
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-11-18T15:58:58.729779",
-    "usage_count": 9
+    "updated_at": "2026-11-20T21:03:58.780745",
+    "usage_count": 11
   },
   "can you _____ luka ___ luka ________ luka , please? the sun is blinding me. | zasunąć zasłony": {
     "answer": "close the curtains",
@@ -1753,15 +1753,15 @@
     "answer": "compete",
     "prompt": "konkurować",
     "sentence": "They always _______\nluka\n with each other.",
-    "updated_at": "2026-11-16T12:59:27.006748",
-    "usage_count": 1
+    "updated_at": "2026-11-20T21:04:50.975067",
+    "usage_count": 3
   },
   "konkurować": {
     "answer": "compete",
     "prompt": "konkurować",
     "sentence": "They always _______\nluka\n with each other.",
-    "updated_at": "2026-11-16T12:59:27.006748",
-    "usage_count": 1
+    "updated_at": "2026-11-20T21:04:50.975067",
+    "usage_count": 3
   },
   "i've got my tennis __________ luka at the weekend. i must win! | zawody; turniej": {
     "answer": "tournament",
@@ -1935,43 +1935,43 @@
     "answer": "runner",
     "prompt": "biegacz",
     "sentence": "Mike is a fast ______\nluka\n, but Jack seems fitter.",
-    "updated_at": "2026-11-18T16:00:36.787819",
-    "usage_count": 1
+    "updated_at": "2026-11-20T21:02:25.032375",
+    "usage_count": 3
   },
   "biegacz": {
     "answer": "runner",
     "prompt": "biegacz",
     "sentence": "Mike is a fast ______\nluka\n, but Jack seems fitter.",
-    "updated_at": "2026-11-18T16:00:36.787819",
-    "usage_count": 1
+    "updated_at": "2026-11-20T21:02:25.032375",
+    "usage_count": 3
   },
   "the _______ luka was doing his best to win the race. | rowerzysta; kolarz": {
     "answer": "cyclist",
     "prompt": "rowerzysta; kolarz",
     "sentence": "The _______\nluka\n was doing his best to win the race.",
-    "updated_at": "2026-11-18T21:15:07.452832",
-    "usage_count": 3
+    "updated_at": "2026-11-20T21:05:30.152092",
+    "usage_count": 5
   },
   "rowerzysta; kolarz": {
     "answer": "cyclist",
     "prompt": "rowerzysta; kolarz",
     "sentence": "The _______\nluka\n was doing his best to win the race.",
-    "updated_at": "2026-11-18T21:15:07.452832",
-    "usage_count": 3
+    "updated_at": "2026-11-20T21:05:30.152092",
+    "usage_count": 5
   },
   "he can perform twists, he is a _______ luka . | gimnastyk; gimnastyczka": {
     "answer": "gymnast",
     "prompt": "gimnastyk; gimnastyczka",
     "sentence": "He can perform twists, he is a _______\nluka\n.",
-    "updated_at": "2026-11-18T16:01:16.057608",
-    "usage_count": 1
+    "updated_at": "2026-11-20T21:03:21.680646",
+    "usage_count": 3
   },
   "gimnastyk; gimnastyczka": {
     "answer": "gymnast",
     "prompt": "gimnastyk; gimnastyczka",
     "sentence": "He can perform twists, he is a _______\nluka\n.",
-    "updated_at": "2026-11-18T16:01:16.057608",
-    "usage_count": 1
+    "updated_at": "2026-11-20T21:03:21.680646",
+    "usage_count": 3
   },
   "the audience _______ luka the team. | wiwatować; robić owację": {
     "answer": "cheer",
