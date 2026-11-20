@@ -1893,15 +1893,15 @@
     "answer": "swimmer",
     "prompt": "pływak",
     "sentence": "Anna's a great _______\nluka\n. She won a medal last week.",
-    "updated_at": "2026-11-18T15:59:32.088971",
-    "usage_count": 1
+    "updated_at": "2026-11-20T20:59:44.784132",
+    "usage_count": 3
   },
   "pływak": {
     "answer": "swimmer",
     "prompt": "pływak",
     "sentence": "Anna's a great _______\nluka\n. She won a medal last week.",
-    "updated_at": "2026-11-18T15:59:32.088971",
-    "usage_count": 1
+    "updated_at": "2026-11-20T20:59:44.784132",
+    "usage_count": 3
   },
   "a ____________ luka must be strong. | ciężarowiec; sztangista": {
     "answer": "weightlifter",
@@ -2187,15 +2187,15 @@
     "answer": "beat",
     "prompt": "pokonać; pobić",
     "sentence": "This team was ______\nluka\n by 10 points.",
-    "updated_at": "2026-11-19T21:15:12.809115",
-    "usage_count": 1
+    "updated_at": "2026-11-20T21:00:51.993638",
+    "usage_count": 3
   },
   "pokonać; pobić": {
     "answer": "beat",
     "prompt": "pokonać; pobić",
     "sentence": "This team was ______\nluka\n by 10 points.",
-    "updated_at": "2026-11-19T21:15:12.809115",
-    "usage_count": 1
+    "updated_at": "2026-11-20T21:00:51.993638",
+    "usage_count": 3
   },
   "the caribbeans are a paradise for ______ luka . | nurek; skoczek do wody": {
     "answer": "diver",
@@ -2243,15 +2243,15 @@
     "answer": "athletic",
     "prompt": "wysportowany",
     "sentence": "George is an ________\nluka\n boy.",
-    "updated_at": "2026-11-19T21:18:11.642910",
-    "usage_count": 3
+    "updated_at": "2026-11-20T21:00:04.461717",
+    "usage_count": 5
   },
   "wysportowany": {
     "answer": "athletic",
     "prompt": "wysportowany",
     "sentence": "George is an ________\nluka\n boy.",
-    "updated_at": "2026-11-19T21:18:11.642910",
-    "usage_count": 3
+    "updated_at": "2026-11-20T21:00:04.461717",
+    "usage_count": 5
   },
   "he threw the ____ luka at me, but i couldn't catch it. | piłka": {
     "answer": "ball",

@@ -9313,5 +9313,130 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-20T17:02:52.255010"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:16",
+    "words_total": 21,
+    "words_correct": 15,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 216.6,
+    "started_at_warsaw": "2026-11-20 21:57:59 CET",
+    "completed_at_warsaw": "2026-11-20 22:01:35 CET",
+    "finished_at": "2026-11-20T22:01:35.772137+01:00",
+    "words_details": [
+      {
+        "prompt": "biegacz",
+        "answer": "runner",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ciężarowiec; sztangista",
+        "answer": "weightlifter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "captain",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ubrudzić się błotem",
+        "answer": "get muddy",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłka",
+        "answer": "ball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bokser",
+        "answer": "boxer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływak",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pływak",
+        "answer": "swimmer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "lekkoatleta; sportowiec",
+        "answer": "athlete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyk; gimnastyczka",
+        "answer": "gymnast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurek; skoczek do wody",
+        "answer": "diver",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "pływak",
+        "answer": "swimmer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złapać",
+        "answer": "catch",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-20T21:01:35.772447"
   }
 ]
