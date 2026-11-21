@@ -675,15 +675,15 @@
     "answer": "acting",
     "prompt": "aktorstwo; gra aktorska",
     "sentence": "Edward Norton's ______\nluka\n is the main asset of this film.",
-    "updated_at": "2026-11-20T17:01:23.649849",
-    "usage_count": 3
+    "updated_at": "2026-11-21T20:00:04.314142",
+    "usage_count": 5
   },
   "aktorstwo; gra aktorska": {
     "answer": "acting",
     "prompt": "aktorstwo; gra aktorska",
     "sentence": "Edward Norton's ______\nluka\n is the main asset of this film.",
-    "updated_at": "2026-11-20T17:01:23.649849",
-    "usage_count": 3
+    "updated_at": "2026-11-21T20:00:04.314142",
+    "usage_count": 5
   },
   "i've never been to a rock _______ luka before. | koncert": {
     "answer": "concert",
@@ -2397,15 +2397,15 @@
     "answer": "strip",
     "prompt": "strój sportowca",
     "sentence": "Footballers need to wear professional ______\nluka\n.",
-    "updated_at": "2026-11-21T15:27:27.059031",
-    "usage_count": 1
+    "updated_at": "2026-11-21T19:59:47.329418",
+    "usage_count": 3
   },
   "strój sportowca": {
     "answer": "strip",
     "prompt": "strój sportowca",
     "sentence": "Footballers need to wear professional ______\nluka\n.",
-    "updated_at": "2026-11-21T15:27:27.059031",
-    "usage_count": 1
+    "updated_at": "2026-11-21T19:59:47.329418",
+    "usage_count": 3
   },
   "we need a ___ luka to play volleyball. | siatka, kosz (w koszykówce)": {
     "answer": "net",

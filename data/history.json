@@ -9833,5 +9833,120 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-21T16:35:22.580100"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "19:36",
+    "words_total": 19,
+    "words_correct": 15,
+    "words_mistakes": 4,
+    "new_words_count": 0,
+    "autocorrect_count": 2,
+    "accuracy_percent": 78.9,
+    "duration_seconds": 194.1,
+    "started_at_warsaw": "2026-11-21 20:58:36 CET",
+    "completed_at_warsaw": "2026-11-21 21:01:50 CET",
+    "finished_at": "2026-11-21T21:01:50.117427+01:00",
+    "words_details": [
+      {
+        "prompt": "kino",
+        "answer": "cinema",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "lekkoatleta; sportowiec",
+        "answer": "athlete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złapać",
+        "answer": "catch",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "position",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "captain",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zestaw; komplet",
+        "answer": "kit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "obraz",
+        "answer": "painting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zespół",
+        "answer": "band",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "siatka, kosz (w koszykówce)",
+        "answer": "net",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kask",
+        "answer": "helmet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurek; skoczek do wody",
+        "answer": "diver",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-21T20:01:50.117776"
   }
 ]
