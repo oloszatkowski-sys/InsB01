@@ -1949,15 +1949,15 @@
     "answer": "cyclist",
     "prompt": "rowerzysta; kolarz",
     "sentence": "The _______\nluka\n was doing his best to win the race.",
-    "updated_at": "2026-11-20T21:05:30.152092",
-    "usage_count": 5
+    "updated_at": "2026-11-21T20:49:40.020987",
+    "usage_count": 7
   },
   "rowerzysta; kolarz": {
     "answer": "cyclist",
     "prompt": "rowerzysta; kolarz",
     "sentence": "The _______\nluka\n was doing his best to win the race.",
-    "updated_at": "2026-11-20T21:05:30.152092",
-    "usage_count": 5
+    "updated_at": "2026-11-21T20:49:40.020987",
+    "usage_count": 7
   },
   "he can perform twists, he is a _______ luka . | gimnastyk; gimnastyczka": {
     "answer": "gymnast",
@@ -2397,29 +2397,29 @@
     "answer": "strip",
     "prompt": "strój sportowca",
     "sentence": "Footballers need to wear professional ______\nluka\n.",
-    "updated_at": "2026-11-21T19:59:47.329418",
-    "usage_count": 3
+    "updated_at": "2026-11-21T20:50:16.952755",
+    "usage_count": 5
   },
   "strój sportowca": {
     "answer": "strip",
     "prompt": "strój sportowca",
     "sentence": "Footballers need to wear professional ______\nluka\n.",
-    "updated_at": "2026-11-21T19:59:47.329418",
-    "usage_count": 3
+    "updated_at": "2026-11-21T20:50:16.952755",
+    "usage_count": 5
   },
   "we need a ___ luka to play volleyball. | siatka, kosz (w koszykówce)": {
     "answer": "net",
     "prompt": "siatka, kosz (w koszykówce)",
     "sentence": "We need a ___\nluka\n to play volleyball.",
-    "updated_at": "2026-11-21T15:27:33.699657",
-    "usage_count": 1
+    "updated_at": "2026-11-21T20:50:34.855510",
+    "usage_count": 3
   },
   "siatka, kosz (w koszykówce)": {
     "answer": "net",
     "prompt": "siatka, kosz (w koszykówce)",
     "sentence": "We need a ___\nluka\n to play volleyball.",
-    "updated_at": "2026-11-21T15:27:33.699657",
-    "usage_count": 1
+    "updated_at": "2026-11-21T20:50:34.855510",
+    "usage_count": 3
   },
   "the police should _____ luka criminals. | gonić": {
     "answer": "chase",

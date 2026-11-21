@@ -9948,5 +9948,130 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-21T20:01:50.117776"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "21:48",
+    "words_total": 21,
+    "words_correct": 15,
+    "words_mistakes": 6,
+    "new_words_count": 0,
+    "autocorrect_count": 3,
+    "accuracy_percent": 71.4,
+    "duration_seconds": 221.6,
+    "started_at_warsaw": "2026-11-21 21:48:01 CET",
+    "completed_at_warsaw": "2026-11-21 21:51:43 CET",
+    "finished_at": "2026-11-21T21:51:43.354203+01:00",
+    "words_details": [
+      {
+        "prompt": "konkurować",
+        "answer": "compete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "captain",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyk; gimnastyczka",
+        "answer": "gymnast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zawody; turniej",
+        "answer": "tournament",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "biegacz",
+        "answer": "runner",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "piłka",
+        "answer": "ball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kask",
+        "answer": "helmet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "siatka, kosz (w koszykówce)",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "siatka, kosz (w koszykówce)",
+        "answer": "net",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój kąpielowy",
+        "answer": "costume",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "buty (np. korki)",
+        "answer": "boots",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kanał; kanał telewizyjny",
+        "answer": "channel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "siatka, kosz (w koszykówce)",
+        "answer": "net",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-21T20:51:43.354510"
   }
 ]
