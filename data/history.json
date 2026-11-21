@@ -9583,5 +9583,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-20T21:06:22.835033"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "16:26",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 2,
+    "autocorrect_count": 3,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 227.2,
+    "started_at_warsaw": "2026-11-21 16:26:00 CET",
+    "completed_at_warsaw": "2026-11-21 16:29:48 CET",
+    "finished_at": "2026-11-21T16:29:48.005816+01:00",
+    "words_details": [
+      {
+        "prompt": "pływak",
+        "answer": "swimmer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kask",
+        "answer": "helmet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "mistrz",
+        "answer": "champion",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "trener",
+        "answer": "coach",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "nowe"
+      },
+      {
+        "prompt": "siatka, kosz (w koszykówce)",
+        "answer": "net",
+        "status": "nowe"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój kąpielowy",
+        "answer": "costume",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "buty (np. korki)",
+        "answer": "boots",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "_________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "siatka, kosz (w koszykówce)",
+        "answer": "net",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kij (do baseballa, krykieta)",
+        "answer": "bat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gogle; okulary ochronne; okulary do pływania",
+        "answer": "goggles",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popierać; pomagać; kibicować",
+        "answer": "support",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-21T15:29:48.006155"
   }
 ]

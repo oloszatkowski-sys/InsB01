@@ -1571,15 +1571,15 @@
     "answer": "support",
     "prompt": "popierać; pomagać; kibicować",
     "sentence": "The fans _________\nluka\n their team.",
-    "updated_at": "2026-11-16T22:48:15.585360",
-    "usage_count": 5
+    "updated_at": "2026-11-21T15:28:36.638535",
+    "usage_count": 7
   },
   "popierać; pomagać; kibicować": {
     "answer": "support",
     "prompt": "popierać; pomagać; kibicować",
     "sentence": "The fans _________\nluka\n their team.",
-    "updated_at": "2026-11-16T22:48:15.585360",
-    "usage_count": 5
+    "updated_at": "2026-11-21T15:28:36.638535",
+    "usage_count": 7
   },
   "would you like to ____ luka us? we're going to the cinema tonight. | łączyć; przyłączać (się); dołączyć": {
     "answer": "join",
@@ -1977,15 +1977,15 @@
     "answer": "cheer",
     "prompt": "wiwatować; robić owację",
     "sentence": "The audience _______\nluka\n the team.",
-    "updated_at": "2026-11-19T21:16:59.667602",
-    "usage_count": 5
+    "updated_at": "2026-11-21T15:29:05.426202",
+    "usage_count": 7
   },
   "wiwatować; robić owację": {
     "answer": "cheer",
     "prompt": "wiwatować; robić owację",
     "sentence": "The audience _______\nluka\n the team.",
-    "updated_at": "2026-11-19T21:16:59.667602",
-    "usage_count": 5
+    "updated_at": "2026-11-21T15:29:05.426202",
+    "usage_count": 7
   },
   "you must train really hard to become a __________ luka . | piłkarz": {
     "answer": "footballer",
@@ -2187,15 +2187,15 @@
     "answer": "beat",
     "prompt": "pokonać; pobić",
     "sentence": "This team was ______\nluka\n by 10 points.",
-    "updated_at": "2026-11-20T21:00:51.993638",
-    "usage_count": 3
+    "updated_at": "2026-11-21T15:26:58.625221",
+    "usage_count": 5
   },
   "pokonać; pobić": {
     "answer": "beat",
     "prompt": "pokonać; pobić",
     "sentence": "This team was ______\nluka\n by 10 points.",
-    "updated_at": "2026-11-20T21:00:51.993638",
-    "usage_count": 3
+    "updated_at": "2026-11-21T15:26:58.625221",
+    "usage_count": 5
   },
   "the caribbeans are a paradise for ______ luka . | nurek; skoczek do wody": {
     "answer": "diver",
@@ -2391,6 +2391,34 @@
     "prompt": "gogle; okulary ochronne; okulary do pływania",
     "sentence": "Don't forget your _______\nluka\n if you're going skiing.",
     "updated_at": "2026-11-20T17:01:43.143633",
+    "usage_count": 1
+  },
+  "footballers need to wear professional ______ luka . | strój sportowca": {
+    "answer": "strip",
+    "prompt": "strój sportowca",
+    "sentence": "Footballers need to wear professional ______\nluka\n.",
+    "updated_at": "2026-11-21T15:27:27.059031",
+    "usage_count": 1
+  },
+  "strój sportowca": {
+    "answer": "strip",
+    "prompt": "strój sportowca",
+    "sentence": "Footballers need to wear professional ______\nluka\n.",
+    "updated_at": "2026-11-21T15:27:27.059031",
+    "usage_count": 1
+  },
+  "we need a ___ luka to play volleyball. | siatka, kosz (w koszykówce)": {
+    "answer": "net",
+    "prompt": "siatka, kosz (w koszykówce)",
+    "sentence": "We need a ___\nluka\n to play volleyball.",
+    "updated_at": "2026-11-21T15:27:33.699657",
+    "usage_count": 1
+  },
+  "siatka, kosz (w koszykówce)": {
+    "answer": "net",
+    "prompt": "siatka, kosz (w koszykówce)",
+    "sentence": "We need a ___\nluka\n to play volleyball.",
+    "updated_at": "2026-11-21T15:27:33.699657",
     "usage_count": 1
   }
 }
