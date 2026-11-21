@@ -9718,5 +9718,120 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-21T15:29:48.006155"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "17:32",
+    "words_total": 19,
+    "words_correct": 15,
+    "words_mistakes": 4,
+    "new_words_count": 2,
+    "autocorrect_count": 1,
+    "accuracy_percent": 78.9,
+    "duration_seconds": 201.9,
+    "started_at_warsaw": "2026-11-21 17:32:00 CET",
+    "completed_at_warsaw": "2026-11-21 17:35:22 CET",
+    "finished_at": "2026-11-21T17:35:22.579757+01:00",
+    "words_details": [
+      {
+        "prompt": "zdecydowanie; definitywnie",
+        "answer": "definitely",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "akcja",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "akcja",
+        "answer": "action",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kraść",
+        "answer": "steal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "iść do więzienia",
+        "answer": "go to prison",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "disaster",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uciekać",
+        "answer": "run away",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film akcji",
+        "answer": "action film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "cyfrowy",
+        "answer": "digital",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "western",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "mieć miejsce, odbywać się",
+        "answer": "take place",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "efekty specjalne",
+        "answer": "special effects",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gonić",
+        "answer": "chase",
+        "status": "nowe"
+      },
+      {
+        "prompt": "złapać",
+        "answer": "catch",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złodziej sklepowy",
+        "answer": "shoplifter",
+        "status": "nowe"
+      },
+      {
+        "prompt": "akcja",
+        "answer": "action",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gonić",
+        "answer": "chase",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złodziej sklepowy",
+        "answer": "shoplifter",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-21T16:35:22.580100"
   }
 ]

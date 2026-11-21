@@ -1319,15 +1319,15 @@
     "answer": "action",
     "prompt": "akcja",
     "sentence": "You should take some ______\nluka\n.",
-    "updated_at": "2026-11-11T15:20:49.388602",
-    "usage_count": 1
+    "updated_at": "2026-11-21T16:32:43.187186",
+    "usage_count": 3
   },
   "akcja": {
     "answer": "action",
     "prompt": "akcja",
     "sentence": "You should take some ______\nluka\n.",
-    "updated_at": "2026-11-11T15:20:49.388602",
-    "usage_count": 1
+    "updated_at": "2026-11-21T16:32:43.187186",
+    "usage_count": 3
   },
   "the concert will ____ luka _____ luka in the park. | mieć miejsce, odbywać się": {
     "answer": "take place",
@@ -2419,6 +2419,34 @@
     "prompt": "siatka, kosz (w koszykówce)",
     "sentence": "We need a ___\nluka\n to play volleyball.",
     "updated_at": "2026-11-21T15:27:33.699657",
+    "usage_count": 1
+  },
+  "the police should _____ luka criminals. | gonić": {
+    "answer": "chase",
+    "prompt": "gonić",
+    "sentence": "The police should _____\nluka\n criminals.",
+    "updated_at": "2026-11-21T16:34:28.635815",
+    "usage_count": 1
+  },
+  "gonić": {
+    "answer": "chase",
+    "prompt": "gonić",
+    "sentence": "The police should _____\nluka\n criminals.",
+    "updated_at": "2026-11-21T16:34:28.635815",
+    "usage_count": 1
+  },
+  "he thinks he's a gangster, but is just a common __________ luka . | złodziej sklepowy": {
+    "answer": "shoplifter",
+    "prompt": "złodziej sklepowy",
+    "sentence": "He thinks he's a gangster, but is just a common __________\nluka\n.",
+    "updated_at": "2026-11-21T16:34:44.921030",
+    "usage_count": 1
+  },
+  "złodziej sklepowy": {
+    "answer": "shoplifter",
+    "prompt": "złodziej sklepowy",
+    "sentence": "He thinks he's a gangster, but is just a common __________\nluka\n.",
+    "updated_at": "2026-11-21T16:34:44.921030",
     "usage_count": 1
   }
 }
