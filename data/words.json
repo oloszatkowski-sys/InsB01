@@ -2439,15 +2439,15 @@
     "answer": "shoplifter",
     "prompt": "złodziej sklepowy",
     "sentence": "He thinks he's a gangster, but is just a common __________\nluka\n.",
-    "updated_at": "2026-11-21T16:34:44.921030",
-    "usage_count": 1
+    "updated_at": "2026-11-22T16:30:05.768692",
+    "usage_count": 3
   },
   "złodziej sklepowy": {
     "answer": "shoplifter",
     "prompt": "złodziej sklepowy",
     "sentence": "He thinks he's a gangster, but is just a common __________\nluka\n.",
-    "updated_at": "2026-11-21T16:34:44.921030",
-    "usage_count": 1
+    "updated_at": "2026-11-22T16:30:05.768692",
+    "usage_count": 3
   },
   "they all love playing ________ luka . | piłka nożna (bre)": {
     "answer": "football",
@@ -2532,5 +2532,89 @@
     "sentence": "Where are my ____\nluka\n?",
     "updated_at": "2026-11-22T12:45:49.169929",
     "usage_count": 3
+  },
+  "someone _____ luka ____ luka my neighbour's house last night. | włamać się do": {
+    "answer": "break into",
+    "prompt": "włamać się do",
+    "sentence": "Someone _____\nluka\n ____\nluka\n my neighbour's house last night.",
+    "updated_at": "2026-11-22T16:31:05.011803",
+    "usage_count": 1
+  },
+  "włamać się do": {
+    "answer": "break into",
+    "prompt": "włamać się do",
+    "sentence": "Someone _____\nluka\n ____\nluka\n my neighbour's house last night.",
+    "updated_at": "2026-11-22T16:31:05.011803",
+    "usage_count": 1
+  },
+  "i won't wear this _____ luka if it's dirty. | koszula": {
+    "answer": "shirt",
+    "prompt": "koszula",
+    "sentence": "I won't wear this _____\nluka\n if it's dirty.",
+    "updated_at": "2026-11-22T16:31:14.710783",
+    "usage_count": 1
+  },
+  "koszula": {
+    "answer": "shirt",
+    "prompt": "koszula",
+    "sentence": "I won't wear this _____\nluka\n if it's dirty.",
+    "updated_at": "2026-11-22T16:31:14.710783",
+    "usage_count": 1
+  },
+  "he's got a new pair of running _____ luka . | buty": {
+    "answer": "shoes",
+    "prompt": "buty",
+    "sentence": "He's got a new pair of running _____\nluka\n.",
+    "updated_at": "2026-11-22T16:31:35.259245",
+    "usage_count": 1
+  },
+  "buty": {
+    "answer": "shoes",
+    "prompt": "buty",
+    "sentence": "He's got a new pair of running _____\nluka\n.",
+    "updated_at": "2026-11-22T16:31:35.259245",
+    "usage_count": 1
+  },
+  "the police interviewed the _______ luka to the crime. | świadek": {
+    "answer": "witness",
+    "prompt": "świadek",
+    "sentence": "The police interviewed the _______\nluka\n to the crime.",
+    "updated_at": "2026-11-22T16:31:57.797282",
+    "usage_count": 1
+  },
+  "świadek": {
+    "answer": "witness",
+    "prompt": "świadek",
+    "sentence": "The police interviewed the _______\nluka\n to the crime.",
+    "updated_at": "2026-11-22T16:31:57.797282",
+    "usage_count": 1
+  },
+  "i hope the ________ luka will be caught soon. | zbrodniarz; przestępca": {
+    "answer": "criminal",
+    "prompt": "zbrodniarz; przestępca",
+    "sentence": "I hope the ________\nluka\n will be caught soon.",
+    "updated_at": "2026-11-22T16:32:15.127481",
+    "usage_count": 1
+  },
+  "zbrodniarz; przestępca": {
+    "answer": "criminal",
+    "prompt": "zbrodniarz; przestępca",
+    "sentence": "I hope the ________\nluka\n will be caught soon.",
+    "updated_at": "2026-11-22T16:32:15.127481",
+    "usage_count": 1
+  },
+  "jill looks wonderful in this blue _____ luka . | sukienka": {
+    "answer": "dress",
+    "prompt": "sukienka",
+    "sentence": "Jill looks wonderful in this blue _____\nluka\n.",
+    "updated_at": "2026-11-22T16:32:32.045192",
+    "usage_count": 1
+  },
+  "sukienka": {
+    "answer": "dress",
+    "prompt": "sukienka",
+    "sentence": "Jill looks wonderful in this blue _____\nluka\n.",
+    "updated_at": "2026-11-22T16:32:32.045192",
+    "usage_count": 1
   }
 }

@@ -10208,5 +10208,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-22T12:46:04.995973"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "17:29",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 6,
+    "autocorrect_count": 1,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 246.0,
+    "started_at_warsaw": "2026-11-22 17:29:00 CET",
+    "completed_at_warsaw": "2026-11-22 17:33:06 CET",
+    "finished_at": "2026-11-22T17:33:06.528426+01:00",
+    "words_details": [
+      {
+        "prompt": "horror",
+        "answer": "horror film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "akcja",
+        "answer": "action",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantastycznonaukowy",
+        "answer": "science fiction film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złodziej sklepowy",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "złodziej sklepowy",
+        "answer": "shoplifter",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "komedia",
+        "answer": "comedy",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gonić",
+        "answer": "chase",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "statysta",
+        "answer": "extra",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film lub sztuka muzyczna",
+        "answer": "musical",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "katastrofa",
+        "answer": "disaster",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "włamać się do",
+        "answer": "break into",
+        "status": "nowe"
+      },
+      {
+        "prompt": "koszula",
+        "answer": "shirt",
+        "status": "nowe"
+      },
+      {
+        "prompt": "złodziej sklepowy",
+        "answer": "shoplifter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "buty",
+        "answer": "shoes",
+        "status": "nowe"
+      },
+      {
+        "prompt": "włamać się do",
+        "answer": "break into",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "świadek",
+        "answer": "witness",
+        "status": "nowe"
+      },
+      {
+        "prompt": "świadek",
+        "answer": "witness",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zbrodniarz; przestępca",
+        "answer": "criminal",
+        "status": "nowe"
+      },
+      {
+        "prompt": "buty",
+        "answer": "shoes",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sukienka",
+        "answer": "dress",
+        "status": "nowe"
+      },
+      {
+        "prompt": "zbrodniarz; przestępca",
+        "answer": "criminal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koszula",
+        "answer": "shirt",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sukienka",
+        "answer": "dress",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-22T16:33:06.528762"
   }
 ]
