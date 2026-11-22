@@ -10343,5 +10343,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-22T16:33:06.528762"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:11",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 0,
+    "autocorrect_count": 4,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 229.7,
+    "started_at_warsaw": "2026-11-22 21:12:29 CET",
+    "completed_at_warsaw": "2026-11-22 21:16:19 CET",
+    "finished_at": "2026-11-22T21:16:19.017004+01:00",
+    "words_details": [
+      {
+        "prompt": "mistrz",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "mistrz",
+        "answer": "champion",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "lekkoatleta; sportowiec",
+        "answer": "athlete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurek; skoczek do wody",
+        "answer": "diver",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "złapać",
+        "answer": "catch",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "siatka, kosz (w koszykówce)",
+        "answer": "net",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kij (do baseballa, krykieta)",
+        "answer": "bat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gogle; okulary ochronne; okulary do pływania",
+        "answer": "goggles",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "weightlifting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kij golfowy",
+        "answer": "club",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "mistrz",
+        "answer": "champion",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-22T20:16:19.017483"
   }
 ]
