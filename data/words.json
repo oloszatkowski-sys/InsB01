@@ -2448,5 +2448,89 @@
     "sentence": "He thinks he's a gangster, but is just a common __________\nluka\n.",
     "updated_at": "2026-11-21T16:34:44.921030",
     "usage_count": 1
+  },
+  "they all love playing ________ luka . | piłka nożna (bre)": {
+    "answer": "football",
+    "prompt": "piłka nożna (BrE)",
+    "sentence": "They all love playing ________\nluka\n.",
+    "updated_at": "2026-11-22T12:42:49.117452",
+    "usage_count": 1
+  },
+  "piłka nożna (bre)": {
+    "answer": "football",
+    "prompt": "piłka nożna (BrE)",
+    "sentence": "They all love playing ________\nluka\n.",
+    "updated_at": "2026-11-22T12:42:49.117452",
+    "usage_count": 1
+  },
+  "luke's crazy about ______ luka . it's his favourite sport. | nurkowanie; skoki do wody": {
+    "answer": "diving",
+    "prompt": "nurkowanie; skoki do wody",
+    "sentence": "Luke's crazy about ______\nluka\n. It's his favourite sport.",
+    "updated_at": "2026-11-22T12:43:08.848895",
+    "usage_count": 1
+  },
+  "nurkowanie; skoki do wody": {
+    "answer": "diving",
+    "prompt": "nurkowanie; skoki do wody",
+    "sentence": "Luke's crazy about ______\nluka\n. It's his favourite sport.",
+    "updated_at": "2026-11-22T12:43:08.848895",
+    "usage_count": 1
+  },
+  "american people are crazy about ________ luka . | bejsbol": {
+    "answer": "baseball",
+    "prompt": "bejsbol",
+    "sentence": "American people are crazy about ________\nluka\n.",
+    "updated_at": "2026-11-22T12:43:28.208909",
+    "usage_count": 1
+  },
+  "bejsbol": {
+    "answer": "baseball",
+    "prompt": "bejsbol",
+    "sentence": "American people are crazy about ________\nluka\n.",
+    "updated_at": "2026-11-22T12:43:28.208909",
+    "usage_count": 1
+  },
+  "have you seen my swimming ______ luka ? | kąpielówki": {
+    "answer": "trunks",
+    "prompt": "kąpielówki",
+    "sentence": "Have you seen my swimming ______\nluka\n?",
+    "updated_at": "2026-11-22T12:43:53.819950",
+    "usage_count": 1
+  },
+  "kąpielówki": {
+    "answer": "trunks",
+    "prompt": "kąpielówki",
+    "sentence": "Have you seen my swimming ______\nluka\n?",
+    "updated_at": "2026-11-22T12:43:53.819950",
+    "usage_count": 1
+  },
+  "jim's keen on ______ luka , but i don't like it at all. | boks; pięściarstwo": {
+    "answer": "boxing",
+    "prompt": "boks; pięściarstwo",
+    "sentence": "Jim's keen on ______\nluka\n, but I don't like it at all.",
+    "updated_at": "2026-11-22T12:44:40.606997",
+    "usage_count": 1
+  },
+  "boks; pięściarstwo": {
+    "answer": "boxing",
+    "prompt": "boks; pięściarstwo",
+    "sentence": "Jim's keen on ______\nluka\n, but I don't like it at all.",
+    "updated_at": "2026-11-22T12:44:40.606997",
+    "usage_count": 1
+  },
+  "where are my ____ luka ? | narty": {
+    "answer": "skis",
+    "prompt": "narty",
+    "sentence": "Where are my ____\nluka\n?",
+    "updated_at": "2026-11-22T12:45:49.169929",
+    "usage_count": 3
+  },
+  "narty": {
+    "answer": "skis",
+    "prompt": "narty",
+    "sentence": "Where are my ____\nluka\n?",
+    "updated_at": "2026-11-22T12:45:49.169929",
+    "usage_count": 3
   }
 }

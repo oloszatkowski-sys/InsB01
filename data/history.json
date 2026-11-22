@@ -10073,5 +10073,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-21T20:51:43.354510"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "07:16",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 6,
+    "autocorrect_count": 1,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 227.2,
+    "started_at_warsaw": "2026-11-22 13:42:17 CET",
+    "completed_at_warsaw": "2026-11-22 13:46:04 CET",
+    "finished_at": "2026-11-22T13:46:04.995642+01:00",
+    "words_details": [
+      {
+        "prompt": "buty (np. korki)",
+        "answer": "boots",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłka nożna (BrE)",
+        "answer": "football",
+        "status": "nowe"
+      },
+      {
+        "prompt": "strój kąpielowy",
+        "answer": "costume",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurkowanie; skoki do wody",
+        "answer": "diving",
+        "status": "nowe"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "weightlifting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bejsbol",
+        "answer": "baseball",
+        "status": "nowe"
+      },
+      {
+        "prompt": "nurkowanie; skoki do wody",
+        "answer": "diving",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zapasy (sport)",
+        "answer": "wrestling",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kąpielówki",
+        "answer": "trunks",
+        "status": "nowe"
+      },
+      {
+        "prompt": "piłka nożna (BrE)",
+        "answer": "football",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gogle; okulary ochronne; okulary do pływania",
+        "answer": "goggles",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorstwo; gra aktorska",
+        "answer": "acting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pianka do nurkowania",
+        "answer": "wetsuit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "boks; pięściarstwo",
+        "answer": "boxing",
+        "status": "nowe"
+      },
+      {
+        "prompt": "bejsbol",
+        "answer": "baseball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kij (do baseballa, krykieta)",
+        "answer": "bat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kij golfowy",
+        "answer": "club",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "narty",
+        "answer": "skis",
+        "status": "nowe"
+      },
+      {
+        "prompt": "narty",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "boks; pięściarstwo",
+        "answer": "boxing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kąpielówki",
+        "answer": "trunks",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "narty",
+        "answer": "skis",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "narty",
+        "answer": "skis",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-22T12:46:04.995973"
   }
 ]
