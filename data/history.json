@@ -10773,5 +10773,140 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-23T17:46:12.009952"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:13",
+    "words_total": 23,
+    "words_correct": 15,
+    "words_mistakes": 8,
+    "new_words_count": 0,
+    "autocorrect_count": 4,
+    "accuracy_percent": 65.2,
+    "duration_seconds": 241.4,
+    "started_at_warsaw": "2026-11-23 20:13:01 CET",
+    "completed_at_warsaw": "2026-11-23 20:17:02 CET",
+    "finished_at": "2026-11-23T20:17:02.455254+01:00",
+    "words_details": [
+      {
+        "prompt": "ekran",
+        "answer": "screen",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "reżyser",
+        "answer": "director",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "chybić, spudłować, nie trafić",
+        "answer": "miss",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłka",
+        "answer": "ball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kask",
+        "answer": "helmet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "buty (np. korki)",
+        "answer": "boots",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "mistrz",
+        "answer": "champion",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój kąpielowy",
+        "answer": "costume",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "bramka",
+        "answer": "goal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "brać udział (w zawodach)",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "brać udział (w zawodach)",
+        "answer": "enter",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zapasy (sport)",
+        "answer": "wrestling",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "brać udział (w zawodach)",
+        "answer": "enter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-23T19:17:02.455559"
   }
 ]
