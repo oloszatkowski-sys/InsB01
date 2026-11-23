@@ -10628,5 +10628,150 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-23T15:00:52.913725"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "18:42",
+    "words_total": 25,
+    "words_correct": 15,
+    "words_mistakes": 10,
+    "new_words_count": 10,
+    "autocorrect_count": 0,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 251.4,
+    "started_at_warsaw": "2026-11-23 18:42:00 CET",
+    "completed_at_warsaw": "2026-11-23 18:46:12 CET",
+    "finished_at": "2026-11-23T18:46:12.009610+01:00",
+    "words_details": [
+      {
+        "prompt": "rugby",
+        "answer": "rugby",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ring bokserski",
+        "answer": "boxing ring",
+        "status": "nowe"
+      },
+      {
+        "prompt": "piłka nożna (BrE)",
+        "answer": "football",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ring bokserski",
+        "answer": "boxing ring",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "lekkoatletyka",
+        "answer": "athletics",
+        "status": "nowe"
+      },
+      {
+        "prompt": "lekkoatletyka",
+        "answer": "athletics",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "deska",
+        "answer": "board",
+        "status": "nowe"
+      },
+      {
+        "prompt": "deska",
+        "answer": "board",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kajakarstwo",
+        "answer": "canoeing",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kajakarstwo",
+        "answer": "canoeing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grupa",
+        "answer": "group",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (np. z filmu)",
+        "answer": "scene",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "narty",
+        "answer": "skis",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyka",
+        "answer": "gymnastics",
+        "status": "nowe"
+      },
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "surfing",
+        "answer": "surfing",
+        "status": "nowe"
+      },
+      {
+        "prompt": "surfing",
+        "answer": "surfing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kąpielówki",
+        "answer": "trunks",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rakieta",
+        "answer": "racket",
+        "status": "nowe"
+      },
+      {
+        "prompt": "rugby",
+        "answer": "rugby",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "krykiet",
+        "answer": "cricket",
+        "status": "nowe"
+      },
+      {
+        "prompt": "krykiet",
+        "answer": "cricket",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rakieta",
+        "answer": "racket",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyka",
+        "answer": "gymnastics",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-23T17:46:12.009952"
   }
 ]

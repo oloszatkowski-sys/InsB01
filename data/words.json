@@ -2630,5 +2630,145 @@
     "sentence": "You mustn't let the ball in our ____\nluka\n!",
     "updated_at": "2026-11-23T15:00:35.733986",
     "usage_count": 3
+  },
+  "i think _____ luka is a dangerous sport. | rugby": {
+    "answer": "rugby",
+    "prompt": "rugby",
+    "sentence": "I think _____\nluka\n is a dangerous sport.",
+    "updated_at": "2026-11-23T17:42:20.581192",
+    "usage_count": 1
+  },
+  "rugby": {
+    "answer": "rugby",
+    "prompt": "rugby",
+    "sentence": "I think _____\nluka\n is a dangerous sport.",
+    "updated_at": "2026-11-23T17:42:20.581192",
+    "usage_count": 1
+  },
+  "the contestants were waiting at the ______ luka ____ luka . the fight was about to begin. | ring bokserski": {
+    "answer": "boxing ring",
+    "prompt": "ring bokserski",
+    "sentence": "The contestants were waiting at the ______\nluka\n ____\nluka\n. The fight was about to begin.",
+    "updated_at": "2026-11-23T17:42:28.959256",
+    "usage_count": 1
+  },
+  "ring bokserski": {
+    "answer": "boxing ring",
+    "prompt": "ring bokserski",
+    "sentence": "The contestants were waiting at the ______\nluka\n ____\nluka\n. The fight was about to begin.",
+    "updated_at": "2026-11-23T17:42:28.959256",
+    "usage_count": 1
+  },
+  "playing ____ luka isn't as easy as it seems. | golf": {
+    "answer": "golf",
+    "prompt": "golf",
+    "sentence": "Playing ____\nluka\n isn't as easy as it seems.",
+    "updated_at": "2026-11-23T17:42:50.835260",
+    "usage_count": 1
+  },
+  "golf": {
+    "answer": "golf",
+    "prompt": "golf",
+    "sentence": "Playing ____\nluka\n isn't as easy as it seems.",
+    "updated_at": "2026-11-23T17:42:50.835260",
+    "usage_count": 1
+  },
+  "i started practising _________ luka when i was five. | lekkoatletyka": {
+    "answer": "athletics",
+    "prompt": "lekkoatletyka",
+    "sentence": "I started practising _________\nluka\n when I was five.",
+    "updated_at": "2026-11-23T17:43:07.671611",
+    "usage_count": 1
+  },
+  "lekkoatletyka": {
+    "answer": "athletics",
+    "prompt": "lekkoatletyka",
+    "sentence": "I started practising _________\nluka\n when I was five.",
+    "updated_at": "2026-11-23T17:43:07.671611",
+    "usage_count": 1
+  },
+  "take your _____ luka and come with me. let's have fun! | deska": {
+    "answer": "board",
+    "prompt": "deska",
+    "sentence": "Take your _____\nluka\n and come with me. Let's have fun!",
+    "updated_at": "2026-11-23T17:43:27.730212",
+    "usage_count": 1
+  },
+  "deska": {
+    "answer": "board",
+    "prompt": "deska",
+    "sentence": "Take your _____\nluka\n and come with me. Let's have fun!",
+    "updated_at": "2026-11-23T17:43:27.730212",
+    "usage_count": 1
+  },
+  "i love mountain climbing and ________ luka . | kajakarstwo": {
+    "answer": "canoeing",
+    "prompt": "kajakarstwo",
+    "sentence": "I love mountain climbing and ________\nluka\n.",
+    "updated_at": "2026-11-23T17:43:45.567116",
+    "usage_count": 1
+  },
+  "kajakarstwo": {
+    "answer": "canoeing",
+    "prompt": "kajakarstwo",
+    "sentence": "I love mountain climbing and ________\nluka\n.",
+    "updated_at": "2026-11-23T17:43:45.567116",
+    "usage_count": 1
+  },
+  "she's keen on __________ luka . | gimnastyka": {
+    "answer": "gymnastics",
+    "prompt": "gimnastyka",
+    "sentence": "She's keen on __________\nluka\n.",
+    "updated_at": "2026-11-23T17:44:29.502687",
+    "usage_count": 1
+  },
+  "gimnastyka": {
+    "answer": "gymnastics",
+    "prompt": "gimnastyka",
+    "sentence": "She's keen on __________\nluka\n.",
+    "updated_at": "2026-11-23T17:44:29.502687",
+    "usage_count": 1
+  },
+  "he's a _______ luka champion. | surfing": {
+    "answer": "surfing",
+    "prompt": "surfing",
+    "sentence": "He's a _______\nluka\n champion.",
+    "updated_at": "2026-11-23T17:44:47.307536",
+    "usage_count": 1
+  },
+  "surfing": {
+    "answer": "surfing",
+    "prompt": "surfing",
+    "sentence": "He's a _______\nluka\n champion.",
+    "updated_at": "2026-11-23T17:44:47.307536",
+    "usage_count": 1
+  },
+  "i'm looking for the tennis ______ luka . | rakieta": {
+    "answer": "racket",
+    "prompt": "rakieta",
+    "sentence": "I'm looking for the tennis ______\nluka\n.",
+    "updated_at": "2026-11-23T17:45:14.271698",
+    "usage_count": 1
+  },
+  "rakieta": {
+    "answer": "racket",
+    "prompt": "rakieta",
+    "sentence": "I'm looking for the tennis ______\nluka\n.",
+    "updated_at": "2026-11-23T17:45:14.271698",
+    "usage_count": 1
+  },
+  "_______ luka used to be a popular game in england. | krykiet": {
+    "answer": "cricket",
+    "prompt": "krykiet",
+    "sentence": "_______\nluka\n used to be a popular game in England.",
+    "updated_at": "2026-11-23T17:45:32.682213",
+    "usage_count": 1
+  },
+  "krykiet": {
+    "answer": "cricket",
+    "prompt": "krykiet",
+    "sentence": "_______\nluka\n used to be a popular game in England.",
+    "updated_at": "2026-11-23T17:45:32.682213",
+    "usage_count": 1
   }
 }
