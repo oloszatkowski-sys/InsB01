@@ -10478,5 +10478,155 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-22T20:16:19.017483"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "15:39",
+    "words_total": 26,
+    "words_correct": 15,
+    "words_mistakes": 11,
+    "new_words_count": 1,
+    "autocorrect_count": 5,
+    "accuracy_percent": 57.7,
+    "duration_seconds": 258.1,
+    "started_at_warsaw": "2026-11-23 15:56:34 CET",
+    "completed_at_warsaw": "2026-11-23 16:00:52 CET",
+    "finished_at": "2026-11-23T16:00:52.913413+01:00",
+    "words_details": [
+      {
+        "prompt": "zapasy (sport)",
+        "answer": "wrestling",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kij (do baseballa, krykieta)",
+        "answer": "bat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "gogle; okulary ochronne; okulary do pływania",
+        "answer": "goggles",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bramka",
+        "answer": "goal",
+        "status": "nowe"
+      },
+      {
+        "prompt": "strój kąpielowy",
+        "answer": "costume",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "siatka, kosz (w koszykówce)",
+        "answer": "net",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "udostępniać w sieci",
+        "answer": "share online",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pokonać; pobić",
+        "answer": "beat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "buty (np. korki)",
+        "answer": "boots",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysunek",
+        "answer": "drawing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pianka do nurkowania",
+        "answer": "wetsuit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bramka",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "bramka",
+        "answer": "goal",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "bramka",
+        "answer": "goal",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-23T15:00:52.913725"
   }
 ]

@@ -1109,15 +1109,15 @@
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-13T20:42:44.301041",
-    "usage_count": 13
+    "updated_at": "2026-11-23T14:57:25.124455",
+    "usage_count": 15
   },
   "aktor": {
     "answer": "actor",
     "prompt": "aktor",
     "sentence": "Mike should become an _____\nluka\n - he's very talented!",
-    "updated_at": "2026-11-13T20:42:44.301041",
-    "usage_count": 13
+    "updated_at": "2026-11-23T14:57:25.124455",
+    "usage_count": 15
   },
   "students, stop talking and ___ luka _________ luka during the class! | uważać (np. na lekcji)": {
     "answer": "pay attention",
@@ -1627,15 +1627,15 @@
     "answer": "throw",
     "prompt": "rzucać; wyrzucić",
     "sentence": "_____\nluka\n the ball, and I'll catch it.",
-    "updated_at": "2026-11-16T22:52:20.115766",
-    "usage_count": 7
+    "updated_at": "2026-11-23T14:58:23.109725",
+    "usage_count": 9
   },
   "rzucać; wyrzucić": {
     "answer": "throw",
     "prompt": "rzucać; wyrzucić",
     "sentence": "_____\nluka\n the ball, and I'll catch it.",
-    "updated_at": "2026-11-16T22:52:20.115766",
-    "usage_count": 7
+    "updated_at": "2026-11-23T14:58:23.109725",
+    "usage_count": 9
   },
   "how did he ____ luka the goal? | chybić, spudłować, nie trafić": {
     "answer": "miss",
@@ -1977,15 +1977,15 @@
     "answer": "cheer",
     "prompt": "wiwatować; robić owację",
     "sentence": "The audience _______\nluka\n the team.",
-    "updated_at": "2026-11-22T20:15:12.988227",
-    "usage_count": 9
+    "updated_at": "2026-11-23T14:59:25.937391",
+    "usage_count": 11
   },
   "wiwatować; robić owację": {
     "answer": "cheer",
     "prompt": "wiwatować; robić owację",
     "sentence": "The audience _______\nluka\n the team.",
-    "updated_at": "2026-11-22T20:15:12.988227",
-    "usage_count": 9
+    "updated_at": "2026-11-23T14:59:25.937391",
+    "usage_count": 11
   },
   "you must train really hard to become a __________ luka . | piłkarz": {
     "answer": "footballer",
@@ -2397,15 +2397,15 @@
     "answer": "strip",
     "prompt": "strój sportowca",
     "sentence": "Footballers need to wear professional ______\nluka\n.",
-    "updated_at": "2026-11-22T20:13:33.629784",
-    "usage_count": 7
+    "updated_at": "2026-11-23T14:58:41.076319",
+    "usage_count": 9
   },
   "strój sportowca": {
     "answer": "strip",
     "prompt": "strój sportowca",
     "sentence": "Footballers need to wear professional ______\nluka\n.",
-    "updated_at": "2026-11-22T20:13:33.629784",
-    "usage_count": 7
+    "updated_at": "2026-11-23T14:58:41.076319",
+    "usage_count": 9
   },
   "we need a ___ luka to play volleyball. | siatka, kosz (w koszykówce)": {
     "answer": "net",
@@ -2616,5 +2616,19 @@
     "sentence": "Jill looks wonderful in this blue _____\nluka\n.",
     "updated_at": "2026-11-22T16:32:32.045192",
     "usage_count": 1
+  },
+  "you mustn't let the ball in our ____ luka ! | bramka": {
+    "answer": "goal",
+    "prompt": "bramka",
+    "sentence": "You mustn't let the ball in our ____\nluka\n!",
+    "updated_at": "2026-11-23T15:00:35.733986",
+    "usage_count": 3
+  },
+  "bramka": {
+    "answer": "goal",
+    "prompt": "bramka",
+    "sentence": "You mustn't let the ball in our ____\nluka\n!",
+    "updated_at": "2026-11-23T15:00:35.733986",
+    "usage_count": 3
   }
 }
