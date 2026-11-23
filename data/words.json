@@ -2551,15 +2551,15 @@
     "answer": "shirt",
     "prompt": "koszula",
     "sentence": "I won't wear this _____\nluka\n if it's dirty.",
-    "updated_at": "2026-11-22T16:31:14.710783",
-    "usage_count": 1
+    "updated_at": "2026-11-23T20:09:56.258095",
+    "usage_count": 3
   },
   "koszula": {
     "answer": "shirt",
     "prompt": "koszula",
     "sentence": "I won't wear this _____\nluka\n if it's dirty.",
-    "updated_at": "2026-11-22T16:31:14.710783",
-    "usage_count": 1
+    "updated_at": "2026-11-23T20:09:56.258095",
+    "usage_count": 3
   },
   "he's got a new pair of running _____ luka . | buty": {
     "answer": "shoes",
@@ -2593,29 +2593,29 @@
     "answer": "criminal",
     "prompt": "zbrodniarz; przestępca",
     "sentence": "I hope the ________\nluka\n will be caught soon.",
-    "updated_at": "2026-11-22T16:32:15.127481",
-    "usage_count": 1
+    "updated_at": "2026-11-23T20:10:27.245361",
+    "usage_count": 3
   },
   "zbrodniarz; przestępca": {
     "answer": "criminal",
     "prompt": "zbrodniarz; przestępca",
     "sentence": "I hope the ________\nluka\n will be caught soon.",
-    "updated_at": "2026-11-22T16:32:15.127481",
-    "usage_count": 1
+    "updated_at": "2026-11-23T20:10:27.245361",
+    "usage_count": 3
   },
   "jill looks wonderful in this blue _____ luka . | sukienka": {
     "answer": "dress",
     "prompt": "sukienka",
     "sentence": "Jill looks wonderful in this blue _____\nluka\n.",
-    "updated_at": "2026-11-22T16:32:32.045192",
-    "usage_count": 1
+    "updated_at": "2026-11-23T20:10:58.539734",
+    "usage_count": 3
   },
   "sukienka": {
     "answer": "dress",
     "prompt": "sukienka",
     "sentence": "Jill looks wonderful in this blue _____\nluka\n.",
-    "updated_at": "2026-11-22T16:32:32.045192",
-    "usage_count": 1
+    "updated_at": "2026-11-23T20:10:58.539734",
+    "usage_count": 3
   },
   "you mustn't let the ball in our ____ luka ! | bramka": {
     "answer": "goal",
@@ -2769,6 +2769,76 @@
     "prompt": "krykiet",
     "sentence": "_______\nluka\n used to be a popular game in England.",
     "updated_at": "2026-11-23T17:45:32.682213",
+    "usage_count": 1
+  },
+  "they put a _____ luka on the queen's head. | korona": {
+    "answer": "crown",
+    "prompt": "korona",
+    "sentence": "They put a _____\nluka\n on the queen's head.",
+    "updated_at": "2026-11-23T20:11:15.780904",
+    "usage_count": 1
+  },
+  "korona": {
+    "answer": "crown",
+    "prompt": "korona",
+    "sentence": "They put a _____\nluka\n on the queen's head.",
+    "updated_at": "2026-11-23T20:11:15.780904",
+    "usage_count": 1
+  },
+  "these ________ luka are too tight. | spodnie": {
+    "answer": "trousers",
+    "prompt": "spodnie",
+    "sentence": "These ________\nluka\n are too tight.",
+    "updated_at": "2026-11-23T20:11:37.166634",
+    "usage_count": 1
+  },
+  "spodnie": {
+    "answer": "trousers",
+    "prompt": "spodnie",
+    "sentence": "These ________\nluka\n are too tight.",
+    "updated_at": "2026-11-23T20:11:37.166634",
+    "usage_count": 1
+  },
+  "greg is wearing a funny _______ luka today. | koszulka; podkoszulek": {
+    "answer": "T-shirt",
+    "prompt": "koszulka; podkoszulek",
+    "sentence": "Greg is wearing a funny _______\nluka\n today.",
+    "updated_at": "2026-11-23T20:12:03.972005",
+    "usage_count": 1
+  },
+  "koszulka; podkoszulek": {
+    "answer": "T-shirt",
+    "prompt": "koszulka; podkoszulek",
+    "sentence": "Greg is wearing a funny _______\nluka\n today.",
+    "updated_at": "2026-11-23T20:12:03.972005",
+    "usage_count": 1
+  },
+  "it's cold, put your ______ luka on. | kurtka": {
+    "answer": "jacket",
+    "prompt": "kurtka",
+    "sentence": "It's cold, put your ______\nluka\n on.",
+    "updated_at": "2026-11-23T20:12:33.791785",
+    "usage_count": 1
+  },
+  "kurtka": {
+    "answer": "jacket",
+    "prompt": "kurtka",
+    "sentence": "It's cold, put your ______\nluka\n on.",
+    "updated_at": "2026-11-23T20:12:33.791785",
+    "usage_count": 1
+  },
+  "i hate this _____ luka - it's too long and ugly. | spódnica": {
+    "answer": "skirt",
+    "prompt": "spódnica",
+    "sentence": "I hate this _____\nluka\n - it's too long and ugly.",
+    "updated_at": "2026-11-23T20:12:51.948576",
+    "usage_count": 1
+  },
+  "spódnica": {
+    "answer": "skirt",
+    "prompt": "spódnica",
+    "sentence": "I hate this _____\nluka\n - it's too long and ugly.",
+    "updated_at": "2026-11-23T20:12:51.948576",
     "usage_count": 1
   }
 }

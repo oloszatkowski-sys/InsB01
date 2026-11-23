@@ -4,15 +4,15 @@
 
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W48`
-- 📊 **Status tygodnia:** Ukończono **3** z **25** sesji (Pozostało: **22**)
-- 🔄 **Ostatnia aktualizacja:** `2026-11-23 20:17:04 CET`
+- 📊 **Status tygodnia:** Ukończono **4** z **25** sesji (Pozostało: **21**)
+- 🔄 **Ostatnia aktualizacja:** `2026-11-23 21:13:29 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
 | 👉 **Poniedziałek (DZIŚ)** | `2026-11-23` | **OliwiercioTheHacker** | `asa61####` | **15:39** | ✅ Ukończono | 2026-11-23 15:56:34 CET | 2026-11-23 16:00:54 CET | **15/26** (57.7%) |
 | 👉 **Poniedziałek (DZIŚ)** | `2026-11-23` | **Szlucha Jagoda** | `lasa6####` | **18:42** | ✅ Ukończono | 2026-11-23 18:42:00 CET | 2026-11-23 18:46:15 CET | **15/25** (60.0%) |
 | 👉 **Poniedziałek (DZIŚ)** | `2026-11-23` | **Oleslaw 010** | `asa61####` | **20:13** | ✅ Ukończono | 2026-11-23 20:13:00 CET | 2026-11-23 20:17:04 CET | **15/23** (65.2%) |
-| 👉 **Poniedziałek (DZIŚ)** | `2026-11-23` | **Oliwka Pożeraczka Tostów** | `kl799####` | **21:09** | ⏳ Oczekuje | - | - | - |
+| 👉 **Poniedziałek (DZIŚ)** | `2026-11-23` | **Oliwka Pożeraczka Tostów** | `kl799####` | **21:09** | ✅ Ukończono | 2026-11-23 21:09:00 CET | 2026-11-23 21:13:28 CET | **15/26** (57.7%) |
 | Wtorek | `2026-11-24` | **Oliwka Pożeraczka Tostów** | `kl799####` | **15:37** | ⏳ Oczekuje | - | - | - |
 | Wtorek | `2026-11-24` | **Oleslaw 010** | `asa61####` | **18:45** | ⏳ Oczekuje | - | - | - |
 | Wtorek | `2026-11-24` | **OliwiercioTheHacker** | `asa61####` | **20:09** | ⏳ Oczekuje | - | - | - |

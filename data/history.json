@@ -10908,5 +10908,155 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-23T19:17:02.455559"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "21:09",
+    "words_total": 26,
+    "words_correct": 15,
+    "words_mistakes": 11,
+    "new_words_count": 5,
+    "autocorrect_count": 3,
+    "accuracy_percent": 57.7,
+    "duration_seconds": 267.0,
+    "started_at_warsaw": "2026-11-23 21:09:00 CET",
+    "completed_at_warsaw": "2026-11-23 21:13:27 CET",
+    "finished_at": "2026-11-23T21:13:27.634684+01:00",
+    "words_details": [
+      {
+        "prompt": "świadek",
+        "answer": "witness",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złapać",
+        "answer": "catch",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złodziej sklepowy",
+        "answer": "shoplifter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koszula",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "koszula",
+        "answer": "shirt",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "włamać się do",
+        "answer": "break into",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zbrodniarz; przestępca",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zbrodniarz; przestępca",
+        "answer": "criminal",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "buty",
+        "answer": "shoes",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sukienka",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "sukienka",
+        "answer": "dress",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zbrodniarz; przestępca",
+        "answer": "criminal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "korona",
+        "answer": "crown",
+        "status": "nowe"
+      },
+      {
+        "prompt": "koszula",
+        "answer": "shirt",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "spodnie",
+        "answer": "trousers",
+        "status": "nowe"
+      },
+      {
+        "prompt": "sukienka",
+        "answer": "dress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uciekać",
+        "answer": "run away",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koszulka; podkoszulek",
+        "answer": "T-shirt",
+        "status": "nowe"
+      },
+      {
+        "prompt": "koszulka; podkoszulek",
+        "answer": "T-shirt",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "western (film o Dzikim Zachodzie)",
+        "answer": "western",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kurtka",
+        "answer": "jacket",
+        "status": "nowe"
+      },
+      {
+        "prompt": "korona",
+        "answer": "crown",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "spódnica",
+        "answer": "skirt",
+        "status": "nowe"
+      },
+      {
+        "prompt": "spódnica",
+        "answer": "skirt",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "spodnie",
+        "answer": "trousers",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kurtka",
+        "answer": "jacket",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-23T20:13:27.635024"
   }
 ]
