@@ -633,15 +633,15 @@
     "answer": "turn the radiator up",
     "prompt": "zwiększyć temperaturę na kaloryferze",
     "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
-    "updated_at": "2026-11-10T19:22:00.722920",
-    "usage_count": 11
+    "updated_at": "2026-11-24T19:11:49.490134",
+    "usage_count": 13
   },
   "zwiększyć temperaturę na kaloryferze": {
     "answer": "turn the radiator up",
     "prompt": "zwiększyć temperaturę na kaloryferze",
     "sentence": "It's absolutely freezing in here! Can you ____\nluka\n the ________\nluka\n __\nluka\n?",
-    "updated_at": "2026-11-10T19:22:00.722920",
-    "usage_count": 11
+    "updated_at": "2026-11-24T19:11:49.490134",
+    "usage_count": 13
   },
   "if you want to ____ luka _____ luka , you can take quicker showers. | oszczędzać wodę": {
     "answer": "save water",
@@ -1585,15 +1585,15 @@
     "answer": "join",
     "prompt": "łączyć; przyłączać (się); dołączyć",
     "sentence": "Would you like to ____\nluka\n us? We're going to the cinema tonight.",
-    "updated_at": "2026-11-15T20:39:46.564529",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:09:56.114984",
+    "usage_count": 3
   },
   "łączyć; przyłączać (się); dołączyć": {
     "answer": "join",
     "prompt": "łączyć; przyłączać (się); dołączyć",
     "sentence": "Would you like to ____\nluka\n us? We're going to the cinema tonight.",
-    "updated_at": "2026-11-15T20:39:46.564529",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:09:56.114984",
+    "usage_count": 3
   },
   "the doctor told her to lie in a comfortable ________ luka . | pozycja; położenie": {
     "answer": "position",
@@ -1613,15 +1613,15 @@
     "answer": "score goals",
     "prompt": "strzelać gole",
     "sentence": "He's the best player on the pitch. He always ______\nluka\n many _____\nluka\n!",
-    "updated_at": "2026-11-16T22:54:00.073671",
-    "usage_count": 5
+    "updated_at": "2026-11-24T19:10:23.284777",
+    "usage_count": 7
   },
   "strzelać gole": {
     "answer": "score goals",
     "prompt": "strzelać gole",
     "sentence": "He's the best player on the pitch. He always ______\nluka\n many _____\nluka\n!",
-    "updated_at": "2026-11-16T22:54:00.073671",
-    "usage_count": 5
+    "updated_at": "2026-11-24T19:10:23.284777",
+    "usage_count": 7
   },
   "_____ luka the ball, and i'll catch it. | rzucać; wyrzucić": {
     "answer": "throw",
@@ -1921,15 +1921,15 @@
     "answer": "coach",
     "prompt": "trener",
     "sentence": "The _____\nluka\n congratulated his team on the victory.",
-    "updated_at": "2026-11-18T16:00:20.992195",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:12:57.807353",
+    "usage_count": 3
   },
   "trener": {
     "answer": "coach",
     "prompt": "trener",
     "sentence": "The _____\nluka\n congratulated his team on the victory.",
-    "updated_at": "2026-11-18T16:00:20.992195",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:12:57.807353",
+    "usage_count": 3
   },
   "mike is a fast ______ luka , but jack seems fitter. | biegacz": {
     "answer": "runner",
@@ -2481,29 +2481,29 @@
     "answer": "baseball",
     "prompt": "bejsbol",
     "sentence": "American people are crazy about ________\nluka\n.",
-    "updated_at": "2026-11-22T12:43:28.208909",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:12:28.302844",
+    "usage_count": 3
   },
   "bejsbol": {
     "answer": "baseball",
     "prompt": "bejsbol",
     "sentence": "American people are crazy about ________\nluka\n.",
-    "updated_at": "2026-11-22T12:43:28.208909",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:12:28.302844",
+    "usage_count": 3
   },
   "have you seen my swimming ______ luka ? | kąpielówki": {
     "answer": "trunks",
     "prompt": "kąpielówki",
     "sentence": "Have you seen my swimming ______\nluka\n?",
-    "updated_at": "2026-11-22T12:43:53.819950",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:09:28.477996",
+    "usage_count": 3
   },
   "kąpielówki": {
     "answer": "trunks",
     "prompt": "kąpielówki",
     "sentence": "Have you seen my swimming ______\nluka\n?",
-    "updated_at": "2026-11-22T12:43:53.819950",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:09:28.477996",
+    "usage_count": 3
   },
   "jim's keen on ______ luka , but i don't like it at all. | boks; pięściarstwo": {
     "answer": "boxing",

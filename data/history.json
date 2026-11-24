@@ -11363,5 +11363,160 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-24T17:48:28.603776"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:09",
+    "words_total": 27,
+    "words_correct": 15,
+    "words_mistakes": 12,
+    "new_words_count": 0,
+    "autocorrect_count": 6,
+    "accuracy_percent": 55.6,
+    "duration_seconds": 275.1,
+    "started_at_warsaw": "2026-11-24 20:09:00 CET",
+    "completed_at_warsaw": "2026-11-24 20:13:35 CET",
+    "finished_at": "2026-11-24T20:13:35.650108+01:00",
+    "words_details": [
+      {
+        "prompt": "kąpielówki",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kąpielówki",
+        "answer": "trunks",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rzucać; wyrzucić",
+        "answer": "throw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "łączyć; przyłączać (się); dołączyć",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "łączyć; przyłączać (się); dołączyć",
+        "answer": "join",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kąpielówki",
+        "answer": "trunks",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "strój sportowca",
+        "answer": "strip",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bramka",
+        "answer": "goal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gracz",
+        "answer": "player",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wiwatować; robić owację",
+        "answer": "cheer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktor",
+        "answer": "actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "łączyć; przyłączać (się); dołączyć",
+        "answer": "join",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "piłka nożna (BrE)",
+        "answer": "football",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bejsbol",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bejsbol",
+        "answer": "baseball",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "boks; pięściarstwo",
+        "answer": "boxing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "trener",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "trener",
+        "answer": "coach",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "trener",
+        "answer": "coach",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bejsbol",
+        "answer": "baseball",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-24T19:13:35.650535"
   }
 ]
