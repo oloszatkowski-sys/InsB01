@@ -689,15 +689,15 @@
     "answer": "concert",
     "prompt": "koncert",
     "sentence": "I've never been to a rock _______\nluka\n before.",
-    "updated_at": "2026-11-11T16:53:36.229476",
-    "usage_count": 3
+    "updated_at": "2026-11-24T17:47:27.537844",
+    "usage_count": 5
   },
   "koncert": {
     "answer": "concert",
     "prompt": "koncert",
     "sentence": "I've never been to a rock _______\nluka\n before.",
-    "updated_at": "2026-11-11T16:53:36.229476",
-    "usage_count": 3
+    "updated_at": "2026-11-24T17:47:27.537844",
+    "usage_count": 5
   },
   "who is the ____ luka _________ luka of the book? | główny bohater": {
     "answer": "main character",
@@ -1025,15 +1025,15 @@
     "answer": "turn the radiator down",
     "prompt": "zmniejszyć temperaturę na kaloryferze",
     "sentence": "____\nluka\n the ________\nluka\n ____\nluka\n, it's so hot in here.",
-    "updated_at": "2026-11-06T15:37:34.404405",
-    "usage_count": 3
+    "updated_at": "2026-11-24T17:47:57.715665",
+    "usage_count": 5
   },
   "zmniejszyć temperaturę na kaloryferze": {
     "answer": "turn the radiator down",
     "prompt": "zmniejszyć temperaturę na kaloryferze",
     "sentence": "____\nluka\n the ________\nluka\n ____\nluka\n, it's so hot in here.",
-    "updated_at": "2026-11-06T15:37:34.404405",
-    "usage_count": 3
+    "updated_at": "2026-11-24T17:47:57.715665",
+    "usage_count": 5
   },
   "son, you ___ luka a ___ luka ____ luka again for your maths test. i think i need to get you a tutor. | dostać niską ocenę": {
     "answer": "get a low mark",
