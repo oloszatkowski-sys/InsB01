@@ -2593,29 +2593,29 @@
     "answer": "criminal",
     "prompt": "zbrodniarz; przestępca",
     "sentence": "I hope the ________\nluka\n will be caught soon.",
-    "updated_at": "2026-11-23T20:10:27.245361",
-    "usage_count": 3
+    "updated_at": "2026-11-24T15:01:23.055099",
+    "usage_count": 5
   },
   "zbrodniarz; przestępca": {
     "answer": "criminal",
     "prompt": "zbrodniarz; przestępca",
     "sentence": "I hope the ________\nluka\n will be caught soon.",
-    "updated_at": "2026-11-23T20:10:27.245361",
-    "usage_count": 3
+    "updated_at": "2026-11-24T15:01:23.055099",
+    "usage_count": 5
   },
   "jill looks wonderful in this blue _____ luka . | sukienka": {
     "answer": "dress",
     "prompt": "sukienka",
     "sentence": "Jill looks wonderful in this blue _____\nluka\n.",
-    "updated_at": "2026-11-23T20:10:58.539734",
-    "usage_count": 3
+    "updated_at": "2026-11-24T15:02:02.804793",
+    "usage_count": 5
   },
   "sukienka": {
     "answer": "dress",
     "prompt": "sukienka",
     "sentence": "Jill looks wonderful in this blue _____\nluka\n.",
-    "updated_at": "2026-11-23T20:10:58.539734",
-    "usage_count": 3
+    "updated_at": "2026-11-24T15:02:02.804793",
+    "usage_count": 5
   },
   "you mustn't let the ball in our ____ luka ! | bramka": {
     "answer": "goal",
@@ -2803,29 +2803,29 @@
     "answer": "T-shirt",
     "prompt": "koszulka; podkoszulek",
     "sentence": "Greg is wearing a funny _______\nluka\n today.",
-    "updated_at": "2026-11-23T20:12:03.972005",
-    "usage_count": 1
+    "updated_at": "2026-11-24T15:00:10.749022",
+    "usage_count": 3
   },
   "koszulka; podkoszulek": {
     "answer": "T-shirt",
     "prompt": "koszulka; podkoszulek",
     "sentence": "Greg is wearing a funny _______\nluka\n today.",
-    "updated_at": "2026-11-23T20:12:03.972005",
-    "usage_count": 1
+    "updated_at": "2026-11-24T15:00:10.749022",
+    "usage_count": 3
   },
   "it's cold, put your ______ luka on. | kurtka": {
     "answer": "jacket",
     "prompt": "kurtka",
     "sentence": "It's cold, put your ______\nluka\n on.",
-    "updated_at": "2026-11-23T20:12:33.791785",
-    "usage_count": 1
+    "updated_at": "2026-11-24T15:00:34.270279",
+    "usage_count": 3
   },
   "kurtka": {
     "answer": "jacket",
     "prompt": "kurtka",
     "sentence": "It's cold, put your ______\nluka\n on.",
-    "updated_at": "2026-11-23T20:12:33.791785",
-    "usage_count": 1
+    "updated_at": "2026-11-24T15:00:34.270279",
+    "usage_count": 3
   },
   "i hate this _____ luka - it's too long and ugly. | spódnica": {
     "answer": "skirt",
@@ -2840,5 +2840,103 @@
     "sentence": "I hate this _____\nluka\n - it's too long and ugly.",
     "updated_at": "2026-11-23T20:12:51.948576",
     "usage_count": 1
+  },
+  "i'm wearing black ________ luka . | buty sportowe; adidasy": {
+    "answer": "trainers",
+    "prompt": "buty sportowe; adidasy",
+    "sentence": "I'm wearing black ________\nluka\n.",
+    "updated_at": "2026-11-24T15:02:10.908838",
+    "usage_count": 1
+  },
+  "buty sportowe; adidasy": {
+    "answer": "trainers",
+    "prompt": "buty sportowe; adidasy",
+    "sentence": "I'm wearing black ________\nluka\n.",
+    "updated_at": "2026-11-24T15:02:10.908838",
+    "usage_count": 1
+  },
+  "i'm looking for new _____ luka . | dżinsy": {
+    "answer": "jeans",
+    "prompt": "dżinsy",
+    "sentence": "I'm looking for new _____\nluka\n.",
+    "updated_at": "2026-11-24T15:02:25.883664",
+    "usage_count": 1
+  },
+  "dżinsy": {
+    "answer": "jeans",
+    "prompt": "dżinsy",
+    "sentence": "I'm looking for new _____\nluka\n.",
+    "updated_at": "2026-11-24T15:02:25.883664",
+    "usage_count": 1
+  },
+  "she had beautiful long ____ luka . | włosy": {
+    "answer": "hair",
+    "prompt": "włosy",
+    "sentence": "She had beautiful long ____\nluka\n.",
+    "updated_at": "2026-11-24T15:02:46.715662",
+    "usage_count": 1
+  },
+  "włosy": {
+    "answer": "hair",
+    "prompt": "włosy",
+    "sentence": "She had beautiful long ____\nluka\n.",
+    "updated_at": "2026-11-24T15:02:46.715662",
+    "usage_count": 1
+  },
+  "take those dirty _______ luka off. | ubrania; odzież": {
+    "answer": "clothes",
+    "prompt": "ubrania; odzież",
+    "sentence": "Take those dirty _______\nluka\n off.",
+    "updated_at": "2026-11-24T15:03:01.454063",
+    "usage_count": 1
+  },
+  "ubrania; odzież": {
+    "answer": "clothes",
+    "prompt": "ubrania; odzież",
+    "sentence": "Take those dirty _______\nluka\n off.",
+    "updated_at": "2026-11-24T15:03:01.454063",
+    "usage_count": 1
+  },
+  "my ________ luka is really heavy. | plecak": {
+    "answer": "backpack",
+    "prompt": "plecak",
+    "sentence": "My ________\nluka\n is really heavy.",
+    "updated_at": "2026-11-24T15:04:24.656679",
+    "usage_count": 3
+  },
+  "plecak": {
+    "answer": "backpack",
+    "prompt": "plecak",
+    "sentence": "My ________\nluka\n is really heavy.",
+    "updated_at": "2026-11-24T15:04:24.656679",
+    "usage_count": 3
+  },
+  "he had a thin _________ luka and a beard. | wąsy": {
+    "answer": "moustache",
+    "prompt": "wąsy",
+    "sentence": "He had a thin _________\nluka\n and a beard.",
+    "updated_at": "2026-11-24T15:03:36.745358",
+    "usage_count": 1
+  },
+  "wąsy": {
+    "answer": "moustache",
+    "prompt": "wąsy",
+    "sentence": "He had a thin _________\nluka\n and a beard.",
+    "updated_at": "2026-11-24T15:03:36.745358",
+    "usage_count": 1
+  },
+  "the man had a long black _____ luka and a moustache. | broda; zarost": {
+    "answer": "beard",
+    "prompt": "broda; zarost",
+    "sentence": "The man had a long black _____\nluka\n and a moustache.",
+    "updated_at": "2026-11-24T15:04:50.437670",
+    "usage_count": 3
+  },
+  "broda; zarost": {
+    "answer": "beard",
+    "prompt": "broda; zarost",
+    "sentence": "The man had a long black _____\nluka\n and a moustache.",
+    "updated_at": "2026-11-24T15:04:50.437670",
+    "usage_count": 3
   }
 }

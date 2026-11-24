@@ -11058,5 +11058,195 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-23T20:13:27.635024"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "15:37",
+    "words_total": 34,
+    "words_correct": 15,
+    "words_mistakes": 19,
+    "new_words_count": 7,
+    "autocorrect_count": 6,
+    "accuracy_percent": 44.1,
+    "duration_seconds": 337.1,
+    "started_at_warsaw": "2026-11-24 15:59:30 CET",
+    "completed_at_warsaw": "2026-11-24 16:05:07 CET",
+    "finished_at": "2026-11-24T16:05:07.799502+01:00",
+    "words_details": [
+      {
+        "prompt": "korona",
+        "answer": "crown",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koszulka; podkoszulek",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "koszulka; podkoszulek",
+        "answer": "T-shirt",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kurtka",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kurtka",
+        "answer": "jacket",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "spódnica",
+        "answer": "skirt",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "spodnie",
+        "answer": "trousers",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zbrodniarz; przestępca",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "koszulka; podkoszulek",
+        "answer": "T-shirt",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zbrodniarz; przestępca",
+        "answer": "criminal",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "koszula",
+        "answer": "shirt",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sukienka",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zbrodniarz; przestępca",
+        "answer": "criminal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sukienka",
+        "answer": "dress",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "buty sportowe; adidasy",
+        "answer": "trainers",
+        "status": "nowe"
+      },
+      {
+        "prompt": "sukienka",
+        "answer": "dress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dżinsy",
+        "answer": "jeans",
+        "status": "nowe"
+      },
+      {
+        "prompt": "buty sportowe; adidasy",
+        "answer": "trainers",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "włosy",
+        "answer": "hair",
+        "status": "nowe"
+      },
+      {
+        "prompt": "włosy",
+        "answer": "hair",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ubrania; odzież",
+        "answer": "clothes",
+        "status": "nowe"
+      },
+      {
+        "prompt": "ubrania; odzież",
+        "answer": "clothes",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "plecak",
+        "answer": "backpack",
+        "status": "nowe"
+      },
+      {
+        "prompt": "dżinsy",
+        "answer": "jeans",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wąsy",
+        "answer": "moustache",
+        "status": "nowe"
+      },
+      {
+        "prompt": "wąsy",
+        "answer": "moustache",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "broda; zarost",
+        "answer": "beard",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kurtka",
+        "answer": "jacket",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "plecak",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "plecak",
+        "answer": "backpack",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "plecak",
+        "answer": "backpack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "broda; zarost",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "broda; zarost",
+        "answer": "beard",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "broda; zarost",
+        "answer": "beard",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-24T15:05:07.799831"
   }
 ]
