@@ -11518,5 +11518,155 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-24T19:13:35.650535"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "20:58",
+    "words_total": 26,
+    "words_correct": 15,
+    "words_mistakes": 11,
+    "new_words_count": 3,
+    "autocorrect_count": 4,
+    "accuracy_percent": 57.7,
+    "duration_seconds": 258.0,
+    "started_at_warsaw": "2026-11-24 20:58:00 CET",
+    "completed_at_warsaw": "2026-11-24 21:02:18 CET",
+    "finished_at": "2026-11-24T21:02:18.794505+01:00",
+    "words_details": [
+      {
+        "prompt": "projekt; konstrukcja",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kajakarstwo",
+        "answer": "canoeing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "golf",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "surfing",
+        "answer": "surfing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rakieta",
+        "answer": "racket",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyka",
+        "answer": "gymnastics",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "krykiet",
+        "answer": "cricket",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "poeta",
+        "answer": "poet",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ring bokserski",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ring bokserski",
+        "answer": "boxing ring",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rugby",
+        "answer": "rugby",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "deska",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ring bokserski",
+        "answer": "boxing ring",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "deska",
+        "answer": "board",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "lekkoatletyka",
+        "answer": "athletics",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "jazda na deskorolce",
+        "answer": "skateboarding",
+        "status": "nowe"
+      },
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "narciarstwo",
+        "answer": "skiing",
+        "status": "nowe"
+      },
+      {
+        "prompt": "narciarstwo",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "jazda na deskorolce",
+        "answer": "skateboarding",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływanie",
+        "answer": "swimming",
+        "status": "nowe"
+      },
+      {
+        "prompt": "narciarstwo",
+        "answer": "skiing",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "narciarstwo",
+        "answer": "skiing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływanie",
+        "answer": "swimming",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "deska",
+        "answer": "board",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-24T20:02:18.794855"
   }
 ]

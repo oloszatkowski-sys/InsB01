@@ -2649,29 +2649,29 @@
     "answer": "boxing ring",
     "prompt": "ring bokserski",
     "sentence": "The contestants were waiting at the ______\nluka\n ____\nluka\n. The fight was about to begin.",
-    "updated_at": "2026-11-23T17:42:28.959256",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:59:54.955668",
+    "usage_count": 3
   },
   "ring bokserski": {
     "answer": "boxing ring",
     "prompt": "ring bokserski",
     "sentence": "The contestants were waiting at the ______\nluka\n ____\nluka\n. The fight was about to begin.",
-    "updated_at": "2026-11-23T17:42:28.959256",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:59:54.955668",
+    "usage_count": 3
   },
   "playing ____ luka isn't as easy as it seems. | golf": {
     "answer": "golf",
     "prompt": "golf",
     "sentence": "Playing ____\nluka\n isn't as easy as it seems.",
-    "updated_at": "2026-11-23T17:42:50.835260",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:58:45.359268",
+    "usage_count": 3
   },
   "golf": {
     "answer": "golf",
     "prompt": "golf",
     "sentence": "Playing ____\nluka\n isn't as easy as it seems.",
-    "updated_at": "2026-11-23T17:42:50.835260",
-    "usage_count": 1
+    "updated_at": "2026-11-24T19:58:45.359268",
+    "usage_count": 3
   },
   "i started practising _________ luka when i was five. | lekkoatletyka": {
     "answer": "athletics",
@@ -2691,15 +2691,15 @@
     "answer": "board",
     "prompt": "deska",
     "sentence": "Take your _____\nluka\n and come with me. Let's have fun!",
-    "updated_at": "2026-11-23T17:43:27.730212",
-    "usage_count": 1
+    "updated_at": "2026-11-24T20:00:32.256726",
+    "usage_count": 3
   },
   "deska": {
     "answer": "board",
     "prompt": "deska",
     "sentence": "Take your _____\nluka\n and come with me. Let's have fun!",
-    "updated_at": "2026-11-23T17:43:27.730212",
-    "usage_count": 1
+    "updated_at": "2026-11-24T20:00:32.256726",
+    "usage_count": 3
   },
   "i love mountain climbing and ________ luka . | kajakarstwo": {
     "answer": "canoeing",
@@ -2938,5 +2938,47 @@
     "sentence": "The man had a long black _____\nluka\n and a moustache.",
     "updated_at": "2026-11-24T15:04:50.437670",
     "usage_count": 3
+  },
+  "tim and his friends are really into _____________ luka . | jazda na deskorolce": {
+    "answer": "skateboarding",
+    "prompt": "jazda na deskorolce",
+    "sentence": "Tim and his friends are really into _____________\nluka\n.",
+    "updated_at": "2026-11-24T20:00:47.392594",
+    "usage_count": 1
+  },
+  "jazda na deskorolce": {
+    "answer": "skateboarding",
+    "prompt": "jazda na deskorolce",
+    "sentence": "Tim and his friends are really into _____________\nluka\n.",
+    "updated_at": "2026-11-24T20:00:47.392594",
+    "usage_count": 1
+  },
+  "______ luka is the most popular winter sport. | narciarstwo": {
+    "answer": "skiing",
+    "prompt": "narciarstwo",
+    "sentence": "______\nluka\n is the most popular winter sport.",
+    "updated_at": "2026-11-24T20:01:42.150321",
+    "usage_count": 3
+  },
+  "narciarstwo": {
+    "answer": "skiing",
+    "prompt": "narciarstwo",
+    "sentence": "______\nluka\n is the most popular winter sport.",
+    "updated_at": "2026-11-24T20:01:42.150321",
+    "usage_count": 3
+  },
+  "i like ________ luka , but i don't like team sports. | pływanie": {
+    "answer": "swimming",
+    "prompt": "pływanie",
+    "sentence": "I like ________\nluka\n, but I don't like team sports.",
+    "updated_at": "2026-11-24T20:01:33.706174",
+    "usage_count": 1
+  },
+  "pływanie": {
+    "answer": "swimming",
+    "prompt": "pływanie",
+    "sentence": "I like ________\nluka\n, but I don't like team sports.",
+    "updated_at": "2026-11-24T20:01:33.706174",
+    "usage_count": 1
   }
 }
