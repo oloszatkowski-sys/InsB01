@@ -11813,5 +11813,110 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-25T15:04:18.891044"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "18:32",
+    "words_total": 17,
+    "words_correct": 15,
+    "words_mistakes": 2,
+    "new_words_count": 0,
+    "autocorrect_count": 1,
+    "accuracy_percent": 88.2,
+    "duration_seconds": 191.9,
+    "started_at_warsaw": "2026-11-25 18:32:00 CET",
+    "completed_at_warsaw": "2026-11-25 18:35:12 CET",
+    "finished_at": "2026-11-25T18:35:12.659904+01:00",
+    "words_details": [
+      {
+        "prompt": "boks; pięściarstwo",
+        "answer": "boxing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "narciarstwo",
+        "answer": "skiing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływak",
+        "answer": "swimmer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bejsbol",
+        "answer": "baseball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "sędzia sportowy",
+        "answer": "referee",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurkowanie; skoki do wody",
+        "answer": "diving",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływanie",
+        "answer": "swimming",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ring bokserski",
+        "answer": "boxing ring",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "fotografia (dziedzina); fotografika",
+        "answer": "photography",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "golf",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "jazda na deskorolce",
+        "answer": "skateboarding",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "został napisany przez",
+        "answer": "it's written by",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "biegacz",
+        "answer": "runner",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pop",
+        "answer": "pop",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "drużyna",
+        "answer": "team",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-25T17:35:12.660216"
   }
 ]
