@@ -1557,15 +1557,15 @@
     "answer": "kick",
     "prompt": "kopać; kopnąć",
     "sentence": "Neil ______\nluka\n the ball.",
-    "updated_at": "2026-11-15T20:39:08.381180",
-    "usage_count": 1
+    "updated_at": "2026-11-25T22:13:10.851589",
+    "usage_count": 3
   },
   "kopać; kopnąć": {
     "answer": "kick",
     "prompt": "kopać; kopnąć",
     "sentence": "Neil ______\nluka\n the ball.",
-    "updated_at": "2026-11-15T20:39:08.381180",
-    "usage_count": 1
+    "updated_at": "2026-11-25T22:13:10.851589",
+    "usage_count": 3
   },
   "the fans _________ luka their team. | popierać; pomagać; kibicować": {
     "answer": "support",
@@ -1865,15 +1865,15 @@
     "answer": "hit",
     "prompt": "uderzać; stuknąć; dotknąć",
     "sentence": "Why did you ___\nluka\n him?",
-    "updated_at": "2026-11-18T21:16:53.476003",
-    "usage_count": 5
+    "updated_at": "2026-11-25T22:12:29.098801",
+    "usage_count": 7
   },
   "uderzać; stuknąć; dotknąć": {
     "answer": "hit",
     "prompt": "uderzać; stuknąć; dotknąć",
     "sentence": "Why did you ___\nluka\n him?",
-    "updated_at": "2026-11-18T21:16:53.476003",
-    "usage_count": 5
+    "updated_at": "2026-11-25T22:12:29.098801",
+    "usage_count": 7
   },
   "the _____ luka lost the fight. | bokser": {
     "answer": "boxer",
@@ -2327,15 +2327,15 @@
     "answer": "wrestling",
     "prompt": "zapasy (sport)",
     "sentence": "I don't think _________\nluka\n is my favourite sport. I don't like watching people fight.",
-    "updated_at": "2026-11-20T16:59:10.169843",
-    "usage_count": 1
+    "updated_at": "2026-11-25T22:13:36.158582",
+    "usage_count": 3
   },
   "zapasy (sport)": {
     "answer": "wrestling",
     "prompt": "zapasy (sport)",
     "sentence": "I don't think _________\nluka\n is my favourite sport. I don't like watching people fight.",
-    "updated_at": "2026-11-20T16:59:10.169843",
-    "usage_count": 1
+    "updated_at": "2026-11-25T22:13:36.158582",
+    "usage_count": 3
   },
   "to play golf you need a ball and a ____ luka . | kij golfowy": {
     "answer": "club",
@@ -2355,15 +2355,15 @@
     "answer": "weightlifting",
     "prompt": "podnoszenie ciężarów; kulturystyka",
     "sentence": "_____________\nluka\n is not very popular with women.",
-    "updated_at": "2026-11-20T17:00:09.290821",
-    "usage_count": 1
+    "updated_at": "2026-11-25T22:15:33.165293",
+    "usage_count": 3
   },
   "podnoszenie ciężarów; kulturystyka": {
     "answer": "weightlifting",
     "prompt": "podnoszenie ciężarów; kulturystyka",
     "sentence": "_____________\nluka\n is not very popular with women.",
-    "updated_at": "2026-11-20T17:00:09.290821",
-    "usage_count": 1
+    "updated_at": "2026-11-25T22:15:33.165293",
+    "usage_count": 3
   },
   "do you think i should buy this _______ luka ? | strój kąpielowy": {
     "answer": "costume",
@@ -2523,15 +2523,15 @@
     "answer": "skis",
     "prompt": "narty",
     "sentence": "Where are my ____\nluka\n?",
-    "updated_at": "2026-11-22T12:45:49.169929",
-    "usage_count": 3
+    "updated_at": "2026-11-25T22:15:00.751642",
+    "usage_count": 5
   },
   "narty": {
     "answer": "skis",
     "prompt": "narty",
     "sentence": "Where are my ____\nluka\n?",
-    "updated_at": "2026-11-22T12:45:49.169929",
-    "usage_count": 3
+    "updated_at": "2026-11-25T22:15:00.751642",
+    "usage_count": 5
   },
   "someone _____ luka ____ luka my neighbour's house last night. | włamać się do": {
     "answer": "break into",

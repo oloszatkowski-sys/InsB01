@@ -12033,5 +12033,150 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-25T19:13:23.397736"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "21:47",
+    "words_total": 25,
+    "words_correct": 15,
+    "words_mistakes": 10,
+    "new_words_count": 0,
+    "autocorrect_count": 5,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 266.8,
+    "started_at_warsaw": "2026-11-25 23:11:33 CET",
+    "completed_at_warsaw": "2026-11-25 23:16:00 CET",
+    "finished_at": "2026-11-25T23:16:00.351792+01:00",
+    "words_details": [
+      {
+        "prompt": "bramka",
+        "answer": "goal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "koncert",
+        "answer": "concert",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "powieść",
+        "answer": "novel",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "position",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zapasy (sport)",
+        "answer": "_________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zapasy (sport)",
+        "answer": "wrestling",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zmniejszyć temperaturę na kaloryferze",
+        "answer": "turn the radiator down",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "główny (pierwszoplanowy) aktor",
+        "answer": "lead actor",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pianka do nurkowania",
+        "answer": "wetsuit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "deska",
+        "answer": "board",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "grać główną rolę",
+        "answer": "star",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "narty",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "zapasy (sport)",
+        "answer": "wrestling",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "narty",
+        "answer": "skis",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "_____________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "weightlifting",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "narty",
+        "answer": "skis",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "weightlifting",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-25T22:16:00.352059"
   }
 ]
