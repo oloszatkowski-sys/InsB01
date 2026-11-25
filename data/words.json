@@ -3,15 +3,15 @@
     "answer": "cartoon",
     "prompt": "kreskówka",
     "sentence": "My little sister watches ________\nluka\n every weekend.",
-    "updated_at": "2026-11-04T20:21:45.751676",
-    "usage_count": 9
+    "updated_at": "2026-11-25T15:01:37.032535",
+    "usage_count": 11
   },
   "kreskówka": {
     "answer": "cartoon",
     "prompt": "kreskówka",
     "sentence": "My little sister watches ________\nluka\n every weekend.",
-    "updated_at": "2026-11-04T20:21:45.751676",
-    "usage_count": 9
+    "updated_at": "2026-11-25T15:01:37.032535",
+    "usage_count": 11
   },
   "his ___________ luka was amazing. | występ": {
     "answer": "performance",
@@ -1473,15 +1473,15 @@
     "answer": "science fiction film",
     "prompt": "film fantastycznonaukowy",
     "sentence": "I like watching _______\nluka\n _______\nluka\n _____\nluka\n.",
-    "updated_at": "2026-11-13T20:27:57.683306",
-    "usage_count": 1
+    "updated_at": "2026-11-25T15:03:33.400345",
+    "usage_count": 3
   },
   "film fantastycznonaukowy": {
     "answer": "science fiction film",
     "prompt": "film fantastycznonaukowy",
     "sentence": "I like watching _______\nluka\n _______\nluka\n _____\nluka\n.",
-    "updated_at": "2026-11-13T20:27:57.683306",
-    "usage_count": 1
+    "updated_at": "2026-11-25T15:03:33.400345",
+    "usage_count": 3
   },
   "i'm always afraid of ______ luka _____ luka ! | horror": {
     "answer": "horror film",
@@ -2845,29 +2845,29 @@
     "answer": "trainers",
     "prompt": "buty sportowe; adidasy",
     "sentence": "I'm wearing black ________\nluka\n.",
-    "updated_at": "2026-11-24T15:02:10.908838",
-    "usage_count": 1
+    "updated_at": "2026-11-25T15:02:17.832892",
+    "usage_count": 3
   },
   "buty sportowe; adidasy": {
     "answer": "trainers",
     "prompt": "buty sportowe; adidasy",
     "sentence": "I'm wearing black ________\nluka\n.",
-    "updated_at": "2026-11-24T15:02:10.908838",
-    "usage_count": 1
+    "updated_at": "2026-11-25T15:02:17.832892",
+    "usage_count": 3
   },
   "i'm looking for new _____ luka . | dżinsy": {
     "answer": "jeans",
     "prompt": "dżinsy",
     "sentence": "I'm looking for new _____\nluka\n.",
-    "updated_at": "2026-11-24T15:02:25.883664",
-    "usage_count": 1
+    "updated_at": "2026-11-25T15:01:00.248049",
+    "usage_count": 3
   },
   "dżinsy": {
     "answer": "jeans",
     "prompt": "dżinsy",
     "sentence": "I'm looking for new _____\nluka\n.",
-    "updated_at": "2026-11-24T15:02:25.883664",
-    "usage_count": 1
+    "updated_at": "2026-11-25T15:01:00.248049",
+    "usage_count": 3
   },
   "she had beautiful long ____ luka . | włosy": {
     "answer": "hair",
@@ -2979,6 +2979,34 @@
     "prompt": "pływanie",
     "sentence": "I like ________\nluka\n, but I don't like team sports.",
     "updated_at": "2026-11-24T20:01:33.706174",
+    "usage_count": 1
+  },
+  "someone stole all her _________ luka and money. | biżuteria": {
+    "answer": "jewellery",
+    "prompt": "biżuteria",
+    "sentence": "Someone stole all her _________\nluka\n and money.",
+    "updated_at": "2026-11-25T15:02:51.519830",
+    "usage_count": 1
+  },
+  "biżuteria": {
+    "answer": "jewellery",
+    "prompt": "biżuteria",
+    "sentence": "Someone stole all her _________\nluka\n and money.",
+    "updated_at": "2026-11-25T15:02:51.519830",
+    "usage_count": 1
+  },
+  "nina's got ________ luka blonde hair. | prosty": {
+    "answer": "straight",
+    "prompt": "prosty",
+    "sentence": "Nina's got ________\nluka\n blonde hair.",
+    "updated_at": "2026-11-25T15:03:39.707745",
+    "usage_count": 1
+  },
+  "prosty": {
+    "answer": "straight",
+    "prompt": "prosty",
+    "sentence": "Nina's got ________\nluka\n blonde hair.",
+    "updated_at": "2026-11-25T15:03:39.707745",
     "usage_count": 1
   }
 }

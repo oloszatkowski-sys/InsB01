@@ -11668,5 +11668,150 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-24T20:02:18.794855"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "16:00",
+    "words_total": 25,
+    "words_correct": 15,
+    "words_mistakes": 10,
+    "new_words_count": 2,
+    "autocorrect_count": 4,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 257.2,
+    "started_at_warsaw": "2026-11-25 16:00:01 CET",
+    "completed_at_warsaw": "2026-11-25 16:04:18 CET",
+    "finished_at": "2026-11-25T16:04:18.890705+01:00",
+    "words_details": [
+      {
+        "prompt": "plecak",
+        "answer": "backpack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zbrodniarz; przestępca",
+        "answer": "criminal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ubrania; odzież",
+        "answer": "clothes",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dżinsy",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "dżinsy",
+        "answer": "jeans",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "sukienka",
+        "answer": "dress",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "włosy",
+        "answer": "hair",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "koszulka; podkoszulek",
+        "answer": "T-shirt",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "buty sportowe; adidasy",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "buty sportowe; adidasy",
+        "answer": "trainers",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wąsy",
+        "answer": "moustache",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "broda; zarost",
+        "answer": "beard",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kurtka",
+        "answer": "jacket",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "biżuteria",
+        "answer": "jewellery",
+        "status": "nowe"
+      },
+      {
+        "prompt": "buty sportowe; adidasy",
+        "answer": "trainers",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantastycznonaukowy",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "dżinsy",
+        "answer": "jeans",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantastycznonaukowy",
+        "answer": "science fiction film",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "prosty",
+        "answer": "straight",
+        "status": "nowe"
+      },
+      {
+        "prompt": "prosty",
+        "answer": "straight",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "biżuteria",
+        "answer": "jewellery",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantastycznonaukowy",
+        "answer": "science fiction film",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-25T15:04:18.891044"
   }
 ]
