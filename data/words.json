@@ -2663,29 +2663,29 @@
     "answer": "golf",
     "prompt": "golf",
     "sentence": "Playing ____\nluka\n isn't as easy as it seems.",
-    "updated_at": "2026-11-25T17:34:00.472024",
-    "usage_count": 5
+    "updated_at": "2026-11-25T19:12:09.268960",
+    "usage_count": 7
   },
   "golf": {
     "answer": "golf",
     "prompt": "golf",
     "sentence": "Playing ____\nluka\n isn't as easy as it seems.",
-    "updated_at": "2026-11-25T17:34:00.472024",
-    "usage_count": 5
+    "updated_at": "2026-11-25T19:12:09.268960",
+    "usage_count": 7
   },
   "i started practising _________ luka when i was five. | lekkoatletyka": {
     "answer": "athletics",
     "prompt": "lekkoatletyka",
     "sentence": "I started practising _________\nluka\n when I was five.",
-    "updated_at": "2026-11-23T17:43:07.671611",
-    "usage_count": 1
+    "updated_at": "2026-11-25T19:12:45.322045",
+    "usage_count": 3
   },
   "lekkoatletyka": {
     "answer": "athletics",
     "prompt": "lekkoatletyka",
     "sentence": "I started practising _________\nluka\n when I was five.",
-    "updated_at": "2026-11-23T17:43:07.671611",
-    "usage_count": 1
+    "updated_at": "2026-11-25T19:12:45.322045",
+    "usage_count": 3
   },
   "take your _____ luka and come with me. let's have fun! | deska": {
     "answer": "board",

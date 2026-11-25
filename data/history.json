@@ -11918,5 +11918,120 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-25T17:35:12.660216"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "20:10",
+    "words_total": 19,
+    "words_correct": 15,
+    "words_mistakes": 4,
+    "new_words_count": 0,
+    "autocorrect_count": 2,
+    "accuracy_percent": 78.9,
+    "duration_seconds": 201.7,
+    "started_at_warsaw": "2026-11-25 20:10:01 CET",
+    "completed_at_warsaw": "2026-11-25 20:13:23 CET",
+    "finished_at": "2026-11-25T20:13:23.397416+01:00",
+    "words_details": [
+      {
+        "prompt": "pozycja; położenie",
+        "answer": "position",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "chybić, spudłować, nie trafić",
+        "answer": "miss",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "łączyć; przyłączać (się); dołączyć",
+        "answer": "join",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bejsbol",
+        "answer": "baseball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kąpielówki",
+        "answer": "trunks",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "strzelać gole",
+        "answer": "score goals",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "trener",
+        "answer": "coach",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zwiększyć temperaturę na kaloryferze",
+        "answer": "turn the radiator up",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "biegacz",
+        "answer": "runner",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurkowanie; skoki do wody",
+        "answer": "diving",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "golf",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rock",
+        "answer": "rock",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyka",
+        "answer": "gymnastics",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "lekkoatletyka",
+        "answer": "_________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "lekkoatletyka",
+        "answer": "athletics",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rugby",
+        "answer": "rugby",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "lekkoatletyka",
+        "answer": "athletics",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-25T19:13:23.397736"
   }
 ]
