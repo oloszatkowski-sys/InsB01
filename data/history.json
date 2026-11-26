@@ -12333,5 +12333,180 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-26T16:21:36.489827"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "19:16",
+    "words_total": 31,
+    "words_correct": 15,
+    "words_mistakes": 16,
+    "new_words_count": 0,
+    "autocorrect_count": 8,
+    "accuracy_percent": 48.4,
+    "duration_seconds": 334.8,
+    "started_at_warsaw": "2026-11-26 19:16:00 CET",
+    "completed_at_warsaw": "2026-11-26 19:21:35 CET",
+    "finished_at": "2026-11-26T19:21:35.350013+01:00",
+    "words_details": [
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłkarz",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "piłkarz",
+        "answer": "footballer",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "boks; pięściarstwo",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "boks; pięściarstwo",
+        "answer": "boxing",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "piłkarz",
+        "answer": "footballer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "lekkoatletyka",
+        "answer": "athletics",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłka nożna (BrE)",
+        "answer": "football",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "surfing",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "surfing",
+        "answer": "surfing",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kajakarstwo",
+        "answer": "canoeing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "krykiet",
+        "answer": "cricket",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "jazda na deskorolce",
+        "answer": "_____________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "surfing",
+        "answer": "surfing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "jazda na deskorolce",
+        "answer": "skateboarding",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "__________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "boks; pięściarstwo",
+        "answer": "boxing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ścieżka dźwiękowa",
+        "answer": "soundtrack",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "narciarstwo",
+        "answer": "skiing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "projektować",
+        "answer": "design",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływanie",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "jazda na deskorolce",
+        "answer": "skateboarding",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływanie",
+        "answer": "swimming",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "artykuł",
+        "answer": "article",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływanie",
+        "answer": "swimming",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-26T18:21:35.350343"
   }
 ]

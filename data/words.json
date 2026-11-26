@@ -409,15 +409,15 @@
     "answer": "article",
     "prompt": "artykuł",
     "sentence": "You absolutely must read this _______\nluka\n.",
-    "updated_at": "2026-11-13T16:57:27.217220",
-    "usage_count": 9
+    "updated_at": "2026-11-26T18:20:13.839292",
+    "usage_count": 11
   },
   "artykuł": {
     "answer": "article",
     "prompt": "artykuł",
     "sentence": "You absolutely must read this _______\nluka\n.",
-    "updated_at": "2026-11-13T16:57:27.217220",
-    "usage_count": 9
+    "updated_at": "2026-11-26T18:20:13.839292",
+    "usage_count": 11
   },
   "that ___________ luka is terribly boring. | film dokumentalny; program dokumentalny": {
     "answer": "documentary",
@@ -801,15 +801,15 @@
     "answer": "soundtrack",
     "prompt": "ścieżka dźwiękowa",
     "sentence": "The film was totally lame - except for the __________\nluka\n! Yes, the music was really cool.",
-    "updated_at": "2026-11-14T20:29:04.399349",
-    "usage_count": 3
+    "updated_at": "2026-11-26T18:19:44.919536",
+    "usage_count": 5
   },
   "ścieżka dźwiękowa": {
     "answer": "soundtrack",
     "prompt": "ścieżka dźwiękowa",
     "sentence": "The film was totally lame - except for the __________\nluka\n! Yes, the music was really cool.",
-    "updated_at": "2026-11-14T20:29:04.399349",
-    "usage_count": 3
+    "updated_at": "2026-11-26T18:19:44.919536",
+    "usage_count": 5
   },
   "i gave the _______ luka to my mother and she really likes it. | rysunek": {
     "answer": "drawing",
@@ -1991,15 +1991,15 @@
     "answer": "footballer",
     "prompt": "piłkarz",
     "sentence": "You must train really hard to become a __________\nluka\n.",
-    "updated_at": "2026-11-18T16:01:58.446647",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:16:44.474090",
+    "usage_count": 3
   },
   "piłkarz": {
     "answer": "footballer",
     "prompt": "piłkarz",
     "sentence": "You must train really hard to become a __________\nluka\n.",
-    "updated_at": "2026-11-18T16:01:58.446647",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:16:44.474090",
+    "usage_count": 3
   },
   "they'll call you a ______ luka if you make graffiti. | wandal": {
     "answer": "vandal",
@@ -2243,15 +2243,15 @@
     "answer": "athletic",
     "prompt": "wysportowany",
     "sentence": "George is an ________\nluka\n boy.",
-    "updated_at": "2026-11-20T21:00:04.461717",
-    "usage_count": 5
+    "updated_at": "2026-11-26T18:17:04.650438",
+    "usage_count": 7
   },
   "wysportowany": {
     "answer": "athletic",
     "prompt": "wysportowany",
     "sentence": "George is an ________\nluka\n boy.",
-    "updated_at": "2026-11-20T21:00:04.461717",
-    "usage_count": 5
+    "updated_at": "2026-11-26T18:17:04.650438",
+    "usage_count": 7
   },
   "he threw the ____ luka at me, but i couldn't catch it. | piłka": {
     "answer": "ball",
@@ -2509,15 +2509,15 @@
     "answer": "boxing",
     "prompt": "boks; pięściarstwo",
     "sentence": "Jim's keen on ______\nluka\n, but I don't like it at all.",
-    "updated_at": "2026-11-22T12:44:40.606997",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:17:23.231343",
+    "usage_count": 3
   },
   "boks; pięściarstwo": {
     "answer": "boxing",
     "prompt": "boks; pięściarstwo",
     "sentence": "Jim's keen on ______\nluka\n, but I don't like it at all.",
-    "updated_at": "2026-11-22T12:44:40.606997",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:17:23.231343",
+    "usage_count": 3
   },
   "where are my ____ luka ? | narty": {
     "answer": "skis",
@@ -2733,15 +2733,15 @@
     "answer": "surfing",
     "prompt": "surfing",
     "sentence": "He's a _______\nluka\n champion.",
-    "updated_at": "2026-11-23T17:44:47.307536",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:18:24.979818",
+    "usage_count": 3
   },
   "surfing": {
     "answer": "surfing",
     "prompt": "surfing",
     "sentence": "He's a _______\nluka\n champion.",
-    "updated_at": "2026-11-23T17:44:47.307536",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:18:24.979818",
+    "usage_count": 3
   },
   "i'm looking for the tennis ______ luka . | rakieta": {
     "answer": "racket",
@@ -2943,15 +2943,15 @@
     "answer": "skateboarding",
     "prompt": "jazda na deskorolce",
     "sentence": "Tim and his friends are really into _____________\nluka\n.",
-    "updated_at": "2026-11-24T20:00:47.392594",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:19:12.620836",
+    "usage_count": 3
   },
   "jazda na deskorolce": {
     "answer": "skateboarding",
     "prompt": "jazda na deskorolce",
     "sentence": "Tim and his friends are really into _____________\nluka\n.",
-    "updated_at": "2026-11-24T20:00:47.392594",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:19:12.620836",
+    "usage_count": 3
   },
   "______ luka is the most popular winter sport. | narciarstwo": {
     "answer": "skiing",
@@ -2971,15 +2971,15 @@
     "answer": "swimming",
     "prompt": "pływanie",
     "sentence": "I like ________\nluka\n, but I don't like team sports.",
-    "updated_at": "2026-11-24T20:01:33.706174",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:21:07.851795",
+    "usage_count": 3
   },
   "pływanie": {
     "answer": "swimming",
     "prompt": "pływanie",
     "sentence": "I like ________\nluka\n, but I don't like team sports.",
-    "updated_at": "2026-11-24T20:01:33.706174",
-    "usage_count": 1
+    "updated_at": "2026-11-26T18:21:07.851795",
+    "usage_count": 3
   },
   "someone stole all her _________ luka and money. | biżuteria": {
     "answer": "jewellery",
