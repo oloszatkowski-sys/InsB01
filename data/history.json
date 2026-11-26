@@ -12508,5 +12508,100 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-26T18:21:35.350343"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "22:14",
+    "words_total": 15,
+    "words_correct": 15,
+    "words_mistakes": 0,
+    "new_words_count": 0,
+    "autocorrect_count": 0,
+    "accuracy_percent": 100.0,
+    "duration_seconds": 158.5,
+    "started_at_warsaw": "2026-11-26 23:10:40 CET",
+    "completed_at_warsaw": "2026-11-26 23:13:18 CET",
+    "finished_at": "2026-11-26T23:13:18.752084+01:00",
+    "words_details": [
+      {
+        "prompt": "tytuł",
+        "answer": "title",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "popełnić przestępstwo",
+        "answer": "commit a crime",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złodziej",
+        "answer": "thief",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kreskówka",
+        "answer": "cartoon",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "biżuteria",
+        "answer": "jewellery",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nóż",
+        "answer": "knife",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wandal",
+        "answer": "vandal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "ucieczka",
+        "answer": "escape",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "buty sportowe; adidasy",
+        "answer": "trainers",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "dżinsy",
+        "answer": "jeans",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantastycznonaukowy",
+        "answer": "science fiction film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "włamywacz",
+        "answer": "burglar",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "prosty",
+        "answer": "straight",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uszkadzać, psuć; niszczyć",
+        "answer": "damage",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-26T22:13:18.752322"
   }
 ]
