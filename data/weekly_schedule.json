@@ -328,14 +328,20 @@
           "is_off_day": false,
           "scheduled_minutes": 1037,
           "scheduled_time": "17:17",
-          "status": "Oczekuje",
-          "completed": false,
-          "countdown_sent": false,
-          "started_at": null,
-          "completed_at": null,
-          "duration_seconds": null,
-          "accuracy_percent": null,
-          "error": null
+          "status": "Ukończono",
+          "completed": true,
+          "countdown_sent": true,
+          "started_at": "2026-11-26 17:17:00 CET",
+          "completed_at": "2026-11-26 17:21:37 CET",
+          "duration_seconds": 275.9,
+          "accuracy_percent": 55.6,
+          "error": null,
+          "words_total": 27,
+          "words_correct": 15,
+          "words_mistakes": 12,
+          "new_words_count": 8,
+          "error_count": 0,
+          "retry_after_warsaw": null
         },
         {
           "slot_id": "2026-11-26_user_3",
@@ -597,5 +603,5 @@
     }
   },
   "last_weekly_plan_week": "2026-W48",
-  "last_daily_plan_date": "2026-11-25"
+  "last_daily_plan_date": "2026-11-26"
 }

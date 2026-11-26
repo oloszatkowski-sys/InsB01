@@ -2691,15 +2691,15 @@
     "answer": "board",
     "prompt": "deska",
     "sentence": "Take your _____\nluka\n and come with me. Let's have fun!",
-    "updated_at": "2026-11-24T20:00:32.256726",
-    "usage_count": 3
+    "updated_at": "2026-11-26T16:18:09.696673",
+    "usage_count": 5
   },
   "deska": {
     "answer": "board",
     "prompt": "deska",
     "sentence": "Take your _____\nluka\n and come with me. Let's have fun!",
-    "updated_at": "2026-11-24T20:00:32.256726",
-    "usage_count": 3
+    "updated_at": "2026-11-26T16:18:09.696673",
+    "usage_count": 5
   },
   "i love mountain climbing and ________ luka . | kajakarstwo": {
     "answer": "canoeing",
@@ -3007,6 +3007,118 @@
     "prompt": "prosty",
     "sentence": "Nina's got ________\nluka\n blonde hair.",
     "updated_at": "2026-11-25T15:03:39.707745",
+    "usage_count": 1
+  },
+  "is ___ luka ______ luka a winter olympic sport? | hokej na lodzie": {
+    "answer": "ice hockey",
+    "prompt": "hokej na lodzie",
+    "sentence": "Is ___\nluka\n ______\nluka\n a Winter Olympic sport?",
+    "updated_at": "2026-11-26T16:18:15.840982",
+    "usage_count": 1
+  },
+  "hokej na lodzie": {
+    "answer": "ice hockey",
+    "prompt": "hokej na lodzie",
+    "sentence": "Is ___\nluka\n ______\nluka\n a Winter Olympic sport?",
+    "updated_at": "2026-11-26T16:18:15.840982",
+    "usage_count": 1
+  },
+  "i'm a failure at rollerblading, but i'm actually good at ___________ luka . | jazda na łyżwach": {
+    "answer": "ice-skating",
+    "prompt": "jazda na łyżwach",
+    "sentence": "I'm a failure at rollerblading, but I'm actually good at ___________\nluka\n.",
+    "updated_at": "2026-11-26T16:18:24.246204",
+    "usage_count": 1
+  },
+  "jazda na łyżwach": {
+    "answer": "ice-skating",
+    "prompt": "jazda na łyżwach",
+    "sentence": "I'm a failure at rollerblading, but I'm actually good at ___________\nluka\n.",
+    "updated_at": "2026-11-26T16:18:24.246204",
+    "usage_count": 1
+  },
+  "he loves mountain ________ luka . | wspinaczka": {
+    "answer": "climbing",
+    "prompt": "wspinaczka",
+    "sentence": "He loves mountain ________\nluka\n.",
+    "updated_at": "2026-11-26T16:18:41.617906",
+    "usage_count": 1
+  },
+  "wspinaczka": {
+    "answer": "climbing",
+    "prompt": "wspinaczka",
+    "sentence": "He loves mountain ________\nluka\n.",
+    "updated_at": "2026-11-26T16:18:41.617906",
+    "usage_count": 1
+  },
+  "_____________ luka isn't any more difficult than roller skating. | jazda na łyżworolkach": {
+    "answer": "rollerblading",
+    "prompt": "jazda na łyżworolkach",
+    "sentence": "_____________\nluka\n isn't any more difficult than roller skating.",
+    "updated_at": "2026-11-26T16:19:00.936078",
+    "usage_count": 1
+  },
+  "jazda na łyżworolkach": {
+    "answer": "rollerblading",
+    "prompt": "jazda na łyżworolkach",
+    "sentence": "_____________\nluka\n isn't any more difficult than roller skating.",
+    "updated_at": "2026-11-26T16:19:00.936078",
+    "usage_count": 1
+  },
+  "i'm too slow to play _____ luka ______ luka . | tenis stołowy": {
+    "answer": "table tennis",
+    "prompt": "tenis stołowy",
+    "sentence": "I'm too slow to play _____\nluka\n ______\nluka\n.",
+    "updated_at": "2026-11-26T16:20:51.571810",
+    "usage_count": 3
+  },
+  "tenis stołowy": {
+    "answer": "table tennis",
+    "prompt": "tenis stołowy",
+    "sentence": "I'm too slow to play _____\nluka\n ______\nluka\n.",
+    "updated_at": "2026-11-26T16:20:51.571810",
+    "usage_count": 3
+  },
+  "i like _____ luka __________ luka more than other sports. | siatkówka plażowa": {
+    "answer": "beach volleyball",
+    "prompt": "siatkówka plażowa",
+    "sentence": "I like _____\nluka\n __________\nluka\n more than other sports.",
+    "updated_at": "2026-11-26T16:19:46.066920",
+    "usage_count": 1
+  },
+  "siatkówka plażowa": {
+    "answer": "beach volleyball",
+    "prompt": "siatkówka plażowa",
+    "sentence": "I like _____\nluka\n __________\nluka\n more than other sports.",
+    "updated_at": "2026-11-26T16:19:46.066920",
+    "usage_count": 1
+  },
+  "i play ______ luka once a week. | squash (rodzaj sportu)": {
+    "answer": "squash",
+    "prompt": "squash (rodzaj sportu)",
+    "sentence": "I play ______\nluka\n once a week.",
+    "updated_at": "2026-11-26T16:20:16.652012",
+    "usage_count": 1
+  },
+  "squash (rodzaj sportu)": {
+    "answer": "squash",
+    "prompt": "squash (rodzaj sportu)",
+    "sentence": "I play ______\nluka\n once a week.",
+    "updated_at": "2026-11-26T16:20:16.652012",
+    "usage_count": 1
+  },
+  "you can't do _______ luka if you don't have a bicycle. | kolarstwo": {
+    "answer": "cycling",
+    "prompt": "kolarstwo",
+    "sentence": "You can't do _______\nluka\n if you don't have a bicycle.",
+    "updated_at": "2026-11-26T16:20:42.507570",
+    "usage_count": 1
+  },
+  "kolarstwo": {
+    "answer": "cycling",
+    "prompt": "kolarstwo",
+    "sentence": "You can't do _______\nluka\n if you don't have a bicycle.",
+    "updated_at": "2026-11-26T16:20:42.507570",
     "usage_count": 1
   }
 }

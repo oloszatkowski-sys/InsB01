@@ -12178,5 +12178,160 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-25T22:16:00.352059"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "17:17",
+    "words_total": 27,
+    "words_correct": 15,
+    "words_mistakes": 12,
+    "new_words_count": 8,
+    "autocorrect_count": 2,
+    "accuracy_percent": 55.6,
+    "duration_seconds": 275.9,
+    "started_at_warsaw": "2026-11-26 17:17:00 CET",
+    "completed_at_warsaw": "2026-11-26 17:21:36 CET",
+    "finished_at": "2026-11-26T17:21:36.489520+01:00",
+    "words_details": [
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bokser",
+        "answer": "boxer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłka",
+        "answer": "ball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "golf",
+        "answer": "golf",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "deska",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "deska",
+        "answer": "board",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "hokej na lodzie",
+        "answer": "ice hockey",
+        "status": "nowe"
+      },
+      {
+        "prompt": "jazda na łyżwach",
+        "answer": "ice-skating",
+        "status": "nowe"
+      },
+      {
+        "prompt": "jazda na łyżwach",
+        "answer": "ice-skating",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wspinaczka",
+        "answer": "climbing",
+        "status": "nowe"
+      },
+      {
+        "prompt": "hokej na lodzie",
+        "answer": "ice hockey",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "jazda na łyżworolkach",
+        "answer": "rollerblading",
+        "status": "nowe"
+      },
+      {
+        "prompt": "deska",
+        "answer": "board",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rysować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tenis stołowy",
+        "answer": "table tennis",
+        "status": "nowe"
+      },
+      {
+        "prompt": "wspinaczka",
+        "answer": "climbing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "siatkówka plażowa",
+        "answer": "beach volleyball",
+        "status": "nowe"
+      },
+      {
+        "prompt": "tenis stołowy",
+        "answer": "_____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "jazda na łyżworolkach",
+        "answer": "rollerblading",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "squash (rodzaj sportu)",
+        "answer": "squash",
+        "status": "nowe"
+      },
+      {
+        "prompt": "squash (rodzaj sportu)",
+        "answer": "squash",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wystawiać (sztukę, przedstawienie)",
+        "answer": "put on",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kolarstwo",
+        "answer": "cycling",
+        "status": "nowe"
+      },
+      {
+        "prompt": "tenis stołowy",
+        "answer": "table tennis",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "siatkówka plażowa",
+        "answer": "beach volleyball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kolarstwo",
+        "answer": "cycling",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tenis stołowy",
+        "answer": "table tennis",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-26T16:21:36.489827"
   }
 ]
