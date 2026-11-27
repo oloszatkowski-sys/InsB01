@@ -12918,5 +12918,150 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-27T18:54:02.506990"
+  },
+  {
+    "success": true,
+    "nickname": "Szlucha Jagoda",
+    "masked_login": "lasa6####",
+    "scheduled_time": "20:19",
+    "words_total": 25,
+    "words_correct": 15,
+    "words_mistakes": 10,
+    "new_words_count": 2,
+    "autocorrect_count": 4,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 271.0,
+    "started_at_warsaw": "2026-11-27 20:19:01 CET",
+    "completed_at_warsaw": "2026-11-27 20:23:32 CET",
+    "finished_at": "2026-11-27T20:23:32.115494+01:00",
+    "words_details": [
+      {
+        "prompt": "ubrudzić się błotem",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ubrudzić się błotem",
+        "answer": "get muddy",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "tenis stołowy",
+        "answer": "table tennis",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "siatkówka plażowa",
+        "answer": "beach volleyball",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bramka",
+        "answer": "goal",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "bieganie",
+        "answer": "running",
+        "status": "nowe"
+      },
+      {
+        "prompt": "remisować",
+        "answer": "draw",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "hokej na lodzie",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "ubrudzić się błotem",
+        "answer": "get muddy",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "hokej na lodzie",
+        "answer": "ice hockey",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "jazda na łyżwach",
+        "answer": "___________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "hokej na lodzie",
+        "answer": "ice hockey",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "jazda na łyżwach",
+        "answer": "ice-skating",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "squash (rodzaj sportu)",
+        "answer": "squash",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wspinaczka",
+        "answer": "climbing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "tenis ziemny",
+        "answer": "tennis",
+        "status": "nowe"
+      },
+      {
+        "prompt": "jazda na łyżwach",
+        "answer": "ice-skating",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kolarstwo",
+        "answer": "cycling",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kibic",
+        "answer": "supporter",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "bieganie",
+        "answer": "running",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "tenis ziemny",
+        "answer": "tennis",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "aktorka",
+        "answer": "actress",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-27T19:23:32.115848"
   }
 ]

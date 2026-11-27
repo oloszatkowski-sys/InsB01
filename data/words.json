@@ -605,15 +605,15 @@
     "answer": "actress",
     "prompt": "aktorka",
     "sentence": "Who's your favourite _______\nluka\n?",
-    "updated_at": "2026-11-16T12:57:01.240545",
-    "usage_count": 5
+    "updated_at": "2026-11-27T19:23:02.349881",
+    "usage_count": 7
   },
   "aktorka": {
     "answer": "actress",
     "prompt": "aktorka",
     "sentence": "Who's your favourite _______\nluka\n?",
-    "updated_at": "2026-11-16T12:57:01.240545",
-    "usage_count": 5
+    "updated_at": "2026-11-27T19:23:02.349881",
+    "usage_count": 7
   },
   "she was humming a merry ____ luka . | melodia": {
     "answer": "tune",
@@ -1725,15 +1725,15 @@
     "answer": "get muddy",
     "prompt": "ubrudzić się błotem",
     "sentence": "You can often ___\nluka\n _____\nluka\n on an obstacle course.",
-    "updated_at": "2026-11-16T12:58:35.009129",
-    "usage_count": 1
+    "updated_at": "2026-11-27T19:19:30.895557",
+    "usage_count": 3
   },
   "ubrudzić się błotem": {
     "answer": "get muddy",
     "prompt": "ubrudzić się błotem",
     "sentence": "You can often ___\nluka\n _____\nluka\n on an obstacle course.",
-    "updated_at": "2026-11-16T12:58:35.009129",
-    "usage_count": 1
+    "updated_at": "2026-11-27T19:19:30.895557",
+    "usage_count": 3
   },
   "i'm sure you won't ____ luka the match. you're great! | przegrać": {
     "answer": "lose",
@@ -3013,29 +3013,29 @@
     "answer": "ice hockey",
     "prompt": "hokej na lodzie",
     "sentence": "Is ___\nluka\n ______\nluka\n a Winter Olympic sport?",
-    "updated_at": "2026-11-26T16:18:15.840982",
-    "usage_count": 1
+    "updated_at": "2026-11-27T19:20:57.246093",
+    "usage_count": 3
   },
   "hokej na lodzie": {
     "answer": "ice hockey",
     "prompt": "hokej na lodzie",
     "sentence": "Is ___\nluka\n ______\nluka\n a Winter Olympic sport?",
-    "updated_at": "2026-11-26T16:18:15.840982",
-    "usage_count": 1
+    "updated_at": "2026-11-27T19:20:57.246093",
+    "usage_count": 3
   },
   "i'm a failure at rollerblading, but i'm actually good at ___________ luka . | jazda na łyżwach": {
     "answer": "ice-skating",
     "prompt": "jazda na łyżwach",
     "sentence": "I'm a failure at rollerblading, but I'm actually good at ___________\nluka\n.",
-    "updated_at": "2026-11-26T16:18:24.246204",
-    "usage_count": 1
+    "updated_at": "2026-11-27T19:21:30.498562",
+    "usage_count": 3
   },
   "jazda na łyżwach": {
     "answer": "ice-skating",
     "prompt": "jazda na łyżwach",
     "sentence": "I'm a failure at rollerblading, but I'm actually good at ___________\nluka\n.",
-    "updated_at": "2026-11-26T16:18:24.246204",
-    "usage_count": 1
+    "updated_at": "2026-11-27T19:21:30.498562",
+    "usage_count": 3
   },
   "he loves mountain ________ luka . | wspinaczka": {
     "answer": "climbing",
@@ -3273,6 +3273,34 @@
     "prompt": "kręcony (o włosach)",
     "sentence": "She had long _____\nluka\n hair.",
     "updated_at": "2026-11-27T18:53:22.816993",
+    "usage_count": 1
+  },
+  "i love morning _______ luka . exercising makes me feel alive. | bieganie": {
+    "answer": "running",
+    "prompt": "bieganie",
+    "sentence": "I love morning _______\nluka\n. Exercising makes me feel alive.",
+    "updated_at": "2026-11-27T19:20:17.981592",
+    "usage_count": 1
+  },
+  "bieganie": {
+    "answer": "running",
+    "prompt": "bieganie",
+    "sentence": "I love morning _______\nluka\n. Exercising makes me feel alive.",
+    "updated_at": "2026-11-27T19:20:17.981592",
+    "usage_count": 1
+  },
+  "i love playing ______ luka . | tenis ziemny": {
+    "answer": "tennis",
+    "prompt": "tenis ziemny",
+    "sentence": "I love playing ______\nluka\n.",
+    "updated_at": "2026-11-27T19:22:00.200650",
+    "usage_count": 1
+  },
+  "tenis ziemny": {
+    "answer": "tennis",
+    "prompt": "tenis ziemny",
+    "sentence": "I love playing ______\nluka\n.",
+    "updated_at": "2026-11-27T19:22:00.200650",
     "usage_count": 1
   }
 }
