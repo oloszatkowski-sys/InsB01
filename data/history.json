@@ -12603,5 +12603,150 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-26T22:13:18.752322"
+  },
+  {
+    "success": true,
+    "nickname": "OliwiercioTheHacker",
+    "masked_login": "asa61####",
+    "scheduled_time": "16:26",
+    "words_total": 25,
+    "words_correct": 15,
+    "words_mistakes": 10,
+    "new_words_count": 0,
+    "autocorrect_count": 5,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 254.7,
+    "started_at_warsaw": "2026-11-27 16:26:00 CET",
+    "completed_at_warsaw": "2026-11-27 16:30:15 CET",
+    "finished_at": "2026-11-27T16:30:15.281793+01:00",
+    "words_details": [
+      {
+        "prompt": "surfing",
+        "answer": "surfing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływak",
+        "answer": "swimmer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyka",
+        "answer": "gymnastics",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "captain",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "rugby",
+        "answer": "rugby",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "złapać",
+        "answer": "catch",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "przegrać",
+        "answer": "lose",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurkowanie; skoki do wody",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nurkowanie; skoki do wody",
+        "answer": "diving",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "drużyna",
+        "answer": "team",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływanie",
+        "answer": "________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "nurkowanie; skoki do wody",
+        "answer": "diving",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływanie",
+        "answer": "swimming",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "boks; pięściarstwo",
+        "answer": "boxing",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "captain",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "piłkarz",
+        "answer": "footballer",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "jazda na deskorolce",
+        "answer": "skateboarding",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rowerzysta; kolarz",
+        "answer": "cyclist",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "pływanie",
+        "answer": "swimming",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-27T15:30:15.282125"
   }
 ]

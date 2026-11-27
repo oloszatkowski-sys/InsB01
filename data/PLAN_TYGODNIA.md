@@ -4,8 +4,8 @@
 
 - 🇵🇱 **Strefa czasowa:** `Europe/Warsaw` (CET)
 - 📅 **Tydzień ISO:** `2026-W48`
-- 📊 **Status tygodnia:** Ukończono **15** z **25** sesji (Pozostało: **10**)
-- 🔄 **Ostatnia aktualizacja:** `2026-11-26 23:13:21 CET`
+- 📊 **Status tygodnia:** Ukończono **16** z **25** sesji (Pozostało: **9**)
+- 🔄 **Ostatnia aktualizacja:** `2026-11-27 16:30:17 CET`
 
 | Dzień tygodnia | Data | Uczeń | Login | Plan (PL) | Status | Rozpoczęto | Ukończono | Wynik |
 |---|---|---|---|---|---|---|---|---|
@@ -21,14 +21,14 @@
 | Środa | `2026-11-25` | **Szlucha Jagoda** | `lasa6####` | **18:32** | ✅ Ukończono | 2026-11-25 18:32:00 CET | 2026-11-25 18:35:14 CET | **15/17** (88.2%) |
 | Środa | `2026-11-25` | **OliwiercioTheHacker** | `asa61####` | **20:10** | ✅ Ukończono | 2026-11-25 20:10:00 CET | 2026-11-25 20:13:24 CET | **15/19** (78.9%) |
 | Środa | `2026-11-25` | **Oleslaw 010** | `asa61####` | **21:47** | ✅ Ukończono | 2026-11-25 23:11:33 CET | 2026-11-25 23:16:01 CET | **15/25** (60.0%) |
-| 👉 **Czwartek (DZIŚ)** | `2026-11-26` | **Oleslaw 010** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
-| 👉 **Czwartek (DZIŚ)** | `2026-11-26` | **Szlucha Jagoda** | `lasa6####` | **17:17** | ✅ Ukończono | 2026-11-26 17:17:00 CET | 2026-11-26 17:21:37 CET | **15/27** (55.6%) |
-| 👉 **Czwartek (DZIŚ)** | `2026-11-26` | **OliwiercioTheHacker** | `asa61####` | **19:16** | ✅ Ukończono | 2026-11-26 19:16:00 CET | 2026-11-26 19:21:37 CET | **15/31** (48.4%) |
-| 👉 **Czwartek (DZIŚ)** | `2026-11-26` | **Oliwka Pożeraczka Tostów** | `kl799####` | **22:14** | ✅ Ukończono | 2026-11-26 23:10:39 CET | 2026-11-26 23:13:19 CET | **15/15** (100.0%) |
-| Piątek | `2026-11-27` | **Oleslaw 010** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
-| Piątek | `2026-11-27` | **OliwiercioTheHacker** | `asa61####` | **16:26** | ⏳ Oczekuje | - | - | - |
-| Piątek | `2026-11-27` | **Oliwka Pożeraczka Tostów** | `kl799####` | **19:49** | ⏳ Oczekuje | - | - | - |
-| Piątek | `2026-11-27` | **Szlucha Jagoda** | `lasa6####` | **20:19** | ⏳ Oczekuje | - | - | - |
+| Czwartek | `2026-11-26` | **Oleslaw 010** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
+| Czwartek | `2026-11-26` | **Szlucha Jagoda** | `lasa6####` | **17:17** | ✅ Ukończono | 2026-11-26 17:17:00 CET | 2026-11-26 17:21:37 CET | **15/27** (55.6%) |
+| Czwartek | `2026-11-26` | **OliwiercioTheHacker** | `asa61####` | **19:16** | ✅ Ukończono | 2026-11-26 19:16:00 CET | 2026-11-26 19:21:37 CET | **15/31** (48.4%) |
+| Czwartek | `2026-11-26` | **Oliwka Pożeraczka Tostów** | `kl799####` | **22:14** | ✅ Ukończono | 2026-11-26 23:10:39 CET | 2026-11-26 23:13:19 CET | **15/15** (100.0%) |
+| 👉 **Piątek (DZIŚ)** | `2026-11-27` | **Oleslaw 010** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
+| 👉 **Piątek (DZIŚ)** | `2026-11-27` | **OliwiercioTheHacker** | `asa61####` | **16:26** | ✅ Ukończono | 2026-11-27 16:26:00 CET | 2026-11-27 16:30:16 CET | **15/25** (60.0%) |
+| 👉 **Piątek (DZIŚ)** | `2026-11-27` | **Oliwka Pożeraczka Tostów** | `kl799####` | **19:49** | ⏳ Oczekuje | - | - | - |
+| 👉 **Piątek (DZIŚ)** | `2026-11-27` | **Szlucha Jagoda** | `lasa6####` | **20:19** | ⏳ Oczekuje | - | - | - |
 | Sobota | `2026-11-28` | **OliwiercioTheHacker** | `asa61####` | **Wolne** | 🏖️ Dzień wolny | - | - | - |
 | Sobota | `2026-11-28` | **Oleslaw 010** | `asa61####` | **15:40** | ⏳ Oczekuje | - | - | - |
 | Sobota | `2026-11-28` | **Szlucha Jagoda** | `lasa6####` | **19:56** | ⏳ Oczekuje | - | - | - |

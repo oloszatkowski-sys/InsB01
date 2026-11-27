@@ -1949,15 +1949,15 @@
     "answer": "cyclist",
     "prompt": "rowerzysta; kolarz",
     "sentence": "The _______\nluka\n was doing his best to win the race.",
-    "updated_at": "2026-11-21T20:49:40.020987",
-    "usage_count": 7
+    "updated_at": "2026-11-27T15:29:12.739754",
+    "usage_count": 9
   },
   "rowerzysta; kolarz": {
     "answer": "cyclist",
     "prompt": "rowerzysta; kolarz",
     "sentence": "The _______\nluka\n was doing his best to win the race.",
-    "updated_at": "2026-11-21T20:49:40.020987",
-    "usage_count": 7
+    "updated_at": "2026-11-27T15:29:12.739754",
+    "usage_count": 9
   },
   "he can perform twists, he is a _______ luka . | gimnastyk; gimnastyczka": {
     "answer": "gymnast",
@@ -2173,15 +2173,15 @@
     "answer": "captain",
     "prompt": "kapitan; dowódca",
     "sentence": "The _______\nluka\n said the ship was about to leave port.",
-    "updated_at": "2026-11-19T21:14:54.481843",
-    "usage_count": 1
+    "updated_at": "2026-11-27T15:26:55.749976",
+    "usage_count": 3
   },
   "kapitan; dowódca": {
     "answer": "captain",
     "prompt": "kapitan; dowódca",
     "sentence": "The _______\nluka\n said the ship was about to leave port.",
-    "updated_at": "2026-11-19T21:14:54.481843",
-    "usage_count": 1
+    "updated_at": "2026-11-27T15:26:55.749976",
+    "usage_count": 3
   },
   "this team was ______ luka by 10 points. | pokonać; pobić": {
     "answer": "beat",
@@ -2243,15 +2243,15 @@
     "answer": "athletic",
     "prompt": "wysportowany",
     "sentence": "George is an ________\nluka\n boy.",
-    "updated_at": "2026-11-26T18:17:04.650438",
-    "usage_count": 7
+    "updated_at": "2026-11-27T15:27:32.969952",
+    "usage_count": 9
   },
   "wysportowany": {
     "answer": "athletic",
     "prompt": "wysportowany",
     "sentence": "George is an ________\nluka\n boy.",
-    "updated_at": "2026-11-26T18:17:04.650438",
-    "usage_count": 7
+    "updated_at": "2026-11-27T15:27:32.969952",
+    "usage_count": 9
   },
   "he threw the ____ luka at me, but i couldn't catch it. | piłka": {
     "answer": "ball",
@@ -2467,15 +2467,15 @@
     "answer": "diving",
     "prompt": "nurkowanie; skoki do wody",
     "sentence": "Luke's crazy about ______\nluka\n. It's his favourite sport.",
-    "updated_at": "2026-11-22T12:43:08.848895",
-    "usage_count": 1
+    "updated_at": "2026-11-27T15:28:10.965805",
+    "usage_count": 3
   },
   "nurkowanie; skoki do wody": {
     "answer": "diving",
     "prompt": "nurkowanie; skoki do wody",
     "sentence": "Luke's crazy about ______\nluka\n. It's his favourite sport.",
-    "updated_at": "2026-11-22T12:43:08.848895",
-    "usage_count": 1
+    "updated_at": "2026-11-27T15:28:10.965805",
+    "usage_count": 3
   },
   "american people are crazy about ________ luka . | bejsbol": {
     "answer": "baseball",
@@ -2971,15 +2971,15 @@
     "answer": "swimming",
     "prompt": "pływanie",
     "sentence": "I like ________\nluka\n, but I don't like team sports.",
-    "updated_at": "2026-11-26T18:21:07.851795",
-    "usage_count": 3
+    "updated_at": "2026-11-27T15:28:48.048907",
+    "usage_count": 5
   },
   "pływanie": {
     "answer": "swimming",
     "prompt": "pływanie",
     "sentence": "I like ________\nluka\n, but I don't like team sports.",
-    "updated_at": "2026-11-26T18:21:07.851795",
-    "usage_count": 3
+    "updated_at": "2026-11-27T15:28:48.048907",
+    "usage_count": 5
   },
   "someone stole all her _________ luka and money. | biżuteria": {
     "answer": "jewellery",
