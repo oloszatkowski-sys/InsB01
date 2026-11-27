@@ -12748,5 +12748,175 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-27T15:30:15.282125"
+  },
+  {
+    "success": true,
+    "nickname": "Oliwka Pożeraczka Tostów",
+    "masked_login": "kl799####",
+    "scheduled_time": "19:49",
+    "words_total": 30,
+    "words_correct": 15,
+    "words_mistakes": 15,
+    "new_words_count": 11,
+    "autocorrect_count": 2,
+    "accuracy_percent": 50.0,
+    "duration_seconds": 301.7,
+    "started_at_warsaw": "2026-11-27 19:49:00 CET",
+    "completed_at_warsaw": "2026-11-27 19:54:02 CET",
+    "finished_at": "2026-11-27T19:54:02.506644+01:00",
+    "words_details": [
+      {
+        "prompt": "sławny",
+        "answer": "famous",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film fantasy",
+        "answer": "fantasy film",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "rabuś; złodziej",
+        "answer": "robber",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "nosić; mieć na sobie; ubrać",
+        "answer": "wear",
+        "status": "nowe"
+      },
+      {
+        "prompt": "czarny",
+        "answer": "black",
+        "status": "nowe"
+      },
+      {
+        "prompt": "płaszcz; kurtka",
+        "answer": "coat",
+        "status": "nowe"
+      },
+      {
+        "prompt": "czarny",
+        "answer": "black",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "okulary",
+        "answer": "glasses",
+        "status": "nowe"
+      },
+      {
+        "prompt": "okulary",
+        "answer": "glasses",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "długi",
+        "answer": "long",
+        "status": "nowe"
+      },
+      {
+        "prompt": "długi",
+        "answer": "long",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "czerwony",
+        "answer": "red",
+        "status": "nowe"
+      },
+      {
+        "prompt": "nosić; mieć na sobie; ubrać",
+        "answer": "____",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "płaszcz; kurtka",
+        "answer": "coat",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "krótki",
+        "answer": "short",
+        "status": "nowe"
+      },
+      {
+        "prompt": "czerwony",
+        "answer": "red",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "szczupły",
+        "answer": "slim",
+        "status": "nowe"
+      },
+      {
+        "prompt": "nosić; mieć na sobie; ubrać",
+        "answer": "wear",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "krótki",
+        "answer": "short",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "nosić; mieć na sobie; ubrać",
+        "answer": "wear",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "wysoki (np. o osobie)",
+        "answer": "tall",
+        "status": "nowe"
+      },
+      {
+        "prompt": "szczupły",
+        "answer": "slim",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "torebka",
+        "answer": "handbag",
+        "status": "nowe"
+      },
+      {
+        "prompt": "wysoki (np. o osobie)",
+        "answer": "tall",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kręcony (o włosach)",
+        "answer": "curly",
+        "status": "nowe"
+      },
+      {
+        "prompt": "kręcony (o włosach)",
+        "answer": "curly",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film niemy",
+        "answer": "silent movie",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "torebka",
+        "answer": "handbag",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-27T18:54:02.506990"
   }
 ]

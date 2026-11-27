@@ -1165,15 +1165,15 @@
     "answer": "silent movie",
     "prompt": "film niemy",
     "sentence": "Are there any science fiction ______\nluka\n ______\nluka\n?",
-    "updated_at": "2026-11-19T16:30:28.090676",
-    "usage_count": 5
+    "updated_at": "2026-11-27T18:52:40.331849",
+    "usage_count": 7
   },
   "film niemy": {
     "answer": "silent movie",
     "prompt": "film niemy",
     "sentence": "Are there any science fiction ______\nluka\n ______\nluka\n?",
-    "updated_at": "2026-11-19T16:30:28.090676",
-    "usage_count": 5
+    "updated_at": "2026-11-27T18:52:40.331849",
+    "usage_count": 7
   },
   "could you turn the _________ luka on? i don't understand everything they say. | napisy (w filmie)": {
     "answer": "subtitles",
@@ -3119,6 +3119,160 @@
     "prompt": "kolarstwo",
     "sentence": "You can't do _______\nluka\n if you don't have a bicycle.",
     "updated_at": "2026-11-26T16:20:42.507570",
+    "usage_count": 1
+  },
+  "what are you going to ____ luka at the party? | nosić; mieć na sobie; ubrać": {
+    "answer": "wear",
+    "prompt": "nosić; mieć na sobie; ubrać",
+    "sentence": "What are you going to ____\nluka\n at the party?",
+    "updated_at": "2026-11-27T18:51:57.779608",
+    "usage_count": 3
+  },
+  "nosić; mieć na sobie; ubrać": {
+    "answer": "wear",
+    "prompt": "nosić; mieć na sobie; ubrać",
+    "sentence": "What are you going to ____\nluka\n at the party?",
+    "updated_at": "2026-11-27T18:51:57.779608",
+    "usage_count": 3
+  },
+  "all his clothes are _____ luka . | czarny": {
+    "answer": "black",
+    "prompt": "czarny",
+    "sentence": "All his clothes are _____\nluka\n.",
+    "updated_at": "2026-11-27T18:50:00.220487",
+    "usage_count": 1
+  },
+  "czarny": {
+    "answer": "black",
+    "prompt": "czarny",
+    "sentence": "All his clothes are _____\nluka\n.",
+    "updated_at": "2026-11-27T18:50:00.220487",
+    "usage_count": 1
+  },
+  "put your ____ luka on. | płaszcz; kurtka": {
+    "answer": "coat",
+    "prompt": "płaszcz; kurtka",
+    "sentence": "Put your ____\nluka\n on.",
+    "updated_at": "2026-11-27T18:50:09.356159",
+    "usage_count": 1
+  },
+  "płaszcz; kurtka": {
+    "answer": "coat",
+    "prompt": "płaszcz; kurtka",
+    "sentence": "Put your ____\nluka\n on.",
+    "updated_at": "2026-11-27T18:50:09.356159",
+    "usage_count": 1
+  },
+  "jim wears _______ luka . | okulary": {
+    "answer": "glasses",
+    "prompt": "okulary",
+    "sentence": "Jim wears _______\nluka\n.",
+    "updated_at": "2026-11-27T18:50:28.774536",
+    "usage_count": 1
+  },
+  "okulary": {
+    "answer": "glasses",
+    "prompt": "okulary",
+    "sentence": "Jim wears _______\nluka\n.",
+    "updated_at": "2026-11-27T18:50:28.774536",
+    "usage_count": 1
+  },
+  "this skirt is too ____ luka . | długi": {
+    "answer": "long",
+    "prompt": "długi",
+    "sentence": "This skirt is too ____\nluka\n.",
+    "updated_at": "2026-11-27T18:50:44.740056",
+    "usage_count": 1
+  },
+  "długi": {
+    "answer": "long",
+    "prompt": "długi",
+    "sentence": "This skirt is too ____\nluka\n.",
+    "updated_at": "2026-11-27T18:50:44.740056",
+    "usage_count": 1
+  },
+  "he gave her a ___ luka rose. | czerwony": {
+    "answer": "red",
+    "prompt": "czerwony",
+    "sentence": "He gave her a ___\nluka\n rose.",
+    "updated_at": "2026-11-27T18:51:04.749279",
+    "usage_count": 1
+  },
+  "czerwony": {
+    "answer": "red",
+    "prompt": "czerwony",
+    "sentence": "He gave her a ___\nluka\n rose.",
+    "updated_at": "2026-11-27T18:51:04.749279",
+    "usage_count": 1
+  },
+  "she has _____ luka dark hair. | krótki": {
+    "answer": "short",
+    "prompt": "krótki",
+    "sentence": "She has _____\nluka\n dark hair.",
+    "updated_at": "2026-11-27T18:51:32.034737",
+    "usage_count": 1
+  },
+  "krótki": {
+    "answer": "short",
+    "prompt": "krótki",
+    "sentence": "She has _____\nluka\n dark hair.",
+    "updated_at": "2026-11-27T18:51:32.034737",
+    "usage_count": 1
+  },
+  "mary is tall and ____ luka . | szczupły": {
+    "answer": "slim",
+    "prompt": "szczupły",
+    "sentence": "Mary is tall and ____\nluka\n.",
+    "updated_at": "2026-11-27T18:51:49.736432",
+    "usage_count": 1
+  },
+  "szczupły": {
+    "answer": "slim",
+    "prompt": "szczupły",
+    "sentence": "Mary is tall and ____\nluka\n.",
+    "updated_at": "2026-11-27T18:51:49.736432",
+    "usage_count": 1
+  },
+  "jim was ____ luka and handsome. | wysoki (np. o osobie)": {
+    "answer": "tall",
+    "prompt": "wysoki (np. o osobie)",
+    "sentence": "Jim was ____\nluka\n and handsome.",
+    "updated_at": "2026-11-27T18:52:46.914180",
+    "usage_count": 1
+  },
+  "wysoki (np. o osobie)": {
+    "answer": "tall",
+    "prompt": "wysoki (np. o osobie)",
+    "sentence": "Jim was ____\nluka\n and handsome.",
+    "updated_at": "2026-11-27T18:52:46.914180",
+    "usage_count": 1
+  },
+  "where's my _______ luka ? i put it somewhere here. | torebka": {
+    "answer": "handbag",
+    "prompt": "torebka",
+    "sentence": "Where's my _______\nluka\n? I put it somewhere here.",
+    "updated_at": "2026-11-27T18:53:05.914938",
+    "usage_count": 1
+  },
+  "torebka": {
+    "answer": "handbag",
+    "prompt": "torebka",
+    "sentence": "Where's my _______\nluka\n? I put it somewhere here.",
+    "updated_at": "2026-11-27T18:53:05.914938",
+    "usage_count": 1
+  },
+  "she had long _____ luka hair. | kręcony (o włosach)": {
+    "answer": "curly",
+    "prompt": "kręcony (o włosach)",
+    "sentence": "She had long _____\nluka\n hair.",
+    "updated_at": "2026-11-27T18:53:22.816993",
+    "usage_count": 1
+  },
+  "kręcony (o włosach)": {
+    "answer": "curly",
+    "prompt": "kręcony (o włosach)",
+    "sentence": "She had long _____\nluka\n hair.",
+    "updated_at": "2026-11-27T18:53:22.816993",
     "usage_count": 1
   }
 }
