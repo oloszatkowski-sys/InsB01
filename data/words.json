@@ -423,15 +423,15 @@
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-11-20T21:03:58.780745",
-    "usage_count": 11
+    "updated_at": "2026-11-28T14:43:38.469924",
+    "usage_count": 13
   },
   "film dokumentalny; program dokumentalny": {
     "answer": "documentary",
     "prompt": "film dokumentalny; program dokumentalny",
     "sentence": "That ___________\nluka\n is terribly boring.",
-    "updated_at": "2026-11-20T21:03:58.780745",
-    "usage_count": 11
+    "updated_at": "2026-11-28T14:43:38.469924",
+    "usage_count": 13
   },
   "can you _____ luka ___ luka ________ luka , please? the sun is blinding me. | zasunąć zasłony": {
     "answer": "close the curtains",
@@ -1557,15 +1557,15 @@
     "answer": "kick",
     "prompt": "kopać; kopnąć",
     "sentence": "Neil ______\nluka\n the ball.",
-    "updated_at": "2026-11-25T22:13:10.851589",
-    "usage_count": 3
+    "updated_at": "2026-11-28T14:42:58.299224",
+    "usage_count": 5
   },
   "kopać; kopnąć": {
     "answer": "kick",
     "prompt": "kopać; kopnąć",
     "sentence": "Neil ______\nluka\n the ball.",
-    "updated_at": "2026-11-25T22:13:10.851589",
-    "usage_count": 3
+    "updated_at": "2026-11-28T14:42:58.299224",
+    "usage_count": 5
   },
   "the fans _________ luka their team. | popierać; pomagać; kibicować": {
     "answer": "support",
@@ -1865,15 +1865,15 @@
     "answer": "hit",
     "prompt": "uderzać; stuknąć; dotknąć",
     "sentence": "Why did you ___\nluka\n him?",
-    "updated_at": "2026-11-25T22:12:29.098801",
-    "usage_count": 7
+    "updated_at": "2026-11-28T14:40:43.815398",
+    "usage_count": 9
   },
   "uderzać; stuknąć; dotknąć": {
     "answer": "hit",
     "prompt": "uderzać; stuknąć; dotknąć",
     "sentence": "Why did you ___\nluka\n him?",
-    "updated_at": "2026-11-25T22:12:29.098801",
-    "usage_count": 7
+    "updated_at": "2026-11-28T14:40:43.815398",
+    "usage_count": 9
   },
   "the _____ luka lost the fight. | bokser": {
     "answer": "boxer",
@@ -2313,15 +2313,15 @@
     "answer": "wetsuit",
     "prompt": "pianka do nurkowania",
     "sentence": "We're going swimming so put on your _______\nluka\n.",
-    "updated_at": "2026-11-20T16:58:39.988142",
-    "usage_count": 1
+    "updated_at": "2026-11-28T14:40:30.259828",
+    "usage_count": 3
   },
   "pianka do nurkowania": {
     "answer": "wetsuit",
     "prompt": "pianka do nurkowania",
     "sentence": "We're going swimming so put on your _______\nluka\n.",
-    "updated_at": "2026-11-20T16:58:39.988142",
-    "usage_count": 1
+    "updated_at": "2026-11-28T14:40:30.259828",
+    "usage_count": 3
   },
   "i don't think _________ luka is my favourite sport. i don't like watching people fight. | zapasy (sport)": {
     "answer": "wrestling",
@@ -2355,15 +2355,15 @@
     "answer": "weightlifting",
     "prompt": "podnoszenie ciężarów; kulturystyka",
     "sentence": "_____________\nluka\n is not very popular with women.",
-    "updated_at": "2026-11-25T22:15:33.165293",
-    "usage_count": 3
+    "updated_at": "2026-11-28T14:41:57.820489",
+    "usage_count": 5
   },
   "podnoszenie ciężarów; kulturystyka": {
     "answer": "weightlifting",
     "prompt": "podnoszenie ciężarów; kulturystyka",
     "sentence": "_____________\nluka\n is not very popular with women.",
-    "updated_at": "2026-11-25T22:15:33.165293",
-    "usage_count": 3
+    "updated_at": "2026-11-28T14:41:57.820489",
+    "usage_count": 5
   },
   "do you think i should buy this _______ luka ? | strój kąpielowy": {
     "answer": "costume",

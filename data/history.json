@@ -13063,5 +13063,150 @@
     ],
     "green_audit": null,
     "timestamp": "2026-11-27T19:23:32.115848"
+  },
+  {
+    "success": true,
+    "nickname": "Oleslaw 010",
+    "masked_login": "asa61####",
+    "scheduled_time": "15:40",
+    "words_total": 25,
+    "words_correct": 15,
+    "words_mistakes": 10,
+    "new_words_count": 0,
+    "autocorrect_count": 5,
+    "accuracy_percent": 60.0,
+    "duration_seconds": 256.4,
+    "started_at_warsaw": "2026-11-28 15:40:00 CET",
+    "completed_at_warsaw": "2026-11-28 15:44:16 CET",
+    "finished_at": "2026-11-28T15:44:16.855168+01:00",
+    "words_details": [
+      {
+        "prompt": "pianka do nurkowania",
+        "answer": "_______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pianka do nurkowania",
+        "answer": "wetsuit",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "___",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "konkurować",
+        "answer": "compete",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "gimnastyk; gimnastyczka",
+        "answer": "gymnast",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "biegacz",
+        "answer": "runner",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "scena (np. z filmu)",
+        "answer": "scene",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "_____________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "pianka do nurkowania",
+        "answer": "wetsuit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "weightlifting",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "narty",
+        "answer": "skis",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kapitan; dowódca",
+        "answer": "captain",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "zapasy (sport)",
+        "answer": "wrestling",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "wysportowany",
+        "answer": "athletic",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "______",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "uderzać; stuknąć; dotknąć",
+        "answer": "hit",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "zawody; turniej",
+        "answer": "tournament",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "___________",
+        "status": "celowy_blad"
+      },
+      {
+        "prompt": "kopać; kopnąć",
+        "answer": "kick",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "autokorekta"
+      },
+      {
+        "prompt": "szczotka; pędzel",
+        "answer": "brush",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "podnoszenie ciężarów; kulturystyka",
+        "answer": "weightlifting",
+        "status": "poprawnie"
+      },
+      {
+        "prompt": "film dokumentalny; program dokumentalny",
+        "answer": "documentary",
+        "status": "poprawnie"
+      }
+    ],
+    "green_audit": null,
+    "timestamp": "2026-11-28T14:44:16.855488"
   }
 ]
